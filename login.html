@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - QBank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="brand-name">Adel Elzayat</span>
+        </div>
+        <div class="navbar-actions">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                <span class="icon-moon">🌙</span>
+                <span class="icon-sun">☀️</span>
+            </button>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="login-wrapper">
+            <div class="login-container">
+                <div class="login-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to access your quiz results</p>
+                </div>
+                <div id="error-message" class="error-message"></div>
+                <button class="btn-google" onclick="signInWithGoogle()" id="google-btn">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+                    <span>Continue with Google</span>
+                </button>
+                <div class="guest-link">
+                    <a href="index.html">Continue as Guest</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { auth, googleProvider, signInWithPopup, onAuthStateChanged } from './firebase.js';
+        
+        window.signInWithGoogle = async function() {
+            const errorEl = document.getElementById('error-message');
+            const btn = document.getElementById('google-btn');
+            errorEl.classList.remove('show');
+            btn.classList.add('loading');
+            
+            try {
+                await signInWithPopup(auth, googleProvider);
+                window.location.href = 'index.html';
+            } catch (error) {
+                errorEl.textContent = error.message;
+                errorEl.classList.add('show');
+                btn.classList.remove('loading');
+            }
+        };
+        
+        window.toggleTheme = function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('quiz-theme', newTheme);
+        };
+        
+        const savedTheme = localStorage.getItem('quiz-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
