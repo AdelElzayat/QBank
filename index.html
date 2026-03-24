@@ -72,14 +72,17 @@
                 
                 if (currentUser) {
                     userActions.innerHTML = `
-                        <div class="user-info">
-                            <span class="user-name">${currentUser.displayName || currentUser.email}</span>
-                            ${isAdmin ? '<span class="admin-badge">Admin</span>' : ''}
-                        </div>
-                        <div class="user-buttons">
-                            <button class="btn btn-secondary btn-sm" onclick="quizApp.showResultsHistory()">My Results</button>
-                            ${isAdmin ? '<button class="btn btn-admin" onclick="quizApp.showAdminPanel()">Admin</button>' : ''}
-                            <button class="btn btn-secondary btn-sm" onclick="quizApp.logout()">Logout</button>
+                        <div class="user-section">
+                            <div class="user-profile">
+                                <span class="user-avatar">👤</span>
+                                <span class="user-name">${currentUser.displayName || currentUser.email}</span>
+                                ${isAdmin ? '<span class="admin-badge">Admin</span>' : ''}
+                            </div>
+                            <div class="user-actions-group">
+                                <button class="btn btn-secondary btn-nav" onclick="quizApp.showResultsHistory()">My Results</button>
+                                ${isAdmin ? '<button class="btn btn-admin btn-nav" onclick="quizApp.showAdminPanel()">Admin</button>' : ''}
+                                <button class="btn btn-secondary btn-nav" onclick="quizApp.logout()">Logout</button>
+                            </div>
                         </div>
                     `;
                 } else {
