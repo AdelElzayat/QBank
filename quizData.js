@@ -41,7 +41,7 @@ const quizzes = [
   {
     id: "network-2-questions-bank",
     title: "Network 2 Questions Bank",
-    shuffleQuestions: false,
+    shuffleQuestions: true,
     showScore: true,
     questions: [
       {
