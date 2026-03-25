@@ -266,11 +266,12 @@
                     <div class="quiz-footer">
                         <button class="btn btn-secondary" onclick="quizApp.shareQuiz()">Share Quiz</button>
                         ${this.currentQuestionIndex > 0 ? '<button class="btn btn-secondary" onclick="quizApp.prevQuestion()">Previous</button>' : '<div></div>'}
-                        <button class="btn btn-primary" onclick="quizApp.nextQuestion()" ${!this.selectedAnswer ? 'disabled' : ''}>${this.currentQuestionIndex === this.processedQuestions.length - 1 ? 'Finish' : 'Next'}</button>
+                        <button id="next-btn" class="btn btn-primary" onclick="quizApp.nextQuestion()" ${!this.selectedAnswer ? 'disabled' : ''}>${this.currentQuestionIndex === this.processedQuestions.length - 1 ? 'Finish' : 'Next'}</button>
                     </div>
                 `;
                 
                 this.updateProgressBar();
+                this.enableNextButton();
             },
             
             renderOptions(question) {
@@ -322,7 +323,7 @@
             },
             
             enableNextButton() {
-                const nextBtn = document.querySelector('.btn-primary');
+                const nextBtn = document.getElementById('next-btn');
                 if (nextBtn) {
                     nextBtn.disabled = !this.selectedAnswer;
                 }
