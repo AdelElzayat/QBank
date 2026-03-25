@@ -11,7 +11,6 @@
 <body>
     <nav class="navbar">
         <div class="navbar-brand">
-            <span class="brand-icon">📚</span>
             <span class="brand-name">Adel Elzayat</span>
         </div>
         <div class="navbar-actions">
@@ -56,6 +55,7 @@
             processedQuestions: [],
             selectedAnswer: null,
             quizAnswers: [],
+            savedResultsData: [],
             
             async init() {
                 this.initTheme();
@@ -427,6 +427,13 @@
                 if (!currentUser || !this.currentQuiz) return;
                 
                 try {
+                    const quizData = this.processedQuestions.map((q, index) => ({
+                        question: q.question,
+                        userAnswer: this.userAnswers[index] || null,
+                        correctAnswer: q.correctAnswer,
+                        isCorrect: this.checkAnswer(q, this.userAnswers[index])
+                    }));
+                    
                     await addDoc(collection(db, 'results'), {
                         userId: currentUser.uid,
                         userEmail: currentUser.email,
@@ -435,6 +442,7 @@
                         score: results.score,
                         totalQuestions: results.total,
                         percentage: results.percentage,
+                        quizData: quizData,
                         timestamp: serverTimestamp()
                     });
                 } catch (error) {
@@ -530,17 +538,21 @@
                     const loadingEl = document.getElementById('history-loading');
                     const contentEl = document.getElementById('history-content');
                     
+                    this.savedResultsData = [];
+                    
                     if (snapshot.empty) {
                         loadingEl.style.display = 'none';
                         contentEl.innerHTML = '<div class="empty-state">No results yet. Take a quiz to see your history!</div>';
                     } else {
                         loadingEl.style.display = 'none';
                         let html = '<div class="results-list">';
+                        let index = 0;
                         snapshot.forEach((doc) => {
                             const data = doc.data();
-                            const date = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleDateString() : 'N/A';
+                            this.savedResultsData[index] = data;
+                            const date = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleString() : 'N/A';
                             html += `
-                                <div class="result-item">
+                                <div class="result-item clickable" onclick="quizApp.showReview(${index})">
                                     <div class="result-info">
                                         <div class="result-title">${data.quizTitle}</div>
                                         <div class="result-date">${date}</div>
@@ -551,6 +563,7 @@
                                     </div>
                                 </div>
                             `;
+                            index++;
                         });
                         html += '</div>';
                         contentEl.innerHTML = html;
@@ -560,6 +573,62 @@
                     document.getElementById('history-loading').style.display = 'none';
                     document.getElementById('history-content').innerHTML = '<div class="error-state">Failed to load results</div>';
                 }
+            },
+            
+            showReview(resultIndex) {
+                const resultData = this.savedResultsData[resultIndex];
+                if (!resultData || !resultData.quizData) {
+                    alert('Unable to load review data');
+                    return;
+                }
+                
+                const container = document.getElementById('quiz-container');
+                
+                const questionsHtml = resultData.quizData.map((item, index) => {
+                    const iconClass = item.isCorrect ? 'icon-correct' : 'icon-incorrect';
+                    const icon = item.isCorrect ? '✔' : '✖';
+                    
+                    return `
+                        <div class="review-card ${item.isCorrect ? 'correct' : 'incorrect'}">
+                            <div class="review-card-header">
+                                <span class="question-number">Question ${index + 1}</span>
+                                <span class="${iconClass}">${icon}</span>
+                            </div>
+                            <div class="review-card-question">${item.question}</div>
+                            <div class="review-card-answers">
+                                <div class="answer-row ${item.isCorrect ? 'correct' : 'incorrect'}">
+                                    <span class="answer-label">Your answer:</span>
+                                    <span class="answer-value ${item.isCorrect ? 'correct' : 'incorrect'}">${item.userAnswer || 'No answer'}</span>
+                                </div>
+                                ${!item.isCorrect ? `
+                                <div class="answer-row correct">
+                                    <span class="answer-label">Correct answer:</span>
+                                    <span class="answer-value correct">${item.correctAnswer}</span>
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                container.innerHTML = `
+                    <div class="review-page">
+                        <div class="review-header">
+                            <button class="btn-back" onclick="quizApp.showResultsHistory()">← Back to Results</button>
+                            <h1>${resultData.quizTitle}</h1>
+                            <div class="review-score-summary">
+                                <span class="review-score">${resultData.score}/${resultData.totalQuestions}</span>
+                                <span class="review-percentage">${resultData.percentage}%</span>
+                            </div>
+                        </div>
+                        <div class="review-questions">
+                            ${questionsHtml}
+                        </div>
+                        <div class="review-footer">
+                            <button class="btn btn-secondary" onclick="quizApp.showResultsHistory()">Back to Results</button>
+                        </div>
+                    </div>
+                `;
             },
             
             closeModal(event) {
