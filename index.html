@@ -11,6 +11,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar-brand">
+            <span class="brand-icon">📚</span>
             <span class="brand-name">Adel Elzayat</span>
         </div>
         <div class="navbar-actions">
@@ -18,11 +19,22 @@
                 <span class="icon-moon">🌙</span>
                 <span class="icon-sun">☀️</span>
             </button>
-            <div id="user-actions">
+            <button class="profile-icon-btn" onclick="quizApp.toggleProfilePanel()" aria-label="Profile">
+                <span class="profile-icon">👤</span>
+            </button>
+            <div id="user-actions" class="desktop-only">
                 <a href="login.html" class="btn btn-primary btn-sm">Login</a>
             </div>
         </div>
     </nav>
+    <div class="profile-panel" id="profile-panel">
+        <div class="profile-panel-header">
+            <h3>My Account</h3>
+            <button class="profile-panel-close" onclick="quizApp.toggleProfilePanel()">×</button>
+        </div>
+        <div class="profile-panel-content" id="profile-panel-content"></div>
+    </div>
+    <div class="profile-panel-overlay" id="profile-panel-overlay" onclick="quizApp.toggleProfilePanel()"></div>
     <div class="main-content">
         <div id="quiz-container">
             <div class="home-screen">
@@ -65,6 +77,7 @@
                         isAdmin = false;
                     }
                     this.updateUserUI();
+                    this.updateProfilePanel();
                 });
             },
             
@@ -91,12 +104,54 @@
                 }
             },
             
+            toggleProfilePanel() {
+                const panel = document.getElementById('profile-panel');
+                const overlay = document.getElementById('profile-panel-overlay');
+                panel.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('profile-panel-open');
+            },
+            
+            updateProfilePanel() {
+                const content = document.getElementById('profile-panel-content');
+                
+                if (currentUser) {
+                    content.innerHTML = `
+                        <div class="profile-info">
+                            <div class="profile-avatar-large">👤</div>
+                            <div class="profile-name">${currentUser.displayName || 'User'}</div>
+                            <div class="profile-email">${currentUser.email}</div>
+                            ${isAdmin ? '<span class="admin-badge">Admin</span>' : ''}
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn btn-primary btn-full" onclick="quizApp.showResultsHistory()">My Results</button>
+                            ${isAdmin ? '<button class="btn btn-admin btn-full" onclick="quizApp.showAdminPanel()">Admin Panel</button>' : ''}
+                            <button class="btn btn-secondary btn-full" onclick="quizApp.logout()">Logout</button>
+                        </div>
+                    `;
+                } else {
+                    content.innerHTML = `
+                        <div class="profile-info">
+                            <div class="profile-avatar-large">👤</div>
+                            <div class="profile-name">Guest User</div>
+                            <div class="profile-email">Sign in to save your progress</div>
+                        </div>
+                        <div class="profile-actions">
+                            <a href="login.html" class="btn btn-google btn-full">Login with Google</a>
+                            <button class="btn btn-secondary btn-full" onclick="quizApp.toggleProfilePanel()">Continue as Guest</button>
+                        </div>
+                    `;
+                }
+            },
+            
             async logout() {
                 try {
+                    this.toggleProfilePanel();
                     await signOut(auth);
                     currentUser = null;
                     isAdmin = false;
                     this.updateUserUI();
+                    this.updateProfilePanel();
                 } catch (error) {
                     console.error('Logout error:', error);
                 }
@@ -446,6 +501,8 @@
                     return;
                 }
                 
+                this.toggleProfilePanel();
+                
                 const container = document.getElementById('quiz-container');
                 container.innerHTML = `
                     <div class="modal-overlay" onclick="quizApp.closeModal(event)">
@@ -517,6 +574,8 @@
             
             async showAdminPanel() {
                 if (!isAdmin) return;
+                
+                this.toggleProfilePanel();
                 
                 const container = document.getElementById('quiz-container');
                 container.innerHTML = `
