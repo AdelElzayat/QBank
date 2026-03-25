@@ -643,7 +643,7 @@
                 container.innerHTML = `
                     <div class="review-page">
                         <div class="review-header">
-                            <button class="btn-back" onclick="quizApp.showResultsHistory()">← Back to Results</button>
+                            <button class="btn-back" onclick="quizApp.goHome()">← Back to Quizzes</button>
                             <h1>${resultData.quizTitle}</h1>
                             <div class="review-score-summary">
                                 <span class="review-score">${resultData.score}/${resultData.totalQuestions}</span>
@@ -654,7 +654,7 @@
                             ${questionsHtml}
                         </div>
                         <div class="review-footer">
-                            <button class="btn btn-secondary" onclick="quizApp.showResultsHistory()">Back to Results</button>
+                            <button class="btn btn-secondary" onclick="quizApp.goHome()">Back to Quizzes</button>
                         </div>
                     </div>
                 `;
