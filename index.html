@@ -516,39 +516,41 @@
                     this.toggleProfilePanel();
                 }
                 
-                const container = document.getElementById('quiz-container');
+                const modal = document.createElement('div');
                 
                 if (isMobile) {
-                    container.innerHTML = `
-                        <div class="modal-overlay" onclick="quizApp.closeModal(event)">
-                            <div class="modal-content history-modal" onclick="event.stopPropagation()">
-                                <div class="modal-header">
-                                    <h2>My Results</h2>
-                                    <button class="btn-close" onclick="quizApp.closeHistoryModal()">×</button>
-                                </div>
-                                <div class="modal-body">
-                                    <div id="history-loading" class="loading-text">Loading...</div>
-                                    <div id="history-content"></div>
-                                </div>
+                    modal.className = 'modal-overlay';
+                    modal.setAttribute('onclick', 'quizApp.closeModal(event)');
+                    modal.innerHTML = `
+                        <div class="modal-content history-modal" onclick="event.stopPropagation()">
+                            <div class="modal-header">
+                                <h2>My Results</h2>
+                                <button class="btn-close" onclick="quizApp.closeHistoryModal()">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="history-loading" class="loading-text">Loading...</div>
+                                <div id="history-content"></div>
                             </div>
                         </div>
                     `;
                 } else {
-                    container.innerHTML = `
-                        <div class="desktop-results-overlay" id="desktop-results-overlay">
-                            <div class="desktop-results-modal">
-                                <div class="desktop-results-header">
-                                    <h2>My Results</h2>
-                                    <button class="btn-close" onclick="quizApp.closeDesktopResults()">×</button>
-                                </div>
-                                <div class="desktop-results-body">
-                                    <div id="history-loading" class="loading-text">Loading...</div>
-                                    <div id="history-content"></div>
-                                </div>
+                    modal.className = 'desktop-results-overlay';
+                    modal.id = 'desktop-results-overlay';
+                    modal.innerHTML = `
+                        <div class="desktop-results-modal">
+                            <div class="desktop-results-header">
+                                <h2>My Results</h2>
+                                <button class="btn-close" onclick="quizApp.closeDesktopResults()">×</button>
+                            </div>
+                            <div class="desktop-results-body">
+                                <div id="history-loading" class="loading-text">Loading...</div>
+                                <div id="history-content"></div>
                             </div>
                         </div>
                     `;
                 }
+                
+                document.body.appendChild(modal);
                 
                 try {
                     const q = query(
@@ -679,39 +681,41 @@
                     this.toggleProfilePanel();
                 }
                 
-                const container = document.getElementById('quiz-container');
+                const modal = document.createElement('div');
                 
                 if (isMobile) {
-                    container.innerHTML = `
-                        <div class="modal-overlay" onclick="quizApp.closeModal(event)">
-                            <div class="modal-content admin-modal" onclick="event.stopPropagation()">
-                                <div class="modal-header">
-                                    <h2>Admin Panel</h2>
-                                    <button class="btn-close" onclick="quizApp.closeHistoryModal()">×</button>
-                                </div>
-                                <div class="modal-body">
-                                    <div id="admin-loading" class="loading-text">Loading analytics...</div>
-                                    <div id="admin-content"></div>
-                                </div>
+                    modal.className = 'modal-overlay';
+                    modal.setAttribute('onclick', 'quizApp.closeModal(event)');
+                    modal.innerHTML = `
+                        <div class="modal-content admin-modal" onclick="event.stopPropagation()">
+                            <div class="modal-header">
+                                <h2>Admin Panel</h2>
+                                <button class="btn-close" onclick="quizApp.closeHistoryModal()">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="admin-loading" class="loading-text">Loading analytics...</div>
+                                <div id="admin-content"></div>
                             </div>
                         </div>
                     `;
                 } else {
-                    container.innerHTML = `
-                        <div class="desktop-results-overlay" id="desktop-results-overlay">
-                            <div class="desktop-results-modal">
-                                <div class="desktop-results-header">
-                                    <h2>Admin Panel</h2>
-                                    <button class="btn-close" onclick="quizApp.closeDesktopResults()">×</button>
-                                </div>
-                                <div class="desktop-results-body">
-                                    <div id="admin-loading" class="loading-text">Loading analytics...</div>
-                                    <div id="admin-content"></div>
-                                </div>
+                    modal.className = 'desktop-results-overlay';
+                    modal.id = 'desktop-results-overlay';
+                    modal.innerHTML = `
+                        <div class="desktop-results-modal">
+                            <div class="desktop-results-header">
+                                <h2>Admin Panel</h2>
+                                <button class="btn-close" onclick="quizApp.closeDesktopResults()">×</button>
+                            </div>
+                            <div class="desktop-results-body">
+                                <div id="admin-loading" class="loading-text">Loading analytics...</div>
+                                <div id="admin-content"></div>
                             </div>
                         </div>
                     `;
                 }
+                
+                document.body.appendChild(modal);
                 
                 try {
                     const q = query(collection(db, 'results'), orderBy('timestamp', 'desc'));
