@@ -604,7 +604,13 @@
                 document.getElementById('desktop-results-overlay').remove();
             },
             
+            closeAllModals() {
+                const modals = document.querySelectorAll('.modal-overlay, .desktop-results-overlay');
+                modals.forEach(modal => modal.remove());
+            },
+            
             showReview(resultIndex) {
+                this.closeAllModals();
                 const resultData = this.savedResultsData[resultIndex];
                 if (!resultData || !resultData.quizData) {
                     alert('Unable to load review data');
