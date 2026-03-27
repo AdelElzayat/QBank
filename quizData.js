@@ -248,6 +248,7 @@ const quizzes = [
       {
         question: "In figure.1 What does the number 1 symbolize?",
         type: "multiple",
+        image: "img/Network2-MidQBank-Q24.JPEG",
         options: [
           "Serial Ports",
           "Ethernet Ports",
@@ -260,6 +261,7 @@ const quizzes = [
       {
         question: "In figure.1 What does the number 2 symbolize?",
         type: "multiple",
+        image: "img/Network2-MidQBank-Q25.JPEG",
         options: [
           "Serial Ports",
           "Ethernet Ports",
@@ -272,6 +274,7 @@ const quizzes = [
       {
         question: "In figure.1 What does the number 3 symbolize?",
         type: "multiple",
+        image: "img/Network2-MidQBank-Q26.JPEG",
         options: [
           "Serial Ports",
           "Ethernet Ports",
@@ -284,6 +287,7 @@ const quizzes = [
       {
         question: "In figure.1 What does the number 4 symbolize?",
         type: "multiple",
+        image: "img/Network2-MidQBank-Q27.JPEG",
         options: [
           "Serial Ports",
           "Ethernet Ports",

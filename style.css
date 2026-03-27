@@ -174,6 +174,8 @@ body {
 .question-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: var(--space-lg); margin-bottom: var(--space-lg); }
 .question-text { font-size: 1.25rem; font-weight: 600; color: var(--text-color); margin-bottom: var(--space-lg); line-height: 1.5; }
 
+.question-image { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px; object-fit: contain; display: block; width: 100%; }
+
 .options { display: flex; flex-direction: column; gap: var(--space-md); }
 
 .option { display: flex; align-items: center; padding: var(--space-md) var(--space-lg); border: 2px solid var(--card-border); border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s ease; background: var(--card-bg); }
