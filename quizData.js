@@ -100,10 +100,10 @@ const quizzes = [
         options: [
           "N of networks = 2^ones",
           "N of networks = 2^ones-2",
-          "Hop = 256-last octet in new mask",
+          "N of networks = 256-last octet in new mask",
           "N of networks = 2^zeros-2",
         ],
-        correctAnswer: "Hop = 256-last octet in new mask",
+        correctAnswer: "N of networks = 256-last octet in new mask",
         shuffle: true,
       },
       {
