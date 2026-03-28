@@ -159,9 +159,21 @@ const quizApp = {
         const container = document.getElementById('quiz-container');
         const question = this.processedQuestions[this.currentQuestionIndex];
         
-        console.log("Image path:", question.image);
+        let imageHTML = "";
         
-        const imageHtml = (question.image && question.image.trim() !== "") ? `<img class="question-image" src="${question.image}" alt="Question image" onerror="this.style.display='none'">` : '';
+        if (question.image && question.image.trim() !== "") {
+            console.log("Rendering image:", question.image);
+            
+            imageHTML = `
+                <div class="question-image-container">
+                    <img 
+                        src="${question.image}" 
+                        class="question-image"
+                        onerror="console.error('Image failed:', this.src); this.style.display='none';"
+                    >
+                </div>
+            `;
+        }
         
         container.innerHTML = `
             <div class="quiz-header">
@@ -172,8 +184,8 @@ const quizApp = {
             </div>
             <div class="question-container">
                 <div class="question-card">
-                    ${imageHtml}
-                    <div class="question-text">${question.question}</div>
+                    ${imageHTML}
+                    <h2 class="question-text">${question.question}</h2>
                     ${this.renderOptions(question)}
                 </div>
             </div>
