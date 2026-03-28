@@ -190,18 +190,18 @@ body {
 
 .options { display: flex; flex-direction: column; gap: var(--space-md); }
 
-.option { display: flex; align-items: center; padding: var(--space-md) var(--space-lg); border: 2px solid var(--card-border); border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s ease; background: var(--card-bg); }
+.option { display: flex; align-items: center; padding: var(--space-md) var(--space-lg); border: 2px solid var(--card-border); border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s ease; background: var(--card-bg); touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .option:hover { border-color: var(--primary); background: var(--primary-subtle); transform: translateX(4px); }
 .option.selected { border-color: var(--primary); background: var(--primary); color: white; }
 .option.selected .option-letter { background: white; color: var(--primary); }
 
-.option.correct { border-color: #10b981; background: #10b981; color: white; }
-.option.correct .option-letter { background: white; color: #10b981; }
+.option.correct { border-color: #10b981 !important; background: #10b981 !important; color: white !important; }
+.option.correct .option-letter { background: white !important; color: #10b981 !important; }
 
-.option.wrong { border-color: #ef4444; background: #ef4444; color: white; }
-.option.wrong .option-letter { background: white; color: #ef4444; }
+.option.wrong { border-color: #ef4444 !important; background: #ef4444 !important; color: white !important; }
+.option.wrong .option-letter { background: white !important; color: #ef4444 !important; }
 
-.option.disabled { pointer-events: none; opacity: 0.7; }
+.option.disabled { pointer-events: none !important; opacity: 0.7 !important; cursor: not-allowed !important; }
 
 .option-letter { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: var(--bg-color); border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9375rem; margin-right: var(--space-md); flex-shrink: 0; transition: all 0.2s ease; }
 .option-text { font-size: 1rem; font-weight: 500; }
