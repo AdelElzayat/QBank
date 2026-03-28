@@ -10,6 +10,7 @@ const quizApp = {
     processedQuestions: [],
     selectedAnswer: null,
     quizAnswers: [],
+    questionAnswered: false,
     
     async init() {
         this.initTheme();
@@ -127,6 +128,7 @@ const quizApp = {
         this.userAnswers = [];
         this.selectedAnswer = null;
         this.quizAnswers = [];
+        this.questionAnswered = false;
     },
     
     processQuestions(questions) {
@@ -222,16 +224,45 @@ const quizApp = {
     },
     
     handleAnswer(answer) {
+        if (this.questionAnswered) return;
+        this.questionAnswered = true;
+        
+        const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
+        const selected = answer;
+        const correct = currentQuestion.correctAnswer;
+        
         this.selectedAnswer = answer;
         this.userAnswers[this.currentQuestionIndex] = answer;
-        this.updateSelectedUI();
+        
+        const options = document.querySelectorAll('.option');
+        options.forEach(option => {
+            const optionText = option.querySelector('.option-text').textContent;
+            if (optionText === correct) {
+                option.classList.add('correct');
+            }
+            if (optionText === selected && optionText !== correct) {
+                option.classList.add('wrong');
+            }
+            option.classList.add('disabled');
+        });
+        
         this.enableNextButton();
     },
     
     handleCompleteInput(event) {
+        if (this.questionAnswered) return;
+        this.questionAnswered = true;
+        
         const answer = event.target.value.trim();
         this.selectedAnswer = answer;
         this.userAnswers[this.currentQuestionIndex] = answer;
+        
+        const input = document.getElementById('complete-answer');
+        if (input) {
+            input.classList.add('disabled');
+            input.disabled = true;
+        }
+        
         this.enableNextButton();
     },
     
@@ -266,6 +297,7 @@ const quizApp = {
         if (this.currentQuestionIndex < this.processedQuestions.length - 1) {
             this.currentQuestionIndex++;
             this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+            this.questionAnswered = false;
             this.renderQuiz();
         } else {
             this.showResults();
@@ -276,6 +308,7 @@ const quizApp = {
         if (this.currentQuestionIndex > 0) {
             this.currentQuestionIndex--;
             this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+            this.questionAnswered = !!this.selectedAnswer;
             this.renderQuiz();
         }
     },
@@ -409,6 +442,7 @@ const quizApp = {
         this.userAnswers = [];
         this.selectedAnswer = null;
         this.quizAnswers = [];
+        this.questionAnswered = false;
         this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
         this.renderQuiz();
     },

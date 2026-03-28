@@ -48,7 +48,7 @@
         let currentUser = null;
         let isAdmin = false;
 
-        const quizApp = {
+const quizApp = {
             currentQuiz: null,
             currentQuestionIndex: 0,
             userAnswers: [],
@@ -56,6 +56,7 @@
             selectedAnswer: null,
             quizAnswers: [],
             savedResultsData: [],
+            questionAnswered: false,
             
             async init() {
                 this.initTheme();
@@ -218,6 +219,7 @@
                 this.userAnswers = [];
                 this.selectedAnswer = null;
                 this.quizAnswers = [];
+                this.questionAnswered = false;
             },
             
             processQuestions(questions) {
@@ -270,6 +272,25 @@
                     </div>
                 `;
                 
+                const savedAnswer = this.userAnswers[this.currentQuestionIndex];
+                if (savedAnswer !== undefined) {
+                    const correct = question.correctAnswer;
+                    const options = document.querySelectorAll('.option');
+                    
+                    options.forEach(option => {
+                        const text = option.querySelector('.option-text').textContent;
+                        if (text === correct) {
+                            option.classList.add('correct');
+                        }
+                        if (text === savedAnswer && text !== correct) {
+                            option.classList.add('wrong');
+                        }
+                        option.classList.add('disabled');
+                    });
+                    
+                    this.questionAnswered = true;
+                }
+                
                 this.updateProgressBar();
                 this.enableNextButton();
             },
@@ -297,9 +318,27 @@
             },
             
             handleAnswer(answer) {
+                if (this.userAnswers[this.currentQuestionIndex] !== undefined) return;
+                
                 this.selectedAnswer = answer;
                 this.userAnswers[this.currentQuestionIndex] = answer;
-                this.updateSelectedUI();
+                
+                const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
+                const correct = currentQuestion.correctAnswer;
+                
+                const options = document.querySelectorAll('.option');
+                options.forEach(option => {
+                    const optionText = option.querySelector('.option-text').textContent;
+                    if (optionText === correct) {
+                        option.classList.add('correct');
+                    }
+                    if (optionText === answer && optionText !== correct) {
+                        option.classList.add('wrong');
+                    }
+                    option.classList.add('disabled');
+                });
+                
+                this.questionAnswered = true;
                 this.enableNextButton();
             },
             
@@ -341,6 +380,7 @@
                 if (this.currentQuestionIndex < this.processedQuestions.length - 1) {
                     this.currentQuestionIndex++;
                     this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+                    this.questionAnswered = false;
                     this.renderQuiz();
                 } else {
                     this.showResults();
@@ -492,6 +532,7 @@
                 this.userAnswers = [];
                 this.selectedAnswer = null;
                 this.quizAnswers = [];
+                this.questionAnswered = false;
                 this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
                 this.renderQuiz();
             },
