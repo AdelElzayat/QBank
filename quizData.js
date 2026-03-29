@@ -1,6 +1,6 @@
 const quizzes = [
   //multiple, true_false, complete
-  {
+  { //Law and Human Rights
     id: "human-rights-and-law-qbank-1",
     title: "Law and Human Rights Qbank",
     shuffleQuestions: false,
@@ -971,9 +971,9 @@ const quizzes = [
       },
     ],
   },
-  {
+  { // Network 2
     id: "network-2-questions-bank",
-    title: "Network 2 Questions Bank",
+    title: "Network 2 Questions Qbank",
     shuffleQuestions: true,
     showScore: true,
     questions: [
@@ -1397,6 +1397,112 @@ const quizzes = [
           "Divide network 192.168.1.0/24 into 5 networks for host sizes {60, 30, 30, 60, 60}. What is the Subnet Mask for the Second Network Division (for 30 hosts)?",
         type: "complete",
         correctAnswer: "255.255.255.224",
+      },
+    ],
+  },
+  { //Biomedical Engineering
+    id: "biomedical-engineering-qbank-solved",
+    title: "Biomedical Engineering Qbank",
+    shuffleQuestions: false,
+    showScore: true,
+    questions: [
+      {
+        id: "q1",
+        question:
+          "Which nerve cells carry impulses from the brain to the muscles is called ......",
+        type: "complete",
+        correctAnswer: "Motor",
+      },
+      {
+        id: "q2",
+        question: "Figure 1 represents ......",
+        type: "complete",
+        correctAnswer: "Carbon electrode",
+      },
+      {
+        id: "q3",
+        question:
+          "Electrocardiogram is obtained from bioelectrical signals from the ......",
+        type: "complete",
+        correctAnswer: "heart",
+      },
+      {
+        id: "q4",
+        question:
+          "Electroencephalogram (EEG) is used in the diagnosis of the ......",
+        type: "complete",
+        correctAnswer: "brain",
+      },
+      {
+        id: "q5",
+        question: "The information is forwarded from the neuron through ......",
+        type: "complete",
+        correctAnswer: "Axon",
+      },
+      {
+        id: "q6",
+        question:
+          "Depolarization is when ......",
+        type: "complete",
+        correctAnswer: "NA ions flow inside the neuron's membrane",
+      },
+      {
+        id: "q7",
+        question: "Most of a neuron's DNA is contained within its ......",
+        type: "complete",
+        correctAnswer: "nucleus",
+      },
+      {
+        id: "q8",
+        question:
+          "...... is a rare type of sensory neuron that is found in special sensory structures like the retina of the eye.",
+        type: "complete",
+        correctAnswer: "Bipolar",
+      },
+      {
+        id: "q9",
+        question:
+          "Ag-AgCl, Silver-Silver Chloride Electrodes interfaced with ......",
+        type: "complete",
+        correctAnswer: "AgCl",
+      },
+      {
+        id: "q10",
+        question: "Figure 2 represents ......",
+        type: "complete",
+        options: "Metal microelectrode",
+      },
+      {
+        id: "q11",
+        question: "The following neuron in figure 3 is known as ......",
+        type: "complete",
+        correctAnswer: "unipolar neuron",
+      },
+      {
+        id: "q12",
+        question:
+          "The following neuron in figure 4 considered in ......",
+        type: "complete",
+        correctAnswer: "resting state",
+      },
+      {
+        id: "q13",
+        question: "In heart muscle, an action potential consumes ......",
+        type: "complete",
+        correctAnswer: "150 to 300 milliseconds",
+      },
+      {
+        id: "q14",
+        question:
+          "In nerve and muscle, cell Action potential appears as a spike for ......",
+        type: "complete",
+        correctAnswer: "one millisecond",
+      },
+      {
+        id: "q15",
+        question: "Action potential is about ......",
+        type: "complete",
+        correctAnswer: "+20 mvolt",
       },
     ],
   },
