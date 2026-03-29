@@ -1044,7 +1044,7 @@ const quizzes = [
         question: "Figure 2 represents ......",
         image: "img/Biomedical-Q10.jpg",
         type: "complete",
-        options: "Metal microelectrode",
+        correctAnswer: "Metal microelectrode",
       },
       {
         id: "q11",
