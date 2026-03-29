@@ -1289,7 +1289,7 @@ const quizzes = [
       {
         question: "In figure.1 What does the number 1 symbolize?",
         type: "multiple",
-        image: "img/Network2-MidQBank-Q24.JPEG",
+        image: "img/Network2-MidQBank-Q24.JPG",
         options: [
           "Serial Ports",
           "Ethernet Ports",
@@ -1302,7 +1302,7 @@ const quizzes = [
       {
         question: "In figure.1 What does the number 2 symbolize?",
         type: "multiple",
-        image: "img/Network2-MidQBank-Q25.JPEG",
+        image: "img/Network2-MidQBank-Q25.JPG",
         options: [
           "Serial Ports",
           "Ethernet Ports",
@@ -1315,7 +1315,7 @@ const quizzes = [
       {
         question: "In figure.1 What does the number 3 symbolize?",
         type: "multiple",
-        image: "img/Network2-MidQBank-Q26.JPEG",
+        image: "img/Network2-MidQBank-Q26.JPG",
         options: [
           "Serial Ports",
           "Ethernet Ports",
@@ -1328,7 +1328,7 @@ const quizzes = [
       {
         question: "In figure.1 What does the number 4 symbolize?",
         type: "multiple",
-        image: "img/Network2-MidQBank-Q27.JPEG",
+        image: "img/Network2-MidQBank-Q27.JPG",
         options: [
           "Serial Ports",
           "Ethernet Ports",
@@ -1341,6 +1341,7 @@ const quizzes = [
       {
         question: "What is the number 1 used for?",
         type: "multiple",
+        image: "img/Network2-MidQBank-Q24.JPG",
         options: [
           "To connect two geographically distant branches.",
           "To connect Router with other devices.",
@@ -1353,6 +1354,7 @@ const quizzes = [
       {
         question: "What is the number 2 used for?",
         type: "multiple",
+        image: "img/Network2-MidQBank-Q25.JPG",
         options: [
           "To connect two geographically distant branches.",
           "To connect Router with other devices.",
@@ -1365,6 +1367,7 @@ const quizzes = [
       {
         question: "What is the number 3 used for?",
         type: "multiple",
+        image: "img/Network2-MidQBank-Q26.JPG",
         options: [
           "To connect two geographically distant branches.",
           "To connect Router with other devices.",
@@ -1377,6 +1380,7 @@ const quizzes = [
       {
         question: "What is the number 4 used for?",
         type: "multiple",
+        image: "img/Network2-MidQBank-Q27.JPG",
         options: [
           "To connect two geographically distant branches.",
           "To connect Router with other devices.",
