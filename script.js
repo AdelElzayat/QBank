@@ -3,6 +3,8 @@ import { auth, db, collection, addDoc, query, where, orderBy, getDocs, serverTim
 let currentUser = null;
 let isAdmin = false;
 
+const QUIZ_STORAGE_KEY = "quiz_progress";
+
 const quizApp = {
     currentQuiz: null,
     currentQuestionIndex: 0,
@@ -10,6 +12,7 @@ const quizApp = {
     processedQuestions: [],
     selectedAnswer: null,
     quizAnswers: [],
+    savedResultsData: [],
     questionAnswered: false,
     
     async init() {
@@ -32,6 +35,7 @@ const quizApp = {
                 isAdmin = false;
             }
             this.updateUserUI();
+            this.updateProfilePanel();
         });
     },
     
@@ -40,14 +44,17 @@ const quizApp = {
         
         if (currentUser) {
             userActions.innerHTML = `
-                <div class="user-info">
-                    <span class="user-name">${currentUser.displayName || currentUser.email}</span>
-                    ${isAdmin ? '<span class="admin-badge">Admin</span>' : ''}
-                </div>
-                <div class="user-buttons">
-                    <button class="btn btn-secondary btn-sm" onclick="quizApp.showResultsHistory()">My Results</button>
-                    ${isAdmin ? '<button class="btn btn-admin" onclick="quizApp.showAdminPanel()">Admin Panel</button>' : ''}
-                    <button class="btn btn-secondary btn-sm" onclick="quizApp.logout()">Logout</button>
+                <div class="user-section">
+                    <div class="user-profile">
+                        <span class="user-avatar">👤</span>
+                        <span class="user-name">${currentUser.displayName || currentUser.email}</span>
+                        ${isAdmin ? '<span class="admin-badge">Admin</span>' : ''}
+                    </div>
+                    <div class="user-actions-group">
+                        <button class="btn btn-secondary btn-nav" onclick="quizApp.showResultsHistory()">My Results</button>
+                        ${isAdmin ? '<button class="btn btn-admin btn-nav" onclick="quizApp.showAdminPanel()">Admin</button>' : ''}
+                        <button class="btn btn-secondary btn-nav" onclick="quizApp.logout()">Logout</button>
+                    </div>
                 </div>
             `;
         } else {
@@ -55,12 +62,54 @@ const quizApp = {
         }
     },
     
+    toggleProfilePanel() {
+        const panel = document.getElementById('profile-panel');
+        const overlay = document.getElementById('profile-panel-overlay');
+        panel.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.classList.toggle('profile-panel-open');
+    },
+    
+    updateProfilePanel() {
+        const content = document.getElementById('profile-panel-content');
+        
+        if (currentUser) {
+            content.innerHTML = `
+                <div class="profile-info">
+                    <div class="profile-avatar-large">👤</div>
+                    <div class="profile-name">${currentUser.displayName || 'User'}</div>
+                    <div class="profile-email">${currentUser.email}</div>
+                    ${isAdmin ? '<span class="admin-badge">Admin</span>' : ''}
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-primary btn-full" onclick="quizApp.showResultsHistory()">My Results</button>
+                    ${isAdmin ? '<button class="btn btn-admin btn-full" onclick="quizApp.showAdminPanel()">Admin Panel</button>' : ''}
+                    <button class="btn btn-secondary btn-full" onclick="quizApp.logout()">Logout</button>
+                </div>
+            `;
+        } else {
+            content.innerHTML = `
+                <div class="profile-info">
+                    <div class="profile-avatar-large">👤</div>
+                    <div class="profile-name">Guest User</div>
+                    <div class="profile-email">Sign in to save your progress</div>
+                </div>
+                <div class="profile-actions">
+                    <a href="login.html" class="btn btn-google btn-full">Login with Google</a>
+                    <button class="btn btn-secondary btn-full" onclick="quizApp.toggleProfilePanel()">Continue as Guest</button>
+                </div>
+            `;
+        }
+    },
+    
     async logout() {
         try {
+            this.toggleProfilePanel();
             await signOut(auth);
             currentUser = null;
             isAdmin = false;
             this.updateUserUI();
+            this.updateProfilePanel();
         } catch (error) {
             console.error('Logout error:', error);
         }
@@ -107,8 +156,7 @@ const quizApp = {
         
         container.innerHTML = `
             <div class="home-screen">
-                <h1>Quiz App</h1>
-                <p class="subtitle">Select a quiz to begin</p>
+                <h1>Select a quiz to begin</h1>
                 <div class="quiz-grid">${cardsHtml}</div>
             </div>
         `;
@@ -116,10 +164,50 @@ const quizApp = {
         window.history.replaceState({}, '', window.location.pathname);
     },
     
+    saveProgress() {
+        if (!this.currentQuiz) return;
+        const data = {
+            quizId: this.currentQuiz.id,
+            currentQuestionIndex: this.currentQuestionIndex,
+            userAnswers: this.userAnswers
+        };
+        localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(data));
+    },
+    
+    loadProgress() {
+        const saved = localStorage.getItem(QUIZ_STORAGE_KEY);
+        if (!saved) return false;
+        
+        try {
+            const data = JSON.parse(saved);
+            if (!data.quizId || !this.currentQuiz) return false;
+            if (data.quizId !== this.currentQuiz.id) return false;
+            
+            this.currentQuestionIndex = data.currentQuestionIndex || 0;
+            this.userAnswers = data.userAnswers || [];
+            this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+            this.questionAnswered = !!this.selectedAnswer;
+            
+            return true;
+        } catch (e) {
+            return false;
+        }
+    },
+    
+    clearProgress() {
+        localStorage.removeItem(QUIZ_STORAGE_KEY);
+    },
+    
     startQuiz(quizIndex) {
         this.currentQuiz = quizzes[quizIndex];
         this.resetState();
         this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
+        
+        this.loadProgress();
+        
+        this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+        this.questionAnswered = !!this.selectedAnswer;
+        
         this.renderQuiz();
     },
     
@@ -162,16 +250,10 @@ const quizApp = {
         const question = this.processedQuestions[this.currentQuestionIndex];
         
         let imageHTML = "";
-        
         if (question.image && question.image.trim() !== "") {
             imageHTML = `
                 <div class="question-image-container">
-                    <img 
-                        src="${question.image}" 
-                        class="question-image"
-                        onerror="this.parentElement.style.display='none';"
-                        alt="Question image"
-                    >
+                    <img src="${question.image}" class="question-image" onerror="this.parentElement.style.display='none';" alt="Question image">
                 </div>
             `;
         }
@@ -186,18 +268,42 @@ const quizApp = {
             <div class="question-container">
                 <div class="question-card">
                     ${imageHTML}
-                    <h2 class="question-text">${question.question}</h2>
+                    <div class="question-text">${question.question}</div>
                     ${this.renderOptions(question)}
                 </div>
             </div>
             <div class="quiz-footer">
                 <button class="btn btn-secondary" onclick="quizApp.shareQuiz()">Share Quiz</button>
                 ${this.currentQuestionIndex > 0 ? '<button class="btn btn-secondary" onclick="quizApp.prevQuestion()">Previous</button>' : '<div></div>'}
-                <button class="btn btn-primary" onclick="quizApp.nextQuestion()" ${!this.selectedAnswer ? 'disabled' : ''}>${this.currentQuestionIndex === this.processedQuestions.length - 1 ? 'Finish' : 'Next'}</button>
+                <button id="next-btn" class="btn btn-primary" onclick="quizApp.nextQuestion()" ${!this.selectedAnswer ? 'disabled' : ''}>${this.currentQuestionIndex === this.processedQuestions.length - 1 ? 'Finish' : 'Next'}</button>
             </div>
         `;
         
+        const savedAnswer = this.userAnswers[this.currentQuestionIndex];
+        if (savedAnswer !== undefined) {
+            const correct = question.correctAnswer;
+            const normalizeText = (str) => str ? str.trim().replace(/\s+/g, ' ').toLowerCase() : '';
+            const normalizedSaved = normalizeText(savedAnswer);
+            const normalizedCorrect = normalizeText(correct);
+            const options = document.querySelectorAll('.option');
+            
+            options.forEach(option => {
+                const text = option.querySelector('.option-text').textContent;
+                const normalizedText = normalizeText(text);
+                if (normalizedText === normalizedCorrect) {
+                    option.classList.add('correct');
+                }
+                if (normalizedText === normalizedSaved && normalizedText !== normalizedCorrect) {
+                    option.classList.add('wrong');
+                }
+                option.classList.add('disabled');
+            });
+            
+            this.questionAnswered = true;
+        }
+        
         this.updateProgressBar();
+        this.enableNextButton();
     },
     
     renderOptions(question) {
@@ -223,45 +329,44 @@ const quizApp = {
     },
     
     handleAnswer(answer) {
-        if (this.questionAnswered) return;
-        this.questionAnswered = true;
-        
-        const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
-        const selected = answer;
-        const correct = currentQuestion.correctAnswer;
+        if (this.userAnswers[this.currentQuestionIndex] !== undefined) return;
         
         this.selectedAnswer = answer;
         this.userAnswers[this.currentQuestionIndex] = answer;
+        this.saveProgress();
+        
+        const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
+        const correct = currentQuestion.correctAnswer;
+        
+        const normalizeText = (str) => str ? str.trim().replace(/\s+/g, ' ').toLowerCase() : '';
+        const normalizedAnswer = normalizeText(answer);
+        const normalizedCorrect = normalizeText(correct);
         
         const options = document.querySelectorAll('.option');
         options.forEach(option => {
             const optionText = option.querySelector('.option-text').textContent;
-            if (optionText === correct) {
+            const normalizedOptionText = normalizeText(optionText);
+            
+            if (normalizedOptionText === normalizedCorrect) {
                 option.classList.add('correct');
             }
-            if (optionText === selected && optionText !== correct) {
+            if (normalizedOptionText === normalizedAnswer && normalizedOptionText !== normalizedCorrect) {
                 option.classList.add('wrong');
             }
             option.classList.add('disabled');
         });
         
+        this.questionAnswered = true;
         this.enableNextButton();
     },
     
     handleCompleteInput(event) {
-        if (this.questionAnswered) return;
-        this.questionAnswered = true;
-        
         const answer = event.target.value.trim();
+        if (!answer) return;
+        
         this.selectedAnswer = answer;
         this.userAnswers[this.currentQuestionIndex] = answer;
-        
-        const input = document.getElementById('complete-answer');
-        if (input) {
-            input.classList.add('disabled');
-            input.disabled = true;
-        }
-        
+        this.saveProgress();
         this.enableNextButton();
     },
     
@@ -278,7 +383,7 @@ const quizApp = {
     },
     
     enableNextButton() {
-        const nextBtn = document.querySelector('.btn-primary');
+        const nextBtn = document.getElementById('next-btn');
         if (nextBtn) {
             nextBtn.disabled = !this.selectedAnswer;
         }
@@ -297,8 +402,10 @@ const quizApp = {
             this.currentQuestionIndex++;
             this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
             this.questionAnswered = false;
+            this.saveProgress();
             this.renderQuiz();
         } else {
+            this.clearProgress();
             this.showResults();
         }
     },
@@ -307,7 +414,7 @@ const quizApp = {
         if (this.currentQuestionIndex > 0) {
             this.currentQuestionIndex--;
             this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
-            this.questionAnswered = !!this.selectedAnswer;
+            this.saveProgress();
             this.renderQuiz();
         }
     },
@@ -385,6 +492,13 @@ const quizApp = {
         if (!currentUser || !this.currentQuiz) return;
         
         try {
+            const quizData = this.processedQuestions.map((q, index) => ({
+                question: q.question,
+                userAnswer: this.userAnswers[index] || null,
+                correctAnswer: q.correctAnswer,
+                isCorrect: this.checkAnswer(q, this.userAnswers[index])
+            }));
+            
             await addDoc(collection(db, 'results'), {
                 userId: currentUser.uid,
                 userEmail: currentUser.email,
@@ -393,6 +507,7 @@ const quizApp = {
                 score: results.score,
                 totalQuestions: results.total,
                 percentage: results.percentage,
+                quizData: quizData,
                 timestamp: serverTimestamp()
             });
         } catch (error) {
@@ -437,6 +552,7 @@ const quizApp = {
     },
     
     restartQuiz() {
+        this.clearProgress();
         this.currentQuestionIndex = 0;
         this.userAnswers = [];
         this.selectedAnswer = null;
@@ -447,6 +563,7 @@ const quizApp = {
     },
     
     goHome() {
+        this.clearProgress();
         this.currentQuiz = null;
         this.resetState();
         this.processedQuestions = [];
@@ -460,9 +577,18 @@ const quizApp = {
             return;
         }
         
-        const container = document.getElementById('quiz-container');
-        container.innerHTML = `
-            <div class="modal-overlay" onclick="quizApp.closeModal(event)">
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            this.toggleProfilePanel();
+        }
+        
+        const modal = document.createElement('div');
+        
+        if (isMobile) {
+            modal.className = 'modal-overlay';
+            modal.setAttribute('onclick', 'quizApp.closeModal(event)');
+            modal.innerHTML = `
                 <div class="modal-content history-modal" onclick="event.stopPropagation()">
                     <div class="modal-header">
                         <h2>My Results</h2>
@@ -473,8 +599,25 @@ const quizApp = {
                         <div id="history-content"></div>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
+        } else {
+            modal.className = 'desktop-results-overlay';
+            modal.id = 'desktop-results-overlay';
+            modal.innerHTML = `
+                <div class="desktop-results-modal">
+                    <div class="desktop-results-header">
+                        <h2>My Results</h2>
+                        <button class="btn-close" onclick="quizApp.closeDesktopResults()">×</button>
+                    </div>
+                    <div class="desktop-results-body">
+                        <div id="history-loading" class="loading-text">Loading...</div>
+                        <div id="history-content"></div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        document.body.appendChild(modal);
         
         try {
             const q = query(
@@ -487,17 +630,21 @@ const quizApp = {
             const loadingEl = document.getElementById('history-loading');
             const contentEl = document.getElementById('history-content');
             
+            this.savedResultsData = [];
+            
             if (snapshot.empty) {
                 loadingEl.style.display = 'none';
                 contentEl.innerHTML = '<div class="empty-state">No results yet. Take a quiz to see your history!</div>';
             } else {
                 loadingEl.style.display = 'none';
                 let html = '<div class="results-list">';
+                let index = 0;
                 snapshot.forEach((doc) => {
                     const data = doc.data();
-                    const date = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleDateString() : 'N/A';
+                    this.savedResultsData[index] = data;
+                    const date = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleString() : 'N/A';
                     html += `
-                        <div class="result-item">
+                        <div class="result-item clickable" onclick="quizApp.showReview(${index})">
                             <div class="result-info">
                                 <div class="result-title">${data.quizTitle}</div>
                                 <div class="result-date">${date}</div>
@@ -508,6 +655,7 @@ const quizApp = {
                             </div>
                         </div>
                     `;
+                    index++;
                 });
                 html += '</div>';
                 contentEl.innerHTML = html;
@@ -519,22 +667,99 @@ const quizApp = {
         }
     },
     
+    closeDesktopResults() {
+        document.getElementById('desktop-results-overlay').remove();
+    },
+    
+    closeAllModals() {
+        const modals = document.querySelectorAll('.modal-overlay, .desktop-results-overlay');
+        modals.forEach(modal => modal.remove());
+    },
+    
+    showReview(resultIndex) {
+        this.closeAllModals();
+        const resultData = this.savedResultsData[resultIndex];
+        if (!resultData || !resultData.quizData) {
+            alert('Unable to load review data');
+            return;
+        }
+        
+        const container = document.getElementById('quiz-container');
+        
+        const questionsHtml = resultData.quizData.map((item, index) => {
+            const iconClass = item.isCorrect ? 'icon-correct' : 'icon-incorrect';
+            const icon = item.isCorrect ? '✔' : '✖';
+            
+            return `
+                <div class="review-card ${item.isCorrect ? 'correct' : 'incorrect'}">
+                    <div class="review-card-header">
+                        <span class="question-number">Question ${index + 1}</span>
+                        <span class="${iconClass}">${icon}</span>
+                    </div>
+                    <div class="review-card-question">${item.question}</div>
+                    <div class="review-card-answers">
+                        <div class="answer-row ${item.isCorrect ? 'correct' : 'incorrect'}">
+                            <span class="answer-label">Your answer:</span>
+                            <span class="answer-value ${item.isCorrect ? 'correct' : 'incorrect'}">${item.userAnswer || 'No answer'}</span>
+                        </div>
+                        ${!item.isCorrect ? `
+                        <div class="answer-row correct">
+                            <span class="answer-label">Correct answer:</span>
+                            <span class="answer-value correct">${item.correctAnswer}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        container.innerHTML = `
+            <div class="review-page">
+                <div class="review-header">
+                    <button class="btn-back" onclick="quizApp.goHome()">← Back to Quizzes</button>
+                    <h1>${resultData.quizTitle}</h1>
+                    <div class="review-score-summary">
+                        <span class="review-score">${resultData.score}/${resultData.totalQuestions}</span>
+                        <span class="review-percentage">${resultData.percentage}%</span>
+                    </div>
+                </div>
+                <div class="review-questions">
+                    ${questionsHtml}
+                </div>
+                <div class="review-footer">
+                    <button class="btn btn-secondary" onclick="quizApp.goHome()">Back to Quizzes</button>
+                </div>
+            </div>
+        `;
+    },
+    
     closeModal(event) {
         if (event.target.classList.contains('modal-overlay')) {
-            this.goHome();
+            const modal = document.querySelector('.modal-overlay');
+            if (modal) modal.remove();
         }
     },
     
     closeHistoryModal() {
-        this.goHome();
+        const modal = document.querySelector('.modal-overlay');
+        if (modal) modal.remove();
     },
     
     async showAdminPanel() {
         if (!isAdmin) return;
         
-        const container = document.getElementById('quiz-container');
-        container.innerHTML = `
-            <div class="modal-overlay" onclick="quizApp.closeModal(event)">
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            this.toggleProfilePanel();
+        }
+        
+        const modal = document.createElement('div');
+        
+        if (isMobile) {
+            modal.className = 'modal-overlay';
+            modal.setAttribute('onclick', 'quizApp.closeModal(event)');
+            modal.innerHTML = `
                 <div class="modal-content admin-modal" onclick="event.stopPropagation()">
                     <div class="modal-header">
                         <h2>Admin Panel</h2>
@@ -545,8 +770,25 @@ const quizApp = {
                         <div id="admin-content"></div>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
+        } else {
+            modal.className = 'desktop-results-overlay';
+            modal.id = 'desktop-results-overlay';
+            modal.innerHTML = `
+                <div class="desktop-results-modal">
+                    <div class="desktop-results-header">
+                        <h2>Admin Panel</h2>
+                        <button class="btn-close" onclick="quizApp.closeDesktopResults()">×</button>
+                    </div>
+                    <div class="desktop-results-body">
+                        <div id="admin-loading" class="loading-text">Loading analytics...</div>
+                        <div id="admin-content"></div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        document.body.appendChild(modal);
         
         try {
             const q = query(collection(db, 'results'), orderBy('timestamp', 'desc'));
@@ -637,9 +879,9 @@ const quizApp = {
         
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(shareUrl).then(() => {
-                this.showShareNotification('Link copied to clipboard!');
+                this.showShareNotification('Link copied!');
             }).catch(() => {
-                this.showShareNotification('Failed to copy link');
+                this.showShareNotification('Failed to copy');
             });
         } else {
             const textArea = document.createElement('textarea');
@@ -650,9 +892,9 @@ const quizApp = {
             textArea.select();
             try {
                 document.execCommand('copy');
-                this.showShareNotification('Link copied to clipboard!');
+                this.showShareNotification('Link copied!');
             } catch (err) {
-                this.showShareNotification('Failed to copy link');
+                this.showShareNotification('Failed to copy');
             }
             document.body.removeChild(textArea);
         }
@@ -672,6 +914,7 @@ const quizApp = {
     }
 };
 
+window.quizApp = quizApp;
 document.addEventListener('DOMContentLoaded', () => {
     quizApp.init();
 });

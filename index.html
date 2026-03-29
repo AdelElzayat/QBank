@@ -48,6 +48,8 @@
         let currentUser = null;
         let isAdmin = false;
 
+const QUIZ_STORAGE_KEY = "quiz_progress";
+
 const quizApp = {
             currentQuiz: null,
             currentQuestionIndex: 0,
@@ -207,10 +209,50 @@ const quizApp = {
                 window.history.replaceState({}, '', window.location.pathname);
             },
             
+            saveProgress() {
+                if (!this.currentQuiz) return;
+                const data = {
+                    quizId: this.currentQuiz.id,
+                    currentQuestionIndex: this.currentQuestionIndex,
+                    userAnswers: this.userAnswers
+                };
+                localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(data));
+            },
+            
+            loadProgress() {
+                const saved = localStorage.getItem(QUIZ_STORAGE_KEY);
+                if (!saved) return false;
+                
+                try {
+                    const data = JSON.parse(saved);
+                    if (!data.quizId || !this.currentQuiz) return false;
+                    if (data.quizId !== this.currentQuiz.id) return false;
+                    
+                    this.currentQuestionIndex = data.currentQuestionIndex || 0;
+                    this.userAnswers = data.userAnswers || [];
+                    this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+                    this.questionAnswered = !!this.selectedAnswer;
+                    
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            },
+            
+            clearProgress() {
+                localStorage.removeItem(QUIZ_STORAGE_KEY);
+            },
+            
             startQuiz(quizIndex) {
                 this.currentQuiz = quizzes[quizIndex];
                 this.resetState();
                 this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
+                
+                this.loadProgress();
+                
+                this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+                this.questionAnswered = !!this.selectedAnswer;
+                
                 this.renderQuiz();
             },
             
@@ -336,6 +378,7 @@ const quizApp = {
                 
                 this.selectedAnswer = answer;
                 this.userAnswers[this.currentQuestionIndex] = answer;
+                this.saveProgress();
                 
                 const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
                 const correct = currentQuestion.correctAnswer;
@@ -364,8 +407,11 @@ const quizApp = {
             
             handleCompleteInput(event) {
                 const answer = event.target.value.trim();
+                if (!answer) return;
+                
                 this.selectedAnswer = answer;
                 this.userAnswers[this.currentQuestionIndex] = answer;
+                this.saveProgress();
                 this.enableNextButton();
             },
             
@@ -401,8 +447,10 @@ const quizApp = {
                     this.currentQuestionIndex++;
                     this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
                     this.questionAnswered = false;
+                    this.saveProgress();
                     this.renderQuiz();
                 } else {
+                    this.clearProgress();
                     this.showResults();
                 }
             },
@@ -411,6 +459,7 @@ const quizApp = {
                 if (this.currentQuestionIndex > 0) {
                     this.currentQuestionIndex--;
                     this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+                    this.saveProgress();
                     this.renderQuiz();
                 }
             },
@@ -548,6 +597,7 @@ const quizApp = {
             },
             
             restartQuiz() {
+                this.clearProgress();
                 this.currentQuestionIndex = 0;
                 this.userAnswers = [];
                 this.selectedAnswer = null;
@@ -558,6 +608,7 @@ const quizApp = {
             },
             
             goHome() {
+                this.clearProgress();
                 this.currentQuiz = null;
                 this.resetState();
                 this.processedQuestions = [];
