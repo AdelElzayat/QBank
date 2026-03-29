@@ -1,7 +1,6 @@
 const quizzes = [
   //multiple, true_false, complete
-  {
-    //Law and Human Rights
+  { //Law and Human Rights
     id: "human-rights-and-law-qbank-1",
     title: "Law and Human Rights Qbank",
     shuffleQuestions: false,
@@ -972,11 +971,10 @@ const quizzes = [
       },
     ],
   },
-  {
-    //Biomedical Engineering
+  { //Biomedical Engineering
     id: "biomedical-engineering-qbank-solved",
     title: "Biomedical Engineering Qbank",
-    shuffleQuestions: false,
+    shuffleQuestions: true,
     showScore: true,
     questions: [
       {
@@ -1081,8 +1079,7 @@ const quizzes = [
       },
     ],
   },
-  {
-    // Network 2
+  { // Network 2
     id: "network-2-questions-bank",
     title: "Network 2 Questions Qbank",
     shuffleQuestions: true,

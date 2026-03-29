@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Login - QBank</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="navbar-brand">
@@ -39,13 +41,13 @@
     </div>
     <script type="module">
         import { auth, googleProvider, signInWithPopup, onAuthStateChanged } from './firebase.js';
-        
-        window.signInWithGoogle = async function() {
+
+        window.signInWithGoogle = async function () {
             const errorEl = document.getElementById('error-message');
             const btn = document.getElementById('google-btn');
             errorEl.classList.remove('show');
             btn.classList.add('loading');
-            
+
             try {
                 await signInWithPopup(auth, googleProvider);
                 window.location.href = 'index.html';
@@ -55,17 +57,17 @@
                 btn.classList.remove('loading');
             }
         };
-        
-        window.toggleTheme = function() {
+
+        window.toggleTheme = function () {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('quiz-theme', newTheme);
         };
-        
+
         const savedTheme = localStorage.getItem('quiz-theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
-        
+
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 window.location.href = 'index.html';
@@ -73,4 +75,5 @@
         });
     </script>
 </body>
+
 </html>
