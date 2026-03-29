@@ -164,14 +164,13 @@ const quizApp = {
         let imageHTML = "";
         
         if (question.image && question.image.trim() !== "") {
-            console.log("Rendering image:", question.image);
-            
             imageHTML = `
                 <div class="question-image-container">
                     <img 
                         src="${question.image}" 
                         class="question-image"
-                        onerror="console.error('Image failed:', this.src); this.style.display='none';"
+                        onerror="this.parentElement.style.display='none';"
+                        alt="Question image"
                     >
                 </div>
             `;

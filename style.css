@@ -178,14 +178,19 @@ body {
     width: 100%;
     margin-bottom: 15px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
 }
 
 .question-image {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: contain;
     display: block;
-    margin: 0 auto;
 }
 
 .options { display: flex; flex-direction: column; gap: var(--space-md); }

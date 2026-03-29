@@ -252,6 +252,15 @@ const quizApp = {
                 const container = document.getElementById('quiz-container');
                 const question = this.processedQuestions[this.currentQuestionIndex];
                 
+                let imageHTML = "";
+                if (question.image && question.image.trim() !== "") {
+                    imageHTML = `
+                        <div class="question-image-container">
+                            <img src="${question.image}" class="question-image" onerror="this.parentElement.style.display='none';" alt="Question image">
+                        </div>
+                    `;
+                }
+                
                 container.innerHTML = `
                     <div class="quiz-header">
                         <button class="btn-back" onclick="quizApp.goHome()">← Back</button>
@@ -261,6 +270,7 @@ const quizApp = {
                     </div>
                     <div class="question-container">
                         <div class="question-card">
+                            ${imageHTML}
                             <div class="question-text">${question.question}</div>
                             ${this.renderOptions(question)}
                         </div>
