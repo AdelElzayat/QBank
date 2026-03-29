@@ -1,6 +1,7 @@
 const quizzes = [
   //multiple, true_false, complete
-  { //Law and Human Rights
+  {
+    //Law and Human Rights
     id: "human-rights-and-law-qbank-1",
     title: "Law and Human Rights Qbank",
     shuffleQuestions: false,
@@ -971,7 +972,8 @@ const quizzes = [
       },
     ],
   },
-  { //Biomedical Engineering
+  {
+    //Biomedical Engineering
     id: "biomedical-engineering-qbank-solved",
     title: "Biomedical Engineering Qbank",
     shuffleQuestions: false,
@@ -987,7 +989,7 @@ const quizzes = [
       {
         id: "q2",
         question: "Figure 1 represents ......",
-        image: "img/",
+        image: "img/Biomedical-Q2.png",
         type: "complete",
         correctAnswer: "Carbon electrode",
       },
@@ -1013,8 +1015,7 @@ const quizzes = [
       },
       {
         id: "q6",
-        question:
-          "Depolarization is when ......",
+        question: "Depolarization is when ......",
         type: "complete",
         correctAnswer: "NA ions flow inside the neuron's membrane",
       },
@@ -1041,19 +1042,21 @@ const quizzes = [
       {
         id: "q10",
         question: "Figure 2 represents ......",
+        image: "img/Biomedical-Q10.jpg",
         type: "complete",
         options: "Metal microelectrode",
       },
       {
         id: "q11",
         question: "The following neuron in figure 3 is known as ......",
+        image: "img/Biomedical-Q11.jpg",
         type: "complete",
         correctAnswer: "unipolar neuron",
       },
       {
         id: "q12",
-        question:
-          "The following neuron in figure 4 considered in ......",
+        question: "The following neuron in figure 4 considered in ......",
+        image: "img/Biomedical-Q12.jpg",
         type: "complete",
         correctAnswer: "resting state",
       },
@@ -1078,7 +1081,8 @@ const quizzes = [
       },
     ],
   },
-  { // Network 2
+  {
+    // Network 2
     id: "network-2-questions-bank",
     title: "Network 2 Questions Qbank",
     shuffleQuestions: true,
