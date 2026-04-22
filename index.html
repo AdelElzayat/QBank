@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0f172a">
+    <!-- Controls browser top bar color on mobile -->
+    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <title>QBank</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/AE-Logo.png" type="image/x-icon">
@@ -197,6 +199,12 @@
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('quiz-theme', newTheme);
+                
+                // Update mobile browser top bar color
+                const metaTheme = document.querySelector('meta[name="theme-color"]');
+                if (metaTheme) {
+                    metaTheme.content = newTheme === 'dark' ? '#1e293b' : '#ffffff';
+                }
             },
 
             renderHome() {
