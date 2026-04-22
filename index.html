@@ -206,7 +206,7 @@
                     <div class="quiz-card">
                         <h3>${quiz.title}</h3>
                         <p>${quiz.questions.length} questions</p>
-                        <button class="btn btn-primary" onclick="quizApp.startQuiz(${index})">Start Quiz</button>
+                        <button class="btn btn-primary" onclick="quizApp.showModeSelection(${index})">Start Quiz</button>
                     </div>
                 `).join('');
 
@@ -254,17 +254,140 @@
                 localStorage.removeItem(QUIZ_STORAGE_KEY);
             },
 
-            startQuiz(quizIndex) {
+            showModeSelection(quizIndex) {
                 this.currentQuiz = quizzes[quizIndex];
+                const container = document.getElementById('quiz-container');
+                
+                container.innerHTML = `
+                    <div class="mode-selection-screen">
+                        <h1>${this.currentQuiz.title}</h1>
+                        <p>Select your quiz mode:</p>
+                        <div class="mode-cards">
+                            <div class="mode-card normal-mode" onclick="quizApp.startQuiz(${quizIndex}, 'normal')">
+                                <div class="mode-icon">🟢</div>
+                                <h3>Normal Mode</h3>
+                                <p>Instant feedback after each answer, see correct/incorrect immediately</p>
+                                <button class="btn btn-primary">Start Normal Mode</button>
+                            </div>
+                            <div class="mode-card quiz-mode" onclick="quizApp.startQuiz(${quizIndex}, 'quiz')">
+                                <div class="mode-icon">🔴</div>
+                                <h3>Quiz Mode</h3>
+                                <p>Timer countdown, no instant feedback. See results only at the end</p>
+                                <button class="btn btn-danger">Start Quiz Mode</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary mt-3" onclick="quizApp.goHome()">← Back to Quizzes</button>
+                    </div>
+                `;
+            },
+
+            currentMode: 'normal',
+            quizModeTimer: null,
+            quizModeTimerInterval: null,
+            QUIZ_MODE_STORAGE_KEY: "qbank_quizmode_",
+
+            quizModeTimerInterval: null,
+            quizModeRemainingTime: null,
+            
+            startQuizModeTimer() {
+                const timerValue = this.currentQuiz.quizModeTimer || 300;
+                const savedTime = localStorage.getItem(`qbank_quizmode_timer_${this.currentQuiz.id}`);
+                this.quizModeRemainingTime = savedTime ? parseInt(savedTime) : timerValue;
+
+                const timerEl = document.getElementById('quiz-mode-timer');
+                if (!timerEl) return;
+
+                if (this.quizModeTimerInterval) {
+                    clearInterval(this.quizModeTimerInterval);
+                }
+
+                this.updateTimerDisplay();
+
+                this.quizModeTimerInterval = setInterval(() => {
+                    this.quizModeRemainingTime--;
+                    localStorage.setItem(`qbank_quizmode_timer_${this.currentQuiz.id}`, this.quizModeRemainingTime);
+                    this.updateTimerDisplay();
+
+                    if (this.quizModeRemainingTime <= 0) {
+                        clearInterval(this.quizModeTimerInterval);
+                        this.submitQuizMode();
+                    }
+                }, 1000);
+            },
+
+            updateTimerDisplay() {
+                const timerEl = document.getElementById('quiz-mode-timer');
+                if (!timerEl) return;
+                
+                const mins = String(Math.floor(this.quizModeRemainingTime / 60)).padStart(2, '0');
+                const secs = String(this.quizModeRemainingTime % 60).padStart(2, '0');
+                timerEl.textContent = `⏱ ${mins}:${secs}`;
+            },
+
+            submitQuizMode() {
+                this.clearQuizModeProgress();
+                this.showResults();
+            },
+
+            clearQuizModeProgress() {
+                if (this.quizModeTimerInterval) {
+                    clearInterval(this.quizModeTimerInterval);
+                }
+                localStorage.removeItem(`qbank_quizmode_timer_${this.currentQuiz.id}`);
+                localStorage.removeItem(`${this.QUIZ_MODE_STORAGE_KEY}${this.currentQuiz.id}`);
+            },
+
+            saveQuizModeProgress() {
+                if (!this.currentQuiz) return;
+                const data = {
+                    quizId: this.currentQuiz.id,
+                    currentQuestionIndex: this.currentQuestionIndex,
+                    userAnswers: this.userAnswers,
+                    mode: 'quiz'
+                };
+                localStorage.setItem(`${this.QUIZ_MODE_STORAGE_KEY}${this.currentQuiz.id}`, JSON.stringify(data));
+            },
+
+            loadQuizModeProgress() {
+                const saved = localStorage.getItem(`${this.QUIZ_MODE_STORAGE_KEY}${this.currentQuiz.id}`);
+                if (!saved) return false;
+
+                try {
+                    const data = JSON.parse(saved);
+                    if (!data.quizId || !this.currentQuiz) return false;
+                    if (data.quizId !== this.currentQuiz.id) return false;
+
+                    this.currentQuestionIndex = data.currentQuestionIndex || 0;
+                    this.userAnswers = data.userAnswers || [];
+                    this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
+                    this.questionAnswered = !!this.selectedAnswer;
+
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            },
+
+            startQuiz(quizIndex, mode = 'normal') {
+                this.currentQuiz = quizzes[quizIndex];
+                this.currentMode = mode;
                 this.resetState();
                 this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
 
-                this.loadProgress();
+                if (this.currentMode === 'quiz') {
+                  this.loadQuizModeProgress();
+                } else {
+                  this.loadProgress();
+                }
 
                 this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
                 this.questionAnswered = !!this.selectedAnswer;
 
                 this.renderQuiz();
+                
+                if (this.currentMode === 'quiz') {
+                    this.startQuizModeTimer();
+                }
             },
 
             resetState() {
@@ -318,6 +441,7 @@
                     <div class="quiz-header">
                         <button class="btn-back" onclick="quizApp.goHome()">← Back</button>
                         <h1>${this.currentQuiz.title}</h1>
+                        ${this.currentMode === 'quiz' ? '<div id="quiz-mode-timer" class="quiz-timer">⏱ --:--</div>' : ''}
                         <div class="progress">Question ${this.currentQuestionIndex + 1}/${this.processedQuestions.length}</div>
                         <div class="progress-bar"><div id="progress-bar" class="progress-bar-fill" style="width: 0%"></div></div>
                     </div>
@@ -337,26 +461,37 @@
 
                 const savedAnswer = this.userAnswers[this.currentQuestionIndex];
                 if (savedAnswer !== undefined) {
-                    const correctAnswers = Array.isArray(question.correctAnswer) ? question.correctAnswer : [question.correctAnswer];
-                    const normalizedSaved = normalizeAnswer(savedAnswer);
-
                     const options = document.querySelectorAll('.option');
-                    options.forEach(option => {
-                        const text = option.querySelector('.option-text').textContent;
-                        const normalizedOptionText = normalizeAnswer(text);
-                        const isCorrect = correctAnswers.some(correct => normalizeAnswer(correct) === normalizedOptionText);
-                        const isWrong = normalizedOptionText === normalizedSaved && !isCorrect;
+                    
+                    if (this.currentMode === 'normal') {
+                        const correctAnswers = Array.isArray(question.correctAnswer) ? question.correctAnswer : [question.correctAnswer];
+                        const normalizedSaved = normalizeAnswer(savedAnswer);
 
-                        if (isCorrect) {
-                            option.classList.add('correct');
-                        }
-                        if (isWrong) {
-                            option.classList.add('wrong');
-                        }
-                        if (isCorrect || isWrong) {
-                            option.classList.add('disabled');
-                        }
-                    });
+                        options.forEach(option => {
+                            const text = option.querySelector('.option-text').textContent;
+                            const normalizedOptionText = normalizeAnswer(text);
+                            const isCorrect = correctAnswers.some(correct => normalizeAnswer(correct) === normalizedOptionText);
+                            const isWrong = normalizedOptionText === normalizedSaved && !isCorrect;
+
+                            if (isCorrect) {
+                                option.classList.add('correct');
+                            }
+                            if (isWrong) {
+                                option.classList.add('wrong');
+                            }
+                            if (isCorrect || isWrong) {
+                                option.classList.add('disabled');
+                            }
+                        });
+                    } else {
+                        // QUIZ MODE - only show selected state, NO colors, NO locking
+                        options.forEach(option => {
+                            const text = option.querySelector('.option-text').textContent;
+                            if (text === savedAnswer) {
+                                option.classList.add('selected');
+                            }
+                        });
+                    }
 
                     this.questionAnswered = true;
                 }
@@ -388,36 +523,52 @@
             },
 
             handleAnswer(answer) {
-                if (this.userAnswers[this.currentQuestionIndex] !== undefined) return;
-
+                if (this.currentMode === 'normal' && this.userAnswers[this.currentQuestionIndex] !== undefined) return;
+                
                 this.selectedAnswer = answer;
                 this.userAnswers[this.currentQuestionIndex] = answer;
-                this.saveProgress();
+                
+                if (this.currentMode === 'normal') {
+                    
+                    this.saveProgress();
 
-                const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
-                const correctAnswers = Array.isArray(currentQuestion.correctAnswer)
-                    ? currentQuestion.correctAnswer
-                    : [currentQuestion.correctAnswer];
-                const normalizedAnswer = normalizeAnswer(answer);
+                    const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
+                    const correctAnswers = Array.isArray(currentQuestion.correctAnswer)
+                        ? currentQuestion.correctAnswer
+                        : [currentQuestion.correctAnswer];
+                    const normalizedAnswer = normalizeAnswer(answer);
 
-                const options = document.querySelectorAll('.option');
-                options.forEach(option => {
-                    const text = option.querySelector('.option-text').textContent;
-                    const normalizedOptionText = normalizeAnswer(text);
+                    const options = document.querySelectorAll('.option');
+                    options.forEach(option => {
+                        const text = option.querySelector('.option-text').textContent;
+                        const normalizedOptionText = normalizeAnswer(text);
 
-                    const isCorrect = correctAnswers.some(correct => normalizeAnswer(correct) === normalizedOptionText);
-                    const isWrong = normalizedOptionText === normalizedAnswer && !isCorrect;
+                        const isCorrect = correctAnswers.some(correct => normalizeAnswer(correct) === normalizedOptionText);
+                        const isWrong = normalizedOptionText === normalizedAnswer && !isCorrect;
 
-                    if (isCorrect) {
-                        option.classList.add('correct');
-                    }
-                    if (isWrong) {
-                        option.classList.add('wrong');
-                    }
-                    if (isCorrect || isWrong) {
-                        option.classList.add('disabled');
-                    }
-                });
+                        if (isCorrect) {
+                            option.classList.add('correct');
+                        }
+                        if (isWrong) {
+                            option.classList.add('wrong');
+                        }
+                        if (isCorrect || isWrong) {
+                            option.classList.add('disabled');
+                        }
+                    });
+                } else {
+                    // QUIZ MODE - User can change answers freely, NO locking
+                    this.saveQuizModeProgress();
+                    
+                    const options = document.querySelectorAll('.option');
+                    options.forEach(option => {
+                        option.classList.remove('selected');
+                        const text = option.querySelector('.option-text').textContent;
+                        if (text === answer) {
+                            option.classList.add('selected');
+                        }
+                    });
+                }
 
                 this.questionAnswered = true;
                 this.enableNextButton();
@@ -634,7 +785,19 @@
             },
 
             goHome() {
-                this.clearProgress();
+                if (this.currentMode === 'quiz') {
+                    // Clear Quiz Mode timer and progress
+                    if (this.quizModeTimerInterval) {
+                        clearInterval(this.quizModeTimerInterval);
+                        this.quizModeTimerInterval = null;
+                    }
+                    localStorage.removeItem(`qbank_quizmode_timer_${this.currentQuiz.id}`);
+                    localStorage.removeItem(`${this.QUIZ_MODE_STORAGE_KEY}${this.currentQuiz.id}`);
+                } else {
+                    // Normal Mode - keep existing behavior
+                    this.clearProgress();
+                }
+                
                 this.currentQuiz = null;
                 this.resetState();
                 this.processedQuestions = [];

@@ -175,7 +175,7 @@ const quizApp = {
             <div class="quiz-card">
                 <h3>${quiz.title}</h3>
                 <p>${quiz.questions.length} questions</p>
-                <button class="btn btn-primary" onclick="quizApp.startQuiz(${index})">Start Quiz</button>
+                <button class="btn btn-primary" onclick="quizApp.showModeSelection(${index})">Start Quiz</button>
             </div>
         `,
       )
@@ -225,12 +225,50 @@ const quizApp = {
     localStorage.removeItem(QUIZ_STORAGE_KEY);
   },
 
-  startQuiz(quizIndex) {
+  showModeSelection(quizIndex) {
     this.currentQuiz = quizzes[quizIndex];
+    const container = document.getElementById("quiz-container");
+    
+    container.innerHTML = `
+            <div class="mode-selection-screen">
+                <h1>${this.currentQuiz.title}</h1>
+                <p>Select your quiz mode:</p>
+                <div class="mode-cards">
+                    <div class="mode-card normal-mode" onclick="quizApp.startQuiz(${quizIndex}, 'normal')">
+                        <div class="mode-icon">🟢</div>
+                        <h3>Normal Mode</h3>
+                        <p>Instant feedback after each answer, see correct/incorrect immediately</p>
+                        <button class="btn btn-primary">Start Normal Mode</button>
+                    </div>
+                    <div class="mode-card quiz-mode" onclick="quizApp.startQuiz(${quizIndex}, 'quiz')">
+                        <div class="mode-icon">🔴</div>
+                        <h3>Quiz Mode</h3>
+                        <p>Timer countdown, no instant feedback. See results only at the end</p>
+                        <button class="btn btn-danger">Start Quiz Mode</button>
+                    </div>
+                </div>
+                <button class="btn btn-secondary mt-3" onclick="quizApp.goHome()">← Back to Quizzes</button>
+            </div>
+        `;
+  },
+
+  currentMode: 'normal',
+  quizModeTimer: null,
+  quizModeTimerInterval: null,
+  QUIZ_MODE_STORAGE_KEY: "qbank_quizmode_",
+
+  startQuiz(quizIndex, mode = 'normal') {
+    this.currentQuiz = quizzes[quizIndex];
+    this.currentMode = mode;
     this.resetState();
     this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
 
-    this.loadProgress();
+    if (this.currentMode === 'quiz') {
+      this.initQuizModeTimer();
+      this.loadQuizModeProgress();
+    } else {
+      this.loadProgress();
+    }
 
     this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
     this.questionAnswered = !!this.selectedAnswer;

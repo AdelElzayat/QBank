@@ -6,6 +6,7 @@ const quizzes = [
     title: "Law and Human Rights Qbank",
     shuffleQuestions: false,
     showScore: true,
+    quizModeTimer: 1800,
     questions: [
       {
         question: "الإنسان كائن اجتماعي بطبعه، ولا يمكن أن يعيش بمفرده.",
@@ -978,6 +979,7 @@ const quizzes = [
     title: "Biomedical Engineering Qbank",
     shuffleQuestions: true,
     showScore: true,
+    quizModeTimer: 1800,
     questions: [
       {
         id: "q1",
@@ -1082,11 +1084,12 @@ const quizzes = [
     ],
   },
   {
-    // Network 2
+    //Network 2
     id: "network-2-questions-bank",
     title: "Network 2 Questions Qbank",
     shuffleQuestions: true,
     showScore: true,
+    quizModeTimer: 1800,
     questions: [
       {
         question: "How many hosts in /24?",
@@ -1515,11 +1518,12 @@ const quizzes = [
       },
     ],
   },
-  {
+  { //Network 2 Quiz
     id: "network-2-questions-bank",
     title: "Network 2 Quiz",
     shuffleQuestions: true,
     showScore: true,
+    quizModeTimer: 1800,
     questions: [
       {
         question: "How many hosts in /24?",
