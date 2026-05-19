@@ -40,8 +40,13 @@
     <div class="profile-panel-overlay" id="profile-panel-overlay" onclick="quizApp.toggleProfilePanel()"></div>
     <div class="main-content">
         <div id="quiz-container">
-            <div class="home-screen">
-                <h1>Select a quiz to begin</h1>
+            <div id="quiz-timer-wrapper" class="quiz-timer-wrapper" style="display:none;">
+                <div id="quiz-mode-timer" class="quiz-timer">⏱ 00:00</div>
+            </div>
+            <div id="quiz-content">
+                <div class="home-screen">
+                    <h1>Select a quiz to begin</h1>
+                </div>
             </div>
         </div>
     </div>
@@ -72,6 +77,7 @@
             quizAnswers: [],
             savedResultsData: [],
             questionAnswered: false,
+            subjectBackIndex: null,
 
             async init() {
                 this.initTheme();
@@ -180,9 +186,23 @@
                 if (quizId) {
                     const quiz = quizzes.find(q => q.id === quizId);
                     if (quiz) {
+                        if (quiz.isSubjectGroup) {
+                            this.showChapterSelection(quizzes.indexOf(quiz));
+                            return;
+                        }
                         const quizIndex = quizzes.indexOf(quiz);
                         this.startQuiz(quizIndex);
                         return;
+                    }
+
+                    for (const entry of quizzes) {
+                        if (entry.isSubjectGroup && entry.chapters) {
+                            const ch = entry.chapters.find(c => c.id === quizId);
+                            if (ch) {
+                                this.startQuiz(ch);
+                                return;
+                            }
+                        }
                     }
                 }
 
@@ -208,17 +228,29 @@
             },
 
             renderHome() {
-                const container = document.getElementById('quiz-container');
+                const content = document.getElementById('quiz-content');
 
-                const cardsHtml = quizzes.map((quiz, index) => `
-                    <div class="quiz-card">
-                        <h3>${quiz.title}</h3>
-                        <p>${quiz.questions.length} questions</p>
-                        <button class="btn btn-primary" onclick="quizApp.showModeSelection(${index})">Start Quiz</button>
-                    </div>
-                `).join('');
+                const cardsHtml = quizzes.map((quiz, index) => {
+                    if (quiz.isSubjectGroup) {
+                        const count = quiz.chapters ? quiz.chapters.length : 0;
+                        return `
+                            <div class="quiz-card subject-card">
+                                <h3>${quiz.title}</h3>
+                                <p>${count} quiz${count !== 1 ? 'zes' : ''}</p>
+                                <button class="btn btn-primary" onclick="quizApp.showChapterSelection(${index})">View Quizzes</button>
+                            </div>
+                        `;
+                    }
+                    return `
+                        <div class="quiz-card">
+                            <h3>${quiz.title}</h3>
+                            <p>${quiz.questions.length} questions</p>
+                            <button class="btn btn-primary" onclick="quizApp.showModeSelection(${index})">Start Quiz</button>
+                        </div>
+                    `;
+                }).join('');
 
-                container.innerHTML = `
+                content.innerHTML = `
                     <div class="home-screen">
                         <h1>Select a quiz to begin</h1>
                         <div class="quiz-grid">${cardsHtml}</div>
@@ -226,6 +258,62 @@
                 `;
 
                 window.history.replaceState({}, '', window.location.pathname);
+            },
+
+            showChapterSelection(subjectIndex) {
+                const subject = quizzes[subjectIndex];
+                const content = document.getElementById('quiz-content');
+
+                const chapterCards = (subject.chapters || []).map((chapter, chIndex) => `
+                    <div class="quiz-card">
+                        <h3>${chapter.title}</h3>
+                        <p>${chapter.questions.length} questions</p>
+                        <button class="btn btn-primary" onclick="quizApp.showChapterModeSelection(${subjectIndex}, ${chIndex})">Start Quiz</button>
+                    </div>
+                `).join('');
+
+                content.innerHTML = `
+                    <div class="chapter-screen">
+                        <div class="chapter-header">
+                            <button class="btn-back" onclick="quizApp.goHome()">← Back</button>
+                            <h1>${subject.title}</h1>
+                            <p>Select a chapter quiz to begin</p>
+                        </div>
+                        <div class="quiz-grid">${chapterCards}</div>
+                    </div>
+                `;
+
+                this.subjectBackIndex = subjectIndex;
+                window.history.replaceState({}, '', window.location.pathname);
+            },
+
+            showChapterModeSelection(subjectIndex, chapterIndex) {
+                const chapter = quizzes[subjectIndex].chapters[chapterIndex];
+                this.currentQuiz = chapter;
+                this.subjectBackIndex = subjectIndex;
+                const content = document.getElementById('quiz-content');
+
+                content.innerHTML = `
+                    <div class="mode-selection-screen">
+                        <h1>${chapter.title}</h1>
+                        <p>Select your quiz mode:</p>
+                        <div class="mode-cards">
+                            <div class="mode-card normal-mode" onclick="quizApp.startQuiz(quizzes[${subjectIndex}].chapters[${chapterIndex}], 'normal')">
+                                <div class="mode-icon">🟢</div>
+                                <h3>Normal Mode</h3>
+                                <p>Instant feedback after each answer, see correct/incorrect immediately</p>
+                                <button class="btn btn-primary">Start Normal Mode</button>
+                            </div>
+                            <div class="mode-card quiz-mode" onclick="quizApp.startQuiz(quizzes[${subjectIndex}].chapters[${chapterIndex}], 'quiz')">
+                                <div class="mode-icon">🔴</div>
+                                <h3>Quiz Mode</h3>
+                                <p>Timer countdown, no instant feedback. See results only at the end</p>
+                                <button class="btn btn-danger">Start Quiz Mode</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary mt-3" onclick="quizApp.showChapterSelection(${subjectIndex})">← Back to Chapters</button>
+                    </div>
+                `;
             },
 
             saveProgress() {
@@ -264,9 +352,9 @@
 
             showModeSelection(quizIndex) {
                 this.currentQuiz = quizzes[quizIndex];
-                const container = document.getElementById('quiz-container');
+                const content = document.getElementById('quiz-content');
                 
-                container.innerHTML = `
+                content.innerHTML = `
                     <div class="mode-selection-screen">
                         <h1>${this.currentQuiz.title}</h1>
                         <p>Select your quiz mode:</p>
@@ -293,8 +381,6 @@
             quizModeTimer: null,
             quizModeTimerInterval: null,
             QUIZ_MODE_STORAGE_KEY: "qbank_quizmode_",
-
-            quizModeTimerInterval: null,
             quizModeRemainingTime: null,
             
             startQuizModeTimer() {
@@ -304,6 +390,10 @@
 
                 const timerEl = document.getElementById('quiz-mode-timer');
                 if (!timerEl) return;
+
+                // Show the timer wrapper
+                const wrapper = document.getElementById('quiz-timer-wrapper');
+                if (wrapper) wrapper.style.display = 'block';
 
                 if (this.quizModeTimerInterval) {
                     clearInterval(this.quizModeTimerInterval);
@@ -377,7 +467,8 @@
             },
 
             startQuiz(quizIndex, mode = 'normal') {
-                this.currentQuiz = quizzes[quizIndex];
+                // Support both numeric index (from regular quizzes) and object (from chapter quizzes)
+                this.currentQuiz = typeof quizIndex === 'object' ? quizIndex : quizzes[quizIndex];
                 this.currentMode = mode;
                 this.resetState();
                 this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
@@ -395,6 +486,10 @@
                 
                 if (this.currentMode === 'quiz') {
                     this.startQuizModeTimer();
+                } else {
+                    // Hide timer wrapper for normal mode
+                    const wrapper = document.getElementById('quiz-timer-wrapper');
+                    if (wrapper) wrapper.style.display = 'none';
                 }
             },
 
@@ -433,7 +528,7 @@
             },
 
             renderQuiz() {
-                const container = document.getElementById('quiz-container');
+                const content = document.getElementById('quiz-content');
                 const question = this.processedQuestions[this.currentQuestionIndex];
 
                 let imageHTML = "";
@@ -445,11 +540,10 @@
                     `;
                 }
 
-                container.innerHTML = `
+                content.innerHTML = `
                     <div class="quiz-header">
                         <button class="btn-back" onclick="quizApp.goHome()">← Back</button>
                         <h1>${this.currentQuiz.title}</h1>
-                        ${this.currentMode === 'quiz' ? '<div id="quiz-mode-timer" class="quiz-timer">⏱ --:--</div>' : ''}
                         <div class="progress">Question ${this.currentQuestionIndex + 1}/${this.processedQuestions.length}</div>
                         <div class="progress-bar"><div id="progress-bar" class="progress-bar-fill" style="width: 0%"></div></div>
                     </div>
@@ -665,8 +759,12 @@
             },
 
             async showResults() {
+                // Hide the timer wrapper when showing results
+                const wrapper = document.getElementById('quiz-timer-wrapper');
+                if (wrapper) wrapper.style.display = 'none';
+
                 const results = this.calculateScore();
-                const container = document.getElementById('quiz-container');
+                const content = document.getElementById('quiz-content');
 
                 let showScore = true;
                 if (this.currentQuiz && this.currentQuiz.showScore !== undefined) {
@@ -699,7 +797,7 @@
                     </div>
                 `;
 
-                container.innerHTML = resultsHtml;
+                content.innerHTML = resultsHtml;
             },
 
             async saveResult(results) {
@@ -793,6 +891,10 @@
             },
 
             goHome() {
+                // Hide the timer wrapper
+                const wrapper = document.getElementById('quiz-timer-wrapper');
+                if (wrapper) wrapper.style.display = 'none';
+
                 if (this.currentMode === 'quiz') {
                     // Clear Quiz Mode timer and progress
                     if (this.quizModeTimerInterval) {
@@ -926,7 +1028,7 @@
                     return;
                 }
 
-                const container = document.getElementById('quiz-container');
+                const content = document.getElementById('quiz-content');
 
                 const questionsHtml = resultData.quizData.map((item, index) => {
                     const iconClass = item.isCorrect ? 'icon-correct' : 'icon-incorrect';
@@ -955,7 +1057,7 @@
                     `;
                 }).join('');
 
-                container.innerHTML = `
+                content.innerHTML = `
                     <div class="review-page">
                         <div class="review-header">
                             <button class="btn-back" onclick="quizApp.goHome()">← Back to Quizzes</button>
