@@ -15,10 +15,17 @@
             <span class="brand-name">Adel Elzayat</span>
         </div>
         <div class="navbar-actions">
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-                <span class="icon-moon">🌙</span>
-                <span class="icon-sun">☀️</span>
-            </button>
+            <label class="switch" aria-label="Toggle theme">
+                <input type="checkbox" id="theme-checkbox" />
+                <span class="slider">
+                    <div class="star star_1"></div>
+                    <div class="star star_2"></div>
+                    <div class="star star_3"></div>
+                    <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+                        <path transform="matrix(.77976 0 0 .78395-299.99-418.63)" fill="#fff" d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"></path>
+                    </svg>
+                </span>
+            </label>
         </div>
     </nav>
     <div class="main-content">
@@ -40,7 +47,31 @@
         </div>
     </div>
     <script type="module">
-        import { auth, googleProvider, signInWithPopup, onAuthStateChanged } from './firebase.js';
+        import { auth, googleProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged } from './firebase.js';
+
+        const isMobileOrTablet = () => {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isMobileRegex = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+            const isIPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            return isMobileRegex || isIPad;
+        };
+
+        // Handle Redirect Result on Load
+        window.addEventListener('load', async () => {
+            try {
+                const result = await getRedirectResult(auth);
+                if (result) {
+                    window.location.href = 'index.html';
+                }
+            } catch (error) {
+                console.error("Redirect result error:", error);
+                const errorEl = document.getElementById('error-message');
+                if (errorEl) {
+                    errorEl.textContent = error.message;
+                    errorEl.classList.add('show');
+                }
+            }
+        });
 
         window.signInWithGoogle = async function () {
             const errorEl = document.getElementById('error-message');
@@ -49,8 +80,12 @@
             btn.classList.add('loading');
 
             try {
-                await signInWithPopup(auth, googleProvider);
-                window.location.href = 'index.html';
+                if (isMobileOrTablet()) {
+                    await signInWithRedirect(auth, googleProvider);
+                } else {
+                    await signInWithPopup(auth, googleProvider);
+                    window.location.href = 'index.html';
+                }
             } catch (error) {
                 errorEl.textContent = error.message;
                 errorEl.classList.add('show');
@@ -58,15 +93,25 @@
             }
         };
 
-        window.toggleTheme = function () {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        const setTheme = (newTheme) => {
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('quiz-theme', newTheme);
+            const metaTheme = document.querySelector('meta[name="theme-color"]');
+            if (metaTheme) {
+                metaTheme.content = newTheme === 'dark' ? '#1e293b' : '#ffffff';
+            }
         };
 
+        const themeCheckbox = document.getElementById('theme-checkbox');
         const savedTheme = localStorage.getItem('quiz-theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        setTheme(savedTheme);
+        if (themeCheckbox) {
+            themeCheckbox.checked = savedTheme === 'light';
+            themeCheckbox.addEventListener('change', (e) => {
+                setTheme(e.target.checked ? 'light' : 'dark');
+            });
+        }
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
