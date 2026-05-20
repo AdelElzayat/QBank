@@ -1416,7 +1416,7 @@ const quizzes = [
               "Ethernet Ports",
               "Consol Port",
               "Auxiliary Port",
-            ]
+            ],
           },
           {
             id: "q1_c_ports_usage",
@@ -1428,8 +1428,8 @@ const quizzes = [
               "To connect with WAN Technology.",
               "To connect Router with other devices like another Switch or Router.",
               "To enter the Configurations to the Router directly.",
-              "To enter the Configurations to the Router Remotely."
-            ]
+              "To enter the Configurations to the Router Remotely.",
+            ],
           },
           {
             id: "q2_memory_comparison",
@@ -1441,8 +1441,8 @@ const quizzes = [
               "ROM: Responsible for the post process.",
               "RAM: Running IOS and Configurations file.",
               "NVRAM: Configurations files are kept here.",
-              "Flash memory: IOS Image are kept here."
-            ]
+              "Flash memory: IOS Image are kept here.",
+            ],
           },
           {
             id: "q3_post_process_definition",
@@ -1462,8 +1462,8 @@ const quizzes = [
               "Load the Cisco IOS software.",
               "Find the configuration.",
               "Load the configuration.",
-              "Run the configured Cisco IOS software."
-            ]
+              "Run the configured Cisco IOS software.",
+            ],
           },
           {
             id: "q5_vlsm_definition",
@@ -1504,8 +1504,8 @@ const quizzes = [
               "Sort by largest number of hosts",
               "Assign subnet masks",
               "Allocate IP ranges",
-              "Verify addressing"
-            ]
+              "Verify addressing",
+            ],
           },
           {
             id: "q10_dhcp_purpose",
@@ -1522,8 +1522,8 @@ const quizzes = [
             correctAnswers: [
               "Automatic IP assignment",
               "Reduced manual errors",
-              "Easier administration"
-            ]
+              "Easier administration",
+            ],
           },
           {
             id: "q12_dhcp_disadvantages",
@@ -1532,8 +1532,8 @@ const quizzes = [
             orderMode: "unordered",
             correctAnswers: [
               "Dependency on DHCP server",
-              "Possible security attacks"
-            ]
+              "Possible security attacks",
+            ],
           },
           {
             id: "q13_1_cmd_privileged_mode",
@@ -1674,6 +1674,92 @@ const quizzes = [
             question:
               "Write the command to exception range of Ips from 192.168.2.3 to 192.168.2.5 from distribution",
             correctAnswer: "ip dhcp excluded-address 192.168.2.3 192.168.2.5",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "Artificial-Intelligence-Final-Qbank",
+    title: "Artificial Intelligence Final Qbank",
+    isSubjectGroup: true,
+    chapters: [
+      {
+        id: "lecture-1-quiz",
+        title: "Lecture 1 Quiz",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            id: "q1-artificial-intelligence-simulation",
+            type: "complete",
+            question:
+              "Artificial intelligence is concerned with building systems that simulate ______.",
+            correctAnswer: "intelligent behavior",
+          },
+          {
+            id: "q2-machine-learning-mathematical-models",
+            type: "complete",
+            question:
+              "Machine learning is a subset of AI that learns to make decisions by fitting ______ to observed data.",
+            correctAnswer: "mathematical models",
+          },
+          {
+            id: "q3-deep-neural-network-learning",
+            type: "complete",
+            question:
+              "When a deep neural network is fitted to data, this specific type of learning is referred to as ______.",
+            correctAnswer: "deep learning (DL)",
+          },
+          {
+            id: "q4-machine-learning-primary-goal",
+            type: "complete",
+            question:
+              "The primary goal of machine learning is to automatically detect ______ in data to predict future data or other outcomes of interest.",
+            correctAnswer: "patterns",
+          },
+          {
+            id: "q5-formal-definition-ml",
+            type: "complete",
+            question:
+              "In the formal definition of machine learning, a computer program learns from experience E with respect to some ______ T and some performance measure P.",
+            correctAnswer: "task",
+          },
+          {
+            id: "q6-learning-examples-collection",
+            type: "complete",
+            question:
+              "The specific examples that a machine learning system uses to learn from are collectively called the ______.",
+            correctAnswer: "training set",
+          },
+          {
+            id: "q7-learning-predictions-component",
+            type: "complete",
+            question:
+              "The part of a machine learning system that learns and makes predictions is known as a ______.",
+            correctAnswer: "model",
+          },
+          {
+            id: "q8-ml-necessity-human-expertise",
+            type: "complete",
+            question:
+              "One scenario where machine learning is necessary is when humans are unable to explain their own expertise, such as in speech or ______ recognition.",
+            correctAnswer: "image",
+          },
+          {
+            id: "q9-quality-control-intrusion-detection",
+            type: "complete",
+            question:
+              "In manufacturing quality control and network intrusion detection, machine learning is applied through ______ to identify rare data points that deviate from normal patterns.",
+            correctAnswer: "anomaly detection",
+          },
+          {
+            id: "q10-medical-diagnosis-essential-criteria",
+            type: "complete",
+            question:
+              "In medical diagnosis and medical decision support systems, both ______ and reliability are considered essential criteria for the models.",
+            correctAnswer: "interpretability",
           },
         ],
       },
