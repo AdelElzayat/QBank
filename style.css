@@ -1650,9 +1650,51 @@ body.profile-panel-open {
   .answer-row {
     flex-direction: column;
     gap: var(--space-xs);
+    padding: var(--space-sm);
   }
   .answer-label {
     min-width: auto;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .answer-value {
+    font-size: 0.8125rem;
+    display: inline-block;
+    padding: 2px 8px;
+  }
+  .multi-answer-display {
+    width: 100%;
+  }
+  .multi-answer-display .multi-input-row {
+    margin: 2px 0;
+    gap: 6px;
+  }
+  .multi-answer-display .multi-input-number {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    font-size: 0.7rem;
+  }
+  .review-card-answers {
+    gap: 4px;
+  }
+  .review-card {
+    padding: var(--space-sm) var(--space-md);
+  }
+  .review-card-question {
+    font-size: 0.85rem;
+    margin-bottom: var(--space-sm);
+  }
+  .review-card-header {
+    margin-bottom: var(--space-sm);
+  }
+  .question-number {
+    font-size: 0.75rem;
+  }
+  .icon-correct,
+  .icon-incorrect {
+    font-size: 1rem;
   }
 }
 
