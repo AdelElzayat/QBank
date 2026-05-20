@@ -354,25 +354,32 @@ const quizApp = {
         : [question.correctAnswer];
       const normalizedSaved = normalizeAnswer(savedAnswer);
 
-      const options = document.querySelectorAll(".option");
-      options.forEach((option) => {
-        const text = option.querySelector(".option-text").textContent;
-        const normalizedOptionText = normalizeAnswer(text);
-        const isCorrect = correctAnswers.some(
-          (correct) => normalizeAnswer(correct) === normalizedOptionText,
-        );
-        const isWrong = normalizedOptionText === normalizedSaved && !isCorrect;
+      if (question.type === "complete") {
+        if (this.currentMode === "normal") {
+          const isCorrect = this.checkAnswer(question, savedAnswer);
+          this.showWrittenFeedback(isCorrect, question);
+        }
+      } else {
+        const options = document.querySelectorAll(".option");
+        options.forEach((option) => {
+          const text = option.querySelector(".option-text").textContent;
+          const normalizedOptionText = normalizeAnswer(text);
+          const isCorrect = correctAnswers.some(
+            (correct) => normalizeAnswer(correct) === normalizedOptionText,
+          );
+          const isWrong = normalizedOptionText === normalizedSaved && !isCorrect;
 
-        if (isCorrect) {
-          option.classList.add("correct");
-        }
-        if (isWrong) {
-          option.classList.add("wrong");
-        }
-        if (isCorrect || isWrong) {
-          option.classList.add("disabled");
-        }
-      });
+          if (isCorrect) {
+            option.classList.add("correct");
+          }
+          if (isWrong) {
+            option.classList.add("wrong");
+          }
+          if (isCorrect || isWrong) {
+            option.classList.add("disabled");
+          }
+        });
+      }
 
       this.questionAnswered = true;
     }
@@ -383,9 +390,21 @@ const quizApp = {
 
   renderOptions(question) {
     if (question.type === "complete") {
+      const isAnswered = this.userAnswers[this.currentQuestionIndex] !== undefined;
+      const isCorrect = isAnswered ? this.checkAnswer(question, this.userAnswers[this.currentQuestionIndex]) : false;
       return `
-                <div class="complete-input">
-                    <input type="text" id="complete-answer" placeholder="Type your answer..." value="${this.userAnswers[this.currentQuestionIndex] || ""}" oninput="quizApp.handleCompleteInput(event)">
+                <div class="complete-input ${isAnswered && this.currentMode === 'normal' ? (isCorrect ? 'correct' : 'wrong') : ''}">
+                    <div class="input-wrapper">
+                        <input type="text" id="complete-answer" placeholder="Type your answer..." 
+                            value="${this.userAnswers[this.currentQuestionIndex] || ""}" 
+                            oninput="quizApp.handleCompleteInput(event)"
+                            onkeydown="if(event.key === 'Enter') quizApp.handleWrittenSubmit()"
+                            ${isAnswered && this.currentMode === 'normal' ? "disabled" : ""}>
+                        ${this.currentMode === 'normal' && !isAnswered ? `
+                            <button class="btn-check" onclick="quizApp.handleWrittenSubmit()">Check</button>
+                        ` : ''}
+                    </div>
+                    <div id="written-feedback" class="written-feedback"></div>
                 </div>
             `;
     }
@@ -445,13 +464,75 @@ const quizApp = {
   },
 
   handleCompleteInput(event) {
-    const answer = event.target.value.trim();
+    const answer = event.target.value;
+    this.selectedAnswer = answer.trim();
+
+    if (this.currentMode === "quiz") {
+      this.userAnswers[this.currentQuestionIndex] = this.selectedAnswer || undefined;
+      this.saveProgress();
+    }
+
+    this.enableNextButton();
+  },
+
+  handleWrittenSubmit() {
+    const input = document.getElementById("complete-answer");
+    if (!input) return;
+    const answer = input.value.trim();
     if (!answer) return;
+
+    if (this.currentMode === "quiz") {
+      this.selectedAnswer = answer;
+      this.userAnswers[this.currentQuestionIndex] = answer;
+      this.saveProgress();
+      this.nextQuestion();
+      return;
+    }
+
+    if (this.questionAnswered) {
+      this.nextQuestion();
+      return;
+    }
 
     this.selectedAnswer = answer;
     this.userAnswers[this.currentQuestionIndex] = answer;
     this.saveProgress();
+    this.questionAnswered = true;
+
+    const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
+    const isCorrect = this.checkAnswer(currentQuestion, answer);
+
+    const container = document.querySelector(".complete-input");
+    if (container) {
+      container.classList.add(isCorrect ? "correct" : "wrong");
+    }
+    input.disabled = true;
+
+    const checkBtn = document.querySelector(".btn-check");
+    if (checkBtn) checkBtn.remove();
+
+    this.showWrittenFeedback(isCorrect, currentQuestion);
     this.enableNextButton();
+  },
+
+  showWrittenFeedback(isCorrect, question) {
+    const feedbackDiv = document.getElementById("written-feedback");
+    if (!feedbackDiv) return;
+
+    const correctAnswers = Array.isArray(question.correctAnswer)
+      ? question.correctAnswer
+      : [question.correctAnswer];
+    const displayCorrect = correctAnswers[0];
+
+    feedbackDiv.className = `written-feedback ${isCorrect ? "correct" : "incorrect"}`;
+    feedbackDiv.innerHTML = `
+        <div class="feedback-status ${isCorrect ? "correct" : "incorrect"}">
+            ${isCorrect ? "✓ Correct" : "✗ Incorrect"}
+        </div>
+        ${!isCorrect ? `<div class="correct-answer-text">Correct answer: <strong>${displayCorrect}</strong></div>` : ""}
+        ${question.explanation ? `<div class="explanation">${question.explanation}</div>` : ""}
+    `;
+    feedbackDiv.style.display = "block";
   },
 
   updateSelectedUI() {
