@@ -1411,7 +1411,7 @@ const quizzes = [
             image: "img/Network2-MidQBank-Q1.JPG",
             question: "In figure 1, what do the numbers from 1 to 4 symbolize?",
             correctAnswer:
-              "1- Serial Ports, 2- Ethernet Ports, 3- Consol Port, 4- Auxiliary Port",
+              "Serial Ports, Ethernet Ports, Console Port, Auxiliary Port",
           },
           {
             id: "q1_c_ports_usage",
@@ -1419,7 +1419,7 @@ const quizzes = [
             image: "img/Network2-MidQBank-Q1.JPG",
             question: "In figure 1, what are the numbers from 1 to 4 used for?",
             correctAnswer:
-              "1- To connect with WAN Technology. 2- To connect Router with other devices like another Switch or Router. 3- To enter the Configurations to the Router directly. 4- To enter the Configurations to the Router Remotely",
+              "To connect with WAN Technology. To connect Router with other devices like another Switch or Router. To enter the Configurations to the Router directly. To enter the Configurations to the Router Remotely",
           },
           {
             id: "q2_memory_comparison",
@@ -1441,7 +1441,7 @@ const quizzes = [
             type: "complete",
             question: "What is the Router Power on/Bootup Sequence?",
             correctAnswer:
-              "1. Perform power-on self-test (POST). 2. Find the Cisco IOS software. 3. Load the Cisco IOS software. 4. Find the configuration. 5. Load the configuration. 6. Run the configured Cisco IOS software.",
+              "Perform power-on self-test (POST). Find the Cisco IOS software. Load the Cisco IOS software. Find the configuration. Load the configuration. Run the configured Cisco IOS software.",
           },
           {
             id: "q5_vlsm_definition",
@@ -1477,7 +1477,7 @@ const quizzes = [
             question:
               "Describe the steps used to design a VLSM addressing scheme.",
             correctAnswer:
-              "1. Determine required subnets, 2. Sort by largest number of hosts, 3. Assign subnet masks, 4. Allocate IP ranges, 5. Verify addressing",
+              "Determine required subnets, Sort by largest number of hosts, Assign subnet masks, Allocate IP ranges, Verify addressing",
           },
           {
             id: "q10_dhcp_purpose",
