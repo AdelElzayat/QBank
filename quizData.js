@@ -1638,7 +1638,7 @@ const quizzes = [
             id: "q13_16_cmd_dhcp_pool",
             type: "complete",
             question:
-              "Write the command to give number '1' to the Network interface (DHCP pool)",
+              "Write the command to give number '1' to the Network interface",
             correctAnswer: "ip dhcp pool 1",
           },
           {

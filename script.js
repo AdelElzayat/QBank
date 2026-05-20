@@ -471,7 +471,7 @@ const quizApp = {
                         aria-label="Answer ${index + 1}"
                         value="${this.escapeHtml(values[index] || "")}" 
                         oninput="quizApp.handleWrittenInput(event, ${index})"
-                        onkeydown="if(event.key === 'Enter') quizApp.handleNextButton()"
+                        onkeydown="quizApp.handleMultiAnswerKeyDown(event, ${index}, ${expectedAnswers.length - 1})"
                         ${isAnswered && this.currentMode === 'normal' ? "disabled" : ""}>
                 </div>
             `)
@@ -594,6 +594,22 @@ const quizApp = {
 
   handleWrittenSubmit() {
     this.handleNextButton();
+  },
+
+  handleMultiAnswerKeyDown(event, currentIndex, lastIndex) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      if (currentIndex < lastIndex) {
+        // Focus on the next answer field
+        const nextField = document.getElementById(`complete-answer-${currentIndex + 1}`);
+        if (nextField) {
+          nextField.focus();
+        }
+      } else {
+        // This is the last field, submit the answer
+        this.handleNextButton();
+      }
+    }
   },
 
   handleNextButton() {
