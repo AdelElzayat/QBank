@@ -1378,15 +1378,20 @@
                     let answerDisplay = '';
                     
                     if (isMultiAnswer) {
-                        // Display multi-answer format with numbers
+                        // Display multi-answer format with numbers - per-field coloring
                         const userAnswers = Array.isArray(item.userAnswer) ? item.userAnswer : [];
                         
-                        const userAnswerHtml = correctAnswersArray.map((_, answerIndex) => `
-                            <div class="multi-input-row">
-                                <span class="multi-input-number">${answerIndex + 1}</span>
-                                <span class="answer-value ${item.isCorrect ? 'correct' : 'incorrect'}">${userAnswers[answerIndex] || 'No answer'}</span>
-                            </div>
-                        `).join('');
+                        const userAnswerHtml = correctAnswersArray.map((_, answerIndex) => {
+                            const normalizedUser = normalizeAnswer(userAnswers[answerIndex] || '');
+                            const normalizedCorrect = normalizeAnswer(correctAnswersArray[answerIndex] || '');
+                            const isFieldCorrect = normalizedUser === normalizedCorrect;
+                            return `
+                                <div class="multi-input-row">
+                                    <span class="multi-input-number">${answerIndex + 1}</span>
+                                    <span class="answer-value ${isFieldCorrect ? 'correct' : 'incorrect'}">${userAnswers[answerIndex] || 'No answer'}</span>
+                                </div>
+                            `;
+                        }).join('');
 
                         const correctAnswerHtml = !item.isCorrect ? correctAnswersArray.map((correctAns, answerIndex) => `
                             <div class="multi-input-row">
