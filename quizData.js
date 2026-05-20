@@ -1414,7 +1414,7 @@ const quizzes = [
             correctAnswers: [
               "Serial Ports",
               "Ethernet Ports",
-              "Console Port",
+              "Consol Port",
               "Auxiliary Port",
             ]
           },
@@ -1423,16 +1423,26 @@ const quizzes = [
             type: "complete",
             image: "img/Network2-MidQBank-Q1.JPG",
             question: "In figure 1, what are the numbers from 1 to 4 used for?",
-            correctAnswer:
-              "To connect with WAN Technology. To connect Router with other devices like another Switch or Router. To enter the Configurations to the Router directly. To enter the Configurations to the Router Remotely",
+            orderMode: "ordered",
+            correctAnswers: [
+              "To connect with WAN Technology.",
+              "To connect Router with other devices like another Switch or Router.",
+              "To enter the Configurations to the Router directly.",
+              "To enter the Configurations to the Router Remotely."
+            ]
           },
           {
             id: "q2_memory_comparison",
             type: "complete",
             question:
               "Compare between ROM, RAM, NVRAM and Flash memory in Router components.",
-            correctAnswer:
-              "ROM: Responsible for the post process. RAM: Running IOS and Configurations file. NVRAM: Configurations files are kept here. Flash memory: IOS Image are kept here.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "ROM: Responsible for the post process.",
+              "RAM: Running IOS and Configurations file.",
+              "NVRAM: Configurations files are kept here.",
+              "Flash memory: IOS Image are kept here."
+            ]
           },
           {
             id: "q3_post_process_definition",
@@ -1445,8 +1455,15 @@ const quizzes = [
             id: "q4_bootup_sequence",
             type: "complete",
             question: "What is the Router Power on/Bootup Sequence?",
-            correctAnswer:
-              "Perform power-on self-test (POST). Find the Cisco IOS software. Load the Cisco IOS software. Find the configuration. Load the configuration. Run the configured Cisco IOS software.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Perform power-on self-test (POST).",
+              "Find the Cisco IOS software.",
+              "Load the Cisco IOS software.",
+              "Find the configuration.",
+              "Load the configuration.",
+              "Run the configured Cisco IOS software."
+            ]
           },
           {
             id: "q5_vlsm_definition",
@@ -1481,8 +1498,14 @@ const quizzes = [
             type: "complete",
             question:
               "Describe the steps used to design a VLSM addressing scheme.",
-            correctAnswer:
-              "Determine required subnets, Sort by largest number of hosts, Assign subnet masks, Allocate IP ranges, Verify addressing",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Determine required subnets",
+              "Sort by largest number of hosts",
+              "Assign subnet masks",
+              "Allocate IP ranges",
+              "Verify addressing"
+            ]
           },
           {
             id: "q10_dhcp_purpose",
@@ -1495,15 +1518,22 @@ const quizzes = [
             id: "q11_dhcp_advantages",
             type: "complete",
             question: "What are the advantages of using DHCP?",
-            correctAnswer:
-              "Automatic IP assignment, Reduced manual errors, Easier administration",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Automatic IP assignment",
+              "Reduced manual errors",
+              "Easier administration"
+            ]
           },
           {
             id: "q12_dhcp_disadvantages",
             type: "complete",
             question: "What are the disadvantages of DHCP?",
-            correctAnswer:
-              "Dependency on DHCP server, Possible security attacks",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Dependency on DHCP server",
+              "Possible security attacks"
+            ]
           },
           {
             id: "q13_1_cmd_privileged_mode",
