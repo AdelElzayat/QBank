@@ -56,7 +56,12 @@
             return isMobileRegex || isIPad;
         };
 
-        // Handle Redirect Result on Load
+        const isIOS = () => {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                   (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        };
+
+        // Handle Redirect Result on Load (kept for fallback compatibility)
         window.addEventListener('load', async () => {
             try {
                 const result = await getRedirectResult(auth);
@@ -66,7 +71,7 @@
             } catch (error) {
                 console.error("Redirect result error:", error);
                 const errorEl = document.getElementById('error-message');
-                if (errorEl) {
+                if (errorEl && error.code !== 'auth/web-storage-unsupported') {
                     errorEl.textContent = error.message;
                     errorEl.classList.add('show');
                 }
@@ -80,16 +85,38 @@
             btn.classList.add('loading');
 
             try {
-                if (isMobileOrTablet()) {
-                    await signInWithRedirect(auth, googleProvider);
-                } else {
-                    await signInWithPopup(auth, googleProvider);
+                // ITP-compliant strategy: 
+                // 1. Desktop: Keep signInWithPopup
+                // 2. Mobile (especially iOS): Bypass signInWithRedirect to avoid ITP cookie block.
+                // Using signInWithPopup for all flows as it's more direct and avoids redirect handshake issues.
+                const result = await signInWithPopup(auth, googleProvider);
+                if (result) {
                     window.location.href = 'index.html';
                 }
             } catch (error) {
-                errorEl.textContent = error.message;
-                errorEl.classList.add('show');
+                console.error("Auth error:", error);
                 btn.classList.remove('loading');
+                
+                let errorMessage = "Authentication failed. Please try again.";
+                
+                // Action-oriented error messages for storage and ITP issues
+                if (error.code === 'auth/web-storage-unsupported' || 
+                    error.code === 'auth/operation-not-supported-in-this-environment') {
+                    errorMessage = isIOS() 
+                        ? "Privacy settings are blocking login. Please disable 'Prevent Cross-Site Tracking' in Safari settings or use a different browser."
+                        : "Your browser's storage settings are blocking authentication. Please enable third-party cookies and try again.";
+                } else if (error.code === 'auth/popup-blocked') {
+                    errorMessage = "The sign-in window was blocked. Please allow popups for this site.";
+                } else if (error.code === 'auth/popup-closed-by-user') {
+                    errorMessage = "Sign-in was cancelled before completion.";
+                } else if (error.code === 'auth/network-request-failed') {
+                    errorMessage = "Network error. Please check your connection and try again.";
+                } else {
+                    errorMessage = error.message;
+                }
+
+                errorEl.textContent = errorMessage;
+                errorEl.classList.add('show');
             }
         };
 
