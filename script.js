@@ -37,6 +37,64 @@ const quizApp = {
   savedResultsData: [],
   questionAnswered: false,
 
+  isWrittenQuestion(question) {
+    return question && (question.type === "complete" || question.type === "written");
+  },
+
+  getExpectedAnswers(question) {
+    if (!question) return [];
+    if (Array.isArray(question.correctAnswers)) return question.correctAnswers;
+    if (Array.isArray(question.answers)) return question.answers;
+    if (question.answer !== undefined) return [question.answer];
+    if (Array.isArray(question.correctAnswer)) return question.correctAnswer;
+    if (question.correctAnswer !== undefined) return [question.correctAnswer];
+    return [];
+  },
+
+  getValidationMode(question) {
+    if (!question) return "ordered";
+    if (question.orderMode === "unordered") return "unordered";
+    if (question.validationMode === "unordered") return "unordered";
+    return "ordered";
+  },
+
+  isMultiWrittenQuestion(question) {
+    return this.isWrittenQuestion(question) && this.getExpectedAnswers(question).length > 1;
+  },
+
+  hasWrittenSelection() {
+    if (!this.selectedAnswer) return false;
+    if (Array.isArray(this.selectedAnswer)) {
+      return this.selectedAnswer.length > 0 && this.selectedAnswer.every(
+        (answer) => normalizeAnswer(answer) !== "",
+      );
+    }
+    return normalizeAnswer(this.selectedAnswer) !== "";
+  },
+
+  getMainButtonLabel(question) {
+    if (
+      this.isWrittenQuestion(question) &&
+      this.currentMode === "normal" &&
+      !this.questionAnswered
+    ) {
+      return "Enter";
+    }
+    return this.currentQuestionIndex === this.processedQuestions.length - 1
+      ? "Finish"
+      : "Next";
+  },
+
+  escapeHtml(text) {
+    if (!text) return "";
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  },
+
   async init() {
     this.initTheme();
     this.initAuth();
@@ -326,6 +384,8 @@ const quizApp = {
             `;
     }
 
+    const nextButtonLabel = this.getMainButtonLabel(question);
+
     container.innerHTML = `
             <div class="quiz-header">
                 <button class="btn-back" onclick="quizApp.goHome()">← Back</button>
@@ -343,7 +403,7 @@ const quizApp = {
             <div class="quiz-footer">
                 <button class="btn btn-secondary" onclick="quizApp.shareQuiz()">Share Quiz</button>
                 ${this.currentQuestionIndex > 0 ? '<button class="btn btn-secondary" onclick="quizApp.prevQuestion()">Previous</button>' : "<div></div>"}
-                <button id="next-btn" class="btn btn-primary" onclick="quizApp.nextQuestion()" ${!this.selectedAnswer ? "disabled" : ""}>${this.currentQuestionIndex === this.processedQuestions.length - 1 ? "Finish" : "Next"}</button>
+                <button id="next-btn" class="btn btn-primary" onclick="quizApp.handleNextButton()" ${!this.selectedAnswer ? "disabled" : ""}>${nextButtonLabel}</button>
             </div>
         `;
 
@@ -354,10 +414,10 @@ const quizApp = {
         : [question.correctAnswer];
       const normalizedSaved = normalizeAnswer(savedAnswer);
 
-      if (question.type === "complete") {
+      if (this.isWrittenQuestion(question)) {
         if (this.currentMode === "normal") {
           const isCorrect = this.checkAnswer(question, savedAnswer);
-          this.showWrittenFeedback(isCorrect, question);
+          this.markWrittenFeedback(question, savedAnswer, isCorrect);
         }
       } else {
         const options = document.querySelectorAll(".option");
@@ -389,20 +449,57 @@ const quizApp = {
   },
 
   renderOptions(question) {
-    if (question.type === "complete") {
+    if (this.isWrittenQuestion(question)) {
+      const expectedAnswers = this.getExpectedAnswers(question);
       const isAnswered = this.userAnswers[this.currentQuestionIndex] !== undefined;
       const isCorrect = isAnswered ? this.checkAnswer(question, this.userAnswers[this.currentQuestionIndex]) : false;
+      const savedAnswer = this.userAnswers[this.currentQuestionIndex];
+
+      if (this.isMultiWrittenQuestion(question)) {
+        const values = Array.isArray(savedAnswer)
+          ? savedAnswer
+          : Array(expectedAnswers.length).fill("");
+        const inputFields = expectedAnswers
+          .map((_, index) => `
+                <div class="multi-input-row">
+                    <span class="multi-input-number">${index + 1}</span>
+                    <input
+                        type="text"
+                        id="complete-answer-${index}"
+                        class="complete-answer-field"
+                        placeholder="Answer ${index + 1}"
+                        aria-label="Answer ${index + 1}"
+                        value="${this.escapeHtml(values[index] || "")}" 
+                        oninput="quizApp.handleWrittenInput(event, ${index})"
+                        onkeydown="if(event.key === 'Enter') quizApp.handleNextButton()"
+                        ${isAnswered && this.currentMode === 'normal' ? "disabled" : ""}>
+                </div>
+            `)
+          .join("");
+
+        return `
+                <div class="complete-input ${isAnswered && this.currentMode === 'normal' ? (isCorrect ? 'correct' : 'wrong') : ''}">
+                    <div class="multi-complete-fields">
+                        ${inputFields}
+                    </div>
+                    <div id="written-feedback" class="written-feedback"></div>
+                </div>
+            `;
+      }
+
       return `
                 <div class="complete-input ${isAnswered && this.currentMode === 'normal' ? (isCorrect ? 'correct' : 'wrong') : ''}">
                     <div class="input-wrapper">
-                        <input type="text" id="complete-answer" placeholder="Type your answer..." 
-                            value="${this.userAnswers[this.currentQuestionIndex] || ""}" 
-                            oninput="quizApp.handleCompleteInput(event)"
-                            onkeydown="if(event.key === 'Enter') quizApp.handleWrittenSubmit()"
+                        <input
+                            type="text"
+                            id="complete-answer-0"
+                            class="complete-answer-field"
+                            placeholder="Type your answer..."
+                            aria-label="Answer"
+                            value="${this.escapeHtml(savedAnswer || "")}" 
+                            oninput="quizApp.handleWrittenInput(event, 0)"
+                            onkeydown="if(event.key === 'Enter') quizApp.handleNextButton()"
                             ${isAnswered && this.currentMode === 'normal' ? "disabled" : ""}>
-                        ${this.currentMode === 'normal' && !isAnswered ? `
-                            <button class="btn-check" onclick="quizApp.handleWrittenSubmit()">Check</button>
-                        ` : ''}
                     </div>
                     <div id="written-feedback" class="written-feedback"></div>
                 </div>
@@ -463,74 +560,140 @@ const quizApp = {
     this.enableNextButton();
   },
 
-  handleCompleteInput(event) {
-    const answer = event.target.value;
-    this.selectedAnswer = answer.trim();
+  handleWrittenInput(event, index) {
+    const value = event.target.value;
+    const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
 
-    if (this.currentMode === "quiz") {
-      this.userAnswers[this.currentQuestionIndex] = this.selectedAnswer || undefined;
-      this.saveProgress();
+    if (!this.isWrittenQuestion(currentQuestion)) return;
+
+    if (this.isMultiWrittenQuestion(currentQuestion)) {
+      const expectedAnswers = this.getExpectedAnswers(currentQuestion);
+      const answers = Array.isArray(this.selectedAnswer)
+        ? [...this.selectedAnswer]
+        : Array(expectedAnswers.length).fill("");
+
+      answers[index] = value;
+      this.selectedAnswer = answers;
+
+      if (this.currentMode === "quiz") {
+        const hasAnswer = answers.some((a) => normalizeAnswer(a) !== "");
+        this.userAnswers[this.currentQuestionIndex] = hasAnswer ? answers : undefined;
+        this.saveProgress();
+      }
+    } else {
+      this.selectedAnswer = value;
+      if (this.currentMode === "quiz") {
+        this.userAnswers[this.currentQuestionIndex] = value.trim() || undefined;
+        this.saveProgress();
+      }
     }
 
+    this.questionAnswered = false;
     this.enableNextButton();
   },
 
   handleWrittenSubmit() {
-    const input = document.getElementById("complete-answer");
-    if (!input) return;
-    const answer = input.value.trim();
-    if (!answer) return;
+    this.handleNextButton();
+  },
 
-    if (this.currentMode === "quiz") {
-      this.selectedAnswer = answer;
-      this.userAnswers[this.currentQuestionIndex] = answer;
-      this.saveProgress();
-      this.nextQuestion();
+  handleNextButton() {
+    const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
+    if (
+      this.isWrittenQuestion(currentQuestion) &&
+      this.currentMode === "normal" &&
+      !this.questionAnswered
+    ) {
+      this.submitWrittenAnswer();
       return;
     }
+    this.nextQuestion();
+  },
 
-    if (this.questionAnswered) {
-      this.nextQuestion();
-      return;
+  submitWrittenAnswer() {
+    const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
+    if (!this.isWrittenQuestion(currentQuestion)) return;
+    if (!this.hasWrittenSelection()) return;
+
+    let answerToSave = this.selectedAnswer;
+    if (this.isMultiWrittenQuestion(currentQuestion)) {
+      answerToSave = this.selectedAnswer.map((answer) => answer.trim());
+    } else {
+      answerToSave = String(this.selectedAnswer).trim();
     }
 
-    this.selectedAnswer = answer;
-    this.userAnswers[this.currentQuestionIndex] = answer;
+    this.userAnswers[this.currentQuestionIndex] = answerToSave;
     this.saveProgress();
     this.questionAnswered = true;
 
-    const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
-    const isCorrect = this.checkAnswer(currentQuestion, answer);
+    const isCorrect = this.checkAnswer(currentQuestion, answerToSave);
+    this.markWrittenFeedback(currentQuestion, answerToSave, isCorrect);
+    this.enableNextButton();
+  },
 
+  markWrittenFeedback(question, userAnswer, isCorrect) {
     const container = document.querySelector(".complete-input");
     if (container) {
       container.classList.add(isCorrect ? "correct" : "wrong");
     }
-    input.disabled = true;
 
-    const checkBtn = document.querySelector(".btn-check");
-    if (checkBtn) checkBtn.remove();
+    if (this.isMultiWrittenQuestion(question)) {
+      const expected = this.getExpectedAnswers(question).map(normalizeAnswer);
+      const remaining = [...expected];
+      const inputs = Array.from(document.querySelectorAll(".complete-answer-field"));
 
-    this.showWrittenFeedback(isCorrect, currentQuestion);
-    this.enableNextButton();
+      inputs.forEach((input, index) => {
+        const normalizedValue = normalizeAnswer(input.value || "");
+        let fieldCorrect = false;
+
+        if (this.getValidationMode(question) === "ordered") {
+          fieldCorrect = normalizedValue === expected[index];
+        } else {
+          const matchIndex = remaining.findIndex((correct) => correct === normalizedValue);
+          fieldCorrect = matchIndex !== -1;
+          if (fieldCorrect) {
+            remaining.splice(matchIndex, 1);
+          }
+        }
+
+        input.classList.toggle("correct", fieldCorrect);
+        input.classList.toggle("wrong", !fieldCorrect);
+        input.disabled = true;
+      });
+    } else {
+      const input = document.querySelector(".complete-answer-field");
+      if (input) {
+        input.classList.toggle("correct", isCorrect);
+        input.classList.toggle("wrong", !isCorrect);
+        input.disabled = true;
+      }
+    }
+
+    this.showWrittenFeedback(isCorrect, question);
+
+    const nextBtn = document.getElementById('next-btn');
+    if (nextBtn) {
+      nextBtn.textContent = this.currentQuestionIndex === this.processedQuestions.length - 1 ? 'Finish' : 'Next';
+    }
   },
 
   showWrittenFeedback(isCorrect, question) {
     const feedbackDiv = document.getElementById("written-feedback");
     if (!feedbackDiv) return;
 
-    const correctAnswers = Array.isArray(question.correctAnswer)
-      ? question.correctAnswer
-      : [question.correctAnswer];
-    const displayCorrect = correctAnswers[0];
+    const correctAnswers = this.getExpectedAnswers(question);
+    const displayCorrect = correctAnswers.length > 1
+      ? `<ul>${correctAnswers
+          .map((answer) => `<li>${this.escapeHtml(answer)}</li>`)
+          .join("")}</ul>`
+      : `<strong>${this.escapeHtml(correctAnswers[0])}</strong>`;
 
     feedbackDiv.className = `written-feedback ${isCorrect ? "correct" : "incorrect"}`;
     feedbackDiv.innerHTML = `
         <div class="feedback-status ${isCorrect ? "correct" : "incorrect"}">
             ${isCorrect ? "✓ Correct" : "✗ Incorrect"}
         </div>
-        ${!isCorrect ? `<div class="correct-answer-text">Correct answer: <strong>${displayCorrect}</strong></div>` : ""}
-        ${question.explanation ? `<div class="explanation">${question.explanation}</div>` : ""}
+        ${!isCorrect ? `<div class="correct-answer-text">${correctAnswers.length > 1 ? "Correct answers:" : "Correct answer:"} ${displayCorrect}</div>` : ""}
+        ${question.explanation ? `<div class="explanation">${this.escapeHtml(question.explanation)}</div>` : ""}
     `;
     feedbackDiv.style.display = "block";
   },
@@ -549,9 +712,18 @@ const quizApp = {
 
   enableNextButton() {
     const nextBtn = document.getElementById("next-btn");
-    if (nextBtn) {
-      nextBtn.disabled = !this.selectedAnswer;
+    if (!nextBtn) return;
+
+    const currentQuestion = this.processedQuestions[this.currentQuestionIndex];
+    let enabled = false;
+
+    if (this.isWrittenQuestion(currentQuestion)) {
+      enabled = this.hasWrittenSelection();
+    } else {
+      enabled = !!this.selectedAnswer;
     }
+
+    nextBtn.disabled = !enabled;
   },
 
   nextQuestion() {
@@ -685,23 +857,27 @@ const quizApp = {
       .map((question, index) => {
         const userAnswer = this.userAnswers[index];
         const isCorrect = this.checkAnswer(question, userAnswer);
-        const displayCorrect = Array.isArray(question.correctAnswer)
-          ? question.correctAnswer[0]
-          : question.correctAnswer;
+        const expectedAnswers = this.getExpectedAnswers(question);
+        const userAnswerText = Array.isArray(userAnswer)
+          ? userAnswer.filter(Boolean).join(", ")
+          : userAnswer;
+        const displayCorrect = expectedAnswers.length > 1
+          ? expectedAnswers.join(", ")
+          : expectedAnswers[0];
 
         return `
                 <div class="answer-review ${isCorrect ? "correct" : "incorrect"}">
                     <div class="review-question">${index + 1}. ${question.question}</div>
                     <div class="review-answer">
                         <span class="label">Your answer:</span>
-                        <span class="answer ${isCorrect ? "correct" : "incorrect"}">${userAnswer || "No answer"}</span>
+                        <span class="answer ${isCorrect ? "correct" : "incorrect"}">${this.escapeHtml(userAnswerText || "No answer")}</span>
                     </div>
                     ${
                       !isCorrect
                         ? `
                         <div class="review-answer">
                             <span class="label">Correct answer:</span>
-                            <span class="answer correct">${displayCorrect}</span>
+                            <span class="answer correct">${this.escapeHtml(displayCorrect)}</span>
                         </div>
                     `
                         : ""
@@ -709,7 +885,7 @@ const quizApp = {
                     ${
                       question.explanation
                         ? `
-                        <div class="explanation">${question.explanation}</div>
+                        <div class="explanation">${this.escapeHtml(question.explanation)}</div>
                     `
                         : ""
                     }
@@ -724,25 +900,36 @@ const quizApp = {
   checkAnswer(question, userAnswer) {
     if (!userAnswer) return false;
 
+    if (this.isWrittenQuestion(question)) {
+      const expectedAnswers = this.getExpectedAnswers(question).map(normalizeAnswer);
+
+      if (Array.isArray(userAnswer)) {
+        const normalizedAnswers = userAnswer.map((answer) => normalizeAnswer(answer));
+        if (normalizedAnswers.length !== expectedAnswers.length) return false;
+
+        if (this.getValidationMode(question) === "unordered") {
+          const remaining = [...expectedAnswers];
+          for (const answer of normalizedAnswers) {
+            const matchIndex = remaining.findIndex((correct) => correct === answer);
+            if (matchIndex === -1) return false;
+            remaining.splice(matchIndex, 1);
+          }
+          return remaining.length === 0;
+        }
+
+        return normalizedAnswers.every(
+          (answer, index) => answer === expectedAnswers[index],
+        );
+      }
+
+      return normalizeAnswer(userAnswer) === expectedAnswers[0];
+    }
+
     const correctAnswers = Array.isArray(question.correctAnswer)
       ? question.correctAnswer
       : [question.correctAnswer];
 
-    for (const correct of correctAnswers) {
-      if (question.type === "complete") {
-        const normalizedUser = normalizeAnswer(userAnswer);
-        const normalizedCorrect = normalizeAnswer(correct);
-        if (normalizedUser === normalizedCorrect) {
-          return true;
-        }
-      } else {
-        if (userAnswer === correct) {
-          return true;
-        }
-      }
-    }
-
-    return false;
+    return correctAnswers.some((correct) => userAnswer === correct);
   },
 
   restartQuiz() {

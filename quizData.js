@@ -1410,8 +1410,13 @@ const quizzes = [
             type: "complete",
             image: "img/Network2-MidQBank-Q1.JPG",
             question: "In figure 1, what do the numbers from 1 to 4 symbolize?",
-            correctAnswer:
-              "Serial Ports, Ethernet Ports, Console Port, Auxiliary Port",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Serial Ports",
+              "Ethernet Ports",
+              "Console Port",
+              "Auxiliary Port",
+            ]
           },
           {
             id: "q1_c_ports_usage",

@@ -741,6 +741,16 @@ body {
   background-color: rgba(239, 68, 68, 0.1);
 }
 
+.complete-input.wrong .complete-answer-field.correct {
+  border-color: var(--success);
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.complete-input.correct .complete-answer-field.wrong {
+  border-color: var(--error);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
 .input-wrapper {
   display: flex;
   gap: var(--space-sm);
@@ -761,6 +771,51 @@ body {
 
 .btn-check:hover {
   background: var(--primary-hover);
+}
+
+.multi-complete-fields {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.multi-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.multi-input-number {
+  min-width: 2.4rem;
+  min-height: 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--primary-subtle);
+  color: var(--text-color);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.complete-answer-field.correct {
+  border-color: var(--success);
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.complete-answer-field.wrong {
+  border-color: var(--error);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+@media (max-width: 600px) {
+  .multi-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .multi-input-number {
+    width: 100%;
+  }
 }
 
 .written-feedback {
