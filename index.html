@@ -1104,8 +1104,50 @@
                     const userAnswer = this.userAnswers[index];
                     const isCorrect = this.checkAnswer(question, userAnswer);
                     const expectedAnswers = this.getExpectedAnswers(question);
+
+                    // Handle multi-answer questions with numbered format
+                    if (this.isMultiWrittenQuestion(question)) {
+                        const userAnswers = Array.isArray(userAnswer) ? userAnswer : Array(expectedAnswers.length).fill('');
+                        
+                        const userAnswerHtml = expectedAnswers.map((_, answerIndex) => `
+                            <div class="multi-input-row">
+                                <span class="multi-input-number">${answerIndex + 1}</span>
+                                <span class="answer ${this.checkAnswerAtIndex(question, userAnswers, answerIndex) ? 'correct' : 'incorrect'}">
+                                    ${this.escapeHtml(userAnswers[answerIndex] || 'No answer')}
+                                </span>
+                            </div>
+                        `).join('');
+
+                        const correctAnswerHtml = !isCorrect ? expectedAnswers.map((correctAns, answerIndex) => `
+                            <div class="multi-input-row">
+                                <span class="multi-input-number">${answerIndex + 1}</span>
+                                <span class="answer correct">${this.escapeHtml(correctAns)}</span>
+                            </div>
+                        `).join('') : '';
+
+                        return `
+                            <div class="answer-review ${isCorrect ? 'correct' : 'incorrect'}">
+                                <div class="review-question">${index + 1}. ${question.question}</div>
+                                <div class="review-answer">
+                                    <span class="label">Your answer:</span>
+                                    <div class="multi-answer-display">${userAnswerHtml}</div>
+                                </div>
+                                ${correctAnswerHtml ? `
+                                    <div class="review-answer">
+                                        <span class="label">Correct answer:</span>
+                                        <div class="multi-answer-display">${correctAnswerHtml}</div>
+                                    </div>
+                                ` : ''}
+                                ${question.explanation ? `
+                                    <div class="explanation">${this.escapeHtml(question.explanation)}</div>
+                                ` : ''}
+                            </div>
+                        `;
+                    }
+
+                    // Single answer questions
                     const userAnswerText = Array.isArray(userAnswer) ? userAnswer.filter(Boolean).join(', ') : userAnswer;
-                    const displayCorrect = expectedAnswers.length > 1 ? expectedAnswers.join(', ') : expectedAnswers[0];
+                    const displayCorrect = expectedAnswers[0];
 
                     return `
                         <div class="answer-review ${isCorrect ? 'correct' : 'incorrect'}">
@@ -1128,6 +1170,17 @@
                 }).join('');
 
                 return `<div class="answer-review-container">${reviewHtml}</div>`;
+            },
+
+            checkAnswerAtIndex(question, userAnswers, index) {
+                const expectedAnswers = this.getExpectedAnswers(question).map(normalizeAnswer);
+                const normalizedUserAnswer = normalizeAnswer(userAnswers[index] || '');
+                
+                if (this.getValidationMode(question) === 'ordered') {
+                    return normalizedUserAnswer === expectedAnswers[index];
+                } else {
+                    return expectedAnswers.includes(normalizedUserAnswer);
+                }
             },
 
             checkAnswer(question, userAnswer) {
@@ -1318,6 +1371,61 @@
                     const iconClass = item.isCorrect ? 'icon-correct' : 'icon-incorrect';
                     const icon = item.isCorrect ? '✔' : '✖';
 
+                    // Check if this is a multi-answer question
+                    const isMultiAnswer = Array.isArray(item.userAnswer);
+                    const correctAnswersArray = Array.isArray(item.correctAnswer) ? item.correctAnswer : (Array.isArray(item.correctAnswer) ? item.correctAnswer : [item.correctAnswer]);
+
+                    let answerDisplay = '';
+                    
+                    if (isMultiAnswer) {
+                        // Display multi-answer format with numbers
+                        const userAnswers = Array.isArray(item.userAnswer) ? item.userAnswer : [];
+                        
+                        const userAnswerHtml = correctAnswersArray.map((_, answerIndex) => `
+                            <div class="multi-input-row">
+                                <span class="multi-input-number">${answerIndex + 1}</span>
+                                <span class="answer-value ${item.isCorrect ? 'correct' : 'incorrect'}">${userAnswers[answerIndex] || 'No answer'}</span>
+                            </div>
+                        `).join('');
+
+                        const correctAnswerHtml = !item.isCorrect ? correctAnswersArray.map((correctAns, answerIndex) => `
+                            <div class="multi-input-row">
+                                <span class="multi-input-number">${answerIndex + 1}</span>
+                                <span class="answer-value correct">${correctAns}</span>
+                            </div>
+                        `).join('') : '';
+
+                        answerDisplay = `
+                            <div class="answer-row ${item.isCorrect ? 'correct' : 'incorrect'}">
+                                <span class="answer-label">Your answer:</span>
+                                <div class="multi-answer-display">${userAnswerHtml}</div>
+                            </div>
+                            ${correctAnswerHtml ? `
+                            <div class="answer-row correct">
+                                <span class="answer-label">Correct answer:</span>
+                                <div class="multi-answer-display">${correctAnswerHtml}</div>
+                            </div>
+                            ` : ''}
+                        `;
+                    } else {
+                        // Single answer format (existing)
+                        const userAnswerDisplay = Array.isArray(item.userAnswer) ? item.userAnswer.join(', ') : (item.userAnswer || 'No answer');
+                        const correctAnswerDisplay = Array.isArray(item.correctAnswer) ? item.correctAnswer.join(', ') : item.correctAnswer;
+                        
+                        answerDisplay = `
+                            <div class="answer-row ${item.isCorrect ? 'correct' : 'incorrect'}">
+                                <span class="answer-label">Your answer:</span>
+                                <span class="answer-value ${item.isCorrect ? 'correct' : 'incorrect'}">${userAnswerDisplay}</span>
+                            </div>
+                            ${!item.isCorrect ? `
+                            <div class="answer-row correct">
+                                <span class="answer-label">Correct answer:</span>
+                                <span class="answer-value correct">${correctAnswerDisplay}</span>
+                            </div>
+                            ` : ''}
+                        `;
+                    }
+
                     return `
                         <div class="review-card ${item.isCorrect ? 'correct' : 'incorrect'}">
                             <div class="review-card-header">
@@ -1326,16 +1434,7 @@
                             </div>
                             <div class="review-card-question">${item.question}</div>
                             <div class="review-card-answers">
-                                <div class="answer-row ${item.isCorrect ? 'correct' : 'incorrect'}">
-                                    <span class="answer-label">Your answer:</span>
-                                    <span class="answer-value ${item.isCorrect ? 'correct' : 'incorrect'}">${item.userAnswer || 'No answer'}</span>
-                                </div>
-                                ${!item.isCorrect ? `
-                                <div class="answer-row correct">
-                                    <span class="answer-label">Correct answer:</span>
-                                    <span class="answer-value correct">${item.correctAnswer}</span>
-                                </div>
-                                ` : ''}
+                                ${answerDisplay}
                             </div>
                         </div>
                     `;
