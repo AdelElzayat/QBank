@@ -1044,21 +1044,21 @@ const quizzes = [
       {
         id: "q10",
         question: "Figure 2 represents ......",
-        image: "img/Biomedical-Q10.jpg",
+        image: "img/Biomedical-Q10.JPG",
         type: "complete",
         correctAnswer: "Metal microelectrode",
       },
       {
         id: "q11",
         question: "The following neuron in figure 3 is known as ......",
-        image: "img/Biomedical-Q11.jpg",
+        image: "img/Biomedical-Q11.JPG",
         type: "complete",
         correctAnswer: "unipolar neuron",
       },
       {
         id: "q12",
         question: "The following neuron in figure 4 considered in ......",
-        image: "img/Biomedical-Q12.jpg",
+        image: "img/Biomedical-Q12.JPG",
         type: "complete",
         correctAnswer: "resting state",
       },
@@ -1399,7 +1399,7 @@ const quizzes = [
           {
             id: "q1-a-router-device-identification",
             type: "complete",
-            image: "img/Network2-Final-Q1.jpg",
+            image: "img/Network2-Final-Q1.JPG",
             question:
               "What is the device shown in figure.1 and What is it used for?",
             correctAnswer:
@@ -1408,7 +1408,7 @@ const quizzes = [
           {
             id: "q1-b-router-ports-symbolize",
             type: "complete",
-            image: "img/Network2-Final-Q1.jpg",
+            image: "img/Network2-Final-Q1.JPG",
             question: "In figure.1 What do the numbers from 1 to 4 symbolize?",
             orderMode: "ordered",
             correctAnswers: [
@@ -1421,7 +1421,7 @@ const quizzes = [
           {
             id: "q1-c-router-ports-usage",
             type: "complete",
-            image: "img/Network2-Final-Q1.jpg",
+            image: "img/Network2-Final-Q1.JPG",
             question: "In figure.1 What are the numbers from 1 to 4 used for?",
             orderMode: "ordered",
             correctAnswers: [
