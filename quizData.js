@@ -1397,19 +1397,19 @@ const quizzes = [
         quizModeTimer: 1800,
         questions: [
           {
-            id: "q1_a_device_identification",
+            id: "q1-a-router-device-identification",
             type: "complete",
-            image: "img/Network2-MidQBank-Q1.JPG",
+            image: "img/Network2-Final-Q1.jpg",
             question:
-              "What is the device shown in figure 1 and what is it used for?",
+              "What is the device shown in figure.1 and What is it used for?",
             correctAnswer:
               "The device is Router and it's used to connect between different networks.",
           },
           {
-            id: "q1_b_symbols_identification",
+            id: "q1-b-router-ports-symbolize",
             type: "complete",
-            image: "img/Network2-MidQBank-Q1.JPG",
-            question: "In figure 1, what do the numbers from 1 to 4 symbolize?",
+            image: "img/Network2-Final-Q1.jpg",
+            question: "In figure.1 What do the numbers from 1 to 4 symbolize?",
             orderMode: "ordered",
             correctAnswers: [
               "Serial Ports",
@@ -1419,42 +1419,42 @@ const quizzes = [
             ],
           },
           {
-            id: "q1_c_ports_usage",
+            id: "q1-c-router-ports-usage",
             type: "complete",
-            image: "img/Network2-MidQBank-Q1.JPG",
-            question: "In figure 1, what are the numbers from 1 to 4 used for?",
+            image: "img/Network2-Final-Q1.jpg",
+            question: "In figure.1 What are the numbers from 1 to 4 used for?",
             orderMode: "ordered",
             correctAnswers: [
               "To connect with WAN Technology.",
               "To connect Router with other devices like another Switch or Router.",
-              "To enter the Configurations to the Router directly.",
-              "To enter the Configurations to the Router Remotely.",
+              "To enter the Configurations to the Router directly",
+              "To enter the Configurations to the Router Remotely",
             ],
           },
           {
-            id: "q2_memory_comparison",
+            id: "q2-compare-router-memory",
             type: "complete",
             question:
               "Compare between ROM, RAM, NVRAM and Flash memory in Router components.",
-            orderMode: "ordered",
+            orderMode: "unordered",
             correctAnswers: [
-              "ROM: Responsible for the post process.",
-              "RAM: Running IOS and Configurations file.",
-              "NVRAM: Configurations files are kept here.",
-              "Flash memory: IOS Image are kept here.",
+              "ROM: Responsible for the post process",
+              "RAM: Running IOS and Configurations file",
+              "NVRAM: Configurations files are kept here",
+              "Flash memory: IOS Image are kept here",
             ],
           },
           {
-            id: "q3_post_process_definition",
+            id: "q3-post-process-definition",
             type: "complete",
             question: "What is meant by the post process?",
             correctAnswer:
               "A process that verifies the presence of all device components and that they are functioning normally.",
           },
           {
-            id: "q4_bootup_sequence",
+            id: "q4-router-bootup-sequence",
             type: "complete",
-            question: "What is the Router Power on/Bootup Sequence?",
+            question: "What is the Router Power on/Bootup Sequence",
             orderMode: "ordered",
             correctAnswers: [
               "Perform power-on self-test (POST).",
@@ -1462,39 +1462,25 @@ const quizzes = [
               "Load the Cisco IOS software.",
               "Find the configuration.",
               "Load the configuration.",
-              "Run the configured Cisco IOS software.",
+              "Run the configured Cisco IOS software",
             ],
           },
           {
-            id: "q5_vlsm_definition",
+            id: "q5-vlsm-definition-purpose",
             type: "complete",
-            question: "What is VLSM?",
-            correctAnswer:
-              "VLSM (Variable Length Subnet Mask) is a subnetting technique that allows using different subnet masks within the same network according to the required number of hosts.",
+            question: "Define VLSM and its purpose",
+            correctAnswer: 
+              "VLSM (Variable Length Subnet Mask) is a subnetting technique that allows using different subnet masks within the same network. Its main purpose is to allocate IP addresses efficiently based on the number of hosts required in each subnet, reducing IP waste.",
           },
           {
-            id: "q6_vlsm_purpose",
-            type: "complete",
-            question: "What is the main purpose of using VLSM?",
-            correctAnswer:
-              "The main purpose of VLSM is to improve IP address utilization and reduce address wastage.",
-          },
-          {
-            id: "q7_vlsm_efficiency",
-            type: "complete",
-            question: "Why is VLSM considered more efficient?",
-            correctAnswer:
-              "Because it allocates subnet sizes based on actual host requirements, reducing unused IP addresses.",
-          },
-          {
-            id: "q8_vlsm_largest_subnet",
+            id: "q6-allocate-largest-subnet-first",
             type: "complete",
             question: "Why do we allocate the largest subnet first in VLSM?",
             correctAnswer:
               "To avoid fragmentation and ensure efficient address allocation.",
           },
           {
-            id: "q9_vlsm_steps",
+            id: "q7-design-vlsm-steps",
             type: "complete",
             question:
               "Describe the steps used to design a VLSM addressing scheme.",
@@ -1508,171 +1494,322 @@ const quizzes = [
             ],
           },
           {
-            id: "q10_dhcp_purpose",
+            id: "q8-advantages-vlsm",
             type: "complete",
-            question: "What is the purpose of DHCP?",
+            question: "Advantages of VLSM",
+            correctAnswers: 
+              "VLSM improves IP address utilization by assigning different subnet sizes based on need. It reduces wastage, increases flexibility in network design, and supports better scalability in large enterprise networks.",
+          },
+          {
+            id: "q9-why-vlsm-efficient",
+            type: "complete",
+            question: "Why is VLSM efficient?",
             correctAnswer:
+              "Because it allocates IP addresses according to actual host needs instead of fixed sizes, which reduces unused addresses and improves overall network efficiency.",
+          },
+          {
+            id: "q10-subnet-mask-borrowing",
+            type: "complete",
+            question: "Subnet mask borrowing",
+            correctAnswer:
+              "It is the process of taking bits from the host portion of an IP address and using them to create additional subnets, increasing the number of available networks.",
+          },
+          {
+            id: "q11-dhcp-advantages-disadvantages",
+            type: "complete",
+            question: "Explain DHCP with its advantages and disadvantages?",
+            orderMode: "unordered",
+            correctAnswers: [
               "To automatically assign IP addresses and network settings to devices.",
-          },
-          {
-            id: "q11_dhcp_advantages",
-            type: "complete",
-            question: "What are the advantages of using DHCP?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Automatic IP assignment",
-              "Reduced manual errors",
-              "Easier administration",
+              "Advantages: Automatic IP assignment, Reduced manual errors, Easier administration",
+              "Disadvantages: Dependency on DHCP server, Possible security attacks",
             ],
           },
           {
-            id: "q12_dhcp_disadvantages",
+            id: "q12-what-is-dhcp",
             type: "complete",
-            question: "What are the disadvantages of DHCP?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Dependency on DHCP server",
-              "Possible security attacks",
-            ],
+            question: "What is DHCP?",
+            correctAnswer:
+              "DHCP (Dynamic Host Configuration Protocol) is a protocol used to automatically assign IP addresses and network configuration parameters to devices on a network, reducing manual configuration.",
           },
           {
-            id: "q13_1_cmd_privileged_mode",
+            id: "q13-dhcp-scope",
             type: "complete",
+            question: "What is DHCP scope?",
+            correctAnswer:
+              "A DHCP scope is a defined range of IP addresses that a DHCP server can assign to clients, along with related configuration like gateway and DNS.",
+          },
+          {
+            id: "q14-dhcp-lease-time",
+            type: "complete",
+            question: "What is the DHCP lease time?",
+            correctAnswer:
+              "It is the period for which a client is allowed to use an assigned IP address before it must be renewed or released back to the DHCP pool.",
+          },
+          {
+            id: "q15-dhcp-reservation",
+            type: "complete",
+            question: "Describe DHCP reservation",
+            correctAnswer:
+              "It is a method where a specific IP address is permanently assigned to a device based on its MAC address, even though DHCP is used.",
+          },
+          {
+            id: "q16-importance-dhcp-enterprise",
+            type: "complete",
+            question: "What is the Importance of DHCP in enterprise networks?",
+            correctAnswer:
+              "It reduces manual configuration, speeds up device deployment, and ensures consistent and centralized IP management across large networks.",
+          },
+          {
+            id: "q17-dhcp-discover",
+            type: "complete",
+            question: "Describe DHCP Discover?",
+            correctAnswer:
+              "The client sends a broadcast message to find available DHCP servers in the network.",
+          },
+          {
+            id: "q18-dhcp-offer",
+            type: "complete",
+            question: "What is DHCP Offer?",
+            correctAnswer:
+              "The DHCP server responds with an available IP address and configuration settings.",
+          },
+          {
+            id: "q19-dhcp-request",
+            type: "complete",
+            question: "Describe DHCP Request",
+            correctAnswer:
+              "The client accepts the offered IP address and sends a request to the server to confirm assignment.",
+          },
+          {
+            id: "q20-dhcp-ack",
+            type: "complete",
+            question: "What is DHCP ACK?",
+            correctAnswer:
+              "The server confirms the IP assignment and provides final configuration to the client.",
+          },
+          {
+            id: "q21-dhcp-fails",
+            type: "complete",
+            question: "What happen If DHCP fails?",
+            correctAnswer:
+              "If no DHCP server responds, the device may assign itself an APIPA address (169.254.x.x) to maintain local communication.",
+          },
+          {
+            id: "q22-apipa-definition",
+            type: "complete",
+            question: "What is APIPA?",
+            correctAnswer:
+              "APIPA automatically assigns a private IP address when DHCP is unavailable, allowing limited local network communication.",
+          },
+          {
+            id: "q23-dhcp-relay-agent",
+            type: "complete",
+            question: "What is DHCP relay agent?",
+            correctAnswer:
+              "It is a network device that forwards DHCP requests between clients and servers located on different networks or VLANs.",
+          },
+          {
+            id: "q24-dhcp-starvation-attack",
+            type: "complete",
+            question: "What is DHCP starvation attack?",
+            correctAnswer:
+              "An attacker sends many fake requests to consume all available IP addresses, preventing legitimate users from getting IPs.",
+          },
+          {
+            id: "q28-a-topology-interface-status",
+            type: "complete",
+            image: "img/Network2-Final-Q28.JPG",
             question:
-              "Write the command to Enter Privileged mode from User Mode",
-            correctAnswer: "ena",
+              "In Figure.2, What is the status of the router's interfaces?",
+            correctAnswer: "disable",
           },
           {
-            id: "q13_2_cmd_global_mode",
+            id: "q28-b-topology-activate-command",
             type: "complete",
-            question:
-              "Write the command to Enter Global mode from Privileged Mode",
-            correctAnswer: "config t",
-          },
-          {
-            id: "q13_3_cmd_return_back",
-            type: "complete",
-            question: "Write the command to Return or Back",
-            correctAnswer: "exit",
-          },
-          {
-            id: "q13_4_cmd_rename_hostname",
-            type: "complete",
-            question:
-              "Write the command to Rename the Router to 'Mansoura University'",
-            correctAnswer: "hostname MansouraUniversity",
-          },
-          {
-            id: "q13_5_cmd_show_clock",
-            type: "complete",
-            question: "Write the command to Know date and time for Router",
-            correctAnswer: "show clock",
-          },
-          {
-            id: "q13_6_cmd_set_clock",
-            type: "complete",
-            question:
-              "Write the command to set date and time to 24/5/2026 and 12:30:00 PM",
-            correctAnswer: "clock set 12:30:00 24 May 2026",
-          },
-          {
-            id: "q13_7_cmd_do_modifier",
-            type: "complete",
-            question:
-              "Write the command to Run any command in any case of mode",
-            correctAnswer: "do",
-          },
-          {
-            id: "q13_8_cmd_save_config",
-            type: "complete",
-            question: "Write the command to save Configurations",
-            correctAnswer: "copy run start",
-          },
-          {
-            id: "q13_9_cmd_interface_g0_0",
-            type: "complete",
-            question:
-              "Write the command to Enter the GigaEthernet interface which port number is 0/0",
-            correctAnswer: "interface g0/0",
-          },
-          {
-            id: "q13_10_cmd_no_shutdown",
-            type: "complete",
-            question: "Write the command to Enable port",
+            image: "img/Network2-Final-Q28.JPG",
+            question: "What command is used to activate the interfaces?",
             correctAnswer: "no shutdown",
           },
           {
-            id: "q13_11_cmd_shutdown",
+            id: "q28-c-topology-port-activation-time",
             type: "complete",
-            question: "Write the command to Disable port",
+            image: "img/Network2-Final-Q28.JPG",
+            question:
+              "The port between Switch1 and PC3, how long does it take for it to become active?",
+            correctAnswer: "30 seconds",
+          },
+          {
+            id: "q28-d-topology-appropriate-ips",
+            type: "complete",
+            image: "img/Network2-Final-Q28.JPG",
+            question:
+              "What is the appropriate IP address for both the first interface and the second interface?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "ip for first interface 192.168.1.1",
+              "ip for second interface 192.168.2.1",
+            ],
+          },
+          {
+            id: "q28-e-topology-dhcp-script",
+            type: "complete",
+            image: "img/Network2-Final-Q28.JPG",
+            question:
+              "List the script commands given to enable DHCP on the first interface with dns-server 8.8.8.8.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "ip dhcp pool 1",
+              "network 192.168.1.0 255.255.255.0",
+              "default-router 192.168.1.1",
+              "dns-server 8.8.8.8",
+            ],
+          },
+          {
+            id: "q29-1-cmd-privileged-mode",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Enter Privileged mode from User Mode",
+            correctAnswer: "ena",
+          },
+          {
+            id: "q29-2-cmd-global-mode",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Enter Global mode from Privileged Mode",
+            correctAnswer: "config t",
+          },
+          {
+            id: "q29-3-cmd-return-back",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Return or Back",
+            correctAnswer: "exit",
+          },
+          {
+            id: "q29-4-cmd-rename-router",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Rename the Router to 'Mansoura University'",
+            correctAnswer: "hostname MansouraUniversity",
+          },
+          {
+            id: "q29-5-cmd-show-clock",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Know date and time for Router",
+            correctAnswer: "show clock",
+          },
+          {
+            id: "q29-6-cmd-set-clock",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To set date and time to 24/5/2026 and 12:30:00 PM",
+            correctAnswer: "clock set 12:30:00 24 May 2026",
+          },
+          {
+            id: "q29-7-cmd-do-modifier",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Run any command in any case of mode",
+            correctAnswer: "do",
+          },
+          {
+            id: "q29-8-cmd-save-config",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To save Configurations",
+            correctAnswer: "copy run start",
+          },
+          {
+            id: "q29-9-cmd-enter-interface",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Enter the GigaEthernet interface which port number is 0/0",
+            correctAnswer: "interface g0/0",
+          },
+          {
+            id: "q29-10-cmd-enable-port",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Enable port",
+            correctAnswer: "no shutdown",
+          },
+          {
+            id: "q29-11-cmd-disable-port",
+            type: "complete",
+            question:
+              "Write the command that executes the required configuration: To Disable port",
             correctAnswer: "shutdown",
           },
           {
-            id: "q13_12_cmd_ip_address",
+            id: "q29-12-cmd-set-ip",
             type: "complete",
             question:
-              "Write the command to set interface witch IP address is '192.168.1.0' and its Subnet mask '255.255.255.0'",
+              "Write the command that executes the required configuration: To set interface witch IP address is '192.168.1.0' and its Subnet mask '255.255.255.0'",
             correctAnswer: "ip address 192.168.1.0 255.255.255.0",
           },
           {
-            id: "q13_13_cmd_no_ip_address",
+            id: "q29-13-cmd-remove-ip",
             type: "complete",
             question:
-              "Write the command to remove interface IP address and Subnet mask",
+              "Write the command that executes the required configuration: To remove interface IP address and Subnet mask",
             correctAnswer: "no ip address",
           },
           {
-            id: "q13_14_cmd_show_interface_brief",
+            id: "q29-14-cmd-show-interface-brief",
             type: "complete",
             question:
-              "Write the command to show the content of configurations file (interface status summary)",
+              "Write the command that executes the required configuration: To show the content of configurations file",
             correctAnswer: "show ip interface br",
           },
           {
-            id: "q13_15_cmd_show_ip_route",
+            id: "q29-15-cmd-show-ip-route",
             type: "complete",
-            question: "Write the command to show table of routing",
+            question:
+              "Write the command that executes the required configuration: To show table of routing",
             correctAnswer: "show ip route",
           },
           {
-            id: "q13_16_cmd_dhcp_pool",
+            id: "q29-16-cmd-dhcp-pool-create",
             type: "complete",
             question:
-              "Write the command to give number '1' to the Network interface",
+              "Write the command that executes the required configuration: To give number '1' to the Network interface",
             correctAnswer: "ip dhcp pool 1",
           },
           {
-            id: "q13_17_cmd_no_dhcp_pool",
+            id: "q29-17-cmd-dhcp-pool-disable",
             type: "complete",
             question:
-              "Write the command to disable DHCP on network interface which its number is '1'",
+              "Write the command that executes the required configuration: To disable DHCP on network interface which its number is '1'",
             correctAnswer: "no ip dhcp pool 1",
           },
           {
-            id: "q13_18_cmd_default_router",
+            id: "q29-18-cmd-default-router",
             type: "complete",
             question:
-              "Write the command to select the router default gateway '192.168.1.1'",
+              "Write the command that executes the required configuration: To select the router default gateway '192.168.1.1'",
             correctAnswer: "default-router 192.168.1.1",
           },
           {
-            id: "q13_19_cmd_dns_server",
+            id: "q29-19-cmd-dns-server",
             type: "complete",
-            question: "Write the command to select DNS server '0.0.0.0'",
+            question:
+              "Write the command that executes the required configuration: To select DNS server '0.0.0.0'",
             correctAnswer: "dns-server 0.0.0.0",
           },
           {
-            id: "q13_20_cmd_dhcp_exclude_single",
+            id: "q29-20-cmd-exclude-single-ip",
             type: "complete",
             question:
-              "Write the command to exception the IP '192.168.2.3' from distribution",
+              "Write the command that executes the required configuration: To exception the IP '192.168.2.3' from distribution",
             correctAnswer: "ip dhcp excluded-address 192.168.2.3",
           },
           {
-            id: "q13_21_cmd_dhcp_exclude_range",
+            id: "q29-21-cmd-exclude-range-ip",
             type: "complete",
             question:
-              "Write the command to exception range of Ips from 192.168.2.3 to 192.168.2.5 from distribution",
+              "Write the command that executes the required configuration: To exception range of Ips from 192.168.2.3 to 192.168.2.5 from distribution",
             correctAnswer: "ip dhcp excluded-address 192.168.2.3 192.168.2.5",
           },
         ],
