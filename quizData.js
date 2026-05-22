@@ -1497,7 +1497,7 @@ const quizzes = [
             id: "q8-advantages-vlsm",
             type: "complete",
             question: "Advantages of VLSM",
-            correctAnswers: 
+            correctAnswer: 
               "VLSM improves IP address utilization by assigning different subnet sizes based on need. It reduces wastage, increases flexibility in network design, and supports better scalability in large enterprise networks.",
           },
           {
