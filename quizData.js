@@ -1044,21 +1044,21 @@ const quizzes = [
       {
         id: "q10",
         question: "Figure 2 represents ......",
-        image: "img/Biomedical-Q10.JPG",
+        image: "img/Biomedical-Q10.jpg",
         type: "complete",
         correctAnswer: "Metal microelectrode",
       },
       {
         id: "q11",
         question: "The following neuron in figure 3 is known as ......",
-        image: "img/Biomedical-Q11.JPG",
+        image: "img/Biomedical-Q11.jpg",
         type: "complete",
         correctAnswer: "unipolar neuron",
       },
       {
         id: "q12",
         question: "The following neuron in figure 4 considered in ......",
-        image: "img/Biomedical-Q12.JPG",
+        image: "img/Biomedical-Q12.jpg",
         type: "complete",
         correctAnswer: "resting state",
       },
@@ -1399,7 +1399,7 @@ const quizzes = [
           {
             id: "q1-a-router-device-identification",
             type: "complete",
-            image: "img/Network2-Final-Q1.JPG",
+            image: "img/Network2-Final-Q1.jpg",
             question:
               "What is the device shown in figure.1 and What is it used for?",
             correctAnswer:
@@ -1408,7 +1408,7 @@ const quizzes = [
           {
             id: "q1-b-router-ports-symbolize",
             type: "complete",
-            image: "img/Network2-Final-Q1.JPG",
+            image: "img/Network2-Final-Q1.jpg",
             question: "In figure.1 What do the numbers from 1 to 4 symbolize?",
             orderMode: "ordered",
             correctAnswers: [
@@ -1421,7 +1421,7 @@ const quizzes = [
           {
             id: "q1-c-router-ports-usage",
             type: "complete",
-            image: "img/Network2-Final-Q1.JPG",
+            image: "img/Network2-Final-Q1.jpg",
             question: "In figure.1 What are the numbers from 1 to 4 used for?",
             orderMode: "ordered",
             correctAnswers: [
@@ -1619,7 +1619,7 @@ const quizzes = [
           {
             id: "q28-a-topology-interface-status",
             type: "complete",
-            image: "img/Network2-Final-Q28.JPG",
+            image: "img/Network2-Final-Q28.jpg",
             question:
               "In Figure.2, What is the status of the router's interfaces?",
             correctAnswer: "disable",
@@ -1627,14 +1627,14 @@ const quizzes = [
           {
             id: "q28-b-topology-activate-command",
             type: "complete",
-            image: "img/Network2-Final-Q28.JPG",
+            image: "img/Network2-Final-Q28.jpg",
             question: "What command is used to activate the interfaces?",
             correctAnswer: "no shutdown",
           },
           {
             id: "q28-c-topology-port-activation-time",
             type: "complete",
-            image: "img/Network2-Final-Q28.JPG",
+            image: "img/Network2-Final-Q28.jpg",
             question:
               "The port between Switch1 and PC3, how long does it take for it to become active?",
             correctAnswer: "30 seconds",
@@ -1642,10 +1642,10 @@ const quizzes = [
           {
             id: "q28-d-topology-appropriate-ips",
             type: "complete",
-            image: "img/Network2-Final-Q28.JPG",
+            image: "img/Network2-Final-Q28.jpg",
             question:
               "What is the appropriate IP address for both the first interface and the second interface?",
-            orderMode: "unordered",
+            orderMode: "ordered",
             correctAnswers: [
               "ip for first interface 192.168.1.1",
               "ip for second interface 192.168.2.1",
@@ -1654,7 +1654,7 @@ const quizzes = [
           {
             id: "q28-e-topology-dhcp-script",
             type: "complete",
-            image: "img/Network2-Final-Q28.JPG",
+            image: "img/Network2-Final-Q28.jpg",
             question:
               "List the script commands given to enable DHCP on the first interface with dns-server 8.8.8.8.",
             orderMode: "ordered",
