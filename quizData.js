@@ -1669,147 +1669,147 @@ const quizzes = [
             id: "q29-1-cmd-privileged-mode",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Enter Privileged mode from User Mode",
+              "To Enter Privileged mode from User Mode",
             correctAnswer: "ena",
           },
           {
             id: "q29-2-cmd-global-mode",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Enter Global mode from Privileged Mode",
+              "To Enter Global mode from Privileged Mode",
             correctAnswer: "config t",
           },
           {
             id: "q29-3-cmd-return-back",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Return or Back",
+              "To Return or Back",
             correctAnswer: "exit",
           },
           {
             id: "q29-4-cmd-rename-router",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Rename the Router to 'Mansoura University'",
+              "To Rename the Router to 'Mansoura University'",
             correctAnswer: "hostname MansouraUniversity",
           },
           {
             id: "q29-5-cmd-show-clock",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Know date and time for Router",
+              "To Know date and time for Router",
             correctAnswer: "show clock",
           },
           {
             id: "q29-6-cmd-set-clock",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To set date and time to 24/5/2026 and 12:30:00 PM",
+              "To set date and time to 24/5/2026 and 12:30:00 PM",
             correctAnswer: "clock set 12:30:00 24 May 2026",
           },
           {
             id: "q29-7-cmd-do-modifier",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Run any command in any case of mode",
+              "To Run any command in any case of mode",
             correctAnswer: "do",
           },
           {
             id: "q29-8-cmd-save-config",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To save Configurations",
+              "To save Configurations",
             correctAnswer: "copy run start",
           },
           {
             id: "q29-9-cmd-enter-interface",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Enter the GigaEthernet interface which port number is 0/0",
+              "To Enter the GigaEthernet interface which port number is 0/0",
             correctAnswer: "interface g0/0",
           },
           {
             id: "q29-10-cmd-enable-port",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Enable port",
+              "To Enable port",
             correctAnswer: "no shutdown",
           },
           {
             id: "q29-11-cmd-disable-port",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To Disable port",
+              "To Disable port",
             correctAnswer: "shutdown",
           },
           {
             id: "q29-12-cmd-set-ip",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To set interface witch IP address is '192.168.1.0' and its Subnet mask '255.255.255.0'",
+              "To set interface witch IP address is '192.168.1.0' and its Subnet mask '255.255.255.0'",
             correctAnswer: "ip address 192.168.1.0 255.255.255.0",
           },
           {
             id: "q29-13-cmd-remove-ip",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To remove interface IP address and Subnet mask",
+              "To remove interface IP address and Subnet mask",
             correctAnswer: "no ip address",
           },
           {
             id: "q29-14-cmd-show-interface-brief",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To show the content of configurations file",
+              "To show the content of configurations file",
             correctAnswer: "show ip interface br",
           },
           {
             id: "q29-15-cmd-show-ip-route",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To show table of routing",
+              "To show table of routing",
             correctAnswer: "show ip route",
           },
           {
             id: "q29-16-cmd-dhcp-pool-create",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To give number '1' to the Network interface",
+              "To give number '1' to the Network interface",
             correctAnswer: "ip dhcp pool 1",
           },
           {
             id: "q29-17-cmd-dhcp-pool-disable",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To disable DHCP on network interface which its number is '1'",
+              "To disable DHCP on network interface which its number is '1'",
             correctAnswer: "no ip dhcp pool 1",
           },
           {
             id: "q29-18-cmd-default-router",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To select the router default gateway '192.168.1.1'",
+              "To select the router default gateway '192.168.1.1'",
             correctAnswer: "default-router 192.168.1.1",
           },
           {
             id: "q29-19-cmd-dns-server",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To select DNS server '0.0.0.0'",
+              "To select DNS server '0.0.0.0'",
             correctAnswer: "dns-server 0.0.0.0",
           },
           {
             id: "q29-20-cmd-exclude-single-ip",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To exception the IP '192.168.2.3' from distribution",
+              "To exception the IP '192.168.2.3' from distribution",
             correctAnswer: "ip dhcp excluded-address 192.168.2.3",
           },
           {
             id: "q29-21-cmd-exclude-range-ip",
             type: "complete",
             question:
-              "Write the command that executes the required configuration: To exception range of Ips from 192.168.2.3 to 192.168.2.5 from distribution",
+              "To exception range of Ips from 192.168.2.3 to 192.168.2.5 from distribution",
             correctAnswer: "ip dhcp excluded-address 192.168.2.3 192.168.2.5",
           },
         ],
