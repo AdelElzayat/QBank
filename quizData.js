@@ -1469,7 +1469,7 @@ const quizzes = [
             id: "q5-vlsm-definition-purpose",
             type: "complete",
             question: "Define VLSM and its purpose",
-            correctAnswer: 
+            correctAnswer:
               "VLSM (Variable Length Subnet Mask) is a subnetting technique that allows using different subnet masks within the same network. Its main purpose is to allocate IP addresses efficiently based on the number of hosts required in each subnet, reducing IP waste.",
           },
           {
@@ -1497,7 +1497,7 @@ const quizzes = [
             id: "q8-advantages-vlsm",
             type: "complete",
             question: "Advantages of VLSM",
-            correctAnswer: 
+            correctAnswer:
               "VLSM improves IP address utilization by assigning different subnet sizes based on need. It reduces wastage, increases flexibility in network design, and supports better scalability in large enterprise networks.",
           },
           {
@@ -1668,57 +1668,49 @@ const quizzes = [
           {
             id: "q29-1-cmd-privileged-mode",
             type: "complete",
-            question:
-              "To Enter Privileged mode from User Mode",
+            question: "To Enter Privileged mode from User Mode",
             correctAnswer: "ena",
           },
           {
             id: "q29-2-cmd-global-mode",
             type: "complete",
-            question:
-              "To Enter Global mode from Privileged Mode",
+            question: "To Enter Global mode from Privileged Mode",
             correctAnswer: "config t",
           },
           {
             id: "q29-3-cmd-return-back",
             type: "complete",
-            question:
-              "To Return or Back",
+            question: "To Return or Back",
             correctAnswer: "exit",
           },
           {
             id: "q29-4-cmd-rename-router",
             type: "complete",
-            question:
-              "To Rename the Router to 'Mansoura University'",
+            question: "To Rename the Router to 'Mansoura University'",
             correctAnswer: "hostname MansouraUniversity",
           },
           {
             id: "q29-5-cmd-show-clock",
             type: "complete",
-            question:
-              "To Know date and time for Router",
+            question: "To Know date and time for Router",
             correctAnswer: "show clock",
           },
           {
             id: "q29-6-cmd-set-clock",
             type: "complete",
-            question:
-              "To set date and time to 24/5/2026 and 12:30:00 PM",
+            question: "To set date and time to 24/5/2026 and 12:30:00 PM",
             correctAnswer: "clock set 12:30:00 24 May 2026",
           },
           {
             id: "q29-7-cmd-do-modifier",
             type: "complete",
-            question:
-              "To Run any command in any case of mode",
+            question: "To Run any command in any case of mode",
             correctAnswer: "do",
           },
           {
             id: "q29-8-cmd-save-config",
             type: "complete",
-            question:
-              "To save Configurations",
+            question: "To save Configurations",
             correctAnswer: "copy run start",
           },
           {
@@ -1731,15 +1723,13 @@ const quizzes = [
           {
             id: "q29-10-cmd-enable-port",
             type: "complete",
-            question:
-              "To Enable port",
+            question: "To Enable port",
             correctAnswer: "no shutdown",
           },
           {
             id: "q29-11-cmd-disable-port",
             type: "complete",
-            question:
-              "To Disable port",
+            question: "To Disable port",
             correctAnswer: "shutdown",
           },
           {
@@ -1752,29 +1742,25 @@ const quizzes = [
           {
             id: "q29-13-cmd-remove-ip",
             type: "complete",
-            question:
-              "To remove interface IP address and Subnet mask",
+            question: "To remove interface IP address and Subnet mask",
             correctAnswer: "no ip address",
           },
           {
             id: "q29-14-cmd-show-interface-brief",
             type: "complete",
-            question:
-              "To show the content of configurations file",
+            question: "To show the content of configurations file",
             correctAnswer: "show ip interface br",
           },
           {
             id: "q29-15-cmd-show-ip-route",
             type: "complete",
-            question:
-              "To show table of routing",
+            question: "To show table of routing",
             correctAnswer: "show ip route",
           },
           {
             id: "q29-16-cmd-dhcp-pool-create",
             type: "complete",
-            question:
-              "To give number '1' to the Network interface",
+            question: "To give number '1' to the Network interface",
             correctAnswer: "ip dhcp pool 1",
           },
           {
@@ -1787,22 +1773,19 @@ const quizzes = [
           {
             id: "q29-18-cmd-default-router",
             type: "complete",
-            question:
-              "To select the router default gateway '192.168.1.1'",
+            question: "To select the router default gateway '192.168.1.1'",
             correctAnswer: "default-router 192.168.1.1",
           },
           {
             id: "q29-19-cmd-dns-server",
             type: "complete",
-            question:
-              "To select DNS server '0.0.0.0'",
+            question: "To select DNS server '0.0.0.0'",
             correctAnswer: "dns-server 0.0.0.0",
           },
           {
             id: "q29-20-cmd-exclude-single-ip",
             type: "complete",
-            question:
-              "To exception the IP '192.168.2.3' from distribution",
+            question: "To exception the IP '192.168.2.3' from distribution",
             correctAnswer: "ip dhcp excluded-address 192.168.2.3",
           },
           {
@@ -1897,6 +1880,250 @@ const quizzes = [
             question:
               "In medical diagnosis and medical decision support systems, both ______ and reliability are considered essential criteria for the models.",
             correctAnswer: "interpretability",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "reproductive-disorders",
+    title: "Reproductive Disorders",
+    isSubjectGroup: true,
+    chapters: [
+      {
+        id: "unit-3-reproductive-disorders",
+        title: "Unit 3: Reproductive Disorders",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question:
+              "Which of the following is a key reproductive mechanism of Antiphospholipid Syndrome (APS)?",
+            type: "multiple",
+            options: [
+              "Complement activation and endothelial damage",
+              "Destruction of primordial follicles by T-cells",
+              "Hyperprolactinemia suppressing GnRH",
+              "Granulosa cell anti-apoptosis via survivin overexpression",
+            ],
+            correctAnswer: "Complement activation and endothelial damage",
+            shuffle: true,
+          },
+          {
+            question:
+              "According to the Sydney criteria, how far apart must persistent positivity of aPL antibodies be evaluated on two occasions for an APS diagnosis?",
+            type: "multiple",
+            options: [
+              "Greater than or equal to 4 weeks apart",
+              "Greater than or equal to 6 weeks apart",
+              "Greater than or equal to 12 weeks apart",
+              "Greater than or equal to 24 weeks apart",
+            ],
+            correctAnswer: "Greater than or equal to 12 weeks apart",
+            shuffle: true,
+          },
+          {
+            question:
+              "Primary ovarian insufficiency (POI) is defined as ovarian failure before what age?",
+            type: "multiple",
+            options: ["Age 35", "Age 40", "Age 45", "Age 50"],
+            correctAnswer: "Age 40",
+            shuffle: true,
+          },
+          {
+            question:
+              "What specific hormonal threshold is used to define primary ovarian insufficiency (POI) in terms of FSH and estradiol?",
+            type: "multiple",
+            options: [
+              "FSH >40 IU/L and estradiol <100 pg/mL",
+              "FSH >25 IU/L and estradiol <50 pg/mL",
+              "FSH >10 IU/L and estradiol <25 pg/mL",
+              "FSH >55 IU/L and estradiol <75 pg/mL",
+            ],
+            correctAnswer: "FSH >25 IU/L and estradiol <50 pg/mL",
+            shuffle: true,
+          },
+          {
+            question:
+              "Autoimmune oophoritis is often associated with polyglandular autoimmune syndrome type 1 (APS-1), which involves mutations in which gene?",
+            type: "multiple",
+            options: ["SPO11 gene", "NR5A1 gene", "AIRE gene", "FMR1 gene"],
+            correctAnswer: "AIRE gene",
+            shuffle: true,
+          },
+          {
+            question:
+              "What specific serum TSH range is linked with a 2-3 fold increased miscarriage risk in subclinical hypothyroidism?",
+            type: "multiple",
+            options: [
+              "TSH >2.5 mIU/L",
+              "TSH >4.5 mIU/L",
+              "TSH 0.1-2.5 mIU/L",
+              "TSH >10 mIU/L",
+            ],
+            correctAnswer: "TSH >2.5 mIU/L",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the recommended preconception titration target for Levothyroxine (L-T4) in women with Hashimoto's thyroiditis?",
+            type: "multiple",
+            options: [
+              "TSH <4.5 mIU/L",
+              "TSH <2.5 mIU/L",
+              "TSH 0.1-2.5 mIU/L",
+              "TSH <1.0 mIU/L",
+            ],
+            correctAnswer: "TSH <2.5 mIU/L",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which genetic mutation follows an autosomal recessive pattern and causes non-obstructive azoospermia (NOA) in males due to spermatocyte arrest and POI in females?",
+            type: "multiple",
+            options: [
+              "SPO11 mutations",
+              "NR5A1 mutations",
+              "KAL1 mutations",
+              "FGFR1 mutations",
+            ],
+            correctAnswer: "SPO11 mutations",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which region of Y-chromosome microdeletions involves DAZ genes, causes variable oligospermia, and holds the highest testicular sperm extraction (TESE) success rate at 50%?",
+            type: "multiple",
+            options: ["AZFa", "AZBb", "AZFc", "AZFd"],
+            correctAnswer: "AZFc",
+            shuffle: true,
+          },
+          {
+            question:
+              "What pathogenetic mechanism describes Kallmann Syndrome and Hypogonadotropic Hypogonadism (HH)?",
+            type: "multiple",
+            options: [
+              "Defective neuronal migration causing anosmia and absent GnRH neurons",
+              "Hypermethylation of FMR1 gene leading to FMRP loss",
+              "Triplet repeat expansions causing RNA toxic gain-of-function in Sertoli cells",
+              "Mutation in the androgen receptor (AR) gene on Xq12 causing defective receptor signaling",
+            ],
+            correctAnswer:
+              "Defective neuronal migration causing anosmia and absent GnRH neurons",
+            shuffle: true,
+          },
+          {
+            question:
+              "Complete Androgen Insensitivity Syndrome (CAIS) is characterized by which of the following clinical presentations?",
+            type: "multiple",
+            options: [
+              "46,XX karyotype, ambiguous genitalia, and hyperandrogenism",
+              "46,XY karyotype, phenotypic female with blind vagina, absent uterus, and intra-abdominal testes",
+              "45,X karyotype, streak gonads, primary amenorrhea, and short stature",
+              "47,XXY karyotype, small testes, azoospermia, and gynecomastia",
+            ],
+            correctAnswer:
+              "46,XY karyotype, phenotypic female with blind vagina, absent uterus, and intra-abdominal testes",
+            shuffle: true,
+          },
+          {
+            question:
+              "A female patient has an FMR1 gene triplet repeat expansion size falling into the 'premutation' category. What is the range of repeats and her associated risk?",
+            type: "multiple",
+            options: [
+              "5-44 repeats; no risk of premature ovarian insufficiency",
+              "55-200 repeats; 20-25% risk of fragile X-associated premature ovarian failure (FXPOF)",
+              "200+ repeats; 50% shorter reproductive lifespan with hypermethylation",
+              "150-250 repeats; 10-15% risk of primary amenorrhea",
+            ],
+            correctAnswer:
+              "55-200 repeats; 20-25% risk of fragile X-associated premature ovarian failure (FXPOF)",
+            shuffle: true,
+          },
+          {
+            question:
+              "In Polycystic Ovary Syndrome (PCOS), what feature is overexpressed in granulosa cells, leading to anti-apoptosis and arrested antral folliculogenesis?",
+            type: "multiple",
+            options: ["HOXA10", "Survivin", "VEGF", "FasL"],
+            correctAnswer: "Survivin",
+            shuffle: true,
+          },
+          {
+            question:
+              "What mechanism is responsible for thin endometrium (<7mm) and implantation failure in Asherman Syndrome?",
+            type: "multiple",
+            options: [
+              "Progesterone resistance via KRAS mutations",
+              "Shallow trophoblast invasion due to sFlt-1/PIGF imbalance",
+              "TGF-beta1 overexpression causing myofibroblast proliferation and collagen deposition",
+              "E6/E7 oncoproteins inactivating p53/Rb proteins",
+            ],
+            correctAnswer:
+              "TGF-beta1 overexpression causing myofibroblast proliferation and collagen deposition",
+            shuffle: true,
+          },
+          {
+            question:
+              "How does a hydrosalpinx fluid from Pelvic Inflammatory Disease (PID) affect IVF outcomes?",
+            type: "multiple",
+            options: [
+              "It causes Leydig cell hyperplasia and inefficient steroidogenesis.",
+              "It contains embryotoxic cytokines/ROS that reduce IVF implantation by 50%.",
+              "It increases endometrial thickness beyond 4mm, mimicking atypical hyperplasia.",
+              "It prevents the differentiation of syncytiotrophoblasts via annexin V depletion.",
+            ],
+            correctAnswer:
+              "It contains embryotoxic cytokines/ROS that reduce IVF implantation by 50%.",
+            shuffle: true,
+          },
+          {
+            question:
+              "What specific histological findings are expected in a rare ovarian biopsy for a patient with Autoimmune Oophoritis?",
+            type: "multiple",
+            options: [
+              "Theca cell hyperplasia and cyst formation",
+              "Lymphocytic infiltration",
+              "Myofibroblast proliferation and dense collagen deposition",
+              "Hyalinized tubules and Leydig cell aplasia",
+            ],
+            correctAnswer: "Lymphocytic infiltration",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the estimated contribution of chronic prostatitis to cases of male infertility due to leukocyte influx and seminal ROS production?",
+            type: "multiple",
+            options: [
+              "10-15% contribution",
+              "20-25% contribution",
+              "30% contribution",
+              "50% contribution",
+            ],
+            correctAnswer: "30% contribution",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following describes the genetic composition and mechanism behind a gestational trophoblastic hydatidiform mole?",
+            type: "multiple",
+            options: [
+              "An extra maternal X-chromosome escaping inactivation via XIST dysregulation",
+              "A 45,X chromosomal breakdown resulting in streak gonads",
+              "An androgenic diploid sperm fertilizes an empty ovum, leading to trophoblast hyperplasia",
+              "A de novo autosomal dominant mutation in the NR5A1 gene disrupting gonadal differentiation",
+            ],
+            correctAnswer:
+              "An androgenic diploid sperm fertilizes an empty ovum, leading to trophoblast hyperplasia",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which gene mutation is associated with 46,XY gonadal dysgenesis (resulting in XY females with streak gonads) or 46,XX POI?",
+            type: "multiple",
+            options: ["CYP17A1", "HSD17B3", "NR5A1", "SPO11"],
+            correctAnswer: "NR5A1",
+            shuffle: true,
           },
         ],
       },
