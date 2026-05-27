@@ -1830,7 +1830,7 @@ const quizzes = [
             type: "complete",
             question:
               "When a deep neural network is fitted to data, this is referred to as _______.",
-            correctAnswer: "deep learning (DL)",
+            correctAnswer: "deep learning",
           },
           {
             id: "q4-mitchell-model-definition",
@@ -1850,8 +1850,8 @@ const quizzes = [
             id: "q6-sample-training-instance",
             type: "complete",
             question:
-              "Each individual training example within a training set is called a training instance or _______.",
-            correctAnswer: "sample",
+              "Each individual training example within a training set is called a _______.",
+            correctAnswer: "training sample",
           },
           {
             id: "q7-traditional-programming-vs-ml",
@@ -1878,14 +1878,14 @@ const quizzes = [
             id: "q10-dangerous-environment-learning",
             type: "complete",
             question:
-              "For humans, 'learning by doing' cannot be applied if the environment is .",
+              "For humans, 'learning by doing' cannot be applied if the environment is _______.",
             correctAnswer: "dangerous",
           },
           {
             id: "q11-predictive-analytics-historical-data",
             type: "complete",
             question:
-              " analytics uses machine learning models to estimate future values based on historical data.",
+              "_______ analytics uses machine learning models to estimate future values based on historical data.",
             correctAnswer: "Predictive",
           },
           {
@@ -1906,8 +1906,8 @@ const quizzes = [
             id: "q14-medical-diagnosis-vital-signs",
             type: "complete",
             question:
-              "In the application of medical diagnosis, classical algorithms analyze structured data such as laboratory results, medical history, and _______.",
-            correctAnswer: "vital signs",
+              "In the application of _______, classical algorithms analyze structured data such as laboratory results, medical history, and vital signs.",
+            correctAnswer: "medical diagnosis",
           },
           {
             id: "q15-medical-models-interpretability",
@@ -1919,9 +1919,14 @@ const quizzes = [
           {
             id: "q16-gaming-chess-piece-mobility",
             type: "complete",
+            orderMode: "unordered",
             question:
-              "In gaming applications like chess, features such as material balance, _______, and king safety are used to score positions.",
-            correctAnswer: "piece mobility",
+              "In gaming applications like chess, features such as _______, _______, and _______ are used to score positions.",
+            correctAnswers: [
+              "material balance",
+              "piece mobility",
+              "king safety",
+            ],
           },
         ],
       },
