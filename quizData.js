@@ -1807,866 +1807,908 @@ const quizzes = [
       {
         id: "lecture-1-quiz",
         title: "Lecture 1 Quiz",
-        shuffleQuestions: true,
+        shuffleQuestions: false,
         showScore: true,
         quizModeTimer: 1800,
         questions: [
           {
-            id: "q1-artificial-intelligence-simulation",
+            id: "q1-ai-intelligent-behavior",
             type: "complete",
             question:
-              "Artificial intelligence is concerned with building systems that simulate ______.",
+              "Artificial intelligence (AI) is concerned with building systems that simulate _______.",
             correctAnswer: "intelligent behavior",
           },
           {
-            id: "q2-machine-learning-mathematical-models",
+            id: "q2-ml-mathematical-models",
             type: "complete",
             question:
-              "Machine learning is a subset of AI that learns to make decisions by fitting ______ to observed data.",
+              "Machine learning (ML) is a subset of AI that learns to make decisions by fitting _______ to observed data.",
             correctAnswer: "mathematical models",
           },
           {
-            id: "q3-deep-neural-network-learning",
+            id: "q3-dl-deep-neural-network",
             type: "complete",
             question:
-              "When a deep neural network is fitted to data, this specific type of learning is referred to as ______.",
+              "When a deep neural network is fitted to data, this is referred to as _______.",
             correctAnswer: "deep learning (DL)",
           },
           {
-            id: "q4-machine-learning-primary-goal",
+            id: "q4-mitchell-model-definition",
             type: "complete",
             question:
-              "The primary goal of machine learning is to automatically detect ______ in data to predict future data or other outcomes of interest.",
-            correctAnswer: "patterns",
-          },
-          {
-            id: "q5-formal-definition-ml",
-            type: "complete",
-            question:
-              "In the formal definition of machine learning, a computer program learns from experience E with respect to some ______ T and some performance measure P.",
-            correctAnswer: "task",
-          },
-          {
-            id: "q6-learning-examples-collection",
-            type: "complete",
-            question:
-              "The specific examples that a machine learning system uses to learn from are collectively called the ______.",
-            correctAnswer: "training set",
-          },
-          {
-            id: "q7-learning-predictions-component",
-            type: "complete",
-            question:
-              "The part of a machine learning system that learns and makes predictions is known as a ______.",
+              "According to Tom Mitchell's definition, the part of a machine learning system that learns and makes predictions is called a _______.",
             correctAnswer: "model",
           },
           {
-            id: "q8-ml-necessity-human-expertise",
+            id: "q5-training-set-examples",
             type: "complete",
             question:
-              "One scenario where machine learning is necessary is when humans are unable to explain their own expertise, such as in speech or ______ recognition.",
-            correctAnswer: "image",
+              "The examples that a machine learning system uses to learn are called the _______.",
+            correctAnswer: "training set",
           },
           {
-            id: "q9-quality-control-intrusion-detection",
+            id: "q6-sample-training-instance",
             type: "complete",
             question:
-              "In manufacturing quality control and network intrusion detection, machine learning is applied through ______ to identify rare data points that deviate from normal patterns.",
-            correctAnswer: "anomaly detection",
+              "Each individual training example within a training set is called a training instance or _______.",
+            correctAnswer: "sample",
           },
           {
-            id: "q10-medical-diagnosis-essential-criteria",
+            id: "q7-traditional-programming-vs-ml",
             type: "complete",
             question:
-              "In medical diagnosis and medical decision support systems, both ______ and reliability are considered essential criteria for the models.",
+              "In traditional programming, the computer takes data and a program as inputs to produce an output, whereas in machine learning, the computer takes data and _______ as inputs to produce a program.",
+            correctAnswer: "output",
+          },
+          {
+            id: "q8-explain-human-expertise",
+            type: "complete",
+            question:
+              "One of the cases where machine learning is necessary is when humans are unable to _______ their expertise, such as in speech or image recognition.",
+            correctAnswer: "explain",
+          },
+          {
+            id: "q9-mars-navigation-expertise",
+            type: "complete",
+            question:
+              "Navigating on Mars is given as an example of using machine learning because human _______ does not exist or there is a danger.",
+            correctAnswer: "expertise",
+          },
+          {
+            id: "q10-dangerous-environment-learning",
+            type: "complete",
+            question:
+              "For humans, 'learning by doing' cannot be applied if the environment is .",
+            correctAnswer: "dangerous",
+          },
+          {
+            id: "q11-predictive-analytics-historical-data",
+            type: "complete",
+            question:
+              " analytics uses machine learning models to estimate future values based on historical data.",
+            correctAnswer: "Predictive",
+          },
+          {
+            id: "q12-fraud-detection-normal-behavior",
+            type: "complete",
+            question:
+              "Fraud and risk detection focuses on identifying unusual or suspicious behavior within large datasets by learning patterns of _______ behavior and flagging deviations.",
+            correctAnswer: "normal",
+          },
+          {
+            id: "q13-spam-filter-performance-ratio",
+            type: "complete",
+            question:
+              "In a spam filter application, the performance measure P can be defined as the ratio of _______ emails.",
+            correctAnswer: "correctly classified",
+          },
+          {
+            id: "q14-medical-diagnosis-vital-signs",
+            type: "complete",
+            question:
+              "In the application of medical diagnosis, classical algorithms analyze structured data such as laboratory results, medical history, and _______.",
+            correctAnswer: "vital signs",
+          },
+          {
+            id: "q15-medical-models-interpretability",
+            type: "complete",
+            question:
+              "Apart from reliability, _______ is highlighted as an essential requirement for machine learning models used in medical diagnosis and decision support systems.",
             correctAnswer: "interpretability",
           },
-        ],
-      },
-    ],
-  },
-  {
-    id: "reproductive-disorders",
-    title: "Reproductive Disorders",
-    isSubjectGroup: true,
-    chapters: [
-      {
-        id: "unit-1-reproductive-disorders",
-        title: "Unit 1: Reproductive Disorders",
-        shuffleQuestions: false,
-        showScore: true,
-        quizModeTimer: 1800,
-        questions: [
           {
+            id: "q16-gaming-chess-piece-mobility",
+            type: "complete",
             question:
-              "In the three main stages of sexual differentiation, when does gonadal sex development typically occur, and what specific factor influences the development of testes?",
-            type: "multiple",
-            options: [
-              "At fertilization; determined by XX or XY chromosomes",
-              "Around 6-8 weeks gestation; influenced by the SRY gene on the Y chromosome",
-              "Around 12-14 weeks gestation; influenced by anti-Müllerian hormone (AMH)",
-              "At birth; under the direct influence of testosterone and estrogen",
-            ],
-            correctAnswer:
-              "Around 6-8 weeks gestation; influenced by the SRY gene on the Y chromosome",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which embryonic structures develop into the female uterus and fallopian tubes, and under what condition is this development prevented?",
-            type: "multiple",
-            options: [
-              "Wolffian ducts; unless inhibited by testosterone",
-              "Müllerian ducts; unless inhibited by anti-Müllerian hormone (AMH) from the testes",
-              "Wolffian ducts; unless inhibited by estrogen from the ovaries",
-              "Müllerian ducts; unless stimulated by 5-alpha reductase",
-            ],
-            correctAnswer:
-              "Müllerian ducts; unless inhibited by anti-Müllerian hormone (AMH) from the testes",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the estimated incidence rate of Disorders of Sex Development (DSDs) in live births, and how are these conditions classified?",
-            type: "multiple",
-            options: [
-              "~1 in 500 births; classified by physical appearance",
-              "~1 in 2,500 births; classified by chromosomal count only",
-              "~1 in 4,400 births; classified by the Prader scale severity",
-              "~1 in 4,500 births; classified by etiology",
-            ],
-            correctAnswer: "~1 in 4,500 births; classified by etiology",
-            shuffle: true,
-          },
-          {
-            question:
-              "A patient presents with a 45,X karyotype, short stature, a webbed neck, cardiac defects like coarctation of the aorta, and streak ovaries. What is the diagnosis and recommended treatment based on the text?",
-            type: "multiple",
-            options: [
-              "Klinefelter Syndrome; treated with testosterone therapy",
-              "Swyer Syndrome; treated with surgery and progesterone",
-              "Turner Syndrome; treated with growth hormone and estrogen replacement",
-              "Ovotesticular DSD; treated with gender reassignment surgery",
-            ],
-            correctAnswer:
-              "Turner Syndrome; treated with growth hormone and estrogen replacement",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which of the following describes the chromosomal abnormality and key clinical features of Klinefelter Syndrome?",
-            type: "multiple",
-            options: [
-              "45,X; short stature, webbed neck, and ovarian dysgenesis",
-              "47,XXY; tall stature, gynecomastia, small testes, infertility, and reduced testosterone",
-              "46,XY; female external genitalia, uterus, but no ovaries",
-              "48,XXYY; ambiguous genitalia at birth that completely virilizes at puberty",
-            ],
-            correctAnswer:
-              "47,XXY; tall stature, gynecomastia, small testes, infertility, and reduced testosterone",
-            shuffle: true,
-          },
-          {
-            question:
-              "In Swyer Syndrome (46,XY DSD), a mutation in the SRY or related genes prevents testis formation. What is the resulting phenotype of these individuals?",
-            type: "multiple",
-            options: [
-              "Typical male external genitalia, undescended testes, and high testosterone levels",
-              "Ambiguous genitalia at birth (micropenis, hypospadias) with sudden virilization at puberty",
-              "Female external genitalia, a uterus, but no ovaries (streak-like gonads)",
-              "Presence of both distinct ovarian and testicular tissue with a normal male phenotype",
-            ],
-            correctAnswer:
-              "Female external genitalia, a uterus, but no ovaries (streak-like gonads)",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which phenotypic differentiation defect is characterized by normal male chromosomes (46,XY) and testes that produce testosterone, but a body that does not respond to it due to a receptor mutation?",
-            type: "multiple",
-            options: [
-              "5-Alpha Reductase Deficiency",
-              "Congenital Adrenal Hyperplasia (CAH)",
-              "Swyer Syndrome",
-              "Androgen Insensitivity Syndrome (AIS)",
-            ],
-            correctAnswer: "Androgen Insensitivity Syndrome (AIS)",
-            shuffle: true,
-          },
-          {
-            question:
-              "A child is born with ambiguous genitalia, including a micropenis and hypospadias. At puberty, the child experiences significant virilization. What is the most likely underlying defect?",
-            type: "multiple",
-            options: [
-              "Androgen Insensitivity Syndrome (AIS)",
-              "5-Alpha Reductase Deficiency",
-              "21-Hydroxylase Deficiency (CAH)",
-              "Turner Syndrome",
-            ],
-            correctAnswer: "5-Alpha Reductase Deficiency",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the specific enzymatic defect in Congenital Adrenal Hyperplasia (CAH) mentioned in the text, and what are its classic phenotypic expressions in a 46,XX individual?",
-            type: "multiple",
-            options: [
-              "SRY translocation; presence of both ovarian and testicular tissues",
-              "Androgen receptor deficiency; female external genitalia with an absent uterus",
-              "21-Hydroxylase Deficiency; virilized female genitalia (clitoromegaly, fused labia) and a salt-wasting crisis",
-              "5-alpha reductase deficiency; typical male external genitalia with a severe growth spurt",
-            ],
-            correctAnswer:
-              "21-Hydroxylase Deficiency; virilized female genitalia (clitoromegaly, fused labia) and a salt-wasting crisis",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which scale is used to classify the severity of ambiguous genitalia based on phallus size and urethral position?",
-            type: "multiple",
-            options: [
-              "Tanner scale",
-              "Prader scale",
-              "GnRH scale",
-              "Müllerian scale",
-            ],
-            correctAnswer: "Prader scale",
-            shuffle: true,
-          },
-          {
-            question:
-              "How are central and peripheral precocious puberty differentiated etiologically and diagnostically?",
-            type: "multiple",
-            options: [
-              "Central is gonadotropin-independent (low LH/FSH); peripheral is gonadotropin-dependent (high LH/FSH)",
-              "Central involves premature activation of the HPG axis with elevated LH/FSH; peripheral is gonadotropin-independent with suppressed LH/FSH",
-              "Central is caused exclusively by McCune-Albright syndrome; peripheral is always idiopathic",
-              "Central is diagnosed via bone age X-ray; peripheral is diagnosed strictly via pelvic laparoscopy",
-            ],
-            correctAnswer:
-              "Central involves premature activation of the HPG axis with elevated LH/FSH; peripheral is gonadotropin-independent with suppressed LH/FSH",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the most common cause of central precocious puberty in girls, and what medication is typically used to halt its progression?",
-            type: "multiple",
-            options: [
-              "Brain tumors (hamartoma); treated with testosterone",
-              "Ovarian tumors; treated with transsphenoidal surgery",
-              "Idiopathic; treated with GnRH agonists (e.g., leuprolide)",
-              "Adrenal hyperplasia; treated with glucocorticoids",
-            ],
-            correctAnswer:
-              "Idiopathic; treated with GnRH agonists (e.g., leuprolide)",
-            shuffle: true,
-          },
-          {
-            question:
-              "Delayed puberty is defined as the absence of pubertal signs by what age thresholds in girls and boys respectively?",
-            type: "multiple",
-            options: [
-              "Age 11 in girls or age 12 in boys",
-              "Age 13 in girls or age 14 in boys",
-              "Age 15 in girls or age 16 in boys",
-              "Age 12 in girls or age 15 in boys",
-            ],
-            correctAnswer: "Age 13 in girls or age 14 in boys",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which condition is a pathological cause of delayed puberty characterized as hypogonadotropic hypogonadism accompanied by a lack of smell (anosmia)?",
-            type: "multiple",
-            options: [
-              "Turner syndrome",
-              "Klinefelter syndrome",
-              "Kallmann syndrome",
-              "McCune-Albright syndrome",
-            ],
-            correctAnswer: "Kallmann syndrome",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the difference between primary and secondary amenorrhea based on the lecture guidelines?",
-            type: "multiple",
-            options: [
-              "Primary is pain during menses; secondary is the total absence of a cycle for more than 1 year",
-              "Primary is the absence of periods by age 15-16 (or 13 if no secondary sex characteristics); secondary is the cessation of periods for '>=3 months' in women with prior menses",
-              "Primary is due to anovulation; secondary is caused strictly by an imperforate hymen",
-              "Primary occurs before menopause; secondary occurs post-menopause",
-            ],
-            correctAnswer:
-              "Primary is the absence of periods by age 15-16 (or 13 if no secondary sex characteristics); secondary is the cessation of periods for '>=3 months' in women with prior menses",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the most common cause of secondary amenorrhea, and what is the most common cause of oligomenorrhea?",
-            type: "multiple",
-            options: [
-              "Polycystic ovary syndrome (PCOS); Thyroid disorders",
-              "Stress; Hypothalamic dysfunction",
-              "Pregnancy; Polycystic ovary syndrome (PCOS)",
-              "Hyperprolactinemia; Premature ovarian failure",
-            ],
-            correctAnswer: "Pregnancy; Polycystic ovary syndrome (PCOS)",
-            shuffle: true,
-          },
-          {
-            question:
-              "Primary dysmenorrhea is defined as painful periods with no underlying pathology. What is its primary physiological cause?",
-            type: "multiple",
-            options: [
-              "Endometriosis or fibroids",
-              "Cervical stenosis compressing the nerve path",
-              "Prostaglandin-mediated uterine contractions",
-              "Excess production of adrenal cortisol",
-            ],
-            correctAnswer: "Prostaglandin-mediated uterine contractions",
-            shuffle: true,
-          },
-          {
-            question:
-              "How is anovulation definitively diagnosed using hormone levels, and what is a first-line ovulation induction agent used if the cause is PCOS?",
-            type: "multiple",
-            options: [
-              "Mid-cycle progesterone '<3 ng/mL'; clomiphene",
-              "Mid-cycle progesterone '>25 ng/mL'; cabergoline",
-              "Suppressed LH/FSH ratio; leuprolide",
-              "Elevated cortisol levels; glucocorticoids",
-            ],
-            correctAnswer: "Mid-cycle progesterone '<3 ng/mL'; clomiphene",
-            shuffle: true,
-          },
-          {
-            question:
-              "How is Primary Hypogonadism distinguished from Secondary Hypogonadism in blood test results?",
-            type: "multiple",
-            options: [
-              "Primary has low FSH/LH; Secondary has high FSH/LH",
-              "Primary has high FSH/LH with low testosterone/estradiol; Secondary has low/normal FSH/LH with low testosterone/estradiol",
-              "Primary features elevated prolactin levels; Secondary features elevated cortisol levels",
-              "Primary is diagnosed via pelvic ultrasound; Secondary can only be diagnosed using an X-ray",
-            ],
-            correctAnswer:
-              "Primary has high FSH/LH with low testosterone/estradiol; Secondary has low/normal FSH/LH with low testosterone/estradiol",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the most common cause of hyperprolactinemia, and how does elevated prolactin directly impact fertility?",
-            type: "multiple",
-            options: [
-              "Hypothyroidism; it destroys ovarian and testicular tissue structures directly",
-              "Pituitary prolactinoma; it inhibits GnRH, suppressing FSH/LH and causing anovulation or oligospermia",
-              "Adrenal hyperplasia; it elevates testosterone to block egg implantation",
-              "Chronic kidney disease; it triggers premature epiphyseal fusion",
-            ],
-            correctAnswer:
-              "Pituitary prolactinoma; it inhibits GnRH, suppressing FSH/LH and causing anovulation or oligospermia",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which class of medications is the first-line medical treatment for hyperprolactinemia to lower prolactin levels and shrink pituitary tumors?",
-            type: "multiple",
-            options: [
-              "GnRH agonists (e.g., leuprolide)",
-              "Glucocorticoids (e.g., hydrocortisone)",
-              "Dopamine agonists (e.g., cabergoline, bromocriptine)",
-              "Non-steroidal anti-inflammatory drugs (NSAIDs)",
-            ],
-            correctAnswer:
-              "Dopamine agonists (e.g., cabergoline, bromocriptine)",
-            shuffle: true,
-          },
-        ],
-      },
-      {
-        id: "unit-2-reproductive-disorders",
-        title: "Unit 2: Reproductive Disorders",
-        shuffleQuestions: false,
-        showScore: true,
-        quizModeTimer: 1800,
-        questions: [
-          {
-            question:
-              "What is the definition of infertility for a woman under the age of 35?",
-            type: "multiple",
-            options: [
-              "Inability to conceive after 6 months of regular unprotected intercourse",
-              "Inability to conceive after 12 months of regular unprotected intercourse",
-              "Inability to conceive after 18 months of regular unprotected intercourse",
-              "Inability to conceive after 24 months of regular unprotected intercourse",
-            ],
-            correctAnswer:
-              "Inability to conceive after 12 months of regular unprotected intercourse",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which of the following is categorized as a pre-testicular cause of male infertility?",
-            type: "multiple",
-            options: [
-              "Cryptorchidism",
-              "Varicocele",
-              "Hypogonadotropic hypogonadism",
-              "Congenital bilateral absence of vas deferens",
-            ],
-            correctAnswer: "Hypogonadotropic hypogonadism",
-            shuffle: true,
-          },
-          {
-            question:
-              "According to WHO criteria, what is the minimum normal value for total sperm motility?",
-            type: "multiple",
-            options: ["≥32%", "≥40%", "≥15%", "≥4%"],
-            correctAnswer: "≥40%",
-            shuffle: true,
-          },
-          {
-            question:
-              "A semen analysis profile shows a sperm count of less than 15 million/mL. How is this condition classified?",
-            type: "multiple",
-            options: [
-              "Azoospermia",
-              "Asthenozoospermia",
-              "Teratozoospermia",
-              "Oligospermia",
-            ],
-            correctAnswer: "Oligospermia",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which of the following is the most common cause of ovulatory disorders in female infertility?",
-            type: "multiple",
-            options: [
-              "Premature ovarian failure",
-              "Polycystic Ovary Syndrome (PCOS)",
-              "Hyperprolactinemia",
-              "Hypothalamic amenorrhea",
-            ],
-            correctAnswer: "Polycystic Ovary Syndrome (PCOS)",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which imaging technique is specifically mentioned in the text for evaluating tubal patency?",
-            type: "multiple",
-            options: [
-              "Transvaginal ultrasound (USG)",
-              "Magnetic Resonance Imaging (MRI)",
-              "Hysterosalpingography (HSG)",
-              "Scrotal ultrasound (USG)",
-            ],
-            correctAnswer: "Hysterosalpingography (HSG)",
-            shuffle: true,
-          },
-          {
-            question:
-              "What values indicate a low ovarian reserve and diminished ovarian reserve during hormone assessments?",
-            type: "multiple",
-            options: [
-              "AMH <1 ng/mL and Day 3 FSH >10 IU/L",
-              "AMH >1 ng/mL and Day 3 FSH <10 IU/L",
-              "Mid-luteal progesterone >10 ng/mL",
-              "Mid-luteal progesterone <25 nmol/L",
-            ],
-            correctAnswer: "AMH <1 ng/mL and Day 3 FSH >10 IU/L",
-            shuffle: true,
-          },
-          {
-            question:
-              "Vascular causes account for what percentage of sexual dysfunction cases?",
-            type: "multiple",
-            options: ["10-20%", "5%", "40-50%", "15%"],
-            correctAnswer: "40-50%",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which screening tool score indicates Erectile Dysfunction (ED) according to the text?",
-            type: "multiple",
-            options: [
-              "IIEF-5 score <21",
-              "BPP score <6/10",
-              "IIEF-5 score >21",
-              "FSFI score <21",
-            ],
-            correctAnswer: "IIEF-5 score <21",
-            shuffle: true,
-          },
-          {
-            question:
-              "How is retrograde ejaculation diagnosed according to the provided lecture?",
-            type: "multiple",
-            options: [
-              "Peak systolic velocity <25 cm/s on a Doppler ultrasound",
-              "Post-orgasm urinalysis revealing spermatozoa",
-              "Speculum exam revealing pelvic floor muscle spasms",
-              "Elevated morning testosterone levels",
-            ],
-            correctAnswer: "Post-orgasm urinalysis revealing spermatozoa",
-            shuffle: true,
-          },
-          {
-            question:
-              "Pelvic floor physiotherapy using dilators and cognitive behavioral therapy (CBT) are standard treatments for which condition?",
-            type: "multiple",
-            options: [
-              "Retrograde ejaculation",
-              "Erectile Dysfunction",
-              "Vaginismus",
-              "Asymmetric IUGR",
-            ],
-            correctAnswer: "Vaginismus",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the most common cause of sporadic first-trimester spontaneous pregnancy loss?",
-            type: "multiple",
-            options: [
-              "Anatomical defects (like a septate uterus)",
-              "Chromosomal abnormalities (Aneuploidy)",
-              "Paternal sperm DNA fragmentation",
-              "Maternal infections like Listeria",
-            ],
-            correctAnswer: "Chromosomal abnormalities (Aneuploidy)",
-            shuffle: true,
-          },
-          {
-            question:
-              "A patient presents with vaginal bleeding and cramping. Upon clinical examination, the cervix is closed and ultrasound confirms a viable fetus. Which type of miscarriage is this?",
-            type: "multiple",
-            options: ["Inevitable", "Incomplete", "Missed", "Threatened"],
-            correctAnswer: "Threatened",
-            shuffle: true,
-          },
-          {
-            question:
-              "According to ESHRE guidelines for Recurrent Pregnancy Loss (RPL), which test should be administered to all couples?",
-            type: "multiple",
-            options: [
-              "Inherited thrombophilia screening",
-              "Parental karyotype",
-              "Testicular biopsy",
-              "24h urine protein test",
-            ],
-            correctAnswer: "Parental karyotype",
-            shuffle: true,
-          },
-          {
-            question:
-              "What criteria must be met to establish a diagnosis of Pre-eclampsia?",
-            type: "multiple",
-            options: [
-              "New hypertension after 20 weeks + blood glucose ≥5.1 mmol/L",
-              "New hypertension before 20 weeks + proteinuria ≥300 mg/24h",
-              "New hypertension after 20 weeks + proteinuria (≥300 mg/24h or protein/creatinine ≥30) or end-organ damage",
-              "Blood pressure ≥160/110 mmHg at any gestational age with no proteinuria",
-            ],
-            correctAnswer:
-              "New hypertension after 20 weeks + proteinuria (≥300 mg/24h or protein/creatinine ≥30) or end-organ damage",
-            shuffle: true,
-          },
-          {
-            question:
-              "An umbilical-to-middle cerebral artery (MCA) Doppler ratio of >4 indicates what condition in a growth-restricted fetus?",
-            type: "multiple",
-            options: [
-              "Normal placentation",
-              "Brain-sparing effect",
-              "Ejaculatory duct obstruction",
-              "Chorioamnionitis",
-            ],
-            correctAnswer: "Brain-sparing effect",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which of the following blood glucose thresholds is used to diagnose Gestational Diabetes Mellitus (GDM) 1 hour after a glucose challenge?",
-            type: "multiple",
-            options: [
-              "≥5.1 mmol/L",
-              "≥8.5 mmol/L",
-              "≥10.0 mmol/L",
-              "≥7.2 mmol/L",
-            ],
-            correctAnswer: "≥10.0 mmol/L",
-            shuffle: true,
-          },
-          {
-            question:
-              "According to the text, prolonged labour (dystocia) in the active phase is characterized by protracted descent/dilation. What is a primary cause of this?",
-            type: "multiple",
-            options: [
-              "Inadequate contractions",
-              "Maternal anxiety",
-              "Cephalopelvic disproportion (CPD) or malposition",
-              "Premature rupture of membranes",
-            ],
-            correctAnswer: "Cephalopelvic disproportion (CPD) or malposition",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the recommended management approach for a patient with Preterm Premature Rupture of Membranes (PPROM) at less than 34 weeks gestation without immediate infection?",
-            type: "multiple",
-            options: [
-              "Induce labour immediately",
-              "Perform an emergency D&C",
-              "Administer antibiotics (erythromycin), steroids, MgSO4, and use expectant management till 37 weeks",
-              "Perform a hysteroscopic metroplasty",
-            ],
-            correctAnswer:
-              "Administer antibiotics (erythromycin), steroids, MgSO4, and use expectant management till 37 weeks",
-            shuffle: true,
-          },
-        ],
-      },
-      {
-        id: "unit-3-reproductive-disorders",
-        title: "Unit 3: Reproductive Disorders",
-        shuffleQuestions: false,
-        showScore: true,
-        quizModeTimer: 1800,
-        questions: [
-          {
-            question:
-              "Which of the following is a key reproductive mechanism of Antiphospholipid Syndrome (APS)?",
-            type: "multiple",
-            options: [
-              "Complement activation and endothelial damage",
-              "Destruction of primordial follicles by T-cells",
-              "Hyperprolactinemia suppressing GnRH",
-              "Granulosa cell anti-apoptosis via survivin overexpression",
-            ],
-            correctAnswer: "Complement activation and endothelial damage",
-            shuffle: true,
-          },
-          {
-            question:
-              "According to the Sydney criteria, how far apart must persistent positivity of aPL antibodies be evaluated on two occasions for an APS diagnosis?",
-            type: "multiple",
-            options: [
-              "Greater than or equal to 4 weeks apart",
-              "Greater than or equal to 6 weeks apart",
-              "Greater than or equal to 12 weeks apart",
-              "Greater than or equal to 24 weeks apart",
-            ],
-            correctAnswer: "Greater than or equal to 12 weeks apart",
-            shuffle: true,
-          },
-          {
-            question:
-              "Primary ovarian insufficiency (POI) is defined as ovarian failure before what age?",
-            type: "multiple",
-            options: ["Age 35", "Age 40", "Age 45", "Age 50"],
-            correctAnswer: "Age 40",
-            shuffle: true,
-          },
-          {
-            question:
-              "What specific hormonal threshold is used to define primary ovarian insufficiency (POI) in terms of FSH and estradiol?",
-            type: "multiple",
-            options: [
-              "FSH >40 IU/L and estradiol <100 pg/mL",
-              "FSH >25 IU/L and estradiol <50 pg/mL",
-              "FSH >10 IU/L and estradiol <25 pg/mL",
-              "FSH >55 IU/L and estradiol <75 pg/mL",
-            ],
-            correctAnswer: "FSH >25 IU/L and estradiol <50 pg/mL",
-            shuffle: true,
-          },
-          {
-            question:
-              "Autoimmune oophoritis is often associated with polyglandular autoimmune syndrome type 1 (APS-1), which involves mutations in which gene?",
-            type: "multiple",
-            options: ["SPO11 gene", "NR5A1 gene", "AIRE gene", "FMR1 gene"],
-            correctAnswer: "AIRE gene",
-            shuffle: true,
-          },
-          {
-            question:
-              "What specific serum TSH range is linked with a 2-3 fold increased miscarriage risk in subclinical hypothyroidism?",
-            type: "multiple",
-            options: [
-              "TSH >2.5 mIU/L",
-              "TSH >4.5 mIU/L",
-              "TSH 0.1-2.5 mIU/L",
-              "TSH >10 mIU/L",
-            ],
-            correctAnswer: "TSH >2.5 mIU/L",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the recommended preconception titration target for Levothyroxine (L-T4) in women with Hashimoto's thyroiditis?",
-            type: "multiple",
-            options: [
-              "TSH <4.5 mIU/L",
-              "TSH <2.5 mIU/L",
-              "TSH 0.1-2.5 mIU/L",
-              "TSH <1.0 mIU/L",
-            ],
-            correctAnswer: "TSH <2.5 mIU/L",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which genetic mutation follows an autosomal recessive pattern and causes non-obstructive azoospermia (NOA) in males due to spermatocyte arrest and POI in females?",
-            type: "multiple",
-            options: [
-              "SPO11 mutations",
-              "NR5A1 mutations",
-              "KAL1 mutations",
-              "FGFR1 mutations",
-            ],
-            correctAnswer: "SPO11 mutations",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which region of Y-chromosome microdeletions involves DAZ genes, causes variable oligospermia, and holds the highest testicular sperm extraction (TESE) success rate at 50%?",
-            type: "multiple",
-            options: ["AZFa", "AZBb", "AZFc", "AZFd"],
-            correctAnswer: "AZFc",
-            shuffle: true,
-          },
-          {
-            question:
-              "What pathogenetic mechanism describes Kallmann Syndrome and Hypogonadotropic Hypogonadism (HH)?",
-            type: "multiple",
-            options: [
-              "Defective neuronal migration causing anosmia and absent GnRH neurons",
-              "Hypermethylation of FMR1 gene leading to FMRP loss",
-              "Triplet repeat expansions causing RNA toxic gain-of-function in Sertoli cells",
-              "Mutation in the androgen receptor (AR) gene on Xq12 causing defective receptor signaling",
-            ],
-            correctAnswer:
-              "Defective neuronal migration causing anosmia and absent GnRH neurons",
-            shuffle: true,
-          },
-          {
-            question:
-              "Complete Androgen Insensitivity Syndrome (CAIS) is characterized by which of the following clinical presentations?",
-            type: "multiple",
-            options: [
-              "46,XX karyotype, ambiguous genitalia, and hyperandrogenism",
-              "46,XY karyotype, phenotypic female with blind vagina, absent uterus, and intra-abdominal testes",
-              "45,X karyotype, streak gonads, primary amenorrhea, and short stature",
-              "47,XXY karyotype, small testes, azoospermia, and gynecomastia",
-            ],
-            correctAnswer:
-              "46,XY karyotype, phenotypic female with blind vagina, absent uterus, and intra-abdominal testes",
-            shuffle: true,
-          },
-          {
-            question:
-              "A female patient has an FMR1 gene triplet repeat expansion size falling into the 'premutation' category. What is the range of repeats and her associated risk?",
-            type: "multiple",
-            options: [
-              "5-44 repeats; no risk of premature ovarian insufficiency",
-              "55-200 repeats; 20-25% risk of fragile X-associated premature ovarian failure (FXPOF)",
-              "200+ repeats; 50% shorter reproductive lifespan with hypermethylation",
-              "150-250 repeats; 10-15% risk of primary amenorrhea",
-            ],
-            correctAnswer:
-              "55-200 repeats; 20-25% risk of fragile X-associated premature ovarian failure (FXPOF)",
-            shuffle: true,
-          },
-          {
-            question:
-              "In Polycystic Ovary Syndrome (PCOS), what feature is overexpressed in granulosa cells, leading to anti-apoptosis and arrested antral folliculogenesis?",
-            type: "multiple",
-            options: ["HOXA10", "Survivin", "VEGF", "FasL"],
-            correctAnswer: "Survivin",
-            shuffle: true,
-          },
-          {
-            question:
-              "What mechanism is responsible for thin endometrium (<7mm) and implantation failure in Asherman Syndrome?",
-            type: "multiple",
-            options: [
-              "Progesterone resistance via KRAS mutations",
-              "Shallow trophoblast invasion due to sFlt-1/PIGF imbalance",
-              "TGF-beta1 overexpression causing myofibroblast proliferation and collagen deposition",
-              "E6/E7 oncoproteins inactivating p53/Rb proteins",
-            ],
-            correctAnswer:
-              "TGF-beta1 overexpression causing myofibroblast proliferation and collagen deposition",
-            shuffle: true,
-          },
-          {
-            question:
-              "How does a hydrosalpinx fluid from Pelvic Inflammatory Disease (PID) affect IVF outcomes?",
-            type: "multiple",
-            options: [
-              "It causes Leydig cell hyperplasia and inefficient steroidogenesis.",
-              "It contains embryotoxic cytokines/ROS that reduce IVF implantation by 50%.",
-              "It increases endometrial thickness beyond 4mm, mimicking atypical hyperplasia.",
-              "It prevents the differentiation of syncytiotrophoblasts via annexin V depletion.",
-            ],
-            correctAnswer:
-              "It contains embryotoxic cytokines/ROS that reduce IVF implantation by 50%.",
-            shuffle: true,
-          },
-          {
-            question:
-              "What specific histological findings are expected in a rare ovarian biopsy for a patient with Autoimmune Oophoritis?",
-            type: "multiple",
-            options: [
-              "Theca cell hyperplasia and cyst formation",
-              "Lymphocytic infiltration",
-              "Myofibroblast proliferation and dense collagen deposition",
-              "Hyalinized tubules and Leydig cell aplasia",
-            ],
-            correctAnswer: "Lymphocytic infiltration",
-            shuffle: true,
-          },
-          {
-            question:
-              "What is the estimated contribution of chronic prostatitis to cases of male infertility due to leukocyte influx and seminal ROS production?",
-            type: "multiple",
-            options: [
-              "10-15% contribution",
-              "20-25% contribution",
-              "30% contribution",
-              "50% contribution",
-            ],
-            correctAnswer: "30% contribution",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which of the following describes the genetic composition and mechanism behind a gestational trophoblastic hydatidiform mole?",
-            type: "multiple",
-            options: [
-              "An extra maternal X-chromosome escaping inactivation via XIST dysregulation",
-              "A 45,X chromosomal breakdown resulting in streak gonads",
-              "An androgenic diploid sperm fertilizes an empty ovum, leading to trophoblast hyperplasia",
-              "A de novo autosomal dominant mutation in the NR5A1 gene disrupting gonadal differentiation",
-            ],
-            correctAnswer:
-              "An androgenic diploid sperm fertilizes an empty ovum, leading to trophoblast hyperplasia",
-            shuffle: true,
-          },
-          {
-            question:
-              "Which gene mutation is associated with 46,XY gonadal dysgenesis (resulting in XY females with streak gonads) or 46,XX POI?",
-            type: "multiple",
-            options: ["CYP17A1", "HSD17B3", "NR5A1", "SPO11"],
-            correctAnswer: "NR5A1",
-            shuffle: true,
+              "In gaming applications like chess, features such as material balance, _______, and king safety are used to score positions.",
+            correctAnswer: "piece mobility",
           },
         ],
       },
     ],
   },
+  // {
+  //   id: "reproductive-disorders",
+  //   title: "Reproductive Disorders",
+  //   isSubjectGroup: true,
+  //   chapters: [
+  //     {
+  //       id: "unit-1-reproductive-disorders",
+  //       title: "Unit 1: Reproductive Disorders",
+  //       shuffleQuestions: false,
+  //       showScore: true,
+  //       quizModeTimer: 1800,
+  //       questions: [
+  //         {
+  //           question:
+  //             "In the three main stages of sexual differentiation, when does gonadal sex development typically occur, and what specific factor influences the development of testes?",
+  //           type: "multiple",
+  //           options: [
+  //             "At fertilization; determined by XX or XY chromosomes",
+  //             "Around 6-8 weeks gestation; influenced by the SRY gene on the Y chromosome",
+  //             "Around 12-14 weeks gestation; influenced by anti-Müllerian hormone (AMH)",
+  //             "At birth; under the direct influence of testosterone and estrogen",
+  //           ],
+  //           correctAnswer:
+  //             "Around 6-8 weeks gestation; influenced by the SRY gene on the Y chromosome",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which embryonic structures develop into the female uterus and fallopian tubes, and under what condition is this development prevented?",
+  //           type: "multiple",
+  //           options: [
+  //             "Wolffian ducts; unless inhibited by testosterone",
+  //             "Müllerian ducts; unless inhibited by anti-Müllerian hormone (AMH) from the testes",
+  //             "Wolffian ducts; unless inhibited by estrogen from the ovaries",
+  //             "Müllerian ducts; unless stimulated by 5-alpha reductase",
+  //           ],
+  //           correctAnswer:
+  //             "Müllerian ducts; unless inhibited by anti-Müllerian hormone (AMH) from the testes",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the estimated incidence rate of Disorders of Sex Development (DSDs) in live births, and how are these conditions classified?",
+  //           type: "multiple",
+  //           options: [
+  //             "~1 in 500 births; classified by physical appearance",
+  //             "~1 in 2,500 births; classified by chromosomal count only",
+  //             "~1 in 4,400 births; classified by the Prader scale severity",
+  //             "~1 in 4,500 births; classified by etiology",
+  //           ],
+  //           correctAnswer: "~1 in 4,500 births; classified by etiology",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "A patient presents with a 45,X karyotype, short stature, a webbed neck, cardiac defects like coarctation of the aorta, and streak ovaries. What is the diagnosis and recommended treatment based on the text?",
+  //           type: "multiple",
+  //           options: [
+  //             "Klinefelter Syndrome; treated with testosterone therapy",
+  //             "Swyer Syndrome; treated with surgery and progesterone",
+  //             "Turner Syndrome; treated with growth hormone and estrogen replacement",
+  //             "Ovotesticular DSD; treated with gender reassignment surgery",
+  //           ],
+  //           correctAnswer:
+  //             "Turner Syndrome; treated with growth hormone and estrogen replacement",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which of the following describes the chromosomal abnormality and key clinical features of Klinefelter Syndrome?",
+  //           type: "multiple",
+  //           options: [
+  //             "45,X; short stature, webbed neck, and ovarian dysgenesis",
+  //             "47,XXY; tall stature, gynecomastia, small testes, infertility, and reduced testosterone",
+  //             "46,XY; female external genitalia, uterus, but no ovaries",
+  //             "48,XXYY; ambiguous genitalia at birth that completely virilizes at puberty",
+  //           ],
+  //           correctAnswer:
+  //             "47,XXY; tall stature, gynecomastia, small testes, infertility, and reduced testosterone",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "In Swyer Syndrome (46,XY DSD), a mutation in the SRY or related genes prevents testis formation. What is the resulting phenotype of these individuals?",
+  //           type: "multiple",
+  //           options: [
+  //             "Typical male external genitalia, undescended testes, and high testosterone levels",
+  //             "Ambiguous genitalia at birth (micropenis, hypospadias) with sudden virilization at puberty",
+  //             "Female external genitalia, a uterus, but no ovaries (streak-like gonads)",
+  //             "Presence of both distinct ovarian and testicular tissue with a normal male phenotype",
+  //           ],
+  //           correctAnswer:
+  //             "Female external genitalia, a uterus, but no ovaries (streak-like gonads)",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which phenotypic differentiation defect is characterized by normal male chromosomes (46,XY) and testes that produce testosterone, but a body that does not respond to it due to a receptor mutation?",
+  //           type: "multiple",
+  //           options: [
+  //             "5-Alpha Reductase Deficiency",
+  //             "Congenital Adrenal Hyperplasia (CAH)",
+  //             "Swyer Syndrome",
+  //             "Androgen Insensitivity Syndrome (AIS)",
+  //           ],
+  //           correctAnswer: "Androgen Insensitivity Syndrome (AIS)",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "A child is born with ambiguous genitalia, including a micropenis and hypospadias. At puberty, the child experiences significant virilization. What is the most likely underlying defect?",
+  //           type: "multiple",
+  //           options: [
+  //             "Androgen Insensitivity Syndrome (AIS)",
+  //             "5-Alpha Reductase Deficiency",
+  //             "21-Hydroxylase Deficiency (CAH)",
+  //             "Turner Syndrome",
+  //           ],
+  //           correctAnswer: "5-Alpha Reductase Deficiency",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the specific enzymatic defect in Congenital Adrenal Hyperplasia (CAH) mentioned in the text, and what are its classic phenotypic expressions in a 46,XX individual?",
+  //           type: "multiple",
+  //           options: [
+  //             "SRY translocation; presence of both ovarian and testicular tissues",
+  //             "Androgen receptor deficiency; female external genitalia with an absent uterus",
+  //             "21-Hydroxylase Deficiency; virilized female genitalia (clitoromegaly, fused labia) and a salt-wasting crisis",
+  //             "5-alpha reductase deficiency; typical male external genitalia with a severe growth spurt",
+  //           ],
+  //           correctAnswer:
+  //             "21-Hydroxylase Deficiency; virilized female genitalia (clitoromegaly, fused labia) and a salt-wasting crisis",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which scale is used to classify the severity of ambiguous genitalia based on phallus size and urethral position?",
+  //           type: "multiple",
+  //           options: [
+  //             "Tanner scale",
+  //             "Prader scale",
+  //             "GnRH scale",
+  //             "Müllerian scale",
+  //           ],
+  //           correctAnswer: "Prader scale",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "How are central and peripheral precocious puberty differentiated etiologically and diagnostically?",
+  //           type: "multiple",
+  //           options: [
+  //             "Central is gonadotropin-independent (low LH/FSH); peripheral is gonadotropin-dependent (high LH/FSH)",
+  //             "Central involves premature activation of the HPG axis with elevated LH/FSH; peripheral is gonadotropin-independent with suppressed LH/FSH",
+  //             "Central is caused exclusively by McCune-Albright syndrome; peripheral is always idiopathic",
+  //             "Central is diagnosed via bone age X-ray; peripheral is diagnosed strictly via pelvic laparoscopy",
+  //           ],
+  //           correctAnswer:
+  //             "Central involves premature activation of the HPG axis with elevated LH/FSH; peripheral is gonadotropin-independent with suppressed LH/FSH",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the most common cause of central precocious puberty in girls, and what medication is typically used to halt its progression?",
+  //           type: "multiple",
+  //           options: [
+  //             "Brain tumors (hamartoma); treated with testosterone",
+  //             "Ovarian tumors; treated with transsphenoidal surgery",
+  //             "Idiopathic; treated with GnRH agonists (e.g., leuprolide)",
+  //             "Adrenal hyperplasia; treated with glucocorticoids",
+  //           ],
+  //           correctAnswer:
+  //             "Idiopathic; treated with GnRH agonists (e.g., leuprolide)",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Delayed puberty is defined as the absence of pubertal signs by what age thresholds in girls and boys respectively?",
+  //           type: "multiple",
+  //           options: [
+  //             "Age 11 in girls or age 12 in boys",
+  //             "Age 13 in girls or age 14 in boys",
+  //             "Age 15 in girls or age 16 in boys",
+  //             "Age 12 in girls or age 15 in boys",
+  //           ],
+  //           correctAnswer: "Age 13 in girls or age 14 in boys",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which condition is a pathological cause of delayed puberty characterized as hypogonadotropic hypogonadism accompanied by a lack of smell (anosmia)?",
+  //           type: "multiple",
+  //           options: [
+  //             "Turner syndrome",
+  //             "Klinefelter syndrome",
+  //             "Kallmann syndrome",
+  //             "McCune-Albright syndrome",
+  //           ],
+  //           correctAnswer: "Kallmann syndrome",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the difference between primary and secondary amenorrhea based on the lecture guidelines?",
+  //           type: "multiple",
+  //           options: [
+  //             "Primary is pain during menses; secondary is the total absence of a cycle for more than 1 year",
+  //             "Primary is the absence of periods by age 15-16 (or 13 if no secondary sex characteristics); secondary is the cessation of periods for '>=3 months' in women with prior menses",
+  //             "Primary is due to anovulation; secondary is caused strictly by an imperforate hymen",
+  //             "Primary occurs before menopause; secondary occurs post-menopause",
+  //           ],
+  //           correctAnswer:
+  //             "Primary is the absence of periods by age 15-16 (or 13 if no secondary sex characteristics); secondary is the cessation of periods for '>=3 months' in women with prior menses",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the most common cause of secondary amenorrhea, and what is the most common cause of oligomenorrhea?",
+  //           type: "multiple",
+  //           options: [
+  //             "Polycystic ovary syndrome (PCOS); Thyroid disorders",
+  //             "Stress; Hypothalamic dysfunction",
+  //             "Pregnancy; Polycystic ovary syndrome (PCOS)",
+  //             "Hyperprolactinemia; Premature ovarian failure",
+  //           ],
+  //           correctAnswer: "Pregnancy; Polycystic ovary syndrome (PCOS)",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Primary dysmenorrhea is defined as painful periods with no underlying pathology. What is its primary physiological cause?",
+  //           type: "multiple",
+  //           options: [
+  //             "Endometriosis or fibroids",
+  //             "Cervical stenosis compressing the nerve path",
+  //             "Prostaglandin-mediated uterine contractions",
+  //             "Excess production of adrenal cortisol",
+  //           ],
+  //           correctAnswer: "Prostaglandin-mediated uterine contractions",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "How is anovulation definitively diagnosed using hormone levels, and what is a first-line ovulation induction agent used if the cause is PCOS?",
+  //           type: "multiple",
+  //           options: [
+  //             "Mid-cycle progesterone '<3 ng/mL'; clomiphene",
+  //             "Mid-cycle progesterone '>25 ng/mL'; cabergoline",
+  //             "Suppressed LH/FSH ratio; leuprolide",
+  //             "Elevated cortisol levels; glucocorticoids",
+  //           ],
+  //           correctAnswer: "Mid-cycle progesterone '<3 ng/mL'; clomiphene",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "How is Primary Hypogonadism distinguished from Secondary Hypogonadism in blood test results?",
+  //           type: "multiple",
+  //           options: [
+  //             "Primary has low FSH/LH; Secondary has high FSH/LH",
+  //             "Primary has high FSH/LH with low testosterone/estradiol; Secondary has low/normal FSH/LH with low testosterone/estradiol",
+  //             "Primary features elevated prolactin levels; Secondary features elevated cortisol levels",
+  //             "Primary is diagnosed via pelvic ultrasound; Secondary can only be diagnosed using an X-ray",
+  //           ],
+  //           correctAnswer:
+  //             "Primary has high FSH/LH with low testosterone/estradiol; Secondary has low/normal FSH/LH with low testosterone/estradiol",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the most common cause of hyperprolactinemia, and how does elevated prolactin directly impact fertility?",
+  //           type: "multiple",
+  //           options: [
+  //             "Hypothyroidism; it destroys ovarian and testicular tissue structures directly",
+  //             "Pituitary prolactinoma; it inhibits GnRH, suppressing FSH/LH and causing anovulation or oligospermia",
+  //             "Adrenal hyperplasia; it elevates testosterone to block egg implantation",
+  //             "Chronic kidney disease; it triggers premature epiphyseal fusion",
+  //           ],
+  //           correctAnswer:
+  //             "Pituitary prolactinoma; it inhibits GnRH, suppressing FSH/LH and causing anovulation or oligospermia",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which class of medications is the first-line medical treatment for hyperprolactinemia to lower prolactin levels and shrink pituitary tumors?",
+  //           type: "multiple",
+  //           options: [
+  //             "GnRH agonists (e.g., leuprolide)",
+  //             "Glucocorticoids (e.g., hydrocortisone)",
+  //             "Dopamine agonists (e.g., cabergoline, bromocriptine)",
+  //             "Non-steroidal anti-inflammatory drugs (NSAIDs)",
+  //           ],
+  //           correctAnswer:
+  //             "Dopamine agonists (e.g., cabergoline, bromocriptine)",
+  //           shuffle: true,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "unit-2-reproductive-disorders",
+  //       title: "Unit 2: Reproductive Disorders",
+  //       shuffleQuestions: false,
+  //       showScore: true,
+  //       quizModeTimer: 1800,
+  //       questions: [
+  //         {
+  //           question:
+  //             "What is the definition of infertility for a woman under the age of 35?",
+  //           type: "multiple",
+  //           options: [
+  //             "Inability to conceive after 6 months of regular unprotected intercourse",
+  //             "Inability to conceive after 12 months of regular unprotected intercourse",
+  //             "Inability to conceive after 18 months of regular unprotected intercourse",
+  //             "Inability to conceive after 24 months of regular unprotected intercourse",
+  //           ],
+  //           correctAnswer:
+  //             "Inability to conceive after 12 months of regular unprotected intercourse",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which of the following is categorized as a pre-testicular cause of male infertility?",
+  //           type: "multiple",
+  //           options: [
+  //             "Cryptorchidism",
+  //             "Varicocele",
+  //             "Hypogonadotropic hypogonadism",
+  //             "Congenital bilateral absence of vas deferens",
+  //           ],
+  //           correctAnswer: "Hypogonadotropic hypogonadism",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "According to WHO criteria, what is the minimum normal value for total sperm motility?",
+  //           type: "multiple",
+  //           options: ["≥32%", "≥40%", "≥15%", "≥4%"],
+  //           correctAnswer: "≥40%",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "A semen analysis profile shows a sperm count of less than 15 million/mL. How is this condition classified?",
+  //           type: "multiple",
+  //           options: [
+  //             "Azoospermia",
+  //             "Asthenozoospermia",
+  //             "Teratozoospermia",
+  //             "Oligospermia",
+  //           ],
+  //           correctAnswer: "Oligospermia",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which of the following is the most common cause of ovulatory disorders in female infertility?",
+  //           type: "multiple",
+  //           options: [
+  //             "Premature ovarian failure",
+  //             "Polycystic Ovary Syndrome (PCOS)",
+  //             "Hyperprolactinemia",
+  //             "Hypothalamic amenorrhea",
+  //           ],
+  //           correctAnswer: "Polycystic Ovary Syndrome (PCOS)",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which imaging technique is specifically mentioned in the text for evaluating tubal patency?",
+  //           type: "multiple",
+  //           options: [
+  //             "Transvaginal ultrasound (USG)",
+  //             "Magnetic Resonance Imaging (MRI)",
+  //             "Hysterosalpingography (HSG)",
+  //             "Scrotal ultrasound (USG)",
+  //           ],
+  //           correctAnswer: "Hysterosalpingography (HSG)",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What values indicate a low ovarian reserve and diminished ovarian reserve during hormone assessments?",
+  //           type: "multiple",
+  //           options: [
+  //             "AMH <1 ng/mL and Day 3 FSH >10 IU/L",
+  //             "AMH >1 ng/mL and Day 3 FSH <10 IU/L",
+  //             "Mid-luteal progesterone >10 ng/mL",
+  //             "Mid-luteal progesterone <25 nmol/L",
+  //           ],
+  //           correctAnswer: "AMH <1 ng/mL and Day 3 FSH >10 IU/L",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Vascular causes account for what percentage of sexual dysfunction cases?",
+  //           type: "multiple",
+  //           options: ["10-20%", "5%", "40-50%", "15%"],
+  //           correctAnswer: "40-50%",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which screening tool score indicates Erectile Dysfunction (ED) according to the text?",
+  //           type: "multiple",
+  //           options: [
+  //             "IIEF-5 score <21",
+  //             "BPP score <6/10",
+  //             "IIEF-5 score >21",
+  //             "FSFI score <21",
+  //           ],
+  //           correctAnswer: "IIEF-5 score <21",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "How is retrograde ejaculation diagnosed according to the provided lecture?",
+  //           type: "multiple",
+  //           options: [
+  //             "Peak systolic velocity <25 cm/s on a Doppler ultrasound",
+  //             "Post-orgasm urinalysis revealing spermatozoa",
+  //             "Speculum exam revealing pelvic floor muscle spasms",
+  //             "Elevated morning testosterone levels",
+  //           ],
+  //           correctAnswer: "Post-orgasm urinalysis revealing spermatozoa",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Pelvic floor physiotherapy using dilators and cognitive behavioral therapy (CBT) are standard treatments for which condition?",
+  //           type: "multiple",
+  //           options: [
+  //             "Retrograde ejaculation",
+  //             "Erectile Dysfunction",
+  //             "Vaginismus",
+  //             "Asymmetric IUGR",
+  //           ],
+  //           correctAnswer: "Vaginismus",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the most common cause of sporadic first-trimester spontaneous pregnancy loss?",
+  //           type: "multiple",
+  //           options: [
+  //             "Anatomical defects (like a septate uterus)",
+  //             "Chromosomal abnormalities (Aneuploidy)",
+  //             "Paternal sperm DNA fragmentation",
+  //             "Maternal infections like Listeria",
+  //           ],
+  //           correctAnswer: "Chromosomal abnormalities (Aneuploidy)",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "A patient presents with vaginal bleeding and cramping. Upon clinical examination, the cervix is closed and ultrasound confirms a viable fetus. Which type of miscarriage is this?",
+  //           type: "multiple",
+  //           options: ["Inevitable", "Incomplete", "Missed", "Threatened"],
+  //           correctAnswer: "Threatened",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "According to ESHRE guidelines for Recurrent Pregnancy Loss (RPL), which test should be administered to all couples?",
+  //           type: "multiple",
+  //           options: [
+  //             "Inherited thrombophilia screening",
+  //             "Parental karyotype",
+  //             "Testicular biopsy",
+  //             "24h urine protein test",
+  //           ],
+  //           correctAnswer: "Parental karyotype",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What criteria must be met to establish a diagnosis of Pre-eclampsia?",
+  //           type: "multiple",
+  //           options: [
+  //             "New hypertension after 20 weeks + blood glucose ≥5.1 mmol/L",
+  //             "New hypertension before 20 weeks + proteinuria ≥300 mg/24h",
+  //             "New hypertension after 20 weeks + proteinuria (≥300 mg/24h or protein/creatinine ≥30) or end-organ damage",
+  //             "Blood pressure ≥160/110 mmHg at any gestational age with no proteinuria",
+  //           ],
+  //           correctAnswer:
+  //             "New hypertension after 20 weeks + proteinuria (≥300 mg/24h or protein/creatinine ≥30) or end-organ damage",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "An umbilical-to-middle cerebral artery (MCA) Doppler ratio of >4 indicates what condition in a growth-restricted fetus?",
+  //           type: "multiple",
+  //           options: [
+  //             "Normal placentation",
+  //             "Brain-sparing effect",
+  //             "Ejaculatory duct obstruction",
+  //             "Chorioamnionitis",
+  //           ],
+  //           correctAnswer: "Brain-sparing effect",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which of the following blood glucose thresholds is used to diagnose Gestational Diabetes Mellitus (GDM) 1 hour after a glucose challenge?",
+  //           type: "multiple",
+  //           options: [
+  //             "≥5.1 mmol/L",
+  //             "≥8.5 mmol/L",
+  //             "≥10.0 mmol/L",
+  //             "≥7.2 mmol/L",
+  //           ],
+  //           correctAnswer: "≥10.0 mmol/L",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "According to the text, prolonged labour (dystocia) in the active phase is characterized by protracted descent/dilation. What is a primary cause of this?",
+  //           type: "multiple",
+  //           options: [
+  //             "Inadequate contractions",
+  //             "Maternal anxiety",
+  //             "Cephalopelvic disproportion (CPD) or malposition",
+  //             "Premature rupture of membranes",
+  //           ],
+  //           correctAnswer: "Cephalopelvic disproportion (CPD) or malposition",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the recommended management approach for a patient with Preterm Premature Rupture of Membranes (PPROM) at less than 34 weeks gestation without immediate infection?",
+  //           type: "multiple",
+  //           options: [
+  //             "Induce labour immediately",
+  //             "Perform an emergency D&C",
+  //             "Administer antibiotics (erythromycin), steroids, MgSO4, and use expectant management till 37 weeks",
+  //             "Perform a hysteroscopic metroplasty",
+  //           ],
+  //           correctAnswer:
+  //             "Administer antibiotics (erythromycin), steroids, MgSO4, and use expectant management till 37 weeks",
+  //           shuffle: true,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "unit-3-reproductive-disorders",
+  //       title: "Unit 3: Reproductive Disorders",
+  //       shuffleQuestions: false,
+  //       showScore: true,
+  //       quizModeTimer: 1800,
+  //       questions: [
+  //         {
+  //           question:
+  //             "Which of the following is a key reproductive mechanism of Antiphospholipid Syndrome (APS)?",
+  //           type: "multiple",
+  //           options: [
+  //             "Complement activation and endothelial damage",
+  //             "Destruction of primordial follicles by T-cells",
+  //             "Hyperprolactinemia suppressing GnRH",
+  //             "Granulosa cell anti-apoptosis via survivin overexpression",
+  //           ],
+  //           correctAnswer: "Complement activation and endothelial damage",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "According to the Sydney criteria, how far apart must persistent positivity of aPL antibodies be evaluated on two occasions for an APS diagnosis?",
+  //           type: "multiple",
+  //           options: [
+  //             "Greater than or equal to 4 weeks apart",
+  //             "Greater than or equal to 6 weeks apart",
+  //             "Greater than or equal to 12 weeks apart",
+  //             "Greater than or equal to 24 weeks apart",
+  //           ],
+  //           correctAnswer: "Greater than or equal to 12 weeks apart",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Primary ovarian insufficiency (POI) is defined as ovarian failure before what age?",
+  //           type: "multiple",
+  //           options: ["Age 35", "Age 40", "Age 45", "Age 50"],
+  //           correctAnswer: "Age 40",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What specific hormonal threshold is used to define primary ovarian insufficiency (POI) in terms of FSH and estradiol?",
+  //           type: "multiple",
+  //           options: [
+  //             "FSH >40 IU/L and estradiol <100 pg/mL",
+  //             "FSH >25 IU/L and estradiol <50 pg/mL",
+  //             "FSH >10 IU/L and estradiol <25 pg/mL",
+  //             "FSH >55 IU/L and estradiol <75 pg/mL",
+  //           ],
+  //           correctAnswer: "FSH >25 IU/L and estradiol <50 pg/mL",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Autoimmune oophoritis is often associated with polyglandular autoimmune syndrome type 1 (APS-1), which involves mutations in which gene?",
+  //           type: "multiple",
+  //           options: ["SPO11 gene", "NR5A1 gene", "AIRE gene", "FMR1 gene"],
+  //           correctAnswer: "AIRE gene",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What specific serum TSH range is linked with a 2-3 fold increased miscarriage risk in subclinical hypothyroidism?",
+  //           type: "multiple",
+  //           options: [
+  //             "TSH >2.5 mIU/L",
+  //             "TSH >4.5 mIU/L",
+  //             "TSH 0.1-2.5 mIU/L",
+  //             "TSH >10 mIU/L",
+  //           ],
+  //           correctAnswer: "TSH >2.5 mIU/L",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the recommended preconception titration target for Levothyroxine (L-T4) in women with Hashimoto's thyroiditis?",
+  //           type: "multiple",
+  //           options: [
+  //             "TSH <4.5 mIU/L",
+  //             "TSH <2.5 mIU/L",
+  //             "TSH 0.1-2.5 mIU/L",
+  //             "TSH <1.0 mIU/L",
+  //           ],
+  //           correctAnswer: "TSH <2.5 mIU/L",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which genetic mutation follows an autosomal recessive pattern and causes non-obstructive azoospermia (NOA) in males due to spermatocyte arrest and POI in females?",
+  //           type: "multiple",
+  //           options: [
+  //             "SPO11 mutations",
+  //             "NR5A1 mutations",
+  //             "KAL1 mutations",
+  //             "FGFR1 mutations",
+  //           ],
+  //           correctAnswer: "SPO11 mutations",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which region of Y-chromosome microdeletions involves DAZ genes, causes variable oligospermia, and holds the highest testicular sperm extraction (TESE) success rate at 50%?",
+  //           type: "multiple",
+  //           options: ["AZFa", "AZBb", "AZFc", "AZFd"],
+  //           correctAnswer: "AZFc",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What pathogenetic mechanism describes Kallmann Syndrome and Hypogonadotropic Hypogonadism (HH)?",
+  //           type: "multiple",
+  //           options: [
+  //             "Defective neuronal migration causing anosmia and absent GnRH neurons",
+  //             "Hypermethylation of FMR1 gene leading to FMRP loss",
+  //             "Triplet repeat expansions causing RNA toxic gain-of-function in Sertoli cells",
+  //             "Mutation in the androgen receptor (AR) gene on Xq12 causing defective receptor signaling",
+  //           ],
+  //           correctAnswer:
+  //             "Defective neuronal migration causing anosmia and absent GnRH neurons",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Complete Androgen Insensitivity Syndrome (CAIS) is characterized by which of the following clinical presentations?",
+  //           type: "multiple",
+  //           options: [
+  //             "46,XX karyotype, ambiguous genitalia, and hyperandrogenism",
+  //             "46,XY karyotype, phenotypic female with blind vagina, absent uterus, and intra-abdominal testes",
+  //             "45,X karyotype, streak gonads, primary amenorrhea, and short stature",
+  //             "47,XXY karyotype, small testes, azoospermia, and gynecomastia",
+  //           ],
+  //           correctAnswer:
+  //             "46,XY karyotype, phenotypic female with blind vagina, absent uterus, and intra-abdominal testes",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "A female patient has an FMR1 gene triplet repeat expansion size falling into the 'premutation' category. What is the range of repeats and her associated risk?",
+  //           type: "multiple",
+  //           options: [
+  //             "5-44 repeats; no risk of premature ovarian insufficiency",
+  //             "55-200 repeats; 20-25% risk of fragile X-associated premature ovarian failure (FXPOF)",
+  //             "200+ repeats; 50% shorter reproductive lifespan with hypermethylation",
+  //             "150-250 repeats; 10-15% risk of primary amenorrhea",
+  //           ],
+  //           correctAnswer:
+  //             "55-200 repeats; 20-25% risk of fragile X-associated premature ovarian failure (FXPOF)",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "In Polycystic Ovary Syndrome (PCOS), what feature is overexpressed in granulosa cells, leading to anti-apoptosis and arrested antral folliculogenesis?",
+  //           type: "multiple",
+  //           options: ["HOXA10", "Survivin", "VEGF", "FasL"],
+  //           correctAnswer: "Survivin",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What mechanism is responsible for thin endometrium (<7mm) and implantation failure in Asherman Syndrome?",
+  //           type: "multiple",
+  //           options: [
+  //             "Progesterone resistance via KRAS mutations",
+  //             "Shallow trophoblast invasion due to sFlt-1/PIGF imbalance",
+  //             "TGF-beta1 overexpression causing myofibroblast proliferation and collagen deposition",
+  //             "E6/E7 oncoproteins inactivating p53/Rb proteins",
+  //           ],
+  //           correctAnswer:
+  //             "TGF-beta1 overexpression causing myofibroblast proliferation and collagen deposition",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "How does a hydrosalpinx fluid from Pelvic Inflammatory Disease (PID) affect IVF outcomes?",
+  //           type: "multiple",
+  //           options: [
+  //             "It causes Leydig cell hyperplasia and inefficient steroidogenesis.",
+  //             "It contains embryotoxic cytokines/ROS that reduce IVF implantation by 50%.",
+  //             "It increases endometrial thickness beyond 4mm, mimicking atypical hyperplasia.",
+  //             "It prevents the differentiation of syncytiotrophoblasts via annexin V depletion.",
+  //           ],
+  //           correctAnswer:
+  //             "It contains embryotoxic cytokines/ROS that reduce IVF implantation by 50%.",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What specific histological findings are expected in a rare ovarian biopsy for a patient with Autoimmune Oophoritis?",
+  //           type: "multiple",
+  //           options: [
+  //             "Theca cell hyperplasia and cyst formation",
+  //             "Lymphocytic infiltration",
+  //             "Myofibroblast proliferation and dense collagen deposition",
+  //             "Hyalinized tubules and Leydig cell aplasia",
+  //           ],
+  //           correctAnswer: "Lymphocytic infiltration",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "What is the estimated contribution of chronic prostatitis to cases of male infertility due to leukocyte influx and seminal ROS production?",
+  //           type: "multiple",
+  //           options: [
+  //             "10-15% contribution",
+  //             "20-25% contribution",
+  //             "30% contribution",
+  //             "50% contribution",
+  //           ],
+  //           correctAnswer: "30% contribution",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which of the following describes the genetic composition and mechanism behind a gestational trophoblastic hydatidiform mole?",
+  //           type: "multiple",
+  //           options: [
+  //             "An extra maternal X-chromosome escaping inactivation via XIST dysregulation",
+  //             "A 45,X chromosomal breakdown resulting in streak gonads",
+  //             "An androgenic diploid sperm fertilizes an empty ovum, leading to trophoblast hyperplasia",
+  //             "A de novo autosomal dominant mutation in the NR5A1 gene disrupting gonadal differentiation",
+  //           ],
+  //           correctAnswer:
+  //             "An androgenic diploid sperm fertilizes an empty ovum, leading to trophoblast hyperplasia",
+  //           shuffle: true,
+  //         },
+  //         {
+  //           question:
+  //             "Which gene mutation is associated with 46,XY gonadal dysgenesis (resulting in XY females with streak gonads) or 46,XX POI?",
+  //           type: "multiple",
+  //           options: ["CYP17A1", "HSD17B3", "NR5A1", "SPO11"],
+  //           correctAnswer: "NR5A1",
+  //           shuffle: true,
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   // {
   //     title: "Science Quiz",
   //     questions: [
