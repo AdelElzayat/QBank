@@ -1812,120 +1812,278 @@ const quizzes = [
         quizModeTimer: 1800,
         questions: [
           {
-            id: "q1-ai-intelligent-behavior",
-            type: "complete",
             question:
-              "Artificial intelligence (AI) is concerned with building systems that simulate _______.",
-            correctAnswer: "intelligent behavior",
+              "How are Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL) related?",
+            type: "multiple",
+            options: [
+              "DL is a subset of ML, and ML is a subset of AI.",
+              "AI is a subset of ML, and ML is a subset of DL.",
+              "ML is a subset of DL, and DL is a subset of AI.",
+              "AI, ML, and DL are entirely distinct, non-overlapping fields.",
+            ],
+            correctAnswer: "DL is a subset of ML, and ML is a subset of AI.",
+            shuffle: true,
           },
           {
-            id: "q2-ml-mathematical-models",
-            type: "complete",
             question:
-              "Machine learning (ML) is a subset of AI that learns to make decisions by fitting _______ to observed data.",
-            correctAnswer: "mathematical models",
+              "A computer program downloads a complete copy of Wikipedia. Why is this operation NOT considered Machine Learning?",
+            type: "multiple",
+            options: [
+              "The system used unstructured data instead of structured data.",
+              "The computer has merely accumulated more data but has not suddenly become better at performing any task.",
+              "Wikipedia lacks the mathematical models needed to build a predictor.",
+              "Downloading text represents unsupervised clustering, which requires no algorithmic learning.",
+            ],
+            correctAnswer:
+              "The computer has merely accumulated more data but has not suddenly become better at performing any task.",
+            shuffle: true,
           },
           {
-            id: "q3-dl-deep-neural-network",
-            type: "complete",
             question:
-              "When a deep neural network is fitted to data, this is referred to as _______.",
-            correctAnswer: "deep learning",
+              "In Tom Mitchell's formal definition of Machine Learning (E,T,P), what do the past examples given to a spam filter system represent?",
+            type: "multiple",
+            options: [
+              "The task T",
+              "The performance measure P",
+              "The model or predictor",
+              "The experience E",
+            ],
+            correctAnswer: "The experience E",
+            shuffle: true,
           },
           {
-            id: "q4-mitchell-model-definition",
-            type: "complete",
             question:
-              "According to Tom Mitchell's definition, the part of a machine learning system that learns and makes predictions is called a _______.",
-            correctAnswer: "model",
+              "How is the performance measure P specifically calculated or defined for a spam filter application?",
+            type: "multiple",
+            options: [
+              "The total volume of emails arriving in the inbox over a past period.",
+              "The number of examples of spam emails flagged manually by the user.",
+              "The ratio of correctly classified emails.",
+              "The computational resource limits required to filter large sets of data.",
+            ],
+            correctAnswer: "The ratio of correctly classified emails.",
+            shuffle: true,
           },
           {
-            id: "q5-training-set-examples",
-            type: "complete",
             question:
-              "The examples that a machine learning system uses to learn are called the _______.",
-            correctAnswer: "training set",
+              "What forms the inputs and outputs of a computer executing 'Traditional Programming' versus 'Machine Learning'?",
+            type: "multiple",
+            options: [
+              "Traditional Programming takes Data and Output to produce a Program; Machine Learning takes Data and Program to produce an Output.",
+              "Traditional Programming takes Data and Program to produce an Output; Machine Learning takes Data and Output to produce a Program.",
+              "Traditional Programming takes Program and Output to produce Data; Machine Learning takes Data and Program to produce an Output.",
+              "Both traditional programming and machine learning take Data and Program to generate an Output.",
+            ],
+            correctAnswer:
+              "Traditional Programming takes Data and Program to produce an Output; Machine Learning takes Data and Output to produce a Program.",
+            shuffle: true,
           },
           {
-            id: "q6-sample-training-instance",
-            type: "complete",
             question:
-              "Each individual training example within a training set is called a _______.",
-            correctAnswer: "training sample",
+              "Human learning is described as a three-step sequential pipeline. What is the correct order of these stages?",
+            type: "multiple",
+            options: [
+              "Collect Available Data (ingest) -> Use New Knowledge to Do Something (act) -> Gain Knowledge (understand data and transform it into knowledge).",
+              "Gain Knowledge (understand data and transform it into knowledge) -> Collect Available Data (ingest) -> Use New Knowledge to Do Something (act).",
+              "Collect Available Data (ingest) -> Gain Knowledge (understand data and transform it into knowledge) -> Use New Knowledge to Do Something (act).",
+              "Try and test -> Gain Knowledge (understand data and transform it into knowledge) -> Someone tells us.",
+            ],
+            correctAnswer:
+              "Collect Available Data (ingest) -> Gain Knowledge (understand data and transform it into knowledge) -> Use New Knowledge to Do Something (act).",
+            shuffle: true,
           },
           {
-            id: "q7-traditional-programming-vs-ml",
-            type: "complete",
             question:
-              "In traditional programming, the computer takes data and a program as inputs to produce an output, whereas in machine learning, the computer takes data and _______ as inputs to produce a program.",
-            correctAnswer: "output",
+              "Under which of the following circumstances is it noted that learning becomes specifically difficult for humans, thereby necessitating Machine Learning?",
+            type: "multiple",
+            options: [
+              "When mathematical models cannot be fitted to observed data.",
+              "When there are too many data, or data change too frequently.",
+              "When the performance measure P cannot be calculated as a ratio.",
+              "When the system is required to process structured laboratory results.",
+            ],
+            correctAnswer:
+              "When there are too many data, or data change too frequently.",
+            shuffle: true,
           },
           {
-            id: "q8-explain-human-expertise",
-            type: "complete",
             question:
-              "One of the cases where machine learning is necessary is when humans are unable to _______ their expertise, such as in speech or image recognition.",
-            correctAnswer: "explain",
+              "Which machine learning application is specifically described as focusing on identifying unusual or suspicious behavior by learning patterns of normal behavior and flagging deviations?",
+            type: "multiple",
+            options: [
+              "Recommendation Systems",
+              "Predictive Analytics and Forecasting",
+              "Fraud and Risk Detection",
+              "Spam Detection",
+            ],
+            correctAnswer: "Fraud and Risk Detection",
+            shuffle: true,
           },
           {
-            id: "q9-mars-navigation-expertise",
-            type: "complete",
             question:
-              "Navigating on Mars is given as an example of using machine learning because human _______ does not exist or there is a danger.",
-            correctAnswer: "expertise",
+              "Which two qualities are explicitly highlighted as 'essential' or 'crucial' for Machine Learning models applied to Medical Diagnosis and Medical Decision Support Systems?",
+            type: "multiple",
+            options: [
+              "Scalability and low computational resource demand",
+              "Speed and real-time processing capabilities",
+              "High dimensionality and multi-layered structures",
+              "Interpretability and reliability",
+            ],
+            correctAnswer: "Interpretability and reliability",
+            shuffle: true,
           },
           {
-            id: "q10-dangerous-environment-learning",
-            type: "complete",
             question:
-              "For humans, 'learning by doing' cannot be applied if the environment is _______.",
-            correctAnswer: "dangerous",
+              "In the context of the Gaming application, what specific features are listed as being used to score positions in a chess system?",
+            type: "multiple",
+            options: [
+              "Material balance, piece mobility, and king safety",
+              "Historical player rankings and move selection times",
+              "User feedback, likes, and dislikes",
+              "Deviations from normal behavior patterns over time",
+            ],
+            correctAnswer: "Material balance, piece mobility, and king safety",
+            shuffle: true,
           },
           {
-            id: "q11-predictive-analytics-historical-data",
+            id: "written-question-1",
             type: "complete",
             question:
-              "_______ analytics uses machine learning models to estimate future values based on historical data.",
-            correctAnswer: "Predictive",
-          },
-          {
-            id: "q12-fraud-detection-normal-behavior",
-            type: "complete",
-            question:
-              "Fraud and risk detection focuses on identifying unusual or suspicious behavior within large datasets by learning patterns of _______ behavior and flagging deviations.",
-            correctAnswer: "normal",
-          },
-          {
-            id: "q13-spam-filter-performance-ratio",
-            type: "complete",
-            question:
-              "In a spam filter application, the performance measure P can be defined as the ratio of _______ emails.",
-            correctAnswer: "correctly classified",
-          },
-          {
-            id: "q14-medical-diagnosis-vital-signs",
-            type: "complete",
-            question:
-              "In the application of _______, classical algorithms analyze structured data such as laboratory results, medical history, and vital signs.",
-            correctAnswer: "medical diagnosis",
-          },
-          {
-            id: "q15-medical-models-interpretability",
-            type: "complete",
-            question:
-              "Apart from reliability, _______ is highlighted as an essential requirement for machine learning models used in medical diagnosis and decision support systems.",
-            correctAnswer: "interpretability",
-          },
-          {
-            id: "q16-gaming-chess-piece-mobility",
-            type: "complete",
+              "Define Artificial Intelligence(AI), Machine Learning(ML), and Deep Learning(DL).",
             orderMode: "unordered",
-            question:
-              "In gaming applications like chess, features such as _______, _______, and _______ are used to score positions.",
             correctAnswers: [
-              "material balance",
-              "piece mobility",
-              "king safety",
+              "Artificial Intelligence: Concerned with building systems that simulate intelligent behavior. Its core focus is to mimic human behavior.",
+              "Machine Learning: A subset of AI that learns to make decisions by fitting mathematical models to observed data. It concerns the construction and study of systems that can learn from experience/data.",
+              "Deep Learning: Application of deep neural network models within machine learning, where these networks learn representations directly from data. They represent different levels of intelligent computing.",
+            ],
+          },
+          {
+            id: "written-question-2",
+            type: "complete",
+            question:
+              "State the primary goal of machine learning.",
+            correctAnswer:
+              "The goal of machine learning is to develop methods that can automatically detect patterns in data, and then to use the uncovered patterns to predict future data or other outcomes of interest. Briefly, it is about predicting the future based on the past.",
+          },
+          {
+            id: "written-question-3",
+            type: "complete",
+            question:
+              "Describe the timeline and flow of data when a machine learning model is utilized, explaining what happens during the 'past' phase and the 'future' phase.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "In the Past: 'Training Data' is supplied to a learning process ('learn') to construct and develop a 'model'.",
+              "In the Future: New 'Testing Data' is fed directly into the developed 'model', which processes the data to generate a 'predict' outcome.",
+            ],
+          },
+          {
+            id: "written-question-4",
+            type: "complete",
+            question:
+              "Define the terms 'Training Set', 'Training Instance or sample', and 'Model'.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Training Set: The examples that a machine learning system uses to learn.",
+              "Training Instance: Each individual training example within the training set.",
+              "Model: The specific part of a machine learning system that learns and makes predictions.",
+            ],
+          },
+          {
+            id: "written-question-5",
+            type: "complete",
+            question:
+              "Explain the two primary ways through which humans learn.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Someone tells us: Learning via a teacher or by watching others.",
+              "Try and test: Learning by doing.",
+            ],
+          },
+          {
+            id: "written-question-6",
+            type: "complete",
+            question:
+              "Under what four conditions or scenarios is it necessary to use Machine Learning because human expertise is limited or inapplicable?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Human expertise does not exist (navigating on Mars), or there is a danger.",
+              "Humans are unable to explain their expertise (speech/image recognition).",
+              "A solution changes in time (market data for market forecast).",
+              "A solution needs to be adapted to particular cases (biometrics).",
+            ],
+          },
+          {
+            id: "written-question-7",
+            type: "complete",
+            question:
+              "What is 'Predictive Analytics and Forecasting'? Detail its core mechanism, its main goal, and list three areas where it is widely applied.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Definition: Predictive analytics uses machine learning models to estimate future values based on historical data by using algorithms to analyze trends and patterns in past observations.",
+              "Main Goal: To support decision-making by providing accurate numerical predictions while keeping the model easy to understand and explain.",
+              "Applications: It is widely used in sales forecasting, energy consumption estimation, and financial analysis.",
+            ],
+          },
+          {
+            id: "written-question-8",
+            type: "complete",
+            question:
+              "Identify where Fraud and Risk Detection applications are critical, and explain how machine learning models spot potential risks.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Critical Domains: This application is critical in banking, insurance, cybersecurity, and transaction monitoring systems.",
+              "Mechanism: Machine learning models learn patterns of normal behavior and flag any deviations from that baseline that may indicate fraud or risk within large datasets.",
+            ],
+          },
+          {
+            id: "written-question-9",
+            type: "complete",
+            question:
+              "Explain the goal of Recommendation Systems, where they are commonly applied, and describe the advantages of using classical recommendation algorithms.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Goal: To suggest relevant items to users based on their preferences or past behavior.",
+              "Common Applications: E-commerce platforms, streaming services, and online learning environments.",
+              "Advantages: Despite their simplicity, classical recommendation algorithms provide strong performance and scalability without requiring large computational resources.",
+            ],
+          },
+          {
+            id: "written-question-10",
+            type: "complete",
+            question:
+              "What is the primary function of Anomaly Detection, name three fields where it is essential, and what is its typical operational temporal requirement?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Primary Function: It identifies rare or abnormal data points that deviate from normal patterns.",
+              "Essential Fields: Manufacturing quality control, network intrusion detection, and sensor monitoring.",
+              "Temporal Requirement: Anomaly detection systems often operate in real time.",
+            ],
+          },
+          {
+            id: "written-question-11",
+            type: "complete",
+            question:
+              "What makes spam detection systems highly viable and widely used in email and messaging platforms?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Speed",
+              "Accuracy",
+              "Ability to operate effectively on large volumes of data with limited computational resources.",
+            ],
+          },
+          {
+            id: "written-question-12",
+            type: "complete",
+            question:
+              "Describe the input data types and the role of Machine Learning in 'Medical Diagnosis' and 'Medical Decision Support Systems (CDSS)'. Also, list the five surrounding components that interact with the clinical decision-makers team according to the CDSS.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Data Types and Role: Structured clinical data-such as laboratory results, medical history, vital signs, and clinical measurements-are analyzed using classical algorithms. The models assist healthcare professionals by predicting disease risk, supporting early diagnosis, predicting treatment outcomes/patient readmission rates, and improving clinical decision-making.",
+              "Diagnosis",
+              "Prognosis",
+              "Treatment",
+              "Evolution",
+              "Prevention",
             ],
           },
         ],
