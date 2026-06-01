@@ -1960,8 +1960,7 @@ const quizzes = [
           {
             id: "written-question-2",
             type: "complete",
-            question:
-              "State the primary goal of machine learning.",
+            question: "State the primary goal of machine learning.",
             correctAnswer:
               "The goal of machine learning is to develop methods that can automatically detect patterns in data, and then to use the uncovered patterns to predict future data or other outcomes of interest. Briefly, it is about predicting the future based on the past.",
           },
@@ -2084,6 +2083,510 @@ const quizzes = [
               "Treatment",
               "Evolution",
               "Prevention",
+            ],
+          },
+        ],
+      },
+      {
+        id: "ai-lec2-quiz",
+        title: "Lecture 2 Quiz",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question:
+              "In the context of supervised learning, what is an 'example'?",
+            type: "multiple",
+            options: [
+              "A model's correct prediction output.",
+              "A pair consisting of input features and its corresponding label.",
+              "The mathematical function that maps inputs to outputs.",
+              "The standalone unlabelled testing instance.",
+            ],
+            correctAnswer:
+              "A pair consisting of input features and its corresponding label.",
+            shuffle: true,
+          },
+          {
+            question:
+              "If a supervised learning model is designed to predict more than one continuous numerical value, what type of problem is it?",
+            type: "multiple",
+            options: [
+              "Multiclass classification",
+              "Binary classification",
+              "Multivariate regression",
+              "Unsupervised clustering",
+            ],
+            correctAnswer: "Multivariate regression",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is a key operational benefit of using Dimensionality Reduction?",
+            type: "multiple",
+            options: [
+              "It automatically assigns classes based on a supervisor's direct feedback.",
+              "It expands the feature space to preserve every raw detail without simplification.",
+              "It reduces the used storage and enhances computational speed.",
+              "It generates entirely new, highly realistic images using random sampling.",
+            ],
+            correctAnswer:
+              "It reduces the used storage and enhances computational speed.",
+            shuffle: true,
+          },
+          {
+            question:
+              "A system is trained by looking at mostly normal instances so that it can identify whether a new instance looks normal or is likely an anomaly. Which of the following is an application of this technique?",
+            type: "multiple",
+            options: [
+              "Automatically mapping text inputs into continuous numerical house values.",
+              "Evaluating a chess board state to pick an immediate action using a policy.",
+              "Automatically getting rid of outliers from a dataset before giving it to another learning algorithm.",
+              "Filling in the blanks of text passages by predicting randomly hidden words.",
+            ],
+            correctAnswer:
+              "Automatically getting rid of outliers from a dataset before giving it to another learning algorithm.",
+            shuffle: true,
+          },
+          {
+            question:
+              "How do Generative Adversarial Networks (GANs) differ from some other generative models?",
+            type: "multiple",
+            options: [
+              "They define an explicit probability distribution from data to calculate specific numbers.",
+              "They do not give a number for how likely an image is, but they are very good at producing realistic images.",
+              "They require manual input labeling by human domain experts to operate.",
+              "They are used exclusively for binary classification tasks.",
+            ],
+            correctAnswer:
+              "They do not give a number for how likely an image is, but they are very good at producing realistic images.",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the fundamental limitation of modern generative text models?",
+            type: "multiple",
+            options: [
+              "They cannot generate the most probable completion when given a question.",
+              "They operate purely based on the statistical patterns of language and do not truly understand meaning.",
+              "They require a human supervisor to provide an active reward or penalty for every single word.",
+              "They are incapable of working with passages or text sequences.",
+            ],
+            correctAnswer:
+              "They operate purely based on the statistical patterns of language and do not truly understand meaning.",
+            shuffle: true,
+          },
+          {
+            question: "In self-supervised learning, how are labels obtained?",
+            type: "multiple",
+            options: [
+              "By having an agent actively gather real-time rewards from an unpredictable environment.",
+              "By asking a human annotator to evaluate pairs of attribute-value features.",
+              "By automatically generating labels from the unlabeled data itself by setting up a pretext task.",
+              "By computing the exact multivariate regression lines of the input features.",
+            ],
+            correctAnswer:
+              "By automatically generating labels from the unlabeled data itself by setting up a pretext task.",
+            shuffle: true,
+          },
+          {
+            question:
+              "How does a model train to process text under a self-supervised learning approach?",
+            type: "multiple",
+            options: [
+              "By calculating the exact freezing and boiling points of continuous chemical numbers.",
+              "By predicting randomly hidden words using their context words without labels.",
+              "By assigning a positive or negative class category based on a supervisor's feedback loop.",
+              "By clustering text into discrete groups before human verification.",
+            ],
+            correctAnswer:
+              "By predicting randomly hidden words using their context words without labels.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which machine learning approach would be most appropriate when a dataset has many unlabeled instances and relatively few labeled ones, often combining unsupervised clustering with standard supervised learning?",
+            type: "multiple",
+            options: [
+              "Pure Reinforcement Learning",
+              "Multivariate Regression",
+              "Semi-Supervised Learning",
+              "Binary Classification",
+            ],
+            correctAnswer: "Semi-Supervised Learning",
+            shuffle: true,
+          },
+          {
+            question:
+              "In Reinforcement Learning, what is the optimal strategy learned by an agent called?",
+            type: "multiple",
+            options: ["A Pretext Task", "A Policy", "An Example", "A Cluster"],
+            correctAnswer: "A Policy",
+            shuffle: true,
+          },
+          {
+            id: "written-question-1",
+            type: "complete",
+            question:
+              "Machine learning systems can be classified based on three main criteria. List these three criteria, and state the five sub-types belonging to the first category.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Classification criteria: ML Supervision, Data Availability, Generalization",
+              "Sub-types of supervision: Supervised Learning, Unsupervised Learning, Self-supervised Learning, Semi-supervised Learning, Reinforcement Learning",
+            ],
+          },
+          {
+            id: "written-question-2",
+            type: "complete",
+            question:
+              "Explain how a supervised learning algorithm functions during its training phase. What is the explicit objective of the algorithm during this phase?",
+            correctAnswer:
+              "During the training phase, the supervised learning algorithm is provided with a dataset that includes both input data (features) and their corresponding output solutions (labels). The algorithm attempts to approximate the function that maps inputs to outputs. It does this by learning a function that continuously decreases the difference between its own predictions and the actual true labels. Once this training phase is complete, the model can be used to predict outputs for novel, unseen data.",
+          },
+          {
+            id: "written-question-3",
+            type: "complete",
+            question:
+              "Compare and contrast the two main types of supervised learning tasks.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Classification: The task where the model takes input features and predicts which category (class) among a discrete set of options an example belongs to. It can be binary classification (only two possible classes available) or multiclass classification (more than two classes are involved).",
+              "Regression: The task where the labels are continuous numerical values. The objective is to develop a model that predicts values as close as possible to the true labels. It can also be a multivariate regression problem if the model predicts more than one number.",
+            ],
+          },
+          {
+            id: "written-question-4",
+            type: "complete",
+            question:
+              "Define unsupervised learning and identify its two most common types.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Unsupervised learning is a type of machine learning where a model is built entirely from input data with no existing labels, meaning there is zero supervision. Instead of learning to map inputs to outputs, the algorithm learns to understand the structural arrangements, connections, and patterns within the data.",
+              "The two common unsupervised learning types mentioned are clustering and generative models.",
+            ],
+          },
+          {
+            id: "written-question-5",
+            type: "complete",
+            question:
+              "What is the primary goal of Dimensionality Reduction, and what transformations does it perform on data?",
+            correctAnswer:
+              "The primary goal of dimensionality reduction is to simplify the data without losing too much information. It converts high-dimensional data into a lower-dimensional space while retaining key information and preserving important details. This reduction helps lower the amount of used storage and enhances computational speed.",
+          },
+          {
+            id: "written-question-6",
+            type: "complete",
+            question:
+              "Describe how a cat generative model reacts when fed an image of a dog, and explain how this specific behavior can be utilized as a tool.",
+            correctAnswer:
+              "If you feed a cat generative model an image of a dog, it will assign a low probability to that image, indicating that the input does not look like the training data it learned. This specific behavioral mechanism is highly useful for anomaly detection applications.",
+          },
+          {
+            id: "written-question-7",
+            type: "complete",
+            question:
+              "Explain how self-supervised learning operates on images, including the specific term used for the setup task.",
+            correctAnswer:
+              "Self-supervised learning on images operates by starting with unlabeled data and automatically generating its own labels from the data itself. It accomplishes this by setting up a 'pretext task.' For images, models are specifically trained to forecast a blocked-out or missing part of an image given the remaining visible parts of that image.",
+          },
+          {
+            id: "written-question-8",
+            type: "complete",
+            question:
+              "Using the photo-hosting service example (like Google Photos), provide a step-by-step breakdown of how semi-supervised learning operates in practice.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Unsupervised Clustering Step: When a user uploads many photos, the system automatically runs a clustering step to identify face similarities. It figures out that a particular person (Person X) appears in photos 1, 3, and 5, while another person (Person Y) appears in photos 2, 4, and 6, without knowing who they actually are.",
+              "Supervised Labeling Step: The user provides just one single text label per person (e.g., naming Person X and Person Y).",
+              "Application/Mapping: Utilizing that single label combined with the clusters, the system automatically recognizes and names everyone across all the remaining photos, making searching and organization easier.",
+            ],
+          },
+          {
+            id: "written-question-9",
+            type: "complete",
+            question:
+              "Detail the step-by-step loop interaction between a Reinforcement Learning agent and its environment.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "The agent observes the environment.",
+              "The agent selects an action using its current policy.",
+              "The agent executes the Action! into the environment.",
+              "The agent gets a reward or penalty based on that action (e.g., getting -50 points and experiencing an 'Ouch!' penalty for interacting with fire).",
+              "The agent performs a learning step to update its policy so it can avoid bad actions next time.",
+              "The system iterates through this cycle repeatedly until an optimal policy is found.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "ml-lec3-quiz",
+        title: "Lecture 3 Quiz",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question:
+              "Machine learning systems that are classified based on whether they can learn incrementally from a stream of incoming data are divided into which categories?",
+            type: "multiple",
+            options: [
+              "Supervised learning and Unsupervised learning",
+              "Instance-based learning and Model-based learning",
+              "Batch learning and Online learning",
+              "Overfitting and Underfitting",
+            ],
+            correctAnswer: "Batch learning and Online learning",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the main characteristic of a model's operation after it has been trained in a batch learning setup?",
+            type: "multiple",
+            options: [
+              "It continuously modifies its parameters using a high learning rate.",
+              "It is deployed into production and operates without further learning, applying only its acquired knowledge.",
+              "It updates its rules sequentially using small groups called mini-batches.",
+              "It uses similarity measures to compare new data points on the fly.",
+            ],
+            correctAnswer:
+              "It is deployed into production and operates without further learning, applying only its acquired knowledge.",
+            shuffle: true,
+          },
+          {
+            question:
+              "A financial market forecasting model trained with batch learning experiences a rapid deterioration in performance. What is this phenomenon called?",
+            type: "multiple",
+            options: [
+              "Sampling bias",
+              "Model rot or data drift",
+              "Overfitting",
+              "Feature extraction",
+            ],
+            correctAnswer: "Model rot or data drift",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is a key advantage of Online Learning?",
+            type: "multiple",
+            options: [
+              "It completely eliminates the need for data cleaning or handling missing values.",
+              "It requires training a new version of the system from the entirety of the original dataset.",
+              "It allows models to be trained on very large datasets that exceed a single computer's main memory.",
+              "It operates without using hyperparameters or performance measures.",
+            ],
+            correctAnswer:
+              "It allows models to be trained on very large datasets that exceed a single computer's main memory.",
+            shuffle: true,
+          },
+          {
+            question:
+              "In online learning, what happens if the learning rate is set to a high value?",
+            type: "multiple",
+            options: [
+              "The system will learn more slowly but will be less affected by noise and outliers.",
+              "The system will quickly learn new things, but it will also forget old things very quickly.",
+              "The system will completely stop learning and revert to an offline batch learning state.",
+              "The system will automatically switch to instance-based similarity comparisons.",
+            ],
+            correctAnswer:
+              "The system will quickly learn new things, but it will also forget old things very quickly.",
+            shuffle: true,
+          },
+          {
+            question:
+              "How does an instance-based learning system generalize to new input data cases?",
+            type: "multiple",
+            options: [
+              "By creating a set of rules and establishing a strict learned decision boundary.",
+              "By adjusting hyperparameters like regularization until the cost function reaches zero.",
+              "By comparing new input data to the examples stored in memory using a similarity measure.",
+              "By extracting features and combining them to form an completely new dataset.",
+            ],
+            correctAnswer:
+              "By comparing new input data to the examples stored in memory using a similarity measure.",
+            shuffle: true,
+          },
+          {
+            question:
+              "If a very large data sample is collected but the underlying sampling method itself is faulty, what type of problem does this introduce?",
+            type: "multiple",
+            options: [
+              "Sampling noise",
+              "Sampling bias",
+              "Model underfitting",
+              "Data drift",
+            ],
+            correctAnswer: "Sampling bias",
+            shuffle: true,
+          },
+          {
+            question:
+              "Suppose a training dataset contains instances where a few features are completely missing. Which of the following is NOT listed as an option to handle this?",
+            type: "multiple",
+            options: [
+              "Ignore the attribute.",
+              "Ignore the instances.",
+              "Fill in the missing values.",
+              "Randomly generate new patterns from noise.",
+            ],
+            correctAnswer: "Randomly generate new patterns from noise.",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the process of combining existing features to produce a more useful one called?",
+            type: "multiple",
+            options: [
+              "Feature selection",
+              "Feature extraction",
+              "Regularization",
+              "Hyperparameter tuning",
+            ],
+            correctAnswer: "Feature extraction",
+            shuffle: true,
+          },
+          {
+            question: "What is a hyperparameter?",
+            type: "multiple",
+            options: [
+              "A parameter of the model that automatically updates itself using a similarity measure during training.",
+              "A parameter of a learning algorithm that must be set prior to training and remains constant during training.",
+              "An outlier feature that must be handled by ignoring the corresponding data instance.",
+              "A performance measure that calculates how bad a model is based on training data.",
+            ],
+            correctAnswer:
+              "A parameter of a learning algorithm that must be set prior to training and remains constant during training.",
+            shuffle: true,
+          },
+          {
+            id: "written-question-1",
+            type: "complete",
+            question:
+              "Explain how an update is performed in a Batch Learning system when new data becomes available, and identify the primary disadvantages of this technique.",
+            correctAnswer:
+              "To update a batch learning system with new data, it is necessary to train a completely new version of the system from scratch using the entirety of the dataset, which incorporates both the new data and the existing data. Once trained, the old model is replaced with the newly trained one. The primary disadvantages are that training with the complete dataset requires extensive hours and demands substantial computational resources, including CPU, RAM, disk space, disk I/O, and network I/O.",
+          },
+          {
+            id: "written-question-2",
+            type: "complete",
+            question:
+              "Describe the concept of 'model rot' (or 'data drift'), explain why it occurs, and compare how its frequency varies between different use cases.",
+            correctAnswer:
+              "Model rot or data drift refers to the phenomenon where a machine learning model's efficacy gradually diminishes over time. This occurs because the real world evolves while the trained model remains static. The frequency of performance deterioration depends heavily on the specific use case: If the model's task is to categorize images of cats and dogs, its performance will diminish gradually. If the model engages with rapidly changing systems, such as forecasting in the financial market, its performance is likely to deteriorate fast.",
+          },
+          {
+            id: "written-question-3",
+            type: "complete",
+            question:
+              "How does Online Learning handle data during the training process, and under what constraints or scenarios is it considered an ideal choice?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "When things need to change very quickly, such as in the stock market.",
+              "When there is a limited amount of computer power available, such as when a model is trained directly on a phone.",
+              "When training models on very large datasets that are too massive to fit into a single computer's main memory.",
+            ],
+          },
+          {
+            id: "written-question-4",
+            type: "complete",
+            question:
+              "Contrast low learning rates and high learning rates in the context of online learning systems. What are the trade-offs for each?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "High Learning Rate: The system will quickly learn and adapt to new incoming information, but it will also forget old information and past patterns very quickly.",
+              "Low Learning Rate: The system will learn more slowly, but it has the advantage of being less affected by noise in the new data or by groups of data points that do not belong to the category (outliers).",
+            ],
+          },
+          {
+            id: "written-question-5",
+            type: "complete",
+            question:
+              "Compare and contrast Instance-based Learning and Model-based Learning in terms of how they learn and how they make predictions on new data instances.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Instance-based Learning: The model learns from examples and stores them directly in memory. It generalizes to new cases by comparing new input data to these stored examples using a similarity measure.",
+              "Model-based Learning: The model is trained on a large dataset to create a model (which can be thought of as a set of rules) that predicts outcomes based on input data. The prediction about the class is decided based on a boundary learned from the training data, rather than comparing data points using similarity measures.",
+            ],
+          },
+          {
+            id: "written-question-6",
+            type: "complete",
+            question:
+              "What parameters must be specified to tune a model to a training set in Model-based learning, and how are they defined?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "A fitness function, which measures how good the model is.",
+              "A cost function, which measures how bad the model is.",
+            ],
+          },
+          {
+            id: "written-question-7",
+            type: "complete",
+            question:
+              "When things go wrong in machine learning, they fall into two broad categories of challenges. Name these two categories and list the specific reasons associated with the data category.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Insufficient Quantity of Training Data.",
+              "Nonrepresentative Training Data.",
+              "Poor-Quality Data.",
+              "Irrelevant Features.",
+            ],
+          },
+          {
+            id: "written-question-8",
+            type: "complete",
+            question:
+              "How much data is typically required for machine learning algorithms to function properly for simple versus complex problems?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "For very simple problems, you typically need thousands of examples.",
+              "For complex problems (such as image or speech recognition), you may need millions of examples.",
+            ],
+          },
+          {
+            id: "written-question-9",
+            type: "complete",
+            question:
+              "What is Feature Engineering, and what are the specific steps involved in this process?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Feature selection: Selecting the most useful features to train on among existing features.",
+              "Feature extraction: Combining existing features to produce a more useful one.",
+              "Creating new features by gathering new data.",
+            ],
+          },
+          {
+            id: "written-question-10",
+            type: "complete",
+            question:
+              "Define 'Overfitting,' explain why it occurs, and list the solutions proposed to mitigate it.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Simplify the model by reducing the number of attributes in the training data, constraining the model, or selecting another model with fewer parameters.",
+              "Collect more training data.",
+              "Decrease the noise in the training data.",
+            ],
+          },
+          {
+            id: "written-question-11",
+            type: "complete",
+            question:
+              "What is regularization, and how is it controlled during the learning process?",
+            correctAnswer:
+              "Regularization is the process of constraining a model to make it simpler and reduce the overall risk of overfitting. The amount of regularization to apply during learning can be controlled by a hyperparameter, which must be set prior to training and remains constant throughout the training process.",
+          },
+          {
+            id: "written-question-12",
+            type: "complete",
+            question:
+              "Define 'Underfitting' and list the solutions required to resolve it.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Selecting a more complex model.",
+              "Using advanced feature engineering to select better features.",
+              "Reducing the constraints on the model.",
             ],
           },
         ],
