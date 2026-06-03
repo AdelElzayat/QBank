@@ -2591,6 +2591,573 @@ const quizzes = [
           },
         ],
       },
+      {
+        id: "chapter1-qbank",
+        title: "Chapter1 QBank",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            id: "q1-define-machine-learning",
+            type: "complete",
+            question: "Define Machine Learning (ML).",
+            correctAnswer:
+              "A branch of AI that enables systems to learn patterns from data and make predictions without being explicitly programmed. Formally: a program learns from experience E for task T measured by P, if performance on T improves with E.",
+          },
+          {
+            id: "q2-define-artificial-intelligence",
+            type: "complete",
+            question: "Define Artificial Intelligence (AI).",
+            correctAnswer:
+              "The broadest field building systems that make machine act as human (reasoning, perception, problem-solving).",
+          },
+          {
+            id: "q3-define-deep-learning",
+            type: "complete",
+            question: "Define Deep Learning (DL).",
+            correctAnswer:
+              "A subset of ML using multi-layered neural networks that learn hierarchical representations directly from raw data (images, text).",
+          },
+          {
+            id: "q4-define-training-set-and-training-instance",
+            type: "complete",
+            question: "Define Training Set and Training Instance.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Training Set: the full collection of examples used for learning.",
+              "Training Instance (sample): one individual example in the set.",
+            ],
+          },
+          {
+            id: "q5-define-a-model",
+            type: "complete",
+            question: "Define a Model.",
+            correctAnswer:
+              "The component that learns patterns from training data and generates predictions on new data.",
+          },
+          {
+            id: "q6-define-supervised-learning",
+            type: "complete",
+            question: "Define Supervised Learning.",
+            correctAnswer:
+              "Training on labeled data (input + correct output). Learns input output mapping. Two main tasks: Classification and Regression.",
+          },
+          {
+            id: "q7-define-unsupervised-learning",
+            type: "complete",
+            question: "Define Unsupervised Learning.",
+            correctAnswer:
+              "Training on unlabeled data to discover hidden patterns. Tasks: Clustering, Dimensionality Reduction, Anomaly Detection, Generative Modeling.",
+          },
+          {
+            id: "q8-define-semi-supervised-learning",
+            type: "complete",
+            question: "Define Semi-Supervised Learning.",
+            correctAnswer:
+              "Combines small labeled + large unlabeled data. Cluster unlabeled instances -> assign labels from cluster majority apply supervised algorithm.",
+          },
+          {
+            id: "q9-define-self-supervised-learning",
+            type: "complete",
+            question: "Define Self-Supervised Learning.",
+            correctAnswer:
+              "Generates its own labels via a pretext task. E.g., NLP: predict masked words; CV: predict masked image region.",
+          },
+          {
+            id: "q10-define-reinforcement-learning",
+            type: "complete",
+            question: "Define Reinforcement Learning (RL).",
+            correctAnswer:
+              "An agent interacts with an environment, receives rewards/penalties, and learns a policy to maximize cumulative reward.",
+          },
+          {
+            id: "q11-define-batch-learning",
+            type: "complete",
+            question: "Define Batch Learning.",
+            correctAnswer:
+              "Trained on the entire dataset at once (offline). Must fully retrain from scratch when new data arrives.",
+          },
+          {
+            id: "q12-define-online-learning",
+            type: "complete",
+            question: "Define Online Learning.",
+            correctAnswer:
+              "Learns incrementally from sequential data (one or mini-batches at a time). Continuously adapts without full retraining.",
+          },
+          {
+            id: "q13-define-instance-based-learning",
+            type: "complete",
+            question: "Define Instance-based Learning.",
+            correctAnswer:
+              "Stores all training examples; predicts by similarity to stored instances. Example: k-Nearest Neighbors (KNN).",
+          },
+          {
+            id: "q14-define-model-based-learning",
+            type: "complete",
+            question: "Define Model-based Learning.",
+            correctAnswer:
+              "Builds a mathematical model (e.g., decision boundary or equation) by optimizing a cost function. Predicts using the formula, not stored instances.",
+          },
+          {
+            id: "q15-define-overfitting",
+            type: "complete",
+            question: "Define Overfitting.",
+            correctAnswer:
+              "Model memorizes training noise low training error but poor generalization. Cause: model too complex relative to data. Training accuracy is high, test accuracy is low. Training error is low, test error is high.",
+          },
+          {
+            id: "q16-define-underfitting",
+            type: "complete",
+            question: "Define Underfitting.",
+            correctAnswer:
+              "Model too simple to learn meaningful patterns. Training accuracy is low, test accuracy is low. Both training and test errors are high.",
+          },
+          {
+            id: "q17-define-regularization",
+            type: "complete",
+            question: "Define Regularization.",
+            correctAnswer:
+              "Constrains model complexity (e.g., limits weight magnitudes via Ridge/Lasso) to reduce overfitting. Degree controlled by a hyperparameter.",
+          },
+          {
+            id: "q18-define-a-hyperparameter",
+            type: "complete",
+            question: "Define a Hyperparameter.",
+            correctAnswer:
+              "Configuration set before training, stays constant throughout (e.g., learning rate, regularization strength a, k in KNN).",
+          },
+          {
+            id: "q19-define-generalization-error",
+            type: "complete",
+            question: "Define Generalization Error.",
+            correctAnswer:
+              "Error rate on new, unseen data (out-of-sample error). Low training error + high generalization error = overfitting.",
+          },
+          {
+            id: "q20-define-sampling-bias",
+            type: "complete",
+            question: "Define Sampling Bias.",
+            correctAnswer:
+              "Training data collected via flawed method fails to represent the real population poor generalization even with large samples.",
+          },
+          {
+            id: "q21-define-feature-engineering",
+            type: "complete",
+            question: "Define Feature Engineering.",
+            correctAnswer:
+              "Creating, selecting, or transforming features to improve model performance: Feature Selection, Feature Extraction, adding new data sources.",
+          },
+          {
+            id: "q22-define-the-no-free-lunch-theorem",
+            type: "complete",
+            question: "Define the No Free Lunch (NFL) Theorem.",
+            correctAnswer:
+              "No single ML model is universally best for all datasets. Model selection requires assumptions and empirical testing.",
+          },
+          {
+            id: "q23-define-k-fold-cross-validation",
+            type: "complete",
+            question: "Define K-Fold Cross-Validation.",
+            correctAnswer:
+              "Splits data into K folds; trains/validates K times, each time using a different fold for validation. Final score = average across K runs. Training time xK.",
+          },
+          {
+            id: "q24-define-classification-and-regression",
+            type: "complete",
+            question: "Define Classification and Regression.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Classification: Discrete class label (binary <= 2 classes; multiclass > 2). Example: Spam detection, disease diagnosis.",
+              "Regression: Continuous numerical value (multivariate: multiple outputs). Example: House price, GDP forecasting.",
+            ],
+          },
+          {
+            id: "q25-define-the-learning-rate-in-gradient-descent",
+            type: "complete",
+            question: "Define the Learning Rate in Gradient Descent.",
+            correctAnswer:
+              "Hyperparameter controlling step size per iteration. Too low -> slow convergence. Too high -> overshoots minimum/diverges. Must be tuned.",
+          },
+          {
+            id: "q26-compare-ai-ml-and-deep-learning",
+            type: "complete",
+            question:
+              "Compare AI, ML, and Deep Learning based on Scope, Data Dependency, Mechanism, Examples, and Interpretability.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "AI: Broadest scope; Rules or data dependency; Rule/learning-based mechanism; Examples include Expert systems, robotics; Interpretability varies.",
+              "ML: Subset of AI scope; Requires data dependency; Learns functions mechanism; Examples include SVM, Decision Trees; Generally interpretable.",
+              "DL: Subset of ML scope; Requires large data dependency; Learns hierarchical reps mechanism; Examples include CNN, RNN, Transformers; Often black box.",
+            ],
+          },
+          {
+            id: "q27-compare-traditional-programming-vs-machine-learning",
+            type: "complete",
+            question:
+              "Compare Traditional Programming vs. Machine Learning based on Input, Output, Rule Source, Adaptability, and Best For.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Traditional Programming: Input is Data + Rules; Output is Result; Rule Source is Written by developer; Adaptability requires manual updates; Best for stable, well-defined problems.",
+              "Machine Learning: Input is Data + Labels (Output); Output is Learned Model (Rules); Rule Source is Learned from data automatically; Adapts with new data; Best for complex or changing problems.",
+            ],
+          },
+          {
+            id: "q28-compare-supervised-unsupervised-and-reinforcement-learning",
+            type: "complete",
+            question:
+              "Compare Supervised, Unsupervised, and Reinforcement Learning based on Labels, Goal, Feedback, Main Tasks, and Example.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Supervised: Labels required; Goal is to predict output; Direct (correct labels) feedback; Main tasks are Classification, Regression; Example is Spam filter.",
+              "Unsupervised: No labels; Goal is to discover structure; No feedback; Main tasks are Clustering, DR, Anomaly; Example is Customer segmentation.",
+              "Reinforcement: Reward signal only labels; Goal is to maximize reward; Indirect (reward/penalty) feedback; Main task is Policy optimization; Example is Game playing, robotics.",
+            ],
+          },
+          {
+            id: "q29-compare-batch-learning-vs-online-learning",
+            type: "complete",
+            question:
+              "Compare Batch Learning vs. Online Learning based on Learning Mode, Adaptability, Resource Use, and Best For.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Batch (Offline): Entire dataset at once learning mode; Low adaptability (full retrain needed); High CPU/RAM per cycle resource use; Best for stable data, large resources.",
+              "Online: Incremental (one/mini-batch) learning mode; High adaptability (adapts instantly); Low resource use per update; Best for fast-changing data, IoT, streams.",
+            ],
+          },
+          {
+            id: "q30-compare-instance-based-vs-model-based-learning",
+            type: "complete",
+            question:
+              "Compare Instance-based vs. Model-based Learning based on Prediction Method, Memory Use, Training Speed, Prediction Speed, and Example.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Instance-based: Predicts by comparing to stored examples (similarity); Stores all instances; Fast training speed (memorize); Slow prediction speed (compare all instances); Example is KNN.",
+              "Model-based: Applies learned equation/boundary for prediction; Stores only parameters; Slow training speed (optimization); Fast prediction speed (apply formula); Examples include Linear Regression, SVM.",
+            ],
+          },
+          {
+            id: "q31-compare-overfitting-vs-underfitting",
+            type: "complete",
+            question:
+              "Compare Overfitting vs. Underfitting based on Training Error, Test/Val Error, Bias, Variance, Cause, and Solution.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Overfitting: Low training error; High test/val error; Low bias; High variance; Cause is model too complex / noisy data; Solution is regularization, more data, simpler model.",
+              "Underfitting: High training error; High test/val error; High bias; Low variance; Cause is model too simple / poor features; Solution is more complex model, better features.",
+            ],
+          },
+          {
+            id: "q32-compare-classification-vs-regression",
+            type: "complete",
+            question:
+              "Compare Classification vs. Regression based on Output, Performance Metric, Examples, and Algorithm Examples.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Classification: Discrete class label output; Accuracy, F1, AUC-ROC performance metrics; Examples include spam detection, disease diagnosis; Algorithm examples include Logistic Regression, SVM, Decision Tree.",
+              "Regression: Continuous numerical value output; RMSE, MSE, MAE, R' performance metrics; Examples include house price, GDP prediction; Algorithm examples include Linear Regression, Ridge, Lasso.",
+            ],
+          },
+          {
+            id: "q33-compare-model-parameter-vs-hyperparameter",
+            type: "complete",
+            question:
+              "Compare Model Parameter vs. Hyperparameter based on who sets it, timing, and examples.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Model Parameter: Learned automatically during training; Updated each training step; Examples include weights in linear regression (theta0, theta1).",
+              "Hyperparameter: Set manually before training; Fixed throughout training; Examples include learning rate, alpha, k in KNN.",
+            ],
+          },
+          {
+            id: "q34-compare-training-set-validation-set-and-test-set",
+            type: "complete",
+            question:
+              "Compare Training Set, Validation Set, and Test Set based on Purpose, Typical Size, Reuse, and Risk if misused.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Training Set: Purpose is to learn parameters; Typical size is ~60-80%; Reused repeatedly; Risk if misused is overfitting.",
+              "Validation Set: Purpose is to tune hyperparameters and detect overfitting; Typical size is ~10-20%; Reused repeatedly; Risk if misused is hyperparameter overfitting.",
+              "Test Set: Purpose is final evaluation; Typical size is ~10-20%; Used only once; Risk if misused is optimistic estimate.",
+            ],
+          },
+          {
+            id: "q35-advantages-disadvantages-of-machine-learning",
+            type: "complete",
+            question:
+              "What are the Advantages and Disadvantages of Machine Learning?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Advantage: Handles complex, non-linear problems",
+              "Advantage: Adapts and improves with more data",
+              "Advantage: Automates rule discovery",
+              "Advantage: Finds hidden patterns humans miss",
+              "Advantage: Applicable across diverse domains",
+              "Disadvantage: Requires large, high-quality labeled data",
+              "Disadvantage: Models can be opaque ('black box')",
+              "Disadvantage: Computationally expensive to train",
+              "Disadvantage: Sensitive to data quality (garbage in, garbage out)",
+              "Disadvantage: May amplify biases in training data",
+            ],
+          },
+          {
+            id: "q36-advantages-disadvantages-of-supervised-learning",
+            type: "complete",
+            question:
+              "What are the Advantages and Disadvantages of Supervised Learning?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Advantage: Accurate with direct label feedback",
+              "Advantage: Measurable performance metrics",
+              "Advantage: Mature algorithms, strong theory",
+              "Disadvantage: Labeling is expensive and time-consuming",
+              "Disadvantage: Needs large labeled datasets to generalize",
+              "Disadvantage: Cannot discover patterns not in labels",
+            ],
+          },
+          {
+            id: "q37-advantages-disadvantages-of-unsupervised-learning",
+            type: "complete",
+            question:
+              "What are the Advantages and Disadvantages of Unsupervised Learning?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Advantage: No labeling required",
+              "Advantage: Discovers hidden structure",
+              "Advantage: Scalable to large datasets",
+              "Disadvantage: Hard to evaluate (no ground truth)",
+              "Disadvantage: Cluster assignments can be ambiguous",
+              "Disadvantage: Harder to tune and interpret",
+            ],
+          },
+          {
+            id: "q38-advantages-disadvantages-of-batch-learning",
+            type: "complete",
+            question:
+              "What are the Advantages and Disadvantages of Batch Learning?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Advantage: Stable, consistent model",
+              "Advantage: Easy to validate and version",
+              "Advantage: Uses full dataset for training",
+              "Disadvantage: Cannot adapt without full retraining",
+              "Disadvantage: Retraining is costly on large data",
+              "Disadvantage: Suffers model rot over time",
+            ],
+          },
+          {
+            id: "q39-advantages-disadvantages-of-online-learning",
+            type: "complete",
+            question:
+              "What are the Advantages and Disadvantages of Online Learning?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Advantage: Adapts in real time",
+              "Advantage: Memory efficient",
+              "Advantage: Handles streaming data (stock, IoT)",
+              "Disadvantage: Sensitive to noisy/adversarial data",
+              "Disadvantage: Learning rate is critical and hard to tune",
+              "Disadvantage: May forget old patterns if rate too high",
+            ],
+          },
+          {
+            id: "q40-main-challenges-of-machine-learning",
+            type: "complete",
+            question:
+              "What are the main challenges of Machine Learning categorized into Bad Data Challenges and Bad Algorithm Challenges?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Bad Data Challenge: Insufficient training data",
+              "Bad Data Challenge: Nonrepresentative data / sampling bias",
+              "Bad Data Challenge: Poor-quality data (noise, errors, outliers)",
+              "Bad Data Challenge: Irrelevant features needs feature engineering",
+              "Bad Algorithm Challenge: Overfitting memorizes noise, poor generalization",
+              "Bad Algorithm Challenge: Underfitting too simple to capture patterns",
+            ],
+          },
+          {
+            id: "q41-when-to-use-ml-instead-of-traditional-programming",
+            type: "complete",
+            question:
+              "When should you use ML instead of traditional programming?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "No human expertise or task too dangerous (e.g., Mars navigation).",
+              "Humans perform it but cannot explain the rules (e.g., speech/image recognition).",
+              "Rules change over time and system must adapt (e.g., financial forecasting).",
+              "Needs per-user customization (e.g., biometric authentication).",
+            ],
+          },
+          {
+            id: "q42-five-applications-of-machine-learning",
+            type: "complete",
+            question:
+              "List and describe five applications of Machine Learning.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Predictive Analytics: Estimates future values from historical patterns (sales, energy)",
+              "Fraud & Risk Detection: Identifies unusual behavior in financial/security data",
+              "Recommendation Systems: Suggests relevant items based on user history (Netflix, Amazon)",
+              "Medical Diagnosis: Analyzes patient data to assist disease identification",
+              "Anomaly Detection: Detects rare/abnormal data points (manufacturing, intrusion detection)",
+            ],
+          },
+          {
+            id: "q43-testing-and-validation-in-ml",
+            type: "complete",
+            question:
+              "Explain testing and validation in ML, including the standard splits, K-Fold CV, and key signals.",
+            correctAnswer:
+              "Goal: estimate generalization error on unseen data. Split sizes and purposes: Training Set (~80%) to learn model parameters; Validation Set (~10%) to tune hyperparameters and early stopping when val error rises; Test Set (~10%) used ONLY ONCE for final unbiased evaluation. K-Fold CV is used when data is small and rotates validation fold across K iterations. Key signal: Low train + High test error -> Overfitting. Both high indicates underfitting.",
+          },
+          {
+            id: "q44-three-sources-of-generalization-error",
+            type: "complete",
+            question:
+              "What are the three sources of generalization error, their causes, and remedies?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Bias: Cause is wrong model assumptions (e.g., linear for nonlinear data) -> underfitting; Remedy is more complex model, better features.",
+              "Variance: Cause is oversensitive to training data fluctuations -> overfitting; Remedy is regularization, more data, simpler model.",
+              "Irreducible Error: Cause is inherent data noise (sensor errors, wrong labels); Remedy is clean data, remove outliers.",
+            ],
+          },
+          {
+            id: "q45-bias-variance-tradeoff",
+            type: "complete",
+            question:
+              "Describe the Bias-Variance Tradeoff based on model complexity and its goal.",
+            correctAnswer:
+              "High complexity results in Low Bias and High Variance, leading to Overfitting. Low complexity results in High Bias and Low Variance, leading to Underfitting. Optimal complexity has balanced Bias and balanced Variance, leading to the best generalization. Goal: find the sweet spot minimizing Bias^2 + Variance + Irreducible Error.",
+          },
+          {
+            id: "q46-validation-set-vs-test-set",
+            type: "complete",
+            question:
+              "Compare the Validation Set vs. Test Set in terms of purpose and how often they are used.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Validation Set: Used to monitor training, detect overfitting, and tune hyperparameters. Used repeatedly during training.",
+              "Test Set: Used for final unbiased performance estimate after all training/tuning. Used only once at the end.",
+            ],
+          },
+          {
+            id: "q47-types-of-unsupervised-learning",
+            type: "complete",
+            question:
+              "List the types of Unsupervised Learning with their description and examples.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Clustering: Groups similar instances without labels. Example: K-Means customer segmentation.",
+              "Dimensionality Reduction: Merges correlated features to simplify data. Example: PCA for image features.",
+              "Anomaly Detection: Identifies rare/abnormal data points. Example: Fraudulent credit card transactions.",
+              "Generative Models: Creates new data similar to training distribution. Example: GANs generating faces.",
+            ],
+          },
+          {
+            id: "q48-reinforcement-learning-components",
+            type: "complete",
+            question:
+              "List and describe the components of Reinforcement Learning, and outline the process.",
+            correctAnswer:
+              "Components: Agent (The learning system making decisions); Environment (The world the agent interacts with); State (Current situation/observation); Action (Decision that affects the environment); Reward (Positive = good action, Negative/penalty = bad action); Policy (Learned strategy: best action per state to maximize long-term reward). Process: Observe state -> Select action -> Receive reward -> Update policy -> Repeat.",
+          },
+          {
+            id: "q49-why-does-the-nfl-theorem-matter-for-practitioners",
+            type: "complete",
+            question: "Why does the NFL theorem matter for practitioners?",
+            correctAnswer:
+              "No algorithm blindly outperforms all others on every problem. Practitioners must make domain assumptions, test multiple models empirically, and select the best for their specific problem.",
+          },
+          {
+            id: "q50-why-does-data-quality-matter-more-than-quantity",
+            type: "complete",
+            question: "Why does data quality matter more than quantity?",
+            correctAnswer:
+              "A large dataset full of errors, bias, or irrelevant features teaches wrong patterns regardless of size. Nonrepresentative data fails on the real distribution. Data cleaning and representative sampling are often more impactful than collecting more data.",
+          },
+          {
+            id: "q51-99-percent-training-accuracy-55-percent-test-accuracy-what-is-happening",
+            type: "complete",
+            question:
+              "If a model achieves 99% training accuracy and 55% test accuracy, what is happening and what are the fixes?",
+            correctAnswer:
+              "This is classic Overfitting where the model memorized training noise. Fixes: Apply regularization (Ridge, Lasso, Elastic Net); Simplify the model (reduce polynomial degree / parameters); Collect more diverse training data; Remove noisy or irrelevant features; Use Early Stopping during gradient descent.",
+          },
+          {
+            id: "q52-why-scale-features-before-gradient-descent",
+            type: "complete",
+            question: "Why scale features before Gradient Descent?",
+            correctAnswer:
+              "Different feature scales create elongated elliptical cost contours where GD follows a near-perpendicular path, needing many more iterations. Feature scaling (normalization/standardization) makes the bowl-shaped cost function circular, leading to fast, direct convergence.",
+          },
+          {
+            id: "q53-learning-rate-tradeoff-how-to-choose",
+            type: "complete",
+            question:
+              "Explain the learning rate tradeoff and strategies on how to choose it.",
+            correctAnswer:
+              "Too low (e.g., 0.02) causes very slow convergence with many iterations needed. Too high (e.g., 0.5) overshoots minimum and may diverge completely. Appropriate (e.g., 0.1) leads to efficient convergence in reasonable iterations. Strategy: grid search or learning rate schedule; monitor loss curve. Decrease if oscillating; increase if too slow.",
+          },
+          {
+            id: "ex-q1-define-machine-learning",
+            type: "complete",
+            question: "Define Machine Learning.",
+            correctAnswer:
+              "ML gives computers the ability to learn from data without being explicitly programmed. Formally: performance on task T improves with experience E as measured by P. Goal: detect patterns automatically and use them for predictions.",
+          },
+          {
+            id: "ex-q2-two-most-common-supervised-tasks",
+            type: "complete",
+            question: "What are the two most common supervised tasks?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Classification: Discrete class label (binary: 2 classes; multiclass: > 2). Example: Spam detection, image recognition.",
+              "Regression: Continuous numerical value (multivariate: multiple outputs). Example: House price, GDP forecasting.",
+            ],
+          },
+          {
+            id: "ex-q3-model-parameter-vs-hyperparameter",
+            type: "complete",
+            question: "Compare model parameter vs. hyperparameter.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Model Parameter: Learned automatically by training algorithm; Updated during training; Examples include theta0, theta1 (weights & bias in linear regression).",
+              "Hyperparameter: Set manually by practitioner; Fixed before training; Examples include Learning rate eta, alpha, k in KNN.",
+            ],
+          },
+          {
+            id: "ex-q4-role-of-rewards-in-reinforcement-learning",
+            type: "complete",
+            question: "What is the role of rewards in Reinforcement Learning?",
+            correctAnswer:
+              "Rewards are the feedback guiding learning. Positive reward -> reinforces good actions. Penalty (negative reward) -> discourages bad actions. Agent learns a policy to maximize cumulative long term reward. E.g., chess: capturing a piece = reward; losing one = penalty.",
+          },
+          {
+            id: "ex-q5-main-challenges-in-machine-learning",
+            type: "complete",
+            question: "What are the main challenges in Machine Learning?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Bad Data Problem: Insufficient training data quantity",
+              "Bad Data Problem: Nonrepresentative data / sampling bias",
+              "Bad Data Problem: Poor-quality data (noise, errors, outliers)",
+              "Bad Data Problem: Irrelevant features / poor feature engineering",
+              "Bad Algorithm Problem: Overfitting: too complex, poor generalization",
+              "Bad Algorithm Problem: Underfitting: too simple, misses patterns",
+              "Bad Algorithm Problem: Wrong model choice for problem type",
+              "Bad Algorithm Problem: Poor hyperparameter tuning",
+            ],
+          },
+          {
+            id: "ex-q6-purpose-of-a-validation-set",
+            type: "complete",
+            question: "What is the purpose of a Validation Set?",
+            correctAnswer:
+              "Monitor performance during training to detect overfitting and tune hyperparameters. Apply Early Stopping when validation error rises. Standard split: ~80% Training (Learn model parameters) / ~10% Validation (Tune hyperparameters; early stopping) / ~10% Test (Final unbiased evaluation used once). For small datasets, use K-Fold Cross-Validation which rotates which fold is used for validation across K iterations.",
+          },
+        ],
+      },
     ],
   },
   // {
