@@ -2594,7 +2594,7 @@ const quizzes = [
       {
         id: "chapter1-qbank",
         title: "Chapter1 QBank",
-        shuffleQuestions: true,
+        shuffleQuestions: false,
         showScore: true,
         quizModeTimer: 1800,
         questions: [
