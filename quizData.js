@@ -1806,7 +1806,7 @@ const quizzes = [
     chapters: [
       {
         id: "lecture-1-quiz",
-        title: "Lecture 1 Quiz",
+        title: "MCQ QBank",
         shuffleQuestions: false,
         showScore: true,
         quizModeTimer: 1800,
@@ -1946,155 +1946,6 @@ const quizzes = [
             shuffle: true,
           },
           {
-            id: "written-question-1",
-            type: "complete",
-            question:
-              "Define Artificial Intelligence(AI), Machine Learning(ML), and Deep Learning(DL).",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Artificial Intelligence: Concerned with building systems that simulate intelligent behavior. Its core focus is to mimic human behavior.",
-              "Machine Learning: A subset of AI that learns to make decisions by fitting mathematical models to observed data. It concerns the construction and study of systems that can learn from experience/data.",
-              "Deep Learning: Application of deep neural network models within machine learning, where these networks learn representations directly from data. They represent different levels of intelligent computing.",
-            ],
-          },
-          {
-            id: "written-question-2",
-            type: "complete",
-            question: "State the primary goal of machine learning.",
-            correctAnswer:
-              "The goal of machine learning is to develop methods that can automatically detect patterns in data, and then to use the uncovered patterns to predict future data or other outcomes of interest. Briefly, it is about predicting the future based on the past.",
-          },
-          {
-            id: "written-question-3",
-            type: "complete",
-            question:
-              "Describe the timeline and flow of data when a machine learning model is utilized, explaining what happens during the 'past' phase and the 'future' phase.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "In the Past: 'Training Data' is supplied to a learning process ('learn') to construct and develop a 'model'.",
-              "In the Future: New 'Testing Data' is fed directly into the developed 'model', which processes the data to generate a 'predict' outcome.",
-            ],
-          },
-          {
-            id: "written-question-4",
-            type: "complete",
-            question:
-              "Define the terms 'Training Set', 'Training Instance or sample', and 'Model'.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Training Set: The examples that a machine learning system uses to learn.",
-              "Training Instance: Each individual training example within the training set.",
-              "Model: The specific part of a machine learning system that learns and makes predictions.",
-            ],
-          },
-          {
-            id: "written-question-5",
-            type: "complete",
-            question:
-              "Explain the two primary ways through which humans learn.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Someone tells us: Learning via a teacher or by watching others.",
-              "Try and test: Learning by doing.",
-            ],
-          },
-          {
-            id: "written-question-6",
-            type: "complete",
-            question:
-              "Under what four conditions or scenarios is it necessary to use Machine Learning because human expertise is limited or inapplicable?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Human expertise does not exist (navigating on Mars), or there is a danger.",
-              "Humans are unable to explain their expertise (speech/image recognition).",
-              "A solution changes in time (market data for market forecast).",
-              "A solution needs to be adapted to particular cases (biometrics).",
-            ],
-          },
-          {
-            id: "written-question-7",
-            type: "complete",
-            question:
-              "What is 'Predictive Analytics and Forecasting'? Detail its core mechanism, its main goal, and list three areas where it is widely applied.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Definition: Predictive analytics uses machine learning models to estimate future values based on historical data by using algorithms to analyze trends and patterns in past observations.",
-              "Main Goal: To support decision-making by providing accurate numerical predictions while keeping the model easy to understand and explain.",
-              "Applications: It is widely used in sales forecasting, energy consumption estimation, and financial analysis.",
-            ],
-          },
-          {
-            id: "written-question-8",
-            type: "complete",
-            question:
-              "Identify where Fraud and Risk Detection applications are critical, and explain how machine learning models spot potential risks.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Critical Domains: This application is critical in banking, insurance, cybersecurity, and transaction monitoring systems.",
-              "Mechanism: Machine learning models learn patterns of normal behavior and flag any deviations from that baseline that may indicate fraud or risk within large datasets.",
-            ],
-          },
-          {
-            id: "written-question-9",
-            type: "complete",
-            question:
-              "Explain the goal of Recommendation Systems, where they are commonly applied, and describe the advantages of using classical recommendation algorithms.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Goal: To suggest relevant items to users based on their preferences or past behavior.",
-              "Common Applications: E-commerce platforms, streaming services, and online learning environments.",
-              "Advantages: Despite their simplicity, classical recommendation algorithms provide strong performance and scalability without requiring large computational resources.",
-            ],
-          },
-          {
-            id: "written-question-10",
-            type: "complete",
-            question:
-              "What is the primary function of Anomaly Detection, name three fields where it is essential, and what is its typical operational temporal requirement?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Primary Function: It identifies rare or abnormal data points that deviate from normal patterns.",
-              "Essential Fields: Manufacturing quality control, network intrusion detection, and sensor monitoring.",
-              "Temporal Requirement: Anomaly detection systems often operate in real time.",
-            ],
-          },
-          {
-            id: "written-question-11",
-            type: "complete",
-            question:
-              "What makes spam detection systems highly viable and widely used in email and messaging platforms?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Speed",
-              "Accuracy",
-              "Ability to operate effectively on large volumes of data with limited computational resources.",
-            ],
-          },
-          {
-            id: "written-question-12",
-            type: "complete",
-            question:
-              "Describe the input data types and the role of Machine Learning in 'Medical Diagnosis' and 'Medical Decision Support Systems (CDSS)'. Also, list the five surrounding components that interact with the clinical decision-makers team according to the CDSS.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Data Types and Role: Structured clinical data-such as laboratory results, medical history, vital signs, and clinical measurements-are analyzed using classical algorithms. The models assist healthcare professionals by predicting disease risk, supporting early diagnosis, predicting treatment outcomes/patient readmission rates, and improving clinical decision-making.",
-              "Diagnosis",
-              "Prognosis",
-              "Treatment",
-              "Evolution",
-              "Prevention",
-            ],
-          },
-        ],
-      },
-      {
-        id: "ai-lec2-quiz",
-        title: "Lecture 2 Quiz",
-        shuffleQuestions: false,
-        showScore: true,
-        quizModeTimer: 1800,
-        questions: [
-          {
             question:
               "In the context of supervised learning, what is an 'example'?",
             type: "multiple",
@@ -2225,107 +2076,6 @@ const quizzes = [
             correctAnswer: "A Policy",
             shuffle: true,
           },
-          {
-            id: "written-question-1",
-            type: "complete",
-            question:
-              "Machine learning systems can be classified based on three main criteria. List these three criteria, and state the five sub-types belonging to the first category.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Classification criteria: ML Supervision, Data Availability, Generalization",
-              "Sub-types of supervision: Supervised Learning, Unsupervised Learning, Self-supervised Learning, Semi-supervised Learning, Reinforcement Learning",
-            ],
-          },
-          {
-            id: "written-question-2",
-            type: "complete",
-            question:
-              "Explain how a supervised learning algorithm functions during its training phase. What is the explicit objective of the algorithm during this phase?",
-            correctAnswer:
-              "During the training phase, the supervised learning algorithm is provided with a dataset that includes both input data (features) and their corresponding output solutions (labels). The algorithm attempts to approximate the function that maps inputs to outputs. It does this by learning a function that continuously decreases the difference between its own predictions and the actual true labels. Once this training phase is complete, the model can be used to predict outputs for novel, unseen data.",
-          },
-          {
-            id: "written-question-3",
-            type: "complete",
-            question:
-              "Compare and contrast the two main types of supervised learning tasks.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Classification: The task where the model takes input features and predicts which category (class) among a discrete set of options an example belongs to. It can be binary classification (only two possible classes available) or multiclass classification (more than two classes are involved).",
-              "Regression: The task where the labels are continuous numerical values. The objective is to develop a model that predicts values as close as possible to the true labels. It can also be a multivariate regression problem if the model predicts more than one number.",
-            ],
-          },
-          {
-            id: "written-question-4",
-            type: "complete",
-            question:
-              "Define unsupervised learning and identify its two most common types.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Unsupervised learning is a type of machine learning where a model is built entirely from input data with no existing labels, meaning there is zero supervision. Instead of learning to map inputs to outputs, the algorithm learns to understand the structural arrangements, connections, and patterns within the data.",
-              "The two common unsupervised learning types mentioned are clustering and generative models.",
-            ],
-          },
-          {
-            id: "written-question-5",
-            type: "complete",
-            question:
-              "What is the primary goal of Dimensionality Reduction, and what transformations does it perform on data?",
-            correctAnswer:
-              "The primary goal of dimensionality reduction is to simplify the data without losing too much information. It converts high-dimensional data into a lower-dimensional space while retaining key information and preserving important details. This reduction helps lower the amount of used storage and enhances computational speed.",
-          },
-          {
-            id: "written-question-6",
-            type: "complete",
-            question:
-              "Describe how a cat generative model reacts when fed an image of a dog, and explain how this specific behavior can be utilized as a tool.",
-            correctAnswer:
-              "If you feed a cat generative model an image of a dog, it will assign a low probability to that image, indicating that the input does not look like the training data it learned. This specific behavioral mechanism is highly useful for anomaly detection applications.",
-          },
-          {
-            id: "written-question-7",
-            type: "complete",
-            question:
-              "Explain how self-supervised learning operates on images, including the specific term used for the setup task.",
-            correctAnswer:
-              "Self-supervised learning on images operates by starting with unlabeled data and automatically generating its own labels from the data itself. It accomplishes this by setting up a 'pretext task.' For images, models are specifically trained to forecast a blocked-out or missing part of an image given the remaining visible parts of that image.",
-          },
-          {
-            id: "written-question-8",
-            type: "complete",
-            question:
-              "Using the photo-hosting service example (like Google Photos), provide a step-by-step breakdown of how semi-supervised learning operates in practice.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Unsupervised Clustering Step: When a user uploads many photos, the system automatically runs a clustering step to identify face similarities. It figures out that a particular person (Person X) appears in photos 1, 3, and 5, while another person (Person Y) appears in photos 2, 4, and 6, without knowing who they actually are.",
-              "Supervised Labeling Step: The user provides just one single text label per person (e.g., naming Person X and Person Y).",
-              "Application/Mapping: Utilizing that single label combined with the clusters, the system automatically recognizes and names everyone across all the remaining photos, making searching and organization easier.",
-            ],
-          },
-          {
-            id: "written-question-9",
-            type: "complete",
-            question:
-              "Detail the step-by-step loop interaction between a Reinforcement Learning agent and its environment.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "The agent observes the environment.",
-              "The agent selects an action using its current policy.",
-              "The agent executes the Action! into the environment.",
-              "The agent gets a reward or penalty based on that action (e.g., getting -50 points and experiencing an 'Ouch!' penalty for interacting with fire).",
-              "The agent performs a learning step to update its policy so it can avoid bad actions next time.",
-              "The system iterates through this cycle repeatedly until an optimal policy is found.",
-            ],
-          },
-        ],
-      },
-      {
-        id: "ml-lec3-quiz",
-        title: "Lecture 3 Quiz",
-        shuffleQuestions: false,
-        showScore: true,
-        quizModeTimer: 1800,
-        questions: [
           {
             question:
               "Machine learning systems that are classified based on whether they can learn incrementally from a stream of incoming data are divided into which categories?",
@@ -2461,700 +2211,823 @@ const quizzes = [
             shuffle: true,
           },
           {
-            id: "written-question-1",
-            type: "complete",
             question:
-              "Explain how an update is performed in a Batch Learning system when new data becomes available, and identify the primary disadvantages of this technique.",
-            correctAnswer:
-              "To update a batch learning system with new data, it is necessary to train a completely new version of the system from scratch using the entirety of the dataset, which incorporates both the new data and the existing data. Once trained, the old model is replaced with the newly trained one. The primary disadvantages are that training with the complete dataset requires extensive hours and demands substantial computational resources, including CPU, RAM, disk space, disk I/O, and network I/O.",
-          },
-          {
-            id: "written-question-2",
-            type: "complete",
-            question:
-              "Describe the concept of 'model rot' (or 'data drift'), explain why it occurs, and compare how its frequency varies between different use cases.",
-            correctAnswer:
-              "Model rot or data drift refers to the phenomenon where a machine learning model's efficacy gradually diminishes over time. This occurs because the real world evolves while the trained model remains static. The frequency of performance deterioration depends heavily on the specific use case: If the model's task is to categorize images of cats and dogs, its performance will diminish gradually. If the model engages with rapidly changing systems, such as forecasting in the financial market, its performance is likely to deteriorate fast.",
-          },
-          {
-            id: "written-question-3",
-            type: "complete",
-            question:
-              "How does Online Learning handle data during the training process, and under what constraints or scenarios is it considered an ideal choice?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "When things need to change very quickly, such as in the stock market.",
-              "When there is a limited amount of computer power available, such as when a model is trained directly on a phone.",
-              "When training models on very large datasets that are too massive to fit into a single computer's main memory.",
+              "What is considered the most reliable way to determine how well a machine learning model will generalize to new data?",
+            type: "multiple",
+            options: [
+              "Deploying the model directly into production and observing it.",
+              "Testing the model on unseen examples.",
+              "Increasing the number of parameters during the training phase.",
+              "Achieving a 0% error rate on the initial training dataset.",
             ],
+            correctAnswer: "Testing the model on unseen examples.",
+            shuffle: true,
           },
           {
-            id: "written-question-4",
-            type: "complete",
             question:
-              "Contrast low learning rates and high learning rates in the context of online learning systems. What are the trade-offs for each?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "High Learning Rate: The system will quickly learn and adapt to new incoming information, but it will also forget old information and past patterns very quickly.",
-              "Low Learning Rate: The system will learn more slowly, but it has the advantage of being less affected by noise in the new data or by groups of data points that do not belong to the category (outliers).",
+              "If a machine learning model achieves low error on the training set but high error on the test set, what does this indicate?",
+            type: "multiple",
+            options: [
+              "The model is perfectly optimized.",
+              "The model is underfitting the data.",
+              "The model is overfitting the training data.",
+              "The dataset split ratio needs to be inverted.",
             ],
+            correctAnswer: "The model is overfitting the training data.",
+            shuffle: true,
           },
           {
-            id: "written-question-5",
-            type: "complete",
             question:
-              "Compare and contrast Instance-based Learning and Model-based Learning in terms of how they learn and how they make predictions on new data instances.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Instance-based Learning: The model learns from examples and stores them directly in memory. It generalizes to new cases by comparing new input data to these stored examples using a similarity measure.",
-              "Model-based Learning: The model is trained on a large dataset to create a model (which can be thought of as a set of rules) that predicts outcomes based on input data. The prediction about the class is decided based on a boundary learned from the training data, rather than comparing data points using similarity measures.",
+              "What risk arises if a developer repeatedly evaluates generalization error on the same test set to tune hyperparameters?",
+            type: "multiple",
+            options: [
+              "The model becomes too simple to learn anything.",
+              "The training data size is automatically increased.",
+              "The model and its hyperparameters may be tuned to perform optimally only on that specific set, reducing performance on truly unseen data.",
+              "The model will fail to compute any linear regression functions.",
             ],
+            correctAnswer:
+              "The model and its hyperparameters may be tuned to perform optimally only on that specific set, reducing performance on truly unseen data.",
+            shuffle: true,
           },
           {
-            id: "written-question-6",
-            type: "complete",
             question:
-              "What parameters must be specified to tune a model to a training set in Model-based learning, and how are they defined?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "A fitness function, which measures how good the model is.",
-              "A cost function, which measures how bad the model is.",
+              "When monitoring training and validation accuracies, at what point should training be stopped to preserve generalization?",
+            type: "multiple",
+            options: [
+              "As soon as validation accuracy begins to improve.",
+              "When training accuracy plateaus while validation accuracy continues to sharply rise.",
+              "Once the model begins to overfit, which is indicated when training accuracy continues to improve while validation accuracy plateaus or declines.",
+              "When the total training time has been multiplied by a factor of K.",
             ],
+            correctAnswer:
+              "Once the model begins to overfit, which is indicated when training accuracy continues to improve while validation accuracy plateaus or declines.",
+            shuffle: true,
           },
           {
-            id: "written-question-7",
-            type: "complete",
             question:
-              "When things go wrong in machine learning, they fall into two broad categories of challenges. Name these two categories and list the specific reasons associated with the data category.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Insufficient Quantity of Training Data.",
-              "Nonrepresentative Training Data.",
-              "Poor-Quality Data.",
-              "Irrelevant Features.",
+              "What is a major disadvantage of utilizing the K-fold cross-validation method?",
+            type: "multiple",
+            options: [
+              "It severely reduces the reliability of model evaluations.",
+              "It permanently shrinks the final test dataset size.",
+              "It prevents the calculation of an average validation error.",
+              "It increases the total training time by a factor of K.",
             ],
+            correctAnswer:
+              "It increases the total training time by a factor of K.",
+            shuffle: true,
           },
           {
-            id: "written-question-8",
-            type: "complete",
             question:
-              "How much data is typically required for machine learning algorithms to function properly for simple versus complex problems?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "For very simple problems, you typically need thousands of examples.",
-              "For complex problems (such as image or speech recognition), you may need millions of examples.",
+              "In the linear model for the life satisfaction regression example (life_satisfaction = theta_0 + theta_1 * GDP_per_capita), what role do theta_0 and theta_1 play?",
+            type: "multiple",
+            options: [
+              "They are the non-overlapping data subsets.",
+              "They are the model parameters that need tweaking to represent a linear function.",
+              "They represent the specific life satisfaction scores for Turkey and Hungary.",
+              "They are the regularization constraints forced to remain at a value of 10.",
             ],
+            correctAnswer:
+              "They are the model parameters that need tweaking to represent a linear function.",
+            shuffle: true,
           },
           {
-            id: "written-question-9",
-            type: "complete",
             question:
-              "What is Feature Engineering, and what are the specific steps involved in this process?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Feature selection: Selecting the most useful features to train on among existing features.",
-              "Feature extraction: Combining existing features to produce a more useful one.",
-              "Creating new features by gathering new data.",
+              "What is the objective of a cost function in a linear regression algorithm?",
+            type: "multiple",
+            options: [
+              "To separate the validation data from the test data.",
+              "To minimize the distance between the linear model's predictions and the training examples.",
+              "To maximize the slope of the linear regression line.",
+              "To ensure that countries with a 'w' in their name achieve higher satisfaction scores.",
             ],
+            correctAnswer:
+              "To minimize the distance between the linear model's predictions and the training examples.",
+            shuffle: true,
           },
           {
-            id: "written-question-10",
-            type: "complete",
             question:
-              "Define 'Overfitting,' explain why it occurs, and list the solutions proposed to mitigate it.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Simplify the model by reducing the number of attributes in the training data, constraining the model, or selecting another model with fewer parameters.",
-              "Collect more training data.",
-              "Decrease the noise in the training data.",
+              "Why did the high-degree polynomial model for life satisfaction fail to truly generalize, despite performing better on the training data?",
+            type: "multiple",
+            options: [
+              "It forced theta_0 = 0, removing all degrees of freedom.",
+              "It strongly overfitted the training data by detecting coincidental patterns caused by noise, such as names containing the letter 'w'.",
+              "It was trained entirely on impoverished nations like Rwanda and Zimbabwe.",
+              "It didn't employ any training subsets.",
             ],
-          },
-          {
-            id: "written-question-11",
-            type: "complete",
-            question:
-              "What is regularization, and how is it controlled during the learning process?",
             correctAnswer:
-              "Regularization is the process of constraining a model to make it simpler and reduce the overall risk of overfitting. The amount of regularization to apply during learning can be controlled by a hyperparameter, which must be set prior to training and remains constant throughout the training process.",
+              "It strongly overfitted the training data by detecting coincidental patterns caused by noise, such as names containing the letter 'w'.",
+            shuffle: true,
           },
           {
-            id: "written-question-12",
-            type: "complete",
-            question:
-              "Define 'Underfitting' and list the solutions required to resolve it.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Selecting a more complex model.",
-              "Using advanced feature engineering to select better features.",
-              "Reducing the constraints on the model.",
+            question: "What does the No Free Lunch (NFL) theorem state?",
+            type: "multiple",
+            options: [
+              "Training datasets must always consist of an 80/20 split.",
+              "No single model performs best for all possible datasets.",
+              "Models with two degrees of freedom are always superior to models with one.",
+              "Linear models are guaranteed in advance to outperform neural networks.",
             ],
-          },
-        ],
-      },
-      {
-        id: "chapter1-qbank",
-        title: "Chapter1 QBank",
-        shuffleQuestions: false,
-        showScore: true,
-        quizModeTimer: 1800,
-        questions: [
-          {
-            id: "q1-define-machine-learning",
-            type: "complete",
-            question: "Define Machine Learning (ML).",
             correctAnswer:
-              "A branch of AI that enables systems to learn patterns from data and make predictions without being explicitly programmed. Formally: a program learns from experience E for task T measured by P, if performance on T improves with E.",
+              "No single model performs best for all possible datasets.",
+            shuffle: true,
           },
           {
-            id: "q2-define-artificial-intelligence",
-            type: "complete",
-            question: "Define Artificial Intelligence (AI).",
-            correctAnswer:
-              "The broadest field building systems that make machine act as human (reasoning, perception, problem-solving).",
-          },
-          {
-            id: "q3-define-deep-learning",
-            type: "complete",
-            question: "Define Deep Learning (DL).",
-            correctAnswer:
-              "A subset of ML using multi-layered neural networks that learn hierarchical representations directly from raw data (images, text).",
-          },
-          {
-            id: "q4-define-training-set-and-training-instance",
-            type: "complete",
-            question: "Define Training Set and Training Instance.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Training Set: the full collection of examples used for learning.",
-              "Training Instance (sample): one individual example in the set.",
-            ],
-          },
-          {
-            id: "q5-define-a-model",
-            type: "complete",
-            question: "Define a Model.",
-            correctAnswer:
-              "The component that learns patterns from training data and generates predictions on new data.",
-          },
-          {
-            id: "q6-define-supervised-learning",
-            type: "complete",
-            question: "Define Supervised Learning.",
-            correctAnswer:
-              "Training on labeled data (input + correct output). Learns input output mapping. Two main tasks: Classification and Regression.",
-          },
-          {
-            id: "q7-define-unsupervised-learning",
-            type: "complete",
-            question: "Define Unsupervised Learning.",
-            correctAnswer:
-              "Training on unlabeled data to discover hidden patterns. Tasks: Clustering, Dimensionality Reduction, Anomaly Detection, Generative Modeling.",
-          },
-          {
-            id: "q8-define-semi-supervised-learning",
-            type: "complete",
-            question: "Define Semi-Supervised Learning.",
-            correctAnswer:
-              "Combines small labeled + large unlabeled data. Cluster unlabeled instances -> assign labels from cluster majority apply supervised algorithm.",
-          },
-          {
-            id: "q9-define-self-supervised-learning",
-            type: "complete",
-            question: "Define Self-Supervised Learning.",
-            correctAnswer:
-              "Generates its own labels via a pretext task. E.g., NLP: predict masked words; CV: predict masked image region.",
-          },
-          {
-            id: "q10-define-reinforcement-learning",
-            type: "complete",
-            question: "Define Reinforcement Learning (RL).",
-            correctAnswer:
-              "An agent interacts with an environment, receives rewards/penalties, and learns a policy to maximize cumulative reward.",
-          },
-          {
-            id: "q11-define-batch-learning",
-            type: "complete",
-            question: "Define Batch Learning.",
-            correctAnswer:
-              "Trained on the entire dataset at once (offline). Must fully retrain from scratch when new data arrives.",
-          },
-          {
-            id: "q12-define-online-learning",
-            type: "complete",
-            question: "Define Online Learning.",
-            correctAnswer:
-              "Learns incrementally from sequential data (one or mini-batches at a time). Continuously adapts without full retraining.",
-          },
-          {
-            id: "q13-define-instance-based-learning",
-            type: "complete",
-            question: "Define Instance-based Learning.",
-            correctAnswer:
-              "Stores all training examples; predicts by similarity to stored instances. Example: k-Nearest Neighbors (KNN).",
-          },
-          {
-            id: "q14-define-model-based-learning",
-            type: "complete",
-            question: "Define Model-based Learning.",
-            correctAnswer:
-              "Builds a mathematical model (e.g., decision boundary or equation) by optimizing a cost function. Predicts using the formula, not stored instances.",
-          },
-          {
-            id: "q15-define-overfitting",
-            type: "complete",
-            question: "Define Overfitting.",
-            correctAnswer:
-              "Model memorizes training noise low training error but poor generalization. Cause: model too complex relative to data. Training accuracy is high, test accuracy is low. Training error is low, test error is high.",
-          },
-          {
-            id: "q16-define-underfitting",
-            type: "complete",
-            question: "Define Underfitting.",
-            correctAnswer:
-              "Model too simple to learn meaningful patterns. Training accuracy is low, test accuracy is low. Both training and test errors are high.",
-          },
-          {
-            id: "q17-define-regularization",
-            type: "complete",
-            question: "Define Regularization.",
-            correctAnswer:
-              "Constrains model complexity (e.g., limits weight magnitudes via Ridge/Lasso) to reduce overfitting. Degree controlled by a hyperparameter.",
-          },
-          {
-            id: "q18-define-a-hyperparameter",
-            type: "complete",
-            question: "Define a Hyperparameter.",
-            correctAnswer:
-              "Configuration set before training, stays constant throughout (e.g., learning rate, regularization strength a, k in KNN).",
-          },
-          {
-            id: "q19-define-generalization-error",
-            type: "complete",
-            question: "Define Generalization Error.",
-            correctAnswer:
-              "Error rate on new, unseen data (out-of-sample error). Low training error + high generalization error = overfitting.",
-          },
-          {
-            id: "q20-define-sampling-bias",
-            type: "complete",
-            question: "Define Sampling Bias.",
-            correctAnswer:
-              "Training data collected via flawed method fails to represent the real population poor generalization even with large samples.",
-          },
-          {
-            id: "q21-define-feature-engineering",
-            type: "complete",
-            question: "Define Feature Engineering.",
-            correctAnswer:
-              "Creating, selecting, or transforming features to improve model performance: Feature Selection, Feature Extraction, adding new data sources.",
-          },
-          {
-            id: "q22-define-the-no-free-lunch-theorem",
-            type: "complete",
-            question: "Define the No Free Lunch (NFL) Theorem.",
-            correctAnswer:
-              "No single ML model is universally best for all datasets. Model selection requires assumptions and empirical testing.",
-          },
-          {
-            id: "q23-define-k-fold-cross-validation",
-            type: "complete",
-            question: "Define K-Fold Cross-Validation.",
-            correctAnswer:
-              "Splits data into K folds; trains/validates K times, each time using a different fold for validation. Final score = average across K runs. Training time xK.",
-          },
-          {
-            id: "q24-define-classification-and-regression",
-            type: "complete",
-            question: "Define Classification and Regression.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Classification: Discrete class label (binary <= 2 classes; multiclass > 2). Example: Spam detection, disease diagnosis.",
-              "Regression: Continuous numerical value (multivariate: multiple outputs). Example: House price, GDP forecasting.",
-            ],
-          },
-          {
-            id: "q25-define-the-learning-rate-in-gradient-descent",
-            type: "complete",
-            question: "Define the Learning Rate in Gradient Descent.",
-            correctAnswer:
-              "Hyperparameter controlling step size per iteration. Too low -> slow convergence. Too high -> overshoots minimum/diverges. Must be tuned.",
-          },
-          {
-            id: "q26-compare-ai-ml-and-deep-learning",
-            type: "complete",
             question:
-              "Compare AI, ML, and Deep Learning based on Scope, Data Dependency, Mechanism, Examples, and Interpretability.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "AI: Broadest scope; Rules or data dependency; Rule/learning-based mechanism; Examples include Expert systems, robotics; Interpretability varies.",
-              "ML: Subset of AI scope; Requires data dependency; Learns functions mechanism; Examples include SVM, Decision Trees; Generally interpretable.",
-              "DL: Subset of ML scope; Requires large data dependency; Learns hierarchical reps mechanism; Examples include CNN, RNN, Transformers; Often black box.",
+              "By applying a regularization constraint to a linear model (keeping theta_1 small), what is the practical outcome?",
+            type: "multiple",
+            options: [
+              "The model fits the training data perfectly but fails completely on new examples.",
+              "The model is forced to match a high-degree polynomial function.",
+              "The model produces a simpler model that doesn't fit training data quite as well but does better with new unseen examples.",
+              "The algorithm automatically switches into a neural network architecture.",
             ],
-          },
-          {
-            id: "q27-compare-traditional-programming-vs-machine-learning",
-            type: "complete",
-            question:
-              "Compare Traditional Programming vs. Machine Learning based on Input, Output, Rule Source, Adaptability, and Best For.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Traditional Programming: Input is Data + Rules; Output is Result; Rule Source is Written by developer; Adaptability requires manual updates; Best for stable, well-defined problems.",
-              "Machine Learning: Input is Data + Labels (Output); Output is Learned Model (Rules); Rule Source is Learned from data automatically; Adapts with new data; Best for complex or changing problems.",
-            ],
-          },
-          {
-            id: "q28-compare-supervised-unsupervised-and-reinforcement-learning",
-            type: "complete",
-            question:
-              "Compare Supervised, Unsupervised, and Reinforcement Learning based on Labels, Goal, Feedback, Main Tasks, and Example.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Supervised: Labels required; Goal is to predict output; Direct (correct labels) feedback; Main tasks are Classification, Regression; Example is Spam filter.",
-              "Unsupervised: No labels; Goal is to discover structure; No feedback; Main tasks are Clustering, DR, Anomaly; Example is Customer segmentation.",
-              "Reinforcement: Reward signal only labels; Goal is to maximize reward; Indirect (reward/penalty) feedback; Main task is Policy optimization; Example is Game playing, robotics.",
-            ],
-          },
-          {
-            id: "q29-compare-batch-learning-vs-online-learning",
-            type: "complete",
-            question:
-              "Compare Batch Learning vs. Online Learning based on Learning Mode, Adaptability, Resource Use, and Best For.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Batch (Offline): Entire dataset at once learning mode; Low adaptability (full retrain needed); High CPU/RAM per cycle resource use; Best for stable data, large resources.",
-              "Online: Incremental (one/mini-batch) learning mode; High adaptability (adapts instantly); Low resource use per update; Best for fast-changing data, IoT, streams.",
-            ],
-          },
-          {
-            id: "q30-compare-instance-based-vs-model-based-learning",
-            type: "complete",
-            question:
-              "Compare Instance-based vs. Model-based Learning based on Prediction Method, Memory Use, Training Speed, Prediction Speed, and Example.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Instance-based: Predicts by comparing to stored examples (similarity); Stores all instances; Fast training speed (memorize); Slow prediction speed (compare all instances); Example is KNN.",
-              "Model-based: Applies learned equation/boundary for prediction; Stores only parameters; Slow training speed (optimization); Fast prediction speed (apply formula); Examples include Linear Regression, SVM.",
-            ],
-          },
-          {
-            id: "q31-compare-overfitting-vs-underfitting",
-            type: "complete",
-            question:
-              "Compare Overfitting vs. Underfitting based on Training Error, Test/Val Error, Bias, Variance, Cause, and Solution.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Overfitting: Low training error; High test/val error; Low bias; High variance; Cause is model too complex / noisy data; Solution is regularization, more data, simpler model.",
-              "Underfitting: High training error; High test/val error; High bias; Low variance; Cause is model too simple / poor features; Solution is more complex model, better features.",
-            ],
-          },
-          {
-            id: "q32-compare-classification-vs-regression",
-            type: "complete",
-            question:
-              "Compare Classification vs. Regression based on Output, Performance Metric, Examples, and Algorithm Examples.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Classification: Discrete class label output; Accuracy, F1, AUC-ROC performance metrics; Examples include spam detection, disease diagnosis; Algorithm examples include Logistic Regression, SVM, Decision Tree.",
-              "Regression: Continuous numerical value output; RMSE, MSE, MAE, R' performance metrics; Examples include house price, GDP prediction; Algorithm examples include Linear Regression, Ridge, Lasso.",
-            ],
-          },
-          {
-            id: "q33-compare-model-parameter-vs-hyperparameter",
-            type: "complete",
-            question:
-              "Compare Model Parameter vs. Hyperparameter based on who sets it, timing, and examples.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Model Parameter: Learned automatically during training; Updated each training step; Examples include weights in linear regression (theta0, theta1).",
-              "Hyperparameter: Set manually before training; Fixed throughout training; Examples include learning rate, alpha, k in KNN.",
-            ],
-          },
-          {
-            id: "q34-compare-training-set-validation-set-and-test-set",
-            type: "complete",
-            question:
-              "Compare Training Set, Validation Set, and Test Set based on Purpose, Typical Size, Reuse, and Risk if misused.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Training Set: Purpose is to learn parameters; Typical size is ~60-80%; Reused repeatedly; Risk if misused is overfitting.",
-              "Validation Set: Purpose is to tune hyperparameters and detect overfitting; Typical size is ~10-20%; Reused repeatedly; Risk if misused is hyperparameter overfitting.",
-              "Test Set: Purpose is final evaluation; Typical size is ~10-20%; Used only once; Risk if misused is optimistic estimate.",
-            ],
-          },
-          {
-            id: "q35-advantages-disadvantages-of-machine-learning",
-            type: "complete",
-            question:
-              "What are the Advantages and Disadvantages of Machine Learning?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Advantage: Handles complex, non-linear problems",
-              "Advantage: Adapts and improves with more data",
-              "Advantage: Automates rule discovery",
-              "Advantage: Finds hidden patterns humans miss",
-              "Advantage: Applicable across diverse domains",
-              "Disadvantage: Requires large, high-quality labeled data",
-              "Disadvantage: Models can be opaque ('black box')",
-              "Disadvantage: Computationally expensive to train",
-              "Disadvantage: Sensitive to data quality (garbage in, garbage out)",
-              "Disadvantage: May amplify biases in training data",
-            ],
-          },
-          {
-            id: "q36-advantages-disadvantages-of-supervised-learning",
-            type: "complete",
-            question:
-              "What are the Advantages and Disadvantages of Supervised Learning?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Advantage: Accurate with direct label feedback",
-              "Advantage: Measurable performance metrics",
-              "Advantage: Mature algorithms, strong theory",
-              "Disadvantage: Labeling is expensive and time-consuming",
-              "Disadvantage: Needs large labeled datasets to generalize",
-              "Disadvantage: Cannot discover patterns not in labels",
-            ],
-          },
-          {
-            id: "q37-advantages-disadvantages-of-unsupervised-learning",
-            type: "complete",
-            question:
-              "What are the Advantages and Disadvantages of Unsupervised Learning?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Advantage: No labeling required",
-              "Advantage: Discovers hidden structure",
-              "Advantage: Scalable to large datasets",
-              "Disadvantage: Hard to evaluate (no ground truth)",
-              "Disadvantage: Cluster assignments can be ambiguous",
-              "Disadvantage: Harder to tune and interpret",
-            ],
-          },
-          {
-            id: "q38-advantages-disadvantages-of-batch-learning",
-            type: "complete",
-            question:
-              "What are the Advantages and Disadvantages of Batch Learning?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Advantage: Stable, consistent model",
-              "Advantage: Easy to validate and version",
-              "Advantage: Uses full dataset for training",
-              "Disadvantage: Cannot adapt without full retraining",
-              "Disadvantage: Retraining is costly on large data",
-              "Disadvantage: Suffers model rot over time",
-            ],
-          },
-          {
-            id: "q39-advantages-disadvantages-of-online-learning",
-            type: "complete",
-            question:
-              "What are the Advantages and Disadvantages of Online Learning?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Advantage: Adapts in real time",
-              "Advantage: Memory efficient",
-              "Advantage: Handles streaming data (stock, IoT)",
-              "Disadvantage: Sensitive to noisy/adversarial data",
-              "Disadvantage: Learning rate is critical and hard to tune",
-              "Disadvantage: May forget old patterns if rate too high",
-            ],
-          },
-          {
-            id: "q40-main-challenges-of-machine-learning",
-            type: "complete",
-            question:
-              "What are the main challenges of Machine Learning categorized into Bad Data Challenges and Bad Algorithm Challenges?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Bad Data Challenge: Insufficient training data",
-              "Bad Data Challenge: Nonrepresentative data / sampling bias",
-              "Bad Data Challenge: Poor-quality data (noise, errors, outliers)",
-              "Bad Data Challenge: Irrelevant features needs feature engineering",
-              "Bad Algorithm Challenge: Overfitting memorizes noise, poor generalization",
-              "Bad Algorithm Challenge: Underfitting too simple to capture patterns",
-            ],
-          },
-          {
-            id: "q41-when-to-use-ml-instead-of-traditional-programming",
-            type: "complete",
-            question:
-              "When should you use ML instead of traditional programming?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "No human expertise or task too dangerous (e.g., Mars navigation).",
-              "Humans perform it but cannot explain the rules (e.g., speech/image recognition).",
-              "Rules change over time and system must adapt (e.g., financial forecasting).",
-              "Needs per-user customization (e.g., biometric authentication).",
-            ],
-          },
-          {
-            id: "q42-five-applications-of-machine-learning",
-            type: "complete",
-            question:
-              "List and describe five applications of Machine Learning.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Predictive Analytics: Estimates future values from historical patterns (sales, energy)",
-              "Fraud & Risk Detection: Identifies unusual behavior in financial/security data",
-              "Recommendation Systems: Suggests relevant items based on user history (Netflix, Amazon)",
-              "Medical Diagnosis: Analyzes patient data to assist disease identification",
-              "Anomaly Detection: Detects rare/abnormal data points (manufacturing, intrusion detection)",
-            ],
-          },
-          {
-            id: "q43-testing-and-validation-in-ml",
-            type: "complete",
-            question:
-              "Explain testing and validation in ML, including the standard splits, K-Fold CV, and key signals.",
             correctAnswer:
-              "Goal: estimate generalization error on unseen data. Split sizes and purposes: Training Set (~80%) to learn model parameters; Validation Set (~10%) to tune hyperparameters and early stopping when val error rises; Test Set (~10%) used ONLY ONCE for final unbiased evaluation. K-Fold CV is used when data is small and rotates validation fold across K iterations. Key signal: Low train + High test error -> Overfitting. Both high indicates underfitting.",
+              "The model produces a simpler model that doesn't fit training data quite as well but does better with new unseen examples.",
+            shuffle: true,
           },
           {
-            id: "q44-three-sources-of-generalization-error",
-            type: "complete",
             question:
-              "What are the three sources of generalization error, their causes, and remedies?",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Bias: Cause is wrong model assumptions (e.g., linear for nonlinear data) -> underfitting; Remedy is more complex model, better features.",
-              "Variance: Cause is oversensitive to training data fluctuations -> overfitting; Remedy is regularization, more data, simpler model.",
-              "Irreducible Error: Cause is inherent data noise (sensor errors, wrong labels); Remedy is clean data, remove outliers.",
+              "In a linear regression model, what represents the input instance's feature vector in the vector equation 'ŷ = hθ(x) = θᵀx'?",
+            type: "multiple",
+            options: ["ŷ", "hθ", "θ", "x"],
+            correctAnswer: "x",
+            shuffle: true,
+          },
+          {
+            question:
+              "Why is the Mean Square Error (MSE) typically preferred over the Root Mean Square Error (RMSE) when training a Linear Regression model?",
+            type: "multiple",
+            options: [
+              "MSE gives a completely different and more accurate optimal parameter set than RMSE.",
+              "MSE is easier to minimize, and the number that minimizes a function also minimizes its square root.",
+              "MSE does not require calculating the number of training instances (m).",
+              "MSE is an iterative approach, whereas RMSE is only used in closed-form math equations.",
             ],
-          },
-          {
-            id: "q45-bias-variance-tradeoff",
-            type: "complete",
-            question:
-              "Describe the Bias-Variance Tradeoff based on model complexity and its goal.",
             correctAnswer:
-              "High complexity results in Low Bias and High Variance, leading to Overfitting. Low complexity results in High Bias and Low Variance, leading to Underfitting. Optimal complexity has balanced Bias and balanced Variance, leading to the best generalization. Goal: find the sweet spot minimizing Bias^2 + Variance + Irreducible Error.",
+              "MSE is easier to minimize, and the number that minimizes a function also minimizes its square root.",
+            shuffle: true,
           },
           {
-            id: "q46-validation-set-vs-test-set",
-            type: "complete",
             question:
-              "Compare the Validation Set vs. Test Set in terms of purpose and how often they are used.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Validation Set: Used to monitor training, detect overfitting, and tune hyperparameters. Used repeatedly during training.",
-              "Test Set: Used for final unbiased performance estimate after all training/tuning. Used only once at the end.",
+              "Which mathematical formula represents the 'Normal equation' used to directly compute the optimal parameter vector θ̂ in the closed-form approach?",
+            type: "multiple",
+            options: [
+              "θ̂ = (XᵀX)⁻¹Xᵀy",
+              "MSE(X,hθ) = 1/m ∑ (θᵀx⁽ⁱ⁾ - y⁽ⁱ⁾)²",
+              "ŷ = θ₀ + θ₁x₁ + ... + θₙxₙ",
+              "θ̂ = (Xy)⁻¹XᵀX",
             ],
+            correctAnswer: "θ̂ = (XᵀX)⁻¹Xᵀy",
+            shuffle: true,
           },
           {
-            id: "q47-types-of-unsupervised-learning",
-            type: "complete",
             question:
-              "List the types of Unsupervised Learning with their description and examples.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Clustering: Groups similar instances without labels. Example: K-Means customer segmentation.",
-              "Dimensionality Reduction: Merges correlated features to simplify data. Example: PCA for image features.",
-              "Anomaly Detection: Identifies rare/abnormal data points. Example: Fraudulent credit card transactions.",
-              "Generative Models: Creates new data similar to training distribution. Example: GANs generating faces.",
+              "What happens during Gradient Descent optimization if the learning rate hyperparameter is configured to be too high?",
+            type: "multiple",
+            options: [
+              "The algorithm will take an excessive amount of steps and a very long time to converge.",
+              "The parameters will smoothly settle exactly into a local minimum on the left side of the curve.",
+              "The algorithm can jump across the valley, end up higher than before, and go off track with increasingly larger values.",
+              "The algorithm automatically stops because the gradient vector immediately falls below the tolerance threshold.",
             ],
+            correctAnswer:
+              "The algorithm can jump across the valley, end up higher than before, and go off track with increasingly larger values.",
+            shuffle: true,
           },
           {
-            id: "q48-reinforcement-learning-components",
-            type: "complete",
             question:
-              "List and describe the components of Reinforcement Learning, and outline the process.",
+              "Why is a Linear Regression model's Mean Square Error (MSE) cost function guaranteed to avoid poor local minima during Gradient Descent?",
+            type: "multiple",
+            options: [
+              "Because it is an irregular function that allows random steps to jump across plateaus.",
+              "Because it is a convex function, meaning there is only one global minimum and no local ones.",
+              "Because it uses an adaptive learning rate schedule that automatically shrinks to zero.",
+              "Because it is computed using only a single randomly selected training instance at each iteration.",
+            ],
             correctAnswer:
-              "Components: Agent (The learning system making decisions); Environment (The world the agent interacts with); State (Current situation/observation); Action (Decision that affects the environment); Reward (Positive = good action, Negative/penalty = bad action); Policy (Learned strategy: best action per state to maximize long-term reward). Process: Observe state -> Select action -> Receive reward -> Update policy -> Repeat.",
+              "Because it is a convex function, meaning there is only one global minimum and no local ones.",
+            shuffle: true,
           },
           {
-            id: "q49-why-does-the-nfl-theorem-matter-for-practitioners",
-            type: "complete",
-            question: "Why does the NFL theorem matter for practitioners?",
-            correctAnswer:
-              "No algorithm blindly outperforms all others on every problem. Practitioners must make domain assumptions, test multiple models empirically, and select the best for their specific problem.",
-          },
-          {
-            id: "q50-why-does-data-quality-matter-more-than-quantity",
-            type: "complete",
-            question: "Why does data quality matter more than quantity?",
-            correctAnswer:
-              "A large dataset full of errors, bias, or irrelevant features teaches wrong patterns regardless of size. Nonrepresentative data fails on the real distribution. Data cleaning and representative sampling are often more impactful than collecting more data.",
-          },
-          {
-            id: "q51-99-percent-training-accuracy-55-percent-test-accuracy-what-is-happening",
-            type: "complete",
             question:
-              "If a model achieves 99% training accuracy and 55% test accuracy, what is happening and what are the fixes?",
+              "If Feature 1 has a much lower numerical scale compared to Feature 2, how does Gradient Descent behave when optimizing the cost function?",
+            type: "multiple",
+            options: [
+              "It goes completely straight toward the minimum and quickly reaches it.",
+              "It proceeds in a perfectly smooth trajectory and stops exactly at the minimum within a single epoch.",
+              "It starts off moving almost perpendicular to the global minimum and finishes with a long march down a nearly flat valley.",
+              "It breaks down entirely because Min-max scaling cannot be applied to features with different boundaries.",
+            ],
             correctAnswer:
-              "This is classic Overfitting where the model memorized training noise. Fixes: Apply regularization (Ridge, Lasso, Elastic Net); Simplify the model (reduce polynomial degree / parameters); Collect more diverse training data; Remove noisy or irrelevant features; Use Early Stopping during gradient descent.",
+              "It starts off moving almost perpendicular to the global minimum and finishes with a long march down a nearly flat valley.",
+            shuffle: true,
           },
           {
-            id: "q52-why-scale-features-before-gradient-descent",
-            type: "complete",
-            question: "Why scale features before Gradient Descent?",
-            correctAnswer:
-              "Different feature scales create elongated elliptical cost contours where GD follows a near-perpendicular path, needing many more iterations. Feature scaling (normalization/standardization) makes the bowl-shaped cost function circular, leading to fast, direct convergence.",
-          },
-          {
-            id: "q53-learning-rate-tradeoff-how-to-choose",
-            type: "complete",
             question:
-              "Explain the learning rate tradeoff and strategies on how to choose it.",
-            correctAnswer:
-              "Too low (e.g., 0.02) causes very slow convergence with many iterations needed. Too high (e.g., 0.5) overshoots minimum and may diverge completely. Appropriate (e.g., 0.1) leads to efficient convergence in reasonable iterations. Strategy: grid search or learning rate schedule; monitor loss curve. Decrease if oscillating; increase if too slow.",
-          },
-          {
-            id: "ex-q1-define-machine-learning",
-            type: "complete",
-            question: "Define Machine Learning.",
-            correctAnswer:
-              "ML gives computers the ability to learn from data without being explicitly programmed. Formally: performance on task T improves with experience E as measured by P. Goal: detect patterns automatically and use them for predictions.",
-          },
-          {
-            id: "ex-q2-two-most-common-supervised-tasks",
-            type: "complete",
-            question: "What are the two most common supervised tasks?",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Classification: Discrete class label (binary: 2 classes; multiclass: > 2). Example: Spam detection, image recognition.",
-              "Regression: Continuous numerical value (multivariate: multiple outputs). Example: House price, GDP forecasting.",
+              "What are the characteristics of the Standardization feature scaling method as described in the lecture?",
+            type: "multiple",
+            options: [
+              "It restricts numbers strictly to a range between 0 and 1 by dividing by the minimum value.",
+              "It subtracts the mean to achieve a zero mean, divides by the standard deviation for unit variance, and is less influenced by outliers.",
+              "It is much easier than normalization but performs poorly when there are extreme numerical attributes.",
+              "It requires calculating partial derivatives over the whole training batch to achieve a zero variance.",
             ],
-          },
-          {
-            id: "ex-q3-model-parameter-vs-hyperparameter",
-            type: "complete",
-            question: "Compare model parameter vs. hyperparameter.",
-            orderMode: "ordered",
-            correctAnswers: [
-              "Model Parameter: Learned automatically by training algorithm; Updated during training; Examples include theta0, theta1 (weights & bias in linear regression).",
-              "Hyperparameter: Set manually by practitioner; Fixed before training; Examples include Learning rate eta, alpha, k in KNN.",
-            ],
-          },
-          {
-            id: "ex-q4-role-of-rewards-in-reinforcement-learning",
-            type: "complete",
-            question: "What is the role of rewards in Reinforcement Learning?",
             correctAnswer:
-              "Rewards are the feedback guiding learning. Positive reward -> reinforces good actions. Penalty (negative reward) -> discourages bad actions. Agent learns a policy to maximize cumulative long term reward. E.g., chess: capturing a piece = reward; losing one = penalty.",
+              "It subtracts the mean to achieve a zero mean, divides by the standard deviation for unit variance, and is less influenced by outliers.",
+            shuffle: true,
           },
           {
-            id: "ex-q5-main-challenges-in-machine-learning",
-            type: "complete",
-            question: "What are the main challenges in Machine Learning?",
-            orderMode: "unordered",
-            correctAnswers: [
-              "Bad Data Problem: Insufficient training data quantity",
-              "Bad Data Problem: Nonrepresentative data / sampling bias",
-              "Bad Data Problem: Poor-quality data (noise, errors, outliers)",
-              "Bad Data Problem: Irrelevant features / poor feature engineering",
-              "Bad Algorithm Problem: Overfitting: too complex, poor generalization",
-              "Bad Algorithm Problem: Underfitting: too simple, misses patterns",
-              "Bad Algorithm Problem: Wrong model choice for problem type",
-              "Bad Algorithm Problem: Poor hyperparameter tuning",
+            question:
+              "Which variant of Gradient Descent is characterized by selecting exactly one single training instance at random for each update step?",
+            type: "multiple",
+            options: [
+              "Batch Gradient Descent",
+              "Mini-batch Gradient Descent",
+              "Closed-form Normal Equation Descent",
+              "Stochastic Gradient Descent",
             ],
+            correctAnswer: "Stochastic Gradient Descent",
+            shuffle: true,
           },
           {
-            id: "ex-q6-purpose-of-a-validation-set",
-            type: "complete",
-            question: "What is the purpose of a Validation Set?",
+            question:
+              "What is a primary technical advantage of Stochastic Gradient Descent's inherent random fluctuations when dealing with a highly irregular cost function?",
+            type: "multiple",
+            options: [
+              "It follows a perfectly smooth path and stops exactly at the true global minimum.",
+              "It helps the algorithm escape local minima, increasing the likelihood of reaching the global minimum compared to Batch Gradient Descent.",
+              "It guarantees that every single training instance is picked exactly once per epoch.",
+              "It eliminates the need for any learning rate hyperparameter or tolerance threshold tuning.",
+            ],
             correctAnswer:
-              "Monitor performance during training to detect overfitting and tune hyperparameters. Apply Early Stopping when validation error rises. Standard split: ~80% Training (Learn model parameters) / ~10% Validation (Tune hyperparameters; early stopping) / ~10% Test (Final unbiased evaluation used once). For small datasets, use K-Fold Cross-Validation which rotates which fold is used for validation across K iterations.",
+              "It helps the algorithm escape local minima, increasing the likelihood of reaching the global minimum compared to Batch Gradient Descent.",
+            shuffle: true,
+          },
+          {
+            question:
+              "How do the trajectories and settling behaviors of Batch, Stochastic, and Mini-batch Gradient Descent differ at the end of training?",
+            type: "multiple",
+            options: [
+              "Stochastic and Mini-batch follow a smooth path and settle exactly at the minimum, while Batch fluctuates.",
+              "All three variants follow a smooth path and stop exactly at the global minimum.",
+              "Batch follows a smooth path and stops exactly at the minimum, while both Stochastic and Mini-batch continue to fluctuate around it.",
+              "Mini-batch settles exactly at the minimum, Batch oscillates wildly, and Stochastic stops progressing entirely.",
+            ],
+            correctAnswer:
+              "Batch follows a smooth path and stops exactly at the minimum, while both Stochastic and Mini-batch continue to fluctuate around it.",
+            shuffle: true,
+          },
+          {
+            question:
+              "When a dataset contains multiple features, how does Polynomial Regression capture the interactions between them?",
+            type: "multiple",
+            options: [
+              "By automatically removing correlated features from the training set.",
+              "By using separate independent linear equations for each feature.",
+              "By expanding the feature set to include higher-order powers and combinations of features up to a specified degree.",
+              "By applying an 'l2' norm constraint directly to the input matrices.",
+            ],
+            correctAnswer:
+              "By expanding the feature set to include higher-order powers and combinations of features up to a specified degree.",
+            shuffle: true,
+          },
+          {
+            question:
+              "What initial behavior does the training error curve exhibit in a basic Linear Regression model's learning curves, and why?",
+            type: "multiple",
+            options: [
+              "It starts high and gradually decreases because the model struggles with small datasets.",
+              "It begins at zero because the model can fit the training set perfectly when there are just one or two instances.",
+              "It remains completely flat from the beginning because the data contains no Gaussian noise.",
+              "It converges directly to zero as more training examples are added to the set.",
+            ],
+            correctAnswer:
+              "It begins at zero because the model can fit the training set perfectly when there are just one or two instances.",
+            shuffle: true,
+          },
+          {
+            question:
+              "If an engineering student discovers that both the training error and validation error curves have plateaued, and are rather high and close to one another, what does this indicate about the machine learning model?",
+            type: "multiple",
+            options: [
+              "The model is overfitting the training dataset.",
+              "The model has achieved an optimal fit with minimal generalization error.",
+              "The model is underfitting the dataset.",
+              "The model needs a much larger quantity of identical training instances to improve.",
+            ],
+            correctAnswer: "The model is underfitting the dataset.",
+            shuffle: true,
+          },
+          {
+            question:
+              "If a model is underfitting the training set, which of the following strategies will NOT assist in improving its performance according to the lecture text?",
+            type: "multiple",
+            options: [
+              "Increasing the number of training instances.",
+              "Developing greater features.",
+              "Employing a more intricate model.",
+              "Using a model with higher complexity.",
+            ],
+            correctAnswer: "Increasing the number of training instances.",
+            shuffle: true,
+          },
+          {
+            question:
+              "What are the two significant visual differences between the learning curves of an overfitting 10th-degree polynomial model compared to a basic Linear Regression model?",
+            type: "multiple",
+            options: [
+              "The training error is significantly larger, and there is a massive overlap between the two curves.",
+              "The training error is significantly smaller, and the curves are separated by a gap.",
+              "The validation error is zero, and the training error curve is completely horizontal.",
+              "Both curves start at a value of 3.0 and steadily decrease to zero without any gap.",
+            ],
+            correctAnswer:
+              "The training error is significantly smaller, and the curves are separated by a gap.",
+            shuffle: true,
+          },
+          {
+            question:
+              "According to statistical findings highlighted in the text, inaccurate assumptions—such as believing data is linear when it is actually quadratic—cause which component of the generalization error?",
+            type: "multiple",
+            options: [
+              "Variance",
+              "Irreducible error",
+              "Bias",
+              "Regularization ratio",
+            ],
+            correctAnswer: "Bias",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the only method available to reduce the portion of generalization error known as 'irreducible error'?",
+            type: "multiple",
+            options: [
+              "Lowering the number of polynomial degrees.",
+              "Increasing the hyperparameter 'alpha' to a very large value.",
+              "Adjusting the ratio 'r' in an Elastic Net model to 0.",
+              "Cleaning up the data, such as repairing malfunctioning sensors or identifying and eliminating outliers.",
+            ],
+            correctAnswer:
+              "Cleaning up the data, such as repairing malfunctioning sensors or identifying and eliminating outliers.",
+            shuffle: true,
+          },
+          {
+            question:
+              "How is regularization typically achieved structurally within a standard linear regression model?",
+            type: "multiple",
+            options: [
+              "By limiting the model's weights.",
+              "By adding more interaction terms like a^2b and ab^2.",
+              "By increasing the size of the validation dataset.",
+              "By always setting the hyperparameter 'alpha' = 0.",
+            ],
+            correctAnswer: "By limiting the model's weights.",
+            shuffle: true,
+          },
+          {
+            question:
+              "In Ridge Regression, what happens to the trained model's predictions if the hyperparameter 'alpha' is set to a very large value?",
+            type: "multiple",
+            options: [
+              "The model matches the training data exactly, resulting in zero training error.",
+              "The model reverts entirely into a standard Lasso Regression model.",
+              "All weights end up very close to zero, and the result is a flat line going through the data's mean.",
+              "The model captures all higher-order combinations up to a degree of 300.",
+            ],
+            correctAnswer:
+              "All weights end up very close to zero, and the result is a flat line going through the data's mean.",
+            shuffle: true,
+          },
+          {
+            question:
+              "An Elastic Net model is configured with an adjustable ratio parameter 'r'. According to the text, what occurs when 'r' = 0 and when 'r' = 1?",
+            type: "multiple",
+            options: [
+              "If 'r' = 0 it is Polynomial Regression; if 'r' = 1 it is Linear Regression.",
+              "If 'r' = 0 it is Ridge Regression; if 'r' = 1 it is Lasso Regression.",
+              "If 'r' = 0 it has zero bias; if 'r' = 1 it has zero variance.",
+              "If 'r' = 0 it is a simple model; if 'r' = 1 it is an overly complex model.",
+            ],
+            correctAnswer:
+              "If 'r' = 0 it is Ridge Regression; if 'r' = 1 it is Lasso Regression.",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the core definition of the 'Early Stopping' regularization method?",
+            type: "multiple",
+            options: [
+              "Terminating training as soon as the training error reaches zero.",
+              "Terminating training as soon as the validation error achieves a minimum.",
+              "Terminating training when the learning rate drops below a specific threshold.",
+              "Terminating training when the training error begins to increase.",
+            ],
+            correctAnswer:
+              "Terminating training as soon as the validation error achieves a minimum.",
+            shuffle: true,
+          },
+          {
+            question:
+              "During iterative learning (such as Batch Gradient Descent on a complex Polynomial Regression model), what behavior typically indicates that the model has started to overfit the training data?",
+            type: "multiple",
+            options: [
+              "Both the training error and validation error stop decreasing.",
+              "The training error begins to increase while the validation error decreases.",
+              "The validation error begins to increase again rather than decrease.",
+              "The training error drops abruptly to zero.",
+            ],
+            correctAnswer:
+              "The validation error begins to increase again rather than decrease.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Why is it difficult to pinpoint when the validation error minimum is reached when using Stochastic Gradient Descent (SGD) or Mini-batch Gradient Descent compared to Batch Gradient Descent?",
+            type: "multiple",
+            options: [
+              "The training error never drops in SGD.",
+              "The error curves are not smooth, making it hard to identify the true minimum.",
+              "These algorithms do not use a validation set.",
+              "The validation error steadily increases from the first epoch.",
+            ],
+            correctAnswer:
+              "The error curves are not smooth, making it hard to identify the true minimum.",
+            shuffle: true,
+          },
+          {
+            question:
+              "What solution does the lecture propose to handle early stopping when dealing with the non-smooth error curves of Stochastic or Mini-batch Gradient Descent?",
+            type: "multiple",
+            options: [
+              "Stop training immediately at the very first slight increase in validation error.",
+              "Stop only after the validation error has been above the minimum for some time, then roll back the model parameters to the minimum point.",
+              "Ignore the validation curve and stop only when the training error reaches its absolute minimum.",
+              "Switch back to Batch Gradient Descent to smooth out the curves.",
+            ],
+            correctAnswer:
+              "Stop only after the validation error has been above the minimum for some time, then roll back the model parameters to the minimum point.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Logistic Regression is classified as a binary classifier because it predicts that an instance belongs to the positive class (label '1') if its estimated probability satisfies which condition?",
+            type: "multiple",
+            options: [
+              "P_hat > 0",
+              "P_hat < 0.5",
+              "P_hat >= 0.5",
+              "P_hat = 1.0",
+            ],
+            correctAnswer: "P_hat >= 0.5",
+            shuffle: true,
+          },
+          {
+            question:
+              "What mathematical function does Logistic Regression use to output a probability between 0 and 1 instead of producing a raw weighted sum directly?",
+            type: "multiple",
+            options: [
+              "A high-degree polynomial function",
+              "A cost-entropy function",
+              "A softmax function",
+              "A sigmoid function",
+            ],
+            correctAnswer: "A sigmoid function",
+            shuffle: true,
+          },
+          {
+            question:
+              "In the context of the Logistic Regression cost function for a single positive instance (y=1), how does the cost change as the predicted probability approaches zero?",
+            type: "multiple",
+            options: [
+              "The cost approaches zero.",
+              "The cost becomes very large.",
+              "The cost remains completely constant.",
+              "The cost becomes negative.",
+            ],
+            correctAnswer: "The cost becomes very large.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which extension allows Logistic Regression to perform multiclass classification directly without combining multiple binary classifiers?",
+            type: "multiple",
+            options: [
+              "Polynomial Regression",
+              "Softmax Regression",
+              "Cross Entropy Regression",
+              "Batch Gradient Regression",
+            ],
+            correctAnswer: "Softmax Regression",
+            shuffle: true,
+          },
+          {
+            question:
+              "How are the individual parameter vectors for each class organized structurally in Softmax Regression?",
+            type: "multiple",
+            options: [
+              "They are averaged into a single parameter vector.",
+              "They are organized as columns in a target vector.",
+              "They are organized as rows in a single parameter matrix.",
+              "They are discarded after calculating the scores.",
+            ],
+            correctAnswer:
+              "They are organized as rows in a single parameter matrix.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Why must Softmax Regression only be applied to mutually exclusive classes?",
+            type: "multiple",
+            options: [
+              "Because it can only compute gradients for one class at a time.",
+              "Because it can only predict one class at a time (it is multiclass, not multioutput).",
+              "Because it uses the sigmoid function instead of the exponential function.",
+              "Because it is limited strictly to a maximum of two target classes.",
+            ],
+            correctAnswer:
+              "Because it can only predict one class at a time (it is multiclass, not multioutput).",
+            shuffle: true,
+          },
+          {
+            question:
+              "In the MNIST dataset, how many total features are present in each image, and what determines this number?",
+            type: "multiple",
+            options: [
+              "70,000 features, representing the total number of small photos in the dataset.",
+              "60,000 features, representing the size of the training split.",
+              "784 features, because each image consists of 28x28 pixels where each feature shows one pixel's intensity.",
+              "255 features, corresponding to the maximum pixel intensity range from black to white.",
+            ],
+            correctAnswer:
+              "784 features, because each image consists of 28x28 pixels where each feature shows one pixel's intensity.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Why is the Stochastic Gradient Descent (SGD) classifier considered suitable for a task like designing a '5-detector' on the MNIST dataset?",
+            type: "multiple",
+            options: [
+              "It can naturally perform multioutput multiclass classification natively without any threshold shifting.",
+              "It is highly capable of handling very large datasets efficiently.",
+              "It is a perfect classifier that ensures zero values on the minor diagonal of a confusion matrix.",
+              "It bypasses the precision/recall tradeoff by keeping both values at 100% simultaneously.",
+            ],
+            correctAnswer:
+              "It is highly capable of handling very large datasets efficiently.",
+            shuffle: true,
+          },
+          {
+            question:
+              "If a classifier is built to categorize every single handwritten digit in the MNIST dataset as 'not 5', what would its approximate accuracy be, and why?",
+            type: "multiple",
+            options: [
+              "Around 50%, because it is a binary task with two outcomes: 5 and not 5.",
+              "Above 93%, because K-fold cross-validation always inflates the score.",
+              "About 90%, because each digit constitutes roughly 10% of the entire dataset.",
+              "Exactly 0%, because it completely fails to identify any actual true positive 5s.",
+            ],
+            correctAnswer:
+              "About 90%, because each digit constitutes roughly 10% of the entire dataset.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following accurately describes the alignment of rows and columns within a confusion matrix as defined in the lecture?",
+            type: "multiple",
+            options: [
+              "Each column represents an actual class, while each row represents a predicted class.",
+              "Each column represents a predicted class, while each row represents an actual class.",
+              "Both rows and columns represent actual classes simultaneously.",
+              "Both rows and columns represent predicted classes simultaneously.",
+            ],
+            correctAnswer:
+              "Each column represents a predicted class, while each row represents an actual class.",
+            shuffle: true,
+          },
+          {
+            question:
+              "A classifier incorrectly marks a non-5 image as a 5. According to the performance terminology, this mistake is classified as a:",
+            type: "multiple",
+            options: [
+              "True Negative (TN)",
+              "False Negative (FN)",
+              "True Positive (TP)",
+              "False Positive (FP)",
+            ],
+            correctAnswer: "False Positive (FP)",
+            shuffle: true,
+          },
+          {
+            question:
+              "What metric is calculated as the harmonic mean of precision and recall, and why is this specific mean type selected?",
+            type: "multiple",
+            options: [
+              "Accuracy, because it provides an equal weight to all classification categories.",
+              "F1 score, because the harmonic mean gives more weight to low values, ensuring a high score only when both precision and recall are high.",
+              "ROC Curve, because it maps the trade-off between sensitivity and specificity.",
+              "True Negative Rate (TNR), because it focuses on correctly identifying the negative class.",
+            ],
+            correctAnswer:
+              "F1 score, because the harmonic mean gives more weight to low values, ensuring a high score only when both precision and recall are high.",
+            shuffle: true,
+          },
+          {
+            question:
+              "When a classification threshold is raised by moving it to the right on a decision score axis, what happens to precision and recall?",
+            type: "multiple",
+            options: [
+              "Precision decreases and recall increases.",
+              "Both precision and recall decrease concurrently.",
+              "Precision increases (potentially up to 100%) while recall decreases.",
+              "Both precision and recall increase concurrently.",
+            ],
+            correctAnswer:
+              "Precision increases (potentially up to 100%) while recall decreases.",
+            shuffle: true,
+          },
+          {
+            question:
+              "The Receiver Operating Characteristic (ROC) curve plots the True Positive Rate (TPR) against which specific metric?",
+            type: "multiple",
+            options: [
+              "Precision",
+              "False Negative Rate (FNR)",
+              "False Positive Rate (FPR), which is equal to 1 - TNR",
+              "Area Under the Curve (AUC)",
+            ],
+            correctAnswer:
+              "False Positive Rate (FPR), which is equal to 1 - TNR",
+            shuffle: true,
+          },
+          {
+            question:
+              "For a dataset containing N unique classes, how many distinct binary classifiers must be trained if an engineer utilizes the one-versus-one (OvO) strategy?",
+            type: "multiple",
+            options: [
+              "N classifiers",
+              "N * (N - 1) classifiers",
+              "N * (N - 1) / 2 classifiers",
+              "10 classifiers, regardless of N",
+            ],
+            correctAnswer: "N * (N - 1) / 2 classifiers",
+            shuffle: true,
+          },
+          {
+            question:
+              "Why is the one-versus-one (OvO) strategy preferred over one-versus-all (OvA) when training algorithms like support vector machines?",
+            type: "multiple",
+            options: [
+              "Support vector machines do not scale efficiently as the training set size increases, and OvO trains classifiers on smaller subsets of data faster.",
+              "OvO is simpler to implement for most other generic classification algorithms.",
+              "OvO requires far fewer total classifiers to be created than OvA.",
+              "Support vector machines are naturally multiclass and do not require binary extensions unless using OvA.",
+            ],
+            correctAnswer:
+              "Support vector machines do not scale efficiently as the training set size increases, and OvO trains classifiers on smaller subsets of data faster.",
+            shuffle: true,
+          },
+          {
+            question:
+              "In a manufacturing scenario where images are captured automatically along a production line to detect defective products, what is the main bottleneck that makes training a standard binary classifier difficult?",
+            type: "multiple",
+            options: [
+              "Automatically capturing images is too slow and technologically complex.",
+              "Design modifications happen too frequently to build any initial database.",
+              "Manual labeling by human experts is time-consuming, expensive, and tedious.",
+              "Unsupervised learning models completely fail to process high-resolution pixel data.",
+            ],
+            correctAnswer:
+              "Manual labeling by human experts is time-consuming, expensive, and tedious.",
+            shuffle: true,
+          },
+          {
+            question:
+              "When a clustering algorithm is applied to the unlabeled Iris dataset using only petal length and petal width, which of the following best describes what is visually discernible?",
+            type: "multiple",
+            options: [
+              "All three species clusters are perfectly separated and easily visible to our own eyes.",
+              "The bottom left cluster is readily identified, but it is less obvious that the top right cluster contains two unique sub-clusters.",
+              "The top right cluster is perfectly separated, but the bottom left cluster is completely hidden.",
+              "No groupings can be identified unless the dataset is completely manually labeled first.",
+            ],
+            correctAnswer:
+              "The bottom left cluster is readily identified, but it is less obvious that the top right cluster contains two unique sub-clusters.",
+            shuffle: true,
+          },
+          {
+            question:
+              "How can clustering be utilized within search engines to build an image-retrieval system based on a reference picture?",
+            type: "multiple",
+            options: [
+              "By calculating manual labels for every user text query in real time.",
+              "By running a clustering algorithm on all database images, mapping the user's reference picture to its corresponding cluster, and returning all images in that cluster.",
+              "By eliminating the pixel patterns entirely and sorting the database alphabetically by file size.",
+              "By re-initializing the centroids of the search engine database each time a new search is performed.",
+            ],
+            correctAnswer:
+              "By running a clustering algorithm on all database images, mapping the user's reference picture to its corresponding cluster, and returning all images in that cluster.",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the fundamental difference between hard clustering and soft clustering in the K-Means algorithm?",
+            type: "multiple",
+            options: [
+              "Hard clustering uses mean squared distance, while soft clustering avoids using any distance metrics.",
+              "Hard clustering is used exclusively for labeled datasets, whereas soft clustering works only on unlabeled datasets.",
+              "Hard clustering places every data point into only one cluster, while soft clustering provides each point with a value reflecting its relationship to every cluster.",
+              "Hard clustering requires pre-specifying the value of 'k', while soft clustering calculates the number of clusters automatically.",
+            ],
+            correctAnswer:
+              "Hard clustering places every data point into only one cluster, while soft clustering provides each point with a value reflecting its relationship to every cluster.",
+            shuffle: true,
+          },
+          {
+            question:
+              "During the K-Means clustering process, if the cluster labels of all instances are completely known and available, how are the centroids determined?",
+            type: "multiple",
+            options: [
+              "By initializing them randomly from 'k' arbitrary points outside the dataset boundary.",
+              "By computing the mean position of the instances within each cluster.",
+              "By evaluating the performance metric known as the model's inertia.",
+              "By measuring the distance to the furthest outperforming outlier.",
+            ],
+            correctAnswer:
+              "By computing the mean position of the instances within each cluster.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Why is the K-Means procedure guaranteed to converge after a finite number of iterations instead of oscillating indefinitely?",
+            type: "multiple",
+            options: [
+              "Because the number of clusters 'k' decreases dynamically with each iteration.",
+              "Because the centroids are initialized using values from other algorithms.",
+              "Because the mean squared distance between instances and their closest centroid decreases with each iteration.",
+              "Because the algorithm automatically transitions from hard clustering to soft clustering.",
+            ],
+            correctAnswer:
+              "Because the mean squared distance between instances and their closest centroid decreases with each iteration.",
+            shuffle: true,
+          },
+          {
+            question:
+              "To mitigate the risk of K-Means converging to a local optimum rather than the global correct solution, what strategy is recommended by the lecture?",
+            type: "multiple",
+            options: [
+              "Increase the number of clusters 'k' until inertia reaches zero.",
+              "Switch from color segmentation to semantic segmentation.",
+              "Avoid initializing centroids randomly and instead manually label the entire dataset.",
+              "Run the algorithm several times with different random initializations and store the best solutions based on inertia.",
+            ],
+            correctAnswer:
+              "Run the algorithm several times with different random initializations and store the best solutions based on inertia.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Why is 'inertia' an unreliable metric if used as the sole criterion to determine the optimal absolute number of clusters ('k') for a K-Means model?",
+            type: "multiple",
+            options: [
+              "Inertia consistently increases as the number of clusters increases, making models look worse.",
+              "Inertia consistently decreases as the number of clusters increases, because data points naturally become closer to their nearest centroid.",
+              "Inertia only works when clusters vary significantly in shape and density.",
+              "Inertia can only be computed if the true human-annotated target labels ('y') are available.",
+            ],
+            correctAnswer:
+              "Inertia consistently decreases as the number of clusters increases, because data points naturally become closer to their nearest centroid.",
+            shuffle: true,
+          },
+          {
+            question:
+              "In the context of computer vision and image segmentation, how does semantic segmentation differ from instance segmentation?",
+            type: "multiple",
+            options: [
+              "Semantic segmentation groups pixels by color values, while instance segmentation groups pixels by texture patterns.",
+              "Semantic segmentation groups all pixels belonging to the same category of object into a single segment, while instance segmentation assigns pixels based on individual objects.",
+              "Semantic segmentation relies heavily on supervised labels, while instance segmentation is entirely unsupervised.",
+              "Semantic segmentation is used exclusively for medical imaging, while instance segmentation is used exclusively for autonomous driving.",
+            ],
+            correctAnswer:
+              "Semantic segmentation groups all pixels belonging to the same category of object into a single segment, while instance segmentation assigns pixels based on individual objects.",
+            shuffle: true,
+          },
+          {
+            question:
+              "When performing basic color segmentation on an image of a ladybug using K-Means, what happens if fewer than eight clusters are used, and why?",
+            type: "multiple",
+            options: [
+              "The ladybug's bright red color receives its own dedicated cluster because K-Means favors small, vivid regions.",
+              "The algorithm oscillates indefinitely because red is a highly dense and elongated cluster.",
+              "The ladybug's bright red color is grouped with surrounding environmental colors because the ladybug occupies only a small portion of the image and K-Means favors clusters of relatively similar size.",
+              "The algorithm switches automatically to instance segmentation to separate the ladybug from the background.",
+            ],
+            correctAnswer:
+              "The ladybug's bright red color is grouped with surrounding environmental colors because the ladybug occupies only a small portion of the image and K-Means favors clusters of relatively similar size.",
+            shuffle: true,
           },
         ],
       },
