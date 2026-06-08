@@ -3031,6 +3031,860 @@ const quizzes = [
           },
         ],
       },
+      {
+        id: "ds-exams-questions",
+        title: "DS Exams MSQ",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question:
+              "As soon as computers are interconnected and communicating, we have distributed system. This approach of interconnectivity has been known as",
+            type: "multiple",
+            options: [
+              "Multi-computers.",
+              "Distributed computers.",
+              "Parallel computers.",
+              "All of them.",
+            ],
+            correctAnswer: "All of them.",
+            shuffle: true,
+          },
+          {
+            question:
+              "In Cluster computing, there is a master node that hosts processes responsible for as",
+            type: "multiple",
+            options: ["2 tasks.", "3 tasks.", "4 tasks.", "5 tasks."],
+            correctAnswer: "2 tasks.",
+            shuffle: true,
+          },
+          {
+            question: "Banks, Travel agencies",
+            type: "multiple",
+            options: [
+              "Distributed Pervasive Systems.",
+              "Distributed Information Systems.",
+              "Distributed Computing Systems.",
+              "None of the above.",
+            ],
+            correctAnswer: "Distributed Information Systems.",
+            shuffle: true,
+          },
+          {
+            question: "In a distributed system, each processor has its own",
+            type: "multiple",
+            options: [
+              "Local memory.",
+              "Clock.",
+              "Both local memory and clock.",
+              "None of the above.",
+            ],
+            correctAnswer: "Both local memory and clock.",
+            shuffle: true,
+          },
+          {
+            question:
+              "The computer system of a parallel computer is capable of",
+            type: "multiple",
+            options: [
+              "Decentralized computing.",
+              "Parallel computing.",
+              "Centralized computing.",
+              "None of these.",
+            ],
+            correctAnswer: "Parallel computing.",
+            shuffle: true,
+          },
+          {
+            question:
+              "is a network where nodes have the special capability of sensing some parameters.",
+            type: "multiple",
+            options: [
+              "Pervasive Applications.",
+              "Information Applications.",
+              "Computing Applications.",
+              "Sensor N/W.",
+            ],
+            correctAnswer: "Sensor N/W.",
+            shuffle: true,
+          },
+          {
+            question: "There are main types of distributed systems.",
+            type: "multiple",
+            options: ["2.", "3.", "4.", "5."],
+            correctAnswer: "3.",
+            shuffle: true,
+          },
+          {
+            question: "Cloud is classified as",
+            type: "multiple",
+            options: [
+              "Distributed Computing Systems.",
+              "Distributed Information Systems.",
+              "Distributed Pervasive Systems.",
+              "None of them.",
+            ],
+            correctAnswer: "Distributed Computing Systems.",
+            shuffle: true,
+          },
+          {
+            question:
+              "A distributed system is a collection of computers linked by a computer network that appears to its users as a single coherent system.",
+            type: "multiple",
+            options: ["Dependent.", "Independent.", "Same.", "Different."],
+            correctAnswer: "Independent.",
+            shuffle: true,
+          },
+          {
+            question: "Computer Network is",
+            type: "multiple",
+            options: [
+              "Collection of hardware components and computers.",
+              "Interconnected by communication channels.",
+              "Sharing of resources and information.",
+              "All of the above.",
+            ],
+            correctAnswer: "All of the above.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Types of transmission channels or media used for LAN or WAN are",
+            type: "multiple",
+            options: [
+              "Twisted Pair Cables.",
+              "Coaxial Cables.",
+              "Fibre-Optic Cables and Radio Waves.",
+              "All of the above.",
+            ],
+            correctAnswer: "All of the above.",
+            shuffle: true,
+          },
+          {
+            question: "Grid is classified as",
+            type: "multiple",
+            options: [
+              "Distributed Computing Systems.",
+              "Distributed Information Systems.",
+              "Distributed Pervasive Systems.",
+              "None of them.",
+            ],
+            correctAnswer: "Distributed Computing Systems.",
+            shuffle: true,
+          },
+          {
+            question:
+              "In pervasive Computing Systems, we are faced with distributed systems in which is the default behavior.",
+            type: "multiple",
+            options: [
+              "Instability.",
+              "Stability.",
+              "Both of them.",
+              "None of them.",
+            ],
+            correctAnswer: "Instability.",
+            shuffle: true,
+          },
+          {
+            question: "Distributed Systems are used because",
+            type: "multiple",
+            options: [
+              "Cost reduction.",
+              "Increase of availability.",
+              "Decrease in performance.",
+              "Both a and b.",
+            ],
+            correctAnswer: "Both a and b.",
+            shuffle: true,
+          },
+          {
+            question:
+              "is considered one of the problems that face distributed systems.",
+            type: "multiple",
+            options: [
+              "Parallelism converting.",
+              "No. of processors.",
+              "The bandwidth of interconnection.",
+              "All of them.",
+            ],
+            correctAnswer: "All of them.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Load Balancing ensures that each node performs amount of work.",
+            type: "multiple",
+            options: ["Same.", "Different.", "Double.", "Half."],
+            correctAnswer: "Same.",
+            shuffle: true,
+          },
+          {
+            question: "Cluster is classified as",
+            type: "multiple",
+            options: [
+              "Distributed Computing Systems.",
+              "Distributed Information Systems.",
+              "Distributed Pervasive Systems.",
+              "Distributed International Systems.",
+            ],
+            correctAnswer: "Distributed Computing Systems.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is not an advantage of distributed systems?",
+            type: "multiple",
+            options: [
+              "All the nodes in the distributed system are connected.",
+              "It can be scaled as required.",
+              "Failure of one node does not lead to the failure of the entire distributed system.",
+              "Some messages and data can be lost in the network while moving from one node to another.",
+            ],
+            correctAnswer:
+              "Some messages and data can be lost in the network while moving from one node to another.",
+            shuffle: true,
+          },
+          {
+            question:
+              "If 5% of machines are down, the System should continue to work with % loss in performance.",
+            type: "multiple",
+            options: ["4.", "5.", "6.", "7."],
+            correctAnswer: "5.",
+            shuffle: true,
+          },
+          {
+            question:
+              "The technologies that helped in arising of a distributed system are",
+            type: "multiple",
+            options: [
+              "Availability of microprocessors.",
+              "Continuing advances in communication technologies.",
+              "Both of them.",
+              "None of them.",
+            ],
+            correctAnswer: "Both of them.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Cluster computing Systems are a group of high-end systems connected through",
+            type: "multiple",
+            options: ["LAN.", "WAN.", "MAN.", "None of them."],
+            correctAnswer: "LAN.",
+            shuffle: true,
+          },
+          {
+            question: "WAN stands for",
+            type: "multiple",
+            options: [
+              "World Area Network.",
+              "Wide Area Network.",
+              "Web Area Network.",
+              "Wide Web Network.",
+            ],
+            correctAnswer: "Wide Area Network.",
+            shuffle: true,
+          },
+          {
+            question: "are considered the components of a distributed system.",
+            type: "multiple",
+            options: ["Hardware.", "Software.", "Network.", "All of them."],
+            correctAnswer: "All of them.",
+            shuffle: true,
+          },
+          {
+            question:
+              "is a collection of independent computers that appear to the users of the system as a single computer",
+            type: "multiple",
+            options: [
+              "Networking.",
+              "Computer network",
+              "Distributed system.",
+              "None of them.",
+            ],
+            correctAnswer: "Distributed system.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which type of network supports transmitting voice, video, and data?",
+            type: "multiple",
+            options: ["LAN.", "MAN.", "WAN.", "All of the above."],
+            correctAnswer: "All of the above.",
+            shuffle: true,
+          },
+          {
+            question: "If one site fails in the distributed system then",
+            type: "multiple",
+            options: [
+              "The remaining sites can continue operating.",
+              "All the sites will stop working.",
+              "Directly connected sites will stop working.",
+              "None of the mentioned.",
+            ],
+            correctAnswer: "The remaining sites can continue operating.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following are the Advantages of Distributed Systems?",
+            type: "multiple",
+            options: [
+              "Decremental growth.",
+              "Economic.",
+              "Low speed.",
+              "All of the above.",
+            ],
+            correctAnswer: "Economic.",
+            shuffle: true,
+          },
+          {
+            question: "Distributed Systems Challenges and Problems are",
+            type: "multiple",
+            options: [
+              "Parallelism converting.",
+              "No. of processors.",
+              "The bandwidth of interconnection.",
+              "All of the above.",
+            ],
+            correctAnswer: "All of the above.",
+            shuffle: true,
+          },
+          {
+            question:
+              "An important consideration is to ensure that each node performs the amount of work.",
+            type: "multiple",
+            options: [
+              "The same.",
+              "Difference.",
+              "Both a & b.",
+              "None of the above.",
+            ],
+            correctAnswer: "The same.",
+            shuffle: true,
+          },
+          {
+            question: "According to Amdahl's law, speed up rule",
+            type: "multiple",
+            options: [
+              "(S+P)/(S+P/N).",
+              "(S+P/N)/(S+P).",
+              "P/(S+P/N)",
+              "S/(S+P/N)",
+            ],
+            correctAnswer: "(S+P)/(S+P/N).",
+            shuffle: true,
+          },
+          {
+            question:
+              "is the relative amount of work done between synchronization-communication.",
+            type: "multiple",
+            options: [
+              "Speed up.",
+              "Grain Size.",
+              "Performance.",
+              "Efficiency.",
+            ],
+            correctAnswer: "Grain Size.",
+            shuffle: true,
+          },
+          {
+            question:
+              "According to Flynn's taxonomy multiprocessors are classified into main types.",
+            type: "multiple",
+            options: ["2.", "3.", "5.", "6."],
+            correctAnswer: "2.",
+            shuffle: true,
+          },
+          {
+            question:
+              "is considered a measure of the quality of parallel algorithms.",
+            type: "multiple",
+            options: [
+              "Speed up.",
+              "Efficiency.",
+              "Both of them.",
+              "None of them.",
+            ],
+            correctAnswer: "Both of them.",
+            shuffle: true,
+          },
+          {
+            question: "Flynn classified computer systems into classes.",
+            type: "multiple",
+            options: ["2.", "3.", "4.", "5."],
+            correctAnswer: "4.",
+            shuffle: true,
+          },
+          {
+            question: "NVIDIA is considered as",
+            type: "multiple",
+            options: ["SIMD.", "SISD.", "MISD.", "MIMD."],
+            correctAnswer: "SIMD.",
+            shuffle: true,
+          },
+          {
+            question:
+              "The intermachine message delay in loosely coupled systems is",
+            type: "multiple",
+            options: ["Slow.", "Large.", "Both of them.", "None of them."],
+            correctAnswer: "Large.",
+            shuffle: true,
+          },
+          {
+            question: "Distributed Systems are needed for",
+            type: "multiple",
+            options: [
+              "Information exchange (collaborative work).",
+              "Hardware resource sharing.",
+              "Software resource sharing.",
+              "All of the above.",
+            ],
+            correctAnswer: "All of the above.",
+            shuffle: true,
+          },
+          {
+            question: "Rapid Elasticity feature exists in",
+            type: "multiple",
+            options: ["Cluster.", "Grid.", "Cloud.", "All of them."],
+            correctAnswer: "Cloud.",
+            shuffle: true,
+          },
+          {
+            question: "Communication is done in tightly coupled systems using",
+            type: "multiple",
+            options: [
+              "Shared memory.",
+              "Bus.",
+              "Both of them.",
+              "None of them.",
+            ],
+            correctAnswer: "Both of them.",
+            shuffle: true,
+          },
+          {
+            question: "According to Amdahl's law, speed up rule",
+            type: "multiple",
+            options: [
+              "(S+P)/(S+P/N)",
+              "(S+P/N)/(S+P).",
+              "Tseq/Tpar.",
+              "a & c.",
+            ],
+            correctAnswer: "a & c.",
+            shuffle: true,
+          },
+          {
+            question:
+              "There are factors that limit speed up in parallel processing.",
+            type: "multiple",
+            options: ["2.", "3.", "4.", "5."],
+            correctAnswer: "3.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Omega network cross point switches by adding more switching stages.",
+            type: "multiple",
+            options: ["Increase.", "Reduces.", "Doubles.", "Equals."],
+            correctAnswer: "Reduces.",
+            shuffle: true,
+          },
+          {
+            question: "Clusters classified as",
+            type: "multiple",
+            options: [
+              "Distributed Computing Systems.",
+              "Distributed Information Systems.",
+              "Distributed Pervavise Systems.",
+              "Distributed International Systems.",
+            ],
+            correctAnswer: "Distributed Computing Systems.",
+            shuffle: true,
+          },
+          {
+            question:
+              "is the relative amount of work done between synchronization- communication.",
+            type: "multiple",
+            options: [
+              "Speed up.",
+              "Grain size.",
+              "Performance.",
+              "Efficiency.",
+            ],
+            correctAnswer: "Grain size.",
+            shuffle: true,
+          },
+          {
+            question: "Traffic with the number of CPUs.",
+            type: "multiple",
+            options: ["Decrease.", "Increase.", "No change.", "A and B."],
+            correctAnswer: "Increase.",
+            shuffle: true,
+          },
+          {
+            question: "How many types of multiprocessors?",
+            type: "multiple",
+            options: ["2.", "3.", "4.", "5."],
+            correctAnswer: "2.",
+            shuffle: true,
+          },
+          {
+            question:
+              "A collection of lines that connects several devices is called",
+            type: "multiple",
+            options: [
+              "Bus.",
+              "Peripheral connection wires.",
+              "Both a and b.",
+              "Internal wires.",
+            ],
+            correctAnswer: "Bus.",
+            shuffle: true,
+          },
+          {
+            question:
+              "Motherboard into which CPU and memory cards is an example for",
+            type: "multiple",
+            options: [
+              "Switched multi computers.",
+              "Switched multiprocessors.",
+              "Bus multi computers.",
+              "Bus multiprocessors.",
+            ],
+            correctAnswer: "Bus multiprocessors.",
+            shuffle: true,
+          },
+          {
+            question: "_ is an efficient method of cache updating.",
+            type: "multiple",
+            options: [
+              "Snoopy writes.",
+              "Write through.",
+              "Write within.",
+              "Buffered write.",
+            ],
+            correctAnswer: "Snoopy writes.",
+            shuffle: true,
+          },
+          {
+            question:
+              "is considered a design issue for Client-Server communication.",
+            type: "multiple",
+            options: [
+              "Addressing.",
+              "Blocking.",
+              "Reliability.",
+              "All of the above.",
+            ],
+            correctAnswer: "All of the above.",
+            shuffle: true,
+          },
+          {
+            question:
+              "There are different classes of failure that occur in the RPC system.",
+            type: "multiple",
+            options: ["2.", "3.", "4.", "5."],
+            correctAnswer: "5.",
+            shuffle: true,
+          },
+          {
+            question:
+              "There are solutions for killing orphans in client crash problems.",
+            type: "multiple",
+            options: ["2.", "3.", "4.", "5."],
+            correctAnswer: "4.",
+            shuffle: true,
+          },
+          {
+            question: "Client/Server is",
+            type: "multiple",
+            options: [
+              "Service model.",
+              "File sharing.",
+              "A & B.",
+              "None of the above.",
+            ],
+            correctAnswer: "Service model.",
+            shuffle: true,
+          },
+          {
+            question: "The client-server model consists of layers.",
+            type: "multiple",
+            options: ["2.", "3.", "4.", "7."],
+            correctAnswer: "3.",
+            shuffle: true,
+          },
+          {
+            question:
+              "A network that consists of both LANs and MANs is called a Wide area network.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "Distributed System is software that ensures that a collection of independent computers appears as a single coherent system.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "Low speed is considered one of the advantages of distributed systems.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "Multiple LANs can be connected to form a single MAN (Metropolitan Area Network).",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "Microprocessors make it cheap to add computing power.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "One of the goals of the parallel algorithm is to make grain size as small as possible.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question: "Tingly coupled systems use buses.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "Traffic increases as the number of CPUs increases.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "Shared memory bus-based SMP is tightly coupled.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "Efficiency is considered a measure of the quality of parallel algorithms.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "Flynn classified computer systems into 4 classes.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "Nividia is considered as SISD.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question: "Multiprocessors have shared memory.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "Tightly Coupled using buses.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "Coherent Memory is a disadvantage of bus-based multiprocessors",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "The single most important difference between a distributed system and a uniprocessor system is inter-process communication.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "The data rate is higher in tightly coupled systems than in loosely coupled systems.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "A TP is responsible for coordinating the execution of a transaction.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "Encouraging Adhoc composition is considered the only requirement needed in designing Pervasive System.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "Bus-based architecture doesn't scale to a large number of CPUs.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "A truly distributed system puts tightly-coupled software upon loosely coupled.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "TA is a packet from Server to Client.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "Middleware doesn't hide the heterogeneity of hardware in distributed systems.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question: "REQ is a packet from server to client.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "RPC is considered a communication module used when Clients access the Server to manipulate information.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "There are 4 different solutions for killing the orphan in a client crash problem with RPC.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "Server stubs convert parameters used in function calls and reconvert the result obtained from the server after function execution.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "If sending is non-blocking, it returns control to the caller after sending the message.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "Architectural models are classified into 3 models.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "Client/Server is a Service model.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question: "There are three different forms of RPC call semantics.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "2 different addressing methods can be done in the Client-Server model.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "Blocking Send Primitive is sometimes called Asynchronous primitive.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "Killing the orphan is the most suitable solution to the Client crash problem with RPC.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "One of the solutions to the drawbacks of non-blocking primitive is to interrupt the sender when the message has been sent.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+        ],
+      },
     ],
   },
   // {
