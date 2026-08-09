@@ -10438,6 +10438,811 @@ const quizzes = [
       },
     ],
   },
+  {
+id: "maths5",
+title: "Maths 5",
+isSubjectGroup: true,
+chapters: [
+{
+id: "midterm-exam-2021-2022",
+title: "Midterm Exam 2021-2022",
+shuffleQuestions: false,
+showScore: true,
+quizModeTimer: 1800,
+questions: [
+{
+question: "A = .........................................",
+type: "multiple",
+image: "img/Maths5-Midterm21-22.png",
+options: [
+"-0.042",
+"0.09",
+"0.023",
+"None of these"
+],
+correctAnswer: "None of these",
+shuffle: true
+},
+{
+question: "B = .........................................",
+type: "multiple",
+image: "img/Maths5-Midterm21-22.png",
+options: [
+"0.01",
+"0.05",
+"-0.01",
+"None of these"
+],
+correctAnswer: "None of these",
+shuffle: true
+},
+{
+question: "C = .........................................",
+type: "multiple",
+image: "img/Maths5-Midterm21-22.png",
+options: [
+"-0.005",
+"0.001",
+"-0.001",
+"None of these"
+],
+correctAnswer: "-0.001",
+shuffle: true
+},
+{
+question: "The interpolation polynomial obtained by Lagrange interpolation for the given data (x, y) with 6 points has degree at most",
+type: "multiple",
+image: "img/Maths5-Midterm21-22.png",
+options: [
+"6",
+"3",
+"5",
+"4"
+],
+correctAnswer: "5",
+shuffle: true
+},
+{
+question: "Using Newton forward difference formula, y(0.15) ≈ ......",
+type: "multiple",
+image: "img/Maths5-Midterm21-22.png",
+options: [
+"0.0406",
+"1.2356",
+"0",
+"0.0001"
+],
+correctAnswer: "0.0406",
+shuffle: true
+},
+{
+question: "Using Newton Backward difference formula, y(0.9) ≈ ......",
+type: "multiple",
+image: "img/Maths5-Midterm21-22.png",
+options: [
+"-0.4589",
+"0.5858",
+"0.6369",
+"0.9563"
+],
+correctAnswer: "0.5858",
+shuffle: true
+},
+{
+question: "Using Newton forward divided difference formula, y(0) ≈ ......",
+type: "multiple",
+image: "img/Maths5-Midterm21-22.png",
+options: [
+"0.002",
+"-0.002",
+"0",
+"None of these"
+],
+correctAnswer: "-0.002",
+shuffle: true
+},
+{
+question: "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, a root of f(x) lies in the interval",
+type: "multiple",
+options: [
+"[0, 1]",
+"[2, 3]",
+"[4, 5]",
+"[-1, 0]"
+],
+correctAnswer: "[0, 1]",
+shuffle: true
+},
+{
+question: "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, using the simple iteration method, the formula x = φ(x) which achieves the convergence condition over the root interval is",
+type: "multiple",
+options: [
+"x = (1/3)e'^-x'",
+"x = -ln(3x)",
+"x = (1/3)e'^x",
+"None of these"
+],
+correctAnswer: "x = (1/3)e'^-x'",
+shuffle: true
+},
+{
+question: "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, the root of f(x) = 0 using simple iteration method is",
+type: "multiple",
+options: [
+"4.2576",
+"2.2576",
+"-0.2576",
+"0.2576"
+],
+correctAnswer: "0.2576",
+shuffle: true
+},
+{
+question: "m =",
+type: "multiple",
+image: "img/Q11Maths5-Midterm21-22.png",
+options: [
+"ln M",
+"e'^M",
+"log m",
+"None of these"
+],
+correctAnswer: "e'^M",
+shuffle: true
+},
+{
+question: "X =",
+type: "multiple",
+image: "img/Q11Maths5-Midterm21-22.png",
+options: [
+"ln x",
+"e'^x",
+"log mx",
+"None of these"
+],
+correctAnswer: "ln x",
+shuffle: true
+},
+{
+question: "Σ_(i=1)^7 X_i'^2' =",
+type: "multiple",
+image: "img/Q11Maths5-Midterm21-22.png",
+options: [
+"1.4589",
+"11.5261",
+"6.1826",
+"None of these"
+],
+correctAnswer: "6.1826",
+shuffle: true
+},
+{
+question: "Σ_(i=1)^7 X_i Y_i =",
+type: "multiple",
+image: "img/Q11Maths5-Midterm21-22.png",
+options: [
+"17.2358",
+"10.0199",
+"15.8441",
+"None of these"
+],
+correctAnswer: "15.8441",
+shuffle: true
+},
+{
+question: "m =",
+type: "multiple",
+options: [
+"0.1211",
+"-0.2811",
+"1.3858",
+"None of these"
+],
+correctAnswer: "0.1211",
+shuffle: true
+},
+{
+question: "c =",
+type: "multiple",
+image: "img/Q11Maths5-Midterm21-22.png",
+options: [
+"1.2789",
+"3.5853",
+"0.5658",
+"None of these"
+],
+correctAnswer: "3.5853",
+shuffle: true
+},
+{
+question: "The L_2 norm of error √(Σ_(r=1)^7 |y(x_r) - y_r|'^2') =",
+type: "multiple",
+image: "img/Q11Maths5-Midterm21-22.png",
+options: [
+"0.0956",
+"0",
+"2.0358",
+"None of these"
+],
+correctAnswer: "0.0956",
+shuffle: true
+},
+{
+question: "Given the two curves y = e'^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, x_0 ∈ ......",
+type: "multiple",
+options: [
+"[0, 1]",
+"[1, 2]",
+"[2, 3]",
+"[3, 4]"
+],
+correctAnswer: "[1, 2]",
+shuffle: true
+},
+{
+question: "Given the two curves y = e'^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, x_0 = ......",
+type: "multiple",
+options: [
+"1.2789",
+"3.5853",
+"0.5658",
+"1.1462"
+],
+correctAnswer: "1.1462",
+shuffle: true
+},
+{
+question: "Given the two curves y = e'^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, y_0 = ......",
+type: "multiple",
+options: [
+"1.2789",
+"3.5853",
+"0.5658",
+"1.1462"
+],
+correctAnswer: "1.1462",
+shuffle: true
+}
+]
+},
+{
+id: "midterm-exam-2024-2025",
+title: "Midterm Exam 2024-2025",
+shuffleQuestions: false,
+showScore: true,
+quizModeTimer: 1800,
+questions: [
+// {
+// question: "In Curve fitting process to fit the data (x_t, y_t){t=1}^n to the straight line y = a + bx, we begin with the error formula e = \sum{t=1}^{n}(y_t - b - ax_t)^2 and then using the least square method. The equation \sum_{t=1}^{n}y_t = an + b\sum_{t=1}^{n}x_t is obtained by differentiating the error formula with respect to ..........",
+// type: "multiple",
+// image: "img/Maths5-Midterm24-25.png",
+// options: [
+// "x",
+// "y",
+// "a",
+// "b"
+// ],
+// correctAnswer: "a",
+// shuffle: true
+// },
+// {
+// question: "The equation \sum_{t=1}^{n}x_t y_t = a\sum_{t=1}^{n}x_t + b\sum_{t=1}^{n}x_t^2 is obtained by differentiating the error formula with respect to .........",
+// type: "multiple",
+// image: "img/Maths5-Midterm24-25.png",
+// options: [
+// "x",
+// "y",
+// "a",
+// "b"
+// ],
+// correctAnswer: "b",
+// shuffle: true
+// },
+{
+question: "A = .......",
+type: "multiple",
+image: "img/Q3Maths5-Midterm24-25.png",
+options: [
+"3",
+"2",
+"1",
+"4"
+],
+correctAnswer: "4",
+shuffle: true
+},
+{
+question: "B = ........",
+type: "multiple",
+image: "img/Q3Maths5-Midterm24-25.png",
+options: [
+"3.19",
+"1.25",
+"8.28",
+"1.51"
+],
+correctAnswer: "8.28",
+shuffle: true
+},
+{
+question: "L_2 norm of error = .......",
+type: "multiple",
+image: "img/Q3Maths5-Midterm24-25.png",
+options: [
+"0.532",
+"0.236",
+"0.789",
+"None of these"
+],
+correctAnswer: "None of these",
+shuffle: true
+},
+{
+question: "Use the obtained curve to approximate y'(\pi/4)",
+type: "multiple",
+image: "img/Q3Maths5-Midterm24-25.png",
+options: [
+"0",
+"0.25",
+"8.28",
+"1.526"
+],
+correctAnswer: "8.28",
+shuffle: true
+},
+{
+question: "A:",
+type: "multiple",
+image: "img/Q7Maths5-Midterm24-25.png",
+options: [
+"-0.042",
+"0.134",
+"0.091",
+"None of these"
+],
+correctAnswer: "0.091",
+shuffle: true
+},
+{
+question: "B:",
+type: "multiple",
+image: "img/Q7Maths5-Midterm24-25.png",
+options: [
+"0.012",
+"0.05",
+"-0.01",
+"None of these"
+],
+correctAnswer: "None of these",
+shuffle: true
+},
+{
+question: "C:",
+type: "multiple",
+image: "img/Q7Maths5-Midterm24-25.png",
+options: [
+"-0.005",
+"0.001",
+"-0.001",
+"None of these"
+],
+correctAnswer: "-0.001",
+shuffle: true
+},
+{
+question: "The polynomial obtained by Lagrange formula for the data (x, y) has degree at most",
+type: "multiple",
+image: "img/Q7Maths5-Midterm24-25.png",
+options: [
+"6",
+"3",
+"5",
+"4"
+],
+correctAnswer: "5",
+shuffle: true
+},
+{
+question: "y(0.15) =......",
+type: "multiple",
+image: "img/Q7Maths5-Midterm24-25.png",
+options: [
+"0.0406",
+"1.2356",
+"0",
+"0.0001"
+],
+correctAnswer: "0.0406",
+shuffle: true
+},
+{
+question: "y(0.9) =.....",
+type: "multiple",
+image: "img/Q7Maths5-Midterm24-25.png",
+options: [
+"-0.4589",
+"0.5858",
+"0.6369",
+"0.9563"
+],
+correctAnswer: "0.5858",
+shuffle: true
+},
+{
+question: "y(0) =......",
+type: "multiple",
+image: "img/Q7Maths5-Midterm24-25.png",
+options: [
+"0.002",
+"-0.002",
+"0",
+"None of these"
+],
+correctAnswer: "-0.002",
+shuffle: true
+},
+{
+question: "The convergence condition for the successive iterations is",
+type: "multiple",
+image: "img/Q14Maths5-Midterm24-25.png",
+options: [
+"| (f(x) f''(x)) / (f'(x))^2 | > 1 no",
+"| (f'(x) f''(x)) / (f'(x))^2 | < 1 yes",
+"| (f(x) f''(x)) / (f'(x))^2 | < 1 no",
+"| (f(x) f''(x)) / f'(x) | < 1 yes"
+],
+correctAnswer: "| (f(x) f''(x)) / (f'(x))^2 | < 1 no",
+shuffle: true
+},
+{
+question: "The smallest positive root of the equation lies in the interval",
+type: "multiple",
+image: "img/Q14Maths5-Midterm24-25.png",
+options: [
+"[3, 3.5]",
+"[0, 1]",
+"[1.5, 2.5]",
+"[4, 5.5]"
+],
+correctAnswer: "[3, 3.5]",
+shuffle: true
+},
+{
+question: "The smallest positive root of the equation correct to 4 decimal places is x = .....",
+type: "multiple",
+image: "img/Q14Maths5-Midterm24-25.png",
+options: [
+"3.2827",
+"0.5369",
+"1.9586",
+"5.1430"
+],
+correctAnswer: "3.2827",
+shuffle: true
+},
+{
+question: "A = .......",
+type: "multiple",
+image: "img/Q17Maths5-Midterm24-25.png",
+options: [
+"1/2",
+"-1/2",
+"1",
+"2"
+],
+correctAnswer: "-1/2",
+shuffle: true
+},
+{
+question: "B = .......",
+type: "multiple",
+image: "img/Q17Maths5-Midterm24-25.png",
+options: [
+"9/2",
+"7/2",
+"-9/2",
+"-7/2"
+],
+correctAnswer: "9/2",
+shuffle: true
+},
+{
+question: "C = .......",
+type: "multiple",
+image: "img/Q17Maths5-Midterm24-25.png",
+options: [
+"-2",
+"2",
+"4",
+"-4"
+],
+correctAnswer: "-4",
+shuffle: true
+},
+{
+question: "P(0) = .......",
+type: "multiple",
+image: "img/Q17Maths5-Midterm24-25.png",
+options: [
+"-2",
+"2",
+"4",
+"-4"
+],
+correctAnswer: "-4",
+shuffle: true
+}
+]
+},
+{
+id: "midterm-exam-2023-2024",
+title: "Midterm Exam 2023-2024",
+shuffleQuestions: false,
+showScore: true,
+quizModeTimer: 1800,
+questions: [
+{
+question: "Y~ =",
+type: "multiple",
+image: "img/Q1Maths5-Midterm23-24.png",
+options: [
+"y",
+"y²",
+"√y",
+"None of these"
+],
+correctAnswer: "y",
+shuffle: true
+},
+{
+question: "X~ =",
+type: "multiple",
+image: "img/Q1Maths5-Midterm23-24.png",
+options: [
+"x",
+"x²",
+"√x",
+"None of these"
+],
+correctAnswer: "√x",
+shuffle: true
+},
+{
+question: "a =",
+type: "multiple",
+image: "img/Q1Maths5-Midterm23-24.png",
+options: [
+"A",
+"A²",
+"√A",
+"None of these"
+],
+correctAnswer: "A²",
+shuffle: true
+},
+{
+question: "a = ......",
+type: "multiple",
+image: "img/Q1Maths5-Midterm23-24.png",
+options: [
+"16.1236",
+"-3.2156",
+"5.0256",
+"20.002"
+],
+correctAnswer: "16.1236",
+shuffle: true
+},
+{
+question: "b = ......",
+type: "multiple",
+image: "img/Q1Maths5-Midterm23-24.png",
+options: [
+"-4.9994",
+"4.9994",
+"0",
+"2.0365"
+],
+correctAnswer: "-4.9994",
+shuffle: true
+},
+{
+question: "The polynomial which interpolates the above data has at most degree =",
+type: "multiple",
+image: "img/Q1Maths5-Midterm23-24.png",
+options: [
+"2",
+"4",
+"5",
+"None of these"
+],
+correctAnswer: "4",
+shuffle: true
+},
+{
+question: "m = ......",
+type: "multiple",
+image: "img/Q7Maths5-Midterm23-24.png",
+options: [
+"a",
+"1 / b",
+"b",
+"1 / a"
+],
+correctAnswer: "b",
+shuffle: true
+},
+{
+question: "The normal equations for finding p, q are",
+type: "multiple",
+image: "img/Q7Maths5-Midterm23-24.png",
+options: [
+"∑ Y_i = mn + q ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
+"∑ Y_i = qn + m ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
+"∑ my_i = qn + ∑ x_i, ∑ mX_i Y_i = q ∑ X_i + ∑ X_i²",
+"∑ Y = m ∑ X_i + qn, ∑ X_i Y_i = m ∑ X_i² + q ∑ X_i³"
+],
+correctAnswer: "∑ Y_i = mn + q ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
+shuffle: true
+},
+{
+question: "For the equation f(x) = e^x - 3x, use simple iteration to find the root in (1.5, 1.6). The used relation for convergence is .....",
+type: "multiple",
+options: [
+"x_{n+1} = (1/3) e^{x_n}",
+"x_{n+1} = ln(3x_n)",
+"x_{n+1} = 1 / (3x_n)",
+"x_{n+1} = 3 e^{x_n}"
+],
+correctAnswer: "x_{n+1} = ln(3x_n)",
+shuffle: true
+},
+{
+question: "For the equation f(x) = e^x - 3x, use simple iteration to find the root in (1.5, 1.6). Using the selected relation, the root correct to 4-decimal =",
+type: "multiple",
+options: [
+"2.3610",
+"1.4020",
+"1.6780",
+"1.5120"
+],
+correctAnswer: "1.5120",
+shuffle: true
+},
+{
+question: "The convergence condition for the successive iterations is",
+type: "multiple",
+image: "img/Q11Maths5-Midterm23-24.png",
+options: [
+"|(f(x)f''(x)) / (f'(x))²| > 1 no",
+"|(f'(x)f''(x)) / (f'(x))²| < 1 yes",
+"|(f(x)f''(x)) / (f'(x))²| < 1 no",
+"|(f(x)f''(x)) / f'(x)| < 1 no"
+],
+correctAnswer: "|(f(x)f''(x)) / (f'(x))²| < 1 no",
+shuffle: true
+},
+{
+question: "The smallest positive root of the equation lies in the interval",
+type: "multiple",
+image: "img/Q11Maths5-Midterm23-24.png",
+options: [
+"[3, 3.5]",
+"[0, 1]",
+"[1.5, 2.5]",
+"[4, 5]"
+],
+correctAnswer: "[3, 3.5]",
+shuffle: true
+},
+{
+question: "The smallest positive root of the equation correct to 4 decimal places is x = ....",
+type: "multiple",
+image: "img/Q11Maths5-Midterm23-24.png",
+options: [
+"3.2827",
+"0.5369",
+"1.9586",
+"5.1430"
+],
+correctAnswer: "3.2827",
+shuffle: true
+},
+{
+question: "A =",
+type: "multiple",
+image: "img/Q14Maths5-Midterm23-24.png",
+options: [
+"-0.042",
+"0.134",
+"0.091",
+"None of these"
+],
+correctAnswer: "0.134",
+shuffle: true
+},
+{
+question: "B =",
+type: "multiple",
+image: "img/Q14Maths5-Midterm23-24.png",
+options: [
+"0.012",
+"0.05",
+"-0.01",
+"None of these"
+],
+correctAnswer: "0.012",
+shuffle: true
+},
+{
+question: "C =",
+type: "multiple",
+image: "img/Q14Maths5-Midterm23-24.png",
+options: [
+"-0.005",
+"0.001",
+"-0.001",
+"None of these"
+],
+correctAnswer: "-0.001",
+shuffle: true
+},
+{
+question: "The polynomial obtained by Lagrange formula for the data (x, y) has degree at most",
+type: "multiple",
+image: "img/Q14Maths5-Midterm23-24.png",
+options: [
+"6",
+"3",
+"5",
+"4"
+],
+correctAnswer: "5",
+shuffle: true
+},
+{
+question: "Using Newton forward difference formula y(0.15) ≈ ......",
+type: "multiple",
+image: "img/Q14Maths5-Midterm23-24.png",
+options: [
+"0.0406",
+"1.2356",
+"0",
+"0.0001"
+],
+correctAnswer: "0.0406",
+shuffle: true
+},
+{
+question: "Using Newton Backward difference formula y(0.9) ≈ ......",
+type: "multiple",
+image: "img/Q14Maths5-Midterm23-24.png",
+options: [
+"-0.4589",
+"0.5858",
+"0.6369",
+"0.9563"
+],
+correctAnswer: "0.5858",
+shuffle: true
+},
+{
+question: "Using Newton forward divided difference formula y(0) ≈ ......",
+type: "multiple",
+image: "img/Q14Maths5-Midterm23-24.png",
+options: [
+"0.002",
+"-0.002",
+"0",
+"None of these"
+],
+correctAnswer: "-0.002",
+shuffle: true
+}
+]
+}
+]
+},
   // {
   //   id: "reproductive-disorders",
   //   title: "Reproductive Disorders",
