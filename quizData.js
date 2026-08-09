@@ -10456,11 +10456,11 @@ type: "multiple",
 image: "img/Maths5-Midterm21-22.png",
 options: [
 "-0.042",
-"0.09",
+"0.091",
 "0.023",
 "None of these"
 ],
-correctAnswer: "None of these",
+correctAnswer: "0.091",
 shuffle: true
 },
 {
@@ -10473,7 +10473,7 @@ options: [
 "-0.01",
 "None of these"
 ],
-correctAnswer: "None of these",
+correctAnswer: "0.01",
 shuffle: true
 },
 {
@@ -10557,9 +10557,9 @@ shuffle: true
 question: "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, using the simple iteration method, the formula x = φ(x) which achieves the convergence condition over the root interval is",
 type: "multiple",
 options: [
-"x = (1/3)e'^-x'",
+"x = (1/3)e^-x'",
 "x = -ln(3x)",
-"x = (1/3)e'^x",
+"x = (1/3)e^x",
 "None of these"
 ],
 correctAnswer: "x = (1/3)e'^-x'",
@@ -10596,7 +10596,7 @@ type: "multiple",
 image: "img/Q11Maths5-Midterm21-22.png",
 options: [
 "ln x",
-"e'^x",
+"e^x",
 "log mx",
 "None of these"
 ],
@@ -10604,7 +10604,7 @@ correctAnswer: "ln x",
 shuffle: true
 },
 {
-question: "Σ_(i=1)^7 X_i'^2' =",
+question: "Σ_(i=1)^7 X_i'^2 =",
 type: "multiple",
 image: "img/Q11Maths5-Midterm21-22.png",
 options: [
@@ -10626,12 +10626,13 @@ options: [
 "15.8441",
 "None of these"
 ],
-correctAnswer: "15.8441",
+correctAnswer: "10.0199",
 shuffle: true
 },
 {
 question: "m =",
 type: "multiple",
+image: "img/Q11Maths5-Midterm21-22.png",
 options: [
 "0.1211",
 "-0.2811",
@@ -10668,7 +10669,7 @@ correctAnswer: "0.0956",
 shuffle: true
 },
 {
-question: "Given the two curves y = e'^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, x_0 ∈ ......",
+question: "Given the two curves y = e^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, x_0 ∈ ......",
 type: "multiple",
 options: [
 "[0, 1]",
@@ -10774,7 +10775,7 @@ options: [
 "0.789",
 "None of these"
 ],
-correctAnswer: "None of these",
+correctAnswer: "0.532",
 shuffle: true
 },
 {
@@ -10800,7 +10801,7 @@ options: [
 "0.091",
 "None of these"
 ],
-correctAnswer: "0.091",
+correctAnswer: "0.134",
 shuffle: true
 },
 {
@@ -10813,7 +10814,7 @@ options: [
 "-0.01",
 "None of these"
 ],
-correctAnswer: "None of these",
+correctAnswer: "0.012",
 shuffle: true
 },
 {
@@ -11030,7 +11031,7 @@ options: [
 "5.0256",
 "20.002"
 ],
-correctAnswer: "16.1236",
+correctAnswer: "20.002",
 shuffle: true
 },
 {
