@@ -11011,7 +11011,7 @@ const quizzes = [
     chapters: [
       {
         id: "ai-embedded-networking-instrumentation",
-        title: "Bank Training Quiz 2026",
+        title: "Summer Training QBank",
         shuffleQuestions: true,
         showScore: true,
         quizModeTimer: 1800,
