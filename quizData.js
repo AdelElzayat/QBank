@@ -10439,811 +10439,1666 @@ const quizzes = [
     ],
   },
   {
-id: "maths5",
-title: "Maths 5",
-isSubjectGroup: true,
-chapters: [
-{
-id: "midterm-exam-2021-2022",
-title: "Midterm Exam 2021-2022",
-shuffleQuestions: false,
-showScore: true,
-quizModeTimer: 1800,
-questions: [
-{
-question: "A = .........................................",
-type: "multiple",
-image: "img/Maths5-Midterm21-22.png",
-options: [
-"-0.042",
-"0.091",
-"0.023",
-"None of these"
-],
-correctAnswer: "0.091",
-shuffle: true
-},
-{
-question: "B = .........................................",
-type: "multiple",
-image: "img/Maths5-Midterm21-22.png",
-options: [
-"0.01",
-"0.05",
-"-0.01",
-"None of these"
-],
-correctAnswer: "0.01",
-shuffle: true
-},
-{
-question: "C = .........................................",
-type: "multiple",
-image: "img/Maths5-Midterm21-22.png",
-options: [
-"-0.005",
-"0.001",
-"-0.001",
-"None of these"
-],
-correctAnswer: "-0.001",
-shuffle: true
-},
-{
-question: "The interpolation polynomial obtained by Lagrange interpolation for the given data (x, y) with 6 points has degree at most",
-type: "multiple",
-image: "img/Maths5-Midterm21-22.png",
-options: [
-"6",
-"3",
-"5",
-"4"
-],
-correctAnswer: "5",
-shuffle: true
-},
-{
-question: "Using Newton forward difference formula, y(0.15) ≈ ......",
-type: "multiple",
-image: "img/Maths5-Midterm21-22.png",
-options: [
-"0.0406",
-"1.2356",
-"0",
-"0.0001"
-],
-correctAnswer: "0.0406",
-shuffle: true
-},
-{
-question: "Using Newton Backward difference formula, y(0.9) ≈ ......",
-type: "multiple",
-image: "img/Maths5-Midterm21-22.png",
-options: [
-"-0.4589",
-"0.5858",
-"0.6369",
-"0.9563"
-],
-correctAnswer: "0.5858",
-shuffle: true
-},
-{
-question: "Using Newton forward divided difference formula, y(0) ≈ ......",
-type: "multiple",
-image: "img/Maths5-Midterm21-22.png",
-options: [
-"0.002",
-"-0.002",
-"0",
-"None of these"
-],
-correctAnswer: "-0.002",
-shuffle: true
-},
-{
-question: "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, a root of f(x) lies in the interval",
-type: "multiple",
-options: [
-"[0, 1]",
-"[2, 3]",
-"[4, 5]",
-"[-1, 0]"
-],
-correctAnswer: "[0, 1]",
-shuffle: true
-},
-{
-question: "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, using the simple iteration method, the formula x = φ(x) which achieves the convergence condition over the root interval is",
-type: "multiple",
-options: [
-"x = (1/3)e^-x'",
-"x = -ln(3x)",
-"x = (1/3)e^x",
-"None of these"
-],
-correctAnswer: "x = (1/3)e'^-x'",
-shuffle: true
-},
-{
-question: "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, the root of f(x) = 0 using simple iteration method is",
-type: "multiple",
-options: [
-"4.2576",
-"2.2576",
-"-0.2576",
-"0.2576"
-],
-correctAnswer: "0.2576",
-shuffle: true
-},
-{
-question: "m =",
-type: "multiple",
-image: "img/Q11Maths5-Midterm21-22.png",
-options: [
-"ln M",
-"e'^M",
-"log m",
-"None of these"
-],
-correctAnswer: "e'^M",
-shuffle: true
-},
-{
-question: "X =",
-type: "multiple",
-image: "img/Q11Maths5-Midterm21-22.png",
-options: [
-"ln x",
-"e^x",
-"log mx",
-"None of these"
-],
-correctAnswer: "ln x",
-shuffle: true
-},
-{
-question: "Σ_(i=1)^7 X_i'^2 =",
-type: "multiple",
-image: "img/Q11Maths5-Midterm21-22.png",
-options: [
-"1.4589",
-"11.5261",
-"6.1826",
-"None of these"
-],
-correctAnswer: "6.1826",
-shuffle: true
-},
-{
-question: "Σ_(i=1)^7 X_i Y_i =",
-type: "multiple",
-image: "img/Q11Maths5-Midterm21-22.png",
-options: [
-"17.2358",
-"10.0199",
-"15.8441",
-"None of these"
-],
-correctAnswer: "10.0199",
-shuffle: true
-},
-{
-question: "m =",
-type: "multiple",
-image: "img/Q11Maths5-Midterm21-22.png",
-options: [
-"0.1211",
-"-0.2811",
-"1.3858",
-"None of these"
-],
-correctAnswer: "0.1211",
-shuffle: true
-},
-{
-question: "c =",
-type: "multiple",
-image: "img/Q11Maths5-Midterm21-22.png",
-options: [
-"1.2789",
-"3.5853",
-"0.5658",
-"None of these"
-],
-correctAnswer: "3.5853",
-shuffle: true
-},
-{
-question: "The L_2 norm of error √(Σ_(r=1)^7 |y(x_r) - y_r|'^2') =",
-type: "multiple",
-image: "img/Q11Maths5-Midterm21-22.png",
-options: [
-"0.0956",
-"0",
-"2.0358",
-"None of these"
-],
-correctAnswer: "0.0956",
-shuffle: true
-},
-{
-question: "Given the two curves y = e^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, x_0 ∈ ......",
-type: "multiple",
-options: [
-"[0, 1]",
-"[1, 2]",
-"[2, 3]",
-"[3, 4]"
-],
-correctAnswer: "[1, 2]",
-shuffle: true
-},
-{
-question: "Given the two curves y = e'^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, x_0 = ......",
-type: "multiple",
-options: [
-"1.2789",
-"3.5853",
-"0.5658",
-"1.1462"
-],
-correctAnswer: "1.1462",
-shuffle: true
-},
-{
-question: "Given the two curves y = e'^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, y_0 = ......",
-type: "multiple",
-options: [
-"1.2789",
-"3.5853",
-"0.5658",
-"1.1462"
-],
-correctAnswer: "1.1462",
-shuffle: true
-}
-]
-},
-{
-id: "midterm-exam-2024-2025",
-title: "Midterm Exam 2024-2025",
-shuffleQuestions: false,
-showScore: true,
-quizModeTimer: 1800,
-questions: [
-// {
-// question: "In Curve fitting process to fit the data (x_t, y_t){t=1}^n to the straight line y = a + bx, we begin with the error formula e = \sum{t=1}^{n}(y_t - b - ax_t)^2 and then using the least square method. The equation \sum_{t=1}^{n}y_t = an + b\sum_{t=1}^{n}x_t is obtained by differentiating the error formula with respect to ..........",
-// type: "multiple",
-// image: "img/Maths5-Midterm24-25.png",
-// options: [
-// "x",
-// "y",
-// "a",
-// "b"
-// ],
-// correctAnswer: "a",
-// shuffle: true
-// },
-// {
-// question: "The equation \sum_{t=1}^{n}x_t y_t = a\sum_{t=1}^{n}x_t + b\sum_{t=1}^{n}x_t^2 is obtained by differentiating the error formula with respect to .........",
-// type: "multiple",
-// image: "img/Maths5-Midterm24-25.png",
-// options: [
-// "x",
-// "y",
-// "a",
-// "b"
-// ],
-// correctAnswer: "b",
-// shuffle: true
-// },
-{
-question: "A = .......",
-type: "multiple",
-image: "img/Q3Maths5-Midterm24-25.png",
-options: [
-"3",
-"2",
-"1",
-"4"
-],
-correctAnswer: "4",
-shuffle: true
-},
-{
-question: "B = ........",
-type: "multiple",
-image: "img/Q3Maths5-Midterm24-25.png",
-options: [
-"3.19",
-"1.25",
-"8.28",
-"1.51"
-],
-correctAnswer: "8.28",
-shuffle: true
-},
-{
-question: "L_2 norm of error = .......",
-type: "multiple",
-image: "img/Q3Maths5-Midterm24-25.png",
-options: [
-"0.532",
-"0.236",
-"0.789",
-"None of these"
-],
-correctAnswer: "0.532",
-shuffle: true
-},
-{
-question: "Use the obtained curve to approximate y'(\pi/4)",
-type: "multiple",
-image: "img/Q3Maths5-Midterm24-25.png",
-options: [
-"0",
-"0.25",
-"8.28",
-"1.526"
-],
-correctAnswer: "8.28",
-shuffle: true
-},
-{
-question: "A:",
-type: "multiple",
-image: "img/Q7Maths5-Midterm24-25.png",
-options: [
-"-0.042",
-"0.134",
-"0.091",
-"None of these"
-],
-correctAnswer: "0.134",
-shuffle: true
-},
-{
-question: "B:",
-type: "multiple",
-image: "img/Q7Maths5-Midterm24-25.png",
-options: [
-"0.012",
-"0.05",
-"-0.01",
-"None of these"
-],
-correctAnswer: "0.012",
-shuffle: true
-},
-{
-question: "C:",
-type: "multiple",
-image: "img/Q7Maths5-Midterm24-25.png",
-options: [
-"-0.005",
-"0.001",
-"-0.001",
-"None of these"
-],
-correctAnswer: "-0.001",
-shuffle: true
-},
-{
-question: "The polynomial obtained by Lagrange formula for the data (x, y) has degree at most",
-type: "multiple",
-image: "img/Q7Maths5-Midterm24-25.png",
-options: [
-"6",
-"3",
-"5",
-"4"
-],
-correctAnswer: "5",
-shuffle: true
-},
-{
-question: "y(0.15) =......",
-type: "multiple",
-image: "img/Q7Maths5-Midterm24-25.png",
-options: [
-"0.0406",
-"1.2356",
-"0",
-"0.0001"
-],
-correctAnswer: "0.0406",
-shuffle: true
-},
-{
-question: "y(0.9) =.....",
-type: "multiple",
-image: "img/Q7Maths5-Midterm24-25.png",
-options: [
-"-0.4589",
-"0.5858",
-"0.6369",
-"0.9563"
-],
-correctAnswer: "0.5858",
-shuffle: true
-},
-{
-question: "y(0) =......",
-type: "multiple",
-image: "img/Q7Maths5-Midterm24-25.png",
-options: [
-"0.002",
-"-0.002",
-"0",
-"None of these"
-],
-correctAnswer: "-0.002",
-shuffle: true
-},
-{
-question: "The convergence condition for the successive iterations is",
-type: "multiple",
-image: "img/Q14Maths5-Midterm24-25.png",
-options: [
-"| (f(x) f''(x)) / (f'(x))^2 | > 1 no",
-"| (f'(x) f''(x)) / (f'(x))^2 | < 1 yes",
-"| (f(x) f''(x)) / (f'(x))^2 | < 1 no",
-"| (f(x) f''(x)) / f'(x) | < 1 yes"
-],
-correctAnswer: "| (f(x) f''(x)) / (f'(x))^2 | < 1 no",
-shuffle: true
-},
-{
-question: "The smallest positive root of the equation lies in the interval",
-type: "multiple",
-image: "img/Q14Maths5-Midterm24-25.png",
-options: [
-"[3, 3.5]",
-"[0, 1]",
-"[1.5, 2.5]",
-"[4, 5.5]"
-],
-correctAnswer: "[3, 3.5]",
-shuffle: true
-},
-{
-question: "The smallest positive root of the equation correct to 4 decimal places is x = .....",
-type: "multiple",
-image: "img/Q14Maths5-Midterm24-25.png",
-options: [
-"3.2827",
-"0.5369",
-"1.9586",
-"5.1430"
-],
-correctAnswer: "3.2827",
-shuffle: true
-},
-{
-question: "A = .......",
-type: "multiple",
-image: "img/Q17Maths5-Midterm24-25.png",
-options: [
-"1/2",
-"-1/2",
-"1",
-"2"
-],
-correctAnswer: "-1/2",
-shuffle: true
-},
-{
-question: "B = .......",
-type: "multiple",
-image: "img/Q17Maths5-Midterm24-25.png",
-options: [
-"9/2",
-"7/2",
-"-9/2",
-"-7/2"
-],
-correctAnswer: "9/2",
-shuffle: true
-},
-{
-question: "C = .......",
-type: "multiple",
-image: "img/Q17Maths5-Midterm24-25.png",
-options: [
-"-2",
-"2",
-"4",
-"-4"
-],
-correctAnswer: "-4",
-shuffle: true
-},
-{
-question: "P(0) = .......",
-type: "multiple",
-image: "img/Q17Maths5-Midterm24-25.png",
-options: [
-"-2",
-"2",
-"4",
-"-4"
-],
-correctAnswer: "-4",
-shuffle: true
-}
-]
-},
-{
-id: "midterm-exam-2023-2024",
-title: "Midterm Exam 2023-2024",
-shuffleQuestions: false,
-showScore: true,
-quizModeTimer: 1800,
-questions: [
-{
-question: "Y~ =",
-type: "multiple",
-image: "img/Q1Maths5-Midterm23-24.png",
-options: [
-"y",
-"y²",
-"√y",
-"None of these"
-],
-correctAnswer: "y",
-shuffle: true
-},
-{
-question: "X~ =",
-type: "multiple",
-image: "img/Q1Maths5-Midterm23-24.png",
-options: [
-"x",
-"x²",
-"√x",
-"None of these"
-],
-correctAnswer: "√x",
-shuffle: true
-},
-{
-question: "a =",
-type: "multiple",
-image: "img/Q1Maths5-Midterm23-24.png",
-options: [
-"A",
-"A²",
-"√A",
-"None of these"
-],
-correctAnswer: "A²",
-shuffle: true
-},
-{
-question: "a = ......",
-type: "multiple",
-image: "img/Q1Maths5-Midterm23-24.png",
-options: [
-"16.1236",
-"-3.2156",
-"5.0256",
-"20.002"
-],
-correctAnswer: "20.002",
-shuffle: true
-},
-{
-question: "b = ......",
-type: "multiple",
-image: "img/Q1Maths5-Midterm23-24.png",
-options: [
-"-4.9994",
-"4.9994",
-"0",
-"2.0365"
-],
-correctAnswer: "-4.9994",
-shuffle: true
-},
-{
-question: "The polynomial which interpolates the above data has at most degree =",
-type: "multiple",
-image: "img/Q1Maths5-Midterm23-24.png",
-options: [
-"2",
-"4",
-"5",
-"None of these"
-],
-correctAnswer: "4",
-shuffle: true
-},
-{
-question: "m = ......",
-type: "multiple",
-image: "img/Q7Maths5-Midterm23-24.png",
-options: [
-"a",
-"1 / b",
-"b",
-"1 / a"
-],
-correctAnswer: "b",
-shuffle: true
-},
-{
-question: "The normal equations for finding p, q are",
-type: "multiple",
-image: "img/Q7Maths5-Midterm23-24.png",
-options: [
-"∑ Y_i = mn + q ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
-"∑ Y_i = qn + m ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
-"∑ my_i = qn + ∑ x_i, ∑ mX_i Y_i = q ∑ X_i + ∑ X_i²",
-"∑ Y = m ∑ X_i + qn, ∑ X_i Y_i = m ∑ X_i² + q ∑ X_i³"
-],
-correctAnswer: "∑ Y_i = mn + q ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
-shuffle: true
-},
-{
-question: "For the equation f(x) = e^x - 3x, use simple iteration to find the root in (1.5, 1.6). The used relation for convergence is .....",
-type: "multiple",
-options: [
-"x_{n+1} = (1/3) e^{x_n}",
-"x_{n+1} = ln(3x_n)",
-"x_{n+1} = 1 / (3x_n)",
-"x_{n+1} = 3 e^{x_n}"
-],
-correctAnswer: "x_{n+1} = ln(3x_n)",
-shuffle: true
-},
-{
-question: "For the equation f(x) = e^x - 3x, use simple iteration to find the root in (1.5, 1.6). Using the selected relation, the root correct to 4-decimal =",
-type: "multiple",
-options: [
-"2.3610",
-"1.4020",
-"1.6780",
-"1.5120"
-],
-correctAnswer: "1.5120",
-shuffle: true
-},
-{
-question: "The convergence condition for the successive iterations is",
-type: "multiple",
-image: "img/Q11Maths5-Midterm23-24.png",
-options: [
-"|(f(x)f''(x)) / (f'(x))²| > 1 no",
-"|(f'(x)f''(x)) / (f'(x))²| < 1 yes",
-"|(f(x)f''(x)) / (f'(x))²| < 1 no",
-"|(f(x)f''(x)) / f'(x)| < 1 no"
-],
-correctAnswer: "|(f(x)f''(x)) / (f'(x))²| < 1 no",
-shuffle: true
-},
-{
-question: "The smallest positive root of the equation lies in the interval",
-type: "multiple",
-image: "img/Q11Maths5-Midterm23-24.png",
-options: [
-"[3, 3.5]",
-"[0, 1]",
-"[1.5, 2.5]",
-"[4, 5]"
-],
-correctAnswer: "[3, 3.5]",
-shuffle: true
-},
-{
-question: "The smallest positive root of the equation correct to 4 decimal places is x = ....",
-type: "multiple",
-image: "img/Q11Maths5-Midterm23-24.png",
-options: [
-"3.2827",
-"0.5369",
-"1.9586",
-"5.1430"
-],
-correctAnswer: "3.2827",
-shuffle: true
-},
-{
-question: "A =",
-type: "multiple",
-image: "img/Q14Maths5-Midterm23-24.png",
-options: [
-"-0.042",
-"0.134",
-"0.091",
-"None of these"
-],
-correctAnswer: "0.134",
-shuffle: true
-},
-{
-question: "B =",
-type: "multiple",
-image: "img/Q14Maths5-Midterm23-24.png",
-options: [
-"0.012",
-"0.05",
-"-0.01",
-"None of these"
-],
-correctAnswer: "0.012",
-shuffle: true
-},
-{
-question: "C =",
-type: "multiple",
-image: "img/Q14Maths5-Midterm23-24.png",
-options: [
-"-0.005",
-"0.001",
-"-0.001",
-"None of these"
-],
-correctAnswer: "-0.001",
-shuffle: true
-},
-{
-question: "The polynomial obtained by Lagrange formula for the data (x, y) has degree at most",
-type: "multiple",
-image: "img/Q14Maths5-Midterm23-24.png",
-options: [
-"6",
-"3",
-"5",
-"4"
-],
-correctAnswer: "5",
-shuffle: true
-},
-{
-question: "Using Newton forward difference formula y(0.15) ≈ ......",
-type: "multiple",
-image: "img/Q14Maths5-Midterm23-24.png",
-options: [
-"0.0406",
-"1.2356",
-"0",
-"0.0001"
-],
-correctAnswer: "0.0406",
-shuffle: true
-},
-{
-question: "Using Newton Backward difference formula y(0.9) ≈ ......",
-type: "multiple",
-image: "img/Q14Maths5-Midterm23-24.png",
-options: [
-"-0.4589",
-"0.5858",
-"0.6369",
-"0.9563"
-],
-correctAnswer: "0.5858",
-shuffle: true
-},
-{
-question: "Using Newton forward divided difference formula y(0) ≈ ......",
-type: "multiple",
-image: "img/Q14Maths5-Midterm23-24.png",
-options: [
-"0.002",
-"-0.002",
-"0",
-"None of these"
-],
-correctAnswer: "-0.002",
-shuffle: true
-}
-]
-}
-]
-},
+    id: "maths5",
+    title: "Maths 5",
+    isSubjectGroup: true,
+    chapters: [
+      {
+        id: "midterm-exam-2021-2022",
+        title: "Midterm Exam 2021-2022",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question: "A = .........................................",
+            type: "multiple",
+            image: "img/Maths5-Midterm21-22.png",
+            options: ["-0.042", "0.091", "0.023", "None of these"],
+            correctAnswer: "0.091",
+            shuffle: true,
+          },
+          {
+            question: "B = .........................................",
+            type: "multiple",
+            image: "img/Maths5-Midterm21-22.png",
+            options: ["0.01", "0.05", "-0.01", "None of these"],
+            correctAnswer: "0.01",
+            shuffle: true,
+          },
+          {
+            question: "C = .........................................",
+            type: "multiple",
+            image: "img/Maths5-Midterm21-22.png",
+            options: ["-0.005", "0.001", "-0.001", "None of these"],
+            correctAnswer: "-0.001",
+            shuffle: true,
+          },
+          {
+            question:
+              "The interpolation polynomial obtained by Lagrange interpolation for the given data (x, y) with 6 points has degree at most",
+            type: "multiple",
+            image: "img/Maths5-Midterm21-22.png",
+            options: ["6", "3", "5", "4"],
+            correctAnswer: "5",
+            shuffle: true,
+          },
+          {
+            question:
+              "Using Newton forward difference formula, y(0.15) ≈ ......",
+            type: "multiple",
+            image: "img/Maths5-Midterm21-22.png",
+            options: ["0.0406", "1.2356", "0", "0.0001"],
+            correctAnswer: "0.0406",
+            shuffle: true,
+          },
+          {
+            question:
+              "Using Newton Backward difference formula, y(0.9) ≈ ......",
+            type: "multiple",
+            image: "img/Maths5-Midterm21-22.png",
+            options: ["-0.4589", "0.5858", "0.6369", "0.9563"],
+            correctAnswer: "0.5858",
+            shuffle: true,
+          },
+          {
+            question:
+              "Using Newton forward divided difference formula, y(0) ≈ ......",
+            type: "multiple",
+            image: "img/Maths5-Midterm21-22.png",
+            options: ["0.002", "-0.002", "0", "None of these"],
+            correctAnswer: "-0.002",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, a root of f(x) lies in the interval",
+            type: "multiple",
+            options: ["[0, 1]", "[2, 3]", "[4, 5]", "[-1, 0]"],
+            correctAnswer: "[0, 1]",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, using the simple iteration method, the formula x = φ(x) which achieves the convergence condition over the root interval is",
+            type: "multiple",
+            options: [
+              "x = (1/3)e^-x'",
+              "x = -ln(3x)",
+              "x = (1/3)e^x",
+              "None of these",
+            ],
+            correctAnswer: "x = (1/3)e'^-x'",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the given nonlinear equation f(x) = 3x - e'^-x' = 0, the root of f(x) = 0 using simple iteration method is",
+            type: "multiple",
+            options: ["4.2576", "2.2576", "-0.2576", "0.2576"],
+            correctAnswer: "0.2576",
+            shuffle: true,
+          },
+          {
+            question: "m =",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm21-22.png",
+            options: ["ln M", "e'^M", "log m", "None of these"],
+            correctAnswer: "e'^M",
+            shuffle: true,
+          },
+          {
+            question: "X =",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm21-22.png",
+            options: ["ln x", "e^x", "log mx", "None of these"],
+            correctAnswer: "ln x",
+            shuffle: true,
+          },
+          {
+            question: "Σ_(i=1)^7 X_i'^2 =",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm21-22.png",
+            options: ["1.4589", "11.5261", "6.1826", "None of these"],
+            correctAnswer: "6.1826",
+            shuffle: true,
+          },
+          {
+            question: "Σ_(i=1)^7 X_i Y_i =",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm21-22.png",
+            options: ["17.2358", "10.0199", "15.8441", "None of these"],
+            correctAnswer: "10.0199",
+            shuffle: true,
+          },
+          {
+            question: "m =",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm21-22.png",
+            options: ["0.1211", "-0.2811", "1.3858", "None of these"],
+            correctAnswer: "0.1211",
+            shuffle: true,
+          },
+          {
+            question: "c =",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm21-22.png",
+            options: ["1.2789", "3.5853", "0.5658", "None of these"],
+            correctAnswer: "3.5853",
+            shuffle: true,
+          },
+          {
+            question: "The L_2 norm of error √(Σ_(r=1)^7 |y(x_r) - y_r|'^2') =",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm21-22.png",
+            options: ["0.0956", "0", "2.0358", "None of these"],
+            correctAnswer: "0.0956",
+            shuffle: true,
+          },
+          {
+            question:
+              "Given the two curves y = e^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, x_0 ∈ ......",
+            type: "multiple",
+            options: ["[0, 1]", "[1, 2]", "[2, 3]", "[3, 4]"],
+            correctAnswer: "[1, 2]",
+            shuffle: true,
+          },
+          {
+            question:
+              "Given the two curves y = e'^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, x_0 = ......",
+            type: "multiple",
+            options: ["1.2789", "3.5853", "0.5658", "1.1462"],
+            correctAnswer: "1.1462",
+            shuffle: true,
+          },
+          {
+            question:
+              "Given the two curves y = e'^x' - 2 and y = ln(x + 2) which intersect at (x_0, y_0), using Newton Raphson method, y_0 = ......",
+            type: "multiple",
+            options: ["1.2789", "3.5853", "0.5658", "1.1462"],
+            correctAnswer: "1.1462",
+            shuffle: true,
+          },
+        ],
+      },
+      {
+        id: "midterm-exam-2024-2025",
+        title: "Midterm Exam 2024-2025",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          // {
+          // question: "In Curve fitting process to fit the data (x_t, y_t){t=1}^n to the straight line y = a + bx, we begin with the error formula e = \sum{t=1}^{n}(y_t - b - ax_t)^2 and then using the least square method. The equation \sum_{t=1}^{n}y_t = an + b\sum_{t=1}^{n}x_t is obtained by differentiating the error formula with respect to ..........",
+          // type: "multiple",
+          // image: "img/Maths5-Midterm24-25.png",
+          // options: [
+          // "x",
+          // "y",
+          // "a",
+          // "b"
+          // ],
+          // correctAnswer: "a",
+          // shuffle: true
+          // },
+          // {
+          // question: "The equation \sum_{t=1}^{n}x_t y_t = a\sum_{t=1}^{n}x_t + b\sum_{t=1}^{n}x_t^2 is obtained by differentiating the error formula with respect to .........",
+          // type: "multiple",
+          // image: "img/Maths5-Midterm24-25.png",
+          // options: [
+          // "x",
+          // "y",
+          // "a",
+          // "b"
+          // ],
+          // correctAnswer: "b",
+          // shuffle: true
+          // },
+          {
+            question: "A = .......",
+            type: "multiple",
+            image: "img/Q3Maths5-Midterm24-25.png",
+            options: ["3", "2", "1", "4"],
+            correctAnswer: "4",
+            shuffle: true,
+          },
+          {
+            question: "B = ........",
+            type: "multiple",
+            image: "img/Q3Maths5-Midterm24-25.png",
+            options: ["3.19", "1.25", "8.28", "1.51"],
+            correctAnswer: "8.28",
+            shuffle: true,
+          },
+          {
+            question: "L_2 norm of error = .......",
+            type: "multiple",
+            image: "img/Q3Maths5-Midterm24-25.png",
+            options: ["0.532", "0.236", "0.789", "None of these"],
+            correctAnswer: "0.532",
+            shuffle: true,
+          },
+          {
+            question: "Use the obtained curve to approximate y'(\pi/4)",
+            type: "multiple",
+            image: "img/Q3Maths5-Midterm24-25.png",
+            options: ["0", "0.25", "8.28", "1.526"],
+            correctAnswer: "8.28",
+            shuffle: true,
+          },
+          {
+            question: "A:",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm24-25.png",
+            options: ["-0.042", "0.134", "0.091", "None of these"],
+            correctAnswer: "0.134",
+            shuffle: true,
+          },
+          {
+            question: "B:",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm24-25.png",
+            options: ["0.012", "0.05", "-0.01", "None of these"],
+            correctAnswer: "0.012",
+            shuffle: true,
+          },
+          {
+            question: "C:",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm24-25.png",
+            options: ["-0.005", "0.001", "-0.001", "None of these"],
+            correctAnswer: "-0.001",
+            shuffle: true,
+          },
+          {
+            question:
+              "The polynomial obtained by Lagrange formula for the data (x, y) has degree at most",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm24-25.png",
+            options: ["6", "3", "5", "4"],
+            correctAnswer: "5",
+            shuffle: true,
+          },
+          {
+            question: "y(0.15) =......",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm24-25.png",
+            options: ["0.0406", "1.2356", "0", "0.0001"],
+            correctAnswer: "0.0406",
+            shuffle: true,
+          },
+          {
+            question: "y(0.9) =.....",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm24-25.png",
+            options: ["-0.4589", "0.5858", "0.6369", "0.9563"],
+            correctAnswer: "0.5858",
+            shuffle: true,
+          },
+          {
+            question: "y(0) =......",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm24-25.png",
+            options: ["0.002", "-0.002", "0", "None of these"],
+            correctAnswer: "-0.002",
+            shuffle: true,
+          },
+          {
+            question:
+              "The convergence condition for the successive iterations is",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm24-25.png",
+            options: [
+              "| (f(x) f''(x)) / (f'(x))^2 | > 1 no",
+              "| (f'(x) f''(x)) / (f'(x))^2 | < 1 yes",
+              "| (f(x) f''(x)) / (f'(x))^2 | < 1 no",
+              "| (f(x) f''(x)) / f'(x) | < 1 yes",
+            ],
+            correctAnswer: "| (f(x) f''(x)) / (f'(x))^2 | < 1 no",
+            shuffle: true,
+          },
+          {
+            question:
+              "The smallest positive root of the equation lies in the interval",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm24-25.png",
+            options: ["[3, 3.5]", "[0, 1]", "[1.5, 2.5]", "[4, 5.5]"],
+            correctAnswer: "[3, 3.5]",
+            shuffle: true,
+          },
+          {
+            question:
+              "The smallest positive root of the equation correct to 4 decimal places is x = .....",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm24-25.png",
+            options: ["3.2827", "0.5369", "1.9586", "5.1430"],
+            correctAnswer: "3.2827",
+            shuffle: true,
+          },
+          {
+            question: "A = .......",
+            type: "multiple",
+            image: "img/Q17Maths5-Midterm24-25.png",
+            options: ["1/2", "-1/2", "1", "2"],
+            correctAnswer: "-1/2",
+            shuffle: true,
+          },
+          {
+            question: "B = .......",
+            type: "multiple",
+            image: "img/Q17Maths5-Midterm24-25.png",
+            options: ["9/2", "7/2", "-9/2", "-7/2"],
+            correctAnswer: "9/2",
+            shuffle: true,
+          },
+          {
+            question: "C = .......",
+            type: "multiple",
+            image: "img/Q17Maths5-Midterm24-25.png",
+            options: ["-2", "2", "4", "-4"],
+            correctAnswer: "-4",
+            shuffle: true,
+          },
+          {
+            question: "P(0) = .......",
+            type: "multiple",
+            image: "img/Q17Maths5-Midterm24-25.png",
+            options: ["-2", "2", "4", "-4"],
+            correctAnswer: "-4",
+            shuffle: true,
+          },
+        ],
+      },
+      {
+        id: "midterm-exam-2023-2024",
+        title: "Midterm Exam 2023-2024",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question: "Y~ =",
+            type: "multiple",
+            image: "img/Q1Maths5-Midterm23-24.png",
+            options: ["y", "y²", "√y", "None of these"],
+            correctAnswer: "y",
+            shuffle: true,
+          },
+          {
+            question: "X~ =",
+            type: "multiple",
+            image: "img/Q1Maths5-Midterm23-24.png",
+            options: ["x", "x²", "√x", "None of these"],
+            correctAnswer: "√x",
+            shuffle: true,
+          },
+          {
+            question: "a =",
+            type: "multiple",
+            image: "img/Q1Maths5-Midterm23-24.png",
+            options: ["A", "A²", "√A", "None of these"],
+            correctAnswer: "A²",
+            shuffle: true,
+          },
+          {
+            question: "a = ......",
+            type: "multiple",
+            image: "img/Q1Maths5-Midterm23-24.png",
+            options: ["16.1236", "-3.2156", "5.0256", "20.002"],
+            correctAnswer: "20.002",
+            shuffle: true,
+          },
+          {
+            question: "b = ......",
+            type: "multiple",
+            image: "img/Q1Maths5-Midterm23-24.png",
+            options: ["-4.9994", "4.9994", "0", "2.0365"],
+            correctAnswer: "-4.9994",
+            shuffle: true,
+          },
+          {
+            question:
+              "The polynomial which interpolates the above data has at most degree =",
+            type: "multiple",
+            image: "img/Q1Maths5-Midterm23-24.png",
+            options: ["2", "4", "5", "None of these"],
+            correctAnswer: "4",
+            shuffle: true,
+          },
+          {
+            question: "m = ......",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm23-24.png",
+            options: ["a", "1 / b", "b", "1 / a"],
+            correctAnswer: "b",
+            shuffle: true,
+          },
+          {
+            question: "The normal equations for finding p, q are",
+            type: "multiple",
+            image: "img/Q7Maths5-Midterm23-24.png",
+            options: [
+              "∑ Y_i = mn + q ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
+              "∑ Y_i = qn + m ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
+              "∑ my_i = qn + ∑ x_i, ∑ mX_i Y_i = q ∑ X_i + ∑ X_i²",
+              "∑ Y = m ∑ X_i + qn, ∑ X_i Y_i = m ∑ X_i² + q ∑ X_i³",
+            ],
+            correctAnswer:
+              "∑ Y_i = mn + q ∑ X_i, ∑ X_i Y_i = m ∑ X_i + q ∑ X_i²",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the equation f(x) = e^x - 3x, use simple iteration to find the root in (1.5, 1.6). The used relation for convergence is .....",
+            type: "multiple",
+            options: [
+              "x_{n+1} = (1/3) e^{x_n}",
+              "x_{n+1} = ln(3x_n)",
+              "x_{n+1} = 1 / (3x_n)",
+              "x_{n+1} = 3 e^{x_n}",
+            ],
+            correctAnswer: "x_{n+1} = ln(3x_n)",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the equation f(x) = e^x - 3x, use simple iteration to find the root in (1.5, 1.6). Using the selected relation, the root correct to 4-decimal =",
+            type: "multiple",
+            options: ["2.3610", "1.4020", "1.6780", "1.5120"],
+            correctAnswer: "1.5120",
+            shuffle: true,
+          },
+          {
+            question:
+              "The convergence condition for the successive iterations is",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm23-24.png",
+            options: [
+              "|(f(x)f''(x)) / (f'(x))²| > 1 no",
+              "|(f'(x)f''(x)) / (f'(x))²| < 1 yes",
+              "|(f(x)f''(x)) / (f'(x))²| < 1 no",
+              "|(f(x)f''(x)) / f'(x)| < 1 no",
+            ],
+            correctAnswer: "|(f(x)f''(x)) / (f'(x))²| < 1 no",
+            shuffle: true,
+          },
+          {
+            question:
+              "The smallest positive root of the equation lies in the interval",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm23-24.png",
+            options: ["[3, 3.5]", "[0, 1]", "[1.5, 2.5]", "[4, 5]"],
+            correctAnswer: "[3, 3.5]",
+            shuffle: true,
+          },
+          {
+            question:
+              "The smallest positive root of the equation correct to 4 decimal places is x = ....",
+            type: "multiple",
+            image: "img/Q11Maths5-Midterm23-24.png",
+            options: ["3.2827", "0.5369", "1.9586", "5.1430"],
+            correctAnswer: "3.2827",
+            shuffle: true,
+          },
+          {
+            question: "A =",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm23-24.png",
+            options: ["-0.042", "0.134", "0.091", "None of these"],
+            correctAnswer: "0.134",
+            shuffle: true,
+          },
+          {
+            question: "B =",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm23-24.png",
+            options: ["0.012", "0.05", "-0.01", "None of these"],
+            correctAnswer: "0.012",
+            shuffle: true,
+          },
+          {
+            question: "C =",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm23-24.png",
+            options: ["-0.005", "0.001", "-0.001", "None of these"],
+            correctAnswer: "-0.001",
+            shuffle: true,
+          },
+          {
+            question:
+              "The polynomial obtained by Lagrange formula for the data (x, y) has degree at most",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm23-24.png",
+            options: ["6", "3", "5", "4"],
+            correctAnswer: "5",
+            shuffle: true,
+          },
+          {
+            question:
+              "Using Newton forward difference formula y(0.15) ≈ ......",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm23-24.png",
+            options: ["0.0406", "1.2356", "0", "0.0001"],
+            correctAnswer: "0.0406",
+            shuffle: true,
+          },
+          {
+            question:
+              "Using Newton Backward difference formula y(0.9) ≈ ......",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm23-24.png",
+            options: ["-0.4589", "0.5858", "0.6369", "0.9563"],
+            correctAnswer: "0.5858",
+            shuffle: true,
+          },
+          {
+            question:
+              "Using Newton forward divided difference formula y(0) ≈ ......",
+            type: "multiple",
+            image: "img/Q14Maths5-Midterm23-24.png",
+            options: ["0.002", "-0.002", "0", "None of these"],
+            correctAnswer: "-0.002",
+            shuffle: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "bank-training-2026",
+    title: "Summer Training",
+    isSubjectGroup: true,
+    chapters: [
+      {
+        id: "ai-embedded-networking-instrumentation",
+        title: "Bank Training Quiz 2026",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question: "What is the main goal of Artificial Intelligence (AI)?",
+            type: "multiple",
+            options: [
+              "To increase computer storage capacity",
+              "To create machines that can perform tasks requiring human intelligence",
+              "To replace computer hardware",
+              "To improve internet speed",
+            ],
+            correctAnswer:
+              "To create machines that can perform tasks requiring human intelligence",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is considered a branch of Artificial Intelligence?",
+            type: "multiple",
+            options: [
+              "Machine Learning",
+              "Computer Assembly",
+              "Network Cabling",
+              "Database Backup",
+            ],
+            correctAnswer: "Machine Learning",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which type of Al is designed to perform a specific task?",
+            type: "multiple",
+            options: ["General Al", "Super Al", "Narrow Al", "Universal Al"],
+            correctAnswer: "Narrow Al",
+            shuffle: true,
+          },
+          {
+            question: "Which of the following is an example of Narrow AI?",
+            type: "multiple",
+            options: [
+              "A machine with human-level intelligence in every field",
+              "A chess-playing Al system",
+              "A fully conscious robot",
+              "A machine that can perform every human activity",
+            ],
+            correctAnswer: "A chess-playing Al system",
+            shuffle: true,
+          },
+          {
+            question: "What does Machine Learning allow computers to do?",
+            type: "multiple",
+            options: [
+              "Learn patterns from data",
+              "Increase processor voltage",
+              "Manufacture hardware",
+              "Replace operating systems",
+            ],
+            correctAnswer: "Learn patterns from data",
+            shuffle: true,
+          },
+          {
+            question: "Which type of Machine Learning uses labeled data?",
+            type: "multiple",
+            options: [
+              "Unsupervised Learning",
+              "Reinforcement Learning",
+              "Supervised Learning",
+              "Random Learning",
+            ],
+            correctAnswer: "Supervised Learning",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is an example of supervised learning?",
+            type: "multiple",
+            options: [
+              "Customer segmentation without predefined categories",
+              "Predicting house prices using historical labeled data",
+              "Discovering hidden patterns without labels",
+              "Finding groups in unlabeled data",
+            ],
+            correctAnswer:
+              "Predicting house prices using historical labeled data",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which Machine Learning technique is commonly used for grouping similar data points?",
+            type: "multiple",
+            options: [
+              "Classification",
+              "Regression",
+              "Clustering",
+              "Prediction",
+            ],
+            correctAnswer: "Clustering",
+            shuffle: true,
+          },
+          {
+            question: "What is the purpose of a training dataset?",
+            type: "multiple",
+            options: [
+              "To test the final system only",
+              "To train the machine learning model",
+              "To store computer programs",
+              "To increase network bandwidth",
+            ],
+            correctAnswer: "To train the machine learning model",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which algorithm is commonly used for classification problems?",
+            type: "multiple",
+            options: [
+              "Decision Tree",
+              "K-Means only",
+              "PCA only",
+              "Apriori only",
+            ],
+            correctAnswer: "Decision Tree",
+            shuffle: true,
+          },
+          {
+            question: "What is Deep Learning mainly based on?",
+            type: "multiple",
+            options: [
+              "Relational databases",
+              "Artificial neural networks with multiple layers",
+              "Sorting algorithms",
+              "Computer networks",
+            ],
+            correctAnswer: "Artificial neural networks with multiple layers",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which neural network architecture is particularly suitable for image processing?",
+            type: "multiple",
+            options: ["CNN", "RNN", "SQL", "FTP"],
+            correctAnswer: "CNN",
+            shuffle: true,
+          },
+          {
+            question: "What does CNN stand for?",
+            type: "multiple",
+            options: [
+              "Computer Neural Network",
+              "Convolutional Neural Network",
+              "Central Network Node",
+              "Computational Numerical Network",
+            ],
+            correctAnswer: "Convolutional Neural Network",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which neural network is commonly associated with sequential or time-series data?",
+            type: "multiple",
+            options: ["CNN", "RNN", "GAN", "KNN"],
+            correctAnswer: "RNN",
+            shuffle: true,
+          },
+          {
+            question: "What is Natural Language Processing (NLP)?",
+            type: "multiple",
+            options: [
+              "Processing computer hardware",
+              "Enabling computers to understand and process human language",
+              "Managing computer memory",
+              "Encrypting network traffic",
+            ],
+            correctAnswer:
+              "Enabling computers to understand and process human language",
+            shuffle: true,
+          },
+          {
+            question: "Which of the following is an NLP application?",
+            type: "multiple",
+            options: [
+              "Speech recognition",
+              "Disk formatting",
+              "CPU scheduling",
+              "File compression",
+            ],
+            correctAnswer: "Speech recognition",
+            shuffle: true,
+          },
+          {
+            question: "What is Computer Vision concerned with?",
+            type: "multiple",
+            options: [
+              "Understanding and analyzing visual information",
+              "Managing computer processors",
+              "Designing databases",
+              "Controlling network switches",
+            ],
+            correctAnswer: "Understanding and analyzing visual information",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is an example of Al in healthcare?",
+            type: "multiple",
+            options: [
+              "Medical image diagnosis assistance",
+              "Increasing hard disk size",
+              "Installing an operating system",
+              "Printing medical documents",
+            ],
+            correctAnswer: "Medical image diagnosis assistance",
+            shuffle: true,
+          },
+          {
+            question: "What is an intelligent agent?",
+            type: "multiple",
+            options: [
+              "A program that only stores information",
+              "An entity that perceives its environment and takes actions",
+              "A computer monitor",
+              "A database server",
+            ],
+            correctAnswer:
+              "An entity that perceives its environment and takes actions",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which component allows an intelligent agent to perceive its environment?",
+            type: "multiple",
+            options: ["Actuators", "Sensors", "Compilers", "Databases"],
+            correctAnswer: "Sensors",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the main difference between classification and regression?",
+            type: "multiple",
+            options: [
+              "Classification predicts continuous values, while regression predicts classes",
+              "Classification predicts discrete classes, while regression predicts continuous values",
+              "Both always produce categorical outputs",
+              "Both are unsupervised techniques",
+            ],
+            correctAnswer:
+              "Classification predicts discrete classes, while regression predicts continuous values",
+            shuffle: true,
+          },
+          {
+            question: "Which problem is most suitable for regression?",
+            type: "multiple",
+            options: [
+              "Determining whether an email is spam",
+              "Predicting tomorrow's temperature",
+              "Identifying whether an image contains a cat",
+              "Classifying patients into disease categories",
+            ],
+            correctAnswer: "Predicting tomorrow's temperature",
+            shuffle: true,
+          },
+          {
+            question: "What is overfitting in Machine Learning?",
+            type: "multiple",
+            options: [
+              "The model performs poorly on training data",
+              "The model learns the training data too closely and performs poorly on unseen data",
+              "The model has insufficient parameters",
+              "The model contains no training data",
+            ],
+            correctAnswer:
+              "The model learns the training data too closely and performs poorly on unseen data",
+            shuffle: true,
+          },
+          {
+            question: "Which technique can help reduce overfitting?",
+            type: "multiple",
+            options: [
+              "Increasing model complexity indefinitely",
+              "Regularization",
+              "Removing all training data",
+              "Increasing noise in the output",
+            ],
+            correctAnswer: "Regularization",
+            shuffle: true,
+          },
+          {
+            question: "What is the purpose of a validation dataset?",
+            type: "multiple",
+            options: [
+              "To tune and evaluate model performance during development",
+              "To replace the training dataset completely",
+              "To store the source code",
+              "To increase hardware speed",
+            ],
+            correctAnswer:
+              "To tune and evaluate model performance during development",
+            shuffle: true,
+          },
+          {
+            question: "What is the main purpose of a test dataset?",
+            type: "multiple",
+            options: [
+              "To train the model",
+              "To tune model parameters",
+              "To evaluate the final generalization performance",
+              "To generate additional features",
+            ],
+            correctAnswer: "To evaluate the final generalization performance",
+            shuffle: true,
+          },
+          {
+            question: "What does the term 'feature' mean in Machine Learning?",
+            type: "multiple",
+            options: [
+              "A measurable input variable used by a model",
+              "The final prediction only",
+              "The computer processor",
+              "The learning algorithm itself",
+            ],
+            correctAnswer: "A measurable input variable used by a model",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which measure is commonly used to evaluate a binary classification model?",
+            type: "multiple",
+            options: [
+              "Accuracy",
+              "Mean squared error only",
+              "Variance of pixels",
+              "Euclidean distance only",
+            ],
+            correctAnswer: "Accuracy",
+            shuffle: true,
+          },
+          {
+            question:
+              "A model has 95% accuracy on training data but only 65% on test data. What is the most likely problem?",
+            type: "multiple",
+            options: [
+              "Underfitting",
+              "Overfitting",
+              "Data normalization",
+              "Feature scaling",
+            ],
+            correctAnswer: "Overfitting",
+            shuffle: true,
+          },
+          {
+            question: "What is the main purpose of feature scaling?",
+            type: "multiple",
+            options: [
+              "To make features comparable in magnitude",
+              "To remove the target variable",
+              "To increase the number of classes",
+              "To eliminate the training dataset",
+            ],
+            correctAnswer: "To make features comparable in magnitude",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which algorithm is based on finding the nearest training examples?",
+            type: "multiple",
+            options: [
+              "K-Nearest Neighbors",
+              "Linear Regression",
+              "Naive Bayes",
+              "Decision Tree",
+            ],
+            correctAnswer: "K-Nearest Neighbors",
+            shuffle: true,
+          },
+          {
+            question: "In K-Means clustering, what does K represent?",
+            type: "multiple",
+            options: [
+              "Number of input features",
+              "Number of clusters",
+              "Number of training samples",
+              "Number of iterations only",
+            ],
+            correctAnswer: "Number of clusters",
+            shuffle: true,
+          },
+          {
+            question: "What is the main objective of K-Means clustering?",
+            type: "multiple",
+            options: [
+              "Maximize classification accuracy",
+              "Minimize the distance between data points and their assigned cluster centers",
+              "Predict continuous values",
+              "Generate labeled datasets",
+            ],
+            correctAnswer:
+              "Minimize the distance between data points and their assigned cluster centers",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which algorithm is based on the concept of entropy and information gain?",
+            type: "multiple",
+            options: ["Decision Tree", "K-Means", "KNN", "Linear Regression"],
+            correctAnswer: "Decision Tree",
+            shuffle: true,
+          },
+          {
+            question: "What does entropy measure in a decision tree?",
+            type: "multiple",
+            options: [
+              "The size of the dataset",
+              "The impurity or uncertainty of the data",
+              "The number of processors",
+              "The training time only",
+            ],
+            correctAnswer: "The impurity or uncertainty of the data",
+            shuffle: true,
+          },
+          {
+            question: "What is reinforcement learning based on?",
+            type: "multiple",
+            options: [
+              "Learning through rewards and penalties",
+              "Learning only from labeled datasets",
+              "Learning without interaction with an environment",
+              "Learning only from images",
+            ],
+            correctAnswer: "Learning through rewards and penalties",
+            shuffle: true,
+          },
+          {
+            question: "In reinforcement learning, what is an 'agent'?",
+            type: "multiple",
+            options: [
+              "The environment",
+              "The learner that selects actions",
+              "The reward function only",
+              "The training dataset",
+            ],
+            correctAnswer: "The learner that selects actions",
+            shuffle: true,
+          },
+          {
+            question: "What is the role of a reward in reinforcement learning?",
+            type: "multiple",
+            options: [
+              "It indicates how desirable an action or outcome is",
+              "It stores the training dataset",
+              "It defines the neural network architecture",
+              "It removes incorrect states",
+            ],
+            correctAnswer: "It indicates how desirable an action or outcome is",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following best describes a heuristic function in Al search?",
+            type: "multiple",
+            options: [
+              "It estimates the cost or distance from a current state to a goal",
+              "It always gives the exact solution",
+              "It stores all possible solutions",
+              "It randomly selects a solution",
+            ],
+            correctAnswer:
+              "It estimates the cost or distance from a current state to a goal",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which search algorithm uses both the actual path cost and a heuristic estimate?",
+            type: "multiple",
+            options: [
+              "Breadth-First Search",
+              "Depth-First Search",
+              "A* Search",
+              "Random Search",
+            ],
+            correctAnswer: "A* Search",
+            shuffle: true,
+          },
+          {
+            question:
+              "In A search, which evaluation function is commonly used?",
+            type: "multiple",
+            options: [
+              "f(n) = h(n) - g(n)",
+              "f(n) = g(n) + h(n)",
+              "f(n) = g(n) * h(n)",
+              "f(n) = g(n) / h(n)",
+            ],
+            correctAnswer: "f(n) = g(n) + h(n)",
+            shuffle: true,
+          },
+          {
+            question: "What does g(n) represent in the A algorithm?",
+            type: "multiple",
+            options: [
+              "Estimated cost from the current node to the goal",
+              "Actual cost from the start node to node n",
+              "Total number of nodes",
+              "Heuristic error",
+            ],
+            correctAnswer: "Actual cost from the start node to node n",
+            shuffle: true,
+          },
+          {
+            question: "What does h(n) represent in A search?",
+            type: "multiple",
+            options: [
+              "The actual cost from the start to the current node",
+              "The estimated cost from node n to the goal",
+              "The number of available actions",
+              "The depth of the tree",
+            ],
+            correctAnswer: "The estimated cost from node n to the goal",
+            shuffle: true,
+          },
+          {
+            question: "A heuristic is considered admissible if it:",
+            type: "multiple",
+            options: [
+              "Always overestimates the actual cost",
+              "Never overestimates the actual cost to reach the goal",
+              "Is always equal to zero",
+              "Randomly estimates the goal cost",
+            ],
+            correctAnswer:
+              "Never overestimates the actual cost to reach the goal",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the vanishing gradient problem mainly associated with?",
+            type: "multiple",
+            options: [
+              "Very deep neural networks and certain recurrent networks",
+              "Database systems",
+              "Computer networks",
+              "Sorting algorithms",
+            ],
+            correctAnswer:
+              "Very deep neural networks and certain recurrent networks",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which activation function is commonly used to reduce the vanishing gradient problem compared with sigmoid in deep networks?",
+            type: "multiple",
+            options: [
+              "RELU",
+              "Step function",
+              "Binary function",
+              "Constant function",
+            ],
+            correctAnswer: "RELU",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is backpropagation primarily used for in neural networks?",
+            type: "multiple",
+            options: [
+              "Initializing the computer operating system",
+              "Computing gradients used to update network weights",
+              "Increasing the number of training samples",
+              "Removing the output layer",
+            ],
+            correctAnswer: "Computing gradients used to update network weights",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the main purpose of the learning rate in gradient-based optimization?",
+            type: "multiple",
+            options: [
+              "It determines the size of parameter updates",
+              "It determines the number of classes",
+              "It determines the dataset size",
+              "It determines the number of input features",
+            ],
+            correctAnswer: "It determines the size of parameter updates",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is a major concern associated with generative Al models?",
+            type: "multiple",
+            options: [
+              "They cannot process any data",
+              "They may generate inaccurate, biased, or fabricated information",
+              "They always require no training",
+              "They cannot generate text",
+            ],
+            correctAnswer:
+              "They may generate inaccurate, biased, or fabricated information",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which statement best describes the relationship between Artificial Intelligence, Machine Learning, and Deep Learning?",
+            type: "multiple",
+            options: [
+              "Al is a subset of ML, and ML is a subset of Deep Learning",
+              "Deep Learning is a subset of Al, but unrelated to Machine Learning",
+              "Machine Learning is a subset of Al, and Deep Learning is a subset of Machine Learning",
+              "AI, ML, and Deep Learning are completely independent fields",
+            ],
+            correctAnswer:
+              "Machine Learning is a subset of Al, and Deep Learning is a subset of Machine Learning",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is an example of an embedded system?",
+            type: "multiple",
+            options: [
+              "Personal Computer",
+              "Washing Machine",
+              "Mainframe Server",
+              "Supercomputer",
+            ],
+            correctAnswer: "Washing Machine",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the main function of a microcontroller in an embedded system?",
+            type: "multiple",
+            options: [
+              "Perform arithmetic operations",
+              "Control specific tasks",
+              "Manage large databases",
+              "Provide internet connectivity",
+            ],
+            correctAnswer: "Control specific tasks",
+            shuffle: true,
+          },
+          {
+            question: "Which memory type is non-volatile in embedded systems?",
+            type: "multiple",
+            options: ["RAM", "ROM", "Cache", "Registers"],
+            correctAnswer: "ROM",
+            shuffle: true,
+          },
+          {
+            question: "What does RTOS stand for?",
+            type: "multiple",
+            options: [
+              "Real-Time Operating System",
+              "Run-Time Operation Software",
+              "Random Task Operating System",
+              "Real Transfer Output System",
+            ],
+            correctAnswer: "Real-Time Operating System",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which communication protocol is commonly used for short-distance communication between chips?",
+            type: "multiple",
+            options: ["UART", "SPI", "Ethernet", "HTTP"],
+            correctAnswer: "SPI",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following best describes a hard real-time system?",
+            type: "multiple",
+            options: [
+              "Tasks must be completed eventually",
+              "Tasks can miss deadlines occasionally",
+              "Tasks must always meet deadlines",
+              "Tasks are executed randomly",
+            ],
+            correctAnswer: "Tasks must always meet deadlines",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the function of a watchdog timer in embedded systems?",
+            type: "multiple",
+            options: [
+              "To generate interrupts",
+              "To restart the system if it hangs",
+              "To save data permanently",
+              "To increase processing speed",
+            ],
+            correctAnswer: "To restart the system if it hangs",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is NOT a feature of embedded systems?",
+            type: "multiple",
+            options: [
+              "Task-specific functionality",
+              "Real-time operation",
+              "High power consumption",
+              "Reliability",
+            ],
+            correctAnswer: "High power consumption",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which memory is typically used for program storage in embedded systems?",
+            type: "multiple",
+            options: ["EEPROM", "SRAM", "DRAM", "Cache"],
+            correctAnswer: "EEPROM",
+            shuffle: true,
+          },
+          {
+            question: "What is the purpose of interrupts in embedded systems?",
+            type: "multiple",
+            options: [
+              "To slow down execution",
+              "To handle external/internal events immediately",
+              "To reduce memory usage",
+              "To reset the system",
+            ],
+            correctAnswer: "To handle external/internal events immediately",
+            shuffle: true,
+          },
+          {
+            question: "What is the Internet?",
+            type: "multiple",
+            options: [
+              "A single super-computer that stores all the world's information",
+              "A global network of interconnected computers that communicate with each other",
+              "A software program used to type documents",
+              "A type of cable that connects your TV to the wall",
+            ],
+            correctAnswer:
+              "A global network of interconnected computers that communicate with each other",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following do you need to connect to the Internet?",
+            type: "multiple",
+            options: [
+              "A printer",
+              "A web browser",
+              "An Internet Service Provider (ISP)",
+              "A modem, a router, or a mobile data connection",
+            ],
+            correctAnswer: "A modem, a router, or a mobile data connection",
+            shuffle: true,
+          },
+          {
+            question: "What is a 'website'?",
+            type: "multiple",
+            options: [
+              "A collection of related web pages stored on a server and accessible via the Internet",
+              "A physical book you can buy at a store",
+              "The physical cable that carries internet signals",
+              "A type of computer virus",
+            ],
+            correctAnswer:
+              "A collection of related web pages stored on a server and accessible via the Internet",
+            shuffle: true,
+          },
+          {
+            question: "What is a 'web browser'?",
+            type: "multiple",
+            options: [
+              "A search engine like Google or Bing",
+              "A software application used to access and view websites on the Internet",
+              "The physical hardware that stores internet data",
+              "A programming language used to build websites",
+            ],
+            correctAnswer:
+              "A software application used to access and view websites on the Internet",
+            shuffle: true,
+          },
+          {
+            question:
+              "When you type '[www.google.com](https://www.google.com/search?q=https%3A%2F%2Fwww.google.com)' into your browser, what are you typing?",
+            type: "multiple",
+            options: [
+              "The IP address of the Google server",
+              "The domain name of the Google website",
+              "The password to access Google",
+              "The physical location of Google's headquarters",
+            ],
+            correctAnswer: "The domain name of the Google website",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is a 'hyperlink' (or simply a 'link') on a webpage?",
+            type: "multiple",
+            options: [
+              "A physical connection between two computers",
+              "A clickable text or image that takes you to another webpage or a different part of the same page",
+              "A type of internet cable",
+              "The address bar at the top of your browser",
+            ],
+            correctAnswer:
+              "A clickable text or image that takes you to another webpage or a different part of the same page",
+            shuffle: true,
+          },
+          {
+            question: "What does 'Wi-Fi' allow you to do?",
+            type: "multiple",
+            options: [
+              "Connect to the internet without using physical cables, using radio waves",
+              "Charge your phone wirelessly",
+              "Make phone calls over the internet",
+              "Connect your computer directly to a printer",
+            ],
+            correctAnswer:
+              "Connect to the internet without using physical cables, using radio waves",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is an example of an 'email address'?",
+            type: "multiple",
+            options: [
+              "[www.gmail.com](https://www.google.com/search?q=https%3A%2F%2Fwww.gmail.com)",
+              "[https://mail.google.com](https://mail.google.com)",
+              "john.doe@gmail.com",
+              "#email",
+            ],
+            correctAnswer: "john.doe@gmail.com",
+            shuffle: true,
+          },
+          {
+            question: "What does the 'Cloud' refer to in computing?",
+            type: "multiple",
+            options: [
+              "The physical data cables that run across the ocean floor",
+              "A floppy disk used to store files",
+              "A network of remote servers hosted on the internet used to store, manage, and process data, instead of using your local computer's hard drive",
+              "The weather system that can disrupt satellite internet signals",
+            ],
+            correctAnswer:
+              "A network of remote servers hosted on the internet used to store, manage, and process data, instead of using your local computer's hard drive",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the primary purpose of a 'password' when you create an online account?",
+            type: "multiple",
+            options: [
+              "To make your account look unique",
+              "To protect your account and personal information from unauthorized access",
+              "To connect your device to the internet",
+              "To save your files to the cloud",
+            ],
+            correctAnswer:
+              "To protect your account and personal information from unauthorized access",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is NOT a common internet service?",
+            type: "multiple",
+            options: [
+              "Browsing the World Wide Web",
+              "Sending and receiving emails",
+              "Streaming movies and music",
+              "Cooking a meal in an oven",
+            ],
+            correctAnswer: "Cooking a meal in an oven",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the primary function of an instrument's transducer stage?",
+            type: "multiple",
+            options: [
+              "To indicate the value of the measured quantity",
+              "To convert the measured quantity into an analogous electrical signal",
+              "To manipulate the signal for presentation",
+              "To power the entire instrument system",
+            ],
+            correctAnswer:
+              "To convert the measured quantity into an analogous electrical signal",
+            shuffle: true,
+          },
+          {
+            question:
+              "The degree of closeness of a measured value to its true value is called:",
+            type: "multiple",
+            options: ["Precision", "Accuracy", "Resolution", "Sensitivity"],
+            correctAnswer: "Accuracy",
+            shuffle: true,
+          },
+          {
+            question:
+              "The smallest change in input that an instrument can detect reliably is a measure of its:",
+            type: "multiple",
+            options: ["Linearity", "Sensitivity", "Resolution", "Threshold"],
+            correctAnswer: "Resolution",
+            shuffle: true,
+          },
+          {
+            question:
+              "In a null-type instrument, the measurement is performed by:",
+            type: "multiple",
+            options: [
+              "Deflecting a pointer over a calibrated scale",
+              "Balancing the unknown quantity against a known standard until the deflection is zero",
+              "Displaying a numeric value directly",
+              "Integrating the input signal over a period of time",
+            ],
+            correctAnswer:
+              "Balancing the unknown quantity against a known standard until the deflection is zero",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which static characteristic refers to the consistency of a series of measurements?",
+            type: "multiple",
+            options: ["Accuracy", "Precision", "Sensitivity", "Drift"],
+            correctAnswer: "Precision",
+            shuffle: true,
+          },
+          {
+            question:
+              "The ratio of the change in instrument output to the change in instrument input is its:",
+            type: "multiple",
+            options: ["Fidelity", "Resolution", "Sensitivity", "Span"],
+            correctAnswer: "Sensitivity",
+            shuffle: true,
+          },
+          {
+            question:
+              "Hysteresis error in an instrument is primarily caused by:",
+            type: "multiple",
+            options: [
+              "Internal noise in the circuitry",
+              "A slow change in output with no change in input",
+              "The magnetic, elastic, or thermal properties of the materials",
+              "A non-linear scale",
+            ],
+            correctAnswer:
+              "The magnetic, elastic, or thermal properties of the materials",
+            shuffle: true,
+          },
+          {
+            question: "The term 'Drift' is best described as:",
+            type: "multiple",
+            options: [
+              "The ability to reproduce readings",
+              "The smallest detectable input change",
+              "The difference between the indicated and true value",
+              "A gradual shift in the calibration over time",
+            ],
+            correctAnswer: "A gradual shift in the calibration over time",
+            shuffle: true,
+          },
+          {
+            question:
+              "The purpose of signal conditioning in an instrument is to:",
+            type: "multiple",
+            options: [
+              "Sense the physical parameter",
+              "Convert the signal into a form suitable for presentation",
+              "Provide power to the sensor",
+              "Display the final value",
+            ],
+            correctAnswer:
+              "Convert the signal into a form suitable for presentation",
+            shuffle: true,
+          },
+          {
+            question:
+              "The difference between the maximum and minimum values of a quantity for which the instrument is designed to measure is called its:",
+            type: "multiple",
+            options: ["Range", "Span", "Drift", "Resolution"],
+            correctAnswer: "Span",
+            shuffle: true,
+          },
+          {
+            question:
+              "The overall error of a measurement system is the sum of:",
+            type: "multiple",
+            options: [
+              "Systematic and random errors",
+              "Static and dynamic errors",
+              "Absolute and relative errors",
+              "Gross and calibration errors",
+            ],
+            correctAnswer: "Systematic and random errors",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is NOT a static characteristic of an instrument?",
+            type: "multiple",
+            options: [
+              "Accuracy",
+              "Sensitivity",
+              "Speed of response",
+              "Reproducibility",
+            ],
+            correctAnswer: "Speed of response",
+            shuffle: true,
+          },
+          {
+            question:
+              "The difference between the measured value and the true value is called:",
+            type: "multiple",
+            options: ["Correction", "Error", "Deviation", "Uncertainty"],
+            correctAnswer: "Error",
+            shuffle: true,
+          },
+          {
+            question:
+              "An instrument has high precision but low accuracy. This means:",
+            type: "multiple",
+            options: [
+              "The readings are close to the true value but scattered",
+              "The readings are close to each other but far from the true value",
+              "The readings are both close to each other and close to the true value",
+              "The readings are widely scattered and far from the true value",
+            ],
+            correctAnswer:
+              "The readings are close to each other but far from the true value",
+            shuffle: true,
+          },
+          {
+            question:
+              "The maximum amount by which the result of a measurement may differ from the true value is the:",
+            type: "multiple",
+            options: ["Span", "Resolution", "Limiting error", "Repeatability"],
+            correctAnswer: "Limiting error",
+            shuffle: true,
+          },
+          {
+            question:
+              "An instrument's ability to give the same output for the same input when repeated measurements are taken is called:",
+            type: "multiple",
+            options: [
+              "Reproducibility",
+              "Sensitivity",
+              "Threshold",
+              "Accuracy",
+            ],
+            correctAnswer: "Reproducibility",
+            shuffle: true,
+          },
+          {
+            question:
+              "In a deflecting-type instrument, measurement is performed by:",
+            type: "multiple",
+            options: [
+              "Balancing against a known standard",
+              "A pointer moving over a calibrated scale",
+              "Counting pulses",
+              "Comparing with a reference voltage",
+            ],
+            correctAnswer: "A pointer moving over a calibrated scale",
+            shuffle: true,
+          },
+          {
+            question:
+              "The smallest input value that will cause a detectable change in the instrument output is its:",
+            type: "multiple",
+            options: ["Resolution", "Sensitivity", "Threshold", "Span"],
+            correctAnswer: "Threshold",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which error occurs when an instrument's output changes due to variations in temperature, pressure, or humidity?",
+            type: "multiple",
+            options: [
+              "Observational error",
+              "Environmental error",
+              "Random error",
+              "Gross error",
+            ],
+            correctAnswer: "Environmental error",
+            shuffle: true,
+          },
+        ],
+      },
+    ],
+  },
   // {
   //   id: "reproductive-disorders",
   //   title: "Reproductive Disorders",
