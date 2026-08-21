@@ -47,9 +47,12 @@
         <div class="logo-panel-header">
             <div class="logo-panel-title">
                 <img src="img/AE-Logo.png" alt="QBank logo" class="logo-panel-logo">
-                <h3>My Account</h3>
+                <span class="logo-panel-title-text">
+                    <span class="logo-panel-kicker">QBank</span>
+                    <h3>My Account</h3>
+                </span>
             </div>
-            <button class="logo-panel-close" onclick="quizApp.toggleLogoPanel()" aria-label="Close account sidebar">×</button>
+            <button type="button" class="logo-panel-close" onclick="quizApp.toggleLogoPanel()" aria-label="Close account sidebar">×</button>
         </div>
         <div class="logo-panel-body" id="logo-panel-body"></div>
     </aside>
@@ -174,33 +177,82 @@
                 const bodyEl = document.getElementById('logo-panel-body');
                 if (!bodyEl) return;
 
+                const acctFooter = `
+                        <div class="acct-footer">
+                            <span class="acct-footer-icon" aria-hidden="true">🛡️</span>
+                            <span>Your data is secure and private</span>
+                        </div>
+                    `;
+
                 if (currentUser) {
                     bodyEl.innerHTML = `
-                        <div class="logo-panel-welcome">Welcome back, ${currentUser.displayName || 'User'}!</div>
-                        <div class="profile-info">
-                            <div class="profile-avatar-large">👤</div>
-                            <div class="profile-name">${currentUser.displayName || 'User'}</div>
-                            <div class="profile-email">${currentUser.email}</div>
-                            ${isAdmin ? '<span class="admin-badge">Admin</span>' : ''}
+                        <div class="acct-welcome-card">
+                            <div class="acct-welcome-icon" aria-hidden="true">👋</div>
+                            <div class="acct-welcome-text">
+                                <div class="acct-welcome-title">Welcome back, ${currentUser.displayName || 'User'}!</div>
+                                <div class="acct-welcome-sub">Nice to see you again. Pick up where you left off.</div>
+                            </div>
                         </div>
-                        <div class="profile-actions">
-                            <button class="btn btn-primary btn-full" onclick="quizApp.showResultsHistory()">My Results</button>
-                            ${isAdmin ? '<button class="btn btn-admin btn-full" onclick="quizApp.showAdminPanel()">Admin Panel</button>' : ''}
-                            <button class="btn btn-secondary btn-full" onclick="quizApp.logout()">Logout</button>
+                        <div class="acct-user-card">
+                            <div class="acct-user-avatar" aria-hidden="true">👤</div>
+                            <div class="acct-user-meta">
+                                <div class="acct-user-name">${currentUser.displayName || 'User'}</div>
+                                <div class="acct-user-sub">${currentUser.email}</div>
+                            </div>
+                            ${isAdmin ? '<span class="acct-status-badge acct-status-admin">Admin</span>' : '<span class="acct-status-badge">Member</span>'}
                         </div>
+                        <div class="acct-actions">
+                            <button type="button" class="acct-btn acct-btn-primary" onclick="quizApp.showResultsHistory()">
+                                <span class="acct-btn-icon" aria-hidden="true">📊</span>
+                                <span>My Results</span>
+                            </button>
+                            ${isAdmin ? '<button type="button" class="acct-btn acct-btn-admin" onclick="quizApp.showAdminPanel()"><span class="acct-btn-icon" aria-hidden="true">🛠</span><span>Admin Panel</span></button>' : ''}
+                            <button type="button" class="acct-btn acct-btn-ghost" onclick="quizApp.logout()">
+                                <span class="acct-btn-icon" aria-hidden="true">🚪</span>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                        ${acctFooter}
                     `;
                 } else {
                     bodyEl.innerHTML = `
-                        <div class="logo-panel-welcome">Welcome to QBank — sign in to save your progress.</div>
-                        <div class="profile-info">
-                            <div class="profile-avatar-large">👤</div>
-                            <div class="profile-name">Guest User</div>
-                            <div class="profile-email">Sign in to unlock all features</div>
+                        <div class="acct-welcome-card">
+                            <div class="acct-welcome-icon" aria-hidden="true">✨</div>
+                            <div class="acct-welcome-text">
+                                <div class="acct-welcome-title">Welcome to QBank</div>
+                                <div class="acct-welcome-sub">Sign in to save your progress, track your scores and unlock all features.</div>
+                            </div>
                         </div>
-                        <div class="profile-actions">
-                            <a href="login.html" class="btn btn-google btn-full">Login with Google</a>
-                            <button class="btn btn-secondary btn-full" onclick="quizApp.toggleLogoPanel()">Continue as Guest</button>
+                        <div class="acct-user-card">
+                            <div class="acct-user-avatar" aria-hidden="true">👤</div>
+                            <div class="acct-user-meta">
+                                <div class="acct-user-name">Guest User</div>
+                                <div class="acct-user-sub">Not signed in</div>
+                            </div>
+                            <span class="acct-status-badge">Guest</span>
                         </div>
+                        <div class="acct-features-card">
+                            <div class="acct-features-title">
+                                <span class="acct-features-icon" aria-hidden="true">🔓</span>
+                                <span>Sign in to unlock</span>
+                            </div>
+                            <ul class="acct-features-list">
+                                <li><span class="acct-check" aria-hidden="true">✓</span><span>Save your progress &amp; results</span></li>
+                                <li><span class="acct-check" aria-hidden="true">✓</span><span>Track your performance over time</span></li>
+                                <li><span class="acct-check" aria-hidden="true">✓</span><span>Sync your results across devices</span></li>
+                                <li><span class="acct-check" aria-hidden="true">✓</span><span>Review your past answers anytime</span></li>
+                            </ul>
+                        </div>
+                        <a href="login.html" class="acct-btn acct-btn-google">
+                            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" class="acct-google-icon" width="20" height="20" loading="lazy">
+                            <span>Login with Google</span>
+                        </a>
+                        <div class="acct-divider"><span class="acct-divider-line"></span><span class="acct-divider-text">OR</span><span class="acct-divider-line"></span></div>
+                        <button type="button" class="acct-btn acct-btn-outline" onclick="quizApp.toggleLogoPanel()">
+                            <span class="acct-btn-icon" aria-hidden="true">👤</span>
+                            <span>Continue as Guest</span>
+                        </button>
+                        ${acctFooter}
                     `;
                 }
             },

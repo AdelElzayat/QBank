@@ -2836,3 +2836,391 @@ body.logo-panel-open {
     border-radius: 50%;
   }
 }
+/* ============================================================
+   Premium My Account drawer (scoped to the logo-panel account UI)
+   ============================================================ */
+
+.logo-panel {
+  width: 340px;
+  background:
+    radial-gradient(560px 260px at 120% -70px, rgba(139, 92, 246, 0.18), transparent 62%),
+    var(--card-bg);
+  border-left: 1px solid var(--card-border);
+  box-shadow: -18px 0 42px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.logo-panel.active {
+  transform: translateX(0);
+}
+
+.logo-panel-header {
+  position: relative;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 45%, var(--accent) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 10px 26px -16px rgba(99, 102, 241, 0.6);
+}
+.logo-panel-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03) 40%, transparent 78%);
+  pointer-events: none;
+}
+.logo-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  z-index: 1;
+}
+.logo-panel-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 12px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+.logo-panel-title-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.logo-panel-kicker {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+.logo-panel-header h3 {
+  font-size: 1.12rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+.logo-panel-close {
+  width: 38px;
+  height: 38px;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition: all var(--t);
+  flex-shrink: 0;
+}
+.logo-panel-close:hover {
+  background: rgba(255, 255, 255, 0.34);
+  border-color: rgba(255, 255, 255, 0.42);
+  transform: rotate(90deg);
+}
+.logo-panel-close:active {
+  transform: rotate(90deg) scale(0.94);
+}
+
+.logo-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Greeting / welcome card ---------- */
+.acct-welcome-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(160deg, var(--primary-subtle) 0%, var(--card-bg-2) 55%, var(--card-bg) 100%);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+}
+.acct-welcome-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border-radius: 13px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 8px 20px -8px rgba(99, 102, 241, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.acct-welcome-text { min-width: 0; }
+.acct-welcome-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+.acct-welcome-sub {
+  margin-top: 3px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+/* ---------- User status card ---------- */
+.acct-user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 18px -12px rgba(15, 23, 42, 0.5);
+}
+.acct-user-avatar {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  border-radius: 50%;
+  background: radial-gradient(120% 120% at 30% 20%, var(--primary-soft), var(--accent-soft));
+  box-shadow: 0 0 0 3px var(--primary-subtle), 0 8px 20px -8px rgba(99, 102, 241, 0.45);
+}
+.acct-user-meta { flex: 1; min-width: 0; }
+.acct-user-name {
+  font-size: 0.94rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--text-color);
+  overflow-wrap: anywhere;
+}
+.acct-user-sub {
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+}
+.acct-status-badge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--card-border);
+  white-space: nowrap;
+}
+.acct-status-admin {
+  color: #fff;
+  background: var(--brand-gradient);
+  border-color: transparent;
+  box-shadow: 0 6px 14px -6px rgba(139, 92, 246, 0.6);
+}
+
+/* ---------- Sign-in benefits card ---------- */
+.acct-features-card {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+}
+.acct-features-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-color);
+}
+.acct-features-icon {
+  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  border-radius: 9px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 6px 14px -6px rgba(99, 102, 241, 0.6);
+}
+.acct-features-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.acct-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+.acct-check {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  border-radius: 50%;
+  color: var(--success);
+  background: var(--success-soft);
+}
+/* ---------- Action buttons ---------- */
+.acct-actions { display: flex; flex-direction: column; gap: 10px; }
+.acct-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 0.87rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.16s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
+}
+.acct-btn:active { transform: scale(0.98); }
+.acct-btn-icon { font-size: 1rem; line-height: 1; }
+
+.acct-btn-primary {
+  color: #fff;
+  background: var(--brand-gradient);
+  border-color: transparent;
+  box-shadow: 0 8px 20px -8px rgba(99, 102, 241, 0.7);
+}
+.acct-btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+.acct-btn-admin {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+  box-shadow: 0 8px 18px -8px rgba(99, 102, 241, 0.6);
+}
+.acct-btn-admin:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.acct-btn-ghost,
+.acct-btn-outline {
+  color: var(--text-color);
+  background: var(--card-bg);
+  border-color: var(--border-strong);
+}
+.acct-btn-ghost:hover,
+.acct-btn-outline:hover {
+  color: var(--primary);
+  background: var(--primary-subtle);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-subtle);
+  transform: translateY(-1px);
+}
+
+/* Google primary CTA */
+.acct-btn-google {
+  color: var(--google-btn-text);
+  background: var(--google-btn-bg);
+  border-color: var(--card-border);
+  box-shadow: 0 6px 18px -10px rgba(15, 23, 42, 0.35);
+}
+.acct-btn-google:hover {
+  background: var(--google-btn-hover);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.acct-google-icon { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* OR divider */
+.acct-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 0;
+}
+.acct-divider-line { flex: 1; height: 1px; background: var(--card-border); }
+.acct-divider-text {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+
+/* Security footer */
+.acct-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: auto;
+  padding: 12px 6px 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.acct-footer-icon { font-size: 0.9rem; opacity: 0.9; }
+
+/* Subtle content entrance */
+.logo-panel-body > * { animation: accountFade 0.34s var(--t); }
+@keyframes accountFade {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive refinements */
+@media (max-width: 768px) {
+  .logo-panel { width: 300px; }
+}
+@media (max-width: 430px) {
+  .logo-panel { width: 88vw; max-width: 340px; }
+}
+@media (max-width: 359px) {
+  .logo-panel-header { padding: 15px 14px; }
+  .logo-panel-body { padding: 14px 12px; gap: 10px; }
+  .logo-panel-logo { width: 36px; height: 36px; }
+  .acct-welcome-card { padding: 12px; }
+  .acct-welcome-title { font-size: 0.88rem; }
+  .acct-welcome-sub { font-size: 0.72rem; }
+  .acct-btn { min-height: 46px; font-size: 0.82rem; }
+  .acct-user-card { padding: 10px 12px; }
+  .acct-google-icon { width: 18px; height: 18px; }
+}
