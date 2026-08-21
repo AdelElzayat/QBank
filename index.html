@@ -375,6 +375,7 @@ toggleLogoPanel() {
             showChapterModeSelection(subjectIndex, chapterIndex) {
                 const chapter = quizzes[subjectIndex].chapters[chapterIndex];
                 this.currentQuiz = chapter;
+                this.questionOrder = (chapter.shuffleQuestions || chapter.shuffle) ? 'shuffle' : 'ordered';
                 this.subjectBackIndex = subjectIndex;
                 const content = document.getElementById('quiz-content');
 
@@ -385,6 +386,14 @@ toggleLogoPanel() {
                     <div class="mode-selection-screen">
                         <h1>${chapter.title}</h1>
                         <p>How would you like to take this quiz?</p>
+                        <div class="order-selector">
+                          <p class="order-selector-label">Question order</p>
+                          <p class="order-selector-hint">This only arranges <strong>question order</strong> — your answer choices still shuffle as usual.</p>
+                          <div class="order-options">
+                            <button type="button" class="order-option ${this.questionOrder === 'ordered' ? 'active' : ''}" data-order="ordered" onclick="quizApp.selectQuestionOrder('ordered')" aria-pressed="${this.questionOrder === 'ordered'}">In Order</button>
+                            <button type="button" class="order-option ${this.questionOrder === 'shuffle' ? 'active' : ''}" data-order="shuffle" onclick="quizApp.selectQuestionOrder('shuffle')" aria-pressed="${this.questionOrder === 'shuffle'}">🔀 Shuffle</button>
+                          </div>
+                        </div>
                         <div class="mode-cards">
                             <div class="mode-card normal-mode" onclick="quizApp.startQuiz(quizzes[${subjectIndex}].chapters[${chapterIndex}], 'normal')">
                                 <div class="mode-icon">🎯</div>
@@ -450,6 +459,7 @@ toggleLogoPanel() {
 
             showModeSelection(quizIndex) {
                 this.currentQuiz = quizzes[quizIndex];
+                this.questionOrder = (this.currentQuiz.shuffleQuestions || this.currentQuiz.shuffle) ? 'shuffle' : 'ordered';
                 const content = document.getElementById('quiz-content');
                 const totalQ = this.currentQuiz.questions.length;
                 const timerMins = this.currentQuiz.quizModeTimer ? Math.round(this.currentQuiz.quizModeTimer / 60) : null;
@@ -458,6 +468,14 @@ toggleLogoPanel() {
                     <div class="mode-selection-screen">
                         <h1>${this.currentQuiz.title}</h1>
                         <p>How would you like to take this quiz?</p>
+                        <div class="order-selector">
+                          <p class="order-selector-label">Question order</p>
+                          <p class="order-selector-hint">This only arranges <strong>question order</strong> — your answer choices still shuffle as usual.</p>
+                          <div class="order-options">
+                            <button type="button" class="order-option ${this.questionOrder === 'ordered' ? 'active' : ''}" data-order="ordered" onclick="quizApp.selectQuestionOrder('ordered')" aria-pressed="${this.questionOrder === 'ordered'}">In Order</button>
+                            <button type="button" class="order-option ${this.questionOrder === 'shuffle' ? 'active' : ''}" data-order="shuffle" onclick="quizApp.selectQuestionOrder('shuffle')" aria-pressed="${this.questionOrder === 'shuffle'}">🔀 Shuffle</button>
+                          </div>
+                        </div>
                         <div class="mode-cards">
                             <div class="mode-card normal-mode" onclick="quizApp.startQuiz(${quizIndex}, 'normal')">
                                 <div class="mode-icon">🎯</div>
@@ -488,6 +506,7 @@ toggleLogoPanel() {
             },
 
             currentMode: 'normal',
+            questionOrder: 'ordered',
             quizModeTimer: null,
             quizModeTimerInterval: null,
             QUIZ_MODE_STORAGE_KEY: "qbank_quizmode_",
@@ -576,6 +595,18 @@ toggleLogoPanel() {
                 }
             },
 
+            selectQuestionOrder(order) {
+                this.questionOrder = order;
+                const buttons = document.querySelectorAll('.order-option');
+                if (buttons) {
+                    buttons.forEach((btn) => {
+                        const isActive = btn.dataset.order === order;
+                        btn.classList.toggle('active', isActive);
+                        btn.setAttribute('aria-pressed', String(isActive));
+                    });
+                }
+            },
+
             startQuiz(quizIndex, mode = 'normal') {
                 // Support both numeric index (from regular quizzes) and object (from chapter quizzes)
                 this.currentQuiz = typeof quizIndex === 'object' ? quizIndex : quizzes[quizIndex];
@@ -614,7 +645,7 @@ toggleLogoPanel() {
             processQuestions(questions) {
                 let processed = [...questions];
 
-                if (this.currentQuiz.shuffleQuestions) {
+                if (this.questionOrder === 'shuffle') {
                     processed = this.fisherYatesShuffle(processed);
                 }
 
