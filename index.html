@@ -7,15 +7,22 @@
     <!-- Controls browser top bar color on mobile -->
     <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <title>QBank</title>
+    <title>QBank — Adel Elzayat Question Bank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/AE-Logo.png" type="image/x-icon">
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="navbar-brand">
-            <span class="brand-name">Adel Elzayat</span>
+        <div class="navbar-brand" style="cursor:pointer" onclick="quizApp.toggleLogoPanel()" aria-label="Open account sidebar">
+            <img src="img/AE-Logo.png" alt="QBank logo" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-name">Adel Elzayat</span>
+                <span class="brand-sub">Question Bank</span>
+            </div>
         </div>
         <div class="navbar-actions">
             <label class="switch" aria-label="Toggle theme">
@@ -29,22 +36,25 @@
                     </svg>
                 </span>
             </label>
-            <button class="profile-icon-btn" onclick="quizApp.toggleProfilePanel()" aria-label="Profile">
+            <button class="profile-icon-btn" onclick="quizApp.toggleLogoPanel()" aria-label="Profile">
                 <span class="profile-icon">👤</span>
             </button>
-            <div id="user-actions" class="desktop-only">
-                <a href="login.html" class="btn btn-primary btn-sm">Login</a>
-            </div>
         </div>
     </nav>
-    <div class="profile-panel" id="profile-panel">
-        <div class="profile-panel-header">
-            <h3>My Account</h3>
-            <button class="profile-panel-close" onclick="quizApp.toggleProfilePanel()">×</button>
+
+    <!-- Dedicated logo/account sidebar (opens when clicking the profile logo button) -->
+    <aside class="logo-panel" id="logo-panel" aria-label="Account sidebar">
+        <div class="logo-panel-header">
+            <div class="logo-panel-title">
+                <img src="img/AE-Logo.png" alt="QBank logo" class="logo-panel-logo">
+                <h3>My Account</h3>
+            </div>
+            <button class="logo-panel-close" onclick="quizApp.toggleLogoPanel()" aria-label="Close account sidebar">×</button>
         </div>
-        <div class="profile-panel-content" id="profile-panel-content"></div>
-    </div>
-    <div class="profile-panel-overlay" id="profile-panel-overlay" onclick="quizApp.toggleProfilePanel()"></div>
+        <div class="logo-panel-body" id="logo-panel-body"></div>
+    </aside>
+    <div class="logo-panel-overlay" id="logo-panel-overlay" onclick="quizApp.toggleLogoPanel()" aria-hidden="true"></div>
+
     <div class="main-content">
         <div id="quiz-container">
             <div id="quiz-timer-wrapper" class="quiz-timer-wrapper" style="display:none;">
@@ -155,47 +165,18 @@
                         currentUser = null;
                         isAdmin = false;
                     }
-                    this.updateUserUI();
-                    this.updateProfilePanel();
+                    this.updateLogoPanel();
                 });
             },
 
-            updateUserUI() {
-                const userActions = document.getElementById('user-actions');
+
+            updateLogoPanel() {
+                const bodyEl = document.getElementById('logo-panel-body');
+                if (!bodyEl) return;
 
                 if (currentUser) {
-                    userActions.innerHTML = `
-                        <div class="user-section">
-                            <div class="user-profile">
-                                <span class="user-avatar">👤</span>
-                                <span class="user-name">${currentUser.displayName || currentUser.email}</span>
-                                ${isAdmin ? '<span class="admin-badge">Admin</span>' : ''}
-                            </div>
-                            <div class="user-actions-group">
-                                <button class="btn btn-secondary btn-nav" onclick="quizApp.showResultsHistory()">My Results</button>
-                                ${isAdmin ? '<button class="btn btn-admin btn-nav" onclick="quizApp.showAdminPanel()">Admin</button>' : ''}
-                                <button class="btn btn-secondary btn-nav" onclick="quizApp.logout()">Logout</button>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    userActions.innerHTML = '<a href="login.html" class="btn btn-primary btn-sm">Login</a>';
-                }
-            },
-
-            toggleProfilePanel() {
-                const panel = document.getElementById('profile-panel');
-                const overlay = document.getElementById('profile-panel-overlay');
-                panel.classList.toggle('active');
-                overlay.classList.toggle('active');
-                document.body.classList.toggle('profile-panel-open');
-            },
-
-            updateProfilePanel() {
-                const content = document.getElementById('profile-panel-content');
-
-                if (currentUser) {
-                    content.innerHTML = `
+                    bodyEl.innerHTML = `
+                        <div class="logo-panel-welcome">Welcome back, ${currentUser.displayName || 'User'}!</div>
                         <div class="profile-info">
                             <div class="profile-avatar-large">👤</div>
                             <div class="profile-name">${currentUser.displayName || 'User'}</div>
@@ -209,28 +190,39 @@
                         </div>
                     `;
                 } else {
-                    content.innerHTML = `
+                    bodyEl.innerHTML = `
+                        <div class="logo-panel-welcome">Welcome to QBank — sign in to save your progress.</div>
                         <div class="profile-info">
                             <div class="profile-avatar-large">👤</div>
                             <div class="profile-name">Guest User</div>
-                            <div class="profile-email">Sign in to save your progress</div>
+                            <div class="profile-email">Sign in to unlock all features</div>
                         </div>
                         <div class="profile-actions">
                             <a href="login.html" class="btn btn-google btn-full">Login with Google</a>
-                            <button class="btn btn-secondary btn-full" onclick="quizApp.toggleProfilePanel()">Continue as Guest</button>
+                            <button class="btn btn-secondary btn-full" onclick="quizApp.toggleLogoPanel()">Continue as Guest</button>
                         </div>
                     `;
                 }
             },
 
+toggleLogoPanel() {
+                const panel = document.getElementById('logo-panel');
+                const overlay = document.getElementById('logo-panel-overlay');
+                if (panel && overlay) {
+                    const isActive = panel.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    document.body.classList.toggle('logo-panel-open');
+                    panel.setAttribute('aria-hidden', String(!isActive));
+                    const btn = document.querySelector('.profile-icon-btn');
+                    if (btn) btn.setAttribute('aria-expanded', String(isActive));
+                }
+            },
             async logout() {
                 try {
-                    this.toggleProfilePanel();
                     await signOut(auth);
                     currentUser = null;
                     isAdmin = false;
-                    this.updateUserUI();
-                    this.updateProfilePanel();
+                    this.updateLogoPanel();
                 } catch (error) {
                     console.error('Logout error:', error);
                 }
@@ -306,22 +298,31 @@
 
             renderHome() {
                 const content = document.getElementById('quiz-content');
+                const cardIcons = ['📘', '🧠', '📐', '🌐', '⚖️', '🔬', '💼', '📡', '🧮', '🧬'];
 
                 const cardsHtml = quizzes.map((quiz, index) => {
                     if (quiz.isSubjectGroup) {
                         const count = quiz.chapters ? quiz.chapters.length : 0;
                         return `
-                            <div class="quiz-card subject-card">
-                                <h3>${quiz.title}</h3>
-                                <p>${count} quiz${count !== 1 ? 'zes' : ''}</p>
-                                <button class="btn btn-primary" onclick="quizApp.showChapterSelection(${index})">View Quizzes</button>
+                            <div class="quiz-card subject-card" style="--card-i:${index}">
+                                <div class="quiz-card-icon">📚</div>
+                                <div class="quiz-card-title">${quiz.title}</div>
+                                <div class="quiz-card-meta">
+                                    <span class="meta-chip"><span class="chip-dot"></span>${count} quiz${count !== 1 ? 'zes' : ''}</span>
+                                </div>
+                                <button class="btn btn-primary" onclick="quizApp.showChapterSelection(${index})">Browse Quizzes</button>
                             </div>
                         `;
                     }
+                    const timerMins = quiz.quizModeTimer ? Math.round(quiz.quizModeTimer / 60) : null;
                     return `
-                        <div class="quiz-card">
-                            <h3>${quiz.title}</h3>
-                            <p>${quiz.questions.length} questions</p>
+                        <div class="quiz-card" style="--card-i:${index}">
+                            <div class="quiz-card-icon">${cardIcons[index % cardIcons.length]}</div>
+                            <div class="quiz-card-title">${quiz.title}</div>
+                            <div class="quiz-card-meta">
+                                <span class="meta-chip"><span class="chip-dot"></span>${quiz.questions.length} questions</span>
+                                ${timerMins ? `<span class="meta-chip">⏱ ${timerMins} min</span>` : ''}
+                            </div>
                             <button class="btn btn-primary" onclick="quizApp.showModeSelection(${index})">Start Quiz</button>
                         </div>
                     `;
@@ -329,7 +330,11 @@
 
                 content.innerHTML = `
                     <div class="home-screen">
-                        <h1>Select a quiz to begin</h1>
+                        <header class="screen-header">
+                            <span class="screen-kicker">✨ Prepare & Practice</span>
+                            <h1>Question Bank</h1>
+                            <p class="screen-subtitle">Boost your exam confidence — choose a subject, pick a mode, and start practicing.</p>
+                        </header>
                         <div class="quiz-grid">${cardsHtml}</div>
                     </div>
                 `;
@@ -342,9 +347,12 @@
                 const content = document.getElementById('quiz-content');
 
                 const chapterCards = (subject.chapters || []).map((chapter, chIndex) => `
-                    <div class="quiz-card">
-                        <h3>${chapter.title}</h3>
-                        <p>${chapter.questions.length} questions</p>
+                    <div class="quiz-card" style="--card-i:${chIndex}">
+                        <div class="quiz-card-icon">📖</div>
+                        <div class="quiz-card-title">${chapter.title}</div>
+                        <div class="quiz-card-meta">
+                            <span class="meta-chip"><span class="chip-dot"></span>${chapter.questions.length} questions</span>
+                        </div>
                         <button class="btn btn-primary" onclick="quizApp.showChapterModeSelection(${subjectIndex}, ${chIndex})">Start Quiz</button>
                     </div>
                 `).join('');
@@ -352,9 +360,9 @@
                 content.innerHTML = `
                     <div class="chapter-screen">
                         <div class="chapter-header">
-                            <button class="btn-back" onclick="quizApp.goHome()">← Back</button>
+                            <button class="btn-back" onclick="quizApp.goHome()">← <span>Back</span></button>
                             <h1>${subject.title}</h1>
-                            <p>Select a chapter quiz to begin</p>
+                            <p>Pick a chapter to begin practicing</p>
                         </div>
                         <div class="quiz-grid">${chapterCards}</div>
                     </div>
@@ -370,22 +378,35 @@
                 this.subjectBackIndex = subjectIndex;
                 const content = document.getElementById('quiz-content');
 
+                const totalQ = chapter.questions.length;
+                const timerMins = chapter.quizModeTimer ? Math.round(chapter.quizModeTimer / 60) : null;
+
                 content.innerHTML = `
                     <div class="mode-selection-screen">
                         <h1>${chapter.title}</h1>
-                        <p>Select your quiz mode:</p>
+                        <p>How would you like to take this quiz?</p>
                         <div class="mode-cards">
                             <div class="mode-card normal-mode" onclick="quizApp.startQuiz(quizzes[${subjectIndex}].chapters[${chapterIndex}], 'normal')">
-                                <div class="mode-icon">🟢</div>
-                                <h3>Normal Mode</h3>
-                                <p>Instant feedback after each answer, see correct/incorrect immediately</p>
-                                <button class="btn btn-primary">Start Normal Mode</button>
+                                <div class="mode-icon">🎯</div>
+                                <h3>Practice Mode</h3>
+                                <p class="mode-card-desc">Learn as you go with instant feedback.</p>
+                                <div class="mode-feature-list">
+                                    <div class="mode-feature"><span class="tick">✓</span> See if your answer is correct right away</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> Review explanations question by question</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> ${totalQ} questions · ${timerMins ? `⏱ ${timerMins} min timed mode also available` : 'no time pressure'}</div>
+                                </div>
+                                <button class="btn btn-primary">Start Practice</button>
                             </div>
                             <div class="mode-card quiz-mode" onclick="quizApp.startQuiz(quizzes[${subjectIndex}].chapters[${chapterIndex}], 'quiz')">
-                                <div class="mode-icon">🔴</div>
-                                <h3>Quiz Mode</h3>
-                                <p>Timer countdown, no instant feedback. See results only at the end</p>
-                                <button class="btn btn-danger">Start Quiz Mode</button>
+                                <div class="mode-icon">⏱️</div>
+                                <h3>Timed Quiz</h3>
+                                <p class="mode-card-desc">Test yourself under real exam conditions.</p>
+                                <div class="mode-feature-list">
+                                    <div class="mode-feature"><span class="tick">✓</span> ${timerMins ? `Countdown timer · ${timerMins} minutes` : 'Countdown timer'}</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> No feedback until you submit</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> ${totalQ} questions · full results at the end</div>
+                                </div>
+                                <button class="btn btn-danger">Start Timed Quiz</button>
                             </div>
                         </div>
                         <button class="btn btn-secondary mt-3" onclick="quizApp.showChapterSelection(${subjectIndex})">← Back to Chapters</button>
@@ -430,23 +451,35 @@
             showModeSelection(quizIndex) {
                 this.currentQuiz = quizzes[quizIndex];
                 const content = document.getElementById('quiz-content');
-                
+                const totalQ = this.currentQuiz.questions.length;
+                const timerMins = this.currentQuiz.quizModeTimer ? Math.round(this.currentQuiz.quizModeTimer / 60) : null;
+
                 content.innerHTML = `
                     <div class="mode-selection-screen">
                         <h1>${this.currentQuiz.title}</h1>
-                        <p>Select your quiz mode:</p>
+                        <p>How would you like to take this quiz?</p>
                         <div class="mode-cards">
                             <div class="mode-card normal-mode" onclick="quizApp.startQuiz(${quizIndex}, 'normal')">
-                                <div class="mode-icon">🟢</div>
-                                <h3>Normal Mode</h3>
-                                <p>Instant feedback after each answer, see correct/incorrect immediately</p>
-                                <button class="btn btn-primary">Start Normal Mode</button>
+                                <div class="mode-icon">🎯</div>
+                                <h3>Practice Mode</h3>
+                                <p class="mode-card-desc">Learn as you go with instant feedback.</p>
+                                <div class="mode-feature-list">
+                                    <div class="mode-feature"><span class="tick">✓</span> See if your answer is correct right away</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> Review explanations question by question</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> ${totalQ} questions · ${timerMins ? `⏱ ${timerMins} min timed mode also available` : 'no time pressure'}</div>
+                                </div>
+                                <button class="btn btn-primary">Start Practice</button>
                             </div>
                             <div class="mode-card quiz-mode" onclick="quizApp.startQuiz(${quizIndex}, 'quiz')">
-                                <div class="mode-icon">🔴</div>
-                                <h3>Quiz Mode</h3>
-                                <p>Timer countdown, no instant feedback. See results only at the end</p>
-                                <button class="btn btn-danger">Start Quiz Mode</button>
+                                <div class="mode-icon">⏱️</div>
+                                <h3>Timed Quiz</h3>
+                                <p class="mode-card-desc">Test yourself under real exam conditions.</p>
+                                <div class="mode-feature-list">
+                                    <div class="mode-feature"><span class="tick">✓</span> ${timerMins ? `Countdown timer · ${timerMins} minutes` : 'Countdown timer'}</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> No feedback until you submit</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> ${totalQ} questions · full results at the end</div>
+                                </div>
+                                <button class="btn btn-danger">Start Timed Quiz</button>
                             </div>
                         </div>
                         <button class="btn btn-secondary mt-3" onclick="quizApp.goHome()">← Back to Quizzes</button>
@@ -617,24 +650,43 @@
                     `;
                 }
 
+                                const modeLabel = this.currentMode === 'quiz' ? '⏱ Timed' : '🎯 Practice';
+                const typeLabel = question.type === 'true_false' ? 'True / False' : (question.type === 'complete' || question.type === 'written') ? 'Written Answer' : 'Multiple Choice';
+
                 content.innerHTML = `
                     <div class="quiz-header">
-                        <button class="btn-back" onclick="quizApp.goHome()">← Back</button>
-                        <h1>${this.currentQuiz.title}</h1>
-                        <div class="progress">Question ${this.currentQuestionIndex + 1}/${this.processedQuestions.length}</div>
-                        <div class="progress-bar"><div id="progress-bar" class="progress-bar-fill" style="width: 0%"></div></div>
+                        <div class="quiz-header-top">
+                            <button class="btn-back" onclick="quizApp.goHome()" aria-label="Back to quizzes">← <span>Back</span></button>
+                            <h1 class="quiz-header-title">${this.currentQuiz.title}</h1>
+                        </div>
+                        <div class="quiz-progress-row">
+                            <div class="quiz-meta-tags">
+                                <span class="question-number-badge">Q ${this.currentQuestionIndex + 1}</span>
+                                <span class="mode-badge ${this.currentMode === 'quiz' ? 'timed' : 'practice'}">${modeLabel}</span>
+                                <span class="mode-badge ${this.currentMode === 'quiz' ? 'timed' : 'practice'}">${typeLabel}</span>
+                            </div>
+                            <div class="progress">Question ${this.currentQuestionIndex + 1}/${this.processedQuestions.length}</div>
+                            <div class="progress-bar"><div id="progress-bar" class="progress-bar-fill" style="width: 0%"></div></div>
+                        </div>
                     </div>
                     <div class="question-container">
                         <div class="question-card">
+                            <div class="question-tagbar">
+                                <span class="question-type">${typeLabel}</span>
+                            </div>
                             ${imageHTML}
                             <div class="question-text">${question.question}</div>
                             ${this.renderOptions(question)}
                         </div>
                     </div>
                     <div class="quiz-footer">
-                        <button class="btn btn-secondary" onclick="quizApp.shareQuiz()">Share Quiz</button>
-                        ${this.currentQuestionIndex > 0 ? '<button class="btn btn-secondary" onclick="quizApp.prevQuestion()">Previous</button>' : '<div></div>'}
-                        <button id="next-btn" class="btn btn-primary" onclick="quizApp.handleNextButton()" ${!this.selectedAnswer ? 'disabled' : ''}>${this.getMainButtonLabel(question)}</button>
+                        <div class="quiz-footer-actions">
+                            <button class="btn btn-secondary btn-footer" onclick="quizApp.shareQuiz()">
+                                <span class="btn-icon">🔗</span><span>Share</span>
+                            </button>
+                            ${this.currentQuestionIndex > 0 ? '<button class="btn btn-secondary btn-footer" onclick="quizApp.prevQuestion()"><span class="btn-icon">←</span><span>Previous</span></button>' : ''}
+                        </div>
+                        <button id="next-btn" class="btn btn-primary btn-next" onclick="quizApp.handleNextButton()" ${!this.selectedAnswer ? 'disabled' : ''}>${this.getMainButtonLabel(question)}</button>
                     </div>
                 `;
 
@@ -745,6 +797,7 @@
                         <div class="option ${isSelected ? 'selected' : ''}" onclick="quizApp.handleAnswer('${option.replace(/'/g, "\\'")}')">
                             <span class="option-letter">${String.fromCharCode(65 + index)}</span>
                             <span class="option-text">${option}</span>
+                            <span class="option-check" aria-hidden="true"></span>
                         </div>
                     `;
                 }).join('');
@@ -1051,20 +1104,40 @@
                     saveMessage = '<div class="guest-message">Login to save your results</div>';
                 }
 
+                let resultsMessage = 'Not bad — review the answers below.';
+                if (showScore) {
+                    if (results.percentage >= 85) {
+                        resultsMessage = 'Excellent work! You nailed it.';
+                    } else if (results.percentage >= 70) {
+                        resultsMessage = 'Great job!';
+                    } else if (results.percentage >= 50) {
+                        resultsMessage = 'Good effort — keep practicing!';
+                    } else {
+                        resultsMessage = 'Let\'s review the answers below.';
+                    }
+                }
+
                 const resultsHtml = `
                     <div class="results">
                         <h2>Quiz Complete!</h2>
                         ${showScore ? `
-                        <div class="score-display">
-                            <div class="score-number">${results.score}/${results.total}</div>
-                            <div class="score-percentage">${results.percentage}%</div>
+                        <div class="results-hero">
+                            <div class="score-display" style="--p:${results.percentage}">
+                                <div class="score-ring">
+                                    <div class="score-ring-inner">
+                                        <span class="score-number">${results.score}/${results.total}</span>
+                                        <span class="score-percentage">${results.percentage}%</span>
+                                    </div>
+                                </div>
+                                <div class="results-message">${resultsMessage}</div>
+                            </div>
                         </div>
                         ` : ''}
                         ${showScore ? this.renderAnswerReview() : ''}
                         ${saveMessage}
                         <div class="results-buttons">
-                            <button class="btn btn-secondary" onclick="quizApp.goHome()">Back to Quizzes</button>
-                            <button class="btn btn-primary" onclick="quizApp.restartQuiz()">Restart Quiz</button>
+                            <button class="btn btn-secondary btn-hero" onclick="quizApp.goHome()">Back to Quizzes</button>
+                            <button class="btn btn-primary btn-hero" onclick="quizApp.restartQuiz()">Restart Quiz</button>
                         </div>
                     </div>
                 `;
@@ -1260,9 +1333,6 @@
 
                 const isMobile = window.innerWidth <= 768;
 
-                if (isMobile) {
-                    this.toggleProfilePanel();
-                }
 
                 const modal = document.createElement('div');
 
@@ -1482,9 +1552,6 @@
 
                 const isMobile = window.innerWidth <= 768;
 
-                if (isMobile) {
-                    this.toggleProfilePanel();
-                }
 
                 const modal = document.createElement('div');
 

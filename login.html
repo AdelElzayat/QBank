@@ -4,15 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <title>Login - QBank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/AE-Logo.png" type="image/x-icon">
 </head>
 
 <body>
-    <nav class="navbar">
+         <nav class="navbar">
         <div class="navbar-brand">
-            <span class="brand-name">Adel Elzayat</span>
+            <img src="img/AE-Logo.png" alt="QBank logo" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-name">Adel Elzayat</span>
+                <span class="brand-sub">Question Bank</span>
+            </div>
         </div>
         <div class="navbar-actions">
             <label class="switch" aria-label="Toggle theme">
@@ -32,8 +41,11 @@
         <div class="login-wrapper">
             <div class="login-container">
                 <div class="login-header">
+                    <div class="login-hero">
+                        <div class="login-hero-illustration" aria-hidden="true">🔐</div>
+                    </div>
                     <h1>Welcome Back</h1>
-                    <p>Sign in to access your quiz results</p>
+                    <p>Sign in to access your quiz results & history</p>
                 </div>
                 <div id="error-message" class="error-message"></div>
                 <button class="btn-google" onclick="signInWithGoogle()" id="google-btn">
