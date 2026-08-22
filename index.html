@@ -1767,27 +1767,60 @@ toggleLogoPanel() {
 
                 const content = document.getElementById('quiz-content');
 
+                // Build a lookup from the global quiz bank so that OLDER saved
+                // results (stored before options/image/type were included) can
+                // still be rebuilt with the full quiz UI.
+                // Note: `quizzes` mixes standalone quizzes and subject groups
+                // whose `chapters` are the actual quizzes.
+                const bank = (typeof quizzes !== 'undefined' && Array.isArray(quizzes)) ? quizzes : [];
+                const allQuizzes = [];
+                bank.forEach(entry => {
+                    if (Array.isArray(entry.questions)) allQuizzes.push(entry);
+                    if (entry.isSubjectGroup && Array.isArray(entry.chapters)) {
+                        entry.chapters.forEach(ch => { if (Array.isArray(ch.questions)) allQuizzes.push(ch); });
+                    }
+                });
+
+                const questionLookup = new Map();
+                // Prefer the exact quiz this result belongs to...
+                const sourceQuiz = allQuizzes.find(q => q.id === resultData.quizId)
+                    || allQuizzes.find(q => q.title === resultData.quizTitle);
+                if (sourceQuiz) {
+                    sourceQuiz.questions.forEach(q => questionLookup.set(normalizeAnswer(q.question), q));
+                }
+                // ...then fall back to scanning the whole bank for anything missing.
+                allQuizzes.forEach(q => q.questions.forEach(qq => {
+                    const key = normalizeAnswer(qq.question);
+                    if (!questionLookup.has(key)) questionLookup.set(key, qq);
+                }));
+
                 const questionsHtml = resultData.quizData.map((item, index) => {
                     const iconClass = item.isCorrect ? 'icon-correct' : 'icon-incorrect';
                     const icon = item.isCorrect ? '✔' : '✖';
 
+                    // Merge stored data with the original question from the quiz bank
+                    const original = questionLookup.get(normalizeAnswer(item.question)) || {};
+                    const itemType = item.type || original.type || 'multiple';
+                    const itemImage = item.image || original.image || '';
+                    const itemOptions = (Array.isArray(item.options) && item.options.length) ? item.options : (Array.isArray(original.options) ? original.options : null);
+
                     // Multiple-choice / true-false questions: rebuild the exact quiz look
-                    if (Array.isArray(item.options) && item.options.length) {
+                    if (itemOptions) {
                         const correctAnswers = Array.isArray(item.correctAnswer) ? item.correctAnswer : [item.correctAnswer];
                         const userAnswerText = item.userAnswer == null ? '' : String(item.userAnswer);
 
                         let imageHTML = '';
-                        if (item.image && item.image.trim() !== '') {
+                        if (itemImage && itemImage.trim() !== '') {
                             imageHTML = `
                                 <div class="question-image-container">
-                                    <img src="${item.image}" class="question-image" onerror="this.parentElement.style.display='none';" alt="Question image">
+                                    <img src="${itemImage}" class="question-image" onerror="this.parentElement.style.display='none';" alt="Question image">
                                 </div>
                             `;
                         }
 
-                        const typeLabel = item.type === 'true_false' ? 'True / False' : (item.type === 'complete' || item.type === 'written') ? 'Written Answer' : 'Multiple Choice';
+                        const typeLabel = itemType === 'true_false' ? 'True / False' : (itemType === 'complete' || itemType === 'written') ? 'Written Answer' : 'Multiple Choice';
 
-                        const optionsHtml = item.options.map((option, optIndex) => {
+                        const optionsHtml = itemOptions.map((option, optIndex) => {
                             const normalizedOption = normalizeAnswer(option);
                             const isCorrectOption = correctAnswers.some(correct => normalizeAnswer(String(correct)) === normalizedOption);
                             const isUserChoice = userAnswerText !== '' && normalizeAnswer(userAnswerText) === normalizedOption;
@@ -1815,6 +1848,60 @@ toggleLogoPanel() {
                                 ${imageHTML}
                                 <div class="review-card-question">${item.question}</div>
                                 <div class="options">${optionsHtml}</div>
+                            </div>
+                        `;
+                    }
+
+                    // Written / fill-in questions: rebuild the exact quiz look when possible
+                    if (!itemOptions && (itemType === 'complete' || itemType === 'written')) {
+                        const expectedAnswers = Array.isArray(item.correctAnswer) ? item.correctAnswer : [item.correctAnswer];
+                        const isMultiField = expectedAnswers.length > 1;
+
+                        let imageHTML = '';
+                        if (itemImage && itemImage.trim() !== '') {
+                            imageHTML = `
+                                <div class="question-image-container">
+                                    <img src="${itemImage}" class="question-image" onerror="this.parentElement.style.display='none';" alt="Question image">
+                                </div>
+                            `;
+                        }
+
+                        let fieldsHTML = '';
+                        if (isMultiField) {
+                            const values = Array.isArray(item.userAnswer) ? item.userAnswer : [];
+                            fieldsHTML = `<div class="multi-complete-fields">${expectedAnswers.map((correctAns, fieldIndex) => {
+                                const val = values[fieldIndex] || '';
+                                const fieldCorrect = normalizeAnswer(val) === normalizeAnswer(correctAns);
+                                return `
+                                    <div class="multi-input-row">
+                                        <span class="multi-input-number">${fieldIndex + 1}</span>
+                                        <input type="text" class="complete-answer-field ${fieldCorrect ? 'correct' : 'wrong'}" value="${this.escapeHtml(val)}" readonly aria-label="Answer ${fieldIndex + 1}">
+                                    </div>
+                                `;
+                            }).join('')}</div>`;
+                        } else {
+                            const val = Array.isArray(item.userAnswer) ? (item.userAnswer[0] || '') : (item.userAnswer || '');
+                            fieldsHTML = `
+                                <div class="input-wrapper">
+                                    <input type="text" class="complete-answer-field ${item.isCorrect ? 'correct' : 'wrong'}" value="${this.escapeHtml(val)}" readonly aria-label="Answer">
+                                </div>
+                            `;
+                        }
+
+                        return `
+                            <div class="review-card ${item.isCorrect ? 'correct' : 'incorrect'} review-question-card">
+                                <div class="review-card-header">
+                                    <span class="question-number">Question ${index + 1}</span>
+                                    <span class="${iconClass}">${icon}</span>
+                                </div>
+                                <div class="question-tagbar"><span class="question-type">Written Answer</span></div>
+                                ${imageHTML}
+                                <div class="review-card-question">${item.question}</div>
+                                <div class="complete-input ${item.isCorrect ? 'correct' : 'wrong'}">${fieldsHTML}</div>
+                                <div class="written-feedback ${item.isCorrect ? 'correct' : 'incorrect'}">
+                                    <div class="feedback-status ${item.isCorrect ? 'correct' : 'incorrect'}">${item.isCorrect ? '✓ Correct' : '✗ Incorrect'}</div>
+                                    ${!item.isCorrect ? `<div class="correct-answer-text"><strong>${expectedAnswers.length > 1 ? 'Correct answers:' : 'Correct answer:'}</strong> ${expectedAnswers.map(a => this.escapeHtml(String(a))).join(' &nbsp;|&nbsp; ')}</div>` : ''}
+                                </div>
                             </div>
                         `;
                     }
