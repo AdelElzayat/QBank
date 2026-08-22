@@ -2052,6 +2052,31 @@ button {
   }
 }
 
+/* Clickable stat cards — act as filter toggles on the saved review page */
+.rx-stat-card[data-filter] {
+  cursor: pointer;
+  transition: box-shadow var(--t-fast), border-color var(--t-fast),
+    transform var(--t-fast), background var(--t-fast);
+}
+.rx-stat-card[data-filter]:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--stat-accent) 55%, var(--card-border));
+  background: color-mix(in srgb, var(--stat-accent) 6%, var(--card-bg));
+}
+.rx-stat-card[data-filter]:active {
+  transform: translateY(0) scale(0.98);
+}
+.rx-stat-card[data-filter]:focus-visible {
+  outline: 2px solid var(--stat-accent);
+  outline-offset: 2px;
+}
+.rx-stat-card.active {
+  border-color: var(--stat-accent);
+  background: color-mix(in srgb, var(--stat-accent) 10%, var(--card-bg));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--stat-accent) 30%, transparent),
+    0 8px 20px -8px color-mix(in srgb, var(--stat-accent) 55%, transparent);
+}
+
 /* Answer review — accordion cards */
 .rx-review-list {
   display: flex;
