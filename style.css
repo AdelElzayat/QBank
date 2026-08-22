@@ -1654,7 +1654,10 @@ button {
   margin-bottom: var(--space-md);
   animation: fadeInUp 0.5s var(--t) both;
 }
-.rx-hero-glow {
+/* Higher specificity than `.rx-hero > *` below, so the glow stays
+   position:absolute instead of being forced into flow (which caused
+   a ~300px empty block above the hero content). */
+.rx-hero .rx-hero-glow {
   position: absolute;
   top: -90px;
   left: 50%;
