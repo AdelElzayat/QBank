@@ -1647,6 +1647,12 @@ toggleLogoPanel() {
             },
 
             async showResultsHistory() {
+                // Close the profile/account sidebar if it's open
+                const logoPanel = document.getElementById('logo-panel');
+                if (logoPanel && logoPanel.classList.contains('active')) {
+                    this.toggleLogoPanel();
+                }
+
                 if (!currentUser) {
                     alert('Please login to view your results');
                     return;
