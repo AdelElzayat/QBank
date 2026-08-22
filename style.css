@@ -1644,7 +1644,7 @@ button {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: clamp(24px, 6vw, 44px) var(--space-lg);
+  padding: clamp(16px, 3.5vw, 24px) var(--space-lg);
   border-radius: var(--radius-lg);
   background:
     radial-gradient(120% 90% at 50% -20%, var(--primary-subtle) 0%, transparent 60%),
@@ -1679,16 +1679,16 @@ button {
   color: var(--primary);
   background: var(--primary-soft);
   border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
-  padding: 6px 14px;
+  padding: 5px 13px;
   border-radius: var(--radius-full);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 .rx-hero-title {
   font-size: clamp(1.3rem, 5vw, 1.75rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-color);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 /* Score ring — animated via --p (0-100) from initResultsAnimations() */
 .rx-score-ring {
@@ -1933,6 +1933,92 @@ button {
   padding: var(--space-lg);
 }
 
+/* Review filters — wraps naturally on phones, never overflows horizontally */
+.rx-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.rx-filter-chip {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-secondary);
+  background: var(--card-bg-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  padding: 9px 16px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--t-fast), background var(--t-fast),
+    color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+}
+.rx-filter-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+.rx-filter-chip:active {
+  transform: translateY(0) scale(0.97);
+}
+.rx-filter-chip.active {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+}
+/* Per-state accents (subtle, applied on hover + active) */
+.f-correct:not(.active):hover {
+  border-color: var(--success);
+  color: var(--success);
+  background: var(--success-soft);
+}
+.f-correct.active {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  box-shadow: 0 6px 16px -6px rgba(16, 185, 129, 0.55);
+}
+.f-incorrect:not(.active):hover {
+  border-color: var(--error);
+  color: var(--error);
+  background: var(--error-soft);
+}
+.f-incorrect.active {
+  background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);
+  box-shadow: 0 6px 16px -6px rgba(239, 68, 68, 0.5);
+}
+.f-unanswered:not(.active):hover {
+  border-color: var(--warning);
+  color: var(--warning);
+  background: var(--warning-soft);
+}
+.f-unanswered.active {
+  background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+  box-shadow: 0 6px 16px -6px rgba(245, 158, 11, 0.5);
+}
+.rx-chip-count {
+  font-weight: 800;
+  font-size: 0.72rem;
+  line-height: 1;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.18);
+  font-variant-numeric: tabular-nums;
+}
+.rx-filter-chip:not(.active) .rx-chip-count {
+  background: var(--bg);
+  color: var(--text-muted);
+}
+
 /* Answer review — accordion cards */
 .rx-review-list {
   display: flex;
@@ -1945,6 +2031,7 @@ button {
   border-left: 4px solid var(--rc-accent, var(--card-border));
   border-radius: var(--radius-md);
   overflow: hidden;
+  contain: layout style;
   animation: fadeInUp 0.4s var(--t) both;
   animation-delay: calc(min(var(--i, 0), 12) * 25ms);
   transition: box-shadow var(--t-fast);
@@ -2014,7 +2101,7 @@ button {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--text-muted);
-  transition: transform 0.3s var(--t);
+  transition: transform 0.22s cubic-bezier(0.33, 1, 0.68, 1);
 }
 .rx-review-card.open .rx-chevron {
   transform: rotate(90deg);
@@ -2022,7 +2109,7 @@ button {
 .rx-review-body {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.32s var(--t);
+  transition: grid-template-rows 0.22s cubic-bezier(0.33, 1, 0.68, 1);
 }
 .rx-review-card.open .rx-review-body {
   grid-template-rows: 1fr;
@@ -2031,6 +2118,13 @@ button {
   overflow: hidden;
   min-height: 0;
   padding: 0 var(--space-md);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease 0.05s, transform 0.22s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.rx-review-card.open .rx-review-body-inner {
+  opacity: 1;
+  transform: translateY(0);
 }
 .rx-review-card.open .rx-review-body-inner {
   padding-bottom: var(--space-md);
