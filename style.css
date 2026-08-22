@@ -2030,6 +2030,8 @@ button {
 .rx-dashboard-results {
   max-width: 780px;
   margin: 0 auto;
+  /* Inner breathing room so buttons/cards don't touch the quiz-card border */
+  padding: var(--space-lg) var(--space-md);
 }
 .rx-topbar {
   display: flex;
