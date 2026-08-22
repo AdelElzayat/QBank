@@ -1644,7 +1644,7 @@ button {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: clamp(16px, 3.5vw, 24px) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius-lg);
   background:
     radial-gradient(120% 90% at 50% -20%, var(--primary-subtle) 0%, transparent 60%),
@@ -2017,6 +2017,36 @@ button {
 .rx-filter-chip:not(.active) .rx-chip-count {
   background: var(--bg);
   color: var(--text-muted);
+}
+
+/* Saved review page shell — kept in the live CSS region (before the
+   pre-existing unclosed-brace point at .stat-label, which kills the EOF block) */
+.stat-total {
+  --stat-accent: var(--primary);
+}
+.rx-dashboard-results {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.rx-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  line-height: 1;
+}
+.rx-topbar .btn-back {
+  font-size: 0.85rem;
+  min-height: 38px;
+  padding: 6px 12px;
+}
+@media (max-width: 420px) {
+  .rx-topbar .btn-back {
+    font-size: 0.8rem;
+    min-height: 36px;
+    padding: 5px 10px;
+  }
 }
 
 /* Answer review — accordion cards */
