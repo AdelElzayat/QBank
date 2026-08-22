@@ -427,7 +427,7 @@ toggleLogoPanel() {
             showChapterModeSelection(subjectIndex, chapterIndex) {
                 const chapter = quizzes[subjectIndex].chapters[chapterIndex];
                 this.currentQuiz = chapter;
-                this.questionOrder = (chapter.shuffleQuestions || chapter.shuffle) ? 'shuffle' : 'ordered';
+                this.questionOrder = 'ordered';
                 this.subjectBackIndex = subjectIndex;
                 const content = document.getElementById('quiz-content');
 
@@ -511,7 +511,7 @@ toggleLogoPanel() {
 
             showModeSelection(quizIndex) {
                 this.currentQuiz = quizzes[quizIndex];
-                this.questionOrder = (this.currentQuiz.shuffleQuestions || this.currentQuiz.shuffle) ? 'shuffle' : 'ordered';
+                this.questionOrder = 'ordered';
                 const content = document.getElementById('quiz-content');
                 const totalQ = this.currentQuiz.questions.length;
                 const timerMins = this.currentQuiz.quizModeTimer ? Math.round(this.currentQuiz.quizModeTimer / 60) : null;
