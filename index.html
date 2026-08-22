@@ -70,6 +70,68 @@
             </div>
         </div>
     </div>
+    <!-- Timed Quiz duration picker (bottom sheet on mobile / centered modal on desktop) -->
+    <div class="ts-overlay" id="time-select-overlay" role="dialog" aria-modal="true" aria-labelledby="ts-title">
+        <div class="ts-backdrop" onclick="quizApp.closeTimeSelection()"></div>
+        <div class="ts-modal">
+            <button type="button" class="ts-close" onclick="quizApp.closeTimeSelection()" aria-label="Cancel time selection">&times;</button>
+            <div class="ts-header">
+                <div class="ts-header-icon" aria-hidden="true">⏱️</div>
+                <div class="ts-header-text">
+                    <h2 id="ts-title">Choose your time</h2>
+                    <p>Set how long you want for this quiz.</p>
+                </div>
+            </div>
+            <div class="ts-readout">
+                <div class="ts-num-wrap">
+                    <span class="ts-num" id="ts-num">30</span>
+                    <span class="ts-unit">minutes</span>
+                </div>
+                <span class="ts-equivalent" id="ts-equivalent">30 min</span>
+            </div>
+            <div class="ts-slider-block">
+                <input type="range" id="ts-slider" class="ts-slider" min="10" max="300" step="1" value="30"
+                       aria-label="Quiz duration in minutes"
+                       oninput="quizApp.applyTimeSelection(parseInt(this.value, 10), 'slider')" />
+                <div class="ts-scale" aria-hidden="true">
+                    <span>10 min</span>
+                    <span>≈ 2½ h</span>
+                    <span>5 h</span>
+                </div>
+            </div>
+            <div class="ts-section">
+                <p class="ts-section-label">⚡ Quick select</p>
+                <div class="ts-presets" id="ts-presets">
+                    <button type="button" class="ts-chip" data-minutes="10" onclick="quizApp.applyTimeSelection(10, 'preset')">10m</button>
+                    <button type="button" class="ts-chip" data-minutes="15" onclick="quizApp.applyTimeSelection(15, 'preset')">15m</button>
+                    <button type="button" class="ts-chip" data-minutes="30" onclick="quizApp.applyTimeSelection(30, 'preset')">30m</button>
+                    <button type="button" class="ts-chip" data-minutes="45" onclick="quizApp.applyTimeSelection(45, 'preset')">45m</button>
+                    <button type="button" class="ts-chip" data-minutes="60" onclick="quizApp.applyTimeSelection(60, 'preset')">1h</button>
+                    <button type="button" class="ts-chip" data-minutes="90" onclick="quizApp.applyTimeSelection(90, 'preset')">1h 30</button>
+                    <button type="button" class="ts-chip" data-minutes="120" onclick="quizApp.applyTimeSelection(120, 'preset')">2h</button>
+                    <button type="button" class="ts-chip" data-minutes="180" onclick="quizApp.applyTimeSelection(180, 'preset')">3h</button>
+                    <button type="button" class="ts-chip" data-minutes="240" onclick="quizApp.applyTimeSelection(240, 'preset')">4h</button>
+                    <button type="button" class="ts-chip" data-minutes="300" onclick="quizApp.applyTimeSelection(300, 'preset')">5h</button>
+                </div>
+            </div>
+            <div class="ts-section">
+                <p class="ts-section-label">⌨️ Or enter manually</p>
+                <div class="ts-field">
+                    <input type="text" id="ts-minutes-input" inputmode="numeric" pattern="[0-9]*" maxlength="3"
+                           placeholder="30" autocomplete="off" enterkeyhint="done"
+                           aria-describedby="ts-validation"
+                           oninput="quizApp.handleDurationInput(this.value)"
+                           onkeydown="if (event.key === 'Enter') { event.preventDefault(); quizApp.confirmTimeSelection(); }" />
+                    <span class="ts-field-suffix">minutes</span>
+                </div>
+                <p class="ts-validation" id="ts-validation" role="alert" aria-live="polite"></p>
+            </div>
+            <div class="ts-actions">
+                <button type="button" class="btn btn-secondary ts-cancel" onclick="quizApp.closeTimeSelection()">Cancel</button>
+                <button type="button" class="btn ts-start" id="ts-start-btn" onclick="quizApp.confirmTimeSelection()">Start Quiz · 30 min <span class="ts-arrow">→</span></button>
+            </div>
+        </div>
+    </div>
     <script src="quizData.js"></script>
     <script type="module">
         import { auth, db, collection, addDoc, query, where, orderBy, getDocs, serverTimestamp, signOut, onAuthStateChanged, ADMIN_EMAIL } from './firebase.js';
@@ -467,12 +529,12 @@ toggleLogoPanel() {
                                 </div>
                                 <button class="btn btn-primary">Start Practice</button>
                             </div>
-                            <div class="mode-card quiz-mode" onclick="quizApp.startQuiz(quizzes[${subjectIndex}].chapters[${chapterIndex}], 'quiz')">
+                            <div class="mode-card quiz-mode" onclick="quizApp.openTimeSelection(quizzes[${subjectIndex}].chapters[${chapterIndex}])">
                                 <div class="mode-icon">⏱️</div>
                                 <h3>Timed Quiz</h3>
                                 <p class="mode-card-desc">Test yourself under real exam conditions.</p>
                                 <div class="mode-feature-list">
-                                    <div class="mode-feature"><span class="tick">✓</span> ${timerMins ? `Countdown timer · ${timerMins} minutes` : 'Countdown timer'}</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> Countdown timer · you pick the duration</div>
                                     <div class="mode-feature"><span class="tick">✓</span> No feedback until you submit</div>
                                     <div class="mode-feature"><span class="tick">✓</span> ${totalQ} questions · full results at the end</div>
                                 </div>
@@ -549,12 +611,12 @@ toggleLogoPanel() {
                                 </div>
                                 <button class="btn btn-primary">Start Practice</button>
                             </div>
-                            <div class="mode-card quiz-mode" onclick="quizApp.startQuiz(${quizIndex}, 'quiz')">
+                            <div class="mode-card quiz-mode" onclick="quizApp.openTimeSelection(${quizIndex})">
                                 <div class="mode-icon">⏱️</div>
                                 <h3>Timed Quiz</h3>
                                 <p class="mode-card-desc">Test yourself under real exam conditions.</p>
                                 <div class="mode-feature-list">
-                                    <div class="mode-feature"><span class="tick">✓</span> ${timerMins ? `Countdown timer · ${timerMins} minutes` : 'Countdown timer'}</div>
+                                    <div class="mode-feature"><span class="tick">✓</span> Countdown timer · you pick the duration</div>
                                     <div class="mode-feature"><span class="tick">✓</span> No feedback until you submit</div>
                                     <div class="mode-feature"><span class="tick">✓</span> ${totalQ} questions · full results at the end</div>
                                 </div>
@@ -572,10 +634,133 @@ toggleLogoPanel() {
             quizModeTimerInterval: null,
             QUIZ_MODE_STORAGE_KEY: "qbank_quizmode_",
             quizModeRemainingTime: null,
+            userSelectedQuizDuration: null,   // seconds — set by the time picker, consumed by startQuizModeTimer()
+            timeSelectionMinutes: 30,         // single source of truth for the picker (minutes)
+            pendingTimedQuizRef: null,
+
+            openTimeSelection(quizRef) {
+                this.pendingTimedQuizRef = quizRef;
+                const overlay = document.getElementById('time-select-overlay');
+                if (!overlay) {
+                    // Fallback: never block starting the timed quiz
+                    this.startQuiz(quizRef, 'quiz');
+                    return;
+                }
+                this.applyTimeSelection(this.timeSelectionMinutes || 30, 'init');
+                overlay.classList.add('active');
+                document.body.classList.add('ts-open');
+                this._tsEscHandler = (e) => { if (e.key === 'Escape') this.closeTimeSelection(); };
+                document.addEventListener('keydown', this._tsEscHandler);
+            },
+
+            closeTimeSelection() {
+                const overlay = document.getElementById('time-select-overlay');
+                if (overlay) overlay.classList.remove('active');
+                document.body.classList.remove('ts-open');
+                if (this._tsEscHandler) {
+                    document.removeEventListener('keydown', this._tsEscHandler);
+                    this._tsEscHandler = null;
+                }
+                this.pendingTimedQuizRef = null;
+            },
+
+            formatDurationLabel(mins) {
+                if (mins < 60) return `${mins} min`;
+                const h = Math.floor(mins / 60);
+                const m = mins % 60;
+                return m === 0 ? `${h}h` : `${h}h ${m}m`;
+            },
+
+            applyTimeSelection(minutes, source = 'ui') {
+                let value = Math.round(Number(minutes));
+                if (!Number.isFinite(value)) return;
+                value = Math.max(10, Math.min(300, value));
+                const changed = value !== this.timeSelectionMinutes;
+                this.timeSelectionMinutes = value;
+
+                // Big animated readout
+                const numEl = document.getElementById('ts-num');
+                if (numEl) {
+                    numEl.textContent = String(value);
+                    if (changed && source !== 'init') {
+                        numEl.classList.remove('pop');
+                        void numEl.offsetWidth; // restart animation
+                        numEl.classList.add('pop');
+                    }
+                }
+                const equiv = document.getElementById('ts-equivalent');
+                if (equiv) equiv.textContent = this.formatDurationLabel(value);
+
+                // Slider + gradient fill
+                const slider = document.getElementById('ts-slider');
+                if (slider) {
+                    slider.value = String(value);
+                    slider.style.setProperty('--fill', (((value - 10) / 290) * 100).toFixed(2) + '%');
+                }
+
+                // Preset chips
+                document.querySelectorAll('#ts-presets .ts-chip').forEach(chip => {
+                    const isActive = Number(chip.dataset.minutes) === value;
+                    chip.classList.toggle('active', isActive);
+                    chip.setAttribute('aria-pressed', String(isActive));
+                });
+
+                // Manual input stays in sync
+                const input = document.getElementById('ts-minutes-input');
+                if (input && source !== 'input') input.value = String(value);
+
+                const msg = document.getElementById('ts-validation');
+                if (msg && source !== 'input') msg.classList.remove('visible');
+
+                // CTA reflects the selection
+                const cta = document.getElementById('ts-start-btn');
+                if (cta) {
+                    cta.disabled = false;
+                    cta.innerHTML = `Start Quiz · ${this.formatDurationLabel(value)} <span class="ts-arrow">→</span>`;
+                }
+            },
+
+            handleDurationInput(raw) {
+                const inputEl = document.getElementById('ts-minutes-input');
+                const cleaned = String(raw).replace(/[^0-9]/g, '').replace(/^0+(?=\d)/, '').slice(0, 3);
+                if (inputEl && cleaned !== String(raw)) inputEl.value = cleaned;
+
+                const msgEl = document.getElementById('ts-validation');
+                const cta = document.getElementById('ts-start-btn');
+                const fail = (msg) => {
+                    if (msgEl) { msgEl.textContent = msg; msgEl.classList.add('visible'); }
+                    if (cta) cta.disabled = true;
+                };
+
+                if (cleaned === '') { fail('Enter a duration between 10 and 300 minutes'); return; }
+                const n = parseInt(cleaned, 10);
+                if (n < 10) { fail('Minimum time is 10 minutes'); return; }
+                if (n > 300) { fail('Maximum time is 300 minutes'); return; }
+
+                if (msgEl) msgEl.classList.remove('visible');
+                this.applyTimeSelection(n, 'input');
+            },
+
+            confirmTimeSelection() {
+                const mins = this.timeSelectionMinutes;
+                if (!Number.isFinite(mins) || mins < 10 || mins > 300) return;
+                const ref = this.pendingTimedQuizRef;
+                this.userSelectedQuizDuration = mins * 60;
+                this.closeTimeSelection();
+                this.startQuiz(ref, 'quiz');
+            },
+
             
             startQuizModeTimer() {
-                const timerValue = this.currentQuiz.quizModeTimer || 300;
-                const savedTime = localStorage.getItem(`qbank_quizmode_timer_${this.currentQuiz.id}`);
+                // Duration source: user's selection from the time picker (falls back to configured value)
+                const timerValue = this.userSelectedQuizDuration || this.currentQuiz.quizModeTimer || 300;
+                const savedTime = this.userSelectedQuizDuration
+                    ? null
+                    : localStorage.getItem(`qbank_quizmode_timer_${this.currentQuiz.id}`);
+                if (this.userSelectedQuizDuration) {
+                    // A fresh duration was chosen — discard any stale saved countdown
+                    localStorage.removeItem(`qbank_quizmode_timer_${this.currentQuiz.id}`);
+                }
                 this.quizModeRemainingTime = savedTime ? parseInt(savedTime) : timerValue;
 
                 const timerEl = document.getElementById('quiz-mode-timer');
