@@ -3270,8 +3270,8 @@ body.ts-open { overflow: hidden; }
   border-bottom: none;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   box-shadow: var(--shadow-lg), var(--shadow-glow);
-  padding: var(--space-lg);
-  padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom));
+  padding: var(--space-md);
+  padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom));
   transform: translateY(28px);
   opacity: 0;
   transition:
@@ -3333,18 +3333,18 @@ body.ts-open { overflow: hidden; }
 }
 .ts-header-icon {
   flex-shrink: 0;
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   border-radius: var(--radius-md);
   background: var(--brand-gradient);
   box-shadow: var(--shadow-glow);
 }
 .ts-header-text h2 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--text-color);
   letter-spacing: -0.01em;
@@ -3357,8 +3357,8 @@ body.ts-open { overflow: hidden; }
 
 /* --- Big animated readout --- */
 .ts-readout {
-  margin-top: var(--space-lg);
-  padding: var(--space-md) var(--space-lg);
+  margin-top: var(--space-md);
+  padding: 10px var(--space-md);
   text-align: center;
   border-radius: var(--radius-md);
   background:
@@ -3373,7 +3373,7 @@ body.ts-open { overflow: hidden; }
   gap: 10px;
 }
 .ts-num {
-  font-size: clamp(3rem, 13vw, 4.25rem);
+  font-size: clamp(2.35rem, 9vw, 3.2rem);
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -3400,10 +3400,10 @@ body.ts-open { overflow: hidden; }
 }
 .ts-equivalent {
   display: inline-block;
-  margin-top: 8px;
-  padding: 4px 14px;
+  margin-top: 6px;
+  padding: 3px 12px;
   border-radius: var(--radius-full);
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--primary);
   background: var(--primary-soft);
@@ -3412,7 +3412,7 @@ body.ts-open { overflow: hidden; }
 
 /* --- Slider --- */
 .ts-slider-block {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-md);
 }
 .ts-slider {
   -webkit-appearance: none;
@@ -3463,7 +3463,7 @@ body.ts-open { overflow: hidden; }
 .ts-scale {
   display: flex;
   justify-content: space-between;
-  margin-top: 8px;
+  margin-top: 6px;
   padding: 0 2px;
   font-size: 0.72rem;
   font-weight: 600;
@@ -3473,15 +3473,15 @@ body.ts-open { overflow: hidden; }
 
 /* --- Sections / presets --- */
 .ts-section {
-  margin-top: var(--space-lg);
+  margin-top: 14px;
 }
 .ts-section-label {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text-muted);
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 .ts-presets {
   display: flex;
@@ -3489,9 +3489,9 @@ body.ts-open { overflow: hidden; }
   gap: 8px;
 }
 .ts-chip {
-  min-width: 52px;
-  min-height: 44px;
-  padding: 0 14px;
+  min-width: 46px;
+  min-height: 38px;
+  padding: 0 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3499,7 +3499,7 @@ body.ts-open { overflow: hidden; }
   border: 1px solid var(--border-strong);
   background: var(--card-bg);
   color: var(--text-color);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   cursor: pointer;
@@ -3541,8 +3541,8 @@ body.ts-open { overflow: hidden; }
   border: none;
   outline: none;
   background: transparent;
-  padding: 14px 4px 14px 16px;
-  font-size: 1.125rem;
+  padding: 9px 4px 9px 14px;
+  font-size: 1.05rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   color: var(--text-color);
@@ -3552,7 +3552,7 @@ body.ts-open { overflow: hidden; }
   font-weight: 600;
 }
 .ts-field-suffix {
-  padding: 14px 16px 14px 4px;
+  padding: 9px 14px 9px 4px;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -3560,8 +3560,8 @@ body.ts-open { overflow: hidden; }
 }
 .ts-validation {
   display: none;
-  margin-top: 10px;
-  padding: 10px 14px;
+  margin-top: 6px;
+  padding: 7px 12px;
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
   font-weight: 600;
@@ -3575,16 +3575,16 @@ body.ts-open { overflow: hidden; }
 .ts-actions {
   display: flex;
   gap: var(--space-sm);
-  margin-top: var(--space-xl);
+  margin-top: var(--space-md);
 }
 .ts-cancel {
-  min-height: 52px;
-  padding: 0 18px;
+  min-height: 46px;
+  padding: 0 16px;
   font-size: 0.9375rem;
 }
 .ts-start {
   flex: 1;
-  min-height: 52px;
+  min-height: 46px;
   padding: 0 20px;
   font-size: 1rem;
   font-weight: 800;
