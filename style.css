@@ -1014,38 +1014,122 @@ button {
   min-height: 46px;
 }
 /* ---------- 8. Quiz screen ---------- */
-/* Timer */
+/* Timer — compact capsule integrated into the quiz header nav row */
 .quiz-timer-wrapper {
-  width: 100%;
-  overflow: hidden;
-  animation: slideDown 0.35s ease;
-}
-.quiz-timer-wrapper > .quiz-timer {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  margin: 0;
-  background: var(--brand-gradient);
-  color: #fff;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 10px 16px;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.16);
-  font-variant-numeric: tabular-nums;
+  flex: 0 0 auto;
 }
-/* standalone timer (fallback) */
+/* Compact premium timer capsule */
 .quiz-timer {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 8px 16px;
+  gap: 9px;
+  width: max-content;
+  max-width: calc(100% - 4px);
+  margin: 0 auto;
+  padding: 8px 16px 9px;
   border-radius: var(--radius-full);
-  margin: 8px 0;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(180deg, #232047 0%, #191634 100%);
+  border: 1px solid rgba(139, 92, 246, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.18),
+    0 0 20px -6px rgba(139, 92, 246, 0.55),
+    inset 0 1px 0 rgba(236, 72, 153, 0.22);
+  color: #f5f3ff;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+}
+.quiz-timer-icon {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  color: #a78bfa;
+  filter: drop-shadow(0 0 4px rgba(139, 92, 246, 0.55));
+  transition: color 0.6s ease, filter 0.6s ease;
+}
+.quiz-timer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  line-height: 1.05;
+}
+.quiz-timer-remaining {
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.quiz-timer-total {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(196, 181, 253, 0.75);
+}
+
+/* LOW TIME (< 10 min) — subtle warm shift */
+.quiz-timer.timer-low {
+  border-color: rgba(236, 72, 153, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(236, 72, 153, 0.18),
+    0 0 22px -6px rgba(236, 72, 153, 0.55),
+    inset 0 1px 0 rgba(236, 72, 153, 0.28);
+}
+.quiz-timer.timer-low .quiz-timer-icon {
+  color: #f472b6;
+  filter: drop-shadow(0 0 4px rgba(236, 72, 153, 0.55));
+}
+.quiz-timer.timer-low .quiz-timer-total {
+  color: rgba(249, 168, 212, 0.75);
+}
+
+/* CRITICAL (≤ 1 min) — clear danger state with a very subtle pulse */
+.quiz-timer.timer-critical,
+.quiz-timer.timer-critical.timer-low {
+  border-color: rgba(244, 63, 94, 0.75);
+  box-shadow:
+    0 0 0 1px rgba(244, 63, 94, 0.25),
+    0 0 26px -6px rgba(244, 63, 94, 0.65),
+    inset 0 1px 0 rgba(251, 113, 133, 0.32);
+  animation: quizTimerPulse 1.6s ease-in-out infinite;
+}
+.quiz-timer.timer-critical .quiz-timer-icon,
+.quiz-timer.timer-critical.timer-low .quiz-timer-icon {
+  color: #fb7185;
+  filter: drop-shadow(0 0 5px rgba(244, 63, 94, 0.6));
+}
+.quiz-timer.timer-critical .quiz-timer-total,
+.quiz-timer.timer-critical.timer-low .quiz-timer-total {
+  color: rgba(253, 164, 175, 0.8);
+}
+
+@keyframes quizTimerPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.025); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quiz-timer.timer-critical {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-timer {
+    gap: 7px;
+    padding: 6px 13px 7px;
+  }
+  .quiz-timer-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .quiz-timer-remaining {
+    font-size: 0.95rem;
+  }
+  .quiz-timer-total {
+    font-size: 0.58rem;
+  }
 }
 
 /* Quiz header */

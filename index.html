@@ -60,9 +60,6 @@
 
     <div class="main-content">
         <div id="quiz-container">
-            <div id="quiz-timer-wrapper" class="quiz-timer-wrapper" style="display:none;">
-                <div id="quiz-mode-timer" class="quiz-timer">⏱ 00:00</div>
-            </div>
             <div id="quiz-content">
                 <div class="home-screen">
                     <h1>Select a quiz to begin</h1>
@@ -634,6 +631,7 @@ toggleLogoPanel() {
             quizModeTimerInterval: null,
             QUIZ_MODE_STORAGE_KEY: "qbank_quizmode_",
             quizModeRemainingTime: null,
+            quizModeTotalDuration: null,      // seconds — total selected duration, shown as "of MM:SS"
             userSelectedQuizDuration: null,   // seconds — set by the time picker, consumed by startQuizModeTimer()
             timeSelectionMinutes: 30,         // single source of truth for the picker (minutes)
             pendingTimedQuizRef: null,
@@ -762,13 +760,18 @@ toggleLogoPanel() {
                     localStorage.removeItem(`qbank_quizmode_timer_${this.currentQuiz.id}`);
                 }
                 this.quizModeRemainingTime = savedTime ? parseInt(savedTime) : timerValue;
+                // Remember the total so the capsule can display "of MM:SS" (resumed sessions
+                // keep the larger of the configured value and the saved remainder)
+                this.quizModeTotalDuration = savedTime
+                    ? Math.max(timerValue, parseInt(savedTime))
+                    : timerValue;
 
                 const timerEl = document.getElementById('quiz-mode-timer');
                 if (!timerEl) return;
 
-                // Show the timer wrapper
+                // Show the timer capsule (it lives inside the header nav row; CSS controls layout)
                 const wrapper = document.getElementById('quiz-timer-wrapper');
-                if (wrapper) wrapper.style.display = 'block';
+                if (wrapper) wrapper.style.display = '';
 
                 if (this.quizModeTimerInterval) {
                     clearInterval(this.quizModeTimerInterval);
@@ -790,11 +793,25 @@ toggleLogoPanel() {
 
             updateTimerDisplay() {
                 const timerEl = document.getElementById('quiz-mode-timer');
-                if (!timerEl) return;
-                
-                const mins = String(Math.floor(this.quizModeRemainingTime / 60)).padStart(2, '0');
-                const secs = String(this.quizModeRemainingTime % 60).padStart(2, '0');
-                timerEl.textContent = `⏱ ${mins}:${secs}`;
+                if (!timerEl || this.quizModeRemainingTime == null) return;
+
+                const remaining = Math.max(0, Number(this.quizModeRemainingTime) || 0);
+                const mins = String(Math.floor(remaining / 60)).padStart(2, '0');
+                const secs = String(remaining % 60).padStart(2, '0');
+
+                const remainEl = timerEl.querySelector('.quiz-timer-remaining');
+                if (remainEl) remainEl.textContent = `${mins}:${secs}`;
+
+                // Total duration (dynamically reflects the user's selected quiz duration)
+                const total = Math.max(remaining, Number(this.quizModeTotalDuration) || 0);
+                const tMins = String(Math.floor(total / 60)).padStart(2, '0');
+                const tSecs = String(total % 60).padStart(2, '0');
+                const totalEl = timerEl.querySelector('.quiz-timer-total');
+                if (totalEl) totalEl.textContent = `of ${tMins}:${tSecs}`;
+
+                // Visual states driven purely by the existing countdown value
+                timerEl.classList.toggle('timer-low', remaining > 60 && remaining < 600);
+                timerEl.classList.toggle('timer-critical', remaining <= 60);
             },
 
             submitQuizMode() {
@@ -927,6 +944,25 @@ toggleLogoPanel() {
                     `;
                 }
 
+                // Timed quiz only: the compact timer capsule lives inside the header nav row
+                let timerHTML = "";
+                if (this.currentMode === 'quiz') {
+                    timerHTML = `
+                            <div id="quiz-timer-wrapper" class="quiz-timer-wrapper">
+                                <div id="quiz-mode-timer" class="quiz-timer" role="timer" aria-label="Time remaining">
+                                    <svg class="quiz-timer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <line x1="10" x2="14" y1="2" y2="2"></line>
+                                        <line x1="12" x2="15" y1="13" y2="11"></line>
+                                        <circle cx="12" cy="14" r="8"></circle>
+                                    </svg>
+                                    <span class="quiz-timer-text">
+                                        <span class="quiz-timer-remaining">00:00</span>
+                                        <span class="quiz-timer-total">of 00:00</span>
+                                    </span>
+                                </div>
+                            </div>`;
+                }
+
                                 const modeLabel = this.currentMode === 'quiz' ? '⏱ Timed' : '🎯 Practice';
                 const typeLabel = question.type === 'true_false' ? 'True / False' : (question.type === 'complete' || question.type === 'written') ? 'Written Answer' : 'Multiple Choice';
 
@@ -934,6 +970,7 @@ toggleLogoPanel() {
                     <div class="quiz-header">
                         <div class="quiz-header-top">
                             <button class="btn-back" onclick="quizApp.goHome()" aria-label="Back to quizzes">← <span>Back</span></button>
+                            ${timerHTML}
                             <h1 class="quiz-header-title">${this.currentQuiz.title}</h1>
                         </div>
                         <div class="quiz-progress-row">
@@ -1012,6 +1049,12 @@ toggleLogoPanel() {
 
                 this.updateProgressBar();
                 this.enableNextButton();
+
+                // Refresh the capsule instantly after re-render so the countdown
+                // never flashes 00:00 between question navigations
+                if (this.currentMode === 'quiz') {
+                    this.updateTimerDisplay();
+                }
             },
 
             renderOptions(question) {
