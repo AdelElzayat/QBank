@@ -1438,21 +1438,72 @@ toggleLogoPanel() {
                     }
                 }
 
+                // Presentation-only status counts, derived from the SAME data used by calculateScore()
+                let incorrectCount = 0;
+                let unansweredCount = 0;
+                this.processedQuestions.forEach((_, index) => {
+                    const status = this.getQuestionStatus(index);
+                    if (status === 'incorrect') incorrectCount++;
+                    else if (status === 'unanswered') unansweredCount++;
+                });
+
+                const quizTitle = this.currentQuiz && this.currentQuiz.title ? this.escapeHtml(this.currentQuiz.title) : 'Quiz';
+
                 const resultsHtml = `
-                    <div class="results">
-                        <h2>Quiz Complete!</h2>
+                    <div class="results rx-dashboard">
                         ${showScore ? `
-                        <div class="results-hero">
-                            <div class="score-display" style="--p:${results.percentage}">
-                                <div class="score-ring">
-                                    <div class="score-ring-inner">
-                                        <span class="score-number">${results.score}/${results.total}</span>
-                                        <span class="score-percentage">${results.percentage}%</span>
-                                    </div>
+                        <section class="rx-hero" aria-label="Exam result summary">
+                            <div class="rx-hero-glow" aria-hidden="true"></div>
+                            <span class="rx-hero-badge"><span aria-hidden="true">🎓</span> Exam Completed</span>
+                            <h2 class="rx-hero-title">${quizTitle}</h2>
+                            <div class="rx-score-ring" id="rx-score-ring" style="--p:0" role="img" aria-label="Final score ${results.percentage}%: ${results.score} out of ${results.total} correct">
+                                <div class="rx-score-ring-inner">
+                                    <span class="rx-score-pct"><span id="rx-score-num">0</span><span class="rx-pct-sign">%</span></span>
+                                    <span class="rx-score-count">${results.score} / ${results.total} correct</span>
                                 </div>
-                                <div class="results-message">${resultsMessage}</div>
                             </div>
-                        </div>
+                            <p class="rx-hero-message">${resultsMessage}</p>
+                        </section>
+
+                        <section class="rx-stats" aria-label="Performance statistics">
+                            <div class="rx-stat-card stat-correct" style="--stagger:0">
+                                <span class="rx-stat-icon" aria-hidden="true">✓</span>
+                                <span class="rx-stat-value">${results.score}</span>
+                                <span class="rx-stat-label">Correct</span>
+                            </div>
+                            <div class="rx-stat-card stat-incorrect" style="--stagger:1">
+                                <span class="rx-stat-icon" aria-hidden="true">✕</span>
+                                <span class="rx-stat-value">${incorrectCount}</span>
+                                <span class="rx-stat-label">Incorrect</span>
+                            </div>
+                            <div class="rx-stat-card stat-accuracy" style="--stagger:2">
+                                <span class="rx-stat-icon" aria-hidden="true">◎</span>
+                                <span class="rx-stat-value">${results.percentage}%</span>
+                                <span class="rx-stat-label">Accuracy</span>
+                            </div>
+                            ${unansweredCount > 0 ? `
+                            <div class="rx-stat-card stat-unanswered" style="--stagger:3">
+                                <span class="rx-stat-icon" aria-hidden="true">—</span>
+                                <span class="rx-stat-value">${unansweredCount}</span>
+                                <span class="rx-stat-label">Unanswered</span>
+                            </div>` : ''}
+                        </section>
+                        ` : ''}
+                        ${showScore ? `
+                        <section class="rx-overview" aria-label="Performance overview">
+                            <h3 class="rx-overview-title">Performance Overview</h3>
+                            <div class="rx-bar" role="img" aria-label="${results.score} correct, ${incorrectCount} incorrect${unansweredCount ? `, ${unansweredCount} unanswered` : ''}, out of ${results.total} questions">
+                                <span class="rx-bar-segment seg-correct" data-width="${(results.score / results.total) * 100}"></span>
+                                <span class="rx-bar-segment seg-incorrect" data-width="${(incorrectCount / results.total) * 100}"></span>
+                                <span class="rx-bar-segment seg-unanswered" data-width="${(unansweredCount / results.total) * 100}"></span>
+                            </div>
+                            <div class="rx-legend">
+                                <span class="rx-legend-item"><span class="rx-dot dot-correct" aria-hidden="true"></span>Correct · ${results.score}</span>
+                                <span class="rx-legend-item"><span class="rx-dot dot-incorrect" aria-hidden="true"></span>Incorrect · ${incorrectCount}</span>
+                                ${unansweredCount > 0 ? `<span class="rx-legend-item"><span class="rx-dot dot-unanswered" aria-hidden="true"></span>Unanswered · ${unansweredCount}</span>` : ''}
+                            </div>
+                            <p class="rx-accuracy-line">${results.percentage}% accuracy across ${results.total} questions</p>
+                        </section>
                         ` : ''}
                         ${showScore ? this.renderAnswerReview() : ''}
                         ${saveMessage}
@@ -1464,6 +1515,68 @@ toggleLogoPanel() {
                 `;
 
                 content.innerHTML = resultsHtml;
+                this.initResultsAnimations(showScore ? results.percentage : null);
+            },
+
+            /* ---------- Results dashboard UI helpers (presentation only — no scoring logic) ---------- */
+
+            getQuestionStatus(index) {
+                const question = this.processedQuestions[index];
+                const userAnswer = this.userAnswers[index];
+                const answered = Array.isArray(userAnswer)
+                    ? userAnswer.some(a => a !== null && a !== undefined && String(a).trim() !== '')
+                    : userAnswer !== null && userAnswer !== undefined && String(userAnswer).trim() !== '';
+                if (!answered) return 'unanswered';
+                return this.checkAnswer(question, userAnswer) ? 'correct' : 'incorrect';
+            },
+
+            initResultsAnimations(percentage) {
+                const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                const ring = document.getElementById('rx-score-ring');
+                const numEl = document.getElementById('rx-score-num');
+
+                if (ring && percentage !== null && percentage !== undefined) {
+                    const target = Math.max(0, Math.min(100, percentage));
+                    if (reduceMotion) {
+                        ring.style.setProperty('--p', target);
+                        if (numEl) numEl.textContent = target;
+                    } else {
+                        const duration = 1200;
+                        const start = performance.now();
+                        const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+                        const tick = now => {
+                            const progress = Math.min(1, (now - start) / duration);
+                            const value = Math.round(easeOutCubic(progress) * target);
+                            ring.style.setProperty('--p', value);
+                            if (numEl) numEl.textContent = value;
+                            if (progress < 1) requestAnimationFrame(tick);
+                        };
+                        requestAnimationFrame(tick);
+                    }
+                }
+
+                // Animate performance bar segments from 0 to their real share of total questions
+                document.querySelectorAll('.rx-bar-segment').forEach(seg => {
+                    requestAnimationFrame(() => {
+                        seg.style.width = seg.dataset.width + '%';
+                    });
+                });
+            },
+
+            toggleReviewCard(index) {
+                const card = document.querySelector(`.rx-review-card[data-index="${index}"]`);
+                if (!card) return;
+                const isOpen = card.classList.toggle('open');
+                const toggleBtn = card.querySelector('.rx-review-toggle');
+                if (toggleBtn) toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            },
+
+            filterReview(status, chip) {
+                document.querySelectorAll('.rx-review-card').forEach(card => {
+                    card.style.display = (status === 'all' || card.dataset.status === status) ? '' : 'none';
+                });
+                document.querySelectorAll('.rx-filter-chip').forEach(c => c.classList.remove('active'));
+                if (chip) chip.classList.add('active');
             },
 
             async saveResult(results) {
@@ -1497,76 +1610,109 @@ toggleLogoPanel() {
             },
 
             renderAnswerReview() {
-                const reviewHtml = this.processedQuestions.map((question, index) => {
+                const counts = { all: this.processedQuestions.length, correct: 0, incorrect: 0, unanswered: 0 };
+
+                const cardsHtml = this.processedQuestions.map((question, index) => {
                     const userAnswer = this.userAnswers[index];
                     const isCorrect = this.checkAnswer(question, userAnswer);
                     const expectedAnswers = this.getExpectedAnswers(question);
+                    const status = this.getQuestionStatus(index);
+                    counts[status]++;
 
+                    const statusMeta = {
+                        correct: { icon: '✓', label: 'Correct' },
+                        incorrect: { icon: '✕', label: 'Incorrect' },
+                        unanswered: { icon: '—', label: 'Not answered' }
+                    }[status];
+
+                    let answersHtml = '';
                     // Handle multi-answer questions with numbered format
                     if (this.isMultiWrittenQuestion(question)) {
                         const userAnswers = Array.isArray(userAnswer) ? userAnswer : Array(expectedAnswers.length).fill('');
-                        
-                        const userAnswerHtml = expectedAnswers.map((_, answerIndex) => `
+
+                        const userRows = expectedAnswers.map((_, answerIndex) => `
                             <div class="multi-input-row">
                                 <span class="multi-input-number">${answerIndex + 1}</span>
-                                <span class="answer ${this.checkAnswerAtIndex(question, userAnswers, answerIndex) ? 'correct' : 'incorrect'}">
-                                    ${this.escapeHtml(userAnswers[answerIndex] || 'No answer')}
-                                </span>
+                                <span class="answer ${this.checkAnswerAtIndex(question, userAnswers, answerIndex) ? 'correct' : 'incorrect'}">${this.escapeHtml(userAnswers[answerIndex] || 'No answer')}</span>
                             </div>
                         `).join('');
 
-                        const correctAnswerHtml = !isCorrect ? expectedAnswers.map((correctAns, answerIndex) => `
+                        const correctRows = !isCorrect ? expectedAnswers.map(correctAns => `
                             <div class="multi-input-row">
-                                <span class="multi-input-number">${answerIndex + 1}</span>
+                                <span class="multi-input-number">✓</span>
                                 <span class="answer correct">${this.escapeHtml(correctAns)}</span>
                             </div>
                         `).join('') : '';
 
-                        return `
-                            <div class="answer-review ${isCorrect ? 'correct' : 'incorrect'}">
-                                <div class="review-question">${index + 1}. ${question.question}</div>
-                                <div class="review-answer">
-                                    <span class="label">Your answer:</span>
-                                    <div class="multi-answer-display">${userAnswerHtml}</div>
-                                </div>
-                                ${correctAnswerHtml ? `
-                                    <div class="review-answer">
-                                        <span class="label">Correct answer:</span>
-                                        <div class="multi-answer-display">${correctAnswerHtml}</div>
-                                    </div>
-                                ` : ''}
-                                ${question.explanation ? `
-                                    <div class="explanation">${this.escapeHtml(question.explanation)}</div>
-                                ` : ''}
+                        answersHtml = `
+                            <div class="rx-answer-block">
+                                <span class="rx-answer-label">Your answer</span>
+                                <div class="multi-answer-display">${userRows}</div>
                             </div>
-                        `;
+                            ${!isCorrect ? `
+                            <div class="rx-answer-block">
+                                <span class="rx-answer-label">Correct answer</span>
+                                <div class="multi-answer-display">${correctRows}</div>
+                            </div>` : ''}`;
                     }
 
                     // Single answer questions
-                    const userAnswerText = Array.isArray(userAnswer) ? userAnswer.filter(Boolean).join(', ') : userAnswer;
-                    const displayCorrect = expectedAnswers[0];
+                    else {
+                        const userAnswerText = Array.isArray(userAnswer) ? userAnswer.filter(Boolean).join(', ') : userAnswer;
+                        const displayCorrect = expectedAnswers.length > 1 ? expectedAnswers.join(', ') : expectedAnswers[0];
+                        const answerClass = status === 'unanswered' ? 'unanswered' : (isCorrect ? 'correct' : 'incorrect');
+
+                        answersHtml = `
+                            <div class="rx-answer-block">
+                                <span class="rx-answer-label">Your answer</span>
+                                <span class="answer ${answerClass}">${this.escapeHtml(userAnswerText || 'Not answered')}</span>
+                            </div>`;
+                        if (!isCorrect && status !== 'unanswered') {
+                            answersHtml += `
+                            <div class="rx-answer-block">
+                                <span class="rx-answer-label">Correct answer</span>
+                                <span class="answer correct">${this.escapeHtml(displayCorrect)}</span>
+                            </div>`;
+                        }
+                    }
 
                     return `
-                        <div class="answer-review ${isCorrect ? 'correct' : 'incorrect'}">
-                            <div class="review-question">${index + 1}. ${question.question}</div>
-                            <div class="review-answer">
-                                <span class="label">Your answer:</span>
-                                <span class="answer ${isCorrect ? 'correct' : 'incorrect'}">${this.escapeHtml(userAnswerText || 'No answer')}</span>
-                            </div>
-                            ${!isCorrect ? `
-                                <div class="review-answer">
-                                    <span class="label">Correct answer:</span>
-                                    <span class="answer correct">${this.escapeHtml(displayCorrect)}</span>
+                        <div class="rx-review-card ${status}" data-status="${status}" data-index="${index}" style="--i:${index}">
+                            <button type="button" class="rx-review-toggle" onclick="quizApp.toggleReviewCard(${index})" aria-expanded="false" aria-controls="rx-body-${index}">
+                                <span class="rx-status-icon ${status}" aria-hidden="true">${statusMeta.icon}</span>
+                                <span class="rx-toggle-main">
+                                    <span class="rx-q-number">Question ${index + 1}</span>
+                                    <span class="rx-q-status ${status}">${statusMeta.label}</span>
+                                </span>
+                                <span class="rx-chevron" aria-hidden="true">›</span>
+                            </button>
+                            <div class="rx-review-body" id="rx-body-${index}">
+                                <div class="rx-review-body-inner">
+                                    <p class="rx-q-text">${question.question}</p>
+                                    ${answersHtml}
+                                    ${question.explanation ? `
+                                        <div class="explanation">${this.escapeHtml(question.explanation)}</div>
+                                    ` : ''}
                                 </div>
-                            ` : ''}
-                            ${question.explanation ? `
-                                <div class="explanation">${this.escapeHtml(question.explanation)}</div>
-                            ` : ''}
+                            </div>
                         </div>
                     `;
                 }).join('');
 
-                return `<div class="answer-review-container">${reviewHtml}</div>`;
+                return `
+                    <section class="rx-review-section">
+                        <div class="rx-section-head">
+                            <h3 class="rx-section-title">Review Your Answers</h3>
+                            <div class="rx-filters" role="group" aria-label="Filter questions by result">
+                                <button type="button" class="rx-filter-chip active" data-filter="all" onclick="quizApp.filterReview('all', this)">All<span class="rx-chip-count">${counts.all}</span></button>
+                                <button type="button" class="rx-filter-chip" data-filter="correct" onclick="quizApp.filterReview('correct', this)">✓ Correct<span class="rx-chip-count">${counts.correct}</span></button>
+                                <button type="button" class="rx-filter-chip" data-filter="incorrect" onclick="quizApp.filterReview('incorrect', this)">✕ Incorrect<span class="rx-chip-count">${counts.incorrect}</span></button>
+                                ${counts.unanswered > 0 ? `<button type="button" class="rx-filter-chip" data-filter="unanswered" onclick="quizApp.filterReview('unanswered', this)">— Unanswered<span class="rx-chip-count">${counts.unanswered}</span></button>` : ''}
+                            </div>
+                        </div>
+                        <div class="rx-review-list">${cardsHtml || '<p class="rx-empty">No questions to review.</p>'}</div>
+                    </section>
+                `;
             },
 
             checkAnswerAtIndex(question, userAnswers, index) {
