@@ -2093,6 +2093,17 @@ button {
 .multi-answer-display .multi-input-row {
   gap: var(--space-sm);
 }
+/* Review page reuses the real quiz components (tagbar, images, option rows) */
+.review-question-card .question-tagbar {
+  margin-bottom: var(--space-sm);
+}
+.review-question-card .options {
+  margin-top: var(--space-sm);
+}
+.review-question-card .option {
+  pointer-events: none;
+  cursor: default;
+}
 .review-footer {
   padding: var(--space-lg);
   border-top: 1px solid var(--card-border);

@@ -1472,6 +1472,9 @@ toggleLogoPanel() {
                 try {
                     const quizData = this.processedQuestions.map((q, index) => ({
                         question: q.question,
+                        type: q.type || 'multiple',
+                        image: q.image || '',
+                        options: Array.isArray(q.options) ? q.options : null,
                         userAnswer: this.userAnswers[index] || null,
                         correctAnswer: this.getExpectedAnswers(q),
                         isCorrect: this.checkAnswer(q, this.userAnswers[index])
@@ -1767,6 +1770,54 @@ toggleLogoPanel() {
                 const questionsHtml = resultData.quizData.map((item, index) => {
                     const iconClass = item.isCorrect ? 'icon-correct' : 'icon-incorrect';
                     const icon = item.isCorrect ? '✔' : '✖';
+
+                    // Multiple-choice / true-false questions: rebuild the exact quiz look
+                    if (Array.isArray(item.options) && item.options.length) {
+                        const correctAnswers = Array.isArray(item.correctAnswer) ? item.correctAnswer : [item.correctAnswer];
+                        const userAnswerText = item.userAnswer == null ? '' : String(item.userAnswer);
+
+                        let imageHTML = '';
+                        if (item.image && item.image.trim() !== '') {
+                            imageHTML = `
+                                <div class="question-image-container">
+                                    <img src="${item.image}" class="question-image" onerror="this.parentElement.style.display='none';" alt="Question image">
+                                </div>
+                            `;
+                        }
+
+                        const typeLabel = item.type === 'true_false' ? 'True / False' : (item.type === 'complete' || item.type === 'written') ? 'Written Answer' : 'Multiple Choice';
+
+                        const optionsHtml = item.options.map((option, optIndex) => {
+                            const normalizedOption = normalizeAnswer(option);
+                            const isCorrectOption = correctAnswers.some(correct => normalizeAnswer(String(correct)) === normalizedOption);
+                            const isUserChoice = userAnswerText !== '' && normalizeAnswer(userAnswerText) === normalizedOption;
+
+                            const classes = ['option', 'disabled'];
+                            if (isCorrectOption) classes.push('correct');
+                            if (!isCorrectOption && isUserChoice) classes.push('selected', 'wrong');
+
+                            return `
+                                <div class="${classes.join(' ')}">
+                                    <span class="option-letter">${String.fromCharCode(65 + optIndex)}</span>
+                                    <span class="option-text">${option}</span>
+                                    <span class="option-check" aria-hidden="true"></span>
+                                </div>
+                            `;
+                        }).join('');
+
+                        return `
+                            <div class="review-card ${item.isCorrect ? 'correct' : 'incorrect'} review-question-card">
+                                <div class="review-card-header">
+                                    <span class="question-number">Question ${index + 1}</span>
+                                    <span class="${iconClass}">${icon}</span>
+                                </div>
+                                <div class="question-tagbar"><span class="question-type">${typeLabel}</span></div>
+                                ${imageHTML}
+                                <div class="review-card-question">${item.question}</div>
+                                <div class="options">${optionsHtml}</div>
+                            </div>
+                        `;
+                    }
 
                     // Check if this is a multi-answer question
                     const isMultiAnswer = Array.isArray(item.userAnswer);
