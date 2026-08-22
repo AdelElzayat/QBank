@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="style.css?v=8">
     <link rel="icon" href="img/AE-Logo.png" type="image/png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 </head>
@@ -2164,15 +2164,6 @@ toggleLogoPanel() {
                         </section>
 
                         <section class="rx-review-section">
-                            <div class="rx-section-head">
-                                <h3 class="rx-section-title">Review Answers</h3>
-                                <div class="rx-filters" role="group" aria-label="Filter questions by result">
-                                    <button type="button" class="rx-filter-chip active" onclick="quizApp.filterReview('all', this)">All<span class="rx-chip-count">${resultData.quizData.length}</span></button>
-                                    <button type="button" class="rx-filter-chip f-correct" onclick="quizApp.filterReview('correct', this)">✓ Correct<span class="rx-chip-count">${savedCounts.correct}</span></button>
-                                    <button type="button" class="rx-filter-chip f-incorrect" onclick="quizApp.filterReview('incorrect', this)">✕ Incorrect<span class="rx-chip-count">${savedCounts.incorrect}</span></button>
-                                    ${savedCounts.unanswered > 0 ? `<button type="button" class="rx-filter-chip f-unanswered" onclick="quizApp.filterReview('unanswered', this)">— Unanswered<span class="rx-chip-count">${savedCounts.unanswered}</span></button>` : ''}
-                                </div>
-                            </div>
                             <div class="rx-review-list">
                                 ${questionsHtml || '<p class="rx-empty">No saved questions for this attempt.</p>'}
                             </div>

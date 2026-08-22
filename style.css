@@ -2236,11 +2236,32 @@ button {
   border: 1px solid var(--card-border);
 }
 
+/* Results dashboard: phones — all stat cards share ONE row, slightly compacted */
+@media (max-width: 600px) {
+  .rx-dashboard-results .rx-stats {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .rx-dashboard-results .rx-stat-card {
+    padding: 10px 4px;
+  }
+  .rx-dashboard-results .rx-stat-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 0.72rem;
+    margin-bottom: 4px;
+  }
+  .rx-dashboard-results .rx-stat-value {
+    font-size: 1.12rem;
+  }
+  .rx-dashboard-results .rx-stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.03em;
+  }
+}
+
 /* Results dashboard: small-phone refinements */
 @media (max-width: 420px) {
-  .rx-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .rx-answer-label {
     min-width: 100%;
     margin-bottom: 2px;
