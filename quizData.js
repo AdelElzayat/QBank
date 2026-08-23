@@ -11002,7 +11002,215 @@ const quizzes = [
           },
         ],
       },
-      
+      {
+        id: "midterm-exam-2025-2026",
+        title: "Midterm Exam 2025-2026",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 7200,
+        questions: [
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "For the given nonlinear equation $$f(x)=3x-e^{-x}=0$$, a root of $f(x)$ lies in the interval",
+            options: ["$[0,1]$", "$[2,3]$", "$[4,5]$", "$[-1,0]$"],
+            correctAnswer: "$[0,1]$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "Using the simple iteration method, the formula $x=\\varphi(x)$ which achieve the convergence condition over the root interval is .....",
+            options: [
+              "$x=\\frac{1}{3}e^{-x}$",
+              "$x=-\\ln(3x)$",
+              "$x=e^{-x}$",
+              "$x=3e^{-x}$",
+            ],
+            correctAnswer: "$x=\\frac{1}{3}e^{-x}$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "The root of $f(x)=0$ using simple iteration method is.....",
+            options: ["$4.2576$", "$2.2576$", "$-0.2576$", "$0.2576$"],
+            correctAnswer: "$0.2576$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            image: "img/difference-table.png",
+            question: "Given the difference table for the data $(x,y)$, $A=$",
+            options: ["$-0.042$", "$0.134$", "$0.091$", "None of these"],
+            correctAnswer: "$0.091$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            image: "img/difference-table.png",
+            question: "Given the difference table for the data $(x,y)$, $B=$",
+            options: ["$0.012$", "$0.05$", "$-0.01$", "None of these"],
+            correctAnswer: "None of these",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            image: "img/difference-table.png",
+            question: "Given the difference table for the data $(x,y)$, $C=$",
+            options: ["$-0.005$", "$0.001$", "$-0.001$", "None of these"],
+            correctAnswer: "$-0.001$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "The polynomial obtained by Lagrange formula for the data $(x,y)$ has degree at most ......",
+            options: ["$6$", "$3$", "$5$", "$4$"],
+            correctAnswer: "$5$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "Using Newton forward difference formula $y(0.15) \approx ......$",
+            options: ["$0.0406$", "$1.2356$", "$0.0001$", "$0.02$"],
+            correctAnswer: "$0.0406$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "Using Newton Backward difference formula $y(0.9) = ......$",
+            options: ["$-0.4589$", "$0.5858$", "$0.6369$", "$0.9563$"],
+            correctAnswer: "$0.5858$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "Using Newton forward divided difference formula $y(0) = ......$",
+            options: ["$0.002$", "$-0.002$", "$0.000$", "None of these"],
+            correctAnswer: "$-0.002$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            image: "img/lagrange-data.png",
+            question:
+              "Let the Lagrange interpolation for the following data $(x_0, y_0), (x_1, y_1), (x_2, y_2), (x_3, y_3)$ respectively as shown in the above table be in the form $p(x) = 25 L_0(x) - 8 L_1(x) - 15 L_2(x) - 23 L_3(x)$. $L_0(1) = ........$",
+            options: ["$3$", "$0$", "$-5$", "None of these"],
+            correctAnswer: "None of these",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            image: "img/lagrange-data.png",
+            question: "Using the same Lagrange data, $L_1(0) = ........$",
+            options: ["$1$", "$\frac{1}{2}$", "$\frac{5}{9}$", "$0$"],
+            correctAnswer: "$\frac{5}{9}$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            image: "img/lagrange-data.png",
+            question: "Using the same Lagrange data, $p(0) = ........$",
+            options: ["$3$", "$0$", "$-5$", "None of these"],
+            correctAnswer: "$-5$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            image: "img/fit-curve-table.png",
+            question:
+              "Fit the curve $$y(x)=\frac{x}{a+bx}$$ to the readings given in the table. The first step is to linearize the above equation to the form $Y=aX+b$ then $Y=...$",
+            options: [
+              "$\frac{y}{x}$",
+              "$\frac{x}{y}$",
+              "$\frac{a}{xy}$",
+              "$\frac{1}{x}$",
+            ],
+            correctAnswer: "$\frac{x}{y}$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "If the normal equations for finding $a$ and $b$ are $Ka+1.3789b=0.1180$ & $1.3789a+6b=-2.1078$ then $K=....$",
+            options: ["$1.5470$", "$0.7770$", "$0.8756$", "$0.4373$"],
+            correctAnswer: "$0.4373$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "If the normal equations for finding $a$ and $b$ are $Ka+1.3789b=0.1180$ & $1.3789a+Mb=-2.1078$ then $M=...$",
+            options: ["$9$", "$2$", "$6$", "$-3$"],
+            correctAnswer: "$6$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question: "$a=$",
+            options: ["$5.0057$", "$1.0258$", "$11.239$", "$-1.5018$"],
+            correctAnswer: "$5.0057$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question: "$b=$",
+            options: ["$5.0057$", "$1.0258$", "$11.239$", "$-1.5018$"],
+            correctAnswer: "$-1.5018$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "The convergence condition for simple iteration method $x_{n+1}=\varphi(x_n)$, $n=0,1,\dots$ is-",
+            options: [
+              "$\vert{}\varphi'(x)\vert{}>1$",
+              "$\vert{}\varphi'(x)\vert{}<1$",
+              "$\vert{}\varphi'(x)\vert{}=1$",
+              "$\vert{}\varphi'(x)\vert{}=0$",
+            ],
+            correctAnswer: "$\vert{}\varphi'(x)\vert{}<1$",
+            shuffle: true,
+          },
+          {
+            type: "multiple",
+            math: true,
+            question:
+              "Using suitable method, the point of intersection of the curves $y=x^4$ and $y=12x^2+10$ is-",
+            options: [
+              "$(3.5752, 163.3881)$",
+              "$(1.5752, 102.3881)$",
+              "$(7.5752, 263.3881)$",
+              "$(-1.5752, -13.3881)$",
+            ],
+            correctAnswer: "$(3.5752, 163.3881)$",
+            shuffle: true,
+          },
+        ],
+      },
     ],
   },
   {
@@ -12976,7 +13184,7 @@ const quizzes = [
   //         }
   //     ]
   // }
-// ###################################################################
+  // ###################################################################
   // MATH RENDERING DEMO — temporary sample QBank to test LaTeX math rendering.
   // Mark questions with `math: true` and write formulas as $...$ / $$...$$.
   // Remove this quiz anytime — it never touches the other quizzes above.
