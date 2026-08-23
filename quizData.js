@@ -11071,6 +11071,7 @@ const quizzes = [
           {
             type: "multiple",
             math: true,
+            image: "img/difference-table.png",
             question:
               "The polynomial obtained by Lagrange formula for the data $(x,y)$ has degree at most ......",
             options: ["$6$", "$3$", "$5$", "$4$"],
@@ -11080,8 +11081,9 @@ const quizzes = [
           {
             type: "multiple",
             math: true,
+            image: "img/difference-table.png",
             question:
-              "Using Newton forward difference formula $y(0.15) \approx ......$",
+              "Using Newton forward difference formula $y(0.15) \\approx ......$",
             options: ["$0.0406$", "$1.2356$", "$0.0001$", "$0.02$"],
             correctAnswer: "$0.0406$",
             shuffle: true,
@@ -11089,6 +11091,7 @@ const quizzes = [
           {
             type: "multiple",
             math: true,
+            image: "img/difference-table.png",
             question:
               "Using Newton Backward difference formula $y(0.9) = ......$",
             options: ["$-0.4589$", "$0.5858$", "$0.6369$", "$0.9563$"],
@@ -11098,6 +11101,7 @@ const quizzes = [
           {
             type: "multiple",
             math: true,
+            image: "img/difference-table.png",
             question:
               "Using Newton forward divided difference formula $y(0) = ......$",
             options: ["$0.002$", "$-0.002$", "$0.000$", "None of these"],
@@ -11119,8 +11123,8 @@ const quizzes = [
             math: true,
             image: "img/lagrange-data.png",
             question: "Using the same Lagrange data, $L_1(0) = ........$",
-            options: ["$1$", "$\frac{1}{2}$", "$\frac{5}{9}$", "$0$"],
-            correctAnswer: "$\frac{5}{9}$",
+            options: ["$1$", "$\\frac{1}{2}$", "$\\frac{5}{9}$", "$0$"],
+            correctAnswer: "$\\frac{5}{9}$",
             shuffle: true,
           },
           {
@@ -11137,19 +11141,20 @@ const quizzes = [
             math: true,
             image: "img/fit-curve-table.png",
             question:
-              "Fit the curve $$y(x)=\frac{x}{a+bx}$$ to the readings given in the table. The first step is to linearize the above equation to the form $Y=aX+b$ then $Y=...$",
+              "Fit the curve $$y(x)=\\frac{x}{a+bx}$$ to the readings given in the table. The first step is to linearize the above equation to the form $Y=aX+b$ then $Y=...$",
             options: [
-              "$\frac{y}{x}$",
-              "$\frac{x}{y}$",
-              "$\frac{a}{xy}$",
-              "$\frac{1}{x}$",
+              "$\\frac{y}{x}$",
+              "$\\frac{x}{y}$",
+              "$\\frac{a}{xy}$",
+              "$\\frac{1}{x}$",
             ],
-            correctAnswer: "$\frac{x}{y}$",
+            correctAnswer: "$\\frac{x}{y}$",
             shuffle: true,
           },
           {
             type: "multiple",
             math: true,
+            image: "img/fit-curve-table.png",
             question:
               "If the normal equations for finding $a$ and $b$ are $Ka+1.3789b=0.1180$ & $1.3789a+6b=-2.1078$ then $K=....$",
             options: ["$1.5470$", "$0.7770$", "$0.8756$", "$0.4373$"],
@@ -11159,6 +11164,7 @@ const quizzes = [
           {
             type: "multiple",
             math: true,
+            image: "img/fit-curve-table.png",
             question:
               "If the normal equations for finding $a$ and $b$ are $Ka+1.3789b=0.1180$ & $1.3789a+Mb=-2.1078$ then $M=...$",
             options: ["$9$", "$2$", "$6$", "$-3$"],
@@ -11168,6 +11174,7 @@ const quizzes = [
           {
             type: "multiple",
             math: true,
+            image: "img/fit-curve-table.png",
             question: "$a=$",
             options: ["$5.0057$", "$1.0258$", "$11.239$", "$-1.5018$"],
             correctAnswer: "$5.0057$",
@@ -11176,6 +11183,7 @@ const quizzes = [
           {
             type: "multiple",
             math: true,
+            image: "img/fit-curve-table.png",
             question: "$b=$",
             options: ["$5.0057$", "$1.0258$", "$11.239$", "$-1.5018$"],
             correctAnswer: "$-1.5018$",
@@ -11184,20 +11192,22 @@ const quizzes = [
           {
             type: "multiple",
             math: true,
+            image: "img/fit-curve-table.png",
             question:
-              "The convergence condition for simple iteration method $x_{n+1}=\varphi(x_n)$, $n=0,1,\dots$ is-",
+              "The convergence condition for simple iteration method $x_{n+1}=\\varphi(x_n)$, $n=0,1,\\dots$ is-",
             options: [
-              "$\vert{}\varphi'(x)\vert{}>1$",
-              "$\vert{}\varphi'(x)\vert{}<1$",
-              "$\vert{}\varphi'(x)\vert{}=1$",
-              "$\vert{}\varphi'(x)\vert{}=0$",
+              "$\\vert{}\\varphi'(x)\\vert{}>1$",
+              "$\\vert{}\\varphi'(x)\\vert{}<1$",
+              "$\\vert{}\\varphi'(x)\\vert{}=1$",
+              "$\\vert{}\\varphi'(x)\\vert{}=0$",
             ],
-            correctAnswer: "$\vert{}\varphi'(x)\vert{}<1$",
+            correctAnswer: "$\\vert{}\\varphi'(x)\\vert{}<1$",
             shuffle: true,
           },
           {
             type: "multiple",
             math: true,
+            image: "img/fit-curve-table.png",
             question:
               "Using suitable method, the point of intersection of the curves $y=x^4$ and $y=12x^2+10$ is-",
             options: [
