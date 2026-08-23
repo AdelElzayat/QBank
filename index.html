@@ -11,9 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
     <link rel="icon" href="img/AE-Logo.png" type="image/png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <!-- KaTeX: fast, lightweight LaTeX math rendering (used by qbank-math.js) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script src="qbank-math.js"></script>
 </head>
 
 <body>
@@ -207,6 +211,27 @@
                     .replace(/>/g, '&gt;')
                     .replace(/"/g, '&quot;')
                     .replace(/'/g, '&#39;');
+            },
+
+            /*
+             * ---- Math rendering (KaTeX) ----
+             * `formatMath(text, question)` renders `$...$` / `$$...$$` inside any
+             * question-related string. Honor rules:
+             *   question.math === true       -> every $...$ is LaTeX
+             *   question.math === false/absent -> safe auto-detect via qbank-math.js
+             * Normal text stays normal; display equations become centered blocks.
+             */
+            mathFlag(question) {
+                if (question && typeof question.math === 'boolean') return question.math;
+                return undefined; // auto-detect
+            },
+
+            formatMath(text, question) {
+                if (text === null || text === undefined) return '';
+                if (window.QMath && typeof window.QMath.renderString === 'function') {
+                    return window.QMath.renderString(String(text), { math: this.mathFlag(question) });
+                }
+                return this.escapeHtml(String(text));
             },
 
             async init() {
@@ -990,7 +1015,7 @@ toggleLogoPanel() {
                                 <span class="question-type">${typeLabel}</span>
                             </div>
                             ${imageHTML}
-                            <div class="question-text">${question.question}</div>
+                            <div class="question-text">${this.formatMath(question.question, question)}</div>
                             ${this.renderOptions(question)}
                         </div>
                     </div>
@@ -1019,8 +1044,7 @@ toggleLogoPanel() {
                             const normalizedSaved = normalizeAnswer(savedAnswer);
 
                             options.forEach(option => {
-                                const text = option.querySelector('.option-text').textContent;
-                                const normalizedOptionText = normalizeAnswer(text);
+                                const normalizedOptionText = option.getAttribute('data-option-norm') || normalizeAnswer(option.querySelector('.option-text').textContent);
                                 const isCorrect = correctAnswers.some(correct => normalizeAnswer(correct) === normalizedOptionText);
                                 const isWrong = normalizedOptionText === normalizedSaved && !isCorrect;
 
@@ -1037,8 +1061,8 @@ toggleLogoPanel() {
                         } else {
                             // QUIZ MODE - only show selected state, NO colors, NO locking
                             options.forEach(option => {
-                                const text = option.querySelector('.option-text').textContent;
-                                if (text === savedAnswer) {
+                                const optionNorm = option.getAttribute('data-option-norm') || normalizeAnswer(option.querySelector('.option-text').textContent);
+                                if (optionNorm === normalizeAnswer(savedAnswer)) {
                                     option.classList.add('selected');
                                 }
                             });
@@ -1114,10 +1138,11 @@ toggleLogoPanel() {
 
                 const optionsHtml = question.options.map((option, index) => {
                     const isSelected = this.userAnswers[this.currentQuestionIndex] === option;
+                    const safeOption = option.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
                     return `
-                        <div class="option ${isSelected ? 'selected' : ''}" onclick="quizApp.handleAnswer('${option.replace(/'/g, "\\'")}')">
+                        <div class="option ${isSelected ? 'selected' : ''}" data-option-norm="${this.escapeHtml(normalizeAnswer(option))}" onclick="quizApp.handleAnswer('${safeOption}')">
                             <span class="option-letter">${String.fromCharCode(65 + index)}</span>
-                            <span class="option-text">${option}</span>
+                            <span class="option-text">${this.formatMath(option, question)}</span>
                             <span class="option-check" aria-hidden="true"></span>
                         </div>
                     `;
@@ -1144,8 +1169,7 @@ toggleLogoPanel() {
 
                     const options = document.querySelectorAll('.option');
                     options.forEach(option => {
-                        const text = option.querySelector('.option-text').textContent;
-                        const normalizedOptionText = normalizeAnswer(text);
+                        const normalizedOptionText = option.getAttribute('data-option-norm') || normalizeAnswer(option.querySelector('.option-text').textContent);
 
                         const isCorrect = correctAnswers.some(correct => normalizeAnswer(correct) === normalizedOptionText);
                         const isWrong = normalizedOptionText === normalizedAnswer && !isCorrect;
@@ -1167,8 +1191,8 @@ toggleLogoPanel() {
                     const options = document.querySelectorAll('.option');
                     options.forEach(option => {
                         option.classList.remove('selected');
-                        const text = option.querySelector('.option-text').textContent;
-                        if (text === answer) {
+                        const optionNorm = option.getAttribute('data-option-norm') || normalizeAnswer(option.querySelector('.option-text').textContent);
+                        if (optionNorm === normalizeAnswer(answer)) {
                             option.classList.add('selected');
                         }
                     });
@@ -1309,8 +1333,8 @@ toggleLogoPanel() {
 
                 const correctAnswers = this.getExpectedAnswers(question);
                 const displayCorrect = correctAnswers.length > 1
-                    ? `<ul>${correctAnswers.map(answer => `<li>${this.escapeHtml(answer)}</li>`).join('')}</ul>`
-                    : `<strong>${this.escapeHtml(correctAnswers[0])}</strong>`;
+                    ? `<ul>${correctAnswers.map(answer => `<li>${this.formatMath(answer, question)}</li>`).join('')}</ul>`
+                    : `<strong>${this.formatMath(correctAnswers[0], question)}</strong>`;
 
                 feedbackDiv.className = `written-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
                 feedbackDiv.innerHTML = `
@@ -1318,7 +1342,7 @@ toggleLogoPanel() {
                         ${isCorrect ? '✓ Correct' : '✗ Incorrect'}
                     </div>
                     ${!isCorrect ? `<div class="correct-answer-text">${correctAnswers.length > 1 ? 'Correct answers:' : 'Correct answer:'} ${displayCorrect}</div>` : ''}
-                    ${question.explanation ? `<div class="explanation">${this.escapeHtml(question.explanation)}</div>` : ''}
+                    ${question.explanation ? `<div class="explanation">${this.formatMath(question.explanation, question)}</div>` : ''}
                 `;
                 feedbackDiv.style.display = 'block';
             },
@@ -1326,8 +1350,8 @@ toggleLogoPanel() {
             updateSelectedUI() {
                 const options = document.querySelectorAll('.option');
                 options.forEach(option => {
-                    const optionText = option.querySelector('.option-text').textContent;
-                    if (optionText === this.selectedAnswer) {
+                    const optionNorm = option.getAttribute('data-option-norm') || normalizeAnswer(option.querySelector('.option-text').textContent);
+                    if (optionNorm === normalizeAnswer(this.selectedAnswer)) {
                         option.classList.add('selected');
                     } else {
                         option.classList.remove('selected');
@@ -1576,20 +1600,20 @@ toggleLogoPanel() {
                         const userAnswerHtml = expectedAnswers.map((_, answerIndex) => `
                             <div class="multi-input-row">
                                 <span class="multi-input-number">${answerIndex + 1}</span>
-                                <span class="answer ${this.checkAnswerAtIndex(question, userAnswers, answerIndex) ? 'correct' : 'incorrect'}">${this.escapeHtml(userAnswers[answerIndex] || 'No answer')}</span>
+                                <span class="answer ${this.checkAnswerAtIndex(question, userAnswers, answerIndex) ? 'correct' : 'incorrect'}">${this.formatMath(userAnswers[answerIndex] || 'No answer', question)}</span>
                             </div>
                         `).join('');
 
                         const correctAnswerHtml = !isCorrect ? expectedAnswers.map(correctAns => `
                             <div class="multi-input-row">
                                 <span class="multi-input-number">${answerIndex + 1}</span>
-                                <span class="answer correct">${this.escapeHtml(correctAns)}</span>
+                                <span class="answer correct">${this.formatMath(correctAns, question)}</span>
                             </div>
                         `).join('') : '';
 
                         return `
                             <div class="answer-review ${isCorrect ? 'correct' : 'incorrect'}">
-                                <div class="review-question">${index + 1}. ${question.question}</div>
+                                <div class="review-question">${index + 1}. ${this.formatMath(question.question, question)}</div>
                                 <div class="review-answer">
                                     <span class="label">Your answer:</span>
                                     <div class="multi-answer-display">${userAnswerHtml}</div>
@@ -1601,7 +1625,7 @@ toggleLogoPanel() {
                                     </div>
                                 ` : ''}
                                 ${question.explanation ? `
-                                    <div class="explanation">${this.escapeHtml(question.explanation)}</div>
+                                    <div class="explanation">${this.formatMath(question.explanation, question)}</div>
                                 ` : ''}
                             </div>
                         `;
@@ -1613,19 +1637,19 @@ toggleLogoPanel() {
 
                     return `
                         <div class="answer-review ${isCorrect ? 'correct' : 'incorrect'}">
-                            <div class="review-question">${index + 1}. ${question.question}</div>
+                            <div class="review-question">${index + 1}. ${this.formatMath(question.question, question)}</div>
                             <div class="review-answer">
                                 <span class="label">Your answer:</span>
-                                <span class="answer ${isCorrect ? 'correct' : 'incorrect'}">${this.escapeHtml(userAnswerText || 'No answer')}</span>
+                                <span class="answer ${isCorrect ? 'correct' : 'incorrect'}">${this.formatMath(userAnswerText || 'No answer', question)}</span>
                             </div>
                             ${!isCorrect ? `
                                 <div class="review-answer">
                                     <span class="label">Correct answer:</span>
-                                    <span class="answer correct">${this.escapeHtml(displayCorrect)}</span>
+                                    <span class="answer correct">${this.formatMath(displayCorrect, question)}</span>
                                 </div>
                             ` : ''}
                             ${question.explanation ? `
-                                <div class="explanation">${this.escapeHtml(question.explanation)}</div>
+                                <div class="explanation">${this.formatMath(question.explanation, question)}</div>
                             ` : ''}
                         </div>
                     `;
@@ -1941,7 +1965,7 @@ toggleLogoPanel() {
                             return `
                                 <div class="${classes.join(' ')}">
                                     <span class="option-letter">${String.fromCharCode(65 + optIndex)}</span>
-                                    <span class="option-text">${option}</span>
+                                    <span class="option-text">${this.formatMath(option, original)}</span>
                                     <span class="option-check" aria-hidden="true"></span>
                                 </div>
                             `;
@@ -1961,7 +1985,7 @@ toggleLogoPanel() {
                                     <div class="rx-review-body-inner">
                                         <div class="question-tagbar"><span class="question-type">${typeLabel}</span></div>
                                         ${imageHTML}
-                                        <div class="review-card-question">${item.question}</div>
+                                        <div class="review-card-question">${this.formatMath(item.question, original)}</div>
                                         <div class="options">${optionsHtml}</div>
                                     </div>
                                 </div>
@@ -2019,11 +2043,11 @@ toggleLogoPanel() {
                                     <div class="rx-review-body-inner">
                                         <div class="question-tagbar"><span class="question-type">Written Answer</span></div>
                                         ${imageHTML}
-                                        <div class="review-card-question">${item.question}</div>
+                                        <div class="review-card-question">${this.formatMath(item.question, original)}</div>
                                         <div class="complete-input ${item.isCorrect ? 'correct' : 'wrong'}">${fieldsHTML}</div>
                                         <div class="written-feedback ${item.isCorrect ? 'correct' : 'incorrect'}">
                                             <div class="feedback-status ${item.isCorrect ? 'correct' : 'incorrect'}">${item.isCorrect ? '✓ Correct' : '✗ Incorrect'}</div>
-                                            ${!item.isCorrect ? `<div class="correct-answer-text"><strong>${expectedAnswers.length > 1 ? 'Correct answers:' : 'Correct answer:'}</strong> ${expectedAnswers.map(a => this.escapeHtml(String(a))).join(' &nbsp;|&nbsp; ')}</div>` : ''}
+                                            ${!item.isCorrect ? `<div class="correct-answer-text"><strong>${expectedAnswers.length > 1 ? 'Correct answers:' : 'Correct answer:'}</strong> ${expectedAnswers.map(a => this.formatMath(String(a), original)).join(' &nbsp;|&nbsp; ')}</div>` : ''}
                                         </div>
                                     </div>
                                 </div>
@@ -2048,7 +2072,7 @@ toggleLogoPanel() {
                             return `
                                 <div class="multi-input-row">
                                     <span class="multi-input-number">${answerIndex + 1}</span>
-                                    <span class="answer-value ${isFieldCorrect ? 'correct' : 'incorrect'}">${userAnswers[answerIndex] || 'No answer'}</span>
+                                    <span class="answer-value ${isFieldCorrect ? 'correct' : 'incorrect'}">${this.formatMath(userAnswers[answerIndex] || 'No answer', original)}</span>
                                 </div>
                             `;
                         }).join('');
@@ -2056,7 +2080,7 @@ toggleLogoPanel() {
                         const correctAnswerHtml = !item.isCorrect ? correctAnswersArray.map((correctAns, answerIndex) => `
                             <div class="multi-input-row">
                                 <span class="multi-input-number">${answerIndex + 1}</span>
-                                <span class="answer-value correct">${correctAns}</span>
+                                <span class="answer-value correct">${this.formatMath(correctAns, original)}</span>
                             </div>
                         `).join('') : '';
 
@@ -2080,12 +2104,12 @@ toggleLogoPanel() {
                         answerDisplay = `
                             <div class="answer-row ${item.isCorrect ? 'correct' : 'incorrect'}">
                                 <span class="answer-label">Your answer:</span>
-                                <span class="answer-value ${item.isCorrect ? 'correct' : 'incorrect'}">${userAnswerDisplay}</span>
+                                <span class="answer-value ${item.isCorrect ? 'correct' : 'incorrect'}">${this.formatMath(userAnswerDisplay, original)}</span>
                             </div>
                             ${!item.isCorrect ? `
                             <div class="answer-row correct">
                                 <span class="answer-label">Correct answer:</span>
-                                <span class="answer-value correct">${correctAnswerDisplay}</span>
+                                <span class="answer-value correct">${this.formatMath(correctAnswerDisplay, original)}</span>
                             </div>
                             ` : ''}
                         `;
@@ -2103,7 +2127,7 @@ toggleLogoPanel() {
                             </button>
                             <div class="rx-review-body" id="rx-body-${index}">
                                 <div class="rx-review-body-inner">
-                                    <div class="review-card-question">${item.question}</div>
+                                    <div class="review-card-question">${this.formatMath(item.question, original)}</div>
                                     <div class="review-card-answers">
                                         ${answerDisplay}
                                     </div>

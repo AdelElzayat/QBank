@@ -12975,4 +12975,105 @@ const quizzes = [
   //         }
   //     ]
   // }
+// ###################################################################
+  // MATH RENDERING DEMO — temporary sample QBank to test LaTeX math rendering.
+  // Mark questions with `math: true` and write formulas as $...$ / $$...$$.
+  // Remove this quiz anytime — it never touches the other quizzes above.
+  // ###################################################################
+  // {
+  //   id: "math-demo-qbank-1",
+  //   title: "Math Rendering — Sample Test",
+  //   showScore: true,
+  //   shuffleQuestions: false,
+  //   quizModeTimer: 1200,
+  //   questions: [
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "What is the derivative of $x^2$?",
+  //       options: ["$2x$", "$x^2$", "$2$", "$x$"],
+  //       correctAnswer: "$2x$",
+  //       explanation: "Power rule: the derivative of $x^2$ is $2x^{1}=2x$.",
+  //     },
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "Solve $e^{-x}=2$.",
+  //       options: ["$x=-\\ln 2$", "$x=\\ln 2$", "$x=e^2$", "$x=-2$"],
+  //       correctAnswer: "$x=-\\ln 2$",
+  //       explanation: "Taking natural logs: $-x=\\ln 2$, hence $x=-\\ln 2$.",
+  //     },
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "Calculate $\\frac{2x+1}{x-3}$ when $x=4$.",
+  //       options: ["$9$", "$5$", "$-9$", "$7$"],
+  //       correctAnswer: "$9$",
+  //       explanation: "$\\frac{8+1}{4-3}=9$.",
+  //     },
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "Find $\\sqrt{x^2+1}$.",
+  //       options: ["$x+1$", "$x^2+1$", "$\\sqrt{x^2+1}$", "$x^2$"],
+  //       correctAnswer: "$\\sqrt{x^2+1}$",
+  //       explanation: "The expression is already simplified: $\\sqrt{x^2+1}$.",
+  //     },
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "For the given nonlinear equation $$f(x)=3x-e^{-x}=0$$, a root of $f(x)$ lies in the interval:",
+  //       options: ["$[0,1]$", "$[1,2]$", "$[2,3]$", "$[3,4]$"],
+  //       correctAnswer: "$[0,1]$",
+  //       explanation: "$f(0)=-1<0$ and $f(1)=3-e^{-1}>0$, so by the intermediate value theorem a root lies in $[0,1]$.",
+  //     },
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "Solve $$x^2 - 4 = 0$$.",
+  //       options: ["$x=1$", "$x=2$", "$x=\\pm 2$", "$x=4$"],
+  //       correctAnswer: "$x=\\pm 2$",
+  //       explanation: "$x^2-4=0 \\Rightarrow (x-2)(x+2)=0 \\Rightarrow x=\\pm 2$.",
+  //     },
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "If $f(x)=x^2+2x$, calculate $f'(x)$.",
+  //       options: ["$2x+2$", "$x^2+2$", "$2x$", "$x+2$"],
+  //       correctAnswer: "$2x+2$",
+  //       explanation: "Differentiating term by term: $f'(x)=2x+2$.",
+  //     },
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "Evaluate $\\lim_{x\\to 0}\\frac{\\sin x}{x}$.",
+  //       options: ["$0$", "$1$", "$\\infty$", "Undefined"],
+  //       correctAnswer: "$1$",
+  //       explanation: "This is the classical limit: $\\lim_{x\\to 0}\\frac{\\sin x}{x}=1$.",
+  //     },
+  //     {
+  //       type: "multiple-choice",
+  //       math: true,
+  //       question: "Let $A=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}$. What is $\\left|A\\right|$?",
+  //       options: ["$-2$", "$2$", "$10$", "$4$"],
+  //       correctAnswer: "$-2$",
+  //       explanation: "$\\det(A)=1\\cdot 4-2\\cdot 3=-2$.",
+  //     },
+  //     {
+  //       type: "complete",
+  //       math: true,
+  //       question: "Calculate the derivative of $$f(x)=x^3+2x^2-x$$.",
+  //       correctAnswer: "3x^2+4x-1",
+  //       explanation: "Term by term: $f'(x)=3x^2+4x-1$.",
+  //     },
+  //     {
+  //       // No `math` flag — safe auto-detection should still render these.
+  //       type: "multiple-choice",
+  //       question: "Which expression equals $\\alpha+\\beta$ when $\\alpha=2$ and $\\beta=3$?",
+  //       options: ["$5$", "$6$", "$23$", "$-5$"],
+  //       correctAnswer: "$5$",
+  //       explanation: "$2+3=5$, i.e. $\\alpha+\\beta=5$.",
+  //     },
+  //   ],
+  // }
 ];

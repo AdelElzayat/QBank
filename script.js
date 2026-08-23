@@ -95,6 +95,23 @@ const quizApp = {
       .replace(/'/g, "&#39;");
   },
 
+  // ---- Math rendering (KaTeX) ----
+  // Renders `$...$` / `$$...$$` inside any question-related string.
+  //   question.math === true        -> every $...$ is LaTeX
+  //   question.math === false/absent-> safe auto-detect (qbank-math.js)
+  mathFlag(question) {
+    if (question && typeof question.math === "boolean") return question.math;
+    return undefined;
+  },
+
+  formatMath(text, question) {
+    if (text === null || text === undefined) return "";
+    if (window.QMath && typeof window.QMath.renderString === "function") {
+      return window.QMath.renderString(String(text), { math: this.mathFlag(question) });
+    }
+    return this.escapeHtml(String(text));
+  },
+
   async init() {
     this.initTheme();
     this.initAuth();
@@ -396,7 +413,7 @@ const quizApp = {
             <div class="question-container">
                 <div class="question-card">
                     ${imageHTML}
-                    <div class="question-text">${question.question}</div>
+                    <div class="question-text">${this.formatMath(question.question, question)}</div>
                     ${this.renderOptions(question)}
                 </div>
             </div>
@@ -422,8 +439,7 @@ const quizApp = {
       } else {
         const options = document.querySelectorAll(".option");
         options.forEach((option) => {
-          const text = option.querySelector(".option-text").textContent;
-          const normalizedOptionText = normalizeAnswer(text);
+          const normalizedOptionText = option.getAttribute("data-option-norm") || normalizeAnswer(option.querySelector(".option-text").textContent);
           const isCorrect = correctAnswers.some(
             (correct) => normalizeAnswer(correct) === normalizedOptionText,
           );
@@ -510,10 +526,11 @@ const quizApp = {
       .map((option, index) => {
         const isSelected =
           this.userAnswers[this.currentQuestionIndex] === option;
+        const safeOption = option.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
         return `
-                <div class="option ${isSelected ? "selected" : ""}" onclick="quizApp.handleAnswer('${option.replace(/'/g, "\\'")}')">
+                <div class="option ${isSelected ? "selected" : ""}" data-option-norm="${this.escapeHtml(normalizeAnswer(option))}" onclick="quizApp.handleAnswer('${safeOption}')">
                     <span class="option-letter">${String.fromCharCode(65 + index)}</span>
-                    <span class="option-text">${option}</span>
+                    <span class="option-text">${this.formatMath(option, question)}</span>
                 </div>
             `;
       })
@@ -537,8 +554,7 @@ const quizApp = {
 
     const options = document.querySelectorAll(".option");
     options.forEach((option) => {
-      const text = option.querySelector(".option-text").textContent;
-      const normalizedOptionText = normalizeAnswer(text);
+      const normalizedOptionText = option.getAttribute("data-option-norm") || normalizeAnswer(option.querySelector(".option-text").textContent);
 
       const isCorrect = correctAnswers.some(
         (correct) => normalizeAnswer(correct) === normalizedOptionText,
@@ -699,9 +715,9 @@ const quizApp = {
     const correctAnswers = this.getExpectedAnswers(question);
     const displayCorrect = correctAnswers.length > 1
       ? `<ul>${correctAnswers
-          .map((answer) => `<li>${this.escapeHtml(answer)}</li>`)
+          .map((answer) => `<li>${this.formatMath(answer, question)}</li>`)
           .join("")}</ul>`
-      : `<strong>${this.escapeHtml(correctAnswers[0])}</strong>`;
+      : `<strong>${this.formatMath(correctAnswers[0], question)}</strong>`;
 
     feedbackDiv.className = `written-feedback ${isCorrect ? "correct" : "incorrect"}`;
     feedbackDiv.innerHTML = `
@@ -709,7 +725,7 @@ const quizApp = {
             ${isCorrect ? "✓ Correct" : "✗ Incorrect"}
         </div>
         ${!isCorrect ? `<div class="correct-answer-text">${correctAnswers.length > 1 ? "Correct answers:" : "Correct answer:"} ${displayCorrect}</div>` : ""}
-        ${question.explanation ? `<div class="explanation">${this.escapeHtml(question.explanation)}</div>` : ""}
+        ${question.explanation ? `<div class="explanation">${this.formatMath(question.explanation, question)}</div>` : ""}
     `;
     feedbackDiv.style.display = "block";
   },
@@ -717,8 +733,8 @@ const quizApp = {
   updateSelectedUI() {
     const options = document.querySelectorAll(".option");
     options.forEach((option) => {
-      const optionText = option.querySelector(".option-text").textContent;
-      if (optionText === this.selectedAnswer) {
+      const optionNorm = option.getAttribute("data-option-norm") || normalizeAnswer(option.querySelector(".option-text").textContent);
+      if (optionNorm === normalizeAnswer(this.selectedAnswer)) {
         option.classList.add("selected");
       } else {
         option.classList.remove("selected");
@@ -883,17 +899,17 @@ const quizApp = {
 
         return `
                 <div class="answer-review ${isCorrect ? "correct" : "incorrect"}">
-                    <div class="review-question">${index + 1}. ${question.question}</div>
+                    <div class="review-question">${index + 1}. ${this.formatMath(question.question, question)}</div>
                     <div class="review-answer">
                         <span class="label">Your answer:</span>
-                        <span class="answer ${isCorrect ? "correct" : "incorrect"}">${this.escapeHtml(userAnswerText || "No answer")}</span>
+                        <span class="answer ${isCorrect ? "correct" : "incorrect"}">${this.formatMath(userAnswerText || "No answer", question)}</span>
                     </div>
                     ${
                       !isCorrect
                         ? `
                         <div class="review-answer">
                             <span class="label">Correct answer:</span>
-                            <span class="answer correct">${this.escapeHtml(displayCorrect)}</span>
+                            <span class="answer correct">${this.formatMath(displayCorrect, question)}</span>
                         </div>
                     `
                         : ""
@@ -901,7 +917,7 @@ const quizApp = {
                     ${
                       question.explanation
                         ? `
-                        <div class="explanation">${this.escapeHtml(question.explanation)}</div>
+                        <div class="explanation">${this.formatMath(question.explanation, question)}</div>
                     `
                         : ""
                     }
