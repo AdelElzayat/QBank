@@ -4,26 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <!-- Controls browser top bar color on mobile -->
-    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <!-- Single DYNAMIC theme-color: its value tracks the app's ACTIVE theme
+         (dark -> #1e293b, light -> #ffffff) via the script below and setTheme().
+         Do NOT split this into media="(prefers-color-scheme: ...)" variants —
+         iOS standalone latches onto the dark variant and never updates it,
+         which forced the whole PWA area dark even in light mode. -->
+    <meta name="theme-color" content="#ffffff">
     <!-- iOS standalone PWA (Home Screen): render the web app full-screen UNDER the
          status bar. The body already reserves env(safe-area-inset-top), so content
          stays below the notch/Dynamic Island while the page background fills it. -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Sync the top-bar/safe-area color with the APP theme (stored in localStorage),
-         not the OS preference. Runs before first paint so a PWA launched in dark mode
-         never shows a white status-bar strip. -->
+    <!-- Sync the top-bar/safe-area color AND the document theme with the app's own
+         theme state (localStorage), BEFORE first paint. Light launches start light;
+         dark launches start dark — no flash, no forced dark. -->
     <script>
         (function () {
             try {
                 var theme = localStorage.getItem('quiz-theme') === 'dark' ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', theme);
-                document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
-                    m.content = theme === 'dark' ? '#1e293b' : '#ffffff';
-                });
-            } catch (e) { /* storage unavailable: static media-scoped metas still apply */ }
+                var metaTheme = document.querySelector('meta[name="theme-color"]');
+                if (metaTheme) {
+                    metaTheme.content = theme === 'dark' ? '#1e293b' : '#ffffff';
+                }
+            } catch (e) { /* storage unavailable: defaults to light */ }
         })();
     </script>
     <title>QBank — Adel Elzayat Question Bank</title>
@@ -443,11 +447,11 @@ toggleLogoPanel() {
                 localStorage.setItem('quiz-theme', newTheme);
                 
                 // Update mobile browser top bar color.
-                // IMPORTANT: update ALL theme-color metas (both the dark- and light-scoped
-                // ones) so iOS picks the correct color regardless of prefers-color-scheme.
-                document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
-                    m.content = newTheme === 'dark' ? '#1e293b' : '#ffffff';
-                });
+                // Single dynamic theme-color meta — always reflects the ACTIVE theme.
+                const metaTheme = document.querySelector('meta[name="theme-color"]');
+                if (metaTheme) {
+                    metaTheme.content = newTheme === 'dark' ? '#1e293b' : '#ffffff';
+                }
             },
 
             toggleTheme() {

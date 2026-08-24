@@ -4,24 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <!-- Single DYNAMIC theme-color tracking the app's ACTIVE theme
+         (dark -> #1e293b, light -> #ffffff). See index.html for rationale:
+         media-scoped variants made iOS standalone stick to dark permanently. -->
+    <meta name="theme-color" content="#ffffff">
     <!-- iOS standalone PWA (Home Screen): render full-screen UNDER the status bar.
          body already reserves env(safe-area-inset-top), so content stays below the
          notch/Dynamic Island while the page background fills it. -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Sync top-bar/safe-area color with the APP theme (localStorage), not the OS
-         preference. Runs before first paint so no white status-bar strip appears. -->
+    <!-- Sync top-bar/safe-area color AND document theme with the app's own theme
+         state (localStorage) BEFORE first paint. -->
     <script>
         (function () {
             try {
                 var theme = localStorage.getItem('quiz-theme') === 'dark' ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', theme);
-                document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
-                    m.content = theme === 'dark' ? '#1e293b' : '#ffffff';
-                });
-            } catch (e) { /* storage unavailable: static media-scoped metas still apply */ }
+                var metaTheme = document.querySelector('meta[name="theme-color"]');
+                if (metaTheme) {
+                    metaTheme.content = theme === 'dark' ? '#1e293b' : '#ffffff';
+                }
+            } catch (e) { /* storage unavailable: defaults to light */ }
         })();
     </script>
     <title>Login - QBank</title>
@@ -154,12 +157,11 @@
         const setTheme = (newTheme) => {
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('quiz-theme', newTheme);
-            const metaThemes = document.querySelectorAll('meta[name="theme-color"]');
-            // Update BOTH media-scoped metas so iOS picks the correct status-bar
-            // color regardless of the device's prefers-color-scheme.
-            metaThemes.forEach(function (m) {
-                m.content = newTheme === 'dark' ? '#1e293b' : '#ffffff';
-            });
+            // Update the single dynamic theme-color meta (reflects the ACTIVE theme).
+            const metaTheme = document.querySelector('meta[name="theme-color"]');
+            if (metaTheme) {
+                metaTheme.content = newTheme === 'dark' ? '#1e293b' : '#ffffff';
+            }
         };
 
         const themeCheckbox = document.getElementById('theme-checkbox');
