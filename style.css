@@ -105,6 +105,11 @@
   --navbar-bg: rgba(255, 255, 255, 0.86);
   --navbar-border: rgba(212, 219, 233, 0.8);
 
+  /* Frosted-glass navbar (MAIN QUESTION BANK PAGE ONLY — scoped via
+     body.qbank-page in index.html; login.html never references these). */
+  --navbar-glass-bg: rgba(255, 255, 255, 0.72);
+  --safe-area-solid-bg: var(--bg);
+
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 6px 18px -6px rgba(15, 23, 42, 0.14);
   --shadow-lg: 0 18px 44px -14px rgba(15, 23, 42, 0.22);
@@ -172,6 +177,10 @@
 
   --navbar-bg: rgba(13, 20, 38, 0.82);
   --navbar-border: rgba(51, 65, 101, 0.6);
+
+  /* Dark-mode frosted glass + solid safe-area strip (main page only). */
+  --navbar-glass-bg: rgba(17, 25, 48, 0.68);
+  --safe-area-solid-bg: var(--bg);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 8px 20px -8px rgba(0, 0, 0, 0.55);
@@ -299,8 +308,63 @@ button {
   /* NOTE: no backdrop-filter here. A permanent backdrop-filter on this sticky
      bar forced full-time compositing and made the whole UI render soft/blurry
      in iOS standalone (PWA) mode. Removing it keeps the navbar and its logo,
-     text and buttons pixel-sharp. Overlay blurs (modals/panels) are unaffected. */
+     text and buttons pixel-sharp. Overlay blurs (modals/panels) are unaffected.
+     The frosted-glass treatment lives ONLY in the scoped rules below
+     (body.qbank-page) so login.html keeps using this exact plain style. */
   transition: background var(--t), border-color var(--t);
+}
+
+/* ============================================================
+   MAIN QUESTION BANK PAGE ONLY — scoped via body.qbank-page
+   (index.html). login.html does NOT have this class, so every
+   rule below is guaranteed to leave the Login page untouched.
+
+   1) SOLID safe-area strip: a fixed opaque layer covering only
+      env(safe-area-inset-top) — the iPhone status-bar zone.
+      Pure solid var(--bg): no blur, no transparency, no glass.
+      Height resolves to 0px in regular browsers / desktop.
+
+   2) SUBTLE FROSTED-GLASS navbar: semi-transparent theme color,
+      slight backdrop blur + saturation on the BACKGROUND LAYER
+      only, hairline border and faint depth shadow. The navbar's
+      own children (logo, name, toggle, profile icon) receive no
+      filter whatsoever and stay perfectly sharp.
+   ============================================================ */
+.qbank-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--safe-area-solid-bg);
+  z-index: 90; /* above page content, below navbar (z-index 100) */
+  pointer-events: none;
+  transition: background var(--t);
+}
+
+.qbank-page .navbar {
+  /* Keep the pinned navbar BELOW the phone status area instead of
+     sliding up underneath it when scrolling (env() = 0px elsewhere). */
+  top: env(safe-area-inset-top, 0px);
+
+  /* Subtle Apple-style frosted glass — background layer ONLY. */
+  background: var(--navbar-glass-bg);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  backdrop-filter: saturate(160%) blur(10px);
+
+  /* Hairline edge + gentle depth, reusing the existing palette. */
+  border-bottom: 1px solid var(--navbar-border);
+  box-shadow:
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 18px -12px rgba(15, 23, 42, 0.35);
+  transition: background var(--t), border-color var(--t), box-shadow var(--t);
+}
+
+[data-theme="dark"] .qbank-page .navbar {
+  box-shadow:
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    0 4px 20px -12px rgba(0, 0, 0, 0.6);
 }
 
 .navbar-brand {
