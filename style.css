@@ -2951,7 +2951,13 @@ body.profile-panel-open {
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    /* End at `transform: none` (NOT translateY(0)): elements using this
+       animation with fill-mode `both` would otherwise keep a permanent
+       transform, which forces a composited layer and disables subpixel
+       text anti-aliasing on iOS — making the whole main page look soft.
+       With `none`, the transform is released when the animation ends and
+        text/cards render pixel-sharp. Visual motion is identical. */
+    transform: none;
   }
 }
 @keyframes slideUp {
