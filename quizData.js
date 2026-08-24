@@ -11047,7 +11047,7 @@ const quizzes = [
             image: "img/difference-table.png",
             question: "Given the difference table for the data $(x,y)$, $A=$",
             options: ["$-0.042$", "$0.134$", "$0.091$", "None of these"],
-            correctAnswer: "$0.091$",
+            correctAnswer: "$0.134$",
             shuffle: true,
           },
           {
@@ -11056,7 +11056,7 @@ const quizzes = [
             image: "img/difference-table.png",
             question: "Given the difference table for the data $(x,y)$, $B=$",
             options: ["$0.012$", "$0.05$", "$-0.01$", "None of these"],
-            correctAnswer: "None of these",
+            correctAnswer: "0.012",
             shuffle: true,
           },
           {
@@ -11115,7 +11115,7 @@ const quizzes = [
             question:
               "Let the Lagrange interpolation for the following data $(x_0, y_0), (x_1, y_1), (x_2, y_2), (x_3, y_3)$ respectively as shown in the above table be in the form $p(x) = 25 L_0(x) - 8 L_1(x) - 15 L_2(x) - 23 L_3(x)$. $L_0(1) = ........$",
             options: ["$3$", "$0$", "$-5$", "None of these"],
-            correctAnswer: "None of these",
+            correctAnswer: "0",
             shuffle: true,
           },
           {
@@ -11123,8 +11123,8 @@ const quizzes = [
             math: true,
             image: "img/lagrange-data.png",
             question: "Using the same Lagrange data, $L_1(0) = ........$",
-            options: ["$1$", "$\\frac{1}{2}$", "$\\frac{5}{9}$", "$0$"],
-            correctAnswer: "$\\frac{5}{9}$",
+            options: ["$1$", "$\\frac{1}{9}$", "$\\frac{16}{9}$", "$0$"],
+            correctAnswer: "$\\frac{16}{9}$",
             shuffle: true,
           },
           {
@@ -11132,8 +11132,8 @@ const quizzes = [
             math: true,
             image: "img/lagrange-data.png",
             question: "Using the same Lagrange data, $p(0) = ........$",
-            options: ["$3$", "$0$", "$-5$", "None of these"],
-            correctAnswer: "$-5$",
+            options: ["$1$", "$0$", "$-5$", "None of these"],
+            correctAnswer: "$1$",
             shuffle: true,
           },
           {
@@ -11145,10 +11145,10 @@ const quizzes = [
             options: [
               "$\\frac{y}{x}$",
               "$\\frac{x}{y}$",
-              "$\\frac{a}{xy}$",
-              "$\\frac{1}{x}$",
+              "$\\frac{1}{xy}$",
+              "$\\frac{1}{y}$",
             ],
-            correctAnswer: "$\\frac{x}{y}$",
+            correctAnswer: "$\\frac{1}{y}$",
             shuffle: true,
           },
           {
