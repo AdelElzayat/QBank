@@ -11056,7 +11056,7 @@ const quizzes = [
             image: "img/difference-table.png",
             question: "Given the difference table for the data $(x,y)$, $B=$",
             options: ["$0.012$", "$0.05$", "$-0.01$", "None of these"],
-            correctAnswer: "0.012",
+            correctAnswer: "$0.012$",
             shuffle: true,
           },
           {
@@ -11115,7 +11115,7 @@ const quizzes = [
             question:
               "Let the Lagrange interpolation for the following data $(x_0, y_0), (x_1, y_1), (x_2, y_2), (x_3, y_3)$ respectively as shown in the above table be in the form $p(x) = 25 L_0(x) - 8 L_1(x) - 15 L_2(x) - 23 L_3(x)$. $L_0(1) = ........$",
             options: ["$3$", "$0$", "$-5$", "None of these"],
-            correctAnswer: "0",
+            correctAnswer: "$0$",
             shuffle: true,
           },
           {
@@ -11194,14 +11194,14 @@ const quizzes = [
             math: true,
             image: "img/fit-curve-table.png",
             question:
-              "The convergence condition for simple iteration method $x_{n+1}=\\varphi(x_n)$, $n=0,1,\\dots$ is-",
+              "The convergence condition for simple iteration method $x_{n+1}=X(x_n)$, $n=0,1,\\dots$ is-",
             options: [
-              "$\\vert{}\\varphi'(x)\\vert{}>1$",
-              "$\\vert{}\\varphi'(x)\\vert{}<1$",
-              "$\\vert{}\\varphi'(x)\\vert{}=1$",
-              "$\\vert{}\\varphi'(x)\\vert{}=0$",
+              "$\\vert{}X'(x)\\vert{}>1$",
+              "$\\vert{}X'(x)\\vert{}<1$",
+              "$\\vert{}X'(x)\\vert{}=1$",
+              "$\\vert{}X'(x)\\vert{}=0$",
             ],
-            correctAnswer: "$\\vert{}\\varphi'(x)\\vert{}<1$",
+            correctAnswer: "$\\vert{}X'(x)\\vert{}<1$",
             shuffle: true,
           },
           {
