@@ -296,8 +296,10 @@ button {
   padding: 0 var(--space-md);
   background: var(--navbar-bg);
   border-bottom: 1px solid var(--navbar-border);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  /* NOTE: no backdrop-filter here. A permanent backdrop-filter on this sticky
+     bar forced full-time compositing and made the whole UI render soft/blurry
+     in iOS standalone (PWA) mode. Removing it keeps the navbar and its logo,
+     text and buttons pixel-sharp. Overlay blurs (modals/panels) are unaffected. */
   transition: background var(--t), border-color var(--t);
 }
 

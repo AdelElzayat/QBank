@@ -430,6 +430,13 @@ toggleLogoPanel() {
             initTheme() {
                 const savedTheme = localStorage.getItem('quiz-theme') || 'light';
                 document.documentElement.setAttribute('data-theme', savedTheme);
+
+                // Keep the PWA/browser top-bar color locked to the ACTIVE theme
+                // (defense-in-depth; the inline <head> script normally does this).
+                const metaTheme = document.querySelector('meta[name="theme-color"]');
+                if (metaTheme) {
+                    metaTheme.content = savedTheme === 'dark' ? '#1e293b' : '#ffffff';
+                }
                 
                 // Sync the checkbox with saved theme
                 // Checked (sun/cloud shown) = light mode, Unchecked (stars shown) = dark mode
