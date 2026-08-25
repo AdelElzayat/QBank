@@ -5249,6 +5249,37 @@ body.login-modal-open { overflow: hidden; }
 .account-logout-btn:active { transform: scale(0.98); }
 .account-logout-icon { font-size: 1rem; line-height: 1; }
 
+/* ============================================================
+   All Questions (vertical) exam — dedicated scroll region.
+   While a vertical exam is on screen (body.vertical-exam-active,
+   toggled by setExamStatusBar/hideExamStatusBar), the page stops
+   scrolling at document level and #exam-scroll-region becomes
+   the ONLY scroll container. The scrollbar therefore starts at
+   the bottom edge of the pinned navbar + exam status bar instead
+   of sliding behind them.
+
+   Layout uses CSS Grid rows (auto auto 1fr), so NO header heights
+   are hardcoded — navbar and exam bar keep their natural sizes on
+   every device, and 100dvh handles iOS/Android dynamic viewports.
+   Step-by-Step mode / home page never get this class and are
+   completely unaffected.
+   ============================================================ */
+body.vertical-exam-active {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 100vh;      /* fallback for older browsers */
+  height: 100dvh;     /* dynamic viewport (iOS Safari / PWA) */
+  overflow: hidden;
+}
+
+body.vertical-exam-active .exam-scroll-region {
+  /* Row 3: everything below navbar + exam status bar scrolls here */
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
 
 
 

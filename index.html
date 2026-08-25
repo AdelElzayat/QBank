@@ -110,11 +110,17 @@
     <div class="exam-sidebar-overlay" id="exam-sidebar-overlay" onclick="quizApp.closeExamSidebar()" aria-hidden="true"></div>
 
 
-    <div class="main-content">
-        <div id="quiz-container">
-            <div id="quiz-content">
-                <div class="home-screen">
-                    <h1>Select a quiz to begin</h1>
+    <!-- Dedicated scroll region for the All Questions (vertical) exam.
+         Normally inert; ONLY while body.vertical-exam-active is set does it
+         become the page's scroll container (see style.css), so the scrollbar
+         starts BELOW the pinned navbar + exam status bar. -->
+    <div class="exam-scroll-region" id="exam-scroll-region">
+        <div class="main-content">
+            <div id="quiz-container">
+                <div id="quiz-content">
+                    <div class="home-screen">
+                        <h1>Select a quiz to begin</h1>
+                    </div>
                 </div>
             </div>
         </div>
@@ -720,6 +726,10 @@ openLoginModal() {
                 // Marks #quiz-container so CSS can visually flatten the big
                 // outer box on small screens (vertical layout only)
                 document.getElementById('quiz-container')?.classList.add('vertical-exam-mode');
+                // Turns .exam-scroll-region into the page's scroll container so
+                // the scrollbar starts BELOW the navbar + exam header (vertical
+                // layout only — see style.css)
+                document.body.classList.add('vertical-exam-active');
                 bar.innerHTML = html;
                 bar.hidden = false;
             },
@@ -728,6 +738,8 @@ openLoginModal() {
                 const bar = document.getElementById('exam-status-bar');
                 if (!bar) return;
                 document.getElementById('quiz-container')?.classList.remove('vertical-exam-mode');
+                // Restore normal document-level scrolling (Step-by-Step, home…)
+                document.body.classList.remove('vertical-exam-active');
                 bar.hidden = true;
                 bar.innerHTML = '';
             },
@@ -1429,6 +1441,10 @@ openLoginModal() {
                 const previous = root.style.scrollBehavior;
                 root.style.scrollBehavior = 'auto';
                 window.scrollTo(0, 0);
+                // Vertical exam mode scrolls inside the dedicated region,
+                // not the document — reset it too.
+                const region = document.getElementById('exam-scroll-region');
+                if (region) region.scrollTop = 0;
                 if (previous) {
                     root.style.scrollBehavior = previous;
                 } else {
