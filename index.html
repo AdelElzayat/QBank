@@ -45,7 +45,7 @@
 
 <body class="qbank-page">
     <nav class="navbar">
-        <div class="navbar-brand" style="cursor:pointer" onclick="quizApp.goHomeFromBrand()" aria-label="Back to home">
+        <div class="navbar-brand" style="cursor:pointer" onclick="quizApp.openExamSidebar()" aria-label="Open Exam Experience settings">
             <img src="img/AE-Logo.png" alt="QBank logo" class="brand-logo">
             <div class="brand-text">
                 <span class="brand-name">Adel Elzayat</span>
@@ -70,6 +70,14 @@
         </div>
     </nav>
 
+    <!-- VERTICAL exam mode ONLY: unified sticky exam status bar.
+         Sits in the document flow DIRECTLY after the navbar (outside
+         #quiz-content / #quiz-container), so navbar + this bar behave
+         as ONE application header and Question 1 always begins below
+         it — it can never overlap question content. Populated by
+         renderAllQuestions(), hidden everywhere else. -->
+    <header id="exam-status-bar" class="exam-status-bar" hidden aria-label="Exam status"></header>
+
     <!-- Dedicated logo/account sidebar (opens when clicking the profile logo button) -->
     <aside class="logo-panel" id="logo-panel" aria-label="Account sidebar">
         <div class="logo-panel-header">
@@ -85,6 +93,23 @@
         <div class="logo-panel-body" id="logo-panel-body"></div>
     </aside>
     <div class="logo-panel-overlay" id="logo-panel-overlay" onclick="quizApp.toggleLogoPanel()" aria-hidden="true"></div>
+    <!-- Exam Experience customization sidebar (opens via the top-left AE logo) -->
+    <aside class="exam-sidebar" id="exam-sidebar" aria-label="Exam Experience customization" aria-hidden="true">
+        <div class="exam-sidebar-header">
+            <div class="exam-sidebar-title-block">
+                <span class="exam-sidebar-kicker">QBank</span>
+                <h3 class="exam-sidebar-title">Exam Experience</h3>
+                <p class="exam-sidebar-sub">Customize how you take your exams.</p>
+            </div>
+            <button type="button" class="exam-sidebar-close" onclick="quizApp.closeExamSidebar()" aria-label="Close Exam Experience">&times;</button>
+        </div>
+        <div class="exam-sidebar-body" id="exam-sidebar-body"></div>
+        <div class="exam-sidebar-footer">
+            <span class="exam-sidebar-footnote">Your layout preference is saved automatically.</span>
+        </div>
+    </aside>
+    <div class="exam-sidebar-overlay" id="exam-sidebar-overlay" onclick="quizApp.closeExamSidebar()" aria-hidden="true"></div>
+
 
     <div class="main-content">
         <div id="quiz-container">
@@ -185,6 +210,9 @@
             savedResultsData: [],
             questionAnswered: false,
             subjectBackIndex: null,
+            currentLayout: 'step',
+            examLayoutKey: 'examQuestionLayout',
+            _quizRunning: false,
 
             isWrittenQuestion(question) {
                 return question && (question.type === 'complete' || question.type === 'written');
@@ -259,6 +287,7 @@
 
             async init() {
                 this.initTheme();
+                this.renderExamSidebar();
                 this.initAuth();
                 this.checkUrlParams();
             },
@@ -386,6 +415,467 @@ toggleLogoPanel() {
                 }
                 this.goHome();
             },
+
+            /* =========================================================
+               Exam Experience — layout customization sidebar
+               (opens from the top-left AE logo)
+               ========================================================= */
+
+            getExamLayout() {
+                try {
+                    const saved = localStorage.getItem(this.examLayoutKey);
+                    return saved === 'all' ? 'all' : 'step';
+                } catch (e) {
+                    return 'step';
+                }
+            },
+
+            examInProgress() {
+                return !!this.currentQuiz && this._quizRunning;
+            },
+
+            renderExamSidebar() {
+                const bodyEl = document.getElementById('exam-sidebar-body');
+                if (!bodyEl) return;
+
+                const layout = this.getExamLayout();
+                const locked = this.examInProgress();
+
+                bodyEl.innerHTML = `
+                    <div class="exam-section-label">Question Layout</div>
+                    <p class="exam-section-hint">Choose how questions are presented when you start an exam.</p>
+                    <div class="exam-layout-options">
+                        <button type="button" class="exam-layout-option ${layout === 'step' ? 'active' : ''} ${locked ? 'locked' : ''}"
+                            data-layout="step" onclick="quizApp.selectExamLayout('step')" ${locked ? 'disabled' : ''} aria-pressed="${layout === 'step'}">
+                            <span class="exam-option-radio" aria-hidden="true"></span>
+                            <span class="exam-option-main">
+                                <span class="exam-option-title">Step-by-Step</span>
+                                <span class="exam-option-desc">One question at a time</span>
+                            </span>
+                            <span class="exam-option-visual exam-visual-step" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                            </span>
+                        </button>
+                        <button type="button" class="exam-layout-option ${layout === 'all' ? 'active' : ''} ${locked ? 'locked' : ''}"
+                            data-layout="all" onclick="quizApp.selectExamLayout('all')" ${locked ? 'disabled' : ''} aria-pressed="${layout === 'all'}">
+                            <span class="exam-option-radio" aria-hidden="true"></span>
+                            <span class="exam-option-main">
+                                <span class="exam-option-title">All Questions</span>
+                                <span class="exam-option-desc">View the complete exam vertically</span>
+                            </span>
+                            <span class="exam-option-visual exam-visual-all" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                            </span>
+                        </button>
+                    </div>
+                    ${locked ? '<div class="exam-layout-note">🔒 Layout changes apply to your next exam.</div>' : ''}
+                `;
+            },
+
+            openExamSidebar() {
+                this.renderExamSidebar();
+                const panel = document.getElementById('exam-sidebar');
+                const overlay = document.getElementById('exam-sidebar-overlay');
+                if (!panel || !overlay) return;
+                panel.classList.add('active');
+                overlay.classList.add('active');
+                document.body.classList.add('exam-sidebar-open');
+                panel.setAttribute('aria-hidden', 'false');
+                overlay.setAttribute('aria-hidden', 'false');
+            },
+
+            closeExamSidebar() {
+                const panel = document.getElementById('exam-sidebar');
+                const overlay = document.getElementById('exam-sidebar-overlay');
+                if (panel) { panel.classList.remove('active'); panel.setAttribute('aria-hidden', 'true'); }
+                if (overlay) { overlay.classList.remove('active'); overlay.setAttribute('aria-hidden', 'true'); }
+                document.body.classList.remove('exam-sidebar-open');
+            },
+
+            toggleExamSidebar() {
+                const panel = document.getElementById('exam-sidebar');
+                if (panel && panel.classList.contains('active')) {
+                    this.closeExamSidebar();
+                } else {
+                    this.openExamSidebar();
+                }
+            },
+
+            selectExamLayout(layout) {
+                if (this.examInProgress()) return;
+                if (layout !== 'step' && layout !== 'all') return;
+                try {
+                    localStorage.setItem(this.examLayoutKey, layout);
+                } catch (e) { /* storage unavailable */ }
+                this.currentLayout = layout;
+                this.renderExamSidebar();
+            },
+
+            /* =========================================================
+               All Questions (vertical) layout — same engine, one-page view
+               ========================================================= */
+
+            /* Exam status bar (VERTICAL layout only). Lives right after
+               <nav> — OUTSIDE #quiz-container whose overflow:hidden would
+               trap a sticky element. Pure CSS sticky, no scroll listeners.
+               Navbar + this bar form one unified application header. */
+            setExamStatusBar(html) {
+                const bar = document.getElementById('exam-status-bar');
+                if (!bar) return;
+                bar.innerHTML = html;
+                bar.hidden = false;
+            },
+
+            hideExamStatusBar() {
+                const bar = document.getElementById('exam-status-bar');
+                if (!bar) return;
+                bar.hidden = true;
+                bar.innerHTML = '';
+            },
+
+            renderAllQuestions() {
+                const content = document.getElementById('quiz-content');
+                const processed = this.processedQuestions;
+                const total = processed.length;
+
+                const modeLabel = this.currentMode === 'quiz' ? '⏱ Timed' : '🎯 Practice';
+
+                // Sticky header keeps the shared timer + progress reachable while scrolling
+                let timerHTML = '';
+                if (this.currentMode === 'quiz') {
+                    timerHTML = `
+                        <div id="quiz-timer-wrapper" class="quiz-timer-wrapper vertical-timer">
+                            <div id="quiz-mode-timer" class="quiz-timer" role="timer" aria-label="Time remaining">
+                                <svg class="quiz-timer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="10" x2="14" y1="2" y2="2"></line>
+                                    <line x1="12" x2="15" y1="13" y2="11"></line>
+                                    <circle cx="12" cy="14" r="8"></circle>
+                                </svg>
+                                <span class="quiz-timer-text">
+                                    <span class="quiz-timer-remaining">00:00</span>
+                                    <span class="quiz-timer-total">of 00:00</span>
+                                </span>
+                            </div>
+                        </div>`;
+                }
+
+                let answered = 0;
+                processed.forEach((_, i) => { if (this.userAnswers[i] !== undefined) answered++; });
+                const answeredPct = total ? Math.round((answered / total) * 100) : 0;
+
+                const cards = processed.map((q, i) => this.renderVerticalQuestion(q, i)).join('');
+
+                // Unified exam header (VERTICAL only): rendered into the dedicated
+                // bar AFTER <nav> so navbar + status bar behave as one sticky
+                // application header. Questions start BELOW it in normal flow.
+                this.setExamStatusBar(`
+                    <div class="exam-status-bar-inner">
+                        <div class="exam-status-row">
+                            <button class="btn-back" onclick="quizApp.goHome()" aria-label="Back to quizzes">← <span class="exam-back-text">Back</span></button>
+                            ${timerHTML}
+                            <h1 class="quiz-header-title">${this.currentQuiz.title}</h1>
+                            <span class="mode-badge vertical-mode-badge ${this.currentMode === 'quiz' ? 'timed' : 'practice'}">${modeLabel}</span>
+                        </div>
+                        <div class="vertical-quiz-progress">
+                            <span class="vertical-progress-label" id="vertical-progress-label">${answered}/${total} answered</span>
+                            <div class="progress-bar"><div class="progress-bar-fill" id="vertical-progress-fill" style="width:${answeredPct}%"></div></div>
+                        </div>
+                    </div>
+                `);
+
+                content.innerHTML = `
+                    <div class="vertical-quiz">
+                        <div class="vertical-quiz-questions">
+                            ${cards}
+                        </div>
+                        <div class="vertical-quiz-footer">
+                            <button class="btn btn-secondary btn-footer" onclick="quizApp.shareQuiz()"><span class="btn-icon">🔗</span><span>Share</span></button>
+                            <button class="btn btn-primary btn-submit" onclick="quizApp.finishVerticalExam()">Submit Exam</button>
+                        </div>
+                    </div>
+                `;
+
+                if (this.currentMode === 'quiz') {
+                    this.updateTimerDisplay();
+                }
+            },
+
+            renderVerticalQuestion(question, qIndex) {
+                const typeLabel = question.type === 'true_false' ? 'True / False'
+                    : (this.isWrittenQuestion(question) ? 'Written Answer' : 'Multiple Choice');
+
+                let imageHTML = '';
+                if (question.image && question.image.trim() !== '') {
+                    imageHTML = `
+                        <div class="question-image-container">
+                            <img src="${question.image}" class="question-image" onerror="this.parentElement.style.display='none';" alt="Question image">
+                        </div>`;
+                }
+
+                const answerHTML = this.isWrittenQuestion(question)
+                    ? this.renderVerticalWritten(question, qIndex)
+                    : this.renderVerticalOptions(question, qIndex);
+
+                return `
+                    <div class="vertical-question-card" data-qindex="${qIndex}">
+                        <div class="vertical-question-head">
+                            <span class="vertical-question-num">Question ${qIndex + 1}</span>
+                            <span class="question-type">${typeLabel}</span>
+                        </div>
+                        ${imageHTML}
+                        <div class="question-text">${this.formatMath(question.question, question)}</div>
+                        ${answerHTML}
+                    </div>
+                `;
+            },
+
+            renderVerticalOptions(question, qIndex) {
+                const answered = this.userAnswers[qIndex] !== undefined;
+                const savedAnswer = this.userAnswers[qIndex];
+
+                const optionsHtml = question.options.map((option, index) => {
+                    const safeOption = option.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+                    let cls = 'option';
+                    if (savedAnswer === option) cls += ' selected';
+                    if (this.currentMode === 'normal' && answered) {
+                        const correctAnswers = Array.isArray(question.correctAnswer) ? question.correctAnswer : [question.correctAnswer];
+                        const isCorrect = correctAnswers.some(c => normalizeAnswer(c) === normalizeAnswer(option));
+                        const isWrong = normalizeAnswer(option) === normalizeAnswer(savedAnswer) && !isCorrect;
+                        if (isCorrect) cls += ' correct';
+                        if (isWrong) cls += ' wrong';
+                        if (isCorrect || isWrong) cls += ' disabled';
+                    }
+                    return `
+                        <div class="${cls}" data-option-norm="${this.escapeHtml(normalizeAnswer(option))}" onclick="quizApp.handleVerticalAnswer(${qIndex}, '${safeOption}')">
+                            <span class="option-letter">${String.fromCharCode(65 + index)}</span>
+                            <span class="option-text">${this.formatMath(option, question)}</span>
+                            <span class="option-check" aria-hidden="true"></span>
+                        </div>`;
+                }).join('');
+
+                return `<div class="options">${optionsHtml}</div>`;
+            },
+
+            renderVerticalWritten(question, qIndex) {
+                const expectedAnswers = this.getExpectedAnswers(question);
+                const isMulti = this.isMultiWrittenQuestion(question);
+                const answered = this.userAnswers[qIndex] !== undefined;
+                const savedAnswer = this.userAnswers[qIndex];
+
+                let fields = '';
+                if (isMulti) {
+                    const values = Array.isArray(savedAnswer) ? savedAnswer : Array(expectedAnswers.length).fill('');
+                    fields = expectedAnswers.map((_, idx) => `
+                        <div class="multi-input-row">
+                            <span class="multi-input-number">${idx + 1}</span>
+                            <input type="text" id="vcomplete-${qIndex}-${idx}" class="complete-answer-field"
+                                placeholder="Answer ${idx + 1}" aria-label="Answer ${idx + 1}"
+                                value="${this.escapeHtml(values[idx] || '')}"
+                                oninput="quizApp.handleVerticalCompleteInput(${qIndex}, event, ${idx})"
+                                onkeydown="quizApp.handleVerticalMultiKeyDown(event, ${qIndex}, ${idx}, ${expectedAnswers.length - 1})"
+                                ${answered && this.currentMode === 'normal' ? 'disabled' : ''}>
+                        </div>`).join('');
+                } else {
+                    fields = `
+                        <div class="input-wrapper">
+                            <input type="text" id="vcomplete-${qIndex}-0" class="complete-answer-field"
+                                placeholder="Type your answer..." aria-label="Answer"
+                                value="${this.escapeHtml(savedAnswer || '')}"
+                                oninput="quizApp.handleVerticalCompleteInput(${qIndex}, event, 0)"
+                                onkeydown="quizApp.handleVerticalMultiKeyDown(event, ${qIndex}, 0, 0)"
+                                ${answered && this.currentMode === 'normal' ? 'disabled' : ''}>
+                        </div>`;
+                }
+
+                const checkBtn = (this.currentMode === 'normal' && !answered)
+                    ? `<button type="button" class="btn btn-primary vertical-check-btn" onclick="quizApp.submitVerticalWritten(${qIndex})">Check</button>`
+                    : '';
+
+                return `
+                    <div class="complete-input vertical-complete-input">
+                        ${isMulti ? `<div class="multi-complete-fields">${fields}</div>` : fields}
+                        <div id="vfeedback-${qIndex}" class="written-feedback"></div>
+                        ${checkBtn}
+                    </div>`;
+            },
+
+            updateVerticalProgress() {
+                const total = this.processedQuestions.length;
+                let answered = 0;
+                this.processedQuestions.forEach((_, i) => { if (this.userAnswers[i] !== undefined) answered++; });
+                const label = document.getElementById('vertical-progress-label');
+                if (label) label.textContent = `${answered}/${total} answered`;
+                const fill = document.getElementById('vertical-progress-fill');
+                if (fill) fill.style.width = (total ? Math.round((answered / total) * 100) : 0) + '%';
+            },
+
+            handleVerticalAnswer(qIndex, answer) {
+                const currentQuestion = this.processedQuestions[qIndex];
+                if (!currentQuestion) return;
+
+                if (this.currentMode === 'normal' && this.userAnswers[qIndex] !== undefined) return;
+
+                this.selectedAnswer = answer;
+                this.userAnswers[qIndex] = answer;
+                this.questionAnswered = true;
+
+                const card = document.querySelector(`.vertical-question-card[data-qindex="${qIndex}"]`);
+                const options = card ? card.querySelectorAll('.option') : [];
+
+                if (this.currentMode === 'normal') {
+                    this.saveProgress();
+                    const correctAnswers = Array.isArray(currentQuestion.correctAnswer) ? currentQuestion.correctAnswer : [currentQuestion.correctAnswer];
+                    const normalizedAnswer = normalizeAnswer(answer);
+                    options.forEach(option => {
+                        const normalizedOptionText = option.getAttribute('data-option-norm') || normalizeAnswer(option.querySelector('.option-text').textContent);
+                        const isCorrect = correctAnswers.some(c => normalizeAnswer(c) === normalizedOptionText);
+                        const isWrong = normalizedOptionText === normalizedAnswer && !isCorrect;
+                        if (isCorrect) option.classList.add('correct');
+                        if (isWrong) option.classList.add('wrong');
+                        if (isCorrect || isWrong) option.classList.add('disabled');
+                    });
+                } else {
+                    this.saveQuizModeProgress();
+                    options.forEach(option => {
+                        option.classList.remove('selected');
+                        const optionNorm = option.getAttribute('data-option-norm') || normalizeAnswer(option.querySelector('.option-text').textContent);
+                        if (optionNorm === normalizeAnswer(answer)) option.classList.add('selected');
+                    });
+                }
+
+                this.updateVerticalProgress();
+            },
+
+            handleVerticalCompleteInput(qIndex, event, fieldIndex) {
+                const question = this.processedQuestions[qIndex];
+                if (!question || !this.isWrittenQuestion(question)) return;
+
+                const value = event.target.value;
+
+                if (this.isMultiWrittenQuestion(question)) {
+                    const expected = this.getExpectedAnswers(question);
+                    const answers = Array.isArray(this.selectedAnswer) ? [...this.selectedAnswer] : Array(expected.length).fill('');
+                    answers[fieldIndex] = value;
+                    this.selectedAnswer = answers;
+                    if (this.currentMode === 'quiz') {
+                        const hasValue = answers.some(a => normalizeAnswer(a) !== '');
+                        this.userAnswers[qIndex] = hasValue ? answers : undefined;
+                        this.saveQuizModeProgress();
+                    }
+                } else {
+                    this.selectedAnswer = value;
+                    if (this.currentMode === 'quiz') {
+                        this.userAnswers[qIndex] = value.trim() || undefined;
+                        this.saveQuizModeProgress();
+                    }
+                }
+
+                this.updateVerticalProgress();
+            },
+
+            handleVerticalMultiKeyDown(event, qIndex, currentIndex, lastIndex) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    if (currentIndex < lastIndex) {
+                        const next = document.getElementById(`vcomplete-${qIndex}-${currentIndex + 1}`);
+                        if (next) next.focus();
+                    } else if (this.currentMode === 'normal' && this.isWrittenQuestion(this.processedQuestions[qIndex])) {
+                        this.submitVerticalWritten(qIndex);
+                    }
+                }
+            },
+
+            submitVerticalWritten(qIndex) {
+                const question = this.processedQuestions[qIndex];
+                if (!question || !this.isWrittenQuestion(question)) return;
+                if (this.currentMode !== 'normal') return;
+
+                const hasAnswer = Array.isArray(this.selectedAnswer)
+                    ? this.selectedAnswer.length > 0 && this.selectedAnswer.every(a => normalizeAnswer(a) !== '')
+                    : normalizeAnswer(this.selectedAnswer) !== '';
+                if (!hasAnswer) return;
+
+                let answerToSave = this.selectedAnswer;
+                if (this.isMultiWrittenQuestion(question)) {
+                    answerToSave = this.selectedAnswer.map(a => a.trim());
+                } else {
+                    answerToSave = String(this.selectedAnswer).trim();
+                }
+
+                this.userAnswers[qIndex] = answerToSave;
+                this.saveProgress();
+                this.questionAnswered = true;
+
+                const isCorrect = this.checkAnswer(question, answerToSave);
+                this.markVerticalWrittenFeedback(qIndex, question, answerToSave, isCorrect);
+                this.updateVerticalProgress();
+            },
+
+            markVerticalWrittenFeedback(qIndex, question, userAnswer, isCorrect) {
+                const card = document.querySelector(`.vertical-question-card[data-qindex="${qIndex}"]`);
+                const container = card ? card.querySelector('.complete-input') : null;
+                if (container) container.classList.add(isCorrect ? 'correct' : 'wrong');
+
+                if (this.isMultiWrittenQuestion(question)) {
+                    const expected = this.getExpectedAnswers(question).map(normalizeAnswer);
+                    const remaining = [...expected];
+                    const inputs = card ? card.querySelectorAll('.complete-answer-field') : [];
+                    inputs.forEach((input, index) => {
+                        const normalizedValue = normalizeAnswer(input.value || '');
+                        let fieldCorrect = false;
+                        if (this.getValidationMode(question) === 'ordered') {
+                            fieldCorrect = normalizedValue === expected[index];
+                        } else {
+                            const matchIndex = remaining.findIndex(c => c === normalizedValue);
+                            fieldCorrect = matchIndex !== -1;
+                            if (fieldCorrect) remaining.splice(matchIndex, 1);
+                        }
+                        input.classList.toggle('correct', fieldCorrect);
+                        input.classList.toggle('wrong', !fieldCorrect);
+                        input.disabled = true;
+                    });
+                } else {
+                    const input = card ? card.querySelector('.complete-answer-field') : null;
+                    if (input) { input.classList.toggle('correct', isCorrect); input.classList.toggle('wrong', !isCorrect); input.disabled = true; }
+                }
+
+                const checkBtn = card ? card.querySelector('.vertical-check-btn') : null;
+                if (checkBtn) checkBtn.remove();
+
+                const feedbackDiv = card ? card.querySelector('.written-feedback') : null;
+                if (feedbackDiv) {
+                    const correctAnswers = this.getExpectedAnswers(question);
+                    const displayCorrect = correctAnswers.length > 1
+                        ? `<ul>${correctAnswers.map(a => `<li>${this.formatMath(a, question)}</li>`).join('')}</ul>`
+                        : `<strong>${this.formatMath(correctAnswers[0], question)}</strong>`;
+                    feedbackDiv.className = `written-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+                    feedbackDiv.innerHTML = `
+                        <div class="feedback-status ${isCorrect ? 'correct' : 'incorrect'}">
+                            ${isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                        </div>
+                        ${!isCorrect ? `<div class="correct-answer-text">${correctAnswers.length > 1 ? 'Correct answers:' : 'Correct answer:'} ${displayCorrect}</div>` : ''}
+                        ${question.explanation ? `<div class="explanation">${this.formatMath(question.explanation, question)}</div>` : ''}
+                    `;
+                    feedbackDiv.style.display = 'block';
+                }
+            },
+
+            finishVerticalExam() {
+                // Submits straight away — same behavior as the step-by-step layout
+                if (this.currentMode === 'quiz') {
+                    this.submitQuizMode();
+                } else {
+                    this.clearProgress();
+                    this.showResults();
+                }
+            },
+
+
+
+
+
+
+
             async logout() {
                 try {
                     await signOut(auth);
@@ -931,6 +1421,8 @@ toggleLogoPanel() {
                 // Support both numeric index (from regular quizzes) and object (from chapter quizzes)
                 this.currentQuiz = typeof quizIndex === 'object' ? quizIndex : quizzes[quizIndex];
                 this.currentMode = mode;
+                this.currentLayout = this.getExamLayout();
+                this._quizRunning = true;
                 this.resetState();
                 this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
 
@@ -990,6 +1482,12 @@ toggleLogoPanel() {
 
             renderQuiz() {
                 const content = document.getElementById('quiz-content');
+                if (this.currentLayout === 'all') {
+                    this.renderAllQuestions();
+                    return;
+                }
+                // Horizontal (step-by-step) mode must never show the vertical exam header
+                this.hideExamStatusBar();
                 const question = this.processedQuestions[this.currentQuestionIndex];
 
                 let imageHTML = "";
@@ -1460,6 +1958,9 @@ toggleLogoPanel() {
             },
 
             async showResults() {
+                this._quizRunning = false;
+                this.hideExamStatusBar();
+                this.closeExamSidebar();
                 // Hide the timer wrapper when showing results
                 const wrapper = document.getElementById('quiz-timer-wrapper');
                 if (wrapper) wrapper.style.display = 'none';
@@ -1745,6 +2246,9 @@ toggleLogoPanel() {
             },
 
             goHome() {
+                this._quizRunning = false;
+                this.hideExamStatusBar();
+                this.closeExamSidebar();
                 // Hide the timer wrapper
                 const wrapper = document.getElementById('quiz-timer-wrapper');
                 if (wrapper) wrapper.style.display = 'none';

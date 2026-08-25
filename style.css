@@ -1653,7 +1653,6 @@ button {
   max-width: 340px;
 }
 .score-ring {
-  --p: 0;
   width: 190px;
   height: 190px;
   border-radius: 50%;
@@ -3381,7 +3380,10 @@ body.profile-panel-open {
   gap: var(--space-sm);
 }
 .score-ring {
-  --p: 85;
+  /* NOTE: no local --p here on purpose. The real score arrives via an
+     inline style on .score-display (style="--p:<percentage>") and must
+     INHERIT down to this element. Declaring --p locally would override
+     the inherited value and freeze the ring at one fixed ratio. */
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -4687,3 +4689,514 @@ body.ts-open { overflow: hidden; }
     font-size: 1.1rem;
   }
 }
+
+/* ============================================================
+   Exam Experience — customization sidebar (opens via AE logo)
+   ============================================================ */
+.exam-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 360px;
+  max-width: 88vw;
+  height: 100vh;
+  height: 100dvh;
+  background:
+    radial-gradient(520px 240px at -40px -60px, rgba(139, 92, 246, 0.16), transparent 60%),
+    var(--card-bg);
+  border-right: 1px solid var(--card-border);
+  border-top-right-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  box-shadow: 18px 0 44px rgba(0, 0, 0, 0.24);
+  z-index: 4000;
+  transform: translateX(-100%);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+.exam-sidebar.active {
+  transform: translateX(0);
+  visibility: visible;
+}
+.exam-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 12, 24, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 3900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.exam-sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+body.exam-sidebar-open {
+  overflow: hidden;
+}
+
+.exam-sidebar-header {
+  position: relative;
+  flex-shrink: 0;
+  padding: 22px 22px 18px;
+  background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 46%, var(--accent) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 30px -18px rgba(99, 102, 241, 0.7);
+}
+.exam-sidebar-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03) 42%, transparent 80%);
+  pointer-events: none;
+}
+.exam-sidebar-title-block {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+.exam-sidebar-kicker {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 4px;
+}
+.exam-sidebar-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+.exam-sidebar-sub {
+  margin: 5px 0 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+}
+.exam-sidebar-close {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition: all var(--t);
+}
+.exam-sidebar-close:hover {
+  background: rgba(255, 255, 255, 0.34);
+  border-color: rgba(255, 255, 255, 0.42);
+  transform: rotate(90deg);
+}
+.exam-sidebar-close:active {
+  transform: rotate(90deg) scale(0.94);
+}
+
+.exam-sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exam-section-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.exam-section-hint {
+  margin: -4px 0 4px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.exam-layout-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.exam-layout-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 14px;
+  text-align: left;
+  font-family: inherit;
+  background: var(--card-bg-2);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--t);
+  -webkit-tap-highlight-color: transparent;
+}
+.exam-layout-option:hover:not(:disabled) {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+.exam-layout-option.active {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary-soft) 0%, var(--accent-soft) 100%);
+  box-shadow: var(--shadow-glow);
+}
+.exam-layout-option.locked,
+.exam-layout-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.exam-option-radio {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: var(--card-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--t);
+}
+.exam-layout-option.active .exam-option-radio {
+  border-color: var(--primary);
+  background: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+.exam-layout-option.active .exam-option-radio::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.exam-option-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.exam-option-title {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--text-color);
+}
+.exam-option-desc {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.exam-option-visual {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 34px;
+}
+.exam-option-visual i {
+  display: block;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--border-strong);
+  transition: background var(--t);
+}
+.exam-layout-option.active .exam-option-visual i {
+  background: var(--primary);
+}
+.exam-visual-all { gap: 3px; }
+.exam-visual-all i { height: 3px; }
+
+.exam-layout-note {
+  margin-top: 2px;
+  padding: 11px 13px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  background: var(--primary-soft);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-md);
+}
+
+.exam-sidebar-footer {
+  flex-shrink: 0;
+  padding: 12px 18px 16px;
+  border-top: 1px solid var(--card-border);
+}
+.exam-sidebar-footnote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.exam-sidebar-footnote::before {
+  content: "✓";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--success-soft);
+  color: var(--success);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+}
+
+/* ============================================================
+   All Questions (vertical) layout
+   ============================================================ */
+.vertical-quiz {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   Unified exam header — VERTICAL ("All Questions") layout ONLY.
+   .exam-status-bar is a direct child of <body> placed right after
+   the sticky .navbar, so the two pin together as ONE continuous
+   application header. The bar stays in normal document flow, so
+   Question 1 always begins BELOW it — overlap is impossible, no
+   guessed heights, no JS scroll listeners. Theme tokens only:
+   works identically in dark & light mode.
+   ============================================================ */
+.exam-status-bar {
+  position: sticky;
+  /* Mirrors .qbank-page .navbar pinning: nav height + phone notch */
+  top: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
+  z-index: 90; /* above page content, just below the navbar (100) */
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+}
+.exam-status-bar[hidden] { display: none; }
+
+.exam-status-bar-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Row 1: ← Back | Quiz title | 🎯 Practice / ⏱ Timed */
+.exam-status-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+.exam-status-row .quiz-header-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--text-color);
+  font-size: clamp(0.95rem, 3vw, 1.2rem);
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.exam-status-bar .btn-back {
+  color: var(--text-color);
+  border-color: var(--card-border);
+  background: var(--card-bg-2);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  flex-shrink: 0;
+  min-height: 38px; /* comfortable touch target on mobile */
+}
+.exam-status-bar .btn-back:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.exam-status-bar .vertical-mode-badge {
+  flex-shrink: 0;
+  font-weight: 700;
+}
+/* Timed mode capsule — same look as before, minus the old push rule */
+.exam-status-bar .vertical-timer {
+  flex-shrink: 0;
+}
+.exam-status-bar .vertical-timer .quiz-timer {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.vertical-quiz-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.vertical-progress-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+.vertical-progress-label::before {
+  content: "✓ ";
+  color: var(--success);
+}
+.vertical-quiz-progress .progress-bar {
+  background: var(--card-bg-2);
+  border: 1px solid var(--card-border);
+}
+.vertical-quiz-progress .progress-bar-fill {
+  background: var(--brand-gradient);
+}
+.vertical-quiz-questions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+.vertical-question-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+.vertical-question-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+.vertical-question-num {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  background: var(--primary-soft);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+.vertical-complete-input {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+.vertical-check-btn {
+  margin-top: var(--space-md);
+  align-self: flex-start;
+}
+.vertical-quiz-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) 0;
+  border-top: 1px dashed var(--card-border);
+}
+.vertical-quiz-footer .btn-submit {
+  min-height: 48px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glow);
+}
+.vertical-quiz-footer .btn-submit:active {
+  transform: scale(0.97);
+}
+
+@media (min-width: 900px) {
+  /* Desktop navbar is 72px tall — keep the bar glued beneath it */
+  .exam-status-bar {
+    top: calc(72px + env(safe-area-inset-top, 0px));
+  }
+}
+
+@media (max-width: 599px) {
+  .exam-status-bar-inner {
+    padding: var(--space-xs) var(--space-sm);
+  }
+  .exam-status-row {
+    gap: var(--space-xs);
+  }
+  .exam-status-row .quiz-header-title {
+    font-size: 0.95rem;
+  }
+  .vertical-question-card {
+    padding: var(--space-md);
+  }
+  .vertical-quiz-footer .btn-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 379px) {
+  /* Very narrow phones: collapse the Back label to keep row 1 on a
+     single line with no collisions. Visually hidden but still read
+     by screen readers (accessibility preserved). */
+  .exam-status-bar .btn-back .exam-back-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* Logo trigger for the Exam Experience sidebar — subtle interaction only */
+.navbar-brand {
+  border-radius: var(--radius-md);
+  transition: opacity var(--t), transform var(--t);
+}
+.navbar-brand:hover {
+  opacity: 0.82;
+}
+.navbar-brand:active {
+  transform: scale(0.97);
+}
+
+
+
+
