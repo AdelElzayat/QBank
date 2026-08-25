@@ -80,21 +80,18 @@
          renderAllQuestions(), hidden everywhere else. -->
     <header id="exam-status-bar" class="exam-status-bar" hidden aria-label="Exam status"></header>
 
-    <!-- Dedicated logo/account sidebar (opens when clicking the profile logo button) -->
-    <aside class="logo-panel" id="logo-panel" aria-label="Account sidebar">
-        <div class="logo-panel-header">
-            <div class="logo-panel-title">
-                <img src="img/AE-Logo.png" alt="QBank logo" class="logo-panel-logo">
-                <span class="logo-panel-title-text">
-                    <span class="logo-panel-kicker">QBank</span>
-                    <h3>My Account</h3>
-                </span>
-            </div>
-            <button type="button" class="logo-panel-close" onclick="quizApp.toggleLogoPanel()" aria-label="Close account sidebar">×</button>
+    <!-- Account popup (opened ONLY by the profile icon when logged in).
+         Centered modal reusing the login modal's overlay/backdrop/
+         animation system. Contains user info + Logout only — Results
+         lives exclusively in the Exam Experience sidebar. -->
+    <div class="login-modal-overlay" id="account-modal-overlay" aria-hidden="true">
+        <div class="login-modal-backdrop" onclick="quizApp.closeAccountModal()" aria-hidden="true"></div>
+        <div class="login-modal-card account-modal-card" role="dialog" aria-modal="true" aria-labelledby="account-modal-title">
+            <button type="button" class="login-modal-close" onclick="quizApp.closeAccountModal()" aria-label="Close account dialog">&times;</button>
+            <!-- Rendered by quizApp.updateAccountModal() -->
+            <div id="account-modal-body"></div>
         </div>
-        <div class="logo-panel-body" id="logo-panel-body"></div>
-    </aside>
-    <div class="logo-panel-overlay" id="logo-panel-overlay" onclick="quizApp.toggleLogoPanel()" aria-hidden="true"></div>
+    </div>
     <!-- Exam Experience customization sidebar (opens via the top-left AE logo) -->
     <aside class="exam-sidebar" id="exam-sidebar" aria-label="Exam Experience customization" aria-hidden="true">
         <div class="exam-sidebar-header">
@@ -373,93 +370,73 @@
                         currentUser = null;
                         isAdmin = false;
                     }
-                    this.updateLogoPanel();
+                    this.updateAccountModal();
                 });
             },
 
 
-            updateLogoPanel() {
-                const bodyEl = document.getElementById('logo-panel-body');
-                if (!bodyEl) return;
+            /* =========================================================
+               Account Popup — centered modal opened ONLY by the profile
+               icon when logged in. Reuses the login modal's overlay/
+               backdrop/animation system (.login-modal-overlay).
+               Contains user info + Logout ONLY — Results lives
+               exclusively in the Exam Experience sidebar.
+               ========================================================= */
+            updateAccountModal() {
+                const bodyEl = document.getElementById('account-modal-body');
+                if (!bodyEl || !currentUser) return;
 
-                const acctFooter = `
-                        <div class="acct-footer">
-                            <span class="acct-footer-icon" aria-hidden="true">🛡️</span>
-                            <span>Your data is secure and private</span>
-                        </div>
-                    `;
+                const name = currentUser.displayName || 'User';
+                const initial = name.trim().charAt(0).toUpperCase();
 
-                if (currentUser) {
-                    bodyEl.innerHTML = `
-                        <div class="acct-welcome-card">
-                            <div class="acct-welcome-icon" aria-hidden="true">👋</div>
-                            <div class="acct-welcome-text">
-                                <div class="acct-welcome-title">Welcome back, ${currentUser.displayName || 'User'}!</div>
-                                <div class="acct-welcome-sub">Nice to see you again. Pick up where you left off.</div>
-                            </div>
-                        </div>
-                        <div class="acct-user-card">
-                            <div class="acct-user-avatar" aria-hidden="true">👤</div>
-                            <div class="acct-user-meta">
-                                <div class="acct-user-name">${currentUser.displayName || 'User'}</div>
-                                <div class="acct-user-sub">${currentUser.email}</div>
-                            </div>
-                            ${isAdmin ? '<span class="acct-status-badge acct-status-admin">Admin</span>' : '<span class="acct-status-badge">Member</span>'}
-                        </div>
-                        <div class="acct-actions">
-                            <button type="button" class="acct-btn acct-btn-primary" onclick="quizApp.showResultsHistory()">
-                                <span class="acct-btn-icon" aria-hidden="true">📊</span>
-                                <span>My Results</span>
-                            </button>
-                            ${isAdmin ? '<button type="button" class="acct-btn acct-btn-admin" onclick="quizApp.showAdminPanel()"><span class="acct-btn-icon" aria-hidden="true">🛠</span><span>Admin Panel</span></button>' : ''}
-                            <button type="button" class="acct-btn acct-btn-ghost" onclick="quizApp.logout()">
-                                <span class="acct-btn-icon" aria-hidden="true">🚪</span>
-                                <span>Logout</span>
-                            </button>
-                        </div>
-                        ${acctFooter}
-                    `;
-                } else {
-                    bodyEl.innerHTML = `
-                        <div class="acct-welcome-card">
-                            <div class="acct-welcome-icon" aria-hidden="true">✨</div>
-                            <div class="acct-welcome-text">
-                                <div class="acct-welcome-title">Welcome to QBank</div>
-                                <div class="acct-welcome-sub">Sign in to save your progress, track your scores and unlock all features.</div>
-                            </div>
-                        </div>
-                        <div class="acct-user-card">
-                            <div class="acct-user-avatar" aria-hidden="true">👤</div>
-                            <div class="acct-user-meta">
-                                <div class="acct-user-name">Guest User</div>
-                                <div class="acct-user-sub">Not signed in</div>
-                            </div>
-                            <span class="acct-status-badge">Guest</span>
-                        </div>
-                        <div class="acct-features-card">
-                            <div class="acct-features-title">
-                                <span class="acct-features-icon" aria-hidden="true">🔓</span>
-                                <span>Sign in to unlock</span>
-                            </div>
-                            <ul class="acct-features-list">
-                                <li><span class="acct-check" aria-hidden="true">✓</span><span>Save your progress &amp; results</span></li>
-                                <li><span class="acct-check" aria-hidden="true">✓</span><span>Track your performance over time</span></li>
-                                <li><span class="acct-check" aria-hidden="true">✓</span><span>Sync your results across devices</span></li>
-                                <li><span class="acct-check" aria-hidden="true">✓</span><span>Review your past answers anytime</span></li>
-                            </ul>
-                        </div>
-                        <button type="button" class="acct-btn acct-btn-google" onclick="quizApp.openLoginModal()">
-                            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" class="acct-google-icon" width="20" height="20" loading="lazy">
-                            <span>Login with Google</span>
-                        </button>
-                        <div class="acct-divider"><span class="acct-divider-line"></span><span class="acct-divider-text">OR</span><span class="acct-divider-line"></span></div>
-                        <button type="button" class="acct-btn acct-btn-outline" onclick="quizApp.toggleLogoPanel()">
-                            <span class="acct-btn-icon" aria-hidden="true">👤</span>
-                            <span>Continue as Guest</span>
-                        </button>
-                        ${acctFooter}
-                    `;
+                bodyEl.innerHTML = `
+                    <div class="account-avatar" aria-hidden="true">${this.escapeHtml(initial)}</div>
+                    <h2 id="account-modal-title" class="login-modal-title">Welcome back, ${this.escapeHtml(name)}!</h2>
+                    <p class="account-email">${this.escapeHtml(currentUser.email || '')}</p>
+                    ${isAdmin ? '<span class="account-badge">Admin</span>' : '<span class="account-badge">Member</span>'}
+                    <div class="account-divider" aria-hidden="true"></div>
+                    <button type="button" class="account-logout-btn" onclick="quizApp.logout()">
+                        <span class="account-logout-icon" aria-hidden="true">🚪</span>
+                        <span>Logout</span>
+                    </button>
+                    <div class="login-modal-footnote"><span aria-hidden="true">🛡️</span> Your data is secure and private</div>
+                `;
+            },
+
+            openAccountModal() {
+                const overlay = document.getElementById('account-modal-overlay');
+                if (!overlay || !currentUser || overlay.classList.contains('active')) return;
+
+                this.updateAccountModal();
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('login-modal-open'); // shared scroll lock
+                const profileBtn = document.querySelector('.profile-icon-btn');
+                if (profileBtn) profileBtn.setAttribute('aria-expanded', 'true');
+
+                this._lastFocused = document.activeElement;
+                setTimeout(() => {
+                    const target = overlay.querySelector('.account-logout-btn') ||
+                                   overlay.querySelector('.login-modal-close');
+                    if (target) target.focus({ preventScroll: true });
+                }, 60);
+            },
+
+            closeAccountModal() {
+                const overlay = document.getElementById('account-modal-overlay');
+                if (!overlay || !overlay.classList.contains('active')) return;
+
+                overlay.classList.remove('active');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('login-modal-open');
+                const profileBtn = document.querySelector('.profile-icon-btn');
+                if (profileBtn) profileBtn.setAttribute('aria-expanded', 'false');
+
+                // Return focus to where the user was (no logout, no navigation)
+                if (this._lastFocused && document.contains(this._lastFocused)) {
+                    try { this._lastFocused.focus({ preventScroll: true }); } catch (e) {}
                 }
+                this._lastFocused = null;
             },
 
             /* =========================================================
@@ -477,18 +454,12 @@
                     this.openLoginModal();
                     return;
                 }
-                this.toggleLogoPanel();
+                this.openAccountModal();
             },
 
 openLoginModal() {
                 const overlay = document.getElementById('login-modal-overlay');
                 if (!overlay || overlay.classList.contains('active')) return;
-
-                // If opened from the account sidebar, close the sidebar first
-                const panel = document.getElementById('logo-panel');
-                if (panel && panel.classList.contains('active')) {
-                    this.toggleLogoPanel();
-                }
 
                 // Reset any previous error / loading state
                 const errEl = document.getElementById('login-modal-error');
@@ -570,14 +541,25 @@ openLoginModal() {
                 }
             },
 
-            // ESC closes the modal; Tab keeps keyboard focus inside it
+            // ESC closes whichever popup is open (login OR account);
+            // Tab keeps keyboard focus inside it
             handleLoginKeydown(e) {
-                const overlay = document.getElementById('login-modal-overlay');
-                if (!overlay || !overlay.classList.contains('active')) return;
+                const loginOverlay = document.getElementById('login-modal-overlay');
+                const accountOverlay = document.getElementById('account-modal-overlay');
+                let overlay = null;
+                let closeFn = null;
+                if (loginOverlay && loginOverlay.classList.contains('active')) {
+                    overlay = loginOverlay;
+                    closeFn = () => this.closeLoginModal();
+                } else if (accountOverlay && accountOverlay.classList.contains('active')) {
+                    overlay = accountOverlay;
+                    closeFn = () => this.closeAccountModal();
+                }
+                if (!overlay) return;
 
                 if (e.key === 'Escape') {
                     e.preventDefault();
-                    this.closeLoginModal();
+                    closeFn();
                     return;
                 }
 
@@ -598,25 +580,8 @@ openLoginModal() {
                 }
             },
 
-            toggleLogoPanel() {
-                const panel = document.getElementById('logo-panel');
-                const overlay = document.getElementById('logo-panel-overlay');
-                if (panel && overlay) {
-                    const isActive = panel.classList.toggle('active');
-                    overlay.classList.toggle('active');
-                    document.body.classList.toggle('logo-panel-open');
-                    panel.setAttribute('aria-hidden', String(!isActive));
-                    const btn = document.querySelector('.profile-icon-btn');
-                    if (btn) btn.setAttribute('aria-expanded', String(isActive));
-                }
-            },
-
             // Navbar brand (AE logo + name): always navigate back to home
             goHomeFromBrand() {
-                const panel = document.getElementById('logo-panel');
-                if (panel && panel.classList.contains('active')) {
-                    this.toggleLogoPanel();
-                }
                 this.goHome();
             },
 
@@ -1120,7 +1085,9 @@ openLoginModal() {
                     await signOut(auth);
                     currentUser = null;
                     isAdmin = false;
-                    this.updateLogoPanel();
+                    // Close the account popup; the existing onAuthStateChanged
+                    // listener refreshes everything else.
+                    this.closeAccountModal();
                 } catch (error) {
                     console.error('Logout error:', error);
                 }
@@ -2842,12 +2809,6 @@ openLoginModal() {
             },
 
             async showResultsHistory() {
-                // Close the profile/account sidebar if it's open
-                const logoPanel = document.getElementById('logo-panel');
-                if (logoPanel && logoPanel.classList.contains('active')) {
-                    this.toggleLogoPanel();
-                }
-
                 if (!currentUser) {
                     alert('Please login to view your results');
                     return;
