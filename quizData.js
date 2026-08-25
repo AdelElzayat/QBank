@@ -1390,7 +1390,7 @@ const quizzes = [
         ],
       },
       {
-        id: "network-2-questions-bank",
+        id: "network-2-final-qbank",
         title: "Network 2 Final Qbank",
         shuffleQuestions: false,
         showScore: true,

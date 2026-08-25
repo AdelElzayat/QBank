@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=12">
     <link rel="icon" href="img/AE-Logo.png?v=2" type="image/png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
     <!-- KaTeX: fast, lightweight LaTeX math rendering (used by qbank-math.js) -->
@@ -940,6 +940,22 @@ toggleLogoPanel() {
                 const params = new URLSearchParams(window.location.search);
                 const quizId = params.get('quiz');
 
+                // ---- Shared links: ?share=subject/<id> or ?share=exam/<id> ----
+                // Only the stable existing id travels in the URL; the subject/exam
+                // is resolved from the bundled quizData.js data on arrival.
+                const shareParam = params.get('share');
+                if (shareParam && !quizId) {
+                    const shareMatch = shareParam.match(/^(subject|exam)\/(.+)$/);
+                    if (shareMatch) {
+                        if (shareMatch[1] === 'subject') {
+                            this.renderSharedSubject(decodeURIComponent(shareMatch[2]));
+                        } else {
+                            this.renderSharedExam(decodeURIComponent(shareMatch[2]));
+                        }
+                        return;
+                    }
+                }
+
                 if (quizId) {
                     const quiz = quizzes.find(q => q.id === quizId);
                     if (quiz) {
@@ -964,6 +980,240 @@ toggleLogoPanel() {
                 }
 
                 this.renderHome();
+            },
+
+            /* =========================================================
+               SHARING SYSTEM
+               Subjects: ?share=subject/<subject-id>
+               Exams:    ?share=exam/<exam-id>
+               Links resolve against the bundled quizData.js entries
+               using their existing stable ids — nothing else (no
+               questions, answers, or user data) travels in the URL.
+               ========================================================= */
+
+            findSubjectIndexById(subjectId) {
+                return quizzes.findIndex(q => q.isSubjectGroup && q.id === subjectId);
+            },
+
+            findExamLocation(examId) {
+                // Top-level standalone quiz?
+                const topIndex = quizzes.findIndex(q => Array.isArray(q.questions) && q.id === examId);
+                if (topIndex !== -1) {
+                    return { subjectIndex: -1, chapterIndex: -1, quiz: quizzes[topIndex] };
+                }
+                // Otherwise search inside every subject group's chapters
+                for (let s = 0; s < quizzes.length; s++) {
+                    const entry = quizzes[s];
+                    if (entry.isSubjectGroup && entry.chapters) {
+                        const c = entry.chapters.findIndex(ch => ch.id === examId);
+                        if (c !== -1) {
+                            return { subjectIndex: s, chapterIndex: c, quiz: entry.chapters[c] };
+                        }
+                    }
+                }
+                return null;
+            },
+
+            buildShareUrl(type, id) {
+                const base = window.location.origin + window.location.pathname;
+                return `${base}?share=${type}/${encodeURIComponent(id)}`;
+            },
+
+            shareButtonHtml(type, id, title) {
+                return `
+                            <button type="button" class="card-share-btn"
+                                aria-label="${type === 'subject' ? 'Share subject' : 'Share exam'}" title="Share"
+                                data-share-type="${this.escapeHtml(type)}"
+                                data-share-id="${this.escapeHtml(id)}"
+                                data-share-title="${this.escapeHtml(title)}"
+                                onclick="event.stopPropagation(); event.preventDefault(); quizApp.handleCardShare(this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                            </button>
+                `;
+            },
+
+            handleCardShare(btnEl) {
+                if (!btnEl) return;
+                const type = btnEl.getAttribute('data-share-type') || 'exam';
+                const id = btnEl.getAttribute('data-share-id');
+                const title = btnEl.getAttribute('data-share-title') || 'Qbank';
+                if (!id) return;
+                this.shareItem(type, id, title);
+            },
+
+            async shareItem(type, id, title) {
+                const shareUrl = this.buildShareUrl(type, id);
+                const shareText = 'Check out this Qbank on Question Bank';
+
+                // Native OS/browser share sheet when available (iPhone, Android,
+                // and newer desktop browsers)
+                if (navigator.share) {
+                    try {
+                        await navigator.share({ title: title, text: shareText, url: shareUrl });
+                        return;
+                    } catch (err) {
+                        if (err && err.name === 'AbortError') return; // user closed the sheet
+                        // Any other failure -> fall through to the in-app dialog
+                    }
+                }
+                this.openShareModal(type, title, shareUrl);
+            },
+
+            openShareModal(type, title, shareUrl) {
+                this.closeShareModal();
+                const overlay = document.createElement('div');
+                overlay.className = 'share-modal-overlay';
+                overlay.id = 'share-modal-overlay';
+                overlay.innerHTML = `
+                    <div class="share-modal-backdrop" onclick="quizApp.closeShareModal()"></div>
+                    <div class="share-modal" role="dialog" aria-modal="true" aria-labelledby="share-modal-title">
+                        <button type="button" class="share-modal-close" onclick="quizApp.closeShareModal()" aria-label="Close">&times;</button>
+                        <h3 id="share-modal-title">Share ${type === 'subject' ? 'Subject' : 'Exam'}</h3>
+                        <p class="share-modal-name">${this.escapeHtml(title)}</p>
+                        <input type="text" class="share-modal-input" id="share-modal-url" readonly value="${this.escapeHtml(shareUrl)}" aria-label="Share link" onclick="this.select()">
+                        <button type="button" class="btn btn-primary share-modal-copy" onclick="quizApp.copyShareLink()">Copy Link</button>
+                    </div>
+                `;
+                document.body.appendChild(overlay);
+                requestAnimationFrame(() => overlay.classList.add('active'));
+                this._shareEscHandler = (e) => { if (e.key === 'Escape') this.closeShareModal(); };
+                document.addEventListener('keydown', this._shareEscHandler);
+            },
+
+            closeShareModal() {
+                const overlay = document.getElementById('share-modal-overlay');
+                if (overlay) overlay.remove();
+                if (this._shareEscHandler) {
+                    document.removeEventListener('keydown', this._shareEscHandler);
+                    this._shareEscHandler = null;
+                }
+            },
+
+            copyShareLink() {
+                const input = document.getElementById('share-modal-url');
+                const value = input ? input.value : '';
+                const done = () => {
+                    this.closeShareModal();
+                    this.showShareNotification('Link copied!');
+                };
+                const fail = () => this.showShareNotification('Failed to copy');
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(value).then(done).catch(() => {
+                        if (input) {
+                            input.select();
+                            try { document.execCommand('copy'); done(); } catch (e) { fail(); }
+                        } else {
+                            fail();
+                        }
+                    });
+                } else if (input) {
+                    input.select();
+                    try { document.execCommand('copy'); done(); } catch (e) { fail(); }
+                } else {
+                    fail();
+                }
+            },
+
+            renderSharedSubject(subjectId) {
+                const content = document.getElementById('quiz-content');
+                const subjectIndex = this.findSubjectIndexById(subjectId);
+                if (subjectIndex === -1) {
+                    this.renderShareNotFound();
+                    return;
+                }
+                const subject = quizzes[subjectIndex];
+                const chapters = subject.chapters || [];
+                const totalQuestions = chapters.reduce(
+                    (sum, ch) => sum + (Array.isArray(ch.questions) ? ch.questions.length : 0), 0
+                );
+
+                const chapterCards = chapters.map((chapter, chIndex) => {
+                    const timerMins = chapter.quizModeTimer ? Math.round(chapter.quizModeTimer / 60) : null;
+                    return `
+                        <div class="quiz-card has-share" style="--card-i:${chIndex}">
+                            <div class="quiz-card-icon">📖</div>
+                            <div class="quiz-card-title">${chapter.title}</div>
+                            <div class="quiz-card-meta">
+                                <span class="meta-chip"><span class="chip-dot"></span>${chapter.questions.length} questions</span>
+                                ${timerMins ? `<span class="meta-chip">⏱ ${timerMins} min</span>` : ''}
+                            </div>
+                            <button class="btn btn-primary" onclick="quizApp.showChapterModeSelection(${subjectIndex}, ${chIndex})">Start Quiz</button>
+                            ${this.shareButtonHtml('exam', chapter.id, chapter.title)}
+                        </div>
+                    `;
+                }).join('');
+
+                content.innerHTML = `
+                    <div class="chapter-screen">
+                        <div class="chapter-header">
+                            <button class="btn-back" onclick="quizApp.goHome()">← <span>Back to Qbank</span></button>
+                        </div>
+                        <header class="screen-header shared-screen-header">
+                            <div class="quiz-card-icon shared-hero-icon">📚</div>
+                            <span class="shared-badge">🔗 Shared Qbank</span>
+                            <h1>${subject.title}</h1>
+                            <p class="screen-subtitle">${chapters.length} exam${chapters.length !== 1 ? 's' : ''} • ${totalQuestions} questions — pick one to start practicing.</p>
+                        </header>
+                        <div class="quiz-grid">${chapterCards}</div>
+                    </div>
+                `;
+                // Keep the share URL in the address bar so refresh/re-share keeps working
+                this.scrollToTopInstantly();
+            },
+
+            renderSharedExam(examId) {
+                const content = document.getElementById('quiz-content');
+                const location = this.findExamLocation(examId);
+                if (!location || !location.quiz) {
+                    this.renderShareNotFound();
+                    return;
+                }
+
+                const quiz = location.quiz;
+                const totalQ = Array.isArray(quiz.questions) ? quiz.questions.length : 0;
+                const timerMins = quiz.quizModeTimer ? Math.round(quiz.quizModeTimer / 60) : null;
+
+                // Start Quiz routes through the EXISTING mode-selection flow so
+                // practice mode / timed mode / question order behave identically.
+                let startCall;
+                if (location.subjectIndex !== -1) {
+                    startCall = `quizApp.showChapterModeSelection(${location.subjectIndex}, ${location.chapterIndex})`;
+                } else {
+                    startCall = `quizApp.showModeSelection(${quizzes.indexOf(quiz)})`;
+                }
+
+                content.innerHTML = `
+                    <div class="mode-selection-screen">
+                        <header class="screen-header">
+                            <div class="quiz-card-icon shared-hero-icon">📝</div>
+                            <span class="shared-badge">🔗 Shared Exam</span>
+                            <h1>${quiz.title}</h1>
+                            <p class="screen-subtitle">${totalQ} question${totalQ !== 1 ? 's' : ''}${timerMins ? ` • ⏱ ${timerMins} min timed mode available` : ''}</p>
+                        </header>
+                        <div class="shared-exam-actions">
+                            <button class="btn btn-primary" onclick="${startCall}">Start Quiz</button>
+                            <button class="btn btn-secondary" onclick="quizApp.goHome()">← Back to Quizzes</button>
+                        </div>
+                    </div>
+                `;
+                this.scrollToTopInstantly();
+            },
+
+            renderShareNotFound() {
+                const content = document.getElementById('quiz-content');
+                content.innerHTML = `
+                    <div class="mode-selection-screen">
+                        <header class="screen-header">
+                            <div class="quiz-card-icon shared-hero-icon">🔍</div>
+                            <h1>Qbank Not Found</h1>
+                            <p class="screen-subtitle">This subject or exam may have been removed or the link is invalid.</p>
+                        </header>
+                        <div class="shared-exam-actions">
+                            <button class="btn btn-primary" onclick="quizApp.goHome()">Back to Qbank</button>
+                        </div>
+                    </div>
+                `;
+                this.scrollToTopInstantly();
             },
 
             initTheme() {
@@ -1037,19 +1287,20 @@ toggleLogoPanel() {
                     if (quiz.isSubjectGroup) {
                         const count = quiz.chapters ? quiz.chapters.length : 0;
                         return `
-                            <div class="quiz-card subject-card" style="--card-i:${index}">
+                            <div class="quiz-card subject-card has-share" style="--card-i:${index}">
                                 <div class="quiz-card-icon">📚</div>
                                 <div class="quiz-card-title">${quiz.title}</div>
                                 <div class="quiz-card-meta">
                                     <span class="meta-chip"><span class="chip-dot"></span>${count} quiz${count !== 1 ? 'zes' : ''}</span>
                                 </div>
                                 <button class="btn btn-primary" onclick="quizApp.showChapterSelection(${index})">Browse Quizzes</button>
+                                ${this.shareButtonHtml('subject', quiz.id, quiz.title)}
                             </div>
                         `;
                     }
                     const timerMins = quiz.quizModeTimer ? Math.round(quiz.quizModeTimer / 60) : null;
                     return `
-                        <div class="quiz-card" style="--card-i:${index}">
+                        <div class="quiz-card has-share" style="--card-i:${index}">
                             <div class="quiz-card-icon">${cardIcons[index % cardIcons.length]}</div>
                             <div class="quiz-card-title">${quiz.title}</div>
                             <div class="quiz-card-meta">
@@ -1057,6 +1308,7 @@ toggleLogoPanel() {
                                 ${timerMins ? `<span class="meta-chip">⏱ ${timerMins} min</span>` : ''}
                             </div>
                             <button class="btn btn-primary" onclick="quizApp.showModeSelection(${index})">Start Quiz</button>
+                            ${this.shareButtonHtml('exam', quiz.id, quiz.title)}
                         </div>
                     `;
                 }).join('');
@@ -1081,13 +1333,14 @@ toggleLogoPanel() {
                 const content = document.getElementById('quiz-content');
 
                 const chapterCards = (subject.chapters || []).map((chapter, chIndex) => `
-                    <div class="quiz-card" style="--card-i:${chIndex}">
+                    <div class="quiz-card has-share" style="--card-i:${chIndex}">
                         <div class="quiz-card-icon">📖</div>
                         <div class="quiz-card-title">${chapter.title}</div>
                         <div class="quiz-card-meta">
                             <span class="meta-chip"><span class="chip-dot"></span>${chapter.questions.length} questions</span>
                         </div>
                         <button class="btn btn-primary" onclick="quizApp.showChapterModeSelection(${subjectIndex}, ${chIndex})">Start Quiz</button>
+                        ${this.shareButtonHtml('exam', chapter.id, chapter.title)}
                     </div>
                 `).join('');
 
@@ -3003,29 +3256,10 @@ toggleLogoPanel() {
             },
 
             shareQuiz() {
-                const baseUrl = window.location.origin + window.location.pathname;
-                const shareUrl = baseUrl + '?quiz=' + this.currentQuiz.id;
-
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(shareUrl).then(() => {
-                        this.showShareNotification('Link copied!');
-                    }).catch(() => {
-                        this.showShareNotification('Failed to copy');
-                    });
-                } else {
-                    const textArea = document.createElement('textarea');
-                    textArea.value = shareUrl;
-                    textArea.style.position = 'fixed';
-                    textArea.style.left = '-9999px';
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    try {
-                        document.execCommand('copy');
-                        this.showShareNotification('Link copied!');
-                    } catch (err) {
-                        this.showShareNotification('Failed to copy');
-                    }
-                    document.body.removeChild(textArea);
+                // Delegates to the shared sharing system: native share sheet
+                // where supported, copy-link dialog otherwise.
+                if (this.currentQuiz && this.currentQuiz.id) {
+                    this.shareItem('exam', this.currentQuiz.id, this.currentQuiz.title);
                 }
             },
 
