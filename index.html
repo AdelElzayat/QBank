@@ -190,6 +190,7 @@
         let isAdmin = false;
 
         const QUIZ_STORAGE_KEY = "quiz_progress";
+        const ACTIVE_EXAM_KEY = "quiz_active_exam";
 
         const normalizeAnswer = (text) => {
             if (!text) return '';
@@ -289,7 +290,45 @@
                 this.initTheme();
                 this.renderExamSidebar();
                 this.initAuth();
-                this.checkUrlParams();
+                // Resume an in-progress exam (refresh or browser reopen) before
+                // falling back to deep links / the home screen
+                if (!this.tryResumeActiveExam()) {
+                    this.checkUrlParams();
+                }
+            },
+
+            tryResumeActiveExam() {
+                let active = null;
+                try {
+                    active = JSON.parse(localStorage.getItem(ACTIVE_EXAM_KEY));
+                } catch (e) {
+                    active = null;
+                }
+                if (!active || !active.quizId || !active.mode) return false;
+
+                // Find the quiz by id — top-level quizzes or subject-group chapters
+                let quiz = quizzes.find(q => q.id === active.quizId);
+                if (!quiz) {
+                    for (const entry of quizzes) {
+                        if (entry.isSubjectGroup && entry.chapters) {
+                            const ch = entry.chapters.find(c => c.id === active.quizId);
+                            if (ch) {
+                                quiz = ch;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (!quiz) {
+                    // Quiz no longer exists — discard the stale pointer
+                    localStorage.removeItem(ACTIVE_EXAM_KEY);
+                    return false;
+                }
+
+                // Keep the URL in sync so further refreshes stay on this exam
+                window.history.replaceState({}, '', `?quiz=${encodeURIComponent(quiz.id)}`);
+                this.startQuiz(quiz, active.mode);
+                return true;
             },
 
             initAuth() {
@@ -1126,7 +1165,12 @@ toggleLogoPanel() {
                 const data = {
                     quizId: this.currentQuiz.id,
                     currentQuestionIndex: this.currentQuestionIndex,
-                    userAnswers: this.userAnswers
+                    userAnswers: this.userAnswers,
+                    // Preserve the exact exam "moment" across refresh/reopen:
+                    // shuffled question + option order and the active layout
+                    layout: this.currentLayout,
+                    questionOrder: this.questionOrder,
+                    processed: this.processedQuestions
                 };
                 localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(data));
             },
@@ -1144,6 +1188,18 @@ toggleLogoPanel() {
                     this.userAnswers = data.userAnswers || [];
                     this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
                     this.questionAnswered = !!this.selectedAnswer;
+
+                    // Restore the exact processed question order (shuffle-safe)
+                    // and layout so the exam resumes exactly where it was left
+                    if (Array.isArray(data.processed) && data.processed.length) {
+                        this.processedQuestions = data.processed;
+                    }
+                    if (data.layout === 'step' || data.layout === 'all') {
+                        this.currentLayout = data.layout;
+                    }
+                    if (data.questionOrder === 'ordered' || data.questionOrder === 'shuffle') {
+                        this.questionOrder = data.questionOrder;
+                    }
 
                     return true;
                 } catch (e) {
@@ -1413,7 +1469,11 @@ toggleLogoPanel() {
                     quizId: this.currentQuiz.id,
                     currentQuestionIndex: this.currentQuestionIndex,
                     userAnswers: this.userAnswers,
-                    mode: 'quiz'
+                    mode: 'quiz',
+                    // Same "exact moment" preservation as Practice Mode
+                    layout: this.currentLayout,
+                    questionOrder: this.questionOrder,
+                    processed: this.processedQuestions
                 };
                 localStorage.setItem(`${this.QUIZ_MODE_STORAGE_KEY}${this.currentQuiz.id}`, JSON.stringify(data));
             },
@@ -1431,6 +1491,17 @@ toggleLogoPanel() {
                     this.userAnswers = data.userAnswers || [];
                     this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
                     this.questionAnswered = !!this.selectedAnswer;
+
+                    // Restore the exact processed question order and layout
+                    if (Array.isArray(data.processed) && data.processed.length) {
+                        this.processedQuestions = data.processed;
+                    }
+                    if (data.layout === 'step' || data.layout === 'all') {
+                        this.currentLayout = data.layout;
+                    }
+                    if (data.questionOrder === 'ordered' || data.questionOrder === 'shuffle') {
+                        this.questionOrder = data.questionOrder;
+                    }
 
                     return true;
                 } catch (e) {
@@ -1454,15 +1525,26 @@ toggleLogoPanel() {
                 // Support both numeric index (from regular quizzes) and object (from chapter quizzes)
                 this.currentQuiz = typeof quizIndex === 'object' ? quizIndex : quizzes[quizIndex];
                 this.currentMode = mode;
-                this.currentLayout = this.getExamLayout();
                 this._quizRunning = true;
-                this.resetState();
-                this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
 
-                if (this.currentMode === 'quiz') {
-                  this.loadQuizModeProgress();
-                } else {
-                  this.loadProgress();
+                // Remember which exam is running so a refresh or browser reopen
+                // can drop the user straight back into it (see tryResumeActiveExam)
+                localStorage.setItem(ACTIVE_EXAM_KEY, JSON.stringify({
+                    quizId: this.currentQuiz.id,
+                    mode: this.currentMode
+                }));
+
+                this.resetState();
+                this.currentLayout = this.getExamLayout();
+
+                // Restore a saved session for THIS quiz if one exists; otherwise
+                // build a fresh (possibly shuffled) question list
+                const restored = this.currentMode === 'quiz'
+                    ? this.loadQuizModeProgress()
+                    : this.loadProgress();
+
+                if (!restored || !Array.isArray(this.processedQuestions) || !this.processedQuestions.length) {
+                    this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
                 }
 
                 this.selectedAnswer = this.userAnswers[this.currentQuestionIndex] || null;
@@ -1998,6 +2080,9 @@ toggleLogoPanel() {
 
             async showResults() {
                 this._quizRunning = false;
+                // Exam is finished — forget the active-exam pointer so a refresh
+                // no longer re-enters the completed exam
+                localStorage.removeItem(ACTIVE_EXAM_KEY);
                 this.hideExamStatusBar();
                 this.closeExamSidebar();
                 // Hide the timer wrapper when showing results
@@ -2288,6 +2373,8 @@ toggleLogoPanel() {
 
             goHome() {
                 this._quizRunning = false;
+                // User intentionally left the exam — forget the active-exam pointer
+                localStorage.removeItem(ACTIVE_EXAM_KEY);
                 this.hideExamStatusBar();
                 this.closeExamSidebar();
                 // Hide the timer wrapper
