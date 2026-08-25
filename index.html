@@ -632,7 +632,6 @@ toggleLogoPanel() {
                             ${cards}
                         </div>
                         <div class="vertical-quiz-footer">
-                            <button class="btn btn-secondary btn-footer" onclick="quizApp.shareQuiz()"><span class="btn-icon">🔗</span><span>Share</span></button>
                             <button class="btn btn-primary btn-submit" onclick="quizApp.finishVerticalExam()">Submit Exam</button>
                         </div>
                     </div>
@@ -1919,9 +1918,6 @@ toggleLogoPanel() {
                     </div>
                     <div class="quiz-footer">
                         <div class="quiz-footer-actions">
-                            <button class="btn btn-secondary btn-footer" onclick="quizApp.shareQuiz()">
-                                <span class="btn-icon">🔗</span><span>Share</span>
-                            </button>
                             ${this.currentQuestionIndex > 0 ? '<button class="btn btn-secondary btn-footer" onclick="quizApp.prevQuestion()"><span class="btn-icon">←</span><span>Previous</span></button>' : ''}
                         </div>
                         <button id="next-btn" class="btn btn-primary btn-next" onclick="quizApp.handleNextButton()" ${!this.selectedAnswer ? 'disabled' : ''}>${this.getMainButtonLabel(question)}</button>
@@ -3252,14 +3248,6 @@ toggleLogoPanel() {
                     console.error('Error fetching admin data:', error);
                     document.getElementById('admin-loading').style.display = 'none';
                     document.getElementById('admin-content').innerHTML = '<div class="error-state">Failed to load admin data</div>';
-                }
-            },
-
-            shareQuiz() {
-                // Delegates to the shared sharing system: native share sheet
-                // where supported, copy-link dialog otherwise.
-                if (this.currentQuiz && this.currentQuiz.id) {
-                    this.shareItem('exam', this.currentQuiz.id, this.currentQuiz.title);
                 }
             },
 
