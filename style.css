@@ -5416,6 +5416,216 @@ body.exam-sidebar-open {
   width: 100%;
 }
 
+/* ============================================================
+   Login Modal — in-page authentication (replaces login.html)
+   Scoped under .login-modal-* classes only — touches nothing
+   else. Fully themed via the existing design tokens, so dark /
+   light mode adapt automatically with [data-theme].
+   ============================================================ */
+body.login-modal-open { overflow: hidden; }
+
+.login-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Comfortable margins on phones; respect iOS safe areas */
+  padding: 16px;
+  padding-top: calc(16px + env(safe-area-inset-top));
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  /* Hidden state keeps children mounted so the close animation plays */
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0s linear 0.3s;
+}
+.login-modal-overlay.active {
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.login-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 9, 20, 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity var(--t);
+}
+.login-modal-overlay.active .login-modal-backdrop { opacity: 1; }
+
+.login-modal-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  /* Never wider/taller than the viewport; scroll internally instead */
+  max-height: min(calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom)), 640px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  transition:
+    transform 0.3s cubic-bezier(0.32, 0.72, 0.24, 1),
+    opacity 0.2s ease;
+}
+.login-modal-overlay.active .login-modal-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.login-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--card-border);
+  background: var(--bg-soft);
+  color: var(--text-secondary);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+.login-modal-close:hover {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.login-modal-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  margin: 0 auto var(--space-md);
+}
+
+.login-modal-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.login-modal-title {
+  font-size: clamp(1.4rem, 5vw, 1.75rem);
+  font-weight: 800;
+  color: var(--text-color);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-xs);
+}
+
+.login-modal-sub {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.login-modal-error {
+  display: none;
+  background: var(--error-soft);
+  border: 1px solid var(--error-border);
+  color: var(--error);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin-bottom: var(--space-md);
+  overflow-wrap: anywhere;
+}
+.login-modal-error.show { display: block; }
+
+/* Reuses the app's existing .btn-google token-driven styling; only
+   sizing emphasis is added here. */
+.login-modal-google { padding: 0.9375rem 1rem; }
+
+.login-modal-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: var(--space-lg) 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+.login-modal-divider span {
+  flex: 1;
+  height: 1px;
+  background: var(--card-border);
+}
+
+.login-modal-guest {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1rem;
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all var(--t);
+}
+.login-modal-guest:hover {
+  background: var(--bg-soft);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.login-modal-footnote {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--card-border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Keyboard focus visibility for all interactive elements in the modal */
+.login-modal-overlay button:focus-visible,
+.login-modal-overlay .btn-google:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 400px) {
+  .login-modal-card { padding: var(--space-lg) var(--space-md) var(--space-md); }
+  .login-modal-logo { width: 56px; height: 56px; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .login-modal-backdrop,
+  .login-modal-card,
+  .login-modal-close,
+  .login-modal-guest { transition: none; }
+}
+
 
 
 

@@ -64,7 +64,9 @@
                     </svg>
                 </span>
             </label>
-            <button class="profile-icon-btn" onclick="quizApp.toggleLogoPanel()" aria-label="Profile">
+            <!-- Logged out: open the in-page login modal instead of navigating away.
+                 Logged in: keep the existing account sidebar behavior. -->
+            <button class="profile-icon-btn" onclick="quizApp.handleProfileClick()" aria-label="Profile" aria-expanded="false">
                 <span class="profile-icon">👤</span>
             </button>
         </div>
@@ -182,9 +184,32 @@
             </div>
         </div>
     </div>
+    <!-- ============================================================
+         Login Modal — in-page authentication (replaces login.html).
+         Stays on the main Question Bank page at all times; uses the
+         SAME Firebase Google sign-in via quizApp.signInWithGoogleModal().
+         ============================================================ -->
+    <div class="login-modal-overlay" id="login-modal-overlay" aria-hidden="true">
+        <div class="login-modal-backdrop" onclick="quizApp.closeLoginModal()" aria-hidden="true"></div>
+        <div class="login-modal-card" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+            <button type="button" class="login-modal-close" onclick="quizApp.closeLoginModal()" aria-label="Close login dialog">&times;</button>
+            <img src="img/AE-Logo.png" alt="QBank logo" class="login-modal-logo">
+            <div class="login-modal-kicker">QBank · Adel Elzayat</div>
+            <h2 id="login-modal-title" class="login-modal-title">Welcome Back</h2>
+            <p class="login-modal-sub">Sign in to access your quiz results &amp; history</p>
+            <div id="login-modal-error" class="login-modal-error" role="alert" aria-live="polite"></div>
+            <button type="button" id="login-modal-google-btn" class="btn-google login-modal-google" onclick="quizApp.signInWithGoogleModal()">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="" width="20" height="20" loading="lazy">
+                <span>Continue with Google</span>
+            </button>
+            <div class="login-modal-divider" aria-hidden="true"><span></span>OR<span></span></div>
+            <button type="button" class="login-modal-guest" onclick="quizApp.closeLoginModal()">Continue as Guest</button>
+            <div class="login-modal-footnote"><span aria-hidden="true">🛡️</span> Your data is secure and private</div>
+        </div>
+    </div>
     <script src="quizData.js"></script>
     <script type="module">
-        import { auth, db, collection, addDoc, query, where, orderBy, getDocs, serverTimestamp, signOut, onAuthStateChanged, ADMIN_EMAIL } from './firebase.js';
+        import { auth, db, collection, addDoc, query, where, orderBy, getDocs, serverTimestamp, signOut, onAuthStateChanged, ADMIN_EMAIL, googleProvider, signInWithPopup } from './firebase.js';
 
         let currentUser = null;
         let isAdmin = false;
@@ -290,6 +315,8 @@
                 this.initTheme();
                 this.renderExamSidebar();
                 this.initAuth();
+                // Login modal keyboard support (ESC to close + focus trap)
+                document.addEventListener('keydown', (e) => this.handleLoginKeydown(e));
                 // Resume an in-progress exam (refresh or browser reopen) before
                 // falling back to deep links / the home screen
                 if (!this.tryResumeActiveExam()) {
@@ -340,6 +367,8 @@
                             displayName: user.displayName
                         };
                         isAdmin = user.email === ADMIN_EMAIL;
+                        // Signed in via the login modal -> dismiss it automatically.
+                        this.closeLoginModal();
                     } else {
                         currentUser = null;
                         isAdmin = false;
@@ -419,10 +448,10 @@
                                 <li><span class="acct-check" aria-hidden="true">✓</span><span>Review your past answers anytime</span></li>
                             </ul>
                         </div>
-                        <a href="login.html" class="acct-btn acct-btn-google">
+                        <button type="button" class="acct-btn acct-btn-google" onclick="quizApp.openLoginModal()">
                             <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" class="acct-google-icon" width="20" height="20" loading="lazy">
                             <span>Login with Google</span>
-                        </a>
+                        </button>
                         <div class="acct-divider"><span class="acct-divider-line"></span><span class="acct-divider-text">OR</span><span class="acct-divider-line"></span></div>
                         <button type="button" class="acct-btn acct-btn-outline" onclick="quizApp.toggleLogoPanel()">
                             <span class="acct-btn-icon" aria-hidden="true">👤</span>
@@ -433,7 +462,143 @@
                 }
             },
 
-toggleLogoPanel() {
+            /* =========================================================
+               Login Modal — in-page authentication
+               Replaces the old standalone login.html page. The Google
+               button reuses the EXACT same Firebase mechanism the old
+               page used (signInWithPopup + googleProvider from
+               firebase.js) — no duplicated auth implementation.
+               ========================================================= */
+
+            // Profile button entry point: logged-out users get the login
+            // modal, logged-in users keep the existing account sidebar.
+            handleProfileClick() {
+                if (!currentUser) {
+                    this.openLoginModal();
+                    return;
+                }
+                this.toggleLogoPanel();
+            },
+
+openLoginModal() {
+                const overlay = document.getElementById('login-modal-overlay');
+                if (!overlay || overlay.classList.contains('active')) return;
+
+                // If opened from the account sidebar, close the sidebar first
+                const panel = document.getElementById('logo-panel');
+                if (panel && panel.classList.contains('active')) {
+                    this.toggleLogoPanel();
+                }
+
+                // Reset any previous error / loading state
+                const errEl = document.getElementById('login-modal-error');
+                if (errEl) { errEl.textContent = ''; errEl.classList.remove('show'); }
+                const btn = document.getElementById('login-modal-google-btn');
+                if (btn) btn.classList.remove('loading');
+
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('login-modal-open');
+                const profileBtn = document.querySelector('.profile-icon-btn');
+                if (profileBtn) profileBtn.setAttribute('aria-expanded', 'true');
+
+                this._lastFocused = document.activeElement;
+                setTimeout(() => {
+                    const target = document.getElementById('login-modal-google-btn') ||
+                                   overlay.querySelector('.login-modal-close');
+                    if (target) target.focus({ preventScroll: true });
+                }, 60);
+            },
+
+            closeLoginModal() {
+                const overlay = document.getElementById('login-modal-overlay');
+                if (!overlay || !overlay.classList.contains('active')) return;
+
+                overlay.classList.remove('active');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('login-modal-open');
+                const profileBtn = document.querySelector('.profile-icon-btn');
+                if (profileBtn) profileBtn.setAttribute('aria-expanded', 'false');
+
+                // Return focus to where the user was (no logout, no navigation)
+                if (this._lastFocused && document.contains(this._lastFocused)) {
+                    try { this._lastFocused.focus({ preventScroll: true }); } catch (e) {}
+                }
+                this._lastFocused = null;
+            },
+
+            // Google sign-in inside the modal. Same provider, same popup flow
+            // and same error handling as the old login page — only the
+            // redirect is replaced by closing the modal (the existing
+            // onAuthStateChanged listener updates everything automatically).
+            async signInWithGoogleModal() {
+                const errEl = document.getElementById('login-modal-error');
+                const btn = document.getElementById('login-modal-google-btn');
+                errEl.classList.remove('show');
+                errEl.textContent = '';
+                btn.classList.add('loading');
+
+                try {
+                    await signInWithPopup(auth, googleProvider);
+                    // Success: onAuthStateChanged fires -> currentUser set,
+                    // navbar/sidebar refresh, and the modal closes itself.
+                    btn.classList.remove('loading');
+                } catch (error) {
+                    console.error("Auth error:", error);
+                    btn.classList.remove('loading');
+
+                    let errorMessage = "Authentication failed. Please try again.";
+
+                    // Same action-oriented messages as the old login page
+                    if (error.code === 'auth/web-storage-unsupported' ||
+                        error.code === 'auth/operation-not-supported-in-this-environment') {
+                        errorMessage = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+                            ? "Privacy settings are blocking login. Please disable 'Prevent Cross-Site Tracking' in Safari settings or use a different browser."
+                            : "Your browser's storage settings are blocking authentication. Please enable third-party cookies and try again.";
+                    } else if (error.code === 'auth/popup-blocked') {
+                        errorMessage = "The sign-in window was blocked. Please allow popups for this site.";
+                    } else if (error.code === 'auth/popup-closed-by-user') {
+                        errorMessage = "Sign-in was cancelled before completion.";
+                    } else if (error.code === 'auth/network-request-failed') {
+                        errorMessage = "Network error. Please check your connection and try again.";
+                    } else {
+                        errorMessage = error.message;
+                    }
+
+                    errEl.textContent = errorMessage;
+                    errEl.classList.add('show');
+                }
+            },
+
+            // ESC closes the modal; Tab keeps keyboard focus inside it
+            handleLoginKeydown(e) {
+                const overlay = document.getElementById('login-modal-overlay');
+                if (!overlay || !overlay.classList.contains('active')) return;
+
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    this.closeLoginModal();
+                    return;
+                }
+
+                if (e.key === 'Tab') {
+                    const focusables = overlay.querySelectorAll(
+                        'button:not([disabled]):not([hidden]), a[href]'
+                    );
+                    if (!focusables.length) return;
+                    const first = focusables[0];
+                    const last = focusables[focusables.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            },
+
+            toggleLogoPanel() {
                 const panel = document.getElementById('logo-panel');
                 const overlay = document.getElementById('logo-panel-overlay');
                 if (panel && overlay) {
