@@ -648,6 +648,9 @@ toggleLogoPanel() {
                         if (isCorrect) cls += ' correct';
                         if (isWrong) cls += ' wrong';
                         if (isCorrect || isWrong) cls += ' disabled';
+                        // PRACTICE MODE lock: whole question answered -> every
+                        // option non-interactive (no hover/tap/click cursor)
+                        cls += ' locked';
                     }
                     return `
                         <div class="${cls}" data-option-norm="${this.escapeHtml(normalizeAnswer(option))}" onclick="quizApp.handleVerticalAnswer(${qIndex}, '${safeOption}')">
@@ -737,6 +740,9 @@ toggleLogoPanel() {
                         if (isCorrect) option.classList.add('correct');
                         if (isWrong) option.classList.add('wrong');
                         if (isCorrect || isWrong) option.classList.add('disabled');
+                        // PRACTICE MODE lock: every option becomes visually
+                        // non-interactive the instant the question is answered
+                        option.classList.add('locked');
                     });
                 } else {
                     this.saveQuizModeProgress();
@@ -1614,6 +1620,8 @@ toggleLogoPanel() {
                                 if (isCorrect || isWrong) {
                                     option.classList.add('disabled');
                                 }
+                                // Same lock when re-visiting an answered question
+                                option.classList.add('locked');
                             });
                         } else {
                             // QUIZ MODE - only show selected state, NO colors, NO locking
@@ -1740,6 +1748,9 @@ toggleLogoPanel() {
                         if (isCorrect || isWrong) {
                             option.classList.add('disabled');
                         }
+                        // PRACTICE MODE lock: every option becomes visually
+                        // non-interactive (no hover/press/clickable cursor)
+                        option.classList.add('locked');
                     });
                 } else {
                     // QUIZ MODE - User can change answers freely, NO locking

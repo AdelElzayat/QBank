@@ -1410,6 +1410,17 @@ button {
   filter: saturate(0.5);
 }
 
+/* Answered / LOCKED question (Practice mode): EVERY option becomes fully
+   non-interactive. pointer-events:none suppresses :hover, :active and
+   mobile sticky-touch states entirely, so options can no longer show
+   hover background/border changes, transforms, glows or a clickable
+   cursor. Purely interactive suppression — zero visual change, so the
+   resting style and the selected correct/wrong feedback stay untouched. */
+.option.locked {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
 .option-letter {
   width: 36px;
   height: 36px;
