@@ -673,6 +673,19 @@ openLoginModal() {
                         </button>
                     </div>
                     ${locked ? '<div class="exam-layout-note">🔒 Layout changes apply to your next exam.</div>' : ''}
+
+                    <!-- RESULTS — navigation/action item, NOT a layout option.
+                         Reuses the existing results/history system via
+                         quizApp.openResultsFromSidebar(). -->
+                    <div class="exam-section-label exam-results-label">Results</div>
+                    <button type="button" class="exam-layout-option exam-action-option" onclick="quizApp.openResultsFromSidebar()">
+                        <span class="exam-option-icon" aria-hidden="true">📊</span>
+                        <span class="exam-option-main">
+                            <span class="exam-option-title">Results</span>
+                            <span class="exam-option-desc">View your quiz results &amp; history</span>
+                        </span>
+                        <span class="exam-option-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
                 `;
             },
 
@@ -713,6 +726,19 @@ openLoginModal() {
                 } catch (e) { /* storage unavailable */ }
                 this.currentLayout = layout;
                 this.renderExamSidebar();
+            },
+
+            // Sidebar "Results" action item. Closes the sidebar first, then
+            // reuses the EXISTING results/history system (showResultsHistory).
+            // No new results or auth logic — not signed in opens the
+            // EXISTING login modal instead.
+            openResultsFromSidebar() {
+                this.closeExamSidebar();
+                if (!currentUser) {
+                    this.openLoginModal();
+                    return;
+                }
+                this.showResultsHistory();
             },
 
             /* =========================================================
