@@ -963,6 +963,23 @@ toggleLogoPanel() {
                 }
             },
 
+            /* Instantly jumps the window to the top. Overrides the global CSS
+               `html { scroll-behavior: smooth }` so page transitions land at
+               the top with NO visible scrolling animation. Called by every
+               top-level view renderer so a new page never inherits the
+               previous page's scroll position. */
+            scrollToTopInstantly() {
+                const root = document.documentElement;
+                const previous = root.style.scrollBehavior;
+                root.style.scrollBehavior = 'auto';
+                window.scrollTo(0, 0);
+                if (previous) {
+                    root.style.scrollBehavior = previous;
+                } else {
+                    root.style.removeProperty('scroll-behavior');
+                }
+            },
+
             renderHome() {
                 const content = document.getElementById('quiz-content');
                 const cardIcons = ['📘', '🧠', '📐', '🌐', '⚖️', '🔬', '💼', '📡', '🧮', '🧬'];
@@ -1007,6 +1024,7 @@ toggleLogoPanel() {
                 `;
 
                 window.history.replaceState({}, '', window.location.pathname);
+                this.scrollToTopInstantly();
             },
 
             showChapterSelection(subjectIndex) {
@@ -1037,6 +1055,7 @@ toggleLogoPanel() {
 
                 this.subjectBackIndex = subjectIndex;
                 window.history.replaceState({}, '', window.location.pathname);
+                this.scrollToTopInstantly();
             },
 
             showChapterModeSelection(subjectIndex, chapterIndex) {
@@ -1088,6 +1107,8 @@ toggleLogoPanel() {
                         <button class="btn btn-secondary mt-3" onclick="quizApp.showChapterSelection(${subjectIndex})">← Back to Chapters</button>
                     </div>
                 `;
+
+                this.scrollToTopInstantly();
             },
 
             saveProgress() {
@@ -1170,6 +1191,8 @@ toggleLogoPanel() {
                         <button class="btn btn-secondary mt-3" onclick="quizApp.goHome()">← Back to Quizzes</button>
                     </div>
                 `;
+
+                this.scrollToTopInstantly();
             },
 
             currentMode: 'normal',
@@ -1436,7 +1459,8 @@ toggleLogoPanel() {
                 this.questionAnswered = !!this.selectedAnswer;
 
                 this.renderQuiz();
-                
+                this.scrollToTopInstantly();
+
                 if (this.currentMode === 'quiz') {
                     this.startQuizModeTimer();
                 } else {
@@ -2020,6 +2044,7 @@ toggleLogoPanel() {
                 `;
 
                 content.innerHTML = resultsHtml;
+                this.scrollToTopInstantly();
             },
 
             /* ---------- Saved Results UI helpers (presentation only — no scoring/storage logic) ---------- */
@@ -2243,6 +2268,7 @@ toggleLogoPanel() {
                 this.questionAnswered = false;
                 this.processedQuestions = this.processQuestions(this.currentQuiz.questions);
                 this.renderQuiz();
+                this.scrollToTopInstantly();
             },
 
             goHome() {
@@ -2733,6 +2759,7 @@ toggleLogoPanel() {
                     </div>
                 `;
 
+                this.scrollToTopInstantly();
                 this.initResultsAnimations(resultData.percentage);
             },
 
