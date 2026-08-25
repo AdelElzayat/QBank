@@ -522,6 +522,9 @@ toggleLogoPanel() {
             setExamStatusBar(html) {
                 const bar = document.getElementById('exam-status-bar');
                 if (!bar) return;
+                // Marks #quiz-container so CSS can visually flatten the big
+                // outer box on small screens (vertical layout only)
+                document.getElementById('quiz-container')?.classList.add('vertical-exam-mode');
                 bar.innerHTML = html;
                 bar.hidden = false;
             },
@@ -529,6 +532,7 @@ toggleLogoPanel() {
             hideExamStatusBar() {
                 const bar = document.getElementById('exam-status-bar');
                 if (!bar) return;
+                document.getElementById('quiz-container')?.classList.remove('vertical-exam-mode');
                 bar.hidden = true;
                 bar.innerHTML = '';
             },

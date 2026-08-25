@@ -5168,6 +5168,21 @@ body.exam-sidebar-open {
   .vertical-quiz-footer .btn-submit {
     width: 100%;
   }
+
+  /* Mobile ONLY, VERTICAL exam layout ONLY: make the big outer container
+     (#quiz-container) visually invisible so each question card stands on
+     its own instead of looking nested inside one giant card.
+     Geometry is preserved (transparent border, no display/size changes),
+     and question cards keep their own borders/backgrounds/shadows/radius.
+     Desktop / tablet / other pages are unaffected — this rule requires
+     BOTH the small viewport AND the .vertical-exam-mode marker class,
+     which is applied only while the All Questions view is rendered. */
+  #quiz-container.vertical-exam-mode {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 379px) {
