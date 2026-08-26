@@ -12316,6 +12316,488 @@ const quizzes = [
           },
         ],
       },
+      {
+        id: "summer-training-final-exam-2025",
+        title: "Summer Training Final Exam 2024/2025",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question:
+              "What is the primary function of an instrument's transducer stage?",
+            type: "multiple",
+            options: [
+              "To indicate the value of the measured quantity",
+              "To convert the measured quantity into an analogous electrical signal",
+              "To manipulate the signal for presentation",
+              "To power the entire instrument system",
+            ],
+            correctAnswer:
+              "To convert the measured quantity into an analogous electrical signal",
+            shuffle: true,
+          },
+          {
+            question:
+              "The degree of closeness of a measured value to its true value is called:",
+            type: "multiple",
+            options: ["Precision", "Accuracy", "Resolution", "Sensitivity"],
+            correctAnswer: "Accuracy",
+            shuffle: true,
+          },
+          {
+            question:
+              "The smallest change in input that an instrument can detect reliably is a measure of its:",
+            type: "multiple",
+            options: ["Linearity", "Sensitivity", "Resolution", "Threshold"],
+            correctAnswer: "Resolution",
+            shuffle: true,
+          },
+          {
+            question:
+              "In a null-type instrument, the measurement is performed by:",
+            type: "multiple",
+            options: [
+              "Deflecting a pointer over a calibrated scale",
+              "Balancing the unknown quantity against a known standard until the deflection is zero",
+              "Displaying a numeric value directly",
+              "Integrating the input signal over a period of time",
+            ],
+            correctAnswer:
+              "Balancing the unknown quantity against a known standard until the deflection is zero",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which static characteristic refers to the consistency of a series of measurements?",
+            type: "multiple",
+            options: ["Accuracy", "Precision", "Sensitivity", "Drift"],
+            correctAnswer: "Precision",
+            shuffle: true,
+          },
+          {
+            question:
+              "The ratio of the change in instrument output to the change in instrument input is its:",
+            type: "multiple",
+            options: ["Fidelity", "Resolution", "Sensitivity", "Span"],
+            correctAnswer: "Sensitivity",
+            shuffle: true,
+          },
+          {
+            question:
+              "Hysteresis error in an instrument is primarily caused by:",
+            type: "multiple",
+            options: [
+              "Internal noise in the circuitry",
+              "A slow change in output with no change in input",
+              "The magnetic, elastic, or thermal properties of the materials",
+              "A non-linear scale",
+            ],
+            correctAnswer:
+              "The magnetic, elastic, or thermal properties of the materials",
+            shuffle: true,
+          },
+          {
+            question: "The term 'Drift' is best described as:",
+            type: "multiple",
+            options: [
+              "The ability to reproduce readings",
+              "The smallest detectable input change",
+              "The difference between the indicated and true value",
+              "A gradual shift in the calibration over time",
+            ],
+            correctAnswer: "A gradual shift in the calibration over time",
+            shuffle: true,
+          },
+          {
+            question:
+              "The purpose of signal conditioning in an instrument is to:",
+            type: "multiple",
+            options: [
+              "Sense the physical parameter",
+              "Convert the signal into a form suitable for presentation",
+              "Provide power to the sensor",
+              "Display the final value",
+            ],
+            correctAnswer:
+              "Convert the signal into a form suitable for presentation",
+            shuffle: true,
+          },
+          {
+            question:
+              "The difference between the maximum and minimum values of a quantity for which the instrument is designed to measure is called its:",
+            type: "multiple",
+            options: ["Range", "Span", "Drift", "Resolution"],
+            correctAnswer: "Span",
+            shuffle: true,
+          },
+          {
+            question:
+              "A senior commerce student loves graphic design, but his family encourages him to apply for bank jobs because they are 'secure.' As part of his career planning, which decision reflects the most scientific approach?",
+            type: "multiple",
+            options: [
+              "Focus only on applying to banks due to family pressure",
+              "Start taking design courses and try freelancing alongside studies",
+              "Work in commerce for 5 years and then switch to design",
+              "Reject family pressure completely and start a new design path",
+            ],
+            correctAnswer:
+              "Start taking design courses and try freelancing alongside studies",
+            shuffle: true,
+          },
+          {
+            question: "Which of the following is a SMART career goal?",
+            type: "multiple",
+            options: [
+              "I want to become a manager someday",
+              "I want a comfortable job",
+              "i want to get a job in design within 6 months of completing the course",
+              "I want to work in anything for now",
+            ],
+            correctAnswer:
+              "i want to get a job in design within 6 months of completing the course",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the error in the following sentence in an administrative resume? 'I was responsible for many tasks.'",
+            type: "multiple",
+            options: [
+              "Using past tense",
+              "Vague and general terms",
+              "Formal tone",
+              "Incorrect tense",
+            ],
+            correctAnswer: "Vague and general terms",
+            shuffle: true,
+          },
+          {
+            question:
+              "Someone wrote the following address in their resume: 'El Mansoura, Dakahlia, Egypt - Opposite to Old Metro Station beside Coffee shop.' What is the issue?",
+            type: "multiple",
+            options: [
+              "Missing country",
+              "Excessive and unprofessional details",
+              "No need to write the address",
+              "Missing postal code",
+            ],
+            correctAnswer: "Excessive and unprofessional details",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following shows hidden negative behavior in an interview, even if it looks fine on the surface?",
+            type: "multiple",
+            options: [
+              "Speaking with confident body language",
+              "Overpraising the company",
+              "Responding calmly and respectfully",
+              "Asking questions about team culture",
+            ],
+            correctAnswer: "Overpraising the company",
+            shuffle: true,
+          },
+          {
+            question:
+              "You were asked about a skill not listed in your resume. What's the best response?",
+            type: "multiple",
+            options: [
+              "Say honestly you don't have it and move on",
+              "Try to dodge the question",
+              "Explain you've started learning it or plan to",
+              "Claim you already have it",
+            ],
+            correctAnswer: "Explain you've started learning it or plan to",
+            shuffle: true,
+          },
+          {
+            question:
+              "What makes the STAR technique effective in interview answers?",
+            type: "multiple",
+            options: [
+              "Detailed explanations",
+              "Emotional responses",
+              "Clarity, structure, and focus on results",
+              "Shows you're a good speaker",
+            ],
+            correctAnswer: "Clarity, structure, and focus on results",
+            shuffle: true,
+          },
+          {
+            question: "How can you effectively use LinkedIn for job searching?",
+            type: "multiple",
+            options: [
+              "Only send connection request",
+              "Engage in groups relevant to your field",
+              "Post a formal photo",
+              "Use it for entertainment",
+            ],
+            correctAnswer: "Engage in groups relevant to your field",
+            shuffle: true,
+          },
+          {
+            question: "How do you handle a job ad with no company name listed?",
+            type: "multiple",
+            options: [
+              "Don't apply",
+              "Research the site's credibility and ask for details",
+              "Contact an employee directly",
+              "Apply without thinking",
+            ],
+            correctAnswer:
+              "Research the site's credibility and ask for details",
+            shuffle: true,
+          },
+          {
+            question:
+              "What's the smart step after being rejected from a job post-interview?",
+            type: "multiple",
+            options: [
+              "Forget about it",
+              "Send a thank-you note and ask for feedback",
+              "Publicly criticize the company",
+              "Change your career entirely",
+            ],
+            correctAnswer: "Send a thank-you note and ask for feedback",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is an example of an embedded system?",
+            type: "multiple",
+            options: [
+              "Personal Computer",
+              "Washing Machine",
+              "Mainframe Server",
+              "Supercomputer",
+            ],
+            correctAnswer: "Washing Machine",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the main function of a microcontroller in an embedded system?",
+            type: "multiple",
+            options: [
+              "Perform arithmetic operations",
+              "Control specific tasks",
+              "Manage large databases",
+              "Provide internet connectivity",
+            ],
+            correctAnswer: "Control specific tasks",
+            shuffle: true,
+          },
+          {
+            question: "Which memory type is non-volatile in embedded systems?",
+            type: "multiple",
+            options: ["RAM", "ROM", "Cache", "Registers"],
+            correctAnswer: "ROM",
+            shuffle: true,
+          },
+          {
+            question: "What does RTOS stand for?",
+            type: "multiple",
+            options: [
+              "Real-Time Operating System",
+              "Run-Time Operation Software",
+              "Random Task Operating System",
+              "Real Transfer Output System",
+            ],
+            correctAnswer: "Real-Time Operating System",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which communication protocol is commonly used for short-distance communication between chips?",
+            type: "multiple",
+            options: ["UART", "SPI", "Ethernet", "HTTP"],
+            correctAnswer: "SPI",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following best describes a hard real-time system?",
+            type: "multiple",
+            options: [
+              "Tasks must be completed eventually",
+              "Tasks can miss deadlines occasionally",
+              "Tasks must always meet deadlines",
+              "Tasks are executed randomly",
+            ],
+            correctAnswer: "Tasks must always meet deadlines",
+            shuffle: true,
+          },
+          {
+            question:
+              "What is the function of a watchdog timer in embedded systems?",
+            type: "multiple",
+            options: [
+              "To generate interrupts",
+              "To restart the system if it hangs",
+              "To save data permanently",
+              "To increase processing speed",
+            ],
+            correctAnswer: "To restart the system if it hangs",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is NOT a feature of embedded systems?",
+            type: "multiple",
+            options: [
+              "Task-specific functionality",
+              "Real-time operation",
+              "High power consumption",
+              "Reliability",
+            ],
+            correctAnswer: "High power consumption",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which memory is typically used for program storage in embedded systems?",
+            type: "multiple",
+            options: ["EEPROM", "SRAM", "DRAM", "Cache"],
+            correctAnswer: "EEPROM",
+            shuffle: true,
+          },
+          {
+            question: "What is the purpose of interrupts in embedded systems?",
+            type: "multiple",
+            options: [
+              "To slow down execution",
+              "To handle external/internal events immediately",
+              "To reduce memory usage",
+              "To reset the system",
+            ],
+            correctAnswer: "To handle external/internal events immediately",
+            shuffle: true,
+          },
+          {
+            question: "Which type of Machine Learning uses labeled data?",
+            type: "multiple",
+            options: [
+              "Unsupervised Learning",
+              "Reinforcement Learning",
+              "Supervised Learning",
+              "Deep Learning",
+            ],
+            correctAnswer: "Supervised Learning",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is an example of a supervised learning algorithm?",
+            type: "multiple",
+            options: [
+              "K-Means",
+              "Linear Regression",
+              "Reinforcement Learning",
+              "Clustering",
+            ],
+            correctAnswer: "Linear Regression",
+            shuffle: true,
+          },
+          {
+            question: "What inspired the concept of Neural Networks?",
+            type: "multiple",
+            options: [
+              "Computer hardware",
+              "The internet",
+              "The human brain",
+              "Statistical models",
+            ],
+            correctAnswer: "The human brain",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following algorithms is commonly used for classification tasks?",
+            type: "multiple",
+            options: [
+              "K-Nearest Neighbors (KNN)",
+              "K-Means",
+              "Linear Regression",
+              "Principal Component Analysis (PCA)",
+            ],
+            correctAnswer: "K-Nearest Neighbors (KNN)",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which type of neural network is especially good for image and spatial data?",
+            type: "multiple",
+            options: [
+              "Convolutional Neural Network (CNN)",
+              "Recurrent Neural Network (RNN)",
+              "Support Vector Machine (SVM)",
+              "Naive Bayes",
+            ],
+            correctAnswer: "Convolutional Neural Network (CNN)",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which step in the Deep Learning process comes after model training?",
+            type: "multiple",
+            options: [
+              "Data collection",
+              "Prediction",
+              "Model validation",
+              "Designing the network",
+            ],
+            correctAnswer: "Model validation",
+            shuffle: true,
+          },
+          {
+            question: "Which is a common use case for RNNs?",
+            type: "multiple",
+            options: [
+              "Image recognition",
+              "Object detection",
+              "Natural language processing (NLP)",
+              "Regression tasks",
+            ],
+            correctAnswer: "Natural language processing (NLP)",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following is a recommended first step for learning AI?",
+            type: "multiple",
+            options: [
+              "Start with Java advanced frameworks",
+              "Learn NumPy, Pandas, and TensorFlow immediately",
+              "Start with Python basics",
+              "Skip programming and focus on theory only",
+            ],
+            correctAnswer: "Start with Python basics",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which of the following libraries is essential for Deep Learning in Python?",
+            type: "multiple",
+            options: ["TensorFlow", "Matplotlib", "SQL", "Excel"],
+            correctAnswer: "TensorFlow",
+            shuffle: true,
+          },
+          {
+            question:
+              "Why is it important to follow recent Al news and research?",
+            type: "multiple",
+            options: [
+              "Because Al never changes",
+              "To keep updated with the fast-evolving field and new advancements",
+              "To memorize all algorithms",
+              "To avoid learning programming",
+            ],
+            correctAnswer:
+              "To keep updated with the fast-evolving field and new advancements",
+            shuffle: true,
+          },
+        ],
+      },
     ],
   },
   // {
