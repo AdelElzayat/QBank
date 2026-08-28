@@ -11221,6 +11221,670 @@ const quizzes = [
           },
         ],
       },
+      {
+        id: "final-exam-2021-2022",
+        title: "Final Exam 2021-2022",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 7200,
+        questions: [
+          {
+            question:
+              "Using Newton backward formula, at $x = 5.7$ the value of $y = ............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q1Maths5-Finalterm21-22.png",
+            options: ["$0.1759$", "$-0.1759$", "$0$", "$0.1999$"],
+            correctAnswer: "$0.1759$",
+            shuffle: true,
+          },
+          {
+            question:
+              "By applying Lagrange formula $P(x) = L_{0}(x)y_{0} + L_{1}(x)y_{1} + L_{2}(x)y_{2} + L_{3}(x)y_{3}$, then $L_{1}(x)$ has degree $= ............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q1Maths5-Finalterm21-22.png",
+            options: ["$2$", "$3$", "$4$", "None of these"],
+            correctAnswer: "$3$",
+            shuffle: true,
+          },
+          {
+            question:
+              "By applying Lagrange formula $P(x) = L_{0}(x)y_{0} + L_{1}(x)y_{1} + L_{2}(x)y_{2} + L_{3}(x)y_{3}$, then $L_{1}(x_{0}) = .....$",
+            type: "multiple",
+            math: true,
+            image: "img/Q1Maths5-Finalterm21-22.png",
+            options: ["$1$", "$0$", "$-1$", "None of these"],
+            correctAnswer: "$0$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the given nonlinear equation $\sin x = x^{2}$, in simple iteration method, the relation $x_{n+1} = \\varphi(x_{n})$, $n = 0, 1, ...$ converges if",
+            type: "multiple",
+            math: true,
+            options: [
+              "$\\vert{}\\varphi'(x)\\vert{} = 1$",
+              "$\\vert{}\\varphi'(x)\\vert{} < 1$",
+              "$\\vert{}\\varphi'(x)\\vert{} > 1$",
+              "None of these",
+            ],
+            correctAnswer: "$\\vert{}\\varphi'(x)\\vert{} < 1$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the given nonlinear equation $\sin x = x^{2}$, the root of the given equation near $x_{0} = 0.875$ equal .......... (correct to 3-decimal places) (Hint: use Newton-Raphson Method)",
+            type: "multiple",
+            math: true,
+            options: [
+              "$x = 0.4236$",
+              "$x = -0.8767$",
+              "$x = 0.8767$",
+              "$x = 1.2365$",
+            ],
+            correctAnswer: "$x = 0.8767$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$k_{1} =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q6Maths5-Finalterm21-22.png",
+            options: ["$0.1$", "$0.4$", "$0.5$", "None of these"],
+            correctAnswer: "$0.1$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$k_{2} =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q6Maths5-Finalterm21-22.png",
+            options: ["$-0.3256$", "$-0.12525$", "$0.3256$", "$0.12525$"],
+            correctAnswer: "$0.12525$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$k_{3} =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q6Maths5-Finalterm21-22.png",
+            options: ["$-0.1279$", "$0.1279$", "$6.1826$", "None of these"],
+            correctAnswer: "$0.1279$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$y(0.1) =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q6Maths5-Finalterm21-22.png",
+            options: ["$0.2365$", "$1.1273$", "$15.8441$", "None of these"],
+            correctAnswer: "$1.1273$",
+            shuffle: true,
+          },
+          {
+            question:
+              "Use the obtained results to find $y(0.15)$ using Euler method:",
+            type: "multiple",
+            math: true,
+            image: "img/Q6Maths5-Finalterm21-22.png",
+            options: ["$1.2058$", "$3.5853$", "$0.5658$", "None of these"],
+            correctAnswer: "$1.2058$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$\alpha_{1} =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q11Maths5-Finalterm21-22.png",
+            options: ["$1.522$", "$1.512$", "$1.552$", "None of these"],
+            correctAnswer: "$1.512$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$\alpha_{2} =$",
+            type: "multiple",
+            math: true,image: "img/Q11Maths5-Finalterm21-22.png",
+            options: ["$2.78304$", "$2.35690$", "$2.12345$", "None of these"],
+            correctAnswer: "$2.78304$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$\alpha_{3} =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q11Maths5-Finalterm21-22.png",
+            options: [
+              "$-0.924589$",
+              "$-0.912568$",
+              "$-0.978266$",
+              "None of these",
+            ],
+            correctAnswer: "$-0.978266$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$x_{1}^{(5)} =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q11Maths5-Finalterm21-22.png",
+            options: ["$-0.9990$", "$-0.8960$", "$-0.9159$", "None of these"],
+            correctAnswer: "$-0.9990$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$x_{2}^{(5)} =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q11Maths5-Finalterm21-22.png",
+            options: ["$2.9125$", "$2.8523$", "$2.9978$", "None of these"],
+            correctAnswer: "$2.9978$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$x_{3}^{(5)} =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q11Maths5-Finalterm21-22.png",
+            options: ["$1.9989$", "$1.5261$", "$1.3957$", "None of these"],
+            correctAnswer: "$1.9989$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$\tilde{Y} = .............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q17Maths5-Finalterm21-22.png",
+            options: ["$e^{y}$", "$\ln(y)$", "$y$", "None of these"],
+            correctAnswer: "$e^{y}$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$\sum_{i=1}^{5} \tilde{Y}_{i} = ...........$",
+            type: "multiple",
+            math: true,
+            image: "img/Q17Maths5-Finalterm21-22.png",
+            options: ["$54.0808$", "$40.2356$", "$21.2548$", "None of these"],
+            correctAnswer: "$54.0808$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$\sum_{i=1}^{5} x^{2} = .........$",
+            type: "multiple",
+            math: true,
+            image: "img/Q17Maths5-Finalterm21-22.png",
+            options: ["$89$", "$90$", "$72$", "None of these"],
+            correctAnswer: "$90$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$a = ...........$",
+            type: "multiple",
+            math: true,
+            image: "img/Q17Maths5-Finalterm21-22.png",
+            options: ["$2.35$", "$1.89$", "$-1.05$", "None of these"],
+            correctAnswer: "$1.89$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$b = ...........$",
+            type: "multiple",
+            math: true,
+            image: "img/Q17Maths5-Finalterm21-22.png",
+            options: ["$3.23$", "$5.26$", "$-2.48$", "None of these"],
+            correctAnswer: "$3.23$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$A =$",
+            type: "multiple",
+            math: true,
+            image: "img/Q22Maths5-Finalterm21-22.png",
+            options: ["$2$", "$5$", "$-2$", "$1.5$"],
+            correctAnswer: "$2$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$B has ........... value",
+            type: "multiple",
+            math: true,
+            image: "img/Q22Maths5-Finalterm21-22.png",
+            options: ["positive", "negative", "zero", "None of these"],
+            correctAnswer: "negative",
+            shuffle: true,
+          },
+          {
+            question:
+              "$C = ...........$",
+            type: "multiple",
+            math: true,
+            image: "img/Q22Maths5-Finalterm21-22.png",
+            options: ["$1.3671875$", "$1.375$", "$1.359375$", "None of these"],
+            correctAnswer: "$1.3671875$",
+            shuffle: true,
+          },
+          {
+            question:
+              "The x-ordinate of the point of intersection of the two curves to 2-decimal places equal",
+            type: "multiple",
+            math: true,
+            image: "img/Q22Maths5-Finalterm21-22.png",
+            options: ["$1.359375$", "$1.3632$", "$1.3671875$", "None of these"],
+            correctAnswer: "$1.3632$",
+            shuffle: true,
+          },
+          {
+            question:
+              "Using the obtained value of $x$, the y-ordinate of the point of intersection of the two curves equal",
+            type: "multiple",
+            math: true,
+            image: "img/Q22Maths5-Finalterm21-22.png",
+            options: ["$0$", "$1.3632$", "$2.5332$", "None of these"],
+            correctAnswer: "$2.5332$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$u_{1} = .............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q27Maths5-Finalterm21-22.png",
+            options: ["$11.2496$", "$30.8333$", "$20.5694$", "None of these"],
+            correctAnswer: "$30.8333$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$u_{2} = .............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q27Maths5-Finalterm21-22.png",
+            options: ["$20.4167$", "$50.4236$", "$10.4579$", "None of these"],
+            correctAnswer: "$20.4167$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$u_{3} = ..............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q27Maths5-Finalterm21-22.png",
+            options: ["$12.4895$", "$23.4852$", "$52.9167$", "None of these"],
+            correctAnswer: "$52.9167$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$u_{4} = ...............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q27Maths5-Finalterm21-22.png",
+            options: ["$u_{1}$", "$u_{2}$", "$u_{3}$", "None of these"],
+            correctAnswer: "$u_{1}$",
+            shuffle: true,
+          },
+          {
+            question:
+              "$\Psi = ...........$",
+            type: "multiple",
+            math: true,
+            image: "img/Q31Maths5-Finalterm21-22.png",
+            options: [
+              "$(\varphi'(\eta))^{n+1}$",
+              "$(\varphi'(\eta))^{n}$",
+              "$(\varphi'(\eta))^{n-1}$",
+              "None of these",
+            ],
+            correctAnswer: "$(\varphi'(\eta))^{n+1}$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the convergence of the iteration process, it must be that $\lim_{n \rightarrow \infty} \Psi = .............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q31Maths5-Finalterm21-22.png",
+            options: ["$1$", "$\infty$", "$0$", "None of these"],
+            correctAnswer: "$0$",
+            shuffle: true,
+          },
+        ],
+      },
+      {
+        id: "final-exam-2023-2024",
+        title: "Final Exam 2023-2024",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question:
+              "\n$\Psi = ..........$",
+            type: "multiple",
+            math: true,
+            image: "img/Q1Maths5-Finalterm23-24.png",
+            options: [
+              "$1$",
+              "$(\varphi^{\prime}(\eta))^{n+1}$",
+              "$(\varphi^{\prime}(\eta))^{n}$",
+              "$(\varphi^{\prime}(\eta))^{n-1}$",
+            ],
+            correctAnswer: "$(\varphi^{\prime}(\eta))^{n+1}$",
+            shuffle: true,
+          },
+          {
+            question: "$\lim_{n\rightarrow\infty}\Psi = ...............$",
+            type: "multiple",
+            math: true,
+            image: "img/Q1Maths5-Finalterm23-24.png",
+            options: ["$1$", "$\infty$", "$0$", "None of these"],
+            correctAnswer: "$0$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the convergence of the iteration process it must be that...",
+            type: "multiple",
+            math: true,
+            image: "img/Q1Maths5-Finalterm23-24.png",
+            options: [
+              "$\vert{}\phi^{\prime}(x)\vert{}=1$",
+              "$\vert{}\phi^{\prime}(x)\vert{}<1$",
+              "$\vert{}\psi^{\prime}(x)\vert{}=1$",
+              "$\vert{}\psi^{\prime}(x)\vert{}<1$",
+            ],
+            correctAnswer: "$\vert{}\phi^{\prime}(x)\vert{}<1$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the given data $(0, 4.2), (5, 8), (8, 3), (9, 9), (12, 5)$. Fit the data to the curve $y = A + B \sin^2 x$.\n$A = ......$",
+            type: "multiple",
+            math: true,
+            options: ["$3$", "$2$", "$1$", "$4$"],
+            correctAnswer: "$4$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the given data $(0, 4.2), (5, 8), (8, 3), (9, 9), (12, 5)$. Fit the data to the curve $y = A + B \sin^2 x$.\n$B = ........$",
+            type: "multiple",
+            math: true,
+            options: ["$3.19$", "$1.25$", "$8.28$", "$1.51$"],
+            correctAnswer: "$8.28$",
+            shuffle: true,
+          },
+          {
+            question:
+              "Given the two curves, $y_{1}=e^{x}-2$ and $y_{2}=\ln(x+2)$, then we have to find the point of intersection of the two curves $(\hat{x},\hat{y})$.\n$\hat{x}\in",
+            type: "multiple",
+            math: true,
+            options: ["$[1,2]$", "$[0,1]$", "$[2,3]$", "$[3,4]$"],
+            correctAnswer: "$[1,2]$",
+            shuffle: true,
+          },
+          {
+            question:
+              "Given the two curves, $y_{1}=e^{x}-2$ and $y_{2}=\ln(x+2)$, then we have to find the point of intersection of the two curves $(\hat{x},\hat{y})$.\n$\hat{x}=...$ correct to 3 decimal places",
+            type: "multiple",
+            math: true,
+            options: ["$1.1462$", "$0.1462$", "$2.1462$", "$3.1462$"],
+            correctAnswer: "$1.1462$",
+            shuffle: true,
+          },
+          {
+            question:
+              "Given the two curves, $y_{1}=e^{x}-2$ and $y_{2}=\ln(x+2)$, then we have to find the point of intersection of the two curves $(\hat{x},\hat{y})$.\n$\hat{y}=...$",
+            type: "multiple",
+            math: true,
+            options: ["$1.1462$", "$-0.8426$", "$6.5523$", "$21.2476$"],
+            correctAnswer: "$1.1462$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the following ODE $2y^{\prime}=\sqrt{x+y}$, $y(0.4)=0.41$, we need to calculate $y(0.8)$ using Runge-Kutta with $h=0.4$.\n$k_{1}=....$",
+            type: "multiple",
+            math: true,
+            options: ["$0.18$", "$0.56$", "$0.96$", "$2.65$"],
+            correctAnswer: "$0.18$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the following ODE $2y^{\prime}=\sqrt{x+y}$, $y(0.4)=0.41$, we need to calculate $y(0.8)$ using Runge-Kutta with $h=0.4$.\n$k_{2}=....$",
+            type: "multiple",
+            math: true,
+            options: ["$0.7820$", "$0.2098$", "$1.653$", "$11.5840$"],
+            correctAnswer: "$0.2098$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the following ODE $2y^{\prime}=\sqrt{x+y}$, $y(0.4)=0.41$, we need to calculate $y(0.8)$ using Runge-Kutta with $h=0.4$.\n$k_{3}=....$",
+            type: "multiple",
+            math: true,
+            options: ["$0.7236$", "$1.7512$", "$10.992$", "$0.2112$"],
+            correctAnswer: "$0.2112$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the following ODE $2y^{\prime}=\sqrt{x+y}$, $y(0.4)=0.41$, we need to calculate $y(0.8)$ using Runge-Kutta with $h=0.4$.\n$k_{4}=....$",
+            type: "multiple",
+            math: true,
+            options: ["$0.6325$", "$0.2384$", "$11.2365$", "$1.5632$"],
+            correctAnswer: "$0.2384$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the following ODE $2y^{\prime}=\sqrt{x+y}$, $y(0.4)=0.41$, we need to calculate $y(0.8)$ using Runge-Kutta with $h=0.4$.\n$y(0.8)=...$",
+            type: "multiple",
+            math: true,
+            options: ["$0.6203$", "$0.2372$", "$12.35$", "$0.1110$"],
+            correctAnswer: "$0.6203$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the following ODE $2y^{\prime}=\sqrt{x+y}$, $y(0.4)=0.41$, we need to calculate $y(0.8)$ using Runge-Kutta with $h=0.4$. Use the Runge-Kutta result of $y(0.8)$ then by using Euler method:\n$y(1.2)=...$",
+            type: "multiple",
+            math: true,
+            options: ["$0.230$", "$1.6591$", "$0.8587$", "$11.5320$"],
+            correctAnswer: "$0.8587$",
+            shuffle: true,
+          },
+          {
+            question:
+              "Use the Taylor approximation of order 4 to obtain $y(0.1)$ of the initial value problem $y^{\prime\prime}+xy^{\prime}+2y=0$, $y(0)=3$, $y^{\prime}(0)=-2$.\n$y^{\prime\prime}(0)=...$",
+            type: "multiple",
+            math: true,
+            options: ["$-5$", "$4$", "$-6$", "$11$"],
+            correctAnswer: "$-6$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the initial value problem $y^{\prime\prime}+xy^{\prime}+2y=0$, $y(0)=3$, $y^{\prime}(0)=-2$:\n$y^{\prime\prime\prime}(0)=...$",
+            type: "multiple",
+            math: true,
+            options: ["$2$", "$6$", "$-1$", "$0$"],
+            correctAnswer: "$6$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the initial value problem $y^{\prime\prime}+xy^{\prime}+2y=0$, $y(0)=3$, $y^{\prime}(0)=-2$:\n$y^{(4)}(0)=...$",
+            type: "multiple",
+            math: true,
+            options: ["$-2$", "$-32$", "$16$", "$24$"],
+            correctAnswer: "$24$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the initial value problem $y^{\prime\prime}+xy^{\prime}+2y=0$, $y(0)=3$, $y^{\prime}(0)=-2$:\n$y(0.1)=...$",
+            type: "multiple",
+            math: true,
+            options: ["$3.5100$", "$11.8523$", "$-3.260$", "$2.7711$"],
+            correctAnswer: "$2.7711$",
+            shuffle: true,
+          },
+          {
+            question:
+              "By using Gauss-Jacobi method to solve the following system:\n$$\begin{aligned} 4x_1 + x_2 + x_3 + x_4 &= 15 \\ x_1 + 8x_2 + x_3 + x_4 &= 10 \\ x_1 - 2x_2 - 10x_3 - 3x_4 &= -13 \\ 2x_1 - x_2 + x_3 - 5x_4 &= -4 \end{aligned}$$\nAfter separation of variables according to the convergence condition, we have the iteration table:\nFor $k=1$: $(A_1, 0.750000, 1.100000, A_4)$.\n$A_1 = ......$",
+            type: "multiple",
+            image: "images/Q19Maths5-Finalterm23-24.png",
+            math: true,
+            options: ["$3.25$", "$3.10$", "$3$", "$2.952$"],
+            correctAnswer: "$3.75$",
+            shuffle: true,
+          },
+          {
+            question:
+              "From the Gauss-Jacobi iteration table given for the linear system:\nFor $k=2$: $(3.337500, 0.731250, 1.200000, A_2)$.\n$A_2 = ....$",
+            type: "multiple",
+            image: "images/Q19Maths5-Finalterm23-24.png",
+            math: true,
+            options: ["$1.99$", "$2.01$", "$2.17$", "$2.652$"],
+            correctAnswer: "$2.17$",
+            shuffle: true,
+          },
+          {
+            question:
+              "From the Gauss-Jacobi iteration table given for the linear system:\nFor $k=4$: $(A_3, 0.702102, 1.154000, 2.221613)$.\n$A_3 = ...$",
+            type: "multiple",
+            image: "images/Q19Maths5-Finalterm23-24.png",
+            math: true,
+            options: ["$3.6230$", "$3.3075$", "$3.0023$", "$2.9230$"],
+            correctAnswer: "$3.3075$",
+            shuffle: true,
+          },
+          {
+            question:
+              "From the Gauss-Jacobi iteration table given for the linear system:\nFor $k=1$: $(A_1, 0.750000, 1.100000, A_4)$.\n$A_4 = ...$",
+            type: "multiple",
+            image: "images/Q19Maths5-Finalterm23-24.png",
+            math: true,
+            options: ["$2$", "$2.5$", "$2.1$", "$1.9$"],
+            correctAnswer: "$2$",
+            shuffle: true,
+          },
+          {
+            image: "img/elliptic-pde.jpg",
+            question:
+              "For the Elliptic partial differential equation $\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}=4$, $0\le x\le1$, $0\le y\le2$ with boundary conditions $u(0,y)=y^{2}$, $u(1,y)=(y-1)^{2}$, $u(x,0)=x^{2}$, $u(x,2)=(x-2)^{2}$. Divide the solution domain into 3 internal points with $h=k=0.5$. The Exact solution is $u(x,y)=(x-y)^{2}$.\n$u_{1} = ........$",
+            type: "multiple",
+            math: true,
+            options: ["$0$", "$0.25$", "$1$", "None of these"],
+            correctAnswer: "$0.25$",
+            shuffle: true,
+          },
+          {
+            image: "img/elliptic-pde.jpg",
+            question:
+              "For the Elliptic partial differential equation problem with $u(x,y)=(x-y)^{2}$:\n$u_{2} = .........$",
+            type: "multiple",
+            math: true,
+            options: ["$0$", "$0.25$", "$1$", "None of these"],
+            correctAnswer: "$0.25$",
+            shuffle: true,
+          },
+          {
+            image: "img/elliptic-pde.jpg",
+            question:
+              "For the Elliptic partial differential equation problem with $u(x,y)=(x-y)^{2}$:\n$u_{3} = .........$",
+            type: "multiple",
+            math: true,
+            options: ["$0$", "$0.25$", "$1$", "None of these"],
+            correctAnswer: "$1$",
+            shuffle: true,
+          },
+          {
+            image: "img/elliptic-pde.jpg",
+            question:
+              "For the Elliptic partial differential equation problem, the error at the point $(0.5,1) = .........$",
+            type: "multiple",
+            math: true,
+            options: ["$0$", "$0.25$", "$1$", "None of these"],
+            correctAnswer: "$0$",
+            shuffle: true,
+          },
+          {
+            question:
+              "For the following Newton difference table:\n$$x = [1.2, 1.25, 1.5, 1.8, 2.1, 2.4]$$\n$$y = [4.75, 6.0, 8.25, 14.75, 20]$$\nWith calculated differences:\n$\beta_1 = ...$",
+            type: "multiple",
+            math: true,
+            options: ["$2.25$", "$2.1$", "$-2.25$", "None of these"],
+            correctAnswer: "None of these",
+            shuffle: true,
+          },
+          {
+            question: "For the Newton difference table:\n$\beta_{2} = ...$",
+            type: "multiple",
+            math: true,
+            options: ["$5.4$", "$6.5$", "$-6.5$", "None of these"],
+            correctAnswer: "None of these",
+            shuffle: true,
+          },
+          {
+            question: "For the Newton difference table:\n$\gamma_{1} = ...$",
+            type: "multiple",
+            math: true,
+            options: ["$-5.5$", "$5.5$", "$0$", "None of these"],
+            correctAnswer: "$5.5$",
+            shuffle: true,
+          },
+          {
+            question: "For the Newton difference table:\n$\gamma_{2} = .....$",
+            type: "multiple",
+            math: true,
+            options: ["$-8.75$", "$1.25$", "$8.75$", "None of these"],
+            correctAnswer: "$-8.75$",
+            shuffle: true,
+          },
+          {
+            question:
+              "Using Newton's difference formula to calculate $f(2.25)$ we recommend to use:",
+            type: "multiple",
+            math: true,
+            options: [
+              "backward formula",
+              "forward formula",
+              "central formula",
+              "None of these",
+            ],
+            correctAnswer: "backward formula",
+            shuffle: true,
+          },
+          {
+            question: "Using Newton's difference formula, $f(2.25) = ...$",
+            type: "multiple",
+            math: true,
+            options: ["$18.0449$", "$2.9523$", "$-2.9978$", "None of these"],
+            correctAnswer: "$18.0449$",
+            shuffle: true,
+          },
+        ],
+      },
     ],
   },
   {
