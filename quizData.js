@@ -11350,7 +11350,7 @@ const quizzes = [
             question:
               "$\alpha_{2} =$",
             type: "multiple",
-            math: true,image: "img/Q11Maths5-Finalterm21-22.png",
+            math: true, image: "img/Q11Maths5-Finalterm21-22.png",
             options: ["$2.78304$", "$2.35690$", "$2.12345$", "None of these"],
             correctAnswer: "$2.78304$",
             shuffle: true,
@@ -13464,6 +13464,682 @@ const quizzes = [
       },
     ],
   },
+  {
+    id: "project-management",
+    title: "Project Management",
+    isSubjectGroup: true,
+    chapters: [
+      {
+        id: "bank-mcq-1-4",
+        title: "Bank MCQ 1-4",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question: "Which statement is the correct definition of a project?",
+            type: "multiple",
+            options: [
+              "A continuous activity that keeps the business running",
+              "A set of repetitive tasks with standardized outputs",
+              "A temporary endeavor undertaken to create a unique product, service, or result",
+              "A permanent unit that delivers recurring services"
+            ],
+            correctAnswer: "A temporary endeavor undertaken to create a unique product, service, or result",
+            shuffle: true
+          },
+          {
+            question: "Which pair of statements explains the words 'temporary' and 'unique' in the definition of a project?",
+            type: "multiple",
+            options: [
+              "It has a definite beginning and ending; it creates a product, service, or result tailored to specific needs",
+              "It lasts indefinitely; it is repeated every year",
+              "It has no end date; it uses a permanent team",
+              "It repeats a standard process; it has no specific client"
+            ],
+            correctAnswer: "It has a definite beginning and ending; it creates a product, service, or result tailored to specific needs",
+            shuffle: true
+          },
+          {
+            question: "Which of the following is a project?",
+            type: "multiple",
+            options: [
+              "The daily operation of a hospital",
+              "Manufacturing 10,000 identical devices",
+              "Monthly payroll processing",
+              "Designing a new bridge"
+            ],
+            correctAnswer: "Designing a new bridge",
+            shuffle: true
+          },
+          {
+            question: "Which comparison between projects and operations is correct?",
+            type: "multiple",
+            options: [
+              "Projects are continuous; operations are temporary",
+              "Projects are temporary and unique; operations are continuous and repetitive",
+              "Both are temporary and unique",
+              "Both are stable, predictable, and use permanent teams"
+            ],
+            correctAnswer: "Projects are temporary and unique; operations are continuous and repetitive",
+            shuffle: true
+          },
+          {
+            question: "Which statement best justifies the need for project management in engineering?",
+            type: "multiple",
+            options: [
+              "A technically excellent solution can still be a failed project if time, cost, risks, and stakeholders are not managed",
+              "Engineers cannot produce a design without a manager",
+              "Project management replaces the technical design",
+              "Projects with a good design never face constraints"
+            ],
+            correctAnswer: "A technically excellent solution can still be a failed project if time, cost, risks, and stakeholders are not managed",
+            shuffle: true
+          },
+          {
+            question: "Which list contains the five sources of complexity in engineering projects?",
+            type: "multiple",
+            options: [
+              "Technical, financial, legal, political, social",
+              "Scope, time, cost, quality, risk",
+              "Technical, organizational, environmental, stakeholder, uncertainty",
+              "Planning, executing, controlling, adapting, closing"
+            ],
+            correctAnswer: "Technical, organizational, environmental, stakeholder, uncertainty",
+            shuffle: true
+          },
+          {
+            question: "Which statement about the traditional constraints (scope, time, cost) is correct?",
+            type: "multiple",
+            options: [
+              "They are independent of each other",
+              "They are interconnected: increasing the scope usually puts pressure on time and/or cost",
+              "They are quality, risk, and resources",
+              "Only cost matters in engineering projects"
+            ],
+            correctAnswer: "They are interconnected: increasing the scope usually puts pressure on time and/or cost",
+            shuffle: true
+          },
+          {
+            question: "Besides scope, time, and cost, which other constraints are considered in real engineering projects?",
+            type: "multiple",
+            options: [
+              "Marketing, advertising, branding",
+              "Profit, loss, interest",
+              "Weather, mood, fashion",
+              "Quality, risk, resources, stakeholder expectations, safety, regulatory requirements, sustainability"
+            ],
+            correctAnswer: "Quality, risk, resources, stakeholder expectations, safety, regulatory requirements, sustainability",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly defines project management and what it involves?",
+            type: "multiple",
+            options: [
+              "Managing daily operations: monitoring and billing",
+              "Scheduling activities only",
+              "Applying knowledge, skills, tools, and techniques to project activities: planning, executing, controlling, adapting, closing",
+              "Giving orders to the project staff"
+            ],
+            correctAnswer: "Applying knowledge, skills, tools, and techniques to project activities: planning, executing, controlling, adapting, closing",
+            shuffle: true
+          },
+          {
+            question: "Which statement describes 'project management is a system'?",
+            type: "multiple",
+            options: [
+              "Inputs (requirements, resources, information, constraints, expectations) pass through project management activities to produce deliverables, benefits, and value",
+              "It is only a set of documents",
+              "Outcomes come first and inputs come last",
+              "It works without stakeholder expectations"
+            ],
+            correctAnswer: "Inputs (requirements, resources, information, constraints, expectations) pass through project management activities to produce deliverables, benefits, and value",
+            shuffle: true
+          },
+          {
+            question: "A team delivers an excellent technical design late and over budget, and the users are unhappy. What does this show?",
+            type: "multiple",
+            options: [
+              "The technical skills were weak",
+              "The team had too many experts",
+              "The project did not need management",
+              "A technically excellent solution can still be a failed project; likely causes unrealistic schedule, poor cost estimation, poor stakeholder management"
+            ],
+            correctAnswer: "A technically excellent solution can still be a failed project; likely causes unrealistic schedule, poor cost estimation, poor stakeholder management",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly defines a stakeholder and gives examples?",
+            type: "multiple",
+            options: [
+              "Only the people who pay for the project",
+              "An individual, group, or organization that can affect, be affected by, or perceive itself to be affected by the project, such as management, doctors, patients, contractors",
+              "Only the members of the project team",
+              "Only government authorities"
+            ],
+            correctAnswer: "An individual, group, or organization that can affect, be affected by, or perceive itself to be affected by the project, such as management, doctors, patients, contractors",
+            shuffle: true
+          },
+          {
+            question: "In a sustainable building project, the owner wants low cost, and the sustainability consultant wants high environmental performance. The project manager's challenge is to:",
+            type: "multiple",
+            options: [
+              "Align expectations and manage the trade-offs",
+              "Ignore one of the two stakeholders",
+              "Always choose the cheapest option",
+              "Remove the consultant from the project"
+            ],
+            correctAnswer: "Align expectations and manage the trade-offs",
+            shuffle: true
+          },
+          {
+            question: "Which list contains the six skills of a project manager?",
+            type: "multiple",
+            options: [
+              "Technical, accounting, marketing, drawing, legal, sales",
+              "Planning, executing, controlling, adapting, closing, monitoring",
+              "Technical, leadership, communication, decision-making, problem-solving, negotiation",
+              "Scope, time, cost, quality, risk, resources"
+            ],
+            correctAnswer: "Technical, leadership, communication, decision-making, problem-solving, negotiation",
+            shuffle: true
+          },
+          {
+            question: "'Project manager  boss' means that the project manager:",
+            type: "multiple",
+            options: [
+              "Has no authority and no responsibility",
+              "Avoids making decisions",
+              "Directly controls every team member",
+              "Often coordinates, facilitates, and influences people without directly controlling them"
+            ],
+            correctAnswer: "Often coordinates, facilitates, and influences people without directly controlling them",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly gives the simplified life cycle and the medical-device example?",
+            type: "multiple",
+            options: [
+              "Initiating, planning, executing, closing; for a medical device: charter, plan, build, close",
+              "Planning, executing, controlling, adapting, closing; for a medical device: design, prototype, test, launch, close project",
+              "Concept, design, construction, handover; for a medical device: buy, install, operate",
+              "Starting, preparing, working, closing; for a medical device: sell, ship, support"
+            ],
+            correctAnswer: "Planning, executing, controlling, adapting, closing; for a medical device: design, prototype, test, launch, close project",
+            shuffle: true
+          },
+          {
+            question: "Which option gives the four main phases and the longest one?",
+            type: "multiple",
+            options: [
+              "Initiating, planning, executing, closing; planning is the longest",
+              "Starting, organizing and preparing, carrying out the work, closing; closing is the longest",
+              "Starting, organizing and preparing, carrying out the work, closing; carrying out the work is the longest",
+              "Concept, design, construction, handover; handover is the longest"
+            ],
+            correctAnswer: "Starting, organizing and preparing, carrying out the work, closing; carrying out the work is the longest",
+            shuffle: true
+          },
+          {
+            question: "Which statement about cost, staffing, and phase outputs is correct?",
+            type: "multiple",
+            options: [
+              "Low at the start, rising, peaking while carrying out the work, then dropping at closing; outputs: Project Charter, Project Management Plan, Accepted Deliverables, Archived Project Documents",
+              "Highest at the start and falling over time; outputs appear in reverse order",
+              "Constant throughout the project; no output until closing",
+              "Peaking at closing; outputs: Archived Project Documents first"
+            ],
+            correctAnswer: "Low at the start, rising, peaking while carrying out the work, then dropping at closing; outputs: Project Charter, Project Management Plan, Accepted Deliverables, Archived Project Documents",
+            shuffle: true
+          },
+          {
+            question: "How do stakeholder influence, risk, and uncertainty change over time?",
+            type: "multiple",
+            options: [
+              "Low at the start and high at the end",
+              "Highest at the beginning and decreasing as the project progresses",
+              "Constant throughout",
+              "Increasing until closing"
+            ],
+            correctAnswer: "Highest at the beginning and decreasing as the project progresses",
+            shuffle: true
+          },
+          {
+            question: "How does the cost of changes vary over time?",
+            type: "multiple",
+            options: [
+              "Highest at the start and decreasing",
+              "Constant",
+              "Lowest near completion",
+              "Very low at the start and rising sharply near completion, because most of the work is done"
+            ],
+            correctAnswer: "Very low at the start and rising sharply near completion, because most of the work is done",
+            shuffle: true
+          },
+          {
+            question: "Which description of the graph of time, stakeholder influence/risk/uncertainty, and cost of changes is correct?",
+            type: "multiple",
+            options: [
+              "Both curves rise with time",
+              "Both curves fall with time",
+              "Influence/risk/uncertainty starts high and falls; cost of changes starts low and rises; they cross around the middle",
+              "Cost of changes starts high and falls while influence rises"
+            ],
+            correctAnswer: "Influence/risk/uncertainty starts high and falls; cost of changes starts low and rises; they cross around the middle",
+            shuffle: true
+          },
+          {
+            question: "Which comparison of predictive, agile, and hybrid approaches is correct?",
+            type: "multiple",
+            options: [
+              "Predictive: stable requirements, early scope, detailed planning, formal change control; agile: changing requirements, feedback, early frequent delivery; hybrid combines both",
+              "Predictive is iterative and agile needs detailed upfront planning",
+              "Hybrid uses no planning",
+              "Predictive is for highly uncertain projects"
+            ],
+            correctAnswer: "Predictive: stable requirements, early scope, detailed planning, formal change control; agile: changing requirements, feedback, early frequent delivery; hybrid combines both",
+            shuffle: true
+          },
+          {
+            question: "Which approach fits (a) constructing a university building and (b) developing a new healthcare software platform?",
+            type: "multiple",
+            options: [
+              "(a) agile, (b) predictive",
+              "(a) agile, (b) agile",
+              "(a) predictive, (b) predictive",
+              "(a) predictive, (b) agile"
+            ],
+            correctAnswer: "(a) predictive, (b) agile",
+            shuffle: true
+          },
+          {
+            question: "Which list contains only common causes of project failure?",
+            type: "multiple",
+            options: [
+              "Well-defined scope, realistic schedule, strong leadership",
+              "Poorly defined scope, unrealistic schedule, poor cost estimation, weak communication, unmanaged risks, poor stakeholder management",
+              "Excessive training, good communication, clear scope",
+              "Early stakeholder engagement, accurate estimates, risk management"
+            ],
+            correctAnswer: "Poorly defined scope, unrealistic schedule, poor cost estimation, weak communication, unmanaged risks, poor stakeholder management",
+            shuffle: true
+          },
+          {
+            question: "Which sequence gives the project manager's authority in functional, weak matrix, balanced matrix, strong matrix, and projectized organizations?",
+            type: "multiple",
+            options: [
+              "High, high, shared, low, low",
+              "Very low/limited, low, shared, high, high",
+              "Low, shared, high, high, very low",
+              "Shared, shared, shared, shared, shared"
+            ],
+            correctAnswer: "Very low/limited, low, shared, high, high",
+            shuffle: true
+          },
+          {
+            question: "A project manager must ask functional managers to approve almost every decision. Which structures fit?",
+            type: "multiple",
+            options: [
+              "Strong matrix or projectized",
+              "Balanced matrix only",
+              "Functional or weak matrix",
+              "Projectized only"
+            ],
+            correctAnswer: "Functional or weak matrix",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly differentiates project, program, and portfolio management?",
+            type: "multiple",
+            options: [
+              "Project: individual objectives; program: groups-related projects for coordinated benefits; portfolio: highest level, aligned with strategy",
+              "Project: highest level; program: one project; portfolio: operations",
+              "Project: groups programs; program: strategy; portfolio: one project",
+              "All three manage a single project"
+            ],
+            correctAnswer: "Project: individual objectives; program: groups-related projects for coordinated benefits; portfolio: highest level, aligned with strategy",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly distinguishes OPA from EEF?",
+            type: "multiple",
+            options: [
+              "OPA: external influences the project manager cannot control; EEF: organizational knowledge",
+              "Both are internal assets of the organization",
+              "Both are external factors",
+              "OPA: what the organization has (knowledge, processes, tools); EEF: what surrounds and influences the project (legal, economic, culture, expectations, technology)"
+            ],
+            correctAnswer: "OPA: what the organization has (knowledge, processes, tools); EEF: what surrounds and influences the project (legal, economic, culture, expectations, technology)",
+            shuffle: true
+          },
+          {
+            question: "Are the process groups the same as project phases?",
+            type: "multiple",
+            options: [
+              "Yes, each group is one phase",
+              "Yes, but only in construction projects",
+              "No, the groups overlap and repeat within every phase",
+              "No, the groups are the knowledge areas"
+            ],
+            correctAnswer: "No, the groups overlap and repeat within every phase",
+            shuffle: true
+          },
+          {
+            question: "Which option gives the number and distribution of the PMBOK 4th edition processes?",
+            type: "multiple",
+            options: [
+              "49 processes: 2, 24, 10, 12, 1",
+              "42 processes in 9 knowledge areas: 2, 20, 8, 10, 2",
+              "47 processes: 2, 24, 8, 11, 2",
+              "40 processes in 7 domains"
+            ],
+            correctAnswer: "42 processes in 9 knowledge areas: 2, 20, 8, 10, 2",
+            shuffle: true
+          },
+          {
+            question: "How are the six Integration Management processes distributed over the groups?",
+            type: "multiple",
+            options: [
+              "1 initiating, 1 planning, 1 executing, 2 monitoring and controlling, 1 closing",
+              "2 planning, 2 executing, 1 monitoring and controlling, 1 closing",
+              "1 initiating, 3 planning, 2 closing",
+              "6 in planning"
+            ],
+            correctAnswer: "1 initiating, 1 planning, 1 executing, 2 monitoring and controlling, 1 closing",
+            shuffle: true
+          },
+          {
+            question: "Which knowledge areas have processes in at least four process groups?",
+            type: "multiple",
+            options: [
+              "Scope, time, cost",
+              "Quality, human resources, risk",
+              "Integration only",
+              "Integration, communications, procurement"
+            ],
+            correctAnswer: "Integration, communications, procurement",
+            shuffle: true
+          },
+          {
+            question: "Which list contains the eight Executing processes?",
+            type: "multiple",
+            options: [
+              "Verify Scope; Perform Quality Assurance; Acquire, Develop, Manage Project Team; Distribute Information; Manage Stakeholder Expectations; Conduct Procurements",
+              "Direct and Manage Project Execution; Perform Quality Assurance; Acquire, Develop, Manage Project Team; Distribute Information; Manage Stakeholder Expectations; Conduct Procurements",
+              "Direct and Manage Project Execution; Report Performance; Acquire, Develop, Manage Project Team; Distribute Information; Administer Procurements",
+              "Plan Quality; Perform Quality Assurance; Acquire Project Team; Close Procurements"
+            ],
+            correctAnswer: "Direct and Manage Project Execution; Perform Quality Assurance; Acquire, Develop, Manage Project Team; Distribute Information; Manage Stakeholder Expectations; Conduct Procurements",
+            shuffle: true
+          },
+          {
+            question: "Which list contains the ten Monitoring and Controlling processes?",
+            type: "multiple",
+            options: [
+              "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Distribute Information; Report Performance; Monitor and Control Risks; Administer Procurements",
+              "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Assurance; Report Performance; Monitor and Control Risks; Administer Procurements",
+              "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Control; Report Performance; Monitor and Control Risks; Administer Procurements",
+              "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Control; Report Performance; Monitor and Control Risks; Close Procurements"
+            ],
+            correctAnswer: "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Control; Report Performance; Monitor and Control Risks; Administer Procurements",
+            shuffle: true
+          },
+          {
+            question: "Which option describes Develop Project Charter?",
+            type: "multiple",
+            options: [
+              "Authorizes the project and gives the PM authority; inputs: contract (when applicable), SOW, EEF, OPA; tool: expert judgment; output: project charter",
+              "Builds the WBS; inputs: scope statement; output: WBS dictionary",
+              "Identifies stakeholders; inputs: stakeholder register; output: risk register",
+              "Controls costs; tool: earned value; output: budget forecasts"
+            ],
+            correctAnswer: "Authorizes the project and gives the PM authority; inputs: contract (when applicable), SOW, EEF, OPA; tool: expert judgment; output: project charter",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly describes Identify Stakeholders?",
+            type: "multiple",
+            options: [
+              "Inputs: WBS, schedule; tool: decomposition; output: scope baseline",
+              "Inputs: risk register; tool: Monte Carlo; output: risk report",
+              "Inputs: budget; tool: variance analysis; output: forecasts",
+              "Inputs: project charter, procurement documents, EEF, OPA; tools: stakeholder analysis, expert judgment; outputs: stakeholder register, stakeholder management strategy"
+            ],
+            correctAnswer: "Inputs: project charter, procurement documents, EEF, OPA; tools: stakeholder analysis, expert judgment; outputs: stakeholder register, stakeholder management strategy",
+            shuffle: true
+          },
+          {
+            question: "Which statement about the Planning group is correct?",
+            type: "multiple",
+            options: [
+              "It is the smallest group",
+              "It has 8 processes and produces deliverables",
+              "It has 20 processes, establishes scope and objectives, and defines the course of action; outputs include the PM plan, baselines, and risk register",
+              "It has 10 processes and produces accepted deliverables"
+            ],
+            correctAnswer: "It has 20 processes, establishes scope and objectives, and defines the course of action; outputs include the PM plan, baselines, and risk register",
+            shuffle: true
+          },
+          {
+            question: "Which method of matching risk planning processes to their purpose is correct?",
+            type: "multiple",
+            options: [
+              "Identify Risks ranks risks; Qualitative analysis lists risks; Quantitative analysis chooses responses",
+              "Plan Risk Management defines how to conduct risk activities; Identify Risks lists risks; Qualitative ranks by probability and impact; Quantitative measures effect numerically; Plan Risk Responses chooses how to handle each risk",
+              "All five processes only list risks",
+              "Plan Risk Responses ranks risks; Qualitative measures effect numerically"
+            ],
+            correctAnswer: "Plan Risk Management defines how to conduct risk activities; Identify Risks lists risks; Qualitative ranks by probability and impact; Quantitative measures effect numerically; Plan Risk Responses chooses how to handle each risk",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly describes Estimate Costs, Determine Budget, and Control Costs?",
+            type: "multiple",
+            options: [
+              "Estimate Costs approximates money for each activity's resources; Determine Budget sets the authorized cost baseline; Control Costs monitors spending and manages baseline changes",
+              "Estimate Costs sets the baseline; Determine Budget monitors spending",
+              "Control Costs estimates activity costs; Estimate Costs monitors spending",
+              "All three only collect invoices"
+            ],
+            correctAnswer: "Estimate Costs approximates money for each activity's resources; Determine Budget sets the authorized cost baseline; Control Costs monitors spending and manages baseline changes",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly differentiates Verify Scope from Perform Quality Control?",
+            type: "multiple",
+            options: [
+              "Verify Scope checks correctness against standards; Perform Quality Control is customer acceptance",
+              "Both are the same process",
+              "Verify Scope is planning; Perform Quality Control is closing",
+              "Verify Scope is formal acceptance of completed deliverables by the customer or sponsor; Perform Quality Control monitors results against quality standards"
+            ],
+            correctAnswer: "Verify Scope is formal acceptance of completed deliverables by the customer or sponsor; Perform Quality Control monitors results against quality standards",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly describes the Closing group?",
+            type: "multiple",
+            options: [
+              "Close Project or Phase only; output: schedule",
+              "Close Project or Phase and Close Procurements; outputs: final product, service, or result transition, closed procurements, updated OPA",
+              "Verify Scope and Close Project; outputs: accepted deliverables",
+              "Administer Procurements and Close Project; output: forecasts"
+            ],
+            correctAnswer: "Close Project or Phase and Close Procurements; outputs: final product, service, or result transition, closed procurements, updated OPA",
+            shuffle: true
+          },
+          {
+            question: "Integration management is:",
+            type: "multiple",
+            options: [
+              "Managing the schedule only",
+              "Managing human resources only",
+              "The coordination and unification of project management activities, decisions, plans, and changes so the project works as one integrated system",
+              "Managing procurement contracts"
+            ],
+            correctAnswer: "The coordination and unification of project management activities, decisions, plans, and changes so the project works as one integrated system",
+            shuffle: true
+          },
+          {
+            question: "Which statement explains the puzzle analogy of integration management?",
+            type: "multiple",
+            options: [
+              "Each piece (scope, schedule, cost, quality, risk, resources, procurement, stakeholders) may be good alone, but the project succeeds only when the pieces fit together",
+              "Each piece succeeds without the others",
+              "The puzzle is solved by the sponsor only",
+              "Only scope matters"
+            ],
+            correctAnswer: "Each piece (scope, schedule, cost, quality, risk, resources, procurement, stakeholders) may be good alone, but the project succeeds only when the pieces fit together",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly lists the six integration processes with their groups?",
+            type: "multiple",
+            options: [
+              "4.1 Close Project (Closing); 4.6 Develop Project Charter (Initiating)",
+              "4.1 Develop Project Charter (Planning); 4.2 Develop Project Management Plan (Initiating)",
+              "4.3 Develop Project Charter (Executing); 4.4 Close Project (M&C)",
+              "4.1 Charter (Initiating); 4.2 PM Plan (Planning); 4.3 Direct and Manage Project Execution (Executing); 4.4 Monitor and Control Project Work and 4.5 Integrated Change Control (M&C); 4.6 Close Project or Phase (Closing)"
+            ],
+            correctAnswer: "4.1 Charter (Initiating); 4.2 PM Plan (Planning); 4.3 Direct and Manage Project Execution (Executing); 4.4 Monitor and Control Project Work and 4.5 Integrated Change Control (M&C); 4.6 Close Project or Phase (Closing)",
+            shuffle: true
+          },
+          {
+            question: "Why is the project charter called the project's birth certificate?",
+            type: "multiple",
+            options: [
+              "It records the end of the project",
+              "It formally authorizes the project and gives the project manager authority to spend and act",
+              "It lists all project risks",
+              "It defines the WBS"
+            ],
+            correctAnswer: "It formally authorizes the project and gives the project manager authority to spend and act",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly describes Develop Project Management Plan?",
+            type: "multiple",
+            options: [
+              "Documents the actions to define, prepare, integrate, and coordinate all subsidiary plans; inputs: charter, outputs from planning processes, EEF, OPA; tool: expert judgment; output: Project Management Plan",
+              "Performs the work in the plan; output: deliverables",
+              "Reviews change requests; output: status updates",
+              "Finalizes activities; output: final product transition"
+            ],
+            correctAnswer: "Documents the actions to define, prepare, integrate, and coordinate all subsidiary plans; inputs: charter, outputs from planning processes, EEF, OPA; tool: expert judgment; output: Project Management Plan",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly describes Direct and Manage Project Execution?",
+            type: "multiple",
+            options: [
+              "Inputs: stakeholder register; output: charter",
+              "Inputs: accepted deliverables; output: archived documents",
+              "Performs the work in the plan; inputs: PM plan, approved change requests, EEF, OPA; tools: expert judgment, PMIS; outputs: deliverables, work performance information, change requests, plan and document updates",
+              "Inputs: WBS; output: schedule baseline"
+            ],
+            correctAnswer: "Performs the work in the plan; inputs: PM plan, approved change requests, EEF, OPA; tools: expert judgment, PMIS; outputs: deliverables, work performance information, change requests, plan and document updates",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly describes Monitor and Control Project Work?",
+            type: "multiple",
+            options: [
+              "Inputs: contract; outputs: charter",
+              "Inputs: accepted deliverables; outputs: final product transition",
+              "Inputs: SOW; outputs: scope statement",
+              "Tracks, reviews, and regulations progress; inputs: PM plan, performance reports, EEF, OPA; tool: expert judgment; outputs: change requests, plan updates, document updates"
+            ],
+            correctAnswer: "Tracks, reviews, and regulations progress; inputs: PM plan, performance reports, EEF, OPA; tool: expert judgment; outputs: change requests, plan updates, document updates",
+            shuffle: true
+          },
+          {
+            question: "Why is Perform Integrated Change Control called the gatekeeper, and what are its ITTOs?",
+            type: "multiple",
+            options: [
+              "It delivers only; tools: PMIS",
+              "No change enters the project without review and approval; inputs: PM plan, work performance information, change requests, EEF, OPA; tools: expert judgment, change control meetings; outputs: change request status updates, plan updates, document updates",
+              "It writes the charter; tool: brainstorming",
+              "It archives documents; tool: audit"
+            ],
+            correctAnswer: "No change enters the project without review and approval; inputs: PM plan, work performance information, change requests, EEF, OPA; tools: expert judgment, change control meetings; outputs: change request status updates, plan updates, document updates",
+            shuffle: true
+          },
+          {
+            question: "Which is the correct order of the change control flow?",
+            type: "multiple",
+            options: [
+              "Impact analysis, change request, update, board decision, communication",
+              "Board decision, change request, impact analysis, communication, update",
+              "Change request, impact analysis, board (CCB) decision, update and act, communicate",
+              "Communicate, update, change request, board decision, impact analysis"
+            ],
+            correctAnswer: "Change request, impact analysis, board (CCB) decision, update and act, communicate",
+            shuffle: true
+          },
+          {
+            question: "The ministry asks for 4 more classrooms (about 3 months and extra cost). How should the request be handled?",
+            type: "multiple",
+            options: [
+              "Raise it as a change request; the PM analyzes impact; the CCB decides; if approved, update baselines and implement them through 4.3; inform stakeholders",
+              "Start building immediately",
+              "Reject it without analysis",
+              "Change the baseline without approval, then inform the board"
+            ],
+            correctAnswer: "Raise it as a change request; the PM analyzes impact; the CCB decides; if approved, update baselines and implement them through 4.3; inform stakeholders",
+            shuffle: true
+          },
+          {
+            question: "Which option correctly describes Close Project or Phase?",
+            type: "multiple",
+            options: [
+              "Inputs: charter; output: schedule",
+              "Reviews change requests; output: updates",
+              "Executes the plan; output: deliverables",
+              "Finalizes all activities across all process groups; inputs: PM plan, accepted deliverables, OPA; tool: expert judgment; outputs: final product transition, OPA updates; done at the end of every phase"
+            ],
+            correctAnswer: "Finalizes all activities across all process groups; inputs: PM plan, accepted deliverables, OPA; tool: expert judgment; outputs: final product transition, OPA updates; done at the end of every phase",
+            shuffle: true
+          },
+          {
+            question: "Which option describes Develop Project Management Plan across the four phases?",
+            type: "multiple",
+            options: [
+              "Concept: detailed plan; design: not needed; construction: archived; handover: created",
+              "Concept: archived; design: updated; construction: high-level; handover: main work",
+              "Concept: high-level; design: main work (plans integrated, baselines set); construction: updated with approved changes; handover: archived",
+              "All phases: the same detailed plan, never updated"
+            ],
+            correctAnswer: "Concept: high-level; design: main work (plans integrated, baselines set); construction: updated with approved changes; handover: archived",
+            shuffle: true
+          },
+          {
+            question: "Which option describes Perform Integrated Change Control across the four phases?",
+            type: "multiple",
+            options: [
+              "Concept: most requests; design: no control; construction: informal; handover: all approved",
+              "Concept: informal, no baselines; design: formal once baselines are approved; construction: main work, most requests, CCB decides; handover: only critical changes",
+              "Concept: formal CCB; design: informal; construction: none; handover: most requests",
+              "Same in all phases"
+            ],
+            correctAnswer: "Concept: informal, no baselines; design: formal once baselines are approved; construction: main work, most requests, CCB decides; handover: only critical changes",
+            shuffle: true
+          },
+          {
+            question: "In which phase is the main work of 4.1, 4.2, 4.3, 4.5, and 4.6 respectively?",
+            type: "multiple",
+            options: [
+              "Concept, design, construction, construction, handover",
+              "Design, concept, construction, design, handover",
+              "Concept, construction, design, handover, construction",
+              "Handover, design, concept, construction, design"
+            ],
+            correctAnswer: "Concept, design, construction, construction, handover",
+            shuffle: true
+          }
+        ]
+      }
+    ]
+  }
   // {
   //   id: "reproductive-disorders",
   //   title: "Reproductive Disorders",
