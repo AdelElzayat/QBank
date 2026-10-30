@@ -14139,6 +14139,1859 @@ const quizzes = [
         ]
       }
     ]
+  },
+  {
+    id: "communication-skills",
+    title: "Communication Skills",
+    isSubjectGroup: true,
+    chapters: [
+      {
+        id: "sheet-1",
+        title: "Sheet 1",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question: "هي نتاج عملية الترميز للتعبير عن الأفكار أو المعاني المرغوب نقلها للطرف الآخر و قد تكون شفهية أو مكتوبة أو فى شكل حركات للجسم وإشارات.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Feedback"
+            ],
+            correctAnswer: "Message",
+            shuffle: true
+          },
+          {
+            question: "تمثل الوسيلة التى من خلالها يتم نقل الرسالة إلى الطرف الآخر أثناء عملية الإتصال وهناك أنواع مختلفة من هذه الوسائل مثل الميكروفون ، والهاتف ، والفاكس ، والبريد الإلكتروني ، والمذكرات المكتوبة ، وذبذبات الهواء.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Feedback"
+            ],
+            correctAnswer: "Channel",
+            shuffle: true
+          },
+          {
+            question: "هو الذي يستقبل الرسالة المرسلة إليه من المرسل وقد يكون المستقبل فرد واحد أو جماعة من الأفراد.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Receiver"
+            ],
+            correctAnswer: "Receiver",
+            shuffle: true
+          },
+          {
+            question: "تاريخ أو مفهوم يشير إلى ما يقوم به الطرف الآخر الذي استقبل الرسالة وذلك لتفسير ما ورد في الرسالة وتفهمه ويتوقف التفسير والفهم من جانب المستقبل على عوامل عديدة منها مستوى تعليمه وخبراته وإتجاهاته ، ودوافعه.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Receiver"
+            ],
+            correctAnswer: "Decoding",
+            shuffle: true
+          },
+          {
+            question: "تعكس رد فعل المستقبل واستجابته / عدم استجابته للرسالة وقد تكون هذه الاستجابة منظورة أو غير منظورة.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Feedback"
+            ],
+            correctAnswer: "Feedback",
+            shuffle: true
+          },
+          {
+            question: "هو مصدر الرسالة أو النقطة التي تبدأ عندها عملية الاتصال.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Dispatcher"
+            ],
+            correctAnswer: "Dispatcher",
+            shuffle: true
+          },
+          {
+            question: "تعتبر ال ABC communications من السمات الاساسية لعملية الاتصال.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتعنى ضرورة تحديد الهدف من الإتصال.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "من",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "لماذا",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتعني ضرورة تحديد مضمون الرسالة ، أو ماذا سنقول.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "ماذا",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "ماذا",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتعنى تحديد الشخص المستهدف من الإتصال ومعرفة خصائصه.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "من",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "من",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتشير إلى الوسيلة المناسبة التي سوف تستخدم في الإتصال.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "من",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "كيف",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتشير إلى الوقت المناسب للإتصال بالطرف الآخر.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "متي",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "متي",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتشير إلى المكان المناسب الذى سيتم فيه الإتصال بالطرف الآخر.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "متي",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "اين",
+            shuffle: true
+          },
+          {
+            question: "هو مستمع ينصط بشغف و يقوم باظهار مشاعره و انفعالاته تضامنه مع طرف الاتصال.",
+            type: "multiple",
+            options: [
+              "Ignorant listener",
+              "Selective listener",
+              "Attentive listener",
+              "Empathic listener"
+            ],
+            correctAnswer: "Empathic listener",
+            shuffle: true
+          },
+          {
+            question: "هو مستمع ينصط للطرف الآخر بانتباه و تركيز دون اظهار اي مشاعر اثناء عملية الاتصال.",
+            type: "multiple",
+            options: [
+              "Ignorant listener",
+              "Selective listener",
+              "Attentive listener",
+              "Empathic listener"
+            ],
+            correctAnswer: "Attentive listener",
+            shuffle: true
+          },
+          {
+            question: "مستمع يركز فقط في نقاط معينه و يتجاهل الاخري اثناء عملية الاتصال.",
+            type: "multiple",
+            options: [
+              "Ignorant listener",
+              "Selective listener",
+              "Attentive listener",
+              "Empathic listener"
+            ],
+            correctAnswer: "Selective listener",
+            shuffle: true
+          },
+          {
+            question: "مستمع يتجاهل الطرف الآخر تماما في عملية الاتصال.",
+            type: "multiple",
+            options: [
+              "Ignorant listener",
+              "Selective listener",
+              "Attentive listener",
+              "Empathic listener"
+            ],
+            correctAnswer: "Ignorant listener",
+            shuffle: true
+          },
+          {
+            question: "الاتصالات الرسمية تحصل من خلال خطوط السلطة الرسمية والمعتمدة بموجب اللوائح والقرارات المكتوبة، وقد تكون داخلية (داخل المنظمة) وقد تكون خارجية مع منظمات أخرى.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "الاتصالات الغير رسمية التي تنشأ بوسائل غير رسمية ولا تتضمنها اللوائح والإجراءات الرسمية وإنما تحددها الصلات الشخصية والعلاقات الاجتماعية (تبادل المعلومات في الحفلات ، الشكاوى) ، ويمتاز هذا النوع من الاتصالات بسرعته قياساً بالاتصالات الرسمية.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "هي الاتصالات التي تتدفق من أعلى التنظيم إلى أسفل من المسئول إلى مختلف العاملين في المنظمة، وغالباً ما تكون التغذية العكسية في هذا النوع من الاتصالات منخفضة.",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلى الى اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات العمودية من اعلى الى اسفل",
+            shuffle: true
+          },
+          {
+            question: "هي الاتصالات الصادرة من العاملين في المنظمة إلى المسئول، وتضم نتائج تنفيذ الخطط وشرح المعوقات والصعوبات في التنفيذ والملاحظات والآراء.",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلي الي اسفل",
+              "الاتصالات العموديه من اسفل لاعلى",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات العموديه من اسفل لاعلى",
+            shuffle: true
+          },
+          {
+            question: "هي الاتصالات الجانبية التي تتم بين الأفراد أو الجماعات في المستويات المتقابلة (مثل اتصال المسئول بمسئول آخر أو العاملين ببعضهم البعض).",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلي الي اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات الافقيه",
+            shuffle: true
+          },
+          {
+            question: "هي الاتصالات بين المسئولين وجماعة العمل في إدارات غير تابعة لهم تنظيماً (مثل اتصال المسئول بعاملين في قطاع أخر أو مسئول نشاط في المنظمة بأعضاء أنشطة أخرى) ببعضهم البعض.",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلي الي اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحورية"
+            ],
+            correctAnswer: "الاتصالات المتقابله او المحورية",
+            shuffle: true
+          },
+          {
+            question: "الاتصال بين عميد الكلية ورئيس القسم يصنف علي انه من",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلى الى اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات العمودية من اعلى الى اسفل",
+            shuffle: true
+          },
+          {
+            question: "الاتصال بين طلاب كلية الهندسة وطلاب كلية العلوم يصنف علي انه من",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلى الى اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحورية"
+            ],
+            correctAnswer: "الاتصالات الافقيه",
+            shuffle: true
+          },
+          {
+            question: "الاتصال بين طلاب مستوي 100 بقسم CCE و طلاب مستوي 100 بقسم BCE بكلية الهندسة جامعة المنصورة يصنف علي انه من",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلى الى اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقية",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات الافقية",
+            shuffle: true
+          },
+          {
+            question: "من ضمن اشكال وسائل الاتصال الشفوية هو",
+            type: "multiple",
+            options: [
+              "الاجتماعات",
+              "الندوات",
+              "المؤتمرات",
+              "كل ما سبق"
+            ],
+            correctAnswer: "كل ما سبق",
+            shuffle: true
+          },
+          {
+            question: "واحده من هذه الاشكال لا تمثل وسيلة اتصال بالوسائط المتعدده",
+            type: "multiple",
+            options: [
+              "الصور المتحركة",
+              "المجسمات",
+              "البرقيات",
+              "الفيديو"
+            ],
+            correctAnswer: "البرقيات",
+            shuffle: true
+          }
+        ]
+      },
+      {
+        id: "sheet-2",
+        title: "Sheet 2",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question: "هي أقصر الطرق لتبادل المعلومات والأفكار وأكثرها سهوله ويسراً وصراحة ، إلا أنه يعاب أنه يعرض المعلومات للتحريف وسوء الفهم .",
+            type: "multiple",
+            options: [
+              "الاتصالات الشفهية",
+              "الاتصالات الكتابية",
+              "الاتصالات الالكترونية",
+              "الاتصالات غير اللفظية"
+            ],
+            correctAnswer: "الاتصالات الشفهية",
+            shuffle: true
+          },
+          {
+            question: "الأنظمة والمنشورات والتقارير والمذكرات والمقترحات والشكاوى و غيرها تعتبر احد اشكال الاتصالات",
+            type: "multiple",
+            options: [
+              "الاتصالات الشفهية",
+              "الاتصالات الكتابية",
+              "الاتصالات الالكترونية",
+              "الاتصالات غير اللفظية"
+            ],
+            correctAnswer: "الاتصالات الكتابية",
+            shuffle: true
+          },
+          {
+            question: "تتميز الوسائل الكتابية بمزايا أهمها إمكانية الاحتفاظ بها والرجوع لها عند الحاجة وحماية المعلومات من التحريف وقلة التكلفة.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "من أهم عيوب الاتصالات الشفهية هي البطء في إيصال المعلومات ، تأكد احتمال الفهم الخاطئ لها خصوصاً عندما يكون للكلمة أكثر من معنى.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "توجد خمسة شروط للرسالة اللفظية وهي أن تكون كاملة ، ومختصرة، وواضحة وصحيحة، ولطيفة.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "لغة الجسم body language تعتبر احد اشكال",
+            type: "multiple",
+            options: [
+              "الاتصالات الشفهية",
+              "الاتصالات الكتابية",
+              "الاتصالات الالكترونية",
+              "الاتصالات غير اللفظية"
+            ],
+            correctAnswer: "الاتصالات غير اللفظية",
+            shuffle: true
+          },
+          {
+            question: "الاتصالات الكتابية هي الوسائل التي يتم بواسطتها تبادل المعلومات بين المتصل والمتصل به عن طريق الإشارات أو الإيماءات والسلوك تعبيرات الوجه وحركة العينين واليدين وطريقة الجلوس.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "يختلف فهم الرسائل غير اللفظية بسبب اختلاف الثقافات داخل المنظمة وداخل المجتمع أيضا.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "تعتبر التحديات النفسية والادراكية المتعلقة باطراف الاتصال من المعوقات الاساسية في عملية الاتصال الفعال.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "من شروط التقرير الجيد",
+            type: "multiple",
+            options: [
+              "اختيار المفردات المركبة غير التقليدية",
+              "تضخيم حجم الجمل المستخدمة",
+              "استخدام الحقائق و التعزيز بالارقام و الاحصائيات",
+              "البعد عن استخدام عنصر التشويق في العرض"
+            ],
+            correctAnswer: "استخدام الحقائق و التعزيز بالارقام و الاحصائيات",
+            shuffle: true
+          },
+          {
+            question: "الترتيب المنطقي لمراحل التقرير الجيد هي",
+            type: "multiple",
+            options: [
+              "التحضير - التنظيم - الكتابة - المراجعة - العرض",
+              "التحضير - العرض - الكتابة - المراجعة - التنظيم",
+              "التحضير - الكتابة - التنظيم - المراجعة - العرض",
+              "التحضير - التنظيم - المراجعة - العرض - الكتابة"
+            ],
+            correctAnswer: "التحضير - التنظيم - الكتابة - المراجعة - العرض",
+            shuffle: true
+          },
+          {
+            question: "الاتصالات غير المنظورة تصل نسبة استخدامها في الاتصال ما يقرب من 60% من المعاني وبصفة خاصة في الرسائل التي تتعلق بالأحاسيس والشعور.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "يكون شخص واحد وسط مجموعة في شكل العجلة ويكون قادرا على الاتصال مع كل فرد من أفراد الجماعة أما الأفراد فلا يستطيعون الاتصال إلا بهذا الشخص ويكون هذا الشخص قائدا للمجموعة وصانع القرارات لها، واستخدام هذا الأسلوب يجعل سلطة اتخاذ القرارات تركز في يد الرئيس أو المدير.",
+            type: "multiple",
+            options: [
+              "نمط العجلة",
+              "نمط السلسلة",
+              "نمط الشبكة",
+              "نمط الدائرة"
+            ],
+            correctAnswer: "نمط العجلة",
+            shuffle: true
+          },
+          {
+            question: "يتاح لكل فرد من أفراد التنظيم أو المنظمة الاتصال المباشر بأي فرد فيها، بمعنى آخر أن هذا الاتصال يتجه إلى كل الاتجاهات غير أن استخدام هذا النمط يؤدي إلى البطء في عملية توصيل المعلومات وبالتالي يقلل من الوصول إلى قرارات سليمة وفعالة.",
+            type: "multiple",
+            options: [
+              "نمط العجلة",
+              "نمط السلسلة",
+              "نمط الشبكة",
+              "نمط الدائرة"
+            ],
+            correctAnswer: "نمط الشبكة",
+            shuffle: true
+          },
+          {
+            question: "يكون فيه كل عضو مرتبط بعضوين، أي أن كل فرد يستطيع أن يتصل اتصالا مباشراً بشخصين آخرين ، ويمكن الاتصال ببقية أعضاء المجموعة بواسطة أحد الأفراد الذي يتصل بهم اتصالا مباشراً.",
+            type: "multiple",
+            options: [
+              "نمط العجلة",
+              "نمط السلسلة",
+              "مط الشبكة",
+              "نمط الدائرة"
+            ],
+            correctAnswer: "نمط الدائرة",
+            shuffle: true
+          },
+          {
+            question: "يكون جميع الأعضاء في خط واحد، حيث لا يستطيع أي منهم الاتصال المباشر بفرد آخر (أو بفردين) إلا إذا كان أحد الأفراد الذين يمثلون مراكز مهمة، ويلاحظ أن الفرد الذي يقع في وسط (منتصف) السلسلة يملك النفوذ والتأثير الأكبر في منصبه الوسطي.",
+            type: "multiple",
+            options: [
+              "نمط العجلة",
+              "نمط السلسلة",
+              "نمط الشبكة",
+              "نمط الدائرة"
+            ],
+            correctAnswer: "نمط السلسلة",
+            shuffle: true
+          },
+          {
+            question: "قضم الشفاة في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "الارتياح و الرضا",
+              "العصبية و الغضب",
+              "التعجب و الاندهاش",
+              "التهكم و السخرية"
+            ],
+            correctAnswer: "العصبية و الغضب",
+            shuffle: true
+          },
+          {
+            question: "رفع الحواجب مع تحريكك الشفاة او الكتف في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "الارتياح و الرضا",
+              "العصبية و الغضب",
+              "التعجب و الاندهاش",
+              "التهكم و السخرية"
+            ],
+            correctAnswer: "التعجب و الاندهاش",
+            shuffle: true
+          },
+          {
+            question: "تضييق العين في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "عدم الموافقة أو الشعور السلبي",
+              "العصبية و الغضب",
+              "التعجب و الاندهاش",
+              "التهكم و السخرية"
+            ],
+            correctAnswer: "عدم الموافقة أو الشعور السلبي",
+            shuffle: true
+          },
+          {
+            question: "الانحناء للامام في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "عدم الموافقة أو الشعور السلبي",
+              "العصبية و الغضب",
+              "التعجب و الاندهاش",
+              "الاهتمام أو العناية"
+            ],
+            correctAnswer: "الاهتمام أو العناية",
+            shuffle: true
+          },
+          {
+            question: "تجنب تلاقي الاعين في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "عدم الموافقة أو الشعور السلبي",
+              "العصبية و الغضب",
+              "البرودة واللامبالاة",
+              "الاهتمام أو العناية"
+            ],
+            correctAnswer: "البرودة واللامبالاة",
+            shuffle: true
+          },
+          {
+            question: "الرتب علي الكتف في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "الموافقة و الطمانينة و التشجيع",
+              "العصبية و الغضب",
+              "البرودة واللامبالاة",
+              "الاهتمام او العناية"
+            ],
+            correctAnswer: "الموافقة و الطمانينة و التشجيع",
+            shuffle: true
+          },
+          {
+            question: "تعد ال completeness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "The receiver gets all the information he needs to process the message and takes action.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "The receiver gets all the information he needs to process the message and takes action.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Conciseness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "The receiver gets all the information he needs to process the message and takes action.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "Keep your messages to a point.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Consideration من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "The receiver gets all the information he needs to process the message and takes action.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "This takes into account the receiver's background and points of view.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Concreteness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "The receiver gets all the information he needs to process the message and takes action.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "The message must be specific, tangible, and vivid.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Courtesy من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "Respect the receiver's culture, value and beliefs.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "Respect the receiver's culture, value and beliefs.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Clearness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "Respect the receiver's culture, value and beliefs.",
+              "Keep your messages to a point.",
+              "The clarity of your message makes it easier for the receiver to decode it.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "The clarity of your message makes it easier for the receiver to decode it.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Correctness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "Grammar and syntax is a must when it comes to communication.",
+              "Keep your messages to a point.",
+              "The clarity of your message makes it easier for the receiver to decode it.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "Grammar and syntax is a must when it comes to communication.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال psychological barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Unstable internet connection.",
+              "The psychological state of the speaker and listener can affect communication.",
+              "Uncomfortable temperatures.",
+              "Noise."
+            ],
+            correctAnswer: "The psychological state of the speaker and listener can affect communication.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال physiological barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Unstable internet connection.",
+              "The psychological state of the speaker and listener can affect communication.",
+              "Uncomfortable temperatures.",
+              "Impaired eyesight and hearing problems."
+            ],
+            correctAnswer: "Impaired eyesight and hearing problems.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال perceptual barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Unstable internet connection.",
+              "Differing opinions and views can reduce objectivity.",
+              "Uncomfortable temperatures.",
+              "Impaired eyesight and hearing problems."
+            ],
+            correctAnswer: "Differing opinions and views can reduce objectivity.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال attentional barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Unstable internet connection.",
+              "Differing opinions and views can reduce objectivity.",
+              "The listener may not pay enough attention to what is being said.",
+              "Impaired eyesight and hearing problems."
+            ],
+            correctAnswer: "The listener may not pay enough attention to what is being said.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال language barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Difficulties in understanding unfamiliar accents.",
+              "Differing opinions and views can reduce objectivity.",
+              "The listener may not pay enough attention to what is being said.",
+              "Impaired eyesight and hearing problems."
+            ],
+            correctAnswer: "Difficulties in understanding unfamiliar accents.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال shortage of time من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Difficulties in understanding unfamiliar accents.",
+              "Differing opinions and views can reduce objectivity.",
+              "The listener may not pay enough attention to what is being said.",
+              "There may be a lack of time to convey information effectively."
+            ],
+            correctAnswer: "There may be a lack of time to convey information effectively.",
+            shuffle: true
+          },
+          {
+            question: "تعد Assumptions, jumping to conclusions and premature evaluations من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Difficulties in understanding unfamiliar accents.",
+              "Forming a judgment before listening to everything the speaker.",
+              "The listener may not pay enough attention to what is being said.",
+              "There may be a lack of time to convey information effectively."
+            ],
+            correctAnswer: "Forming a judgment before listening to everything the speaker.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Resistance to change من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
+              "Differing opinions and views can reduce objectivity.",
+              "The listener may not pay enough attention to what is being said.",
+              "There may be a lack of time to convey information effectively."
+            ],
+            correctAnswer: "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
+            shuffle: true
+          }
+        ]
+      },
+      {
+        id: "sheet-3",
+        title: "Sheet 3",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question: "Personal email is an Email written to a person that have a non-casual relationship with, like your professor.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "The email you send to the prospective employer is a formal email.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "The email you send to someone you don't know is a non-formal email.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "The email you send to your father considered a formal email.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "The email is a message distributed by electronic means from one user to one or more recipients via a network.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "The casual mails are more important than the formal ones.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "The subject line is not important in the formal mails.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "CC: is the main receiver who is the main target of the email and is concerned of the Email topic.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "To: is the receiver that is interested in the topic of the email but is not the direct target of it.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "BCC: A hidden copy of the Email that might need to interested to certain persons while hiding their Email addresses.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "The subject must be related to the email body and be something that would convince the receiver to open the Email.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "The subject must be short, clear and stick to the point.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "If you know the name of who you are writing the email to, you can start your email with: To Whom it May Concern.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "You should end the email with a statement like: I hope this mail finds you well.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "Depending on the subject, you should have a maximum of four paragraphs and each paragraph should contain a single point.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "'Sincerely' is one the closing words in formal mails.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "Including your name or a signature with additional details and contact information is not necessary in formal mails.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "Checking for spelling and grammar is not necessary in formal mails.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "If you are an engineer and your name is Karim, so you can create your formal email address as for example: bad_boy2020@gmail.com.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "If you are an engineer and your name is Karim, so you can create your formal email address as for example: eng_karim2020@gmail.com.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "In the formal mails, you can write the subject as a question.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "In the formal mails, you can write 'Hi or Hello' to your employer.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "In the formal mails, it is preferable to use all letters in CAPITAL.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "In the non-casual mails, don't use slang, use formal vocabulary.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "If you are handing a hardcopy of your CV, the cover letter will be the first page.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          }
+        ]
+      },
+      {
+        id: "all-sheets",
+        title: "All Sheets",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            question: "هي نتاج عملية الترميز للتعبير عن الأفكار أو المعاني المرغوب نقلها للطرف الآخر و قد تكون شفهية أو مكتوبة أو فى شكل حركات للجسم وإشارات.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Feedback"
+            ],
+            correctAnswer: "Message",
+            shuffle: true
+          },
+          {
+            question: "تمثل الوسيلة التى من خلالها يتم نقل الرسالة إلى الطرف الآخر أثناء عملية الإتصال وهناك أنواع مختلفة من هذه الوسائل مثل الميكروفون ، والهاتف ، والفاكس ، والبريد الإلكتروني ، والمذكرات المكتوبة ، وذبذبات الهواء.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Feedback"
+            ],
+            correctAnswer: "Channel",
+            shuffle: true
+          },
+          {
+            question: "هو الذي يستقبل الرسالة المرسلة إليه من المرسل وقد يكون المستقبل فرد واحد أو جماعة من الأفراد.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Receiver"
+            ],
+            correctAnswer: "Receiver",
+            shuffle: true
+          },
+          {
+            question: "تاريخ أو مفهوم يشير إلى ما يقوم به الطرف الآخر الذي استقبل الرسالة وذلك لتفسير ما ورد في الرسالة وتفهمه ويتوقف التفسير والفهم من جانب المستقبل على عوامل عديدة منها مستوى تعليمه وخبراته وإتجاهاته ، ودوافعه.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Receiver"
+            ],
+            correctAnswer: "Decoding",
+            shuffle: true
+          },
+          {
+            question: "تعكس رد فعل المستقبل واستجابته / عدم استجابته للرسالة وقد تكون هذه الاستجابة منظورة أو غير منظورة.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Feedback"
+            ],
+            correctAnswer: "Feedback",
+            shuffle: true
+          },
+          {
+            question: "هو مصدر الرسالة أو النقطة التي تبدأ عندها عملية الاتصال.",
+            type: "multiple",
+            options: [
+              "Message",
+              "Channel",
+              "Decoding",
+              "Dispatcher"
+            ],
+            correctAnswer: "Dispatcher",
+            shuffle: true
+          },
+          {
+            question: "تعتبر ال ABC communications من السمات الاساسية لعملية الاتصال.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتعنى ضرورة تحديد الهدف من الإتصال.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "من",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "لماذا",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتعني ضرورة تحديد مضمون الرسالة ، أو ماذا سنقول.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "ماذا",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "ماذا",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتعنى تحديد الشخص المستهدف من الإتصال ومعرفة خصائصه.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "من",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "من",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتشير إلى الوسيلة المناسبة التي سوف تستخدم في الإتصال.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "من",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "كيف",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتشير إلى الوقت المناسب للإتصال بالطرف الآخر.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "متي",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "متي",
+            shuffle: true
+          },
+          {
+            question: "هي احد مباديء عملية الاتصال وتشير إلى المكان المناسب الذى سيتم فيه الإتصال بالطرف الآخر.",
+            type: "multiple",
+            options: [
+              "لماذا",
+              "متي",
+              "اين",
+              "كيف"
+            ],
+            correctAnswer: "اين",
+            shuffle: true
+          },
+          {
+            question: "هو مستمع ينصط بشغف و يقوم باظهار مشاعره و انفعالاته تضامنه مع طرف الاتصال.",
+            type: "multiple",
+            options: [
+              "Ignorant listener",
+              "Selective listener",
+              "Attentive listener",
+              "Empathic listener"
+            ],
+            correctAnswer: "Empathic listener",
+            shuffle: true
+          },
+          {
+            question: "هو مستمع ينصط للطرف الآخر بانتباه و تركيز دون اظهار اي مشاعر اثناء عملية الاتصال.",
+            type: "multiple",
+            options: [
+              "Ignorant listener",
+              "Selective listener",
+              "Attentive listener",
+              "Empathic listener"
+            ],
+            correctAnswer: "Attentive listener",
+            shuffle: true
+          },
+          {
+            question: "مستمع يركز فقط في نقاط معينه و يتجاهل الاخري اثناء عملية الاتصال.",
+            type: "multiple",
+            options: [
+              "Ignorant listener",
+              "Selective listener",
+              "Attentive listener",
+              "Empathic listener"
+            ],
+            correctAnswer: "Selective listener",
+            shuffle: true
+          },
+          {
+            question: "مستمع يتجاهل الطرف الآخر تماما في عملية الاتصال.",
+            type: "multiple",
+            options: [
+              "Ignorant listener",
+              "Selective listener",
+              "Attentive listener",
+              "Empathic listener"
+            ],
+            correctAnswer: "Ignorant listener",
+            shuffle: true
+          },
+          {
+            question: "الاتصالات الرسمية تحصل من خلال خطوط السلطة الرسمية والمعتمدة بموجب اللوائح والقرارات المكتوبة، وقد تكون داخلية (داخل المنظمة) وقد تكون خارجية مع منظمات أخرى.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "الاتصالات الغير رسمية التي تنشأ بوسائل غير رسمية ولا تتضمنها اللوائح والإجراءات الرسمية وإنما تحددها الصلات الشخصية والعلاقات الاجتماعية (تبادل المعلومات في الحفلات ، الشكاوى) ، ويمتاز هذا النوع من الاتصالات بسرعته قياساً بالاتصالات الرسمية.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "هي الاتصالات التي تتدفق من أعلى التنظيم إلى أسفل من المسئول إلى مختلف العاملين في المنظمة، وغالباً ما تكون التغذية العكسية في هذا النوع من الاتصالات منخفضة.",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلى الى اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات العمودية من اعلى الى اسفل",
+            shuffle: true
+          },
+          {
+            question: "هي الاتصالات الصادرة من العاملين في المنظمة إلى المسئول، وتضم نتائج تنفيذ الخطط وشرح المعوقات والصعوبات في التنفيذ والملاحظات والآراء.",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلي الي اسفل",
+              "الاتصالات العموديه من اسفل لاعلى",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات العموديه من اسفل لاعلى",
+            shuffle: true
+          },
+          {
+            question: "هي الاتصالات الجانبية التي تتم بين الأفراد أو الجماعات في المستويات المتقابلة (مثل اتصال المسئول بمسئول آخر أو العاملين ببعضهم البعض).",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلي الي اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات الافقيه",
+            shuffle: true
+          },
+          {
+            question: "هي الاتصالات بين المسئولين وجماعة العمل في إدارات غير تابعة لهم تنظيماً (مثل اتصال المسئول بعاملين في قطاع أخر أو مسئول نشاط في المنظمة بأعضاء أنشطة أخرى) ببعضهم البعض.",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلي الي اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحورية"
+            ],
+            correctAnswer: "الاتصالات المتقابله او المحورية",
+            shuffle: true
+          },
+          {
+            question: "الاتصال بين عميد الكلية ورئيس القسم يصنف علي انه من",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلى الى اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات العمودية من اعلى الى اسفل",
+            shuffle: true
+          },
+          {
+            question: "الاتصال بين طلاب كلية الهندسة وطلاب كلية العلوم يصنف علي انه من",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلى الى اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقيه",
+              "الاتصالات المتقابله او المحورية"
+            ],
+            correctAnswer: "الاتصالات الافقيه",
+            shuffle: true
+          },
+          {
+            question: "الاتصال بين طلاب مستوي 100 بقسم CCE و طلاب مستوي 100 بقسم BCE بكلية الهندسة جامعة المنصورة يصنف علي انه من",
+            type: "multiple",
+            options: [
+              "الاتصالات العمودية من اعلى الى اسفل",
+              "الاتصالات العموديه من اسفل لاعلي",
+              "الاتصالات الافقية",
+              "الاتصالات المتقابله او المحوريه"
+            ],
+            correctAnswer: "الاتصالات الافقية",
+            shuffle: true
+          },
+          {
+            question: "من ضمن اشكال وسائل الاتصال الشفوية هو",
+            type: "multiple",
+            options: [
+              "الاجتماعات",
+              "الندوات",
+              "المؤتمرات",
+              "كل ما سبق"
+            ],
+            correctAnswer: "كل ما سبق",
+            shuffle: true
+          },
+          {
+            question: "واحده من هذه الاشكال لا تمثل وسيلة اتصال بالوسائط المتعدده",
+            type: "multiple",
+            options: [
+              "الصور المتحركة",
+              "المجسمات",
+              "البرقيات",
+              "الفيديو"
+            ],
+            correctAnswer: "البرقيات",
+            shuffle: true
+          },
+          {
+            question: "هي أقصر الطرق لتبادل المعلومات والأفكار وأكثرها سهوله ويسراً وصراحة ، إلا أنه يعاب أنه يعرض المعلومات للتحريف وسوء الفهم .",
+            type: "multiple",
+            options: [
+              "الاتصالات الشفهية",
+              "الاتصالات الكتابية",
+              "الاتصالات الالكترونية",
+              "الاتصالات غير اللفظية"
+            ],
+            correctAnswer: "الاتصالات الشفهية",
+            shuffle: true
+          },
+          {
+            question: "الأنظمة والمنشورات والتقارير والمذكرات والمقترحات والشكاوى و غيرها تعتبر احد اشكال الاتصالات",
+            type: "multiple",
+            options: [
+              "الاتصالات الشفهية",
+              "الاتصالات الكتابية",
+              "الاتصالات الالكترونية",
+              "الاتصالات غير اللفظية"
+            ],
+            correctAnswer: "الاتصالات الكتابية",
+            shuffle: true
+          },
+          {
+            question: "تتميز الوسائل الكتابية بمزايا أهمها إمكانية الاحتفاظ بها والرجوع لها عند الحاجة وحماية المعلومات من التحريف وقلة التكلفة.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "من أهم عيوب الاتصالات الشفهية هي البطء في إيصال المعلومات ، تأكد احتمال الفهم الخاطئ لها خصوصاً عندما يكون للكلمة أكثر من معنى.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "توجد خمسة شروط للرسالة اللفظية وهي أن تكون كاملة ، ومختصرة، وواضحة وصحيحة، ولطيفة.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "لغة الجسم body language تعتبر احد اشكال",
+            type: "multiple",
+            options: [
+              "الاتصالات الشفهية",
+              "الاتصالات الكتابية",
+              "الاتصالات الالكترونية",
+              "الاتصالات غير اللفظية"
+            ],
+            correctAnswer: "الاتصالات غير اللفظية",
+            shuffle: true
+          },
+          {
+            question: "الاتصالات الكتابية هي الوسائل التي يتم بواسطتها تبادل المعلومات بين المتصل والمتصل به عن طريق الإشارات أو الإيماءات والسلوك تعبيرات الوجه وحركة العينين واليدين وطريقة الجلوس.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "يختلف فهم الرسائل غير اللفظية بسبب اختلاف الثقافات داخل المنظمة وداخل المجتمع أيضا.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "تعتبر التحديات النفسية والادراكية المتعلقة باطراف الاتصال من المعوقات الاساسية في عملية الاتصال الفعال.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "من شروط التقرير الجيد",
+            type: "multiple",
+            options: [
+              "اختيار المفردات المركبة غير التقليدية",
+              "تضخيم حجم الجمل المستخدمة",
+              "استخدام الحقائق و التعزيز بالارقام و الاحصائيات",
+              "البعد عن استخدام عنصر التشويق في العرض"
+            ],
+            correctAnswer: "استخدام الحقائق و التعزيز بالارقام و الاحصائيات",
+            shuffle: true
+          },
+          {
+            question: "الترتيب المنطقي لمراحل التقرير الجيد هي",
+            type: "multiple",
+            options: [
+              "التحضير - التنظيم - الكتابة - المراجعة - العرض",
+              "التحضير - العرض - الكتابة - المراجعة - التنظيم",
+              "التحضير - الكتابة - التنظيم - المراجعة - العرض",
+              "التحضير - التنظيم - المراجعة - العرض - الكتابة"
+            ],
+            correctAnswer: "التحضير - التنظيم - الكتابة - المراجعة - العرض",
+            shuffle: true
+          },
+          {
+            question: "الاتصالات غير المنظورة تصل نسبة استخدامها في الاتصال ما يقرب من 60% من المعاني وبصفة خاصة في الرسائل التي تتعلق بالأحاسيس والشعور.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "يكون شخص واحد وسط مجموعة في شكل العجلة ويكون قادرا على الاتصال مع كل فرد من أفراد الجماعة أما الأفراد فلا يستطيعون الاتصال إلا بهذا الشخص ويكون هذا الشخص قائدا للمجموعة وصانع القرارات لها، واستخدام هذا الأسلوب يجعل سلطة اتخاذ القرارات تركز في يد الرئيس أو المدير.",
+            type: "multiple",
+            options: [
+              "نمط العجلة",
+              "نمط السلسلة",
+              "نمط الشبكة",
+              "نمط الدائرة"
+            ],
+            correctAnswer: "نمط العجلة",
+            shuffle: true
+          },
+          {
+            question: "يتاح لكل فرد من أفراد التنظيم أو المنظمة الاتصال المباشر بأي فرد فيها، بمعنى آخر أن هذا الاتصال يتجه إلى كل الاتجاهات غير أن استخدام هذا النمط يؤدي إلى البطء في عملية توصيل المعلومات وبالتالي يقلل من الوصول إلى قرارات سليمة وفعالة.",
+            type: "multiple",
+            options: [
+              "نمط العجلة",
+              "نمط السلسلة",
+              "نمط الشبكة",
+              "نمط الدائرة"
+            ],
+            correctAnswer: "نمط الشبكة",
+            shuffle: true
+          },
+          {
+            question: "يكون فيه كل عضو مرتبط بعضوين، أي أن كل فرد يستطيع أن يتصل اتصالا مباشراً بشخصين آخرين ، ويمكن الاتصال ببقية أعضاء المجموعة بواسطة أحد الأفراد الذي يتصل بهم اتصالا مباشراً.",
+            type: "multiple",
+            options: [
+              "نمط العجلة",
+              "نمط السلسلة",
+              "مط الشبكة",
+              "نمط الدائرة"
+            ],
+            correctAnswer: "نمط الدائرة",
+            shuffle: true
+          },
+          {
+            question: "يكون جميع الأعضاء في خط واحد، حيث لا يستطيع أي منهم الاتصال المباشر بفرد آخر (أو بفردين) إلا إذا كان أحد الأفراد الذين يمثلون مراكز مهمة، ويلاحظ أن الفرد الذي يقع في وسط (منتصف) السلسلة يملك النفوذ والتأثير الأكبر في منصبه الوسطي.",
+            type: "multiple",
+            options: [
+              "نمط العجلة",
+              "نمط السلسلة",
+              "نمط الشبكة",
+              "نمط الدائرة"
+            ],
+            correctAnswer: "نمط السلسلة",
+            shuffle: true
+          },
+          {
+            question: "قضم الشفاة في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "الارتياح و الرضا",
+              "العصبية و الغضب",
+              "التعجب و الاندهاش",
+              "التهكم و السخرية"
+            ],
+            correctAnswer: "العصبية و الغضب",
+            shuffle: true
+          },
+          {
+            question: "رفع الحواجب مع تحريكك الشفاة او الكتف في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "الارتياح و الرضا",
+              "العصبية و الغضب",
+              "التعجب و الاندهاش",
+              "التهكم و السخرية"
+            ],
+            correctAnswer: "التعجب و الاندهاش",
+            shuffle: true
+          },
+          {
+            question: "تضييق العين في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "عدم الموافقة أو الشعور السلبي",
+              "العصبية و الغضب",
+              "التعجب و الاندهاش",
+              "التهكم و السخرية"
+            ],
+            correctAnswer: "عدم الموافقة أو الشعور السلبي",
+            shuffle: true
+          },
+          {
+            question: "الانحناء للامام في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "عدم الموافقة أو الشعور السلبي",
+              "العصبية و الغضب",
+              "التعجب و الاندهاش",
+              "الاهتمام أو العناية"
+            ],
+            correctAnswer: "الاهتمام أو العناية",
+            shuffle: true
+          },
+          {
+            question: "تجنب تلاقي الاعين في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "عدم الموافقة أو الشعور السلبي",
+              "العصبية و الغضب",
+              "البرودة واللامبالاة",
+              "الاهتمام أو العناية"
+            ],
+            correctAnswer: "البرودة واللامبالاة",
+            shuffle: true
+          },
+          {
+            question: "الرتب علي الكتف في الاتصالات غير المنظورة تشير الي",
+            type: "multiple",
+            options: [
+              "الموافقة و الطمانينة و التشجيع",
+              "العصبية و الغضب",
+              "البرودة واللامبالاة",
+              "الاهتمام او العناية"
+            ],
+            correctAnswer: "الموافقة و الطمانينة و التشجيع",
+            shuffle: true
+          },
+          {
+            question: "تعد ال completeness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "The receiver gets all the information he needs to process the message and takes action.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "The receiver gets all the information he needs to process the message and takes action.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Conciseness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "The receiver gets all the information he needs to process the message and takes action.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "Keep your messages to a point.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Consideration من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "The receiver gets all the information he needs to process the message and takes action.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "This takes into account the receiver's background and points of view.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Concreteness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "The receiver gets all the information he needs to process the message and takes action.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "The message must be specific, tangible, and vivid.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Courtesy من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "Respect the receiver's culture, value and beliefs.",
+              "Keep your messages to a point.",
+              "This takes into account the receiver's background and points of view.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "Respect the receiver's culture, value and beliefs.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Clearness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "Respect the receiver's culture, value and beliefs.",
+              "Keep your messages to a point.",
+              "The clarity of your message makes it easier for the receiver to decode it.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "The clarity of your message makes it easier for the receiver to decode it.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Correctness من محددات الاتصال الجيد و هي تعني",
+            type: "multiple",
+            options: [
+              "Grammar and syntax is a must when it comes to communication.",
+              "Keep your messages to a point.",
+              "The clarity of your message makes it easier for the receiver to decode it.",
+              "The message must be specific, tangible, and vivid."
+            ],
+            correctAnswer: "Grammar and syntax is a must when it comes to communication.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال psychological barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Unstable internet connection.",
+              "The psychological state of the speaker and listener can affect communication.",
+              "Uncomfortable temperatures.",
+              "Noise."
+            ],
+            correctAnswer: "The psychological state of the speaker and listener can affect communication.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال physiological barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Unstable internet connection.",
+              "The psychological state of the speaker and listener can affect communication.",
+              "Uncomfortable temperatures.",
+              "Impaired eyesight and hearing problems."
+            ],
+            correctAnswer: "Impaired eyesight and hearing problems.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال perceptual barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Unstable internet connection.",
+              "Differing opinions and views can reduce objectivity.",
+              "Uncomfortable temperatures.",
+              "Impaired eyesight and hearing problems."
+            ],
+            correctAnswer: "Differing opinions and views can reduce objectivity.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال attentional barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Unstable internet connection.",
+              "Differing opinions and views can reduce objectivity.",
+              "The listener may not pay enough attention to what is being said.",
+              "Impaired eyesight and hearing problems."
+            ],
+            correctAnswer: "The listener may not pay enough attention to what is being said.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال language barriers من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Difficulties in understanding unfamiliar accents.",
+              "Differing opinions and views can reduce objectivity.",
+              "The listener may not pay enough attention to what is being said.",
+              "Impaired eyesight and hearing problems."
+            ],
+            correctAnswer: "Difficulties in understanding unfamiliar accents.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال shortage of time من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Difficulties in understanding unfamiliar accents.",
+              "Differing opinions and views can reduce objectivity.",
+              "The listener may not pay enough attention to what is being said.",
+              "There may be a lack of time to convey information effectively."
+            ],
+            correctAnswer: "There may be a lack of time to convey information effectively.",
+            shuffle: true
+          },
+          {
+            question: "تعد Assumptions, jumping to conclusions and premature evaluations من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "Difficulties in understanding unfamiliar accents.",
+              "Forming a judgment before listening to everything the speaker.",
+              "The listener may not pay enough attention to what is being said.",
+              "There may be a lack of time to convey information effectively."
+            ],
+            correctAnswer: "Forming a judgment before listening to everything the speaker.",
+            shuffle: true
+          },
+          {
+            question: "تعد ال Resistance to change من معوقات الاتصال و هي تعني",
+            type: "multiple",
+            options: [
+              "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
+              "Differing opinions and views can reduce objectivity.",
+              "The listener may not pay enough attention to what is being said.",
+              "There may be a lack of time to convey information effectively."
+            ],
+            correctAnswer: "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
+            shuffle: true
+          },
+          {
+            question: "Personal email is an Email written to a person that have a non-casual relationship with, like your professor.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "The email you send to the prospective employer is a formal email.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "The email you send to someone you don't know is a non-formal email.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "The email you send to your father considered a formal email.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "The email is a message distributed by electronic means from one user to one or more recipients via a network.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "The casual mails are more important than the formal ones.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "The subject line is not important in the formal mails.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "CC: is the main receiver who is the main target of the email and is concerned of the Email topic.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "To: is the receiver that is interested in the topic of the email but is not the direct target of it.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "BCC: A hidden copy of the Email that might need to interested to certain persons while hiding their Email addresses.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "The subject must be related to the email body and be something that would convince the receiver to open the Email.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "The subject must be short, clear and stick to the point.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "If you know the name of who you are writing the email to, you can start your email with: To Whom it May Concern.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "You should end the email with a statement like: I hope this mail finds you well.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "Depending on the subject, you should have a maximum of four paragraphs and each paragraph should contain a single point.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "'Sincerely' is one the closing words in formal mails.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "Including your name or a signature with additional details and contact information is not necessary in formal mails.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "Checking for spelling and grammar is not necessary in formal mails.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "If you are an engineer and your name is Karim, so you can create your formal email address as for example: bad_boy2020@gmail.com.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "If you are an engineer and your name is Karim, so you can create your formal email address as for example: eng_karim2020@gmail.com.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "In the formal mails, you can write the subject as a question.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "In the formal mails, you can write 'Hi or Hello' to your employer.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "In the formal mails, it is preferable to use all letters in CAPITAL.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false
+          },
+          {
+            question: "In the non-casual mails, don't use slang, use formal vocabulary.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          },
+          {
+            question: "If you are handing a hardcopy of your CV, the cover letter will be the first page.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false
+          }
+        ]
+      },
+    ]
   }
   // {
   //   id: "reproductive-disorders",
