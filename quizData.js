@@ -11287,8 +11287,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$k_{1} =$",
+            question: "$k_{1} =$",
             type: "multiple",
             math: true,
             image: "img/Q6Maths5-Finalterm21-22.png",
@@ -11297,8 +11296,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$k_{2} =$",
+            question: "$k_{2} =$",
             type: "multiple",
             math: true,
             image: "img/Q6Maths5-Finalterm21-22.png",
@@ -11307,8 +11305,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$k_{3} =$",
+            question: "$k_{3} =$",
             type: "multiple",
             math: true,
             image: "img/Q6Maths5-Finalterm21-22.png",
@@ -11317,8 +11314,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$y(0.1) =$",
+            question: "$y(0.1) =$",
             type: "multiple",
             math: true,
             image: "img/Q6Maths5-Finalterm21-22.png",
@@ -11337,8 +11333,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$\alpha_{1} =$",
+            question: "$\alpha_{1} =$",
             type: "multiple",
             math: true,
             image: "img/Q11Maths5-Finalterm21-22.png",
@@ -11347,17 +11342,16 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$\alpha_{2} =$",
+            question: "$\alpha_{2} =$",
             type: "multiple",
-            math: true, image: "img/Q11Maths5-Finalterm21-22.png",
+            math: true,
+            image: "img/Q11Maths5-Finalterm21-22.png",
             options: ["$2.78304$", "$2.35690$", "$2.12345$", "None of these"],
             correctAnswer: "$2.78304$",
             shuffle: true,
           },
           {
-            question:
-              "$\alpha_{3} =$",
+            question: "$\alpha_{3} =$",
             type: "multiple",
             math: true,
             image: "img/Q11Maths5-Finalterm21-22.png",
@@ -11371,8 +11365,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$x_{1}^{(5)} =$",
+            question: "$x_{1}^{(5)} =$",
             type: "multiple",
             math: true,
             image: "img/Q11Maths5-Finalterm21-22.png",
@@ -11381,8 +11374,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$x_{2}^{(5)} =$",
+            question: "$x_{2}^{(5)} =$",
             type: "multiple",
             math: true,
             image: "img/Q11Maths5-Finalterm21-22.png",
@@ -11391,8 +11383,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$x_{3}^{(5)} =$",
+            question: "$x_{3}^{(5)} =$",
             type: "multiple",
             math: true,
             image: "img/Q11Maths5-Finalterm21-22.png",
@@ -11401,8 +11392,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$\tilde{Y} = .............$",
+            question: "$\tilde{Y} = .............$",
             type: "multiple",
             math: true,
             image: "img/Q17Maths5-Finalterm21-22.png",
@@ -11411,8 +11401,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$\sum_{i=1}^{5} \tilde{Y}_{i} = ...........$",
+            question: "$\sum_{i=1}^{5} \tilde{Y}_{i} = ...........$",
             type: "multiple",
             math: true,
             image: "img/Q17Maths5-Finalterm21-22.png",
@@ -11421,8 +11410,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$\sum_{i=1}^{5} x^{2} = .........$",
+            question: "$\sum_{i=1}^{5} x^{2} = .........$",
             type: "multiple",
             math: true,
             image: "img/Q17Maths5-Finalterm21-22.png",
@@ -11431,8 +11419,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$a = ...........$",
+            question: "$a = ...........$",
             type: "multiple",
             math: true,
             image: "img/Q17Maths5-Finalterm21-22.png",
@@ -11441,8 +11428,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$b = ...........$",
+            question: "$b = ...........$",
             type: "multiple",
             math: true,
             image: "img/Q17Maths5-Finalterm21-22.png",
@@ -11451,8 +11437,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$A =$",
+            question: "$A =$",
             type: "multiple",
             math: true,
             image: "img/Q22Maths5-Finalterm21-22.png",
@@ -11461,8 +11446,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$B has ........... value",
+            question: "$B has ........... value",
             type: "multiple",
             math: true,
             image: "img/Q22Maths5-Finalterm21-22.png",
@@ -11471,8 +11455,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$C = ...........$",
+            question: "$C = ...........$",
             type: "multiple",
             math: true,
             image: "img/Q22Maths5-Finalterm21-22.png",
@@ -11501,8 +11484,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$u_{1} = .............$",
+            question: "$u_{1} = .............$",
             type: "multiple",
             math: true,
             image: "img/Q27Maths5-Finalterm21-22.png",
@@ -11511,8 +11493,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$u_{2} = .............$",
+            question: "$u_{2} = .............$",
             type: "multiple",
             math: true,
             image: "img/Q27Maths5-Finalterm21-22.png",
@@ -11521,8 +11502,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$u_{3} = ..............$",
+            question: "$u_{3} = ..............$",
             type: "multiple",
             math: true,
             image: "img/Q27Maths5-Finalterm21-22.png",
@@ -11531,8 +11511,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$u_{4} = ...............$",
+            question: "$u_{4} = ...............$",
             type: "multiple",
             math: true,
             image: "img/Q27Maths5-Finalterm21-22.png",
@@ -11541,8 +11520,7 @@ const quizzes = [
             shuffle: true,
           },
           {
-            question:
-              "$\Psi = ...........$",
+            question: "$\Psi = ...........$",
             type: "multiple",
             math: true,
             image: "img/Q31Maths5-Finalterm21-22.png",
@@ -11575,8 +11553,7 @@ const quizzes = [
         quizModeTimer: 1800,
         questions: [
           {
-            question:
-              "\n$\Psi = ..........$",
+            question: "\n$\Psi = ..........$",
             type: "multiple",
             math: true,
             image: "img/Q1Maths5-Finalterm23-24.png",
@@ -13470,8 +13447,8 @@ const quizzes = [
     isSubjectGroup: true,
     chapters: [
       {
-        id: "bank-mcq-1-4",
-        title: "Bank MCQ 1-4",
+        id: "mcq-midterm-qbank-2027",
+        title: "MCQ Midterm Qbank 2027",
         shuffleQuestions: true,
         showScore: true,
         quizModeTimer: 1800,
@@ -13483,22 +13460,25 @@ const quizzes = [
               "A continuous activity that keeps the business running",
               "A set of repetitive tasks with standardized outputs",
               "A temporary endeavor undertaken to create a unique product, service, or result",
-              "A permanent unit that delivers recurring services"
+              "A permanent unit that delivers recurring services",
             ],
-            correctAnswer: "A temporary endeavor undertaken to create a unique product, service, or result",
-            shuffle: true
+            correctAnswer:
+              "A temporary endeavor undertaken to create a unique product, service, or result",
+            shuffle: true,
           },
           {
-            question: "Which pair of statements explains the words 'temporary' and 'unique' in the definition of a project?",
+            question:
+              "Which pair of statements explains the words 'temporary' and 'unique' in the definition of a project?",
             type: "multiple",
             options: [
               "It has a definite beginning and ending; it creates a product, service, or result tailored to specific needs",
               "It lasts indefinitely; it is repeated every year",
               "It has no end date; it uses a permanent team",
-              "It repeats a standard process; it has no specific client"
+              "It repeats a standard process; it has no specific client",
             ],
-            correctAnswer: "It has a definite beginning and ending; it creates a product, service, or result tailored to specific needs",
-            shuffle: true
+            correctAnswer:
+              "It has a definite beginning and ending; it creates a product, service, or result tailored to specific needs",
+            shuffle: true,
           },
           {
             question: "Which of the following is a project?",
@@ -13507,142 +13487,163 @@ const quizzes = [
               "The daily operation of a hospital",
               "Manufacturing 10,000 identical devices",
               "Monthly payroll processing",
-              "Designing a new bridge"
+              "Designing a new bridge",
             ],
             correctAnswer: "Designing a new bridge",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "Which comparison between projects and operations is correct?",
+            question:
+              "Which comparison between projects and operations is correct?",
             type: "multiple",
             options: [
               "Projects are continuous; operations are temporary",
               "Projects are temporary and unique; operations are continuous and repetitive",
               "Both are temporary and unique",
-              "Both are stable, predictable, and use permanent teams"
+              "Both are stable, predictable, and use permanent teams",
             ],
-            correctAnswer: "Projects are temporary and unique; operations are continuous and repetitive",
-            shuffle: true
+            correctAnswer:
+              "Projects are temporary and unique; operations are continuous and repetitive",
+            shuffle: true,
           },
           {
-            question: "Which statement best justifies the need for project management in engineering?",
+            question:
+              "Which statement best justifies the need for project management in engineering?",
             type: "multiple",
             options: [
               "A technically excellent solution can still be a failed project if time, cost, risks, and stakeholders are not managed",
               "Engineers cannot produce a design without a manager",
               "Project management replaces the technical design",
-              "Projects with a good design never face constraints"
+              "Projects with a good design never face constraints",
             ],
-            correctAnswer: "A technically excellent solution can still be a failed project if time, cost, risks, and stakeholders are not managed",
-            shuffle: true
+            correctAnswer:
+              "A technically excellent solution can still be a failed project if time, cost, risks, and stakeholders are not managed",
+            shuffle: true,
           },
           {
-            question: "Which list contains the five sources of complexity in engineering projects?",
+            question:
+              "Which list contains the five sources of complexity in engineering projects?",
             type: "multiple",
             options: [
               "Technical, financial, legal, political, social",
               "Scope, time, cost, quality, risk",
               "Technical, organizational, environmental, stakeholder, uncertainty",
-              "Planning, executing, controlling, adapting, closing"
+              "Planning, executing, controlling, adapting, closing",
             ],
-            correctAnswer: "Technical, organizational, environmental, stakeholder, uncertainty",
-            shuffle: true
+            correctAnswer:
+              "Technical, organizational, environmental, stakeholder, uncertainty",
+            shuffle: true,
           },
           {
-            question: "Which statement about the traditional constraints (scope, time, cost) is correct?",
+            question:
+              "Which statement about the traditional constraints (scope, time, cost) is correct?",
             type: "multiple",
             options: [
               "They are independent of each other",
               "They are interconnected: increasing the scope usually puts pressure on time and/or cost",
               "They are quality, risk, and resources",
-              "Only cost matters in engineering projects"
+              "Only cost matters in engineering projects",
             ],
-            correctAnswer: "They are interconnected: increasing the scope usually puts pressure on time and/or cost",
-            shuffle: true
+            correctAnswer:
+              "They are interconnected: increasing the scope usually puts pressure on time and/or cost",
+            shuffle: true,
           },
           {
-            question: "Besides scope, time, and cost, which other constraints are considered in real engineering projects?",
+            question:
+              "Besides scope, time, and cost, which other constraints are considered in real engineering projects?",
             type: "multiple",
             options: [
               "Marketing, advertising, branding",
               "Profit, loss, interest",
               "Weather, mood, fashion",
-              "Quality, risk, resources, stakeholder expectations, safety, regulatory requirements, sustainability"
+              "Quality, risk, resources, stakeholder expectations, safety, regulatory requirements, sustainability",
             ],
-            correctAnswer: "Quality, risk, resources, stakeholder expectations, safety, regulatory requirements, sustainability",
-            shuffle: true
+            correctAnswer:
+              "Quality, risk, resources, stakeholder expectations, safety, regulatory requirements, sustainability",
+            shuffle: true,
           },
           {
-            question: "Which option correctly defines project management and what it involves?",
+            question:
+              "Which option correctly defines project management and what it involves?",
             type: "multiple",
             options: [
               "Managing daily operations: monitoring and billing",
               "Scheduling activities only",
               "Applying knowledge, skills, tools, and techniques to project activities: planning, executing, controlling, adapting, closing",
-              "Giving orders to the project staff"
+              "Giving orders to the project staff",
             ],
-            correctAnswer: "Applying knowledge, skills, tools, and techniques to project activities: planning, executing, controlling, adapting, closing",
-            shuffle: true
+            correctAnswer:
+              "Applying knowledge, skills, tools, and techniques to project activities: planning, executing, controlling, adapting, closing",
+            shuffle: true,
           },
           {
-            question: "Which statement describes 'project management is a system'?",
+            question:
+              "Which statement describes 'project management is a system'?",
             type: "multiple",
             options: [
               "Inputs (requirements, resources, information, constraints, expectations) pass through project management activities to produce deliverables, benefits, and value",
               "It is only a set of documents",
               "Outcomes come first and inputs come last",
-              "It works without stakeholder expectations"
+              "It works without stakeholder expectations",
             ],
-            correctAnswer: "Inputs (requirements, resources, information, constraints, expectations) pass through project management activities to produce deliverables, benefits, and value",
-            shuffle: true
+            correctAnswer:
+              "Inputs (requirements, resources, information, constraints, expectations) pass through project management activities to produce deliverables, benefits, and value",
+            shuffle: true,
           },
           {
-            question: "A team delivers an excellent technical design late and over budget, and the users are unhappy. What does this show?",
+            question:
+              "A team delivers an excellent technical design late and over budget, and the users are unhappy. What does this show?",
             type: "multiple",
             options: [
               "The technical skills were weak",
               "The team had too many experts",
               "The project did not need management",
-              "A technically excellent solution can still be a failed project; likely causes unrealistic schedule, poor cost estimation, poor stakeholder management"
+              "A technically excellent solution can still be a failed project; likely causes unrealistic schedule, poor cost estimation, poor stakeholder management",
             ],
-            correctAnswer: "A technically excellent solution can still be a failed project; likely causes unrealistic schedule, poor cost estimation, poor stakeholder management",
-            shuffle: true
+            correctAnswer:
+              "A technically excellent solution can still be a failed project; likely causes unrealistic schedule, poor cost estimation, poor stakeholder management",
+            shuffle: true,
           },
           {
-            question: "Which option correctly defines a stakeholder and gives examples?",
+            question:
+              "Which option correctly defines a stakeholder and gives examples?",
             type: "multiple",
             options: [
               "Only the people who pay for the project",
               "An individual, group, or organization that can affect, be affected by, or perceive itself to be affected by the project, such as management, doctors, patients, contractors",
               "Only the members of the project team",
-              "Only government authorities"
+              "Only government authorities",
             ],
-            correctAnswer: "An individual, group, or organization that can affect, be affected by, or perceive itself to be affected by the project, such as management, doctors, patients, contractors",
-            shuffle: true
+            correctAnswer:
+              "An individual, group, or organization that can affect, be affected by, or perceive itself to be affected by the project, such as management, doctors, patients, contractors",
+            shuffle: true,
           },
           {
-            question: "In a sustainable building project, the owner wants low cost, and the sustainability consultant wants high environmental performance. The project manager's challenge is to:",
+            question:
+              "In a sustainable building project, the owner wants low cost, and the sustainability consultant wants high environmental performance. The project manager's challenge is to:",
             type: "multiple",
             options: [
               "Align expectations and manage the trade-offs",
               "Ignore one of the two stakeholders",
               "Always choose the cheapest option",
-              "Remove the consultant from the project"
+              "Remove the consultant from the project",
             ],
             correctAnswer: "Align expectations and manage the trade-offs",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "Which list contains the six skills of a project manager?",
+            question:
+              "Which list contains the six skills of a project manager?",
             type: "multiple",
             options: [
               "Technical, accounting, marketing, drawing, legal, sales",
               "Planning, executing, controlling, adapting, closing, monitoring",
               "Technical, leadership, communication, decision-making, problem-solving, negotiation",
-              "Scope, time, cost, quality, risk, resources"
+              "Scope, time, cost, quality, risk, resources",
             ],
-            correctAnswer: "Technical, leadership, communication, decision-making, problem-solving, negotiation",
-            shuffle: true
+            correctAnswer:
+              "Technical, leadership, communication, decision-making, problem-solving, negotiation",
+            shuffle: true,
           },
           {
             question: "'Project manager  boss' means that the project manager:",
@@ -13651,58 +13652,67 @@ const quizzes = [
               "Has no authority and no responsibility",
               "Avoids making decisions",
               "Directly controls every team member",
-              "Often coordinates, facilitates, and influences people without directly controlling them"
+              "Often coordinates, facilitates, and influences people without directly controlling them",
             ],
-            correctAnswer: "Often coordinates, facilitates, and influences people without directly controlling them",
-            shuffle: true
+            correctAnswer:
+              "Often coordinates, facilitates, and influences people without directly controlling them",
+            shuffle: true,
           },
           {
-            question: "Which option correctly gives the simplified life cycle and the medical-device example?",
+            question:
+              "Which option correctly gives the simplified life cycle and the medical-device example?",
             type: "multiple",
             options: [
               "Initiating, planning, executing, closing; for a medical device: charter, plan, build, close",
               "Planning, executing, controlling, adapting, closing; for a medical device: design, prototype, test, launch, close project",
               "Concept, design, construction, handover; for a medical device: buy, install, operate",
-              "Starting, preparing, working, closing; for a medical device: sell, ship, support"
+              "Starting, preparing, working, closing; for a medical device: sell, ship, support",
             ],
-            correctAnswer: "Planning, executing, controlling, adapting, closing; for a medical device: design, prototype, test, launch, close project",
-            shuffle: true
+            correctAnswer:
+              "Planning, executing, controlling, adapting, closing; for a medical device: design, prototype, test, launch, close project",
+            shuffle: true,
           },
           {
-            question: "Which option gives the four main phases and the longest one?",
+            question:
+              "Which option gives the four main phases and the longest one?",
             type: "multiple",
             options: [
               "Initiating, planning, executing, closing; planning is the longest",
               "Starting, organizing and preparing, carrying out the work, closing; closing is the longest",
               "Starting, organizing and preparing, carrying out the work, closing; carrying out the work is the longest",
-              "Concept, design, construction, handover; handover is the longest"
+              "Concept, design, construction, handover; handover is the longest",
             ],
-            correctAnswer: "Starting, organizing and preparing, carrying out the work, closing; carrying out the work is the longest",
-            shuffle: true
+            correctAnswer:
+              "Starting, organizing and preparing, carrying out the work, closing; carrying out the work is the longest",
+            shuffle: true,
           },
           {
-            question: "Which statement about cost, staffing, and phase outputs is correct?",
+            question:
+              "Which statement about cost, staffing, and phase outputs is correct?",
             type: "multiple",
             options: [
               "Low at the start, rising, peaking while carrying out the work, then dropping at closing; outputs: Project Charter, Project Management Plan, Accepted Deliverables, Archived Project Documents",
               "Highest at the start and falling over time; outputs appear in reverse order",
               "Constant throughout the project; no output until closing",
-              "Peaking at closing; outputs: Archived Project Documents first"
+              "Peaking at closing; outputs: Archived Project Documents first",
             ],
-            correctAnswer: "Low at the start, rising, peaking while carrying out the work, then dropping at closing; outputs: Project Charter, Project Management Plan, Accepted Deliverables, Archived Project Documents",
-            shuffle: true
+            correctAnswer:
+              "Low at the start, rising, peaking while carrying out the work, then dropping at closing; outputs: Project Charter, Project Management Plan, Accepted Deliverables, Archived Project Documents",
+            shuffle: true,
           },
           {
-            question: "How do stakeholder influence, risk, and uncertainty change over time?",
+            question:
+              "How do stakeholder influence, risk, and uncertainty change over time?",
             type: "multiple",
             options: [
               "Low at the start and high at the end",
               "Highest at the beginning and decreasing as the project progresses",
               "Constant throughout",
-              "Increasing until closing"
+              "Increasing until closing",
             ],
-            correctAnswer: "Highest at the beginning and decreasing as the project progresses",
-            shuffle: true
+            correctAnswer:
+              "Highest at the beginning and decreasing as the project progresses",
+            shuffle: true,
           },
           {
             question: "How does the cost of changes vary over time?",
@@ -13711,94 +13721,106 @@ const quizzes = [
               "Highest at the start and decreasing",
               "Constant",
               "Lowest near completion",
-              "Very low at the start and rising sharply near completion, because most of the work is done"
+              "Very low at the start and rising sharply near completion, because most of the work is done",
             ],
-            correctAnswer: "Very low at the start and rising sharply near completion, because most of the work is done",
-            shuffle: true
+            correctAnswer:
+              "Very low at the start and rising sharply near completion, because most of the work is done",
+            shuffle: true,
           },
           {
-            question: "Which description of the graph of time, stakeholder influence/risk/uncertainty, and cost of changes is correct?",
+            question:
+              "Which description of the graph of time, stakeholder influence/risk/uncertainty, and cost of changes is correct?",
             type: "multiple",
             options: [
               "Both curves rise with time",
               "Both curves fall with time",
               "Influence/risk/uncertainty starts high and falls; cost of changes starts low and rises; they cross around the middle",
-              "Cost of changes starts high and falls while influence rises"
+              "Cost of changes starts high and falls while influence rises",
             ],
-            correctAnswer: "Influence/risk/uncertainty starts high and falls; cost of changes starts low and rises; they cross around the middle",
-            shuffle: true
+            correctAnswer:
+              "Influence/risk/uncertainty starts high and falls; cost of changes starts low and rises; they cross around the middle",
+            shuffle: true,
           },
           {
-            question: "Which comparison of predictive, agile, and hybrid approaches is correct?",
+            question:
+              "Which comparison of predictive, agile, and hybrid approaches is correct?",
             type: "multiple",
             options: [
               "Predictive: stable requirements, early scope, detailed planning, formal change control; agile: changing requirements, feedback, early frequent delivery; hybrid combines both",
               "Predictive is iterative and agile needs detailed upfront planning",
               "Hybrid uses no planning",
-              "Predictive is for highly uncertain projects"
+              "Predictive is for highly uncertain projects",
             ],
-            correctAnswer: "Predictive: stable requirements, early scope, detailed planning, formal change control; agile: changing requirements, feedback, early frequent delivery; hybrid combines both",
-            shuffle: true
+            correctAnswer:
+              "Predictive: stable requirements, early scope, detailed planning, formal change control; agile: changing requirements, feedback, early frequent delivery; hybrid combines both",
+            shuffle: true,
           },
           {
-            question: "Which approach fits (a) constructing a university building and (b) developing a new healthcare software platform?",
+            question:
+              "Which approach fits (a) constructing a university building and (b) developing a new healthcare software platform?",
             type: "multiple",
             options: [
               "(a) agile, (b) predictive",
               "(a) agile, (b) agile",
               "(a) predictive, (b) predictive",
-              "(a) predictive, (b) agile"
+              "(a) predictive, (b) agile",
             ],
             correctAnswer: "(a) predictive, (b) agile",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "Which list contains only common causes of project failure?",
+            question:
+              "Which list contains only common causes of project failure?",
             type: "multiple",
             options: [
               "Well-defined scope, realistic schedule, strong leadership",
               "Poorly defined scope, unrealistic schedule, poor cost estimation, weak communication, unmanaged risks, poor stakeholder management",
               "Excessive training, good communication, clear scope",
-              "Early stakeholder engagement, accurate estimates, risk management"
+              "Early stakeholder engagement, accurate estimates, risk management",
             ],
-            correctAnswer: "Poorly defined scope, unrealistic schedule, poor cost estimation, weak communication, unmanaged risks, poor stakeholder management",
-            shuffle: true
+            correctAnswer:
+              "Poorly defined scope, unrealistic schedule, poor cost estimation, weak communication, unmanaged risks, poor stakeholder management",
+            shuffle: true,
           },
           {
-            question: "Which sequence gives the project manager's authority in functional, weak matrix, balanced matrix, strong matrix, and projectized organizations?",
+            question:
+              "Which sequence gives the project manager's authority in functional, weak matrix, balanced matrix, strong matrix, and projectized organizations?",
             type: "multiple",
             options: [
               "High, high, shared, low, low",
               "Very low/limited, low, shared, high, high",
               "Low, shared, high, high, very low",
-              "Shared, shared, shared, shared, shared"
+              "Shared, shared, shared, shared, shared",
             ],
             correctAnswer: "Very low/limited, low, shared, high, high",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "A project manager must ask functional managers to approve almost every decision. Which structures fit?",
+            question:
+              "A project manager must ask functional managers to approve almost every decision. Which structures fit?",
             type: "multiple",
             options: [
               "Strong matrix or projectized",
               "Balanced matrix only",
               "Functional or weak matrix",
-              "Projectized only"
+              "Projectized only",
             ],
             correctAnswer: "Functional or weak matrix",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "Which option correctly differentiates project, program, and portfolio management?",
+            question:
+              "Which option correctly differentiates project, program, and portfolio management?",
             type: "multiple",
             options: [
               "Project: individual objectives; program: groups-related projects for coordinated benefits; portfolio: highest level, aligned with strategy",
               "Project: highest level; program: one project; portfolio: operations",
               "Project: groups programs; program: strategy; portfolio: one project",
-              "All three manage a single project"
+              "All three manage a single project",
             ],
-            correctAnswer: "Project: individual objectives; program: groups-related projects for coordinated benefits; portfolio: highest level, aligned with strategy",
-            shuffle: true
+            correctAnswer:
+              "Project: individual objectives; program: groups-related projects for coordinated benefits; portfolio: highest level, aligned with strategy",
+            shuffle: true,
           },
           {
             question: "Which option correctly distinguishes OPA from EEF?",
@@ -13807,10 +13829,11 @@ const quizzes = [
               "OPA: external influences the project manager cannot control; EEF: organizational knowledge",
               "Both are internal assets of the organization",
               "Both are external factors",
-              "OPA: what the organization has (knowledge, processes, tools); EEF: what surrounds and influences the project (legal, economic, culture, expectations, technology)"
+              "OPA: what the organization has (knowledge, processes, tools); EEF: what surrounds and influences the project (legal, economic, culture, expectations, technology)",
             ],
-            correctAnswer: "OPA: what the organization has (knowledge, processes, tools); EEF: what surrounds and influences the project (legal, economic, culture, expectations, technology)",
-            shuffle: true
+            correctAnswer:
+              "OPA: what the organization has (knowledge, processes, tools); EEF: what surrounds and influences the project (legal, economic, culture, expectations, technology)",
+            shuffle: true,
           },
           {
             question: "Are the process groups the same as project phases?",
@@ -13819,46 +13842,51 @@ const quizzes = [
               "Yes, each group is one phase",
               "Yes, but only in construction projects",
               "No, the groups overlap and repeat within every phase",
-              "No, the groups are the knowledge areas"
+              "No, the groups are the knowledge areas",
             ],
-            correctAnswer: "No, the groups overlap and repeat within every phase",
-            shuffle: true
+            correctAnswer:
+              "No, the groups overlap and repeat within every phase",
+            shuffle: true,
           },
           {
-            question: "Which option gives the number and distribution of the PMBOK 4th edition processes?",
+            question:
+              "Which option gives the number and distribution of the PMBOK 4th edition processes?",
             type: "multiple",
             options: [
               "49 processes: 2, 24, 10, 12, 1",
               "42 processes in 9 knowledge areas: 2, 20, 8, 10, 2",
               "47 processes: 2, 24, 8, 11, 2",
-              "40 processes in 7 domains"
+              "40 processes in 7 domains",
             ],
             correctAnswer: "42 processes in 9 knowledge areas: 2, 20, 8, 10, 2",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "How are the six Integration Management processes distributed over the groups?",
+            question:
+              "How are the six Integration Management processes distributed over the groups?",
             type: "multiple",
             options: [
               "1 initiating, 1 planning, 1 executing, 2 monitoring and controlling, 1 closing",
               "2 planning, 2 executing, 1 monitoring and controlling, 1 closing",
               "1 initiating, 3 planning, 2 closing",
-              "6 in planning"
+              "6 in planning",
             ],
-            correctAnswer: "1 initiating, 1 planning, 1 executing, 2 monitoring and controlling, 1 closing",
-            shuffle: true
+            correctAnswer:
+              "1 initiating, 1 planning, 1 executing, 2 monitoring and controlling, 1 closing",
+            shuffle: true,
           },
           {
-            question: "Which knowledge areas have processes in at least four process groups?",
+            question:
+              "Which knowledge areas have processes in at least four process groups?",
             type: "multiple",
             options: [
               "Scope, time, cost",
               "Quality, human resources, risk",
               "Integration only",
-              "Integration, communications, procurement"
+              "Integration, communications, procurement",
             ],
             correctAnswer: "Integration, communications, procurement",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "Which list contains the eight Executing processes?",
@@ -13867,22 +13895,25 @@ const quizzes = [
               "Verify Scope; Perform Quality Assurance; Acquire, Develop, Manage Project Team; Distribute Information; Manage Stakeholder Expectations; Conduct Procurements",
               "Direct and Manage Project Execution; Perform Quality Assurance; Acquire, Develop, Manage Project Team; Distribute Information; Manage Stakeholder Expectations; Conduct Procurements",
               "Direct and Manage Project Execution; Report Performance; Acquire, Develop, Manage Project Team; Distribute Information; Administer Procurements",
-              "Plan Quality; Perform Quality Assurance; Acquire Project Team; Close Procurements"
+              "Plan Quality; Perform Quality Assurance; Acquire Project Team; Close Procurements",
             ],
-            correctAnswer: "Direct and Manage Project Execution; Perform Quality Assurance; Acquire, Develop, Manage Project Team; Distribute Information; Manage Stakeholder Expectations; Conduct Procurements",
-            shuffle: true
+            correctAnswer:
+              "Direct and Manage Project Execution; Perform Quality Assurance; Acquire, Develop, Manage Project Team; Distribute Information; Manage Stakeholder Expectations; Conduct Procurements",
+            shuffle: true,
           },
           {
-            question: "Which list contains the ten Monitoring and Controlling processes?",
+            question:
+              "Which list contains the ten Monitoring and Controlling processes?",
             type: "multiple",
             options: [
               "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Distribute Information; Report Performance; Monitor and Control Risks; Administer Procurements",
               "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Assurance; Report Performance; Monitor and Control Risks; Administer Procurements",
               "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Control; Report Performance; Monitor and Control Risks; Administer Procurements",
-              "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Control; Report Performance; Monitor and Control Risks; Close Procurements"
+              "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Control; Report Performance; Monitor and Control Risks; Close Procurements",
             ],
-            correctAnswer: "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Control; Report Performance; Monitor and Control Risks; Administer Procurements",
-            shuffle: true
+            correctAnswer:
+              "Monitor and Control Project Work; Perform Integrated Change Control; Verify Scope; Control Scope; Control Schedule; Control Costs; Perform Quality Control; Report Performance; Monitor and Control Risks; Administer Procurements",
+            shuffle: true,
           },
           {
             question: "Which option describes Develop Project Charter?",
@@ -13891,10 +13922,11 @@ const quizzes = [
               "Authorizes the project and gives the PM authority; inputs: contract (when applicable), SOW, EEF, OPA; tool: expert judgment; output: project charter",
               "Builds the WBS; inputs: scope statement; output: WBS dictionary",
               "Identifies stakeholders; inputs: stakeholder register; output: risk register",
-              "Controls costs; tool: earned value; output: budget forecasts"
+              "Controls costs; tool: earned value; output: budget forecasts",
             ],
-            correctAnswer: "Authorizes the project and gives the PM authority; inputs: contract (when applicable), SOW, EEF, OPA; tool: expert judgment; output: project charter",
-            shuffle: true
+            correctAnswer:
+              "Authorizes the project and gives the PM authority; inputs: contract (when applicable), SOW, EEF, OPA; tool: expert judgment; output: project charter",
+            shuffle: true,
           },
           {
             question: "Which option correctly describes Identify Stakeholders?",
@@ -13903,10 +13935,11 @@ const quizzes = [
               "Inputs: WBS, schedule; tool: decomposition; output: scope baseline",
               "Inputs: risk register; tool: Monte Carlo; output: risk report",
               "Inputs: budget; tool: variance analysis; output: forecasts",
-              "Inputs: project charter, procurement documents, EEF, OPA; tools: stakeholder analysis, expert judgment; outputs: stakeholder register, stakeholder management strategy"
+              "Inputs: project charter, procurement documents, EEF, OPA; tools: stakeholder analysis, expert judgment; outputs: stakeholder register, stakeholder management strategy",
             ],
-            correctAnswer: "Inputs: project charter, procurement documents, EEF, OPA; tools: stakeholder analysis, expert judgment; outputs: stakeholder register, stakeholder management strategy",
-            shuffle: true
+            correctAnswer:
+              "Inputs: project charter, procurement documents, EEF, OPA; tools: stakeholder analysis, expert judgment; outputs: stakeholder register, stakeholder management strategy",
+            shuffle: true,
           },
           {
             question: "Which statement about the Planning group is correct?",
@@ -13915,46 +13948,53 @@ const quizzes = [
               "It is the smallest group",
               "It has 8 processes and produces deliverables",
               "It has 20 processes, establishes scope and objectives, and defines the course of action; outputs include the PM plan, baselines, and risk register",
-              "It has 10 processes and produces accepted deliverables"
+              "It has 10 processes and produces accepted deliverables",
             ],
-            correctAnswer: "It has 20 processes, establishes scope and objectives, and defines the course of action; outputs include the PM plan, baselines, and risk register",
-            shuffle: true
+            correctAnswer:
+              "It has 20 processes, establishes scope and objectives, and defines the course of action; outputs include the PM plan, baselines, and risk register",
+            shuffle: true,
           },
           {
-            question: "Which method of matching risk planning processes to their purpose is correct?",
+            question:
+              "Which method of matching risk planning processes to their purpose is correct?",
             type: "multiple",
             options: [
               "Identify Risks ranks risks; Qualitative analysis lists risks; Quantitative analysis chooses responses",
               "Plan Risk Management defines how to conduct risk activities; Identify Risks lists risks; Qualitative ranks by probability and impact; Quantitative measures effect numerically; Plan Risk Responses chooses how to handle each risk",
               "All five processes only list risks",
-              "Plan Risk Responses ranks risks; Qualitative measures effect numerically"
+              "Plan Risk Responses ranks risks; Qualitative measures effect numerically",
             ],
-            correctAnswer: "Plan Risk Management defines how to conduct risk activities; Identify Risks lists risks; Qualitative ranks by probability and impact; Quantitative measures effect numerically; Plan Risk Responses chooses how to handle each risk",
-            shuffle: true
+            correctAnswer:
+              "Plan Risk Management defines how to conduct risk activities; Identify Risks lists risks; Qualitative ranks by probability and impact; Quantitative measures effect numerically; Plan Risk Responses chooses how to handle each risk",
+            shuffle: true,
           },
           {
-            question: "Which option correctly describes Estimate Costs, Determine Budget, and Control Costs?",
+            question:
+              "Which option correctly describes Estimate Costs, Determine Budget, and Control Costs?",
             type: "multiple",
             options: [
               "Estimate Costs approximates money for each activity's resources; Determine Budget sets the authorized cost baseline; Control Costs monitors spending and manages baseline changes",
               "Estimate Costs sets the baseline; Determine Budget monitors spending",
               "Control Costs estimates activity costs; Estimate Costs monitors spending",
-              "All three only collect invoices"
+              "All three only collect invoices",
             ],
-            correctAnswer: "Estimate Costs approximates money for each activity's resources; Determine Budget sets the authorized cost baseline; Control Costs monitors spending and manages baseline changes",
-            shuffle: true
+            correctAnswer:
+              "Estimate Costs approximates money for each activity's resources; Determine Budget sets the authorized cost baseline; Control Costs monitors spending and manages baseline changes",
+            shuffle: true,
           },
           {
-            question: "Which option correctly differentiates Verify Scope from Perform Quality Control?",
+            question:
+              "Which option correctly differentiates Verify Scope from Perform Quality Control?",
             type: "multiple",
             options: [
               "Verify Scope checks correctness against standards; Perform Quality Control is customer acceptance",
               "Both are the same process",
               "Verify Scope is planning; Perform Quality Control is closing",
-              "Verify Scope is formal acceptance of completed deliverables by the customer or sponsor; Perform Quality Control monitors results against quality standards"
+              "Verify Scope is formal acceptance of completed deliverables by the customer or sponsor; Perform Quality Control monitors results against quality standards",
             ],
-            correctAnswer: "Verify Scope is formal acceptance of completed deliverables by the customer or sponsor; Perform Quality Control monitors results against quality standards",
-            shuffle: true
+            correctAnswer:
+              "Verify Scope is formal acceptance of completed deliverables by the customer or sponsor; Perform Quality Control monitors results against quality standards",
+            shuffle: true,
           },
           {
             question: "Which option correctly describes the Closing group?",
@@ -13963,10 +14003,11 @@ const quizzes = [
               "Close Project or Phase only; output: schedule",
               "Close Project or Phase and Close Procurements; outputs: final product, service, or result transition, closed procurements, updated OPA",
               "Verify Scope and Close Project; outputs: accepted deliverables",
-              "Administer Procurements and Close Project; output: forecasts"
+              "Administer Procurements and Close Project; output: forecasts",
             ],
-            correctAnswer: "Close Project or Phase and Close Procurements; outputs: final product, service, or result transition, closed procurements, updated OPA",
-            shuffle: true
+            correctAnswer:
+              "Close Project or Phase and Close Procurements; outputs: final product, service, or result transition, closed procurements, updated OPA",
+            shuffle: true,
           },
           {
             question: "Integration management is:",
@@ -13975,94 +14016,109 @@ const quizzes = [
               "Managing the schedule only",
               "Managing human resources only",
               "The coordination and unification of project management activities, decisions, plans, and changes so the project works as one integrated system",
-              "Managing procurement contracts"
+              "Managing procurement contracts",
             ],
-            correctAnswer: "The coordination and unification of project management activities, decisions, plans, and changes so the project works as one integrated system",
-            shuffle: true
+            correctAnswer:
+              "The coordination and unification of project management activities, decisions, plans, and changes so the project works as one integrated system",
+            shuffle: true,
           },
           {
-            question: "Which statement explains the puzzle analogy of integration management?",
+            question:
+              "Which statement explains the puzzle analogy of integration management?",
             type: "multiple",
             options: [
               "Each piece (scope, schedule, cost, quality, risk, resources, procurement, stakeholders) may be good alone, but the project succeeds only when the pieces fit together",
               "Each piece succeeds without the others",
               "The puzzle is solved by the sponsor only",
-              "Only scope matters"
+              "Only scope matters",
             ],
-            correctAnswer: "Each piece (scope, schedule, cost, quality, risk, resources, procurement, stakeholders) may be good alone, but the project succeeds only when the pieces fit together",
-            shuffle: true
+            correctAnswer:
+              "Each piece (scope, schedule, cost, quality, risk, resources, procurement, stakeholders) may be good alone, but the project succeeds only when the pieces fit together",
+            shuffle: true,
           },
           {
-            question: "Which option correctly lists the six integration processes with their groups?",
+            question:
+              "Which option correctly lists the six integration processes with their groups?",
             type: "multiple",
             options: [
               "4.1 Close Project (Closing); 4.6 Develop Project Charter (Initiating)",
               "4.1 Develop Project Charter (Planning); 4.2 Develop Project Management Plan (Initiating)",
               "4.3 Develop Project Charter (Executing); 4.4 Close Project (M&C)",
-              "4.1 Charter (Initiating); 4.2 PM Plan (Planning); 4.3 Direct and Manage Project Execution (Executing); 4.4 Monitor and Control Project Work and 4.5 Integrated Change Control (M&C); 4.6 Close Project or Phase (Closing)"
+              "4.1 Charter (Initiating); 4.2 PM Plan (Planning); 4.3 Direct and Manage Project Execution (Executing); 4.4 Monitor and Control Project Work and 4.5 Integrated Change Control (M&C); 4.6 Close Project or Phase (Closing)",
             ],
-            correctAnswer: "4.1 Charter (Initiating); 4.2 PM Plan (Planning); 4.3 Direct and Manage Project Execution (Executing); 4.4 Monitor and Control Project Work and 4.5 Integrated Change Control (M&C); 4.6 Close Project or Phase (Closing)",
-            shuffle: true
+            correctAnswer:
+              "4.1 Charter (Initiating); 4.2 PM Plan (Planning); 4.3 Direct and Manage Project Execution (Executing); 4.4 Monitor and Control Project Work and 4.5 Integrated Change Control (M&C); 4.6 Close Project or Phase (Closing)",
+            shuffle: true,
           },
           {
-            question: "Why is the project charter called the project's birth certificate?",
+            question:
+              "Why is the project charter called the project's birth certificate?",
             type: "multiple",
             options: [
               "It records the end of the project",
               "It formally authorizes the project and gives the project manager authority to spend and act",
               "It lists all project risks",
-              "It defines the WBS"
+              "It defines the WBS",
             ],
-            correctAnswer: "It formally authorizes the project and gives the project manager authority to spend and act",
-            shuffle: true
+            correctAnswer:
+              "It formally authorizes the project and gives the project manager authority to spend and act",
+            shuffle: true,
           },
           {
-            question: "Which option correctly describes Develop Project Management Plan?",
+            question:
+              "Which option correctly describes Develop Project Management Plan?",
             type: "multiple",
             options: [
               "Documents the actions to define, prepare, integrate, and coordinate all subsidiary plans; inputs: charter, outputs from planning processes, EEF, OPA; tool: expert judgment; output: Project Management Plan",
               "Performs the work in the plan; output: deliverables",
               "Reviews change requests; output: status updates",
-              "Finalizes activities; output: final product transition"
+              "Finalizes activities; output: final product transition",
             ],
-            correctAnswer: "Documents the actions to define, prepare, integrate, and coordinate all subsidiary plans; inputs: charter, outputs from planning processes, EEF, OPA; tool: expert judgment; output: Project Management Plan",
-            shuffle: true
+            correctAnswer:
+              "Documents the actions to define, prepare, integrate, and coordinate all subsidiary plans; inputs: charter, outputs from planning processes, EEF, OPA; tool: expert judgment; output: Project Management Plan",
+            shuffle: true,
           },
           {
-            question: "Which option correctly describes Direct and Manage Project Execution?",
+            question:
+              "Which option correctly describes Direct and Manage Project Execution?",
             type: "multiple",
             options: [
               "Inputs: stakeholder register; output: charter",
               "Inputs: accepted deliverables; output: archived documents",
               "Performs the work in the plan; inputs: PM plan, approved change requests, EEF, OPA; tools: expert judgment, PMIS; outputs: deliverables, work performance information, change requests, plan and document updates",
-              "Inputs: WBS; output: schedule baseline"
+              "Inputs: WBS; output: schedule baseline",
             ],
-            correctAnswer: "Performs the work in the plan; inputs: PM plan, approved change requests, EEF, OPA; tools: expert judgment, PMIS; outputs: deliverables, work performance information, change requests, plan and document updates",
-            shuffle: true
+            correctAnswer:
+              "Performs the work in the plan; inputs: PM plan, approved change requests, EEF, OPA; tools: expert judgment, PMIS; outputs: deliverables, work performance information, change requests, plan and document updates",
+            shuffle: true,
           },
           {
-            question: "Which option correctly describes Monitor and Control Project Work?",
+            question:
+              "Which option correctly describes Monitor and Control Project Work?",
             type: "multiple",
             options: [
               "Inputs: contract; outputs: charter",
               "Inputs: accepted deliverables; outputs: final product transition",
               "Inputs: SOW; outputs: scope statement",
-              "Tracks, reviews, and regulations progress; inputs: PM plan, performance reports, EEF, OPA; tool: expert judgment; outputs: change requests, plan updates, document updates"
+              "Tracks, reviews, and regulations progress; inputs: PM plan, performance reports, EEF, OPA; tool: expert judgment; outputs: change requests, plan updates, document updates",
             ],
-            correctAnswer: "Tracks, reviews, and regulations progress; inputs: PM plan, performance reports, EEF, OPA; tool: expert judgment; outputs: change requests, plan updates, document updates",
-            shuffle: true
+            correctAnswer:
+              "Tracks, reviews, and regulations progress; inputs: PM plan, performance reports, EEF, OPA; tool: expert judgment; outputs: change requests, plan updates, document updates",
+            shuffle: true,
           },
           {
-            question: "Why is Perform Integrated Change Control called the gatekeeper, and what are its ITTOs?",
+            question:
+              "Why is Perform Integrated Change Control called the gatekeeper, and what are its ITTOs?",
             type: "multiple",
             options: [
               "It delivers only; tools: PMIS",
               "No change enters the project without review and approval; inputs: PM plan, work performance information, change requests, EEF, OPA; tools: expert judgment, change control meetings; outputs: change request status updates, plan updates, document updates",
               "It writes the charter; tool: brainstorming",
-              "It archives documents; tool: audit"
+              "It archives documents; tool: audit",
             ],
-            correctAnswer: "No change enters the project without review and approval; inputs: PM plan, work performance information, change requests, EEF, OPA; tools: expert judgment, change control meetings; outputs: change request status updates, plan updates, document updates",
-            shuffle: true
+            correctAnswer:
+              "No change enters the project without review and approval; inputs: PM plan, work performance information, change requests, EEF, OPA; tools: expert judgment, change control meetings; outputs: change request status updates, plan updates, document updates",
+            shuffle: true,
           },
           {
             question: "Which is the correct order of the change control flow?",
@@ -14071,74 +14127,864 @@ const quizzes = [
               "Impact analysis, change request, update, board decision, communication",
               "Board decision, change request, impact analysis, communication, update",
               "Change request, impact analysis, board (CCB) decision, update and act, communicate",
-              "Communicate, update, change request, board decision, impact analysis"
+              "Communicate, update, change request, board decision, impact analysis",
             ],
-            correctAnswer: "Change request, impact analysis, board (CCB) decision, update and act, communicate",
-            shuffle: true
+            correctAnswer:
+              "Change request, impact analysis, board (CCB) decision, update and act, communicate",
+            shuffle: true,
           },
           {
-            question: "The ministry asks for 4 more classrooms (about 3 months and extra cost). How should the request be handled?",
+            question:
+              "The ministry asks for 4 more classrooms (about 3 months and extra cost). How should the request be handled?",
             type: "multiple",
             options: [
               "Raise it as a change request; the PM analyzes impact; the CCB decides; if approved, update baselines and implement them through 4.3; inform stakeholders",
               "Start building immediately",
               "Reject it without analysis",
-              "Change the baseline without approval, then inform the board"
+              "Change the baseline without approval, then inform the board",
             ],
-            correctAnswer: "Raise it as a change request; the PM analyzes impact; the CCB decides; if approved, update baselines and implement them through 4.3; inform stakeholders",
-            shuffle: true
+            correctAnswer:
+              "Raise it as a change request; the PM analyzes impact; the CCB decides; if approved, update baselines and implement them through 4.3; inform stakeholders",
+            shuffle: true,
           },
           {
-            question: "Which option correctly describes Close Project or Phase?",
+            question:
+              "Which option correctly describes Close Project or Phase?",
             type: "multiple",
             options: [
               "Inputs: charter; output: schedule",
               "Reviews change requests; output: updates",
               "Executes the plan; output: deliverables",
-              "Finalizes all activities across all process groups; inputs: PM plan, accepted deliverables, OPA; tool: expert judgment; outputs: final product transition, OPA updates; done at the end of every phase"
+              "Finalizes all activities across all process groups; inputs: PM plan, accepted deliverables, OPA; tool: expert judgment; outputs: final product transition, OPA updates; done at the end of every phase",
             ],
-            correctAnswer: "Finalizes all activities across all process groups; inputs: PM plan, accepted deliverables, OPA; tool: expert judgment; outputs: final product transition, OPA updates; done at the end of every phase",
-            shuffle: true
+            correctAnswer:
+              "Finalizes all activities across all process groups; inputs: PM plan, accepted deliverables, OPA; tool: expert judgment; outputs: final product transition, OPA updates; done at the end of every phase",
+            shuffle: true,
           },
           {
-            question: "Which option describes Develop Project Management Plan across the four phases?",
+            question:
+              "Which option describes Develop Project Management Plan across the four phases?",
             type: "multiple",
             options: [
               "Concept: detailed plan; design: not needed; construction: archived; handover: created",
               "Concept: archived; design: updated; construction: high-level; handover: main work",
               "Concept: high-level; design: main work (plans integrated, baselines set); construction: updated with approved changes; handover: archived",
-              "All phases: the same detailed plan, never updated"
+              "All phases: the same detailed plan, never updated",
             ],
-            correctAnswer: "Concept: high-level; design: main work (plans integrated, baselines set); construction: updated with approved changes; handover: archived",
-            shuffle: true
+            correctAnswer:
+              "Concept: high-level; design: main work (plans integrated, baselines set); construction: updated with approved changes; handover: archived",
+            shuffle: true,
           },
           {
-            question: "Which option describes Perform Integrated Change Control across the four phases?",
+            question:
+              "Which option describes Perform Integrated Change Control across the four phases?",
             type: "multiple",
             options: [
               "Concept: most requests; design: no control; construction: informal; handover: all approved",
               "Concept: informal, no baselines; design: formal once baselines are approved; construction: main work, most requests, CCB decides; handover: only critical changes",
               "Concept: formal CCB; design: informal; construction: none; handover: most requests",
-              "Same in all phases"
+              "Same in all phases",
             ],
-            correctAnswer: "Concept: informal, no baselines; design: formal once baselines are approved; construction: main work, most requests, CCB decides; handover: only critical changes",
-            shuffle: true
+            correctAnswer:
+              "Concept: informal, no baselines; design: formal once baselines are approved; construction: main work, most requests, CCB decides; handover: only critical changes",
+            shuffle: true,
           },
           {
-            question: "In which phase is the main work of 4.1, 4.2, 4.3, 4.5, and 4.6 respectively?",
+            question:
+              "In which phase is the main work of 4.1, 4.2, 4.3, 4.5, and 4.6 respectively?",
             type: "multiple",
             options: [
               "Concept, design, construction, construction, handover",
               "Design, concept, construction, design, handover",
               "Concept, construction, design, handover, construction",
-              "Handover, design, concept, construction, design"
+              "Handover, design, concept, construction, design",
             ],
-            correctAnswer: "Concept, design, construction, construction, handover",
-            shuffle: true
-          }
-        ]
-      }
-    ]
+            correctAnswer:
+              "Concept, design, construction, construction, handover",
+            shuffle: true,
+          },
+          {
+            question: "Which statement best defines project scope management?",
+            type: "multiple",
+            options: [
+              "Making sure the project finishes on time",
+              "Making sure the project includes all the work required, and only the work required",
+              "Dividing the budget across work packages",
+              "Selecting and developing the project team",
+            ],
+            correctAnswer:
+              "Making sure the project includes all the work required, and only the work required",
+            shuffle: true,
+          },
+          {
+            question:
+              "The number of beds, imaging features and equipment quality of a new hospital describe its:",
+            type: "multiple",
+            options: [
+              "project scope",
+              "scope baseline",
+              "product scope",
+              "scope creep",
+            ],
+            correctAnswer: "product scope",
+            shuffle: true,
+          },
+          {
+            question:
+              "Obtaining permits, procuring materials, constructing and testing the hospital describe its:",
+            type: "multiple",
+            options: [
+              "product scope",
+              "project scope",
+              "requirements documentation",
+              "acceptance criteria",
+            ],
+            correctAnswer: "project scope",
+            shuffle: true,
+          },
+          {
+            question:
+              "How many scope processes are in Planning and how many in Monitoring and Controlling?",
+            type: "multiple",
+            options: ["2 and 3", "4 and 1", "3 and 2", "5 and 0"],
+            correctAnswer: "3 and 2",
+            shuffle: true,
+          },
+          {
+            question: "Which is the correct order of the scope processes?",
+            type: "multiple",
+            options: [
+              "Define Scope, Collect Requirements, Create WBS, Verify Scope, Control Scope",
+              "Collect Requirements, Define Scope, Create WBS, Verify Scope, Control Scope",
+              "Collect Requirements, Create WBS, Define Scope, Control Scope, Verify Scope",
+              "Create WBS, Collect Requirements, Define Scope, Control Scope, Verify Scope",
+            ],
+            correctAnswer:
+              "Collect Requirements, Define Scope, Create WBS, Verify Scope, Control Scope",
+            shuffle: true,
+          },
+          {
+            question: "The inputs of Collect Requirements are:",
+            type: "multiple",
+            options: [
+              "scope statement and WBS",
+              "scope baseline and OPA",
+              "project charter and stakeholder register",
+              "requirements documentation and RTM",
+            ],
+            correctAnswer: "project charter and stakeholder register",
+            shuffle: true,
+          },
+          {
+            question:
+              "A moderated, interactive discussion among prequalified stakeholders and subject matter experts about a proposed product is a:",
+            type: "multiple",
+            options: ["survey", "observation", "focus group", "prototype"],
+            correctAnswer: "focus group",
+            shuffle: true,
+          },
+          {
+            question:
+              "Design, operations and finance representatives disagree on priorities, and the project manager needs requirements defined quickly while reconciling differences. The best technique is:",
+            type: "multiple",
+            options: [
+              "questionnaires",
+              "observations",
+              "a prototype",
+              "a facilitated workshop",
+            ],
+            correctAnswer: "a facilitated workshop",
+            shuffle: true,
+          },
+          {
+            question:
+              "An analyst watches site clerks process forms at their desks to learn how they work. This technique is:",
+            type: "multiple",
+            options: [
+              "a prototype",
+              "observation (job shadowing)",
+              "a focus group",
+              "the Delphi technique",
+            ],
+            correctAnswer: "observation (job shadowing)",
+            shuffle: true,
+          },
+          {
+            question:
+              "You need answers from 2,000 customers quickly and want statistical analysis. Which technique fits best?",
+            type: "multiple",
+            options: [
+              "Interviews",
+              "Focus groups",
+              "Facilitated workshops",
+              "Questionnaires and surveys",
+            ],
+            correctAnswer: "Questionnaires and surveys",
+            shuffle: true,
+          },
+          {
+            question:
+              "The client cannot describe what they want from a new app, so the team shows a working model to get early feedback. This is a:",
+            type: "multiple",
+            options: [
+              "prototype",
+              "work package",
+              "affinity diagram",
+              "variance analysis",
+            ],
+            correctAnswer: "prototype",
+            shuffle: true,
+          },
+          {
+            question:
+              "Experts answer questionnaires anonymously over several rounds until they converge. This is the:",
+            type: "multiple",
+            options: [
+              "Delphi technique",
+              "nominal group technique",
+              "affinity diagram",
+              "brainstorming",
+            ],
+            correctAnswer: "Delphi technique",
+            shuffle: true,
+          },
+          {
+            question:
+              "Brainstorming followed by a voting process to rank the ideas is the:",
+            type: "multiple",
+            options: [
+              "Delphi technique",
+              "affinity diagram",
+              "nominal group technique",
+              "mind mapping",
+            ],
+            correctAnswer: "nominal group technique",
+            shuffle: true,
+          },
+          {
+            question:
+              "A committee of 9 votes: option X gets 4 votes, Y gets 3 and Z gets 2. X is chosen. The decision method is:",
+            type: "multiple",
+            options: ["unanimity", "plurality", "majority", "dictatorship"],
+            correctAnswer: "plurality",
+            shuffle: true,
+          },
+          {
+            question:
+              "At handover the client says the hall lacks features it expected, although the team built everything on its list. Nobody recorded the client's needs early. Which process was weak?",
+            type: "multiple",
+            options: [
+              "Collect Requirements",
+              "Create WBS",
+              "Control Scope",
+              "Verify Scope",
+            ],
+            correctAnswer: "Collect Requirements",
+            shuffle: true,
+          },
+          {
+            question: "Which requirement is written acceptably?",
+            type: "multiple",
+            options: [
+              "The system shall be fast.",
+              "The slab shall be strong.",
+              "The building should look modern.",
+              "The elevator shall carry 12 people and reach floor 10 within 30 seconds.",
+            ],
+            correctAnswer:
+              "The elevator shall carry 12 people and reach floor 10 within 30 seconds.",
+            shuffle: true,
+          },
+          {
+            question:
+              "The main purpose of the requirements traceability matrix is to:",
+            type: "multiple",
+            options: [
+              "estimate the cost of each requirement",
+              "link each requirement from its origin to the deliverables that satisfy it",
+              "list the stakeholders",
+              "sequence the activities",
+            ],
+            correctAnswer:
+              "link each requirement from its origin to the deliverables that satisfy it",
+            shuffle: true,
+          },
+          {
+            question:
+              "The document that describes how requirements will be analyzed, documented and managed during the project is the:",
+            type: "multiple",
+            options: [
+              "requirements documentation",
+              "traceability matrix",
+              "scope statement",
+              "requirements management plan",
+            ],
+            correctAnswer: "requirements management plan",
+            shuffle: true,
+          },
+          {
+            question: "Which is NOT a tool of Define Scope?",
+            type: "multiple",
+            options: [
+              "Product analysis",
+              "Alternatives identification",
+              "Facilitated workshops",
+              "Decomposition",
+            ],
+            correctAnswer: "Decomposition",
+            shuffle: true,
+          },
+          {
+            question:
+              "The project scope statement includes all of the following EXCEPT:",
+            type: "multiple",
+            options: [
+              "product acceptance criteria",
+              "project exclusions",
+              "project assumptions",
+              "work package cost estimates",
+            ],
+            correctAnswer: "work package cost estimates",
+            shuffle: true,
+          },
+          {
+            question: "Which statement is a project assumption?",
+            type: "multiple",
+            options: [
+              "The budget is capped at EGP 5 million.",
+              "Handover must be before 31 December.",
+              "The site soil is assumed to need no special treatment.",
+              "The parking lot is not part of the project.",
+            ],
+            correctAnswer:
+              "The site soil is assumed to need no special treatment.",
+            shuffle: true,
+          },
+          {
+            question:
+              "A client keeps asking whether the parking lot is included. Which scope statement element prevents this?",
+            type: "multiple",
+            options: [
+              "Project exclusions",
+              "Project constraints",
+              "Project assumptions",
+              "Product acceptance criteria",
+            ],
+            correctAnswer: "Project exclusions",
+            shuffle: true,
+          },
+          {
+            question: "The scope baseline consists of:",
+            type: "multiple",
+            options: [
+              "charter, RTM and WBS",
+              "WBS, schedule and budget",
+              "requirements documentation, scope statement and RTM",
+              "scope statement, WBS and WBS dictionary",
+            ],
+            correctAnswer: "scope statement, WBS and WBS dictionary",
+            shuffle: true,
+          },
+          {
+            question: "Decomposition continues until:",
+            type: "multiple",
+            options: [
+              "every task lasts one day",
+              "there are exactly three levels",
+              "cost and duration can be reliably estimated and managed (work package)",
+              "the team agrees to stop",
+            ],
+            correctAnswer:
+              "cost and duration can be reliably estimated and managed (work package)",
+            shuffle: true,
+          },
+          {
+            question: "Which question does Verify Scope answer?",
+            type: "multiple",
+            options: [
+              "'Are we finished?'",
+              "'Is it correct?'",
+              "'How much will it cost?'",
+              "'Who will do the work?'",
+            ],
+            correctAnswer: "'Are we finished?'",
+            shuffle: true,
+          },
+          {
+            question:
+              "A contractor finishes blockwork, an internal check confirms dimensions, then the client engineer inspects and signs. The correct order of processes is:",
+            type: "multiple",
+            options: [
+              "Verify Scope, then Quality Control",
+              "Control Scope, then Create WBS",
+              "Quality Control, then Verify Scope",
+              "Define Scope, then Verify Scope",
+            ],
+            correctAnswer: "Quality Control, then Verify Scope",
+            shuffle: true,
+          },
+          {
+            question:
+              "The client rejects a deliverable because of defects. The output is a:",
+            type: "multiple",
+            options: [
+              "set of accepted deliverables",
+              "new scope baseline",
+              "requirements management plan",
+              "change request for defect repair",
+            ],
+            correctAnswer: "change request for defect repair",
+            shuffle: true,
+          },
+          {
+            question:
+              "Extra features are added without evaluating their effect on time and cost. This is:",
+            type: "multiple",
+            options: [
+              "decomposition",
+              "scope creep",
+              "variance analysis",
+              "inspection",
+            ],
+            correctAnswer: "scope creep",
+            shuffle: true,
+          },
+          {
+            question: "Which is NOT an output of Control Scope?",
+            type: "multiple",
+            options: [
+              "Work performance measurements",
+              "Accepted deliverables",
+              "Change requests",
+              "Project document updates",
+            ],
+            correctAnswer: "Accepted deliverables",
+            shuffle: true,
+          },
+          {
+            question:
+              "During construction the client asks for an extra swimming pool. What should the project manager do first?",
+            type: "multiple",
+            options: [
+              "Add it immediately to keep the client happy",
+              "Refuse without discussion",
+              "Update the WBS quietly",
+              "Raise a formal change request and analyze the impact on time and cost before a decision",
+            ],
+            correctAnswer:
+              "Raise a formal change request and analyze the impact on time and cost before a decision",
+            shuffle: true,
+          },
+          {
+            question: "Project Time Management has:",
+            type: "multiple",
+            options: [
+              "five processes, all in Planning",
+              "six processes: five in Planning and one in Monitoring and Controlling",
+              "six processes, all in Planning",
+              "seven processes: four in Planning and three in Monitoring and Controlling",
+            ],
+            correctAnswer:
+              "six processes: five in Planning and one in Monitoring and Controlling",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which process takes resource calendars as an input and produces the resource breakdown structure?",
+            type: "multiple",
+            options: [
+              "Define Activities",
+              "Sequence Activities",
+              "Estimate Activity Resources",
+              "Develop Schedule",
+            ],
+            correctAnswer: "Estimate Activity Resources",
+            shuffle: true,
+          },
+          {
+            question: "Which is NOT an output of Define Activities?",
+            type: "multiple",
+            options: [
+              "Activity list",
+              "Activity attributes",
+              "Milestone list",
+              "Project schedule network diagram",
+            ],
+            correctAnswer: "Project schedule network diagram",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which item belongs in the activity list rather than the WBS?",
+            type: "multiple",
+            options: [
+              "Foundation",
+              "MRI unit",
+              "Install RF shielding panels",
+              "RF shielding system",
+            ],
+            correctAnswer: "Install RF shielding panels",
+            shuffle: true,
+          },
+          {
+            question: "Rolling wave planning means:",
+            type: "multiple",
+            options: [
+              "planning all work in full detail at the start",
+              "planning near-term work in detail and future work at a higher level",
+              "planning only milestones",
+              "rescheduling the project every week",
+            ],
+            correctAnswer:
+              "planning near-term work in detail and future work at a higher level",
+            shuffle: true,
+          },
+          {
+            question: "A milestone:",
+            type: "multiple",
+            options: [
+              "lasts one day",
+              "consumes resources",
+              "has zero duration",
+              "is the same as a work package",
+            ],
+            correctAnswer: "has zero duration",
+            shuffle: true,
+          },
+          {
+            question: "The precedence diagramming method is also called:",
+            type: "multiple",
+            options: [
+              "activity-on-arrow",
+              "activity-on-node",
+              "PERT",
+              "the critical chain method",
+            ],
+            correctAnswer: "activity-on-node",
+            shuffle: true,
+          },
+          {
+            question:
+              "'Begin editing a draft 15 days after writing begins' is which relationship?",
+            type: "multiple",
+            options: [
+              "SS with a 15-day lag",
+              "FS with a 15-day lag",
+              "FF with a 15-day lead",
+              "SF with a 15-day lead",
+            ],
+            correctAnswer: "SS with a 15-day lag",
+            shuffle: true,
+          },
+          {
+            question:
+              "A 48-hour curing period for an epoxy floor before heavy equipment moves in is which dependency?",
+            type: "multiple",
+            options: ["Discretionary", "External", "Mandatory", "Optional"],
+            correctAnswer: "Mandatory",
+            shuffle: true,
+          },
+          {
+            question:
+              "An installation must wait for a crane that a rental company delivers on a fixed date outside the team's control. The dependency is:",
+            type: "multiple",
+            options: ["mandatory", "discretionary", "soft logic", "external"],
+            correctAnswer: "external",
+            shuffle: true,
+          },
+          {
+            question:
+              "Activity A finishes on day 3. B follows A with FS and a 2-day lag. B's early start is day:",
+            type: "multiple",
+            options: ["1", "3", "5", "6"],
+            correctAnswer: "5",
+            shuffle: true,
+          },
+          {
+            question:
+              "Activity C finishes on day 7. D follows C with FS and a 1-day lead. D's early start is day:",
+            type: "multiple",
+            options: ["6", "7", "8", "9"],
+            correctAnswer: "6",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which document states the days a crane and its operator crew are available?",
+            type: "multiple",
+            options: [
+              "Activity list",
+              "Resource calendar",
+              "Milestone list",
+              "WBS dictionary",
+            ],
+            correctAnswer: "Resource calendar",
+            shuffle: true,
+          },
+          {
+            question:
+              "A gross-value approach used early, based on a similar past project, is:",
+            type: "multiple",
+            options: [
+              "analogous estimating",
+              "parametric estimating",
+              "three-point estimating",
+              "reserve analysis",
+            ],
+            correctAnswer: "analogous estimating",
+            shuffle: true,
+          },
+          {
+            question:
+              "600 m2 of plastering, one crew plasters 12 m2/day, and 2 crews work together. The duration is:",
+            type: "multiple",
+            options: ["12.5 days", "20 days", "25 days", "50 days"],
+            correctAnswer: "25 days",
+            shuffle: true,
+          },
+          {
+            question:
+              "For optimistic 6, most likely 9 and pessimistic 18 days, the PERT expected duration is:",
+            type: "multiple",
+            options: ["9", "11", "12", "10"],
+            correctAnswer: "10",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which statement about contingency (reserve) time is correct?",
+            type: "multiple",
+            options: [
+              "It is fixed and never reduced",
+              "It is added only to cost",
+              "It equals total float",
+              "It can be reduced or eliminated as information improves",
+            ],
+            correctAnswer:
+              "It can be reduced or eliminated as information improves",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which method calculates early and late dates without regard to resource limitations?",
+            type: "multiple",
+            options: [
+              "Critical chain",
+              "Resource leveling",
+              "Critical path method",
+              "Fast tracking",
+            ],
+            correctAnswer: "Critical path method",
+            shuffle: true,
+          },
+          {
+            question:
+              "A non-critical chain merges into the critical chain at activity X. Where is the buffer placed?",
+            type: "multiple",
+            options: [
+              "At that merge point, as a feeding buffer",
+              "At the end of the project, as a project buffer",
+              "Inside every activity",
+              "No buffer is needed",
+            ],
+            correctAnswer: "At that merge point, as a feeding buffer",
+            shuffle: true,
+          },
+          {
+            question:
+              "Network: A (2 days) then B (6 days) and, in parallel, C (3 days) then D (4 days); B and D both precede E (3 days). The project duration is:",
+            type: "multiple",
+            options: ["11 days", "12 days", "15 days", "18 days"],
+            correctAnswer: "12 days",
+            shuffle: true,
+          },
+          {
+            question: "In the same network, the total float of B is:",
+            type: "multiple",
+            options: ["0", "2", "3", "1"],
+            correctAnswer: "1",
+            shuffle: true,
+          },
+          {
+            question:
+              "An activity has ES=8, duration 4 days and LF=15 Its total float is:",
+            type: "multiple",
+            options: ["0", "1", "3", "7"],
+            correctAnswer: "3",
+            shuffle: true,
+          },
+          {
+            question:
+              "In the MRI network ACT-101 (3 d) goes FS with +2 d lag to ACT-102 (2 d), then ACT-104 (3 d), then ACT-106 (4 d); ACT-101 also goes FS to ACT-103 (4 d), then FS with -1 d lead to ACT-105 (2 d), then ACT-106. The project duration is:",
+            type: "multiple",
+            options: ["12 days", "13 days", "14 days", "16 days"],
+            correctAnswer: "14 days",
+            shuffle: true,
+          },
+          {
+            question: "In the same MRI network the critical path is:",
+            type: "multiple",
+            options: [
+              "ACT-101, 103, 105, 106",
+              "ACT-101, 102, 104, 106",
+              "both paths",
+              "neither path",
+            ],
+            correctAnswer: "ACT-101, 102, 104, 106",
+            shuffle: true,
+          },
+          {
+            question: "Resource leveling, applied after CPM, will most likely:",
+            type: "multiple",
+            options: [
+              "change the critical path and often lengthen the schedule",
+              "shorten the schedule",
+              "increase float on all activities",
+              "reduce the project scope",
+            ],
+            correctAnswer:
+              "change the critical path and often lengthen the schedule",
+            shuffle: true,
+          },
+          {
+            question:
+              "Starting the foundation before all drawings are complete is:",
+            type: "multiple",
+            options: [
+              "crashing",
+              "fast tracking",
+              "resource leveling",
+              "what-if analysis",
+            ],
+            correctAnswer: "fast tracking",
+            shuffle: true,
+          },
+          {
+            question:
+              "A team simulates delayed deliveries and strikes thousands of times to judge schedule feasibility. This is:",
+            type: "multiple",
+            options: [
+              "decomposition",
+              "bottom-up estimating",
+              "what-if scenario analysis (Monte Carlo)",
+              "schedule baselining",
+            ],
+            correctAnswer: "what-if scenario analysis (Monte Carlo)",
+            shuffle: true,
+          },
+          {
+            question:
+              "An activity has 3 days of total float. Crashing it to finish 2 days earlier will:",
+            type: "multiple",
+            options: [
+              "shorten the project by 2 days",
+              "delay the project",
+              "make it the only critical activity",
+              "cost money without shortening the project end date",
+            ],
+            correctAnswer: "cost money without shortening the project end date",
+            shuffle: true,
+          },
+          {
+            question:
+              "Which schedule format is easy to read and often used in management presentations?",
+            type: "multiple",
+            options: [
+              "Milestone chart",
+              "Bar chart (Gantt)",
+              "Network diagram",
+              "Resource breakdown structure",
+            ],
+            correctAnswer: "Bar chart (Gantt)",
+            shuffle: true,
+          },
+          {
+            question:
+              "Senior management wants only the dates of major deliverables and external interfaces. The best format is a:",
+            type: "multiple",
+            options: [
+              "milestone chart",
+              "detailed network diagram",
+              "resource calendar",
+              "WBS dictionary",
+            ],
+            correctAnswer: "milestone chart",
+            shuffle: true,
+          },
+          {
+            question:
+              "The approved version of the schedule used as the target for performance measurement is the:",
+            type: "multiple",
+            options: [
+              "project schedule",
+              "schedule baseline",
+              "schedule data",
+              "milestone list",
+            ],
+            correctAnswer: "schedule baseline",
+            shuffle: true,
+          },
+          {
+            question: "Which is NOT an output of Control Schedule?",
+            type: "multiple",
+            options: [
+              "Work performance measurements",
+              "OPA updates",
+              "Change requests",
+              "Schedule baseline",
+            ],
+            correctAnswer: "Schedule baseline",
+            shuffle: true,
+          },
+          {
+            question: "PV=200 and EV=230 The schedule status is:",
+            type: "multiple",
+            options: [
+              "SV=-30 SPI=0.87 behind",
+              "SV=+30, SPI=0.87, behind",
+              "SV=+30 SPI=1.15 ahead",
+              "SV=-30, SPI=1.15, ahead",
+            ],
+            correctAnswer: "SV=+30 SPI=1.15 ahead",
+            shuffle: true,
+          },
+          {
+            question: "PV=150 and EV=120 The schedule status is:",
+            type: "multiple",
+            options: [
+              "SV=+30 SPI=0.8, ahead",
+              "SV=+30, SPI=1.25, ahead",
+              "SV=-30, SPI=1.25, behind",
+              "SV=-30, SPI=0.8, behind",
+            ],
+            correctAnswer: "SV=-30, SPI=0.8, behind",
+            shuffle: true,
+          },
+          {
+            question:
+              "ACT-103 (total float 3 days) is delayed 2 days, and ACT-102 (total float 0) is delayed 1 day. Which needs immediate action?",
+            type: "multiple",
+            options: ["ACT-102", "ACT-103", "both equally", "neither"],
+            correctAnswer: "ACT-102",
+            shuffle: true,
+          },
+          {
+            question:
+              "A severe delay makes the baseline unachievable. The appropriate response is:",
+            type: "multiple",
+            options: [
+              "ignore it until the end",
+              "submit a change request through integrated change control, possibly with a new target schedule using forecast dates",
+              "delete the late milestones",
+              "reduce scope without telling the client",
+            ],
+            correctAnswer:
+              "submit a change request through integrated change control, possibly with a new target schedule using forecast dates",
+            shuffle: true,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "communication-skills",
@@ -14153,191 +14999,147 @@ const quizzes = [
         quizModeTimer: 1800,
         questions: [
           {
-            question: "هي نتاج عملية الترميز للتعبير عن الأفكار أو المعاني المرغوب نقلها للطرف الآخر و قد تكون شفهية أو مكتوبة أو فى شكل حركات للجسم وإشارات.",
+            question:
+              "هي نتاج عملية الترميز للتعبير عن الأفكار أو المعاني المرغوب نقلها للطرف الآخر و قد تكون شفهية أو مكتوبة أو فى شكل حركات للجسم وإشارات.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Feedback"
-            ],
+            options: ["Message", "Channel", "Decoding", "Feedback"],
             correctAnswer: "Message",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تمثل الوسيلة التى من خلالها يتم نقل الرسالة إلى الطرف الآخر أثناء عملية الإتصال وهناك أنواع مختلفة من هذه الوسائل مثل الميكروفون ، والهاتف ، والفاكس ، والبريد الإلكتروني ، والمذكرات المكتوبة ، وذبذبات الهواء.",
+            question:
+              "تمثل الوسيلة التى من خلالها يتم نقل الرسالة إلى الطرف الآخر أثناء عملية الإتصال وهناك أنواع مختلفة من هذه الوسائل مثل الميكروفون ، والهاتف ، والفاكس ، والبريد الإلكتروني ، والمذكرات المكتوبة ، وذبذبات الهواء.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Feedback"
-            ],
+            options: ["Message", "Channel", "Decoding", "Feedback"],
             correctAnswer: "Channel",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هو الذي يستقبل الرسالة المرسلة إليه من المرسل وقد يكون المستقبل فرد واحد أو جماعة من الأفراد.",
+            question:
+              "هو الذي يستقبل الرسالة المرسلة إليه من المرسل وقد يكون المستقبل فرد واحد أو جماعة من الأفراد.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Receiver"
-            ],
+            options: ["Message", "Channel", "Decoding", "Receiver"],
             correctAnswer: "Receiver",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تاريخ أو مفهوم يشير إلى ما يقوم به الطرف الآخر الذي استقبل الرسالة وذلك لتفسير ما ورد في الرسالة وتفهمه ويتوقف التفسير والفهم من جانب المستقبل على عوامل عديدة منها مستوى تعليمه وخبراته وإتجاهاته ، ودوافعه.",
+            question:
+              "تاريخ أو مفهوم يشير إلى ما يقوم به الطرف الآخر الذي استقبل الرسالة وذلك لتفسير ما ورد في الرسالة وتفهمه ويتوقف التفسير والفهم من جانب المستقبل على عوامل عديدة منها مستوى تعليمه وخبراته وإتجاهاته ، ودوافعه.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Receiver"
-            ],
+            options: ["Message", "Channel", "Decoding", "Receiver"],
             correctAnswer: "Decoding",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تعكس رد فعل المستقبل واستجابته / عدم استجابته للرسالة وقد تكون هذه الاستجابة منظورة أو غير منظورة.",
+            question:
+              "تعكس رد فعل المستقبل واستجابته / عدم استجابته للرسالة وقد تكون هذه الاستجابة منظورة أو غير منظورة.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Feedback"
-            ],
+            options: ["Message", "Channel", "Decoding", "Feedback"],
             correctAnswer: "Feedback",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هو مصدر الرسالة أو النقطة التي تبدأ عندها عملية الاتصال.",
+            question:
+              "هو مصدر الرسالة أو النقطة التي تبدأ عندها عملية الاتصال.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Dispatcher"
-            ],
+            options: ["Message", "Channel", "Decoding", "Dispatcher"],
             correctAnswer: "Dispatcher",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تعتبر ال ABC communications من السمات الاساسية لعملية الاتصال.",
+            question:
+              "تعتبر ال ABC communications من السمات الاساسية لعملية الاتصال.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتعنى ضرورة تحديد الهدف من الإتصال.",
+            question:
+              "هي احد مباديء عملية الاتصال وتعنى ضرورة تحديد الهدف من الإتصال.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "من",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "من", "اين", "كيف"],
             correctAnswer: "لماذا",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتعني ضرورة تحديد مضمون الرسالة ، أو ماذا سنقول.",
+            question:
+              "هي احد مباديء عملية الاتصال وتعني ضرورة تحديد مضمون الرسالة ، أو ماذا سنقول.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "ماذا",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "ماذا", "اين", "كيف"],
             correctAnswer: "ماذا",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتعنى تحديد الشخص المستهدف من الإتصال ومعرفة خصائصه.",
+            question:
+              "هي احد مباديء عملية الاتصال وتعنى تحديد الشخص المستهدف من الإتصال ومعرفة خصائصه.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "من",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "من", "اين", "كيف"],
             correctAnswer: "من",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتشير إلى الوسيلة المناسبة التي سوف تستخدم في الإتصال.",
+            question:
+              "هي احد مباديء عملية الاتصال وتشير إلى الوسيلة المناسبة التي سوف تستخدم في الإتصال.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "من",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "من", "اين", "كيف"],
             correctAnswer: "كيف",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتشير إلى الوقت المناسب للإتصال بالطرف الآخر.",
+            question:
+              "هي احد مباديء عملية الاتصال وتشير إلى الوقت المناسب للإتصال بالطرف الآخر.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "متي",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "متي", "اين", "كيف"],
             correctAnswer: "متي",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتشير إلى المكان المناسب الذى سيتم فيه الإتصال بالطرف الآخر.",
+            question:
+              "هي احد مباديء عملية الاتصال وتشير إلى المكان المناسب الذى سيتم فيه الإتصال بالطرف الآخر.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "متي",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "متي", "اين", "كيف"],
             correctAnswer: "اين",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هو مستمع ينصط بشغف و يقوم باظهار مشاعره و انفعالاته تضامنه مع طرف الاتصال.",
+            question:
+              "هو مستمع ينصط بشغف و يقوم باظهار مشاعره و انفعالاته تضامنه مع طرف الاتصال.",
             type: "multiple",
             options: [
               "Ignorant listener",
               "Selective listener",
               "Attentive listener",
-              "Empathic listener"
+              "Empathic listener",
             ],
             correctAnswer: "Empathic listener",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هو مستمع ينصط للطرف الآخر بانتباه و تركيز دون اظهار اي مشاعر اثناء عملية الاتصال.",
+            question:
+              "هو مستمع ينصط للطرف الآخر بانتباه و تركيز دون اظهار اي مشاعر اثناء عملية الاتصال.",
             type: "multiple",
             options: [
               "Ignorant listener",
               "Selective listener",
               "Attentive listener",
-              "Empathic listener"
+              "Empathic listener",
             ],
             correctAnswer: "Attentive listener",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "مستمع يركز فقط في نقاط معينه و يتجاهل الاخري اثناء عملية الاتصال.",
+            question:
+              "مستمع يركز فقط في نقاط معينه و يتجاهل الاخري اثناء عملية الاتصال.",
             type: "multiple",
             options: [
               "Ignorant listener",
               "Selective listener",
               "Attentive listener",
-              "Empathic listener"
+              "Empathic listener",
             ],
             correctAnswer: "Selective listener",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "مستمع يتجاهل الطرف الآخر تماما في عملية الاتصال.",
@@ -14346,72 +15148,78 @@ const quizzes = [
               "Ignorant listener",
               "Selective listener",
               "Attentive listener",
-              "Empathic listener"
+              "Empathic listener",
             ],
             correctAnswer: "Ignorant listener",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصالات الرسمية تحصل من خلال خطوط السلطة الرسمية والمعتمدة بموجب اللوائح والقرارات المكتوبة، وقد تكون داخلية (داخل المنظمة) وقد تكون خارجية مع منظمات أخرى.",
+            question:
+              "الاتصالات الرسمية تحصل من خلال خطوط السلطة الرسمية والمعتمدة بموجب اللوائح والقرارات المكتوبة، وقد تكون داخلية (داخل المنظمة) وقد تكون خارجية مع منظمات أخرى.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "الاتصالات الغير رسمية التي تنشأ بوسائل غير رسمية ولا تتضمنها اللوائح والإجراءات الرسمية وإنما تحددها الصلات الشخصية والعلاقات الاجتماعية (تبادل المعلومات في الحفلات ، الشكاوى) ، ويمتاز هذا النوع من الاتصالات بسرعته قياساً بالاتصالات الرسمية.",
+            question:
+              "الاتصالات الغير رسمية التي تنشأ بوسائل غير رسمية ولا تتضمنها اللوائح والإجراءات الرسمية وإنما تحددها الصلات الشخصية والعلاقات الاجتماعية (تبادل المعلومات في الحفلات ، الشكاوى) ، ويمتاز هذا النوع من الاتصالات بسرعته قياساً بالاتصالات الرسمية.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "هي الاتصالات التي تتدفق من أعلى التنظيم إلى أسفل من المسئول إلى مختلف العاملين في المنظمة، وغالباً ما تكون التغذية العكسية في هذا النوع من الاتصالات منخفضة.",
+            question:
+              "هي الاتصالات التي تتدفق من أعلى التنظيم إلى أسفل من المسئول إلى مختلف العاملين في المنظمة، وغالباً ما تكون التغذية العكسية في هذا النوع من الاتصالات منخفضة.",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلى الى اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات العمودية من اعلى الى اسفل",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي الاتصالات الصادرة من العاملين في المنظمة إلى المسئول، وتضم نتائج تنفيذ الخطط وشرح المعوقات والصعوبات في التنفيذ والملاحظات والآراء.",
+            question:
+              "هي الاتصالات الصادرة من العاملين في المنظمة إلى المسئول، وتضم نتائج تنفيذ الخطط وشرح المعوقات والصعوبات في التنفيذ والملاحظات والآراء.",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلي الي اسفل",
               "الاتصالات العموديه من اسفل لاعلى",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات العموديه من اسفل لاعلى",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي الاتصالات الجانبية التي تتم بين الأفراد أو الجماعات في المستويات المتقابلة (مثل اتصال المسئول بمسئول آخر أو العاملين ببعضهم البعض).",
+            question:
+              "هي الاتصالات الجانبية التي تتم بين الأفراد أو الجماعات في المستويات المتقابلة (مثل اتصال المسئول بمسئول آخر أو العاملين ببعضهم البعض).",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلي الي اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات الافقيه",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي الاتصالات بين المسئولين وجماعة العمل في إدارات غير تابعة لهم تنظيماً (مثل اتصال المسئول بعاملين في قطاع أخر أو مسئول نشاط في المنظمة بأعضاء أنشطة أخرى) ببعضهم البعض.",
+            question:
+              "هي الاتصالات بين المسئولين وجماعة العمل في إدارات غير تابعة لهم تنظيماً (مثل اتصال المسئول بعاملين في قطاع أخر أو مسئول نشاط في المنظمة بأعضاء أنشطة أخرى) ببعضهم البعض.",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلي الي اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحورية"
+              "الاتصالات المتقابله او المحورية",
             ],
             correctAnswer: "الاتصالات المتقابله او المحورية",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "الاتصال بين عميد الكلية ورئيس القسم يصنف علي انه من",
@@ -14420,60 +15228,53 @@ const quizzes = [
               "الاتصالات العمودية من اعلى الى اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات العمودية من اعلى الى اسفل",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصال بين طلاب كلية الهندسة وطلاب كلية العلوم يصنف علي انه من",
+            question:
+              "الاتصال بين طلاب كلية الهندسة وطلاب كلية العلوم يصنف علي انه من",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلى الى اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحورية"
+              "الاتصالات المتقابله او المحورية",
             ],
             correctAnswer: "الاتصالات الافقيه",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصال بين طلاب مستوي 100 بقسم CCE و طلاب مستوي 100 بقسم BCE بكلية الهندسة جامعة المنصورة يصنف علي انه من",
+            question:
+              "الاتصال بين طلاب مستوي 100 بقسم CCE و طلاب مستوي 100 بقسم BCE بكلية الهندسة جامعة المنصورة يصنف علي انه من",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلى الى اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقية",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات الافقية",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "من ضمن اشكال وسائل الاتصال الشفوية هو",
             type: "multiple",
-            options: [
-              "الاجتماعات",
-              "الندوات",
-              "المؤتمرات",
-              "كل ما سبق"
-            ],
+            options: ["الاجتماعات", "الندوات", "المؤتمرات", "كل ما سبق"],
             correctAnswer: "كل ما سبق",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "واحده من هذه الاشكال لا تمثل وسيلة اتصال بالوسائط المتعدده",
+            question:
+              "واحده من هذه الاشكال لا تمثل وسيلة اتصال بالوسائط المتعدده",
             type: "multiple",
-            options: [
-              "الصور المتحركة",
-              "المجسمات",
-              "البرقيات",
-              "الفيديو"
-            ],
+            options: ["الصور المتحركة", "المجسمات", "البرقيات", "الفيديو"],
             correctAnswer: "البرقيات",
-            shuffle: true
-          }
-        ]
+            shuffle: true,
+          },
+        ],
       },
       {
         id: "sheet-2",
@@ -14483,49 +15284,54 @@ const quizzes = [
         quizModeTimer: 1800,
         questions: [
           {
-            question: "هي أقصر الطرق لتبادل المعلومات والأفكار وأكثرها سهوله ويسراً وصراحة ، إلا أنه يعاب أنه يعرض المعلومات للتحريف وسوء الفهم .",
+            question:
+              "هي أقصر الطرق لتبادل المعلومات والأفكار وأكثرها سهوله ويسراً وصراحة ، إلا أنه يعاب أنه يعرض المعلومات للتحريف وسوء الفهم .",
             type: "multiple",
             options: [
               "الاتصالات الشفهية",
               "الاتصالات الكتابية",
               "الاتصالات الالكترونية",
-              "الاتصالات غير اللفظية"
+              "الاتصالات غير اللفظية",
             ],
             correctAnswer: "الاتصالات الشفهية",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الأنظمة والمنشورات والتقارير والمذكرات والمقترحات والشكاوى و غيرها تعتبر احد اشكال الاتصالات",
+            question:
+              "الأنظمة والمنشورات والتقارير والمذكرات والمقترحات والشكاوى و غيرها تعتبر احد اشكال الاتصالات",
             type: "multiple",
             options: [
               "الاتصالات الشفهية",
               "الاتصالات الكتابية",
               "الاتصالات الالكترونية",
-              "الاتصالات غير اللفظية"
+              "الاتصالات غير اللفظية",
             ],
             correctAnswer: "الاتصالات الكتابية",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تتميز الوسائل الكتابية بمزايا أهمها إمكانية الاحتفاظ بها والرجوع لها عند الحاجة وحماية المعلومات من التحريف وقلة التكلفة.",
+            question:
+              "تتميز الوسائل الكتابية بمزايا أهمها إمكانية الاحتفاظ بها والرجوع لها عند الحاجة وحماية المعلومات من التحريف وقلة التكلفة.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "من أهم عيوب الاتصالات الشفهية هي البطء في إيصال المعلومات ، تأكد احتمال الفهم الخاطئ لها خصوصاً عندما يكون للكلمة أكثر من معنى.",
+            question:
+              "من أهم عيوب الاتصالات الشفهية هي البطء في إيصال المعلومات ، تأكد احتمال الفهم الخاطئ لها خصوصاً عندما يكون للكلمة أكثر من معنى.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "توجد خمسة شروط للرسالة اللفظية وهي أن تكون كاملة ، ومختصرة، وواضحة وصحيحة، ولطيفة.",
+            question:
+              "توجد خمسة شروط للرسالة اللفظية وهي أن تكون كاملة ، ومختصرة، وواضحة وصحيحة، ولطيفة.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
             question: "لغة الجسم body language تعتبر احد اشكال",
@@ -14534,31 +15340,34 @@ const quizzes = [
               "الاتصالات الشفهية",
               "الاتصالات الكتابية",
               "الاتصالات الالكترونية",
-              "الاتصالات غير اللفظية"
+              "الاتصالات غير اللفظية",
             ],
             correctAnswer: "الاتصالات غير اللفظية",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصالات الكتابية هي الوسائل التي يتم بواسطتها تبادل المعلومات بين المتصل والمتصل به عن طريق الإشارات أو الإيماءات والسلوك تعبيرات الوجه وحركة العينين واليدين وطريقة الجلوس.",
+            question:
+              "الاتصالات الكتابية هي الوسائل التي يتم بواسطتها تبادل المعلومات بين المتصل والمتصل به عن طريق الإشارات أو الإيماءات والسلوك تعبيرات الوجه وحركة العينين واليدين وطريقة الجلوس.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "يختلف فهم الرسائل غير اللفظية بسبب اختلاف الثقافات داخل المنظمة وداخل المجتمع أيضا.",
+            question:
+              "يختلف فهم الرسائل غير اللفظية بسبب اختلاف الثقافات داخل المنظمة وداخل المجتمع أيضا.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "تعتبر التحديات النفسية والادراكية المتعلقة باطراف الاتصال من المعوقات الاساسية في عملية الاتصال الفعال.",
+            question:
+              "تعتبر التحديات النفسية والادراكية المتعلقة باطراف الاتصال من المعوقات الاساسية في عملية الاتصال الفعال.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
             question: "من شروط التقرير الجيد",
@@ -14567,10 +15376,10 @@ const quizzes = [
               "اختيار المفردات المركبة غير التقليدية",
               "تضخيم حجم الجمل المستخدمة",
               "استخدام الحقائق و التعزيز بالارقام و الاحصائيات",
-              "البعد عن استخدام عنصر التشويق في العرض"
+              "البعد عن استخدام عنصر التشويق في العرض",
             ],
             correctAnswer: "استخدام الحقائق و التعزيز بالارقام و الاحصائيات",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "الترتيب المنطقي لمراحل التقرير الجيد هي",
@@ -14579,65 +15388,50 @@ const quizzes = [
               "التحضير - التنظيم - الكتابة - المراجعة - العرض",
               "التحضير - العرض - الكتابة - المراجعة - التنظيم",
               "التحضير - الكتابة - التنظيم - المراجعة - العرض",
-              "التحضير - التنظيم - المراجعة - العرض - الكتابة"
+              "التحضير - التنظيم - المراجعة - العرض - الكتابة",
             ],
             correctAnswer: "التحضير - التنظيم - الكتابة - المراجعة - العرض",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصالات غير المنظورة تصل نسبة استخدامها في الاتصال ما يقرب من 60% من المعاني وبصفة خاصة في الرسائل التي تتعلق بالأحاسيس والشعور.",
+            question:
+              "الاتصالات غير المنظورة تصل نسبة استخدامها في الاتصال ما يقرب من 60% من المعاني وبصفة خاصة في الرسائل التي تتعلق بالأحاسيس والشعور.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "يكون شخص واحد وسط مجموعة في شكل العجلة ويكون قادرا على الاتصال مع كل فرد من أفراد الجماعة أما الأفراد فلا يستطيعون الاتصال إلا بهذا الشخص ويكون هذا الشخص قائدا للمجموعة وصانع القرارات لها، واستخدام هذا الأسلوب يجعل سلطة اتخاذ القرارات تركز في يد الرئيس أو المدير.",
+            question:
+              "يكون شخص واحد وسط مجموعة في شكل العجلة ويكون قادرا على الاتصال مع كل فرد من أفراد الجماعة أما الأفراد فلا يستطيعون الاتصال إلا بهذا الشخص ويكون هذا الشخص قائدا للمجموعة وصانع القرارات لها، واستخدام هذا الأسلوب يجعل سلطة اتخاذ القرارات تركز في يد الرئيس أو المدير.",
             type: "multiple",
-            options: [
-              "نمط العجلة",
-              "نمط السلسلة",
-              "نمط الشبكة",
-              "نمط الدائرة"
-            ],
+            options: ["نمط العجلة", "نمط السلسلة", "نمط الشبكة", "نمط الدائرة"],
             correctAnswer: "نمط العجلة",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "يتاح لكل فرد من أفراد التنظيم أو المنظمة الاتصال المباشر بأي فرد فيها، بمعنى آخر أن هذا الاتصال يتجه إلى كل الاتجاهات غير أن استخدام هذا النمط يؤدي إلى البطء في عملية توصيل المعلومات وبالتالي يقلل من الوصول إلى قرارات سليمة وفعالة.",
+            question:
+              "يتاح لكل فرد من أفراد التنظيم أو المنظمة الاتصال المباشر بأي فرد فيها، بمعنى آخر أن هذا الاتصال يتجه إلى كل الاتجاهات غير أن استخدام هذا النمط يؤدي إلى البطء في عملية توصيل المعلومات وبالتالي يقلل من الوصول إلى قرارات سليمة وفعالة.",
             type: "multiple",
-            options: [
-              "نمط العجلة",
-              "نمط السلسلة",
-              "نمط الشبكة",
-              "نمط الدائرة"
-            ],
+            options: ["نمط العجلة", "نمط السلسلة", "نمط الشبكة", "نمط الدائرة"],
             correctAnswer: "نمط الشبكة",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "يكون فيه كل عضو مرتبط بعضوين، أي أن كل فرد يستطيع أن يتصل اتصالا مباشراً بشخصين آخرين ، ويمكن الاتصال ببقية أعضاء المجموعة بواسطة أحد الأفراد الذي يتصل بهم اتصالا مباشراً.",
+            question:
+              "يكون فيه كل عضو مرتبط بعضوين، أي أن كل فرد يستطيع أن يتصل اتصالا مباشراً بشخصين آخرين ، ويمكن الاتصال ببقية أعضاء المجموعة بواسطة أحد الأفراد الذي يتصل بهم اتصالا مباشراً.",
             type: "multiple",
-            options: [
-              "نمط العجلة",
-              "نمط السلسلة",
-              "مط الشبكة",
-              "نمط الدائرة"
-            ],
+            options: ["نمط العجلة", "نمط السلسلة", "مط الشبكة", "نمط الدائرة"],
             correctAnswer: "نمط الدائرة",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "يكون جميع الأعضاء في خط واحد، حيث لا يستطيع أي منهم الاتصال المباشر بفرد آخر (أو بفردين) إلا إذا كان أحد الأفراد الذين يمثلون مراكز مهمة، ويلاحظ أن الفرد الذي يقع في وسط (منتصف) السلسلة يملك النفوذ والتأثير الأكبر في منصبه الوسطي.",
+            question:
+              "يكون جميع الأعضاء في خط واحد، حيث لا يستطيع أي منهم الاتصال المباشر بفرد آخر (أو بفردين) إلا إذا كان أحد الأفراد الذين يمثلون مراكز مهمة، ويلاحظ أن الفرد الذي يقع في وسط (منتصف) السلسلة يملك النفوذ والتأثير الأكبر في منصبه الوسطي.",
             type: "multiple",
-            options: [
-              "نمط العجلة",
-              "نمط السلسلة",
-              "نمط الشبكة",
-              "نمط الدائرة"
-            ],
+            options: ["نمط العجلة", "نمط السلسلة", "نمط الشبكة", "نمط الدائرة"],
             correctAnswer: "نمط السلسلة",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "قضم الشفاة في الاتصالات غير المنظورة تشير الي",
@@ -14646,22 +15440,23 @@ const quizzes = [
               "الارتياح و الرضا",
               "العصبية و الغضب",
               "التعجب و الاندهاش",
-              "التهكم و السخرية"
+              "التهكم و السخرية",
             ],
             correctAnswer: "العصبية و الغضب",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "رفع الحواجب مع تحريكك الشفاة او الكتف في الاتصالات غير المنظورة تشير الي",
+            question:
+              "رفع الحواجب مع تحريكك الشفاة او الكتف في الاتصالات غير المنظورة تشير الي",
             type: "multiple",
             options: [
               "الارتياح و الرضا",
               "العصبية و الغضب",
               "التعجب و الاندهاش",
-              "التهكم و السخرية"
+              "التهكم و السخرية",
             ],
             correctAnswer: "التعجب و الاندهاش",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تضييق العين في الاتصالات غير المنظورة تشير الي",
@@ -14670,10 +15465,10 @@ const quizzes = [
               "عدم الموافقة أو الشعور السلبي",
               "العصبية و الغضب",
               "التعجب و الاندهاش",
-              "التهكم و السخرية"
+              "التهكم و السخرية",
             ],
             correctAnswer: "عدم الموافقة أو الشعور السلبي",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "الانحناء للامام في الاتصالات غير المنظورة تشير الي",
@@ -14682,10 +15477,10 @@ const quizzes = [
               "عدم الموافقة أو الشعور السلبي",
               "العصبية و الغضب",
               "التعجب و الاندهاش",
-              "الاهتمام أو العناية"
+              "الاهتمام أو العناية",
             ],
             correctAnswer: "الاهتمام أو العناية",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تجنب تلاقي الاعين في الاتصالات غير المنظورة تشير الي",
@@ -14694,10 +15489,10 @@ const quizzes = [
               "عدم الموافقة أو الشعور السلبي",
               "العصبية و الغضب",
               "البرودة واللامبالاة",
-              "الاهتمام أو العناية"
+              "الاهتمام أو العناية",
             ],
             correctAnswer: "البرودة واللامبالاة",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "الرتب علي الكتف في الاتصالات غير المنظورة تشير الي",
@@ -14706,10 +15501,10 @@ const quizzes = [
               "الموافقة و الطمانينة و التشجيع",
               "العصبية و الغضب",
               "البرودة واللامبالاة",
-              "الاهتمام او العناية"
+              "الاهتمام او العناية",
             ],
             correctAnswer: "الموافقة و الطمانينة و التشجيع",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال completeness من محددات الاتصال الجيد و هي تعني",
@@ -14718,10 +15513,11 @@ const quizzes = [
               "The receiver gets all the information he needs to process the message and takes action.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
-            correctAnswer: "The receiver gets all the information he needs to process the message and takes action.",
-            shuffle: true
+            correctAnswer:
+              "The receiver gets all the information he needs to process the message and takes action.",
+            shuffle: true,
           },
           {
             question: "تعد ال Conciseness من محددات الاتصال الجيد و هي تعني",
@@ -14730,10 +15526,10 @@ const quizzes = [
               "The receiver gets all the information he needs to process the message and takes action.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
             correctAnswer: "Keep your messages to a point.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال Consideration من محددات الاتصال الجيد و هي تعني",
@@ -14742,10 +15538,11 @@ const quizzes = [
               "The receiver gets all the information he needs to process the message and takes action.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
-            correctAnswer: "This takes into account the receiver's background and points of view.",
-            shuffle: true
+            correctAnswer:
+              "This takes into account the receiver's background and points of view.",
+            shuffle: true,
           },
           {
             question: "تعد ال Concreteness من محددات الاتصال الجيد و هي تعني",
@@ -14754,10 +15551,10 @@ const quizzes = [
               "The receiver gets all the information he needs to process the message and takes action.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
             correctAnswer: "The message must be specific, tangible, and vivid.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال Courtesy من محددات الاتصال الجيد و هي تعني",
@@ -14766,10 +15563,10 @@ const quizzes = [
               "Respect the receiver's culture, value and beliefs.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
             correctAnswer: "Respect the receiver's culture, value and beliefs.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال Clearness من محددات الاتصال الجيد و هي تعني",
@@ -14778,10 +15575,11 @@ const quizzes = [
               "Respect the receiver's culture, value and beliefs.",
               "Keep your messages to a point.",
               "The clarity of your message makes it easier for the receiver to decode it.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
-            correctAnswer: "The clarity of your message makes it easier for the receiver to decode it.",
-            shuffle: true
+            correctAnswer:
+              "The clarity of your message makes it easier for the receiver to decode it.",
+            shuffle: true,
           },
           {
             question: "تعد ال Correctness من محددات الاتصال الجيد و هي تعني",
@@ -14790,34 +15588,38 @@ const quizzes = [
               "Grammar and syntax is a must when it comes to communication.",
               "Keep your messages to a point.",
               "The clarity of your message makes it easier for the receiver to decode it.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
-            correctAnswer: "Grammar and syntax is a must when it comes to communication.",
-            shuffle: true
+            correctAnswer:
+              "Grammar and syntax is a must when it comes to communication.",
+            shuffle: true,
           },
           {
-            question: "تعد ال psychological barriers من معوقات الاتصال و هي تعني",
+            question:
+              "تعد ال psychological barriers من معوقات الاتصال و هي تعني",
             type: "multiple",
             options: [
               "Unstable internet connection.",
               "The psychological state of the speaker and listener can affect communication.",
               "Uncomfortable temperatures.",
-              "Noise."
+              "Noise.",
             ],
-            correctAnswer: "The psychological state of the speaker and listener can affect communication.",
-            shuffle: true
+            correctAnswer:
+              "The psychological state of the speaker and listener can affect communication.",
+            shuffle: true,
           },
           {
-            question: "تعد ال physiological barriers من معوقات الاتصال و هي تعني",
+            question:
+              "تعد ال physiological barriers من معوقات الاتصال و هي تعني",
             type: "multiple",
             options: [
               "Unstable internet connection.",
               "The psychological state of the speaker and listener can affect communication.",
               "Uncomfortable temperatures.",
-              "Impaired eyesight and hearing problems."
+              "Impaired eyesight and hearing problems.",
             ],
             correctAnswer: "Impaired eyesight and hearing problems.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال perceptual barriers من معوقات الاتصال و هي تعني",
@@ -14826,10 +15628,11 @@ const quizzes = [
               "Unstable internet connection.",
               "Differing opinions and views can reduce objectivity.",
               "Uncomfortable temperatures.",
-              "Impaired eyesight and hearing problems."
+              "Impaired eyesight and hearing problems.",
             ],
-            correctAnswer: "Differing opinions and views can reduce objectivity.",
-            shuffle: true
+            correctAnswer:
+              "Differing opinions and views can reduce objectivity.",
+            shuffle: true,
           },
           {
             question: "تعد ال attentional barriers من معوقات الاتصال و هي تعني",
@@ -14838,10 +15641,11 @@ const quizzes = [
               "Unstable internet connection.",
               "Differing opinions and views can reduce objectivity.",
               "The listener may not pay enough attention to what is being said.",
-              "Impaired eyesight and hearing problems."
+              "Impaired eyesight and hearing problems.",
             ],
-            correctAnswer: "The listener may not pay enough attention to what is being said.",
-            shuffle: true
+            correctAnswer:
+              "The listener may not pay enough attention to what is being said.",
+            shuffle: true,
           },
           {
             question: "تعد ال language barriers من معوقات الاتصال و هي تعني",
@@ -14850,10 +15654,10 @@ const quizzes = [
               "Difficulties in understanding unfamiliar accents.",
               "Differing opinions and views can reduce objectivity.",
               "The listener may not pay enough attention to what is being said.",
-              "Impaired eyesight and hearing problems."
+              "Impaired eyesight and hearing problems.",
             ],
             correctAnswer: "Difficulties in understanding unfamiliar accents.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال shortage of time من معوقات الاتصال و هي تعني",
@@ -14862,22 +15666,25 @@ const quizzes = [
               "Difficulties in understanding unfamiliar accents.",
               "Differing opinions and views can reduce objectivity.",
               "The listener may not pay enough attention to what is being said.",
-              "There may be a lack of time to convey information effectively."
+              "There may be a lack of time to convey information effectively.",
             ],
-            correctAnswer: "There may be a lack of time to convey information effectively.",
-            shuffle: true
+            correctAnswer:
+              "There may be a lack of time to convey information effectively.",
+            shuffle: true,
           },
           {
-            question: "تعد Assumptions, jumping to conclusions and premature evaluations من معوقات الاتصال و هي تعني",
+            question:
+              "تعد Assumptions, jumping to conclusions and premature evaluations من معوقات الاتصال و هي تعني",
             type: "multiple",
             options: [
               "Difficulties in understanding unfamiliar accents.",
               "Forming a judgment before listening to everything the speaker.",
               "The listener may not pay enough attention to what is being said.",
-              "There may be a lack of time to convey information effectively."
+              "There may be a lack of time to convey information effectively.",
             ],
-            correctAnswer: "Forming a judgment before listening to everything the speaker.",
-            shuffle: true
+            correctAnswer:
+              "Forming a judgment before listening to everything the speaker.",
+            shuffle: true,
           },
           {
             question: "تعد ال Resistance to change من معوقات الاتصال و هي تعني",
@@ -14886,12 +15693,13 @@ const quizzes = [
               "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
               "Differing opinions and views can reduce objectivity.",
               "The listener may not pay enough attention to what is being said.",
-              "There may be a lack of time to convey information effectively."
+              "There may be a lack of time to convey information effectively.",
             ],
-            correctAnswer: "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
-            shuffle: true
-          }
-        ]
+            correctAnswer:
+              "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
+            shuffle: true,
+          },
+        ],
       },
       {
         id: "sheet-3",
@@ -14901,181 +15709,204 @@ const quizzes = [
         quizModeTimer: 1800,
         questions: [
           {
-            question: "Personal email is an Email written to a person that have a non-casual relationship with, like your professor.",
+            question:
+              "Personal email is an Email written to a person that have a non-casual relationship with, like your professor.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The email you send to the prospective employer is a formal email.",
+            question:
+              "The email you send to the prospective employer is a formal email.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The email you send to someone you don't know is a non-formal email.",
+            question:
+              "The email you send to someone you don't know is a non-formal email.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The email you send to your father considered a formal email.",
+            question:
+              "The email you send to your father considered a formal email.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The email is a message distributed by electronic means from one user to one or more recipients via a network.",
+            question:
+              "The email is a message distributed by electronic means from one user to one or more recipients via a network.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The casual mails are more important than the formal ones.",
+            question:
+              "The casual mails are more important than the formal ones.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
             question: "The subject line is not important in the formal mails.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "CC: is the main receiver who is the main target of the email and is concerned of the Email topic.",
+            question:
+              "CC: is the main receiver who is the main target of the email and is concerned of the Email topic.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "To: is the receiver that is interested in the topic of the email but is not the direct target of it.",
+            question:
+              "To: is the receiver that is interested in the topic of the email but is not the direct target of it.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "BCC: A hidden copy of the Email that might need to interested to certain persons while hiding their Email addresses.",
+            question:
+              "BCC: A hidden copy of the Email that might need to interested to certain persons while hiding their Email addresses.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The subject must be related to the email body and be something that would convince the receiver to open the Email.",
+            question:
+              "The subject must be related to the email body and be something that would convince the receiver to open the Email.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The subject must be short, clear and stick to the point.",
+            question:
+              "The subject must be short, clear and stick to the point.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "If you know the name of who you are writing the email to, you can start your email with: To Whom it May Concern.",
+            question:
+              "If you know the name of who you are writing the email to, you can start your email with: To Whom it May Concern.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "You should end the email with a statement like: I hope this mail finds you well.",
+            question:
+              "You should end the email with a statement like: I hope this mail finds you well.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "Depending on the subject, you should have a maximum of four paragraphs and each paragraph should contain a single point.",
+            question:
+              "Depending on the subject, you should have a maximum of four paragraphs and each paragraph should contain a single point.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
             question: "'Sincerely' is one the closing words in formal mails.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "Including your name or a signature with additional details and contact information is not necessary in formal mails.",
+            question:
+              "Including your name or a signature with additional details and contact information is not necessary in formal mails.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "Checking for spelling and grammar is not necessary in formal mails.",
+            question:
+              "Checking for spelling and grammar is not necessary in formal mails.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "If you are an engineer and your name is Karim, so you can create your formal email address as for example: bad_boy2020@gmail.com.",
+            question:
+              "If you are an engineer and your name is Karim, so you can create your formal email address as for example: bad_boy2020@gmail.com.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "If you are an engineer and your name is Karim, so you can create your formal email address as for example: eng_karim2020@gmail.com.",
+            question:
+              "If you are an engineer and your name is Karim, so you can create your formal email address as for example: eng_karim2020@gmail.com.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "In the formal mails, you can write the subject as a question.",
+            question:
+              "In the formal mails, you can write the subject as a question.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "In the formal mails, you can write 'Hi or Hello' to your employer.",
+            question:
+              "In the formal mails, you can write 'Hi or Hello' to your employer.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "In the formal mails, it is preferable to use all letters in CAPITAL.",
+            question:
+              "In the formal mails, it is preferable to use all letters in CAPITAL.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "In the non-casual mails, don't use slang, use formal vocabulary.",
+            question:
+              "In the non-casual mails, don't use slang, use formal vocabulary.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "If you are handing a hardcopy of your CV, the cover letter will be the first page.",
+            question:
+              "If you are handing a hardcopy of your CV, the cover letter will be the first page.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
-          }
-        ]
+            shuffle: false,
+          },
+        ],
       },
       {
         id: "all-sheets",
@@ -15085,191 +15916,147 @@ const quizzes = [
         quizModeTimer: 1800,
         questions: [
           {
-            question: "هي نتاج عملية الترميز للتعبير عن الأفكار أو المعاني المرغوب نقلها للطرف الآخر و قد تكون شفهية أو مكتوبة أو فى شكل حركات للجسم وإشارات.",
+            question:
+              "هي نتاج عملية الترميز للتعبير عن الأفكار أو المعاني المرغوب نقلها للطرف الآخر و قد تكون شفهية أو مكتوبة أو فى شكل حركات للجسم وإشارات.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Feedback"
-            ],
+            options: ["Message", "Channel", "Decoding", "Feedback"],
             correctAnswer: "Message",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تمثل الوسيلة التى من خلالها يتم نقل الرسالة إلى الطرف الآخر أثناء عملية الإتصال وهناك أنواع مختلفة من هذه الوسائل مثل الميكروفون ، والهاتف ، والفاكس ، والبريد الإلكتروني ، والمذكرات المكتوبة ، وذبذبات الهواء.",
+            question:
+              "تمثل الوسيلة التى من خلالها يتم نقل الرسالة إلى الطرف الآخر أثناء عملية الإتصال وهناك أنواع مختلفة من هذه الوسائل مثل الميكروفون ، والهاتف ، والفاكس ، والبريد الإلكتروني ، والمذكرات المكتوبة ، وذبذبات الهواء.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Feedback"
-            ],
+            options: ["Message", "Channel", "Decoding", "Feedback"],
             correctAnswer: "Channel",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هو الذي يستقبل الرسالة المرسلة إليه من المرسل وقد يكون المستقبل فرد واحد أو جماعة من الأفراد.",
+            question:
+              "هو الذي يستقبل الرسالة المرسلة إليه من المرسل وقد يكون المستقبل فرد واحد أو جماعة من الأفراد.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Receiver"
-            ],
+            options: ["Message", "Channel", "Decoding", "Receiver"],
             correctAnswer: "Receiver",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تاريخ أو مفهوم يشير إلى ما يقوم به الطرف الآخر الذي استقبل الرسالة وذلك لتفسير ما ورد في الرسالة وتفهمه ويتوقف التفسير والفهم من جانب المستقبل على عوامل عديدة منها مستوى تعليمه وخبراته وإتجاهاته ، ودوافعه.",
+            question:
+              "تاريخ أو مفهوم يشير إلى ما يقوم به الطرف الآخر الذي استقبل الرسالة وذلك لتفسير ما ورد في الرسالة وتفهمه ويتوقف التفسير والفهم من جانب المستقبل على عوامل عديدة منها مستوى تعليمه وخبراته وإتجاهاته ، ودوافعه.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Receiver"
-            ],
+            options: ["Message", "Channel", "Decoding", "Receiver"],
             correctAnswer: "Decoding",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تعكس رد فعل المستقبل واستجابته / عدم استجابته للرسالة وقد تكون هذه الاستجابة منظورة أو غير منظورة.",
+            question:
+              "تعكس رد فعل المستقبل واستجابته / عدم استجابته للرسالة وقد تكون هذه الاستجابة منظورة أو غير منظورة.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Feedback"
-            ],
+            options: ["Message", "Channel", "Decoding", "Feedback"],
             correctAnswer: "Feedback",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هو مصدر الرسالة أو النقطة التي تبدأ عندها عملية الاتصال.",
+            question:
+              "هو مصدر الرسالة أو النقطة التي تبدأ عندها عملية الاتصال.",
             type: "multiple",
-            options: [
-              "Message",
-              "Channel",
-              "Decoding",
-              "Dispatcher"
-            ],
+            options: ["Message", "Channel", "Decoding", "Dispatcher"],
             correctAnswer: "Dispatcher",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تعتبر ال ABC communications من السمات الاساسية لعملية الاتصال.",
+            question:
+              "تعتبر ال ABC communications من السمات الاساسية لعملية الاتصال.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتعنى ضرورة تحديد الهدف من الإتصال.",
+            question:
+              "هي احد مباديء عملية الاتصال وتعنى ضرورة تحديد الهدف من الإتصال.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "من",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "من", "اين", "كيف"],
             correctAnswer: "لماذا",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتعني ضرورة تحديد مضمون الرسالة ، أو ماذا سنقول.",
+            question:
+              "هي احد مباديء عملية الاتصال وتعني ضرورة تحديد مضمون الرسالة ، أو ماذا سنقول.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "ماذا",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "ماذا", "اين", "كيف"],
             correctAnswer: "ماذا",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتعنى تحديد الشخص المستهدف من الإتصال ومعرفة خصائصه.",
+            question:
+              "هي احد مباديء عملية الاتصال وتعنى تحديد الشخص المستهدف من الإتصال ومعرفة خصائصه.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "من",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "من", "اين", "كيف"],
             correctAnswer: "من",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتشير إلى الوسيلة المناسبة التي سوف تستخدم في الإتصال.",
+            question:
+              "هي احد مباديء عملية الاتصال وتشير إلى الوسيلة المناسبة التي سوف تستخدم في الإتصال.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "من",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "من", "اين", "كيف"],
             correctAnswer: "كيف",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتشير إلى الوقت المناسب للإتصال بالطرف الآخر.",
+            question:
+              "هي احد مباديء عملية الاتصال وتشير إلى الوقت المناسب للإتصال بالطرف الآخر.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "متي",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "متي", "اين", "كيف"],
             correctAnswer: "متي",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي احد مباديء عملية الاتصال وتشير إلى المكان المناسب الذى سيتم فيه الإتصال بالطرف الآخر.",
+            question:
+              "هي احد مباديء عملية الاتصال وتشير إلى المكان المناسب الذى سيتم فيه الإتصال بالطرف الآخر.",
             type: "multiple",
-            options: [
-              "لماذا",
-              "متي",
-              "اين",
-              "كيف"
-            ],
+            options: ["لماذا", "متي", "اين", "كيف"],
             correctAnswer: "اين",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هو مستمع ينصط بشغف و يقوم باظهار مشاعره و انفعالاته تضامنه مع طرف الاتصال.",
+            question:
+              "هو مستمع ينصط بشغف و يقوم باظهار مشاعره و انفعالاته تضامنه مع طرف الاتصال.",
             type: "multiple",
             options: [
               "Ignorant listener",
               "Selective listener",
               "Attentive listener",
-              "Empathic listener"
+              "Empathic listener",
             ],
             correctAnswer: "Empathic listener",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هو مستمع ينصط للطرف الآخر بانتباه و تركيز دون اظهار اي مشاعر اثناء عملية الاتصال.",
+            question:
+              "هو مستمع ينصط للطرف الآخر بانتباه و تركيز دون اظهار اي مشاعر اثناء عملية الاتصال.",
             type: "multiple",
             options: [
               "Ignorant listener",
               "Selective listener",
               "Attentive listener",
-              "Empathic listener"
+              "Empathic listener",
             ],
             correctAnswer: "Attentive listener",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "مستمع يركز فقط في نقاط معينه و يتجاهل الاخري اثناء عملية الاتصال.",
+            question:
+              "مستمع يركز فقط في نقاط معينه و يتجاهل الاخري اثناء عملية الاتصال.",
             type: "multiple",
             options: [
               "Ignorant listener",
               "Selective listener",
               "Attentive listener",
-              "Empathic listener"
+              "Empathic listener",
             ],
             correctAnswer: "Selective listener",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "مستمع يتجاهل الطرف الآخر تماما في عملية الاتصال.",
@@ -15278,72 +16065,78 @@ const quizzes = [
               "Ignorant listener",
               "Selective listener",
               "Attentive listener",
-              "Empathic listener"
+              "Empathic listener",
             ],
             correctAnswer: "Ignorant listener",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصالات الرسمية تحصل من خلال خطوط السلطة الرسمية والمعتمدة بموجب اللوائح والقرارات المكتوبة، وقد تكون داخلية (داخل المنظمة) وقد تكون خارجية مع منظمات أخرى.",
+            question:
+              "الاتصالات الرسمية تحصل من خلال خطوط السلطة الرسمية والمعتمدة بموجب اللوائح والقرارات المكتوبة، وقد تكون داخلية (داخل المنظمة) وقد تكون خارجية مع منظمات أخرى.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "الاتصالات الغير رسمية التي تنشأ بوسائل غير رسمية ولا تتضمنها اللوائح والإجراءات الرسمية وإنما تحددها الصلات الشخصية والعلاقات الاجتماعية (تبادل المعلومات في الحفلات ، الشكاوى) ، ويمتاز هذا النوع من الاتصالات بسرعته قياساً بالاتصالات الرسمية.",
+            question:
+              "الاتصالات الغير رسمية التي تنشأ بوسائل غير رسمية ولا تتضمنها اللوائح والإجراءات الرسمية وإنما تحددها الصلات الشخصية والعلاقات الاجتماعية (تبادل المعلومات في الحفلات ، الشكاوى) ، ويمتاز هذا النوع من الاتصالات بسرعته قياساً بالاتصالات الرسمية.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "هي الاتصالات التي تتدفق من أعلى التنظيم إلى أسفل من المسئول إلى مختلف العاملين في المنظمة، وغالباً ما تكون التغذية العكسية في هذا النوع من الاتصالات منخفضة.",
+            question:
+              "هي الاتصالات التي تتدفق من أعلى التنظيم إلى أسفل من المسئول إلى مختلف العاملين في المنظمة، وغالباً ما تكون التغذية العكسية في هذا النوع من الاتصالات منخفضة.",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلى الى اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات العمودية من اعلى الى اسفل",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي الاتصالات الصادرة من العاملين في المنظمة إلى المسئول، وتضم نتائج تنفيذ الخطط وشرح المعوقات والصعوبات في التنفيذ والملاحظات والآراء.",
+            question:
+              "هي الاتصالات الصادرة من العاملين في المنظمة إلى المسئول، وتضم نتائج تنفيذ الخطط وشرح المعوقات والصعوبات في التنفيذ والملاحظات والآراء.",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلي الي اسفل",
               "الاتصالات العموديه من اسفل لاعلى",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات العموديه من اسفل لاعلى",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي الاتصالات الجانبية التي تتم بين الأفراد أو الجماعات في المستويات المتقابلة (مثل اتصال المسئول بمسئول آخر أو العاملين ببعضهم البعض).",
+            question:
+              "هي الاتصالات الجانبية التي تتم بين الأفراد أو الجماعات في المستويات المتقابلة (مثل اتصال المسئول بمسئول آخر أو العاملين ببعضهم البعض).",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلي الي اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات الافقيه",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي الاتصالات بين المسئولين وجماعة العمل في إدارات غير تابعة لهم تنظيماً (مثل اتصال المسئول بعاملين في قطاع أخر أو مسئول نشاط في المنظمة بأعضاء أنشطة أخرى) ببعضهم البعض.",
+            question:
+              "هي الاتصالات بين المسئولين وجماعة العمل في إدارات غير تابعة لهم تنظيماً (مثل اتصال المسئول بعاملين في قطاع أخر أو مسئول نشاط في المنظمة بأعضاء أنشطة أخرى) ببعضهم البعض.",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلي الي اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحورية"
+              "الاتصالات المتقابله او المحورية",
             ],
             correctAnswer: "الاتصالات المتقابله او المحورية",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "الاتصال بين عميد الكلية ورئيس القسم يصنف علي انه من",
@@ -15352,103 +16145,101 @@ const quizzes = [
               "الاتصالات العمودية من اعلى الى اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات العمودية من اعلى الى اسفل",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصال بين طلاب كلية الهندسة وطلاب كلية العلوم يصنف علي انه من",
+            question:
+              "الاتصال بين طلاب كلية الهندسة وطلاب كلية العلوم يصنف علي انه من",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلى الى اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقيه",
-              "الاتصالات المتقابله او المحورية"
+              "الاتصالات المتقابله او المحورية",
             ],
             correctAnswer: "الاتصالات الافقيه",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصال بين طلاب مستوي 100 بقسم CCE و طلاب مستوي 100 بقسم BCE بكلية الهندسة جامعة المنصورة يصنف علي انه من",
+            question:
+              "الاتصال بين طلاب مستوي 100 بقسم CCE و طلاب مستوي 100 بقسم BCE بكلية الهندسة جامعة المنصورة يصنف علي انه من",
             type: "multiple",
             options: [
               "الاتصالات العمودية من اعلى الى اسفل",
               "الاتصالات العموديه من اسفل لاعلي",
               "الاتصالات الافقية",
-              "الاتصالات المتقابله او المحوريه"
+              "الاتصالات المتقابله او المحوريه",
             ],
             correctAnswer: "الاتصالات الافقية",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "من ضمن اشكال وسائل الاتصال الشفوية هو",
             type: "multiple",
-            options: [
-              "الاجتماعات",
-              "الندوات",
-              "المؤتمرات",
-              "كل ما سبق"
-            ],
+            options: ["الاجتماعات", "الندوات", "المؤتمرات", "كل ما سبق"],
             correctAnswer: "كل ما سبق",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "واحده من هذه الاشكال لا تمثل وسيلة اتصال بالوسائط المتعدده",
+            question:
+              "واحده من هذه الاشكال لا تمثل وسيلة اتصال بالوسائط المتعدده",
             type: "multiple",
-            options: [
-              "الصور المتحركة",
-              "المجسمات",
-              "البرقيات",
-              "الفيديو"
-            ],
+            options: ["الصور المتحركة", "المجسمات", "البرقيات", "الفيديو"],
             correctAnswer: "البرقيات",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "هي أقصر الطرق لتبادل المعلومات والأفكار وأكثرها سهوله ويسراً وصراحة ، إلا أنه يعاب أنه يعرض المعلومات للتحريف وسوء الفهم .",
+            question:
+              "هي أقصر الطرق لتبادل المعلومات والأفكار وأكثرها سهوله ويسراً وصراحة ، إلا أنه يعاب أنه يعرض المعلومات للتحريف وسوء الفهم .",
             type: "multiple",
             options: [
               "الاتصالات الشفهية",
               "الاتصالات الكتابية",
               "الاتصالات الالكترونية",
-              "الاتصالات غير اللفظية"
+              "الاتصالات غير اللفظية",
             ],
             correctAnswer: "الاتصالات الشفهية",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الأنظمة والمنشورات والتقارير والمذكرات والمقترحات والشكاوى و غيرها تعتبر احد اشكال الاتصالات",
+            question:
+              "الأنظمة والمنشورات والتقارير والمذكرات والمقترحات والشكاوى و غيرها تعتبر احد اشكال الاتصالات",
             type: "multiple",
             options: [
               "الاتصالات الشفهية",
               "الاتصالات الكتابية",
               "الاتصالات الالكترونية",
-              "الاتصالات غير اللفظية"
+              "الاتصالات غير اللفظية",
             ],
             correctAnswer: "الاتصالات الكتابية",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "تتميز الوسائل الكتابية بمزايا أهمها إمكانية الاحتفاظ بها والرجوع لها عند الحاجة وحماية المعلومات من التحريف وقلة التكلفة.",
+            question:
+              "تتميز الوسائل الكتابية بمزايا أهمها إمكانية الاحتفاظ بها والرجوع لها عند الحاجة وحماية المعلومات من التحريف وقلة التكلفة.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "من أهم عيوب الاتصالات الشفهية هي البطء في إيصال المعلومات ، تأكد احتمال الفهم الخاطئ لها خصوصاً عندما يكون للكلمة أكثر من معنى.",
+            question:
+              "من أهم عيوب الاتصالات الشفهية هي البطء في إيصال المعلومات ، تأكد احتمال الفهم الخاطئ لها خصوصاً عندما يكون للكلمة أكثر من معنى.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "توجد خمسة شروط للرسالة اللفظية وهي أن تكون كاملة ، ومختصرة، وواضحة وصحيحة، ولطيفة.",
+            question:
+              "توجد خمسة شروط للرسالة اللفظية وهي أن تكون كاملة ، ومختصرة، وواضحة وصحيحة، ولطيفة.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
             question: "لغة الجسم body language تعتبر احد اشكال",
@@ -15457,31 +16248,34 @@ const quizzes = [
               "الاتصالات الشفهية",
               "الاتصالات الكتابية",
               "الاتصالات الالكترونية",
-              "الاتصالات غير اللفظية"
+              "الاتصالات غير اللفظية",
             ],
             correctAnswer: "الاتصالات غير اللفظية",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصالات الكتابية هي الوسائل التي يتم بواسطتها تبادل المعلومات بين المتصل والمتصل به عن طريق الإشارات أو الإيماءات والسلوك تعبيرات الوجه وحركة العينين واليدين وطريقة الجلوس.",
+            question:
+              "الاتصالات الكتابية هي الوسائل التي يتم بواسطتها تبادل المعلومات بين المتصل والمتصل به عن طريق الإشارات أو الإيماءات والسلوك تعبيرات الوجه وحركة العينين واليدين وطريقة الجلوس.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "يختلف فهم الرسائل غير اللفظية بسبب اختلاف الثقافات داخل المنظمة وداخل المجتمع أيضا.",
+            question:
+              "يختلف فهم الرسائل غير اللفظية بسبب اختلاف الثقافات داخل المنظمة وداخل المجتمع أيضا.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "تعتبر التحديات النفسية والادراكية المتعلقة باطراف الاتصال من المعوقات الاساسية في عملية الاتصال الفعال.",
+            question:
+              "تعتبر التحديات النفسية والادراكية المتعلقة باطراف الاتصال من المعوقات الاساسية في عملية الاتصال الفعال.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
             question: "من شروط التقرير الجيد",
@@ -15490,10 +16284,10 @@ const quizzes = [
               "اختيار المفردات المركبة غير التقليدية",
               "تضخيم حجم الجمل المستخدمة",
               "استخدام الحقائق و التعزيز بالارقام و الاحصائيات",
-              "البعد عن استخدام عنصر التشويق في العرض"
+              "البعد عن استخدام عنصر التشويق في العرض",
             ],
             correctAnswer: "استخدام الحقائق و التعزيز بالارقام و الاحصائيات",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "الترتيب المنطقي لمراحل التقرير الجيد هي",
@@ -15502,65 +16296,50 @@ const quizzes = [
               "التحضير - التنظيم - الكتابة - المراجعة - العرض",
               "التحضير - العرض - الكتابة - المراجعة - التنظيم",
               "التحضير - الكتابة - التنظيم - المراجعة - العرض",
-              "التحضير - التنظيم - المراجعة - العرض - الكتابة"
+              "التحضير - التنظيم - المراجعة - العرض - الكتابة",
             ],
             correctAnswer: "التحضير - التنظيم - الكتابة - المراجعة - العرض",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "الاتصالات غير المنظورة تصل نسبة استخدامها في الاتصال ما يقرب من 60% من المعاني وبصفة خاصة في الرسائل التي تتعلق بالأحاسيس والشعور.",
+            question:
+              "الاتصالات غير المنظورة تصل نسبة استخدامها في الاتصال ما يقرب من 60% من المعاني وبصفة خاصة في الرسائل التي تتعلق بالأحاسيس والشعور.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "يكون شخص واحد وسط مجموعة في شكل العجلة ويكون قادرا على الاتصال مع كل فرد من أفراد الجماعة أما الأفراد فلا يستطيعون الاتصال إلا بهذا الشخص ويكون هذا الشخص قائدا للمجموعة وصانع القرارات لها، واستخدام هذا الأسلوب يجعل سلطة اتخاذ القرارات تركز في يد الرئيس أو المدير.",
+            question:
+              "يكون شخص واحد وسط مجموعة في شكل العجلة ويكون قادرا على الاتصال مع كل فرد من أفراد الجماعة أما الأفراد فلا يستطيعون الاتصال إلا بهذا الشخص ويكون هذا الشخص قائدا للمجموعة وصانع القرارات لها، واستخدام هذا الأسلوب يجعل سلطة اتخاذ القرارات تركز في يد الرئيس أو المدير.",
             type: "multiple",
-            options: [
-              "نمط العجلة",
-              "نمط السلسلة",
-              "نمط الشبكة",
-              "نمط الدائرة"
-            ],
+            options: ["نمط العجلة", "نمط السلسلة", "نمط الشبكة", "نمط الدائرة"],
             correctAnswer: "نمط العجلة",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "يتاح لكل فرد من أفراد التنظيم أو المنظمة الاتصال المباشر بأي فرد فيها، بمعنى آخر أن هذا الاتصال يتجه إلى كل الاتجاهات غير أن استخدام هذا النمط يؤدي إلى البطء في عملية توصيل المعلومات وبالتالي يقلل من الوصول إلى قرارات سليمة وفعالة.",
+            question:
+              "يتاح لكل فرد من أفراد التنظيم أو المنظمة الاتصال المباشر بأي فرد فيها، بمعنى آخر أن هذا الاتصال يتجه إلى كل الاتجاهات غير أن استخدام هذا النمط يؤدي إلى البطء في عملية توصيل المعلومات وبالتالي يقلل من الوصول إلى قرارات سليمة وفعالة.",
             type: "multiple",
-            options: [
-              "نمط العجلة",
-              "نمط السلسلة",
-              "نمط الشبكة",
-              "نمط الدائرة"
-            ],
+            options: ["نمط العجلة", "نمط السلسلة", "نمط الشبكة", "نمط الدائرة"],
             correctAnswer: "نمط الشبكة",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "يكون فيه كل عضو مرتبط بعضوين، أي أن كل فرد يستطيع أن يتصل اتصالا مباشراً بشخصين آخرين ، ويمكن الاتصال ببقية أعضاء المجموعة بواسطة أحد الأفراد الذي يتصل بهم اتصالا مباشراً.",
+            question:
+              "يكون فيه كل عضو مرتبط بعضوين، أي أن كل فرد يستطيع أن يتصل اتصالا مباشراً بشخصين آخرين ، ويمكن الاتصال ببقية أعضاء المجموعة بواسطة أحد الأفراد الذي يتصل بهم اتصالا مباشراً.",
             type: "multiple",
-            options: [
-              "نمط العجلة",
-              "نمط السلسلة",
-              "مط الشبكة",
-              "نمط الدائرة"
-            ],
+            options: ["نمط العجلة", "نمط السلسلة", "مط الشبكة", "نمط الدائرة"],
             correctAnswer: "نمط الدائرة",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "يكون جميع الأعضاء في خط واحد، حيث لا يستطيع أي منهم الاتصال المباشر بفرد آخر (أو بفردين) إلا إذا كان أحد الأفراد الذين يمثلون مراكز مهمة، ويلاحظ أن الفرد الذي يقع في وسط (منتصف) السلسلة يملك النفوذ والتأثير الأكبر في منصبه الوسطي.",
+            question:
+              "يكون جميع الأعضاء في خط واحد، حيث لا يستطيع أي منهم الاتصال المباشر بفرد آخر (أو بفردين) إلا إذا كان أحد الأفراد الذين يمثلون مراكز مهمة، ويلاحظ أن الفرد الذي يقع في وسط (منتصف) السلسلة يملك النفوذ والتأثير الأكبر في منصبه الوسطي.",
             type: "multiple",
-            options: [
-              "نمط العجلة",
-              "نمط السلسلة",
-              "نمط الشبكة",
-              "نمط الدائرة"
-            ],
+            options: ["نمط العجلة", "نمط السلسلة", "نمط الشبكة", "نمط الدائرة"],
             correctAnswer: "نمط السلسلة",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "قضم الشفاة في الاتصالات غير المنظورة تشير الي",
@@ -15569,22 +16348,23 @@ const quizzes = [
               "الارتياح و الرضا",
               "العصبية و الغضب",
               "التعجب و الاندهاش",
-              "التهكم و السخرية"
+              "التهكم و السخرية",
             ],
             correctAnswer: "العصبية و الغضب",
-            shuffle: true
+            shuffle: true,
           },
           {
-            question: "رفع الحواجب مع تحريكك الشفاة او الكتف في الاتصالات غير المنظورة تشير الي",
+            question:
+              "رفع الحواجب مع تحريكك الشفاة او الكتف في الاتصالات غير المنظورة تشير الي",
             type: "multiple",
             options: [
               "الارتياح و الرضا",
               "العصبية و الغضب",
               "التعجب و الاندهاش",
-              "التهكم و السخرية"
+              "التهكم و السخرية",
             ],
             correctAnswer: "التعجب و الاندهاش",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تضييق العين في الاتصالات غير المنظورة تشير الي",
@@ -15593,10 +16373,10 @@ const quizzes = [
               "عدم الموافقة أو الشعور السلبي",
               "العصبية و الغضب",
               "التعجب و الاندهاش",
-              "التهكم و السخرية"
+              "التهكم و السخرية",
             ],
             correctAnswer: "عدم الموافقة أو الشعور السلبي",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "الانحناء للامام في الاتصالات غير المنظورة تشير الي",
@@ -15605,10 +16385,10 @@ const quizzes = [
               "عدم الموافقة أو الشعور السلبي",
               "العصبية و الغضب",
               "التعجب و الاندهاش",
-              "الاهتمام أو العناية"
+              "الاهتمام أو العناية",
             ],
             correctAnswer: "الاهتمام أو العناية",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تجنب تلاقي الاعين في الاتصالات غير المنظورة تشير الي",
@@ -15617,10 +16397,10 @@ const quizzes = [
               "عدم الموافقة أو الشعور السلبي",
               "العصبية و الغضب",
               "البرودة واللامبالاة",
-              "الاهتمام أو العناية"
+              "الاهتمام أو العناية",
             ],
             correctAnswer: "البرودة واللامبالاة",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "الرتب علي الكتف في الاتصالات غير المنظورة تشير الي",
@@ -15629,10 +16409,10 @@ const quizzes = [
               "الموافقة و الطمانينة و التشجيع",
               "العصبية و الغضب",
               "البرودة واللامبالاة",
-              "الاهتمام او العناية"
+              "الاهتمام او العناية",
             ],
             correctAnswer: "الموافقة و الطمانينة و التشجيع",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال completeness من محددات الاتصال الجيد و هي تعني",
@@ -15641,10 +16421,11 @@ const quizzes = [
               "The receiver gets all the information he needs to process the message and takes action.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
-            correctAnswer: "The receiver gets all the information he needs to process the message and takes action.",
-            shuffle: true
+            correctAnswer:
+              "The receiver gets all the information he needs to process the message and takes action.",
+            shuffle: true,
           },
           {
             question: "تعد ال Conciseness من محددات الاتصال الجيد و هي تعني",
@@ -15653,10 +16434,10 @@ const quizzes = [
               "The receiver gets all the information he needs to process the message and takes action.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
             correctAnswer: "Keep your messages to a point.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال Consideration من محددات الاتصال الجيد و هي تعني",
@@ -15665,10 +16446,11 @@ const quizzes = [
               "The receiver gets all the information he needs to process the message and takes action.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
-            correctAnswer: "This takes into account the receiver's background and points of view.",
-            shuffle: true
+            correctAnswer:
+              "This takes into account the receiver's background and points of view.",
+            shuffle: true,
           },
           {
             question: "تعد ال Concreteness من محددات الاتصال الجيد و هي تعني",
@@ -15677,10 +16459,10 @@ const quizzes = [
               "The receiver gets all the information he needs to process the message and takes action.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
             correctAnswer: "The message must be specific, tangible, and vivid.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال Courtesy من محددات الاتصال الجيد و هي تعني",
@@ -15689,10 +16471,10 @@ const quizzes = [
               "Respect the receiver's culture, value and beliefs.",
               "Keep your messages to a point.",
               "This takes into account the receiver's background and points of view.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
             correctAnswer: "Respect the receiver's culture, value and beliefs.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال Clearness من محددات الاتصال الجيد و هي تعني",
@@ -15701,10 +16483,11 @@ const quizzes = [
               "Respect the receiver's culture, value and beliefs.",
               "Keep your messages to a point.",
               "The clarity of your message makes it easier for the receiver to decode it.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
-            correctAnswer: "The clarity of your message makes it easier for the receiver to decode it.",
-            shuffle: true
+            correctAnswer:
+              "The clarity of your message makes it easier for the receiver to decode it.",
+            shuffle: true,
           },
           {
             question: "تعد ال Correctness من محددات الاتصال الجيد و هي تعني",
@@ -15713,34 +16496,38 @@ const quizzes = [
               "Grammar and syntax is a must when it comes to communication.",
               "Keep your messages to a point.",
               "The clarity of your message makes it easier for the receiver to decode it.",
-              "The message must be specific, tangible, and vivid."
+              "The message must be specific, tangible, and vivid.",
             ],
-            correctAnswer: "Grammar and syntax is a must when it comes to communication.",
-            shuffle: true
+            correctAnswer:
+              "Grammar and syntax is a must when it comes to communication.",
+            shuffle: true,
           },
           {
-            question: "تعد ال psychological barriers من معوقات الاتصال و هي تعني",
+            question:
+              "تعد ال psychological barriers من معوقات الاتصال و هي تعني",
             type: "multiple",
             options: [
               "Unstable internet connection.",
               "The psychological state of the speaker and listener can affect communication.",
               "Uncomfortable temperatures.",
-              "Noise."
+              "Noise.",
             ],
-            correctAnswer: "The psychological state of the speaker and listener can affect communication.",
-            shuffle: true
+            correctAnswer:
+              "The psychological state of the speaker and listener can affect communication.",
+            shuffle: true,
           },
           {
-            question: "تعد ال physiological barriers من معوقات الاتصال و هي تعني",
+            question:
+              "تعد ال physiological barriers من معوقات الاتصال و هي تعني",
             type: "multiple",
             options: [
               "Unstable internet connection.",
               "The psychological state of the speaker and listener can affect communication.",
               "Uncomfortable temperatures.",
-              "Impaired eyesight and hearing problems."
+              "Impaired eyesight and hearing problems.",
             ],
             correctAnswer: "Impaired eyesight and hearing problems.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال perceptual barriers من معوقات الاتصال و هي تعني",
@@ -15749,10 +16536,11 @@ const quizzes = [
               "Unstable internet connection.",
               "Differing opinions and views can reduce objectivity.",
               "Uncomfortable temperatures.",
-              "Impaired eyesight and hearing problems."
+              "Impaired eyesight and hearing problems.",
             ],
-            correctAnswer: "Differing opinions and views can reduce objectivity.",
-            shuffle: true
+            correctAnswer:
+              "Differing opinions and views can reduce objectivity.",
+            shuffle: true,
           },
           {
             question: "تعد ال attentional barriers من معوقات الاتصال و هي تعني",
@@ -15761,10 +16549,11 @@ const quizzes = [
               "Unstable internet connection.",
               "Differing opinions and views can reduce objectivity.",
               "The listener may not pay enough attention to what is being said.",
-              "Impaired eyesight and hearing problems."
+              "Impaired eyesight and hearing problems.",
             ],
-            correctAnswer: "The listener may not pay enough attention to what is being said.",
-            shuffle: true
+            correctAnswer:
+              "The listener may not pay enough attention to what is being said.",
+            shuffle: true,
           },
           {
             question: "تعد ال language barriers من معوقات الاتصال و هي تعني",
@@ -15773,10 +16562,10 @@ const quizzes = [
               "Difficulties in understanding unfamiliar accents.",
               "Differing opinions and views can reduce objectivity.",
               "The listener may not pay enough attention to what is being said.",
-              "Impaired eyesight and hearing problems."
+              "Impaired eyesight and hearing problems.",
             ],
             correctAnswer: "Difficulties in understanding unfamiliar accents.",
-            shuffle: true
+            shuffle: true,
           },
           {
             question: "تعد ال shortage of time من معوقات الاتصال و هي تعني",
@@ -15785,22 +16574,25 @@ const quizzes = [
               "Difficulties in understanding unfamiliar accents.",
               "Differing opinions and views can reduce objectivity.",
               "The listener may not pay enough attention to what is being said.",
-              "There may be a lack of time to convey information effectively."
+              "There may be a lack of time to convey information effectively.",
             ],
-            correctAnswer: "There may be a lack of time to convey information effectively.",
-            shuffle: true
+            correctAnswer:
+              "There may be a lack of time to convey information effectively.",
+            shuffle: true,
           },
           {
-            question: "تعد Assumptions, jumping to conclusions and premature evaluations من معوقات الاتصال و هي تعني",
+            question:
+              "تعد Assumptions, jumping to conclusions and premature evaluations من معوقات الاتصال و هي تعني",
             type: "multiple",
             options: [
               "Difficulties in understanding unfamiliar accents.",
               "Forming a judgment before listening to everything the speaker.",
               "The listener may not pay enough attention to what is being said.",
-              "There may be a lack of time to convey information effectively."
+              "There may be a lack of time to convey information effectively.",
             ],
-            correctAnswer: "Forming a judgment before listening to everything the speaker.",
-            shuffle: true
+            correctAnswer:
+              "Forming a judgment before listening to everything the speaker.",
+            shuffle: true,
           },
           {
             question: "تعد ال Resistance to change من معوقات الاتصال و هي تعني",
@@ -15809,190 +16601,214 @@ const quizzes = [
               "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
               "Differing opinions and views can reduce objectivity.",
               "The listener may not pay enough attention to what is being said.",
-              "There may be a lack of time to convey information effectively."
+              "There may be a lack of time to convey information effectively.",
             ],
-            correctAnswer: "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
-            shuffle: true
+            correctAnswer:
+              "When a speaker tries to provide ideas involving a change, people may ignore or oppose it.",
+            shuffle: true,
           },
           {
-            question: "Personal email is an Email written to a person that have a non-casual relationship with, like your professor.",
+            question:
+              "Personal email is an Email written to a person that have a non-casual relationship with, like your professor.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The email you send to the prospective employer is a formal email.",
+            question:
+              "The email you send to the prospective employer is a formal email.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The email you send to someone you don't know is a non-formal email.",
+            question:
+              "The email you send to someone you don't know is a non-formal email.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The email you send to your father considered a formal email.",
+            question:
+              "The email you send to your father considered a formal email.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The email is a message distributed by electronic means from one user to one or more recipients via a network.",
+            question:
+              "The email is a message distributed by electronic means from one user to one or more recipients via a network.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The casual mails are more important than the formal ones.",
+            question:
+              "The casual mails are more important than the formal ones.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
             question: "The subject line is not important in the formal mails.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "CC: is the main receiver who is the main target of the email and is concerned of the Email topic.",
+            question:
+              "CC: is the main receiver who is the main target of the email and is concerned of the Email topic.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "To: is the receiver that is interested in the topic of the email but is not the direct target of it.",
+            question:
+              "To: is the receiver that is interested in the topic of the email but is not the direct target of it.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "BCC: A hidden copy of the Email that might need to interested to certain persons while hiding their Email addresses.",
+            question:
+              "BCC: A hidden copy of the Email that might need to interested to certain persons while hiding their Email addresses.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The subject must be related to the email body and be something that would convince the receiver to open the Email.",
+            question:
+              "The subject must be related to the email body and be something that would convince the receiver to open the Email.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "The subject must be short, clear and stick to the point.",
+            question:
+              "The subject must be short, clear and stick to the point.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "If you know the name of who you are writing the email to, you can start your email with: To Whom it May Concern.",
+            question:
+              "If you know the name of who you are writing the email to, you can start your email with: To Whom it May Concern.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "You should end the email with a statement like: I hope this mail finds you well.",
+            question:
+              "You should end the email with a statement like: I hope this mail finds you well.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "Depending on the subject, you should have a maximum of four paragraphs and each paragraph should contain a single point.",
+            question:
+              "Depending on the subject, you should have a maximum of four paragraphs and each paragraph should contain a single point.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
             question: "'Sincerely' is one the closing words in formal mails.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "Including your name or a signature with additional details and contact information is not necessary in formal mails.",
+            question:
+              "Including your name or a signature with additional details and contact information is not necessary in formal mails.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "Checking for spelling and grammar is not necessary in formal mails.",
+            question:
+              "Checking for spelling and grammar is not necessary in formal mails.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "If you are an engineer and your name is Karim, so you can create your formal email address as for example: bad_boy2020@gmail.com.",
+            question:
+              "If you are an engineer and your name is Karim, so you can create your formal email address as for example: bad_boy2020@gmail.com.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "If you are an engineer and your name is Karim, so you can create your formal email address as for example: eng_karim2020@gmail.com.",
+            question:
+              "If you are an engineer and your name is Karim, so you can create your formal email address as for example: eng_karim2020@gmail.com.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "In the formal mails, you can write the subject as a question.",
+            question:
+              "In the formal mails, you can write the subject as a question.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "In the formal mails, you can write 'Hi or Hello' to your employer.",
+            question:
+              "In the formal mails, you can write 'Hi or Hello' to your employer.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "In the formal mails, it is preferable to use all letters in CAPITAL.",
+            question:
+              "In the formal mails, it is preferable to use all letters in CAPITAL.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "False",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "In the non-casual mails, don't use slang, use formal vocabulary.",
+            question:
+              "In the non-casual mails, don't use slang, use formal vocabulary.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
+            shuffle: false,
           },
           {
-            question: "If you are handing a hardcopy of your CV, the cover letter will be the first page.",
+            question:
+              "If you are handing a hardcopy of your CV, the cover letter will be the first page.",
             type: "true_false",
             options: ["True", "False"],
             correctAnswer: "True",
-            shuffle: false
-          }
-        ]
+            shuffle: false,
+          },
+        ],
       },
-    ]
-  }
+    ],
+  },
   // {
   //   id: "reproductive-disorders",
   //   title: "Reproductive Disorders",
