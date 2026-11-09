@@ -16809,6 +16809,807 @@ const quizzes = [
       },
     ],
   },
+  {
+    id: "software-engineering-exam-summary",
+    title: "Software Engineering Exam Summary",
+    isSubjectGroup: true,
+    chapters: [
+      {
+        id: "lec-1-exam-questions",
+        title: "LEC 1 Exam Questions",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            id: "q1",
+            type: "complete",
+            question: "Define Software Engineering.",
+            correctAnswer:
+              "It is an engineering discipline that is concerned with all aspects of software production from the early stages of system specification until maintainance deployment.",
+          },
+          {
+            id: "q2",
+            type: "complete",
+            question: "Why is Software Engineering important?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Economics of developed countries depend on software.",
+              "Most systems are software controlled.",
+              "Software doedn't end after coding.",
+              "It helps control cost and time.",
+              "Software failures can have serious financial, safety, and social consequences.",
+            ],
+          },
+          {
+            id: "q3",
+            type: "complete",
+            question: "Explain the Ariane 5 Rocket Disaster.",
+            correctAnswer:
+              "On June 4, 1996, an unmanned Ariane 5 rocket launched by the European Space Agency exploded 40 seconds after lift-off. The failure caused a loss of more than $370 million. The disaster occurred because a 64-bit floating-point number was converted into a 16-bit signed integer, causing an unhandled floating-point exception.",
+          },
+          {
+            id: "q4",
+            type: "complete",
+            question: "What is Software?",
+            correctAnswer: "Computer programs and associated documentation.",
+          },
+          {
+            id: "q5",
+            type: "complete",
+            question: "What are the attributes of good software?",
+            correctAnswer:
+              "Good software should deliver the required functionality and performance to the user and should be maintainable, dependable, and usable.",
+          },
+          {
+            id: "q6",
+            type: "complete",
+            question:
+              "What are the fundamental software engineering activities?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Software Specification.",
+              "Software Development.",
+              "Software Validation.",
+              "Software Evolution.",
+            ],
+          },
+          {
+            id: "q7",
+            type: "complete",
+            question: "Explain Software Specification.",
+            correctAnswer:
+              "Customers and engineers define the software that is to be produced and the constraints on its operation.",
+          },
+          {
+            id: "q8",
+            type: "complete",
+            question: "Explain Software Development.",
+            correctAnswer: "The software is designed and coded.",
+          },
+          {
+            id: "q9",
+            type: "complete",
+            question: "Explain Software Validation.",
+            correctAnswer:
+              "The software is checked and tested so it meets customer requirements.",
+          },
+          {
+            id: "q10",
+            type: "complete",
+            question: "Explain Software Evolution.",
+            correctAnswer:
+              "Software is modified to reflect changing customer and market requirements.",
+          },
+          {
+            id: "q11",
+            type: "complete",
+            question:
+              "Differentiate between Software Engineering and Computer Science.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Computer Science focuses on theory and fundamentals.",
+              "Software Engineering is concerned with the practicalities of developing and delivering useful software.",
+            ],
+          },
+          {
+            id: "q12",
+            type: "complete",
+            question:
+              "Differentiate between Software Engineering and System Engineering.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "System Engineering is concerned with all aspects of computer-based systems development including hardware, software, and process engineering. Software Engineering is part of this more general process and focuses on software development.",
+              "Software Engineering is considered a part of system engineering.",
+            ],
+          },
+          {
+            id: "q13",
+            type: "complete",
+            question: "Discuss software costs.",
+            correctAnswer:
+              "Roughly 60% are development costs; 40% are testing costs. For custom software, evolution (maintenance) costs often exceed original development costs.",
+          },
+          {
+            id: "q14",
+            type: "complete",
+            question: "What are Software Products?",
+            orderMode: "unordered",
+            correctAnswers: ["Customized Products.", "Generic Products."],
+          },
+          {
+            id: "q15",
+            type: "complete",
+            question: "What are Customized Products?",
+            correctAnswer:
+              "A software contractor creates it according to a specific customer's needs.",
+          },
+          {
+            id: "q16",
+            type: "complete",
+            question: "What are Generic Products?",
+            correctAnswer: "Developed once and sold to many customers.",
+          },
+          {
+            id: "q17",
+            type: "complete",
+            question: "What is meant by Heterogeneity?",
+            correctAnswer:
+              "Heterogeneity refers to the requirement that software systems operate as distributed systems across networks that include different types of computers and mobile devices.",
+          },
+          {
+            id: "q18",
+            type: "complete",
+            question: "Explain the issue of Business and Social Change.",
+            correctAnswer:
+              "Business and society are changing rapidly as new technologies become available and emerging economies develop. Organizations need to change existing software and rapidly develop new software to meet these changes.",
+          },
+          {
+            id: "q19",
+            type: "complete",
+            question: "Explain Security and Trust in Software Engineering.",
+            correctAnswer:
+              "Since software is intertwined with all aspects of life, it is essential that software can be trusted. It is necessary to ensure that malicious users cannot attack software systems and that information security is maintained.",
+          },
+          {
+            id: "q20",
+            type: "complete",
+            question: "Why is there no universal software engineering method?",
+            correctAnswer:
+              "There are no universal software engineering methods and techniques suitable for all systems and all companies. The most appropriate methods depend on the type of application being developed.",
+          },
+          {
+            id: "q21",
+            type: "complete",
+            question: "What are Stand-Alone Applications?",
+            correctAnswer:
+              "Stand-alone applications run on a local computer and contain all required functionality without needing a network connection. Examples include office applications, CAD programs, and photo manipulation software.",
+          },
+          {
+            id: "q22",
+            type: "complete",
+            question: "What are Interactive Transaction-Based Applications?",
+            correctAnswer:
+              "These applications execute on remote computers and are accessed by users through PCs or terminals. Examples include e-commerce systems and internet banking applications. They often use large databases that are updated with every transaction.",
+          },
+          {
+            id: "q23",
+            type: "complete",
+            question: "What are Embedded Control Systems?",
+            correctAnswer:
+              "Embedded control systems are software systems that control and manage hardware devices. Examples include software used in mobile phones, anti-lock braking systems, central heating systems, and microwave ovens.",
+          },
+          {
+            id: "q24",
+            type: "complete",
+            question: "What are Batch Processing Systems?",
+            correctAnswer:
+              "Batch processing systems are business systems designed to process data in large batches. Examples include phone billing systems and salary payment systems.",
+          },
+          {
+            id: "q25",
+            type: "complete",
+            question: "What are Entertainment Systems?",
+            correctAnswer:
+              "Entertainment systems are systems primarily designed for personal use and intended to entertain users, such as games.",
+          },
+          {
+            id: "q26",
+            type: "complete",
+            question: "What are Systems for Modeling and Simulation?",
+            correctAnswer:
+              "These systems are developed by scientists and engineers to model physical processes or situations.",
+          },
+          {
+            id: "q27",
+            type: "complete",
+            question: "What are Data Collection Systems?",
+            correctAnswer:
+              "Data collection systems gather data from their environment using sensors and send that data to other systems for processing.",
+          },
+          {
+            id: "q28",
+            type: "complete",
+            question: "What are Systems of Systems?",
+            correctAnswer:
+              "Systems of systems are composed of a number of other software systems. Some may be generic software products, while others may be specially written for a particular environment.",
+          },
+          {
+            id: "q29",
+            type: "complete",
+            question:
+              "Explain the four fundamental software engineering activities.",
+            correctAnswer:
+              "The four fundamental software engineering activities are Software Specification, Software Development, Software Validation, and Software Evolution.",
+          },
+          {
+            id: "q30",
+            type: "complete",
+            question:
+              "Explain the difference between Software Engineering and Computer Science, and between Software Engineering and System Engineering.",
+            correctAnswer:
+              "Computer Science focuses on theory and fundamentals, whereas Software Engineering focuses on practicalities. System Engineering covers all aspects of computer-based systems development including hardware, software, and process engineering, whereas Software Engineering focuses specifically on software development.",
+          },
+          {
+            id: "q31",
+            type: "complete",
+            question:
+              "Discuss the major issues that affect different types of software systems.",
+            correctAnswer:
+              "Major issues include heterogeneity, business and social change, and security and trust.",
+          },
+          {
+            id: "q32",
+            type: "complete",
+            question:
+              "Explain the different types of software applications with examples.",
+            correctAnswer:
+              "Types of software applications include stand-alone applications, interactive transaction-based applications, embedded control systems, batch processing systems, entertainment systems, modeling and simulation systems, data collection systems, and systems of systems.",
+          },
+          {
+            id: "q33",
+            type: "complete",
+            question:
+              "Discuss software costs and explain why software engineering is concerned with cost-effective development.",
+            correctAnswer:
+              "Roughly 60% of software costs are development costs and 40% are testing costs, with evolution/maintenance costs often exceeding development costs for long-life or custom systems. Software engineering aims to control these costs through disciplined and efficient practices.",
+          },
+          {
+            id: "q34",
+            type: "complete",
+            question:
+              "Explain the Ariane 5 Rocket Disaster and state what lesson software engineers learned from it.",
+            correctAnswer:
+              "The Ariane 5 rocket exploded 40 seconds after lift-off due to an unhandled floating-point exception caused by converting a 64-bit float to a 16-bit signed integer, resulting in a loss of over $370 million. Software engineers learned the critical importance of rigorous exception handling, testing, and preventing type conversion errors.",
+          },
+        ],
+      },
+      {
+        id: "lec-2-exam-questions",
+        title: "LEC 2 Exam Questions",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            id: "q1-software-engineering-ethics",
+            type: "complete",
+            question: "Explain Software Engineering Ethics.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Confidentiality",
+              "Competence",
+              "Intellectual Property Rights",
+              "Computer Misuse.",
+            ],
+          },
+          {
+            id: "q2-principles-of-software-engineering-ethics",
+            type: "complete",
+            question: "Explain the principles of Software Engineering Ethics.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Respect the confidentiality of employers and clients.",
+              "Do not misrepresent your level of competence and do not accept work outside your competence.",
+              "Protect intellectual property and comply with patent and copyright laws.",
+              "Do not use technical skills to misuse other people's computers.",
+            ],
+          },
+          {
+            id: "q3-three-case-studies",
+            type: "complete",
+            question:
+              "Explain the three case studies introduced in the lecture.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Personal insulin pump: Embedded system used by diabetics to maintain blood glucose control.",
+              "Mental health patient management system: Maintains records of mental health patients.",
+              "Wilderness weather station: Collects weather data from remote areas.",
+            ],
+          },
+          {
+            id: "q4-define-software-process",
+            type: "complete",
+            question: "Define a Software Process.",
+            correctAnswer:
+              "A software process is a set of related activities that leads to the production of a software product. Software is produced through a series of stages that may take months or years to complete.",
+          },
+          {
+            id: "q5-goals-of-each-stage",
+            type: "complete",
+            question: "What are the goals of each stage in a software process?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Define a clear set of steps.",
+              "Produce a tangible item.",
+              "Allow review of work.",
+              "Specify actions for the next stage.",
+            ],
+          },
+          {
+            id: "q6-four-fundamental-activities",
+            type: "complete",
+            question:
+              "Explain the four fundamental activities of a software process.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Software Specification.",
+              "Software Design and Implementation.",
+              "Software Validation.",
+              "Software Evolution.",
+            ],
+          },
+          {
+            id: "q7-software-process-descriptors",
+            type: "complete",
+            question: "What are Software Process Descriptors?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Products (outcomes of process activities).",
+              "Roles (responsibilities of people involved).",
+              "Pre- and Post-Conditions (statements true before and after an activity).",
+            ],
+          },
+          {
+            id: "q8-compare-plan-driven-and-agile",
+            type: "complete",
+            question: "Compare Plan-Driven Processes and Agile Processes.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Plan-Driven Processes: All activities are planned in advance and progress is measured against the plan.",
+              "Agile Processes: Planning is incremental and can be changed easily to reflect changing customer requirements.",
+            ],
+          },
+          {
+            id: "q9-traditional-software-process-models",
+            type: "complete",
+            question: "What are the traditional software process models?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Waterfall Model.",
+              "Incremental Development.",
+              "Reuse-Oriented Software Engineering.",
+            ],
+          },
+          {
+            id: "q10-explain-waterfall-model",
+            type: "complete",
+            question: "Explain the Waterfall Model.",
+            correctAnswer:
+              "The Waterfall Model is the earliest SDLC approach. It is a plan-driven process that follows a linear sequential flow where a phase begins only after the previous phase is completed.",
+          },
+          {
+            id: "q11-phases-of-waterfall-model",
+            type: "complete",
+            question: "What are the phases of the Waterfall Model?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Requirements Analysis and Definition.",
+              "System and Software Design.",
+              "Implementation and Unit Testing.",
+              "Integration and System Testing.",
+              "Operation and Maintenance.",
+            ],
+          },
+          {
+            id: "q12-waterfall-drawback-and-appropriate",
+            type: "complete",
+            question:
+              "What is the main drawback of the Waterfall Model and when is it most appropriate?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Main drawback: Difficulty of accommodating changes after the process has started because each phase must be completed before moving to the next.",
+              "Project is short.",
+              "Requirements are clear, fixed, and well documented.",
+              "No ambiguous requirements.",
+              "Technology is stable and understood.",
+              "Required expertise and resources are available.",
+              "Large distributed systems require coordination.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "lec-3-exam-questions",
+        title: "LEC 3 Exam Questions",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            id: "q1",
+            type: "complete",
+            question: "Compare Plan-Driven Processes and Agile Processes.",
+            correctAnswers: [
+              "Plan-Driven Processes: All process activities are planned in advance and progress is measured against the plan.",
+              "Agile Processes: Planning is incremental and it is easier to change the process to reflect changing customer requirements. There is no ideal software process. In practice, most processes include elements of both approaches.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q2",
+            type: "complete",
+            question: "What are the traditional Software Process Models?",
+            correctAnswers: [
+              "Waterfall Model",
+              "Incremental Development",
+              "Reuse-Oriented Software Engineering",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q3",
+            type: "complete",
+            question: "What is Incremental Development?",
+            correctAnswer:
+              "Incremental development interleaves the activities of specification, development, and validation.",
+          },
+          {
+            id: "q4",
+            type: "complete",
+            question: "Explain Incremental Development.",
+            correctAnswer:
+              "Incremental development is based on developing an initial implementation, exposing it to user feedback, and evolving it through several versions (increments) until an adequate system has been developed. Each increment includes part of the required functionality. Early increments usually contain the most important functions so customers can evaluate the system at an early stage. Incremental development is a fundamental part of agile approaches and is better than the waterfall approach for most e-commerce and personal systems.",
+          },
+          {
+            id: "q5",
+            type: "complete",
+            question: "What are the Benefits of Incremental Development?",
+            correctAnswers: [
+              "Reduced cost of accommodating changing customer requirements.",
+              "Easier customer feedback.",
+              "Faster delivery and deployment of useful software.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q6",
+            type: "complete",
+            question: "What are the Problems of Incremental Development?",
+            correctAnswers: [
+              "The process is not visible because managers need regular deliverables to measure progress.",
+              "System structure tends to degrade as new increments are added unless refactoring is performed.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q7",
+            type: "complete",
+            question: "What is Reuse-Oriented Software Engineering?",
+            correctAnswer:
+              "Reuse-oriented software engineering relies on a large base of reusable software components and an integrating framework for composing these components. It may be plan-driven or agile. Reusable components may be COTS (Commercial Off-The-Shelf systems), and reused elements may be configured to adapt to user requirements.",
+          },
+          {
+            id: "q8",
+            type: "complete",
+            question:
+              "What are the Intermediate Stages in Reuse-Oriented Software Engineering?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Component Analysis.",
+              "Requirements Modification.",
+              "System Design with Reuse.",
+              "Development and Integration.",
+            ],
+          },
+          {
+            id: "q9",
+            type: "complete",
+            question:
+              "Explain Component Analysis and Requirements Modification.",
+            correctAnswers: [
+              "Component Analysis: A search is made for components that can implement the specification. Usually there is no exact match, and available components provide only part of the required functionality.",
+              "Requirements Modification: Requirements are analyzed according to the discovered components and modified to match available components. If modification is impossible, component analysis may be repeated to find alternatives.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q10",
+            type: "complete",
+            question:
+              "Explain System Design with Reuse and Development & Integration.",
+            correctAnswers: [
+              "System Design with Reuse: The system framework is designed or reused. Designers organize the framework around reusable components. New software may be designed if reusable components are unavailable.",
+              "Development and Integration: Software that cannot be externally procured is developed, and components and COTS systems are integrated to create the new system. Integration may be part of development rather than a separate activity.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q11",
+            type: "complete",
+            question:
+              "What types of software components may be used in a Reuse-Oriented Process?",
+            correctAnswers: [
+              "Web Services.",
+              "Collections of Objects developed as packages for frameworks such as .NET or J2EE.",
+              "Stand-Alone Software Systems configured for a particular environment.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q12",
+            type: "complete",
+            question:
+              "What are the Advantages and Disadvantages of Reuse-Oriented Software Engineering?",
+            correctAnswers: [
+              "Advantages: Reduces the amount of software to be developed, reduces cost and risks, and leads to faster software delivery.",
+              "Disadvantages: Requirements compromises may be necessary, the final system may not completely meet user needs, and some control over system evolution is lost because reusable components are controlled by their providers.",
+            ],
+            orderMode: "unordered",
+          },
+        ],
+      },
+      {
+        id: "lec-4-exam-questions",
+        title: "LEC 4 Exam Questions",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            id: "q1",
+            type: "complete",
+            question: "What are Process Activities?",
+            correctAnswers: [
+              "Specification",
+              "Development",
+              "Validation",
+              "Evolution",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q2",
+            type: "complete",
+            question:
+              "What is Software Specification (Requirements Engineering)?",
+            correctAnswer:
+              "The process of understanding and defining the required services of a system and identifying constraints on its operation and development.",
+          },
+          {
+            id: "q3",
+            type: "complete",
+            question:
+              "What are the four main activities in Requirements Engineering?",
+            correctAnswers: [
+              "Feasibility Study",
+              "Requirements Elicitation and Analysis",
+              "Requirements Specification",
+              "Requirements Validation",
+            ],
+            orderMode: "ordered",
+          },
+          {
+            id: "q4",
+            type: "complete",
+            question:
+              "Explain the four activities of Requirements Engineering.",
+            correctAnswers: [
+              "Feasibility Study: Determines whether it is technically and financially feasible to build the system.",
+              "Requirements Elicitation and Analysis: Derives requirements through observation, discussions with users, task analysis, and similar activities.",
+              "Requirements Specification: Translates gathered information into a requirements document, which may contain user or system requirements.",
+              "Requirements Validation: Checks requirements for realism, consistency, and completeness and corrects discovered errors.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q5",
+            type: "complete",
+            question: "What is Software Design and Implementation?",
+            correctAnswer:
+              "The process of converting a system specification into an executable system, involving software structure, data models and structures, interfaces, and algorithms.",
+          },
+          {
+            id: "q6",
+            type: "complete",
+            question: "What are the activities in the General Design Process?",
+            correctAnswers: [
+              "Architectural Design",
+              "Interface Design",
+              "Component Design",
+              "Database Design",
+            ],
+            orderMode: "ordered",
+          },
+          {
+            id: "q7",
+            type: "complete",
+            question: "Explain the activities of the General Design Process.",
+            correctAnswers: [
+              "Architectural Design: Identifies the overall structure of the system, major components, and their relationships.",
+              "Interface Design: Defines interfaces between system components.",
+              "Component Design: Designs how each component operates.",
+              "Database Design: Designs data structures and database representation.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q8",
+            type: "complete",
+            question: "What is Software Validation?",
+            correctAnswer:
+              "Verification and Validation intended to show that a system conforms to its specification and meets customer expectations.",
+          },
+          {
+            id: "q9",
+            type: "complete",
+            question: "What are the stages of testing?",
+            correctAnswers: [
+              "Development Testing",
+              "System Testing",
+              "Acceptance Testing",
+            ],
+            orderMode: "ordered",
+          },
+          {
+            id: "q10",
+            type: "complete",
+            question: "Explain the stages of testing.",
+            correctAnswers: [
+              "Development Testing: Components are tested independently by developers.",
+              "System Testing: Components are integrated and tested to find interaction errors.",
+              "Acceptance Testing: Final testing stage using customer-supplied data to ensure the system meets user needs.",
+            ],
+            orderMode: "unordered",
+          },
+          {
+            id: "q11",
+            type: "complete",
+            question: "Explain Software Evolution and Coping With Changes.",
+            correctAnswer:
+              "Software evolution addresses flexible and widely used systems where maintenance costs exceed initial development costs, using change avoidance or change tolerance approaches.",
+          },
+          {
+            id: "q12",
+            type: "complete",
+            question: "What is Prototyping?",
+            correctAnswer:
+              "An initial version of a software system used to demonstrate concepts, explore design options, and learn more about a problem and its solutions.",
+          },
+        ],
+      },
+      {
+        id: "lec-5-exam-questions",
+        title: "LEC 5 Exam Questions",
+        shuffleQuestions: true,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            id: "q1",
+            type: "complete",
+            question: "What is Requirements Engineering (RE)?",
+            correctAnswer:
+              "Requirements for a system are descriptions of what the system should do, the services it provides, and the constraints on its operation. The process of finding out, analyzing, documenting, and checking these services and constraints is called Requirements Engineering (RE).",
+          },
+          {
+            id: "q2",
+            type: "complete",
+            question: "Explain Requirement Abstraction.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "When a company wants to contract a large software project, requirements should be written in a sufficiently abstract way so that different contractors can propose different solutions.",
+              "After the contract is awarded, the contractor writes a more detailed system definition so that the client can understand and validate what the software will do.",
+            ],
+          },
+          {
+            id: "q3",
+            type: "complete",
+            question: "What are the Types of Requirements?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "User Requirements: Statements in natural language plus diagrams describing services expected by users and constraints under which the system operates.",
+              "System Requirements: More detailed descriptions of functions, services, and operational constraints that may be part of the contract between the customer and software developers.",
+            ],
+          },
+          {
+            id: "q4",
+            type: "complete",
+            question:
+              "Why must requirements be written at different levels of detail?",
+            correctAnswer:
+              "Requirements must be written at different levels of detail because different readers use them in different ways.",
+          },
+          {
+            id: "q5",
+            type: "complete",
+            question: "Compare Functional and Non-Functional Requirements.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Functional Requirements describe services the system should provide, how the system reacts to inputs, how the system behaves in particular situations, and sometimes what the system should not do.",
+              "Non-Functional Requirements are constraints on services or functions, including timing constraints, development process constraints, and constraints imposed by standards. Functional and non-functional requirements may influence each other.",
+            ],
+          },
+          {
+            id: "q6",
+            type: "complete",
+            question: "What are Functional Requirements?",
+            correctAnswer:
+              "Functional requirements describe what the system should do. They depend on the type of software being developed, expected users, and general organizational approach. They may range from general requirements to very specific requirements.",
+          },
+          {
+            id: "q7",
+            type: "complete",
+            question:
+              "Give the Functional Requirements of the Mental Health Care Patient Management System.",
+            orderMode: "ordered",
+            correctAnswers: [
+              "A user shall be able to search appointment lists for all clinics.",
+              "The system shall generate each day, for each clinic, a list of patients expected to attend appointments that day.",
+              "Each staff member using the system shall be uniquely identified by an eight-digit employee number.",
+            ],
+          },
+          {
+            id: "q8",
+            type: "complete",
+            question:
+              "What is meant by Requirements Completeness and Consistency?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Completeness means all services required by the user are defined.",
+              "Consistency means requirements do not have contradictory definitions. For large and complex systems, achieving complete consistency and completeness is practically impossible.",
+            ],
+          },
+          {
+            id: "q9",
+            type: "complete",
+            question: "What are Non-Functional Requirements?",
+            correctAnswer:
+              "Non-functional requirements are requirements not directly concerned with specific services delivered by the system. They may relate to reliability, response time, storage occupancy, and may also define implementation constraints such as I/O capabilities and data representations. Non-functional requirements often constrain the characteristics of the whole system and are usually more critical than individual functional requirements.",
+          },
+          {
+            id: "q10",
+            type: "complete",
+            question: "Why are Non-Functional Requirements Important?",
+            correctAnswer:
+              "Failing to meet a non-functional requirement can make the entire system unusable. For example, an aircraft system that does not satisfy reliability requirements will not be certified as safe, and an embedded control system that fails to meet performance requirements will not operate correctly.",
+          },
+          {
+            id: "q11",
+            type: "complete",
+            question:
+              "Why is it difficult to relate components to Non-Functional Requirements?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Non-functional requirements may affect the overall architecture of the system rather than individual components.",
+              "A single non-functional requirement may generate related functional requirements and may also restrict existing requirements.",
+            ],
+          },
+          {
+            id: "q12",
+            type: "complete",
+            question: "What are the Types of Non-Functional Requirements?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Product Requirements specify or constrain software behavior, including performance, reliability, security, and usability requirements.",
+              "Organizational Requirements are derived from organizational policies and procedures, including operational process requirements, development process requirements, and environmental requirements.",
+              "External Requirements are derived from factors external to the system and development process, including regulatory, legislative, and ethical requirements.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
   // {
   //   id: "reproductive-disorders",
   //   title: "Reproductive Disorders",
