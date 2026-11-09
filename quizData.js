@@ -16822,47 +16822,47 @@ const quizzes = [
         quizModeTimer: 1800,
         questions: [
           {
-            id: "q1",
+            d: "q1-software-engineering-definition-and-importance",
             type: "complete",
-            question: "Define Software Engineering.",
-            correctAnswer:
-              "It is an engineering discipline that is concerned with all aspects of software production from the early stages of system specification until maintainance deployment.",
-          },
-          {
-            id: "q2",
-            type: "complete",
-            question: "Why is Software Engineering important?",
+            question: "What is Software Engineering and why is it important?",
             orderMode: "unordered",
             correctAnswers: [
-              "Economics of developed countries depend on software.",
-              "Most systems are software controlled.",
-              "Software doedn't end after coding.",
+              "Software Engineering is an engineering discipline concerned with all aspects of software production, from system specification to maintenance after deployment.",
+              "Economies depend on software.",
+              "More systems are software-controlled.",
+              "Software doesn't end after coding.",
               "It helps control cost and time.",
               "Software failures can have serious financial, safety, and social consequences.",
             ],
           },
           {
-            id: "q3",
+            id: "q2-ariane-5-rocket-disaster",
             type: "complete",
             question: "Explain the Ariane 5 Rocket Disaster.",
-            correctAnswer:
-              "On June 4, 1996, an unmanned Ariane 5 rocket launched by the European Space Agency exploded 40 seconds after lift-off. The failure caused a loss of more than $370 million. The disaster occurred because a 64-bit floating-point number was converted into a 16-bit signed integer, causing an unhandled floating-point exception.",
+            orderMode: "unordered",
+            correctAnswers: [
+              "On June 4, 1996, an unmanned Ariane 5 rocket exploded 40 seconds after launch.",
+              "The loss exceeded $370 million.",
+              "The failure was caused by an unhandled floating-point exception when a 64-bit floating-point number was converted into a 16-bit signed integer.",
+            ],
           },
           {
-            id: "q4",
+            id: "q3-attributes-good-software",
             type: "complete",
-            question: "What is Software?",
-            correctAnswer: "Computer programs and associated documentation.",
+            question:
+              "What are the attributes of good software and what is software?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Software: Computer programs and associated documentation.",
+              "Functional",
+              "High performance",
+              "Maintainable",
+              "Dependable",
+              "Usable",
+            ],
           },
           {
-            id: "q5",
-            type: "complete",
-            question: "What are the attributes of good software?",
-            correctAnswer:
-              "Good software should deliver the required functionality and performance to the user and should be maintainable, dependable, and usable.",
-          },
-          {
-            id: "q6",
+            id: "q4-fundamental-software-engineering-activities",
             type: "complete",
             question:
               "What are the fundamental software engineering activities?",
@@ -16875,212 +16875,70 @@ const quizzes = [
             ],
           },
           {
-            id: "q7",
-            type: "complete",
-            question: "Explain Software Specification.",
-            correctAnswer:
-              "Customers and engineers define the software that is to be produced and the constraints on its operation.",
-          },
-          {
-            id: "q8",
-            type: "complete",
-            question: "Explain Software Development.",
-            correctAnswer: "The software is designed and coded.",
-          },
-          {
-            id: "q9",
-            type: "complete",
-            question: "Explain Software Validation.",
-            correctAnswer:
-              "The software is checked and tested so it meets customer requirements.",
-          },
-          {
-            id: "q10",
-            type: "complete",
-            question: "Explain Software Evolution.",
-            correctAnswer:
-              "Software is modified to reflect changing customer and market requirements.",
-          },
-          {
-            id: "q11",
+            id: "q5-differentiate-software-engineering-computer-science-system-engineering",
             type: "complete",
             question:
-              "Differentiate between Software Engineering and Computer Science.",
+              "Differentiate between:\na) Software Engineering and Computer Science, \nb) Software Engineering and System Engineering",
             orderMode: "unordered",
             correctAnswers: [
-              "Computer Science focuses on theory and fundamentals.",
-              "Software Engineering is concerned with the practicalities of developing and delivering useful software.",
+              "Computer science focuses on theory and fundamentals, while software engineering focuses on developing and delivering useful software.",
+              "System engineering deals with hardware, software, and process engineering, while software engineering is part of system engineering.",
             ],
           },
           {
-            id: "q12",
+            id: "q6-software-costs",
             type: "complete",
-            question:
-              "Differentiate between Software Engineering and System Engineering.",
-            orderMode: "unordered",
-            correctAnswers: [
-              "System Engineering is concerned with all aspects of computer-based systems development including hardware, software, and process engineering. Software Engineering is part of this more general process and focuses on software development.",
-              "Software Engineering is considered a part of system engineering.",
-            ],
-          },
-          {
-            id: "q13",
-            type: "complete",
-            question: "Discuss software costs.",
+            question: "Discuss Software Costs.",
             correctAnswer:
               "Roughly 60% are development costs; 40% are testing costs. For custom software, evolution (maintenance) costs often exceed original development costs.",
           },
           {
-            id: "q14",
+            id: "q7-types-of-software-products",
             type: "complete",
-            question: "What are Software Products?",
+            question: "What are the types of Software Products?",
             orderMode: "unordered",
-            correctAnswers: ["Customized Products.", "Generic Products."],
+            correctAnswers: [
+              "Generic Products: Developed once and sold to many customers such as (databases, word processors, drawing apps, project-management tools).",
+              "Customized Products: A software contractor creates it according to a specific customer's needs.",
+            ],
           },
           {
-            id: "q15",
-            type: "complete",
-            question: "What are Customized Products?",
-            correctAnswer:
-              "A software contractor creates it according to a specific customer's needs.",
-          },
-          {
-            id: "q16",
-            type: "complete",
-            question: "What are Generic Products?",
-            correctAnswer: "Developed once and sold to many customers.",
-          },
-          {
-            id: "q17",
-            type: "complete",
-            question: "What is meant by Heterogeneity?",
-            correctAnswer:
-              "Heterogeneity refers to the requirement that software systems operate as distributed systems across networks that include different types of computers and mobile devices.",
-          },
-          {
-            id: "q18",
-            type: "complete",
-            question: "Explain the issue of Business and Social Change.",
-            correctAnswer:
-              "Business and society are changing rapidly as new technologies become available and emerging economies develop. Organizations need to change existing software and rapidly develop new software to meet these changes.",
-          },
-          {
-            id: "q19",
-            type: "complete",
-            question: "Explain Security and Trust in Software Engineering.",
-            correctAnswer:
-              "Since software is intertwined with all aspects of life, it is essential that software can be trusted. It is necessary to ensure that malicious users cannot attack software systems and that information security is maintained.",
-          },
-          {
-            id: "q20",
-            type: "complete",
-            question: "Why is there no universal software engineering method?",
-            correctAnswer:
-              "There are no universal software engineering methods and techniques suitable for all systems and all companies. The most appropriate methods depend on the type of application being developed.",
-          },
-          {
-            id: "q21",
-            type: "complete",
-            question: "What are Stand-Alone Applications?",
-            correctAnswer:
-              "Stand-alone applications run on a local computer and contain all required functionality without needing a network connection. Examples include office applications, CAD programs, and photo manipulation software.",
-          },
-          {
-            id: "q22",
-            type: "complete",
-            question: "What are Interactive Transaction-Based Applications?",
-            correctAnswer:
-              "These applications execute on remote computers and are accessed by users through PCs or terminals. Examples include e-commerce systems and internet banking applications. They often use large databases that are updated with every transaction.",
-          },
-          {
-            id: "q23",
-            type: "complete",
-            question: "What are Embedded Control Systems?",
-            correctAnswer:
-              "Embedded control systems are software systems that control and manage hardware devices. Examples include software used in mobile phones, anti-lock braking systems, central heating systems, and microwave ovens.",
-          },
-          {
-            id: "q24",
-            type: "complete",
-            question: "What are Batch Processing Systems?",
-            correctAnswer:
-              "Batch processing systems are business systems designed to process data in large batches. Examples include phone billing systems and salary payment systems.",
-          },
-          {
-            id: "q25",
-            type: "complete",
-            question: "What are Entertainment Systems?",
-            correctAnswer:
-              "Entertainment systems are systems primarily designed for personal use and intended to entertain users, such as games.",
-          },
-          {
-            id: "q26",
-            type: "complete",
-            question: "What are Systems for Modeling and Simulation?",
-            correctAnswer:
-              "These systems are developed by scientists and engineers to model physical processes or situations.",
-          },
-          {
-            id: "q27",
-            type: "complete",
-            question: "What are Data Collection Systems?",
-            correctAnswer:
-              "Data collection systems gather data from their environment using sensors and send that data to other systems for processing.",
-          },
-          {
-            id: "q28",
-            type: "complete",
-            question: "What are Systems of Systems?",
-            correctAnswer:
-              "Systems of systems are composed of a number of other software systems. Some may be generic software products, while others may be specially written for a particular environment.",
-          },
-          {
-            id: "q29",
+            id: "q8-general-issues-software-systems",
             type: "complete",
             question:
-              "Explain the four fundamental software engineering activities.",
-            correctAnswer:
-              "The four fundamental software engineering activities are Software Specification, Software Development, Software Validation, and Software Evolution.",
+              "What are the general issues that affect many software systems?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Heterogeneity: Requires software to work across different devices and networks.",
+              "Business and Social Change: Require software to evolve rapidly.",
+              "Security and Trust: Ensure software is protected from attacks and maintains information security.",
+            ],
           },
           {
-            id: "q30",
+            id: "q9-software-engineering-diversity-importance",
             type: "complete",
-            question:
-              "Explain the difference between Software Engineering and Computer Science, and between Software Engineering and System Engineering.",
-            correctAnswer:
-              "Computer Science focuses on theory and fundamentals, whereas Software Engineering focuses on practicalities. System Engineering covers all aspects of computer-based systems development including hardware, software, and process engineering, whereas Software Engineering focuses specifically on software development.",
+            question: "Why is Software Engineering Diversity important?",
+            orderMode: "unordered",
+            correctAnswers: [
+              "There is no universal software engineering method suitable for all systems and companies.",
+              "The most important factor in choosing methods and techniques is the type of application being developed.",
+            ],
           },
           {
-            id: "q31",
+            id: "q10-different-types-software-applications",
             type: "complete",
-            question:
-              "Discuss the major issues that affect different types of software systems.",
-            correctAnswer:
-              "Major issues include heterogeneity, business and social change, and security and trust.",
-          },
-          {
-            id: "q32",
-            type: "complete",
-            question:
-              "Explain the different types of software applications with examples.",
-            correctAnswer:
-              "Types of software applications include stand-alone applications, interactive transaction-based applications, embedded control systems, batch processing systems, entertainment systems, modeling and simulation systems, data collection systems, and systems of systems.",
-          },
-          {
-            id: "q33",
-            type: "complete",
-            question:
-              "Discuss software costs and explain why software engineering is concerned with cost-effective development.",
-            correctAnswer:
-              "Roughly 60% of software costs are development costs and 40% are testing costs, with evolution/maintenance costs often exceeding development costs for long-life or custom systems. Software engineering aims to control these costs through disciplined and efficient practices.",
-          },
-          {
-            id: "q34",
-            type: "complete",
-            question:
-              "Explain the Ariane 5 Rocket Disaster and state what lesson software engineers learned from it.",
-            correctAnswer:
-              "The Ariane 5 rocket exploded 40 seconds after lift-off due to an unhandled floating-point exception caused by converting a 64-bit float to a 16-bit signed integer, resulting in a loss of over $370 million. Software engineers learned the critical importance of rigorous exception handling, testing, and preventing type conversion errors.",
+            question: "What are the different types of software applications?",
+            orderMode: "ordered",
+            correctAnswers: [
+              "Stand-alone Applications.",
+              "Interactive Transaction-Based Applications.",
+              "Embedded Control Systems.",
+              "Batch Processing Systems.",
+              "Entertainment Systems.",
+              "Systems for Modeling and Simulation.",
+              "Data Collection Systems.",
+              "Systems of Systems.",
+            ],
           },
         ],
       },
@@ -17605,6 +17463,152 @@ const quizzes = [
               "Organizational Requirements are derived from organizational policies and procedures, including operational process requirements, development process requirements, and environmental requirements.",
               "External Requirements are derived from factors external to the system and development process, including regulatory, legislative, and ethical requirements.",
             ],
+          },
+        ],
+      },
+      {
+        id: "chapter-1-review-questions",
+        title: "CSE - Midterm Exam 2026-2027",
+        shuffleQuestions: false,
+        showScore: true,
+        quizModeTimer: 1800,
+        questions: [
+          {
+            id: "q1-define-good-software",
+            type: "complete",
+            question: "Define Good Software. (Lecture 1)",
+            orderMode: "unordered",
+            correctAnswers: ["Functional", "High Performance","Maintainable", "Dependable", "Usable"],
+          },
+          {
+            id: "q2-difference-se-cs",
+            type: "complete",
+            question:
+              "What is the Difference Between Software Engineering and Computer Science? (Lecture 1)",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Computer Science focuses on theory and fundamentals.",
+              "Software Engineering is concerned with the practicalities of developing and delivering useful software.",
+            ],
+          },
+          {
+            id: "q3-fundamental-activities",
+            type: "complete",
+            question:
+              "What are the Fundamental Software Engineering Activities? (Lecture 1)",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Software Specification.",
+              "Software Development.",
+              "Software Validation.",
+              "Software Evolution.",
+            ],
+          },
+          {
+            id: "q4-explain-ethics",
+            type: "complete",
+            question: "Explain Software Engineering Ethics. (Lecture 2)",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Confidentiality: Respect the confidentiality of employers and clients.",
+              "Competence: Do not misrepresent your competence and do not accept work outside your competence.",
+              "Intellectual Property Rights: Protect intellectual property and follow copyright and patent laws.",
+              "Computer Misuse: Do not use technical skills to misuse other people's computers.",
+            ],
+          },
+          {
+            id: "q5-differentiate-plan-agile",
+            type: "complete",
+            question:
+              "Differentiate Between Plan-Driven and Agile (Incremental) Processes. (Lecture 2)",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Plan-Driven Process: All process activities are planned in advance and progress is measured against that plan.",
+              "Agile (Incremental) Process: Planning is incremental and it is easier to change the process to meet changing customer requirements.",
+            ],
+          },
+          {
+            id: "q6-define-incremental-development",
+            type: "complete",
+            question: "Define Incremental Development. (Lecture 3)",
+            correctAnswer:
+              "Incremental development is based on developing an initial implementation, exposing it to user feedback, and evolving it through several versions (increments) until an adequate system has been developed. Each increment includes part of the required functionality and early increments usually contain the most important functionality.",
+          },
+          {
+            id: "q7-disadvantages-plan-driven",
+            type: "complete",
+            question:
+              "Determine the Disadvantages of Plan-Driven (Waterfall) Model. (Lecture 2)",
+            orderMode: "unordered",
+            correctAnswers: [
+              "The main drawback of the Waterfall Model is the difficulty of accommodating change after the process is underway.",
+              "A phase must be completed before moving to the next phase.",
+            ],
+          },
+          {
+            id: "q8-explain-stages",
+            type: "complete",
+            question:
+              "Explain the Stages of Software Engineering. (Lectures 1 & 4)",
+            orderMode: "unordered",
+            correctAnswers: [
+              "Software Specification: Understanding and defining required services and system constraints.",
+              "Software Design and Implementation: Designing the software structure and converting specifications into an executable system.",
+              "Software Validation: Ensuring the software satisfies specifications and customer needs.",
+              "Software Evolution: Modifying software to meet changing customer requirements.",
+            ],
+          },
+          {
+            id: "q9-define-prototyping",
+            type: "complete",
+            question: "Define Prototyping. (Lecture 4)",
+            correctAnswer:
+              "A prototype is an initial version of a software system used to demonstrate concepts, try design options, and learn more about a problem and its possible solutions.",
+          },
+          {
+            id: "q10-explain-uses-prototype",
+            type: "complete",
+            question: "Explain the Uses of a Prototype. (Lecture 4)",
+            orderMode: "unordered",
+            correctAnswers: [
+              "In requirements engineering to help with requirements elicitation and validation.",
+              "In system design to explore software solutions and support user interface design.",
+            ],
+          },
+          {
+            id: "tf-1-coding",
+            type: "true_false",
+            question: "Software Engineering is concerned only with coding.",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            id: "tf-2-waterfall-changes",
+            type: "true_false",
+            question:
+              "The Waterfall Model allows easy changes after development begins.",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            id: "tf-3-incremental-development",
+            type: "true_false",
+            question:
+              "Incremental Development allows customers to evaluate the system at an early stage.",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            id: "tf-4-non-functional-requirements",
+            type: "true_false",
+            question:
+              "Non-functional requirements are usually less important than functional requirements.",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
           },
         ],
       },
