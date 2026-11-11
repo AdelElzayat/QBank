@@ -16805,6 +16805,177 @@ const quizzes = [
             correctAnswer: "True",
             shuffle: false,
           },
+          {
+            question:
+              "Which statement best describes the difference between Hard Skills and Soft Skills?",
+            type: "multiple",
+            options: [
+              "Hard skills are related to personality, while soft skills are technical.",
+              "Hard skills are technical abilities, while soft skills are interpersonal and behavioral abilities.",
+              "Both hard and soft skills are technical abilities.",
+              "Soft skills can only be learned at university.",
+            ],
+            correctAnswer:
+              "Hard skills are technical abilities, while soft skills are interpersonal and behavioral abilities.",
+            shuffle: true,
+          },
+          {
+            question: "Which of the following is a Hard Skill?",
+            type: "multiple",
+            options: [
+              "Teamwork",
+              "Empathy",
+              "Python programming",
+              "Leadership",
+            ],
+            correctAnswer: "Python programming",
+            shuffle: true,
+          },
+          {
+            question: "Which of the following is considered a Soft Skill?",
+            type: "multiple",
+            options: ["MATLAB", "Excel", "Accounting", "Active listening"],
+            correctAnswer: "Active listening",
+            shuffle: true,
+          },
+          {
+            question:
+              "A student is very good at using CAD software. This ability is classified as:",
+            type: "multiple",
+            options: [
+              "Soft Skill",
+              "Hard Skill",
+              "Social Skill",
+              "Communication Skill",
+            ],
+            correctAnswer: "Hard Skill",
+            shuffle: true,
+          },
+          {
+            question: "Which of the following pairs contains only Soft Skills?",
+            type: "multiple",
+            options: [
+              "Leadership and teamwork",
+              "Python and MATLAB",
+              "Excel and Photoshop",
+              "Thermodynamics and Accounting",
+            ],
+            correctAnswer: "Leadership and teamwork",
+            shuffle: true,
+          },
+          {
+            question: "Which of the following pairs contains only Hard Skills?",
+            type: "multiple",
+            options: [
+              "Empathy and negotiation",
+              "Teamwork and leadership",
+              "Python and Photoshop",
+              "Active listening and resilience",
+            ],
+            correctAnswer: "Python and Photoshop",
+            shuffle: true,
+          },
+          {
+            question:
+              "A person who can motivate others, manage conflicts, and work effectively with a team is demonstrating mainly:",
+            type: "multiple",
+            options: [
+              "Hard Skills",
+              "Technical Skills",
+              "Soft Skills",
+              "Computer Skills",
+            ],
+            correctAnswer: "Soft Skills",
+            shuffle: true,
+          },
+          {
+            question:
+              "أحمد بيحضّر عرض تقديمي، فقرر يكتب كل الكلام اللي هيقوله بالحرف على الشرائح عشان ماينساش حاجة.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "سارة عملت 12 شريحة، وقررت تتكلم في كل شريحة حوالي دقيقة ونص. يعني العرض كله هياخد حوالي 18 دقيقة.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "محمد أثناء عرضه فضل يبص على شاشة العرض ورا ضهره طول الوقت، ومش بيبيص للجمهور خالص.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "دينا حطت صورة قطة مضحكة كخلفية لكل الشرائح لأنها بتحب القطة، حتى لو ملهاش علاقة بموضوع العرض.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "علي عنده بيانات مبيعات شهرية، فقرر يستخدم رسم بياني خطي بدل جدول أرقام كبير.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "في وسط عرض خالد، حد من الحاضرين انتقده بقسوة، فخالد رد عليه بغضب وبأسلوب حاد.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "منى تدربت على عرضها أمام زملائها، وطلبت منهم يقولوا لها على أخطائها قبل العرض الحقيقي.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "True",
+            shuffle: false,
+          },
+          {
+            question:
+              "حسن نسي فقرة في عرضه، فقعد يقول 'يعني... أم... يعني...' لحد ما افتكر.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "كريم وقف قدام شاشة العرض وغطاها بجسمه وهو بيشرح، فالناس مش شايفة الشرائح.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "نور قالت: 'الزي مش مهم، هلبس أي حاجة مريحة وأقدم العرض.'",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
+          {
+            question:
+              "سلمى حطت أنيميشن وحركات كتير جدًا في كل عنصر في الشريحة عشان العرض يبقى ممتع.",
+            type: "true_false",
+            options: ["True", "False"],
+            correctAnswer: "False",
+            shuffle: false,
+          },
         ],
       },
     ],
@@ -17478,7 +17649,13 @@ const quizzes = [
             type: "complete",
             question: "Define Good Software. (Lecture 1)",
             orderMode: "unordered",
-            correctAnswers: ["Functional", "High Performance","Maintainable", "Dependable", "Usable"],
+            correctAnswers: [
+              "Functional",
+              "High Performance",
+              "Maintainable",
+              "Dependable",
+              "Usable",
+            ],
           },
           {
             id: "q2-difference-se-cs",
