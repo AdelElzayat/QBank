@@ -15816,7 +15816,7 @@ const quizzes = [
               "You should end the email with a statement like: I hope this mail finds you well.",
             type: "true_false",
             options: ["True", "False"],
-            correctAnswer: "True",
+            correctAnswer: "False",
             shuffle: false,
           },
           {
@@ -16715,7 +16715,7 @@ const quizzes = [
               "You should end the email with a statement like: I hope this mail finds you well.",
             type: "true_false",
             options: ["True", "False"],
-            correctAnswer: "True",
+            correctAnswer: "False",
             shuffle: false,
           },
           {
